@@ -1,5 +1,5 @@
 (function(){
-	var imgDataUrl,iframe;
+	var imgUrl,iframe;
 	window.pixter = {
 		loadIframe:loadIframe,
 		changeImage: changeImage,
@@ -11,7 +11,14 @@
 		}
 	}, false);
 
-	function loadIframe(dataUrl){
+	window.addEventListener('message', function(e) {
+		if( e.data === 'pixter_close' ){
+			document.body.removeChild(iframe);
+			iframe = null;
+		}
+	}, false);
+
+	function loadIframe(url){
 		if( !iframe ){
 			iframe = document.createElement('iframe');
 			iframe.src = '../';
@@ -21,17 +28,16 @@
 			iframe.style.width = '60vw';
 			iframe.style.height = '60vh';
 		}
-		iframe.style.display = 'block';
 		document.body.appendChild(iframe);
-		changeImage(dataUrl);
+		changeImage(url);
 	}
 
-	function changeImage(dataUrl){
-		imgDataUrl = dataUrl;
+	function changeImage(url){
+		imgUrl = url;
 		postImage();
 	}
 
 	function postImage(){
-		iframe.contentWindow.postMessage(imgDataUrl, '*');
+		iframe.contentWindow.postMessage(imgUrl, '*');
 	}
 })();

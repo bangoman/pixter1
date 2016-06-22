@@ -1,5 +1,5 @@
-angular.module('app').run(function($rootScope){
-    window.top.postMessage('pixter_init', '*');
+angular.module('app').run(function($rootScope,message){
+	message('init');
     window.addEventListener('message', function(e) {
         if (e.data) {
             $rootScope.$apply(function(){

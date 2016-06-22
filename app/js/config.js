@@ -1,20 +1,38 @@
 angular.module('app').config(function($stateProvider,$urlRouterProvider){
-	$urlRouterProvider.otherwise('/shop');
+	$urlRouterProvider.otherwise('/app/shop');
 	$stateProvider
-		.state('shop',{
-			url:'/shop',
-			templateUrl:'app/views/shop.html',
-			controller:'shopCtl as vm'
-		})
-        .state('preview',{
-            url:'/preview',
-            templateUrl:'app/views/preview.html',
-            controller:'previewCtl as vm'
+        .state('app', {
+            url: '/app',
+            abstract: true,
+            templateUrl: 'app/views/main.html',
+            controller:'mainCtl as vm',
         })
-        .state('edit',{
+		.state('app.shop',{
+			url:'/shop',
+            views:{
+                main:{
+                    templateUrl:'app/views/shop.html',
+                    controller:'shopCtl as vm'
+                }
+            },
+		})
+        .state('app.preview',{
+            url:'/preview',
+            views:{
+                main:{
+                    templateUrl:'app/views/preview.html',
+                    controller:'previewCtl as vm'
+                }
+            },
+        })
+        .state('app.edit',{
             url:'/edit',
-            templateUrl:'app/views/edit.html',
-            controller:'editCtl as vm'
+            views:{
+                main:{
+                    templateUrl:'app/views/edit.html',
+                    controller:'editCtl as vm'
+                }
+            },
         })
     ;
 });
