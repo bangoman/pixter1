@@ -1,10 +1,10 @@
 angular.module('app').config(function($stateProvider,$urlRouterProvider){
-	$urlRouterProvider.otherwise('/home');
+	$urlRouterProvider.otherwise('/shop');
 	$stateProvider
-		.state('home',{
-			url:'/home',
-			templateUrl:'app/views/home.html',
-			controller:'homeCtl as vm'
+		.state('shop',{
+			url:'/shop',
+			templateUrl:'app/views/shop.html',
+			controller:'shopCtl as vm'
 		})
         .state('preview',{
             url:'/preview',
