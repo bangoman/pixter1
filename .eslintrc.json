@@ -1,0 +1,15 @@
+{
+  "parserOptions": {
+      "ecmaVersion":5
+  },
+  "rules":{
+  	"semi":["warn","always"],
+  	"no-redeclare":["error"],
+  	"max-len":["warn",80],
+  	"eqeqeq":["warn"],
+  	"max-statements":["warn",15],
+  	"max-depth":["warn"],
+  	"quotes":["warn", "single", {"avoidEscape": true, "allowTemplateLiterals": true}],
+  	"no-unused-vars": ["warn"]
+  }
+}
