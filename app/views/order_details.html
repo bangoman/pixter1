@@ -2,5 +2,67 @@
     <div class="order-details-header">
         Contact Information
     </div>
-    <div></div>
+    <div class="row order-details-personal-information">
+        <div class="col-sm-6 col-xs-12">
+            <form>
+                <div class="form-group">
+                    <input type="text" class="form-control order-details-input" name="user_name" placeholder="FullName*" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-control order-details-input" name="user_email" placeholder="E-Mail*" required>
+                </div>
+            </form>
+        </div>
+        <div class="col-sm-6 col-xs-12">
+          <div class="order-details-product-thumbnail">
+            <img src="{{sourceImg}}">
+          </div>
+        </div>
+    </div>
+    <div class="order-details-header">
+        Shipping Address
+    </div>
+    <div class="row order-details-personal-information">
+        <div class="col-sm-6 col-xs-12">
+            <form>
+                <div class="form-group">
+                    <input type="text" class="form-control order-details-input" name="recipient_name" placeholder="Recipient Name">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control order-details-input" name="address" placeholder="Address 1">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control order-details-input" name="address2" placeholder="Address 2">
+                </div>
+            </form>
+        </div>
+        <div class="col-sm-6 col-xs-12">
+            <form>
+                <div class="form-group">
+                    <input type="text" class="form-control order-details-input" name="city" placeholder="City">
+                </div>
+                <div class="form-group" style="display: -webkit-inline-box; width:100%;">
+                    <input type="text" class="form-control order-details-input" style="width:59%; margin-bottom:0" name="state;" placeholder="State">
+                    <input type="text" class="form-control order-details-input" style="width:39%; margin-left: 2%; margin-bottom:0" name="zip" id="p_ZipInput" placeholder="ZIP">
+                </div>
+                <div class="form-group">
+                    <select class="order-details-input" id="p_UserLocale" name="country">
+                        <option value="#" selected> United State </option>
+                        <option value="#"> other  </option>
+                        <option value="#"> more other </option>
+                    </select>
+                </div>
+            </form>
+        </div>
+        <div class="col-sm-8 col-xs-12 checkbox">
+            <label>
+              <input type="checkbox">
+              I agree to the <a target="_blank" href="http://pixter.me/terms_of_use.html">terms</a> and confirm I have the rights to upload and use the image.
+            </label>
+        </div>
+        <div class="col-sm-4 col-xs-12">
+            <div class="next-button">Next</div>
+        </div>
+    </div>
+
 </div>
