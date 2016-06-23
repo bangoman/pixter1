@@ -3,10 +3,10 @@ angular.module('app').controller('checkoutCtl',function($uibModal){
 
     vm.shipmentMethod = 'standart';
 
-    vm.openCuponModel = function(){
+    vm.openCuponModal = function(){
         $uibModal.open({
-            templateUrl: 'app/views/cupon_model.html',
-            controller: 'cuponModelCtl as vm',
+            templateUrl: 'app/views/cupon_modal.html',
+            controller: 'cuponModalCtl as vm',
             backdrop:'static',
         });
     }
