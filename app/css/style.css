@@ -1,11 +1,13 @@
-/* 
+/* ==============================
 
-pixter responsive 
-CSS styleshit
+    pixter responsive 
+    CSS styleshit
 
-created by Elay on 22.6.2016
+    created by Elay on 22.6.2016
 
-*/
+  =============================== */ 
+
+
 /* outline & box-shadow fixes */
 
 :focus {
@@ -52,7 +54,8 @@ select[type="number"]:active {
   box-shadow: none;
   outline: 0 !important;
 }
-/* misc */ 
+
+/* generic classes */ 
 
 .borderR {
   border: solid 1px red;
@@ -62,9 +65,6 @@ select[type="number"]:active {
     margin-right: 0;
     margin-left: 0;
 }*/
-.learn-more-button:focus {
-  outline: none;
-}
 
 
 /* store frame (header, modal/close buttons, discount-info) */
@@ -137,7 +137,9 @@ select[type="number"]:active {
   font-family: Calibri, "CalibriRegular", "Gill Sans", Verdana, Arial;
 }
 
+
 /* learn-more-modal */
+
 #learn-more-modal .modal-content {
   padding: 16px;
 } 
@@ -173,7 +175,7 @@ select[type="number"]:active {
 }
 
 
-/* #shop-view-responsive (first view) */
+/* shop view (first view) */
 
 #shop-view-responsive .product {
   height: 200px;
@@ -222,7 +224,7 @@ select[type="number"]:active {
   background-color: #32bafa;
 }
 
-/* preview (second view) */
+/* preview view */
 
 #preview-view-responsive {
   padding-top: 32px;
@@ -300,7 +302,7 @@ select[type="number"]:active {
   line-height: 28px;
 }
 
-/* #edit */
+/* edit view */
 
 #edit-view-responsive {
   padding: 8px 12px;
@@ -315,7 +317,6 @@ select[type="number"]:active {
   padding: 12px 24px;
   font-family: Calibri, "CalibriRegular", "Gill Sans", Verdana, Arial;
 }
-
 .crop-image-container {
   padding: 36px 20px;
   min-height: 300px;
@@ -323,7 +324,6 @@ select[type="number"]:active {
   background-color: #b3b3b3;
 }
 .image-inner-container {
-  /*width: 72%;*/
   max-width: 260px;
   margin: 0 auto;
 }
@@ -381,7 +381,20 @@ select[type="number"]:active {
   line-height: 38px;
 }
 
-/* order-details-view-responsive */
+/* pay-flow (order_details & checkout views) */
+#checkout-view-responsive {
+    margin: 0;
+    padding: 0px 28px;
+}
+.pay-flow-product-thumbnail {
+  max-width: 120px;
+  margin: 0 auto;
+}
+.pay-flow-product-thumbnail img {
+  width: 100%;
+}
+
+/* order details view */
 
 #order-details-view-responsive {
   padding: 20px 52px;
@@ -412,18 +425,110 @@ select[type="number"]:active {
   color: #888;
 }
 
-.order-details-product-thumbnail {
-  max-width: 120px;
-  margin: 0 auto;
-}
-.order-details-product-thumbnail img {
-  width: 100%;
-}
 #order-details-view-responsive  .next-button {
   float: right;
   width: 164px;
   height: 34px;
   line-height: 34px;
+}
+
+
+/* checkout view */
+
+#checkout-view-responsive .pay-flow-product-thumbnail {
+  margin-top: 64px;
+}
+.checkout-view-header {
+  color: #4d4d4d;
+  font-size: 30px;
+  line-height: 72px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  padding-bottom: 40px;
+  font-weight: normal;
+  border-bottom: 2px solid rgba(206, 206, 206, 0.7);
+  font-family: Calibri, "CalibriRegular", "Gill Sans", Verdana, Arial;
+}
+.checkout-view-price-row {
+  padding: 10px 10px 10px 0;
+  border-bottom: 2px solid rgba(206, 206, 206, 0.7);
+}
+.checkout-view-price-row:last-child {
+  border-bottom: none;
+}
+.checkout-price-title {
+  color: #4d4d4d;
+  font-size: 20px;
+  line-height: 22px;
+  font-family: Calibri, "CalibriRegular", "Gill Sans", Verdana, Arial;
+}
+.checkout-price-title.bigger-title {
+  font-size: 22px;
+}
+.checkout-price {
+  color: #32bafa;
+  font-family: Calibri, "CalibriRegular", "Gill Sans", Verdana, Arial;
+}
+.checkout-new-price {
+  font-size: 20px;
+  line-height: 20px;
+}
+.checkout-old-price {
+  text-decoration: line-through;
+  margin-right: 30px;
+  font-size: 16px;
+  line-height: 20px;
+}
+.checkout-shipping-method-info {
+  color: #6e6e6e;
+  font-size: 17px;
+  line-height: 17px;
+  margin: 4px 0 15px;
+  font-family: Calibri, "CalibriRegular", "Gill Sans", Verdana, Arial;
+}
+.checkout-ship-type-radio-text {
+  color: #7a7a7a;
+  font-size: 17px;
+  line-height: 17px;
+}
+.checkout-saved-price {
+  font-size: 18px; 
+}
+.checkout-total-title {
+  margin-right: 30px;
+}
+.checkout-total-price {
+  font-size: 22px;
+}
+.checkout-cupon-modal-button {
+  color: #106eaf;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 12px 0;
+  line-height: 16px;
+  letter-spacing: -0.5px;
+  text-decoration: underline;
+}
+.checkout-pay-buttons-row {
+  display:  inline-flex;
+}
+.checkout-pay-button {
+  height: 55px;
+  width: 180px;
+/*  display: block;
+  position: absolute;
+  bottom: 0;*/
+  cursor: pointer;
+  border-radius: 7px;
+  background-repeat: no-repeat !important;
+}
+.checkout-pay-button.credit {
+  /*margin-right: 64px;*/
+  background: url('https://pixter-loader-assets.s3.amazonaws.com/1_8_1_stg/files/images/checkout_card_slidly.png');
+}
+.checkout-pay-button.paypal {
+  background-position: -16px -6px !important;
+  background: url('https://pixter-loader-assets.s3.amazonaws.com/1_8_1_stg/files/images/checkout_paypal.png');
 }
 
 /*================
@@ -443,11 +548,21 @@ select[type="number"]:active {
   .edit-header {
     text-align: left;
   }
+  #checkout-view-responsive .pay-flow-product-thumbnail {
+    margin-top: 28px;
+  }
 }
 @media screen and (max-width: 320px) {
   .order-details-header {
     color: #4d4d4d;
     font-size: 26px;
+  }
+  .checkout-view-header {
+    font-size: 25px;
+    line-height: 42px;
+    margin-top: 8px;
+    margin-bottom: 0;
+    padding-bottom: 0;
   }
 }
 
