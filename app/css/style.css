@@ -510,14 +510,11 @@ select[type="number"]:active {
   text-decoration: underline;
 }
 .checkout-pay-buttons-row {
-  display:  inline-flex;
 }
 .checkout-pay-button {
   height: 55px;
   width: 180px;
-/*  display: block;
-  position: absolute;
-  bottom: 0;*/
+  margin: 12px auto;
   cursor: pointer;
   border-radius: 7px;
   background-repeat: no-repeat !important;
@@ -558,7 +555,7 @@ select[type="number"]:active {
     font-size: 26px;
   }
   .checkout-view-header {
-    font-size: 25px;
+    font-size: 24px;
     line-height: 42px;
     margin-top: 8px;
     margin-bottom: 0;

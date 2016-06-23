@@ -22,7 +22,7 @@
             </div>
         </div>
         <div class="row checkout-view-price-row">
-            <div>
+            <div ng-if="vm.shipmentMethod == 'standart'">
                 <span class="checkout-price-title bigger-title">
                     Standard Shipping
                 </span>
@@ -35,17 +35,30 @@
                     </span>
                 </div>
             </div>
+            <div ng-if="vm.shipmentMethod == 'express'">
+                <span class="checkout-price-title bigger-title">
+                    Express Shipping
+                </span>
+                <div class="pull-right">
+                    <span class="checkout-price checkout-old-price">
+                        $13.94
+                    </span>
+                    <span class="checkout-price checkout-new-price">
+                        $0.00
+                    </span>
+                </div>
+            </div>
             <div class="checkout-shipping-method-info">
                 Ships in 3-7 via USPS once produced.
             </div>
             <label class="radio-inline">
-                <input type="radio" name="ship-method-radios" value="option1">
+                <input type="radio" name="ship-method-radios" ng-model="vm.shipmentMethod" value="standart">
                     <span class="checkout-ship-type-radio-text">
                         standard shipping
                     </span> 
             </label>
             <label class="radio-inline">
-                <input type="radio" name="ship-method-radios" value="option2">
+                <input type="radio" name="ship-method-radios" ng-model="vm.shipmentMethod" value="express">
                     <span class="checkout-ship-type-radio-text">
                         express shipping
                     </span> 
@@ -56,7 +69,8 @@
                 You saved:
             </span>
              <span class="checkout-price checkout-saved-price">
-                $6.00
+                <span ng-if="vm.shipmentMethod == 'standart'">$6.00</span>
+                <span ng-if="vm.shipmentMethod == 'express'">$16.74</span>
             </span>
             <div class="pull-right">
                 <span class="checkout-price-title bigger-title checkout-total-title">
@@ -70,13 +84,13 @@
         <div class="row">
             <div class="checkout-cupon-modal-button">Have A Coupon?</div>
         </div>
-        <!-- <div class="row checkout-pay-buttons-row">
+        <div class="row checkout-pay-buttons-row" dir="ltr">
             <div class="col-xs-6">
                 <div class="checkout-pay-button credit"></div>
             </div>
-            <div class="col-xs-6">
+            <div class="col-xs-6 col-xs-offset-6 col-xs-pull-6 col-sm-offset-0 col-sm-pull-0">
                 <div class="checkout-pay-button paypal"></div>
             </div>
-        </div> -->
+        </div>
     </div>
 </div>
