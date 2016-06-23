@@ -1,17 +1,73 @@
-body {
-  background-color: green;
+/* 
+
+pixter responsive 
+CSS styleshit
+
+created by Elay on 22.6.2016
+
+*/
+/* outline & box-shadow fixes */
+
+:focus {
+    outline: none;
 }
+button:active,
+.button:active,
+button:focus,
+.button:focus,
+button:hover,
+.button:hover,
+.btn.active.focus,
+.btn.active:focus,
+.btn:active.focus,
+.btn:active:focus,
+.btn.focus,
+.btn:focus {
+  outline: 0 !important;
+  box-shadow: none;
+}
+input:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+input[type="range"]:focus,
+textarea:focus, 
+textarea[type="text"]:focus,
+textarea[type="text"]:active,
+select:focus,
+select[type="number"]:focus,
+select[type="number"]:active {   
+/*  border-color: #979797 !important;*/
+  box-shadow: none;
+  outline: 0 !important;
+}
+/* misc */ 
 
 .borderR {
   border: solid 1px red;
 }
 
-
 .row {
     margin-right: 0;
     margin-left: 0;
 }
+.learn-more-button:focus {
+  outline: none;
+}
 
+
+/* store frame (header, modal/close buttons, discount-info) */
 
 #pixter-responsive-store {
   width: 100%;
