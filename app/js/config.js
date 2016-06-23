@@ -34,5 +34,14 @@ angular.module('app').config(function($stateProvider,$urlRouterProvider){
                 }
             },
         })
+        .state('app.orderDetails',{
+            url:'/orderDetails',
+            views:{
+                main:{
+                    templateUrl:'app/views/order_details.html',
+                    controller:'orderDetailsCtl as vm'
+                }
+            },
+        })
     ;
 });

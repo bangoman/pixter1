@@ -316,9 +316,7 @@ select[type="number"]:active {
   padding: 12px 24px;
   font-family: Calibri, "CalibriRegular", "Gill Sans", Verdana, Arial;
 }
-/*.crop-outer-container {
-  padding: 4px 12px;
-}*/
+
 .crop-image-container {
   padding: 36px 20px;
   min-height: 300px;
@@ -383,6 +381,9 @@ select[type="number"]:active {
   font-size: 19px;
   line-height: 38px;
 }
+
+/* order-details-view-responsive */
+
 
 
 /*================
