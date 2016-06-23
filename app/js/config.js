@@ -43,5 +43,14 @@ angular.module('app').config(function($stateProvider,$urlRouterProvider){
                 }
             },
         })
+        .state('app.checkout',{
+            url:'/checkout',
+            views:{
+                main:{
+                    templateUrl:'app/views/checkout.html',
+                    controller:'checkoutCtl as vm'
+                }
+            },
+        })
     ;
 });

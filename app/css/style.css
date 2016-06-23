@@ -444,13 +444,11 @@ select[type="number"]:active {
     text-align: left;
   }
 }
-@media screen and (max-width: 375px) {
-  /*.crop-outer-container {
-    padding: 4px;
+@media screen and (max-width: 320px) {
+  .order-details-header {
+    color: #4d4d4d;
+    font-size: 26px;
   }
-  .crop-controls {
-    width: 44px;
-  }*/
 }
 
 
