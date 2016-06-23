@@ -383,7 +383,17 @@ select[type="number"]:active {
 
 /* order-details-view-responsive */
 
-
+#order-details-view-responsive {
+  padding: 20px 52px;
+}
+.order-details-header {
+  color: #4d4d4d;
+  font-size: 32px;
+  font-family: Calibri, "CalibriRegular", "Gill Sans", Verdana, Arial;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #d9d9d9;
+}
 
 /*================
     @media style
