@@ -4,7 +4,8 @@
             <div class="header-back-button" ng-if="!vm.stateIsShop()" ng-click="vm.goBack()"><</div>
         </div>
         <div class="col-xs-6">
-            CLICK A PRODUCT TO GET STARTED <!-- if .state is shop -->
+            {{ vm.getViewHeader() }}
+            <!-- CLICK A PRODUCT TO GET STARTED if .state is shop -->
             <!-- PREVIEW YOUR PRODUCT if .state is preview -->
             <!-- EDIT YOUR IMAGE  if .state is edit -->
             <!-- ORDER DETAILS  if .state is orderDetails -->
@@ -15,7 +16,7 @@
             <button class="close-btn" ng-click="vm.close()">Close</button>
         </div>
     </div>
-    <div class="user-messaging">            
+    <div class="user-messaging">
         Summer Sale Special - 
         <span class="colorizedSpan">
             40% OFF

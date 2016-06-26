@@ -12,6 +12,7 @@ angular.module('app').config(function($stateProvider,$urlRouterProvider){
             views:{
                 main:{
                     templateUrl:'app/views/shop.html',
+                    title:'CLICK A PRODUCT TO GET STARTED',
                     controller:'shopCtl as vm'
                 }
             },
@@ -21,6 +22,7 @@ angular.module('app').config(function($stateProvider,$urlRouterProvider){
             views:{
                 main:{
                     templateUrl:'app/views/preview.html',
+                    title:'PREVIEW YOUR PRODUCT',
                     controller:'previewCtl as vm'
                 }
             },
@@ -30,6 +32,7 @@ angular.module('app').config(function($stateProvider,$urlRouterProvider){
             views:{
                 main:{
                     templateUrl:'app/views/edit.html',
+                    title:'EDIT YOUR IMAGE',
                     controller:'editCtl as vm'
                 }
             },
@@ -39,6 +42,7 @@ angular.module('app').config(function($stateProvider,$urlRouterProvider){
             views:{
                 main:{
                     templateUrl:'app/views/order_details.html',
+                    title:'ORDER DETAILS',
                     controller:'orderDetailsCtl as vm'
                 }
             },
@@ -48,6 +52,7 @@ angular.module('app').config(function($stateProvider,$urlRouterProvider){
             views:{
                 main:{
                     templateUrl:'app/views/checkout.html',
+                    title:'CHECKOUT INFORMATION',
                     controller:'checkoutCtl as vm'
                 }
             },

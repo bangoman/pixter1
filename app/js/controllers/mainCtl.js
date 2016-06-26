@@ -21,6 +21,10 @@ angular.module('app').controller('mainCtl', function(message, $uibModal, $state)
 		}
 	}
 	
+  	vm.getViewHeader = function() {
+  		return $state.title;
+  	}
+
   	vm.goBack = function(){
   		if ($state.current.name == 'app.preview') {
   			$state.go('app.shop');
@@ -35,4 +39,5 @@ angular.module('app').controller('mainCtl', function(message, $uibModal, $state)
   			$state.go('app.orderDetails');
   		}
   	}
+
 });
