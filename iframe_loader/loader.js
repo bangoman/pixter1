@@ -25,8 +25,8 @@
 			iframe.style.position = 'fixed';
 			iframe.style.left = '20vw';
 			iframe.style.top = '20vh';
-			iframe.style.width = '60vw';
-			iframe.style.height = '60vh';
+			iframe.style.width = '64vw';
+			iframe.style.height = '55.7vw';
 		}
 		document.body.appendChild(iframe);
 		changeImage(url);
