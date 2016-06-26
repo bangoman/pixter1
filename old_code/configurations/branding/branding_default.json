@@ -1,0 +1,245 @@
+{
+    "brandName":"Pixter",
+    "brandLogo":"https://pixter-loader-assets.s3.amazonaws.com/v097/files/images/pixter_logo.png",
+    "whiteListedOrigins":["*","https://www.facebook.com","https://www.flickr.com"],
+    "brandSite":"http://pixter.me/whatisthis.html",
+    "brandTOC":"http://pixter.me/terms_of_use.html",
+    "brandTagLine":"Photo-Products with Pixter",
+    "reportingEndpoint":"https://events.pixter-media.com",
+    "c_prefix":"p_",
+    "leadingTeaser":"mug",
+    "ui_id":"_pg2_mdl",
+    "customCss": {
+        "header":{
+            "background": "",
+            "color": "",
+            "span": {
+                "color": ""
+            },
+            "a": {
+                "color": ""
+            }
+        },
+        "buttons": {
+            "background": "",
+            "color": ""
+        },
+        "store-text": {
+            "color": ""
+        },
+        "oss-product-title" : {
+            "color" : "",
+            "span" : {
+                "color": ""
+            }
+        },
+        "oss-product-description" : {
+            "color" : "",
+            "span" : {
+                "color": ""
+            }
+        },
+        "special-offer" : {
+            "span" :{
+                "color": ""
+            },
+            "background": "",
+            "color":""
+        }
+    },
+    "multiLangSelectEnabled":true,
+    "language":"en_US",
+
+    "multiCurrencySelectEnabled":true,
+    "currency": "USD",
+    "currencies":
+    [
+        {
+            "code":"USD",
+            "displayText": "$ USD",
+            "sign": ""
+        },
+        {
+            "code":"EUR",
+            "displayText": "€ EUR",
+            "sign": ""
+        }
+    ],
+
+
+    "presence":["grid","feed"],
+    "c_suffix":{
+        "activeTeaser":"at20032015",
+        "fte":"fte20032015",
+        "feedFTE":"feFTE27032015"
+    },
+    "share":{
+        "enabled":false,
+        "discount":true,
+        "buttonTextOnRegular":"Share your photo product!",
+        "buttonTextOnDiscount":"Share & Get 80% Discount!"
+    },
+    "GA_ID":"UA-55216316-1",
+    "marketingData":{
+        "sideBarData" : {
+            "p_side_banner_top_title": "Photo Gifts",
+            "p_side_banner_top_sub_title": "Summer Sale Special",
+            "p_side_banner_bottom_title": "Your Photos on Products",
+            "p_side_banner_bottom_sub_title": "FREE SHIPPING!"
+        },
+        "ossEnabled":true,
+        "ossMessage":"<img style='height: 104px;position: relative;top: 0;left: 0;' src='dist/files/images/seasonal/specialOffer.jpg'/>",
+        "ossData":[
+            {
+                "tmbWidth":140,
+                "tmbHeight":230,
+                "h2":"Phone Case <span>[currency][price]</span>",
+                "titleStyle":"  text-align: center;width:300px;top:12px;left:0;height: 37px;line-height: 37px;",
+                "p":"<span>40% OFF</span> & FREE SHIPPING",
+                "pStyle":"top: 69px;left:0;width: 310px;  font-size: 21px;min-height: 26px;line-height: 26px;padding: 5px 15px 15px;",
+                "productImage":"pixter_iphone5_oss.png",
+                "index":0,
+                "PID":"SPIP6SOL01EEI6",
+                "portholeStyle":"left: 360px;  top: 100px;  transform: rotateZ(13deg);",
+                "checkoutStyle":"preview",
+                "buttonText":"Choose SmartPhone"
+            },
+            {
+                "tmbWidth":160,
+                "tmbHeight":120,
+                "h2":"4 Premium Magnets <span>[currency][price]</span>",
+                "titleStyle":"text-align:center;line-height:31px;height:31px;width: 265px;  font-size: 23px; top: 12px;",
+                "p":"<span>40% OFF</span> & FREE SHIPPING",
+                "pStyle":" padding: 5px 15px 15px;text-align:center;width: 275px; min-height: 27px; line-height: 27px; top: 63px;    left: 0;  font-size: 20px;",
+                "productImage":"pixter_magnet_oss.png",
+                "index":1,
+                "PID":"MAGN040304EEEE",
+                "portholeStyle":"top: 113px;left: 318px;",
+                "checkoutStyle":"preview",
+                "buttonText":"Continue"
+            },
+            {
+                "tmbWidth":240,
+                "tmbHeight":181,
+                "h2":"10 Flat Cards <span>[currency][price]</span>",
+                "titleStyle":"  width: 290px; top: 10px;  font-size: 25px; text-align: center; padding: 10px 5px; height:33px; line-height:33px;",
+                "p":"<span>40% OFF</span> & FREE SHIPPING",
+                "pStyle":"  top: 63px;  font-size: 20px;  padding: 10px 5px 15px; text-align: center; width: 290px; min-height: 27px; line-height: 27px;",
+                "productImage":"pixter_flatcard_oss.png",
+                "index":2,
+                "PID":"FLAT660510EEEE",
+                "portholeStyle":"left: 316px;top: 85px;transform: rotateZ(-13deg);",
+                "checkoutStyle":"preview",
+                "buttonText":"Continue"
+            },
+            {
+                "tmbWidth":300,
+                "tmbHeight":200,
+                "h2":"Beautiful Canvas <span>[currency][price]</span>",
+                "titleStyle":"width: 250px;top: 10px;   font-size: 24px;  height: 32px;  text-align: center;  line-height: 32px;",
+                "p":"<span>40% OFF</span> ALL SIZES",
+                "pStyle":"top: 62px;font-size: 22px;width: 260px; padding: 5px 15px 15px;text-align: center;min-height: 24px;line-height: 24px;",
+                "productImage":"pixter_canvas_oss.png",
+                "index":3,
+                "PID":"CNVS120801WRE2",
+                "portholeStyle":"left: 300px;top: 20px",
+                "checkoutStyle":"chooseProduct",
+                "buttonText":"Choose Canvas Size"
+            },
+            {
+                "tmbWidth":270,
+                "tmbHeight":205,
+                "h2":"Ceramic Mug <span>[currency][price]</span>",
+                "titleStyle":"width: 253px; box-sizing: border-box !important;padding: 10px 5px; top: 10px;font-size: 25px; line-height: 35px;height: 55px;text-align: center;",
+                "p":"<span>40% OFF</span> & FREE SHIPPING",
+                "pStyle":"  min-height: 23px; line-height: 23px; width: 223px; top: 65px;  font-size: 17px; text-align: center; padding: 5px 15px 15px;",
+                "productImage":"pixter_mug_oss.png",
+                "index":4,
+                "PID":"CMUG11OZ111MUG",
+                "portholeStyle":"left: 240px;top: 96px;",
+                "checkoutStyle":"preview",
+                "buttonText":"Continue"
+            },
+            {
+                "tmbWidth":109,
+                "tmbHeight":109,
+                "h2":"White T-Shirt <span>[currency][price]</span>",
+                "titleStyle":"width: 270px;top: 10px;font-size: 28px; height: 38px; line-height: 38px; text-align: center;",
+                "p":"<span>40% OFF</span> & FREE SHIPPING",
+                "pStyle":"top: 68px;  font-size: 19px; width: 280px; min-height: 27px; line-height: 27px; text-align: center; padding: 0px 15px 10px;",
+                "productImage":"pixter_tshirt_oss.png",
+                "index":5,
+                "PID":"TSHIRTCOTLARGT",
+                "portholeStyle":"left: 370px;top: 110px;",
+                "checkoutStyle":"preview",
+                "buttonText":"Choose T-Shirt Size"
+            }
+        ]
+    },
+    "specialOffer":{
+        "startDate":"2014-10-12",
+        "endDate":"2017-12-01",
+        "catalog":"Summer Sale Special - <span class='colorizedSpan'>40% OFF</span> on <span class='colorizedSpan'>all products</span>",
+        "product_MAGN040304EEEE":"Enjoy <span class='colorizedSpan'>40% OFF</span> & <span class='colorizedSpan'>FREE Shipping</span> of your Product!",
+        "product_FLAT660510EEEE":"Enjoy <span class='colorizedSpan'>40% OFF</span> & <span class='colorizedSpan'>FREE Shipping</span> of your Product!",
+        "product_SPIP4SOL01EEI4":"Enjoy <span class='colorizedSpan'>40% OFF</span> & <span class='colorizedSpan'>FREE Shipping</span> of your Product!",
+        "product_SPIP5SOL01EEI5":"Enjoy <span class='colorizedSpan'>40% OFF</span> & <span class='colorizedSpan'>FREE Shipping</span> of your Product!",
+        "product_SPIP6SOL01EEI6":"Enjoy <span class='colorizedSpan'>40% OFF</span> & <span class='colorizedSpan'>FREE Shipping</span> of your Product!",
+        "product_SPIP6PSOL01I6P":"Enjoy <span class='colorizedSpan'>40% OFF</span> & <span class='colorizedSpan'>FREE Shipping</span> of your Product!",
+        "product_SPIP5CSOL01I5C":"Enjoy <span class='colorizedSpan'>40% OFF</span> & <span class='colorizedSpan'>FREE Shipping</span> of your Product!",
+        "product_SPSG3SOL01ESG3":"Enjoy <span class='colorizedSpan'>40% OFF</span> & <span class='colorizedSpan'>FREE Shipping</span> of your Product!",
+        "product_SPSG4SOL01ESG4":"Enjoy <span class='colorizedSpan'>40% OFF</span> & <span class='colorizedSpan'>FREE Shipping</span> of your Product!",
+        "product_SPSG5SOL01ESG5":"Enjoy <span class='colorizedSpan'>40% OFF</span> & <span class='colorizedSpan'>FREE Shipping</span> of your Product!",
+        "product_CNVS101401WRE0":"Enjoy <span class='colorizedSpan'>40% Off</span> on your product",
+        "product_CNVS141001WRE0":"Enjoy <span class='colorizedSpan'>40% Off</span> on your product",
+        "product_CNVS201601WRE6":"Enjoy <span class='colorizedSpan'>40% Off</span> on your product",
+        "product_CNVS162001WRE6":"Enjoy <span class='colorizedSpan'>40% Off</span> on your product",
+        "product_CNVS162401WRE4":"Enjoy <span class='colorizedSpan'>40% Off</span> on your product",
+        "product_CNVS241601WRE4":"Enjoy <span class='colorizedSpan'>40% Off</span> on your product",
+        "product_CNVS302001WRE0":"Enjoy <span class='colorizedSpan'>40% Off</span> on your product",
+        "product_CNVS203001WRE0":"Enjoy <span class='colorizedSpan'>40% Off</span> on your product",
+        "product_CNVS141401WRE1":"Enjoy <span class='colorizedSpan'>40% Off</span> on your product",
+        "product_CNVS120801WRE2":"Enjoy <span class='colorizedSpan'>40% Off</span> on your product",
+        "product_CNVS081201WRE2":"Enjoy <span class='colorizedSpan'>40% Off</span> on your product",
+        "product_TSHIRTCOTXXLTT":"Enjoy <span class='colorizedSpan'>40% OFF</span> & <span class='colorizedSpan'>FREE Shipping</span> of your Product!",
+        "product_TSHIRTCOTXLTTT":"Enjoy <span class='colorizedSpan'>40% OFF</span> & <span class='colorizedSpan'>FREE Shipping</span> of your Product!",
+        "product_TSHIRTCOTSMALT":"Enjoy <span class='colorizedSpan'>40% OFF</span> & <span class='colorizedSpan'>FREE Shipping</span> of your Product!",
+        "product_TSHIRTCOTMEDUT":"Enjoy <span class='colorizedSpan'>40% OFF</span> & <span class='colorizedSpan'>FREE Shipping</span> of your Product!",
+        "product_TSHIRTCOTLARGT":"Enjoy <span class='colorizedSpan'>40% OFF</span> & <span class='colorizedSpan'>FREE Shipping</span> of your Product!",
+        "product_CMUG11OZ111MUG":"Enjoy <span class='colorizedSpan'>40% OFF</span> & <span class='colorizedSpan'>FREE Shipping</span> of your Product!",
+        "product_INV50730EINV57":"Enjoy <span class='colorizedSpan'>40% OFF</span> & <span class='colorizedSpan'>FREE Shipping</span> of your Product!",
+        "product_INV50500EINV55":"Enjoy <span class='colorizedSpan'>40% OFF</span> & <span class='colorizedSpan'>FREE Shipping</span> of your Product!",
+        "selfInitiate":{
+            "couponString":"FD40FREES",
+            "product_MAGN040304EEEE":{"couponString":"FD40FREES","newPrice":"$4.19","couponDiscountPercentage":40},
+            "product_FLAT660510EEEE":{"couponString":"FD40FREES","newPrice":"$8.99", "couponDiscountPercentage":40},
+            "product_SPIP4SOL01EEI4":{"couponString":"FD40FREES","newPrice":"$16.79", "couponDiscountPercentage":40},
+            "product_SPIP5SOL01EEI5":{"couponString":"FD40FREES","newPrice":"$16.79", "couponDiscountPercentage":40},
+            "product_SPIP6SOL01EEI6":{"couponString":"FD40FREES","newPrice":"$16.79", "couponDiscountPercentage":40},
+            "product_SPIP6PSOL01I6P":{"couponString":"FD40FREES","newPrice":"$16.79", "couponDiscountPercentage":40},
+            "product_SPIP5CSOL01I5C":{"couponString":"FD40FREES","newPrice":"$16.79", "couponDiscountPercentage":40},
+            "product_SPSG3SOL01ESG3":{"couponString":"FD40FREES","newPrice":"$16.79", "couponDiscountPercentage":40},
+            "product_SPSG4SOL01ESG4":{"couponString":"FD40FREES","newPrice":"$16.79", "couponDiscountPercentage":40},
+            "product_SPSG5SOL01ESG5":{"couponString":"FD40FREES","newPrice":"$16.79", "couponDiscountPercentage":40},
+            "product_CNVS101401WRE0":{"couponString":"FD40OFFS","newPrice":"$22.19", "couponDiscountPercentage":40},
+            "product_CNVS141001WRE0":{"couponString":"FD40OFFS","newPrice":"$22.19", "couponDiscountPercentage":40},
+            "product_CNVS201601WRE6":{"couponString":"FD40OFFS","newPrice":"$34.19", "couponDiscountPercentage":40},
+            "product_CNVS162001WRE6":{"couponString":"FD40OFFS","newPrice":"$34.19", "couponDiscountPercentage":40},
+            "product_CNVS162401WRE4":{"couponString":"FD40OFFS","newPrice":"$35.99", "couponDiscountPercentage":40},
+            "product_CNVS241601WRE4":{"couponString":"FD40OFFS","newPrice":"$35.99", "couponDiscountPercentage":40},
+            "product_CNVS302001WRE0":{"couponString":"FD40OFFS","newPrice":"$56.99", "couponDiscountPercentage":40},
+            "product_CNVS203001WRE0":{"couponString":"FD40OFFS","newPrice":"$56.99", "couponDiscountPercentage":40},
+            "product_CNVS141401WRE1":{"couponString":"FD40OFFS","newPrice":"$31.79", "couponDiscountPercentage":40},
+            "product_CNVS120801WRE2":{"couponString":"FD40OFFS","newPrice":"$20.99", "couponDiscountPercentage":40},
+            "product_CNVS081201WRE2":{"couponString":"FD40OFFS","newPrice":"$20.99", "couponDiscountPercentage":40},
+            "product_TSHIRTCOTXXLTT":{"couponString":"FD40FREES","newPrice":"$8.99", "couponDiscountPercentage":40},
+            "product_TSHIRTCOTXLTTT":{"couponString":"FD40FREES","newPrice":"$8.99", "couponDiscountPercentage":40},
+            "product_TSHIRTCOTSMALT":{"couponString":"FD40FREES","newPrice":"$8.99", "couponDiscountPercentage":40},
+            "product_TSHIRTCOTMEDUT":{"couponString":"FD40FREES","newPrice":"$8.99", "couponDiscountPercentage":40},
+            "product_TSHIRTCOTLARGT":{"couponString":"FD40FREES","newPrice":"$8.99", "couponDiscountPercentage":40},
+            "product_CMUG11OZ111MUG":{"couponString":"FD40FREES","newPrice":"$5.39", "couponDiscountPercentage":40},
+            "product_INV50730EINV57":{"couponString":"FD40FREES","newPrice":"$8.99", "couponDiscountPercentage":40},
+            "product_INV50500EINV55":{"couponString":"FD40FREES","newPrice":"$7.79", "couponDiscountPercentage":40}
+        }
+    }
+}

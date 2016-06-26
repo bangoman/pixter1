@@ -1,0 +1,381 @@
+{
+  "categories":[
+    {
+      "type": "magnet_square",
+      "shortName": "4 Magnets",
+      "marketingName": "Magnet 3''x3''",
+      "teaser":true,
+      "tmbHeight": 64,
+      "tmbWidth": 64,
+      "cropRatio": 1,
+      "previewImage":"magnet/preview3x3.png",
+      "categoryText":"Fine printed magnets",
+      "children":[
+        "MAGN030304EEEE"
+      ],
+      "index" : 0
+    },
+    {
+      "type": "toteBag",
+      "shortName": "Tote Bag",
+      "marketingName": "Tote Bag",
+      "teaser":true,
+      "tmbHeight": 44,
+      "tmbWidth": 44,
+      "cropRatio": 1,
+      "previewImage":"toteBag/previewImage.png",
+      "categoryText":"Tote Bag",
+      "children":[
+        "TTE12X12TOTE10"
+      ],
+      "index" : 2
+    },
+    {
+      "type": "flatcard_square",
+      "shortName": "Flat Cards",
+      "marketingName": "Flat Cards 5''x5''",
+      "teaser":true,
+      "tmbHeight": 63,
+      "tmbWidth": 63,
+      "cropRatio": 1,
+      "previewImage":"flatcard/preview5x5.png",
+      "categoryText":"Fine printed flat cards",
+      "children":[
+        "FLAT050510EEEE"
+      ],
+      "index" : 3
+    },
+    {
+      "type": "canvas_white",
+      "shortName": "Canvas",
+      "marketingName": "Canvas 14''x14''",
+      "teaser":true,
+      "tmbHeight": 102,
+      "categoryText":"Choose your image-wrapped Canvas",
+      "tmbWidth": 102,
+      "cropRatio": 1,
+      "previewImage":"canvases/14x14/preview.png",
+      "isRenderAsOne": true,
+      "defaultDropDownItem":"CNVS141401CWB8",
+      "children":[
+        "CNVS141401CWB8",
+        "CNVS101001CWB9"
+      ],
+      "index" : 5
+    },
+    {
+      "type": "tshirt",
+      "shortName": "T-Shirt",
+      "marketingName": "T-Shirt all sizes",
+      "teaser":false,
+      "tmbHeight": 40,
+      "categoryText":"Choose the size of your t-shirt",
+      "tmbWidth": 40,
+      "cropRatio": 1,
+      "previewImage":"tshirt/previewImage.png",
+      "isRenderAsOne": true,
+      "defaultDropDownItem":"TSHIRTCOTLARGT",
+      "children":[
+        "TSHIRTCOTSMALT",
+        "TSHIRTCOTMEDUT",
+        "TSHIRTCOTLARGT",
+        "TSHIRTCOTXLTTT",
+        "TSHIRTCOTXXLTT"
+      ],
+      "index" : 4
+    },
+    {
+      "type": "mug_square",
+      "shortName": "Mug",
+      "marketingName": "11oz White Mug",
+      "teaser":true,
+      "tmbHeight": 61,
+      "tmbWidth": 61,
+      "cropRatio": 1,
+      "previewImage":"mug/previewImage.png",
+      "categoryText":"Ceramic 11oz MUG",
+      "children":["CMUG11OZSQRMUG"],
+      "index" : 1
+    }
+  ],
+  "products": [
+    {
+      "type": "magnet_square",
+      "pid": "MAGN030304EEEE",
+      "shortName": "Magnet",
+      "marketingName": "4 Premium Magnets 3''x3''",
+      "productH": 3.12,
+      "productW": 3.12,
+      "previewImage":"magnet/preview3x3.png",
+      "previewParams":{
+        "height":3,
+        "width":3,
+        "zoom":1.8
+      },
+      "minimumDPI": 100,
+      "tmbHeight": 84,
+      "tmbWidth": 84,
+      "cropRatio": 1,
+      "bulletList":[
+        "4 Premium magnets",
+        "Probably the finest Magnet on the market today. Topped with a thick glossy laminated finish",
+        "They are trimmed to perfection, no rough edges or peeling of image from the magnet's back"
+      ]
+    },
+    {
+      "type": "toteBag",
+      "pid": "TTE12X12TOTE10",
+      "shortName": "Tote Bag",
+      "marketingName": "Tote Bag",
+      "productH": 15.5,
+      "productW": 17.00,
+      "previewImage":"toteBag/previewImage.png",
+      "previewParams":{
+        "height":12,
+        "width":12,
+        "template":false
+      },
+      "minimumDPI": 50,
+      "tmbHeight": 48,
+      "tmbWidth": 48,
+      "cropRatio": 1,
+      "bulletList":[
+        "Our quality crafted Tote Bags are hand sewn in America using durable, heavy cotton canvas.",
+        "Inside pocket provides a handy place to keep smaller items.",
+        "Dimensions: 14''w x 15''h. Spot clean only."
+      ]
+    },
+    {
+      "type": "flatcard_square",
+      "pid": "FLAT050510EEEE",
+      "shortName": "Flat Card",
+      "class":"standard",
+      "marketingName": "10 Flat Cards 5''x5''",
+      "productH": 5.16,
+      "productW": 5.16,
+      "previewImage":"flatcard/preview5x5.png",
+      "previewParams":{
+        "height":5,
+        "width":5,
+        "template":false
+      },
+      "minimumDPI": 100,
+      "teaser":true,
+      "tmbHeight": 64,
+      "tmbWidth": 64,
+      "cropRatio": 1,
+      "rotate": false,
+      "bulletList":[
+        "10 Photo Flat Cards with 10 envelopes",
+        "Thick paper, varnished for photo-gloss effect",
+        "Send Your dears a personalized card to express your love"
+      ]
+    },
+    {
+      "type": "canvas1010_white",
+      "pid": "CNVS101001CWB9",
+      "shortName": "10'' X 10''",
+      "marketingName": "Canvas 10''x10''",
+      "productH": 10,
+      "productW": 10,
+      "previewParams":{
+        "height":10,
+        "width":10,
+        "zoom":1
+      },
+      "minimumDPI": 40,
+      "teaser":true,
+      "tmbHeight": 90,
+      "tmbWidth": 90,
+      "cropRatio": 1,
+      "previewImage":"canvases/14x14/preview.png",
+      "rotate":false,
+      "bulletList":[
+        "Create a stunning photo canvas of your favorite photos",
+        "White-wrapped edges allow you to hang on a wall",
+        "Depth 0.75 inch"
+      ]
+    },
+
+    {
+      "type": "canvas1414_white",
+      "pid": "CNVS141401CWB8",
+      "shortName": "14'' X 14''",
+      "marketingName": "Canvas 14''x14''",
+      "productH": 14,
+      "productW": 14,
+      "previewParams":{
+        "height":14,
+        "width":14
+      },
+      "minimumDPI": 40,
+      "teaser":true,
+      "tmbHeight": 90,
+      "tmbWidth": 90,
+      "cropRatio": 1,
+      "rotate": false,
+      "previewImage":"canvases/14x14/preview.png",
+      "bulletList":[
+        "Create a stunning photo canvas of your favorite photos",
+        "White-wrapped edges allow you to hang on a wall",
+        "Depth 0.75 inch"
+      ]
+    },
+    {
+      "type": "mug_square",
+      "pid": "CMUG11OZSQRMUG",
+      "shortName": "Mug",
+      "class":"standard",
+      "marketingName": "Ceramic 11oz Mug",
+      "productH": 3,
+      "productW": 3,
+      "previewImage":"mug/previewImage.png",
+      "previewParams":{
+        "height":3,
+        "width":3,
+        "template":false
+      },
+      "minimumDPI": 120,
+      "teaser":true,
+      "tmbHeight": 90,
+      "tmbWidth": 90,
+      "cropRatio": 1,
+      "rotate": false,
+      "bulletList":[
+        "Create a stunning photo mug of your favorite photos for yourself or someone special",
+        "Ceramic 11oz White Mug",
+        "Microwave and Dishwasher safe"
+      ]
+    },
+    {
+      "type": "tshirt",
+      "pid": "TSHIRTCOTSMALT",
+      "shortName": "Small White T-Shirt",
+      "marketingName": "Small White T-Shirt",
+      "productH": 10,
+      "productW": 10,
+      "previewParams":{
+        "height":10,
+        "width":10,
+        "template":false,
+        "zoom":1
+      },
+      "minimumDPI": 80,
+      "teaser":false,
+      "tmbHeight": 40,
+      "tmbWidth": 40,
+      "cropRatio": 1,
+      "previewImage":"tshirt/previewImage.png",
+      "bulletList":[
+        "Create a stunning T-Shirt",
+        "100% spun polyester with cotton look and feel",
+        "Machine wash cold"
+      ],
+      "expressCheckoutText":"White 100% cotton offers the best image quality for your personalized image. Perfect for social gatherings of any kind"
+    },
+    {
+      "type": "tshirt",
+      "pid": "TSHIRTCOTMEDUT",
+      "shortName": "Medium White T-Shirt",
+      "marketingName": "Medium White T-Shirt",
+      "productH": 10,
+      "productW": 10,
+      "previewParams":{
+        "height":10,
+        "width":10,
+        "template":false,
+        "zoom":1
+      },
+      "minimumDPI": 80,
+      "teaser":false,
+      "tmbHeight": 40,
+      "tmbWidth": 40,
+      "cropRatio": 1,
+      "previewImage":"tshirt/previewImage.png",
+      "bulletList":[
+        "Create a stunning T-Shirt",
+        "100% spun polyester with cotton look and feel",
+        "Machine wash cold"
+      ],
+      "expressCheckoutText":"White 100% cotton offers the best image quality for your personalized image. Perfect for social gatherings of any kind"
+    },
+    {
+      "type": "tshirt",
+      "pid": "TSHIRTCOTLARGT",
+      "shortName": "Large White T-Shirt",
+      "marketingName": "Large White T-Shirt",
+      "productH": 10,
+      "productW": 10,
+      "previewParams":{
+        "height":10,
+        "width":10,
+        "template":false,
+        "zoom":1
+      },
+      "minimumDPI": 80,
+      "teaser":false,
+      "tmbHeight": 40,
+      "tmbWidth": 40,
+      "cropRatio": 1,
+      "previewImage":"tshirt/previewImage.png",
+      "bulletList":[
+        "Create a stunning T-Shirt",
+        "100% spun polyester with cotton look and feel",
+        "Machine wash cold"
+      ],
+      "expressCheckoutText":"White 100% cotton offers the best image quality for your personalized image. Perfect for social gatherings of any kind"
+    },
+    {
+      "type": "tshirt",
+      "pid": "TSHIRTCOTXLTTT",
+      "shortName": "XL White T-Shirt",
+      "marketingName": "XL White T-Shirt",
+      "productH": 10,
+      "productW": 10,
+      "previewParams":{
+        "height":10,
+        "width":10,
+        "zoom":1,
+        "template":false
+      },
+      "minimumDPI": 80,
+      "teaser":false,
+      "tmbHeight": 40,
+      "tmbWidth": 40,
+      "cropRatio": 1,
+      "previewImage":"tshirt/previewImage.png",
+      "bulletList":[
+        "Create a stunning T-Shirt",
+        "100% spun polyester with cotton look and feel",
+        "Machine wash cold"
+      ],
+      "expressCheckoutText":"White 100% cotton offers the best image quality for your personalized image. Perfect for social gatherings of any kind"
+    },
+    {
+      "type": "tshirt",
+      "pid": "TSHIRTCOTXXLTT",
+      "shortName": "XXL White T-Shirt",
+      "marketingName": "XXL White T-Shirt",
+      "productH": 10,
+      "productW": 10,
+      "previewParams":{
+        "height":10,
+        "width":10,
+        "zoom":1,
+        "template":false
+      },
+      "minimumDPI": 80,
+      "teaser":false,
+      "tmbHeight": 40,
+      "tmbWidth": 40,
+      "cropRatio": 1,
+      "previewImage":"tshirt/previewImage.png",
+      "bulletList":[
+        "Create a stunning T-Shirt",
+        "100% spun polyester with cotton look and feel",
+        "Machine wash cold"
+      ],
+      "expressCheckoutText":"White 100% cotton offers the best image quality for your personalized image. Perfect for social gatherings of any kind"
+    }
+  ]
+}

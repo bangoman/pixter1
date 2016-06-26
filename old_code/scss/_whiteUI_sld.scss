@@ -1,0 +1,474 @@
+$storeBgColor : white;
+$storeHeaderBgColor :$storeBgColor;
+
+#p_overlay {
+  &._sld {
+    background: rgba(35, 47, 58, 0.8) !important;
+  }
+}
+
+#p_Store {
+  &._sld {
+    @import "_boxSizeReset";
+    @mixin sldFont() {
+      font-family: Roboto, 'CalibriRegular', 'Gill Sans', Verdana, Arial !important;
+      color: #92aaaa;
+    }
+    box-sizing: content-box !important;
+    box-shadow: none;
+    border-radius: 6px;
+    $leadingColor: #FF7A01;
+    $fontHeight: 20px;
+    background: rgba(0, 0, 0, 0.1);
+    @include sldFont();
+
+    #oss_canvas {
+      #oss_slide_arrows {
+        top: 170px;
+        a {
+          width: 25px;
+          opacity: 1;
+          transition: background-color 300ms ease-in-out 50ms;
+          -webkit-transition: background-color 300ms ease-in-out 50ms;
+          background: rgba(35, 47, 58, 0.5) center center no-repeat;
+          &:hover {
+            background: rgba(35, 47, 58, 0.8) center center no-repeat;
+          }
+          img {
+            height: 25px;
+            width: 25px;
+            position: relative;
+            top: 25%;
+            left: 0;
+          }
+
+        }
+      }
+      .p_OSS_slide {
+        .p_OSS_title {
+          width: 210px;
+          position: relative;
+          top: 20px;
+          text-align: left;
+          background: #232f3a;
+          border-radius: 3px;
+        }
+        .p_OSS_background_image {
+          border-bottom: none !important;
+        }
+      }
+    }
+
+    &.oss_enabled {
+      border-width: 62px 10px 30px;
+      #themeContainer {
+        width: 600px;
+        padding: 0 20px !important;
+      }
+      &.pStore_step_2 {
+        #themeContainer {
+          height: 465px;
+          border-width: 0 5px;
+        }
+
+        .p_OSS_bottom {
+
+          height: 104px;
+          bottom: 0 !important;
+          width: 100%;
+          position: absolute;
+          .p_OSS_promotional {
+            display: none;
+          }
+          .p_OSS_regularButton {
+            position: relative;
+            top: 3px;
+          }
+          .p_OSS_edit {
+            bottom: auto;
+            top: 25px;
+          }
+          .p_OSS_CTAContainer {
+            right: 0 !important;
+            width: auto !important;
+            top: 36px !important;
+            .p_OSS_bottom_productSelection_btn {
+              box-shadow: none !important;
+              width: 140px !important;
+              padding: 10px 0 !important;
+
+            }
+
+          }
+        }
+      }
+    }
+    /************CATALOG**************/
+    &.pStore_step_1 {
+      border-width: 53px 10px 30px;
+      #p_StoreHeader {
+        //width: 610px;
+        //padding: 5px 10px;
+        //top: -43px;
+      }
+    }
+    .p_Button {
+      background: $leadingColor;
+      line-height: 18px !important;
+      text-transform: none !important;
+      font-size: 18px !important;
+      height: auto !important;
+      //max-width: 110px !important;
+      &:after {
+        content: "";
+        display: none;
+      }
+      &#thankYouContinue {
+
+      }
+
+    }
+
+    #p_StoreHeader {
+      background: $storeHeaderBgColor;
+      width: 610px;
+      padding: 30px 20px 23px 20px;
+      height: auto;
+      top: -64px;
+      z-index: 10;
+      color: #92aaaa;
+      font-size: 20px;
+      line-height: initial;
+      border-radius: 3px;
+
+      /*****************************
+                Publisher Logo
+      *****************************/
+      .logo-container {
+        top: 30px;
+        left: 50px;
+        right: initial;
+        img {
+          position: absolute;
+        }
+      }
+
+
+      #p_fte {
+        bottom: 45px;
+        left: 0;
+        width: 575px;
+        border-color: $leadingColor !important;
+        box-shadow: 2px 2px 3px rgba(255, 142, 32, 0.6);
+        .p_leadingP {
+          color: $leadingColor;
+        }
+      }
+      a {
+        text-decoration: none;
+        color: white;
+        font-size: $fontHeight;
+        line-height: $fontHeight;
+        font-weight: bold;
+      }
+      li {
+        margin: 0;
+        padding: 0;
+        &#backp_StoreContainer {
+          float: left;
+          position: relative;
+          z-index: 100;
+          a {
+            position: relative;
+            padding: 0;
+            height: 14px;
+            width: 14px;
+            color: #92aaaa;
+            background: 0;
+            top: -2px;
+            margin-right: 10px;
+            text-transform: uppercase;
+          }
+        }
+        &#p_closeStoreContainer {
+          a {
+            @include sldFont();
+            position: relative;
+            margin-right: 0;
+            font-size: 14px;
+            height: 14px;
+            width: 100%;
+            font-weight: 400;
+            top: 0;
+            background: none !important;
+          }
+        }
+        &#p_storeHeaderTextContainer {
+          width: 100%;
+          position: absolute;
+          left: 0;
+          line-height: 17px;
+
+          span#headerText {
+            @include sldFont();
+            text-align: center;
+            font-size: 14px;
+            text-transform: uppercase;
+          }
+        }
+        &#p_StoreLearnMore {
+          padding-right: 0;
+          //position: absolute;
+          //right: 55px;
+          //bottom: 17px;
+          a {
+            @include sldFont();
+            display: block;
+            height: 20px;
+            width: 20px;
+            border-radius: 10px;
+            border: 1px solid #92aaaa;
+            text-align: center;
+            font-size: 15px;
+            font-weight: normal;
+          }
+        }
+      }
+    }
+    #themeContainer {
+      border: 5px solid $storeBgColor;
+      background: $storeBgColor;
+      width: 620px;
+      height: 445px;
+      border-radius: 3px;
+      padding: 5px 10px;
+      #rspInch {
+        bottom: 57px;
+      }
+      #rspWindow {
+        #RSPButtons {
+          padding: 5px 0;
+        }
+        .instructions-container {
+          bottom: 35px;
+          left: 23px;
+          .instructions-text {
+
+          }
+        }
+      }
+      #p_ShopCanvas {
+        border-radius: 0;
+        width: 620px;
+        background: transparent;
+        left: -10px;
+      }
+      #userMessaging {
+        margin: 0 30px;
+        z-index: 10;
+        background: #f9f9f9;
+        border: 0;
+        width: 100%;
+        left: -30px;
+        top: 0 !important;
+        font-size: 17px;
+        line-height: 17px;
+        span.colorizedSpan {
+          color: $leadingColor;
+          @include sldFont();
+          font-weight: 700;
+          font-size: 15px;
+
+        }
+      }
+      #productList {
+        li.p_Product {
+          width: 153px;
+          .productData {
+            .productName {
+              color: $leadingColor;
+            }
+          }
+        }
+        &.grid_2, &.grid_6 {
+          li.p_Product {
+            width: 200px;
+            margin: 2% 0 !important;
+          }
+        }
+      }
+    }
+    #p_PreviewWrapper .previewRightPanel .previewBulletList li {
+      color: $leadingColor;
+    }
+    #cropWindow {
+      h2 {
+        color: $leadingColor;
+        padding-top: 6px;
+      }
+      #cropWindowButtonContainer {
+        padding-top: 0 !important;
+      }
+
+    }
+    #p_OrderConfirmation {
+      #confirmationTitleWrapper {
+        padding-bottom: 40px !important;
+      }
+      #confirmationDetails {
+
+        #confirmationTitleWrapper.couponValid {
+          #singularPriceCoupon {
+            color: $leadingColor;
+          }
+        }
+        #confirmationSubTotal {
+          #confirmationTotalRawPriceCoupon, #confirmationTotalRawPrice {
+            color: $leadingColor;
+          }
+        }
+        #confirmationShipping {
+          #shippingMethod {
+            #shippingMethodPrice {
+              color: $leadingColor;
+            }
+            #shippingMethodPriceCoupon {
+              color: $leadingColor;
+            }
+          }
+        }
+        #confirmationTotal {
+          #youSavedContainer {
+            #youSavedPrice {
+              color: $leadingColor;
+            }
+          }
+          #totalContainer {
+            #totalPrice {
+              color: $leadingColor;
+            }
+          }
+        }
+        /**
+        *SLidly checkout button
+        */
+        #confirmationButtons {
+          .confirmationButtonCreditCard {
+            background: url("#{$extensionID}/images/checkout_card_slidly.png") no-repeat center center;
+            /*
+            Add classes for translation
+            */
+            &.es_ES {
+              background: url("#{$extensionID}/images/checkout_card_slidly-es_ES.png") no-repeat center center;
+            }
+          }
+          .confirmationButtonPayPal {
+            /*
+            Add classes for translation if needed a diffrent asset then in the default store
+            */
+            /*&.es_ES {
+              background: url("#{$extensionID}/images/checkout_paypal-es_ES.png") no-repeat center center;
+            }*/
+          }
+
+        }
+      }
+
+    }
+    #rspWindow {
+      h2 {
+        color: $leadingColor;
+      }
+    }
+
+    #p_StorePopupWrapper {
+      #p_StorePopup {
+        &.popupType_coupon {
+          h3 {
+            color: $leadingColor;
+          }
+          #couponMessage {
+            color: $leadingColor ;
+          }
+        }
+        &.popupType_what_is_pixter {
+          left: 14px !important;
+          height: 455px;
+          width: 620px;
+          .what-is-pixter {
+
+          }
+        }
+      }
+
+    }
+
+    #storeBroughtBy {
+      background: #EBEBEB;
+      color: #5A5A5A;
+      border-radius: 2px;
+    }
+
+    #p_PreviewWrapper .previewLeftPanel .editButtonContainer {
+      bottom: 50px;
+      .editImage {
+        //background: url("#{$extensionID}/images/editButtonLightBlue.png") no-repeat center center;
+      }
+      .editText {
+        //color: #088FD1;
+      }
+    }
+
+    #p_Store.activeMessaging #themeContainer #productList {
+      margin-top: 12px;
+    }
+    /*
+     *Catalog next buttons
+     */
+
+    .p_Button.thinp_Button.productBuyNow {
+      font-size: 18px !important;
+      height: 22px !important;
+      line-height: 22px !important;
+    }
+
+    #p_OrderSummaryWrapper {
+      #p_ShippingAddress {
+        li {
+          &#TOCLI {
+            bottom: 18px;
+            #p_TOCText {
+              width: 280px;
+            }
+          }
+        }
+      }
+    }
+    #p_SubmitOrder {
+      .p_Checkout {
+        width: 164px;
+        height: 34px !important;
+        line-height: 18px !important;
+      }
+    }
+
+    &.pStore_step_3_5 {
+      #themeContainer {
+        #p_ShopCanvas {
+          height: 465px;
+          position: relative;
+          bottom: 30px;
+        }
+        #rspInch {
+          bottom: 77px;
+        }
+      }
+    }
+  }
+
+  #thankYouWindow {
+    padding-top: 0 !important;
+  }
+
+
+}

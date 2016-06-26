@@ -1,0 +1,23 @@
+//$extensionID: "/PixterCRX/dev/testAssets/files";
+//$extensionID: "https://assets-521295.c.cdn77.org/v1005/files";
+//$extensionID: "https://pixter-loader-assets.s3.amazonaws.com/v1005/files";
+$extensionID: "../../files";
+
+
+@import "fonts";
+@import "icons";
+@import "store";
+@import "orangeUI_pg1";
+@import "blueUI";
+@import "whiteUI_sld";
+@import "cropTool";
+@import "toolTipster";
+
+
+.mb-1em {
+  margin-bottom: 1em !important;
+}
+
+.mb-2em {
+  margin-bottom: 2em !important;
+}

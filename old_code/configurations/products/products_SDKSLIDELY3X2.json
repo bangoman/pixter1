@@ -1,0 +1,751 @@
+{
+    "categories":[
+        {
+            "type": "magnet_6x4",
+            "shortName": "2 Magnets",
+            "marketingName": "Magnet 6''x4''",
+            "teaser":true,
+            "tmbHeight": 53,
+            "tmbWidth": 80,
+            "cropRatio": 0.67,
+            "previewImage":"magnet/preview_6x4.png",
+            "categoryText":"Fine printed magnets",
+            "children":[
+                "MAGN060404EEEE"
+            ],
+            "index":0
+        },
+        {
+            "type": "mug_3x2",
+            "shortName": "Mug",
+            "marketingName": "11oz White Mug",
+            "teaser":true,
+            "tmbHeight": 60,
+            "tmbWidth": 90,
+            "cropRatio": 0.67,
+            "previewImage":"mug/previewImage.png",
+            "categoryText":"Ceramic 11oz MUG",
+            "children":[
+                "CMUG11OZ3X2MUG"
+            ],
+            "index":1
+        },
+        {
+            "type": "flatcard_3x2",
+            "shortName": "Flat Cards",
+            "marketingName": "Flat Card 7''x5''",
+            "teaser":true,
+            "tmbHeight": 48,
+            "tmbWidth": 72,
+            "cropRatio": 0.67,
+            "previewImage":"flatcard/previewImage_3x2.png",
+            "categoryText":"Fine printed flat cards",
+            "children":[
+                "FLT70532EFLT57"
+            ],
+            "index":3
+        },
+        {
+            "type": "tshirt_3x2",
+            "shortName": "T-Shirt",
+            "marketingName": "T-Shirt all sizes",
+            "teaser":false,
+            "tmbHeight": 35,
+            "categoryText":"Choose the size of your t-shirt",
+            "tmbWidth": 52,
+            "cropRatio": 0.67,
+            "previewImage":"tshirt/previewImage_3x2.png",
+            "dropdownText":"Select T-Shirt Size:",
+            "isRenderAsOne": true,
+            "defaultDropDownItem":"TSHIRTCOTL3X2T",
+            "children":[
+                "TSHIRTCOTS3X2T",
+                "TSHIRTCOTM3X2T",
+                "TSHIRTCOTL3X2T",
+                "TSHIRTCOTXL32T",
+                "TSHIRTCOTXXL32"
+            ],
+            "index":4
+        },
+        {
+            "type": "canvas_white_3x2",
+            "shortName": "Canvas",
+            "marketingName": "Canvas 8''x12''",
+            "teaser":true,
+            "tmbHeight": 70,
+            "categoryText":"Choose your image-wrapped Canvas",
+            "tmbWidth": 106,
+            "cropRatio": 0.67,
+            "previewImage":"canvases/canvasTemplate_3x2.png",
+            "isRenderAsOne": true,
+            "defaultDropDownItem":"CNVS120801CWB1",
+            "children":[
+                "CNVS120801CWB1",
+                "CNVS141001CWB2",
+                "CNVS241601CWB5",
+                "CNVS302001CWB6"
+            ],
+            "hiddenChildren":[
+                "CNVS081201CWB1",
+                "CNVS101401CWB2",
+                "CNVS162401CWB5",
+                "CNVS203001CWB6"
+            ],
+            "index":5
+        },
+        {
+            "type": "phonecase_3x2",
+            "shortName": "Phone Case",
+            "marketingName": "Smart Phone Cases",
+            "teaser":true,
+            "tmbHeight": 67,
+            "tmbWidth": 110,
+            "cropRatio": 0.67,
+            "previewImage":"cases/casePreview_3x2.png",
+            "categoryText":"Choose your high quality 3D phone case",
+            "dropdownText":"Select Phone model:",
+            "isRenderAsOne": true,
+            "defaultDropDownItem":"SPIP6SOL01EEI6",
+            "children":[
+                "SPIP4SOL01EEI4",
+                "SPIP5SOL01EEI5",
+                "SPIP5CSOL01I5C",
+                "SPIP6SOL01EEI6",
+                "SPIP6PSOL01I6P",
+                "SPSG3SOL01ESG3",
+                "SPSG4SOL01ESG4",
+                "SPSG5SOL01ESG5"
+            ],
+            "index":2
+        }
+    ],
+    "products": [
+        {
+            "type": "magnet_6x4",
+            "pid": "MAGN060404EEEE",
+            "shortName": "Magnet",
+            "marketingName": "Large Premium Magnets",
+            "productH": 4.06,
+            "productW": 6.06,
+            "previewImage":"magnet/preview_6x4.png",
+            "previewParams":{
+                "height":4,
+                "width":6,
+                "zoom":1.6
+            },
+            "minimumDPI": 50,
+            "tmbHeight": 70,
+            "tmbWidth": 110,
+            "cropRatio": 0.67,
+            "bulletList":[
+                "2 Large Premium magnets 6''x4''",
+                "Probably the finest Magnet on the market today. Topped with a thick glossy laminated finish",
+                "They are trimmed to perfection, no rough edges or peeling of image from the magnet's back"
+            ],
+            "expressCheckoutText":"2 Large Premium Magnets, topped with thick glossy laminated finish and trimmed to perfection with no rough edges"
+        },
+        {
+            "type": "mug_3x2",
+            "pid": "CMUG11OZ3X2MUG",
+            "shortName": "Mug",
+            "class":"standard",
+            "marketingName": "Ceramic 11oz Mug",
+            "productH": 3,
+            "productW": 4.5,
+            "previewImage":"mug/previewImage.png",
+            "previewParams":{
+                "height":3,
+                "width":4.5
+            },
+            "minimumDPI": 50,
+            "teaser":true,
+            "tmbHeight": 54,
+            "tmbWidth": 81,
+            "cropRatio": 0.67,
+            "rotate": false,
+            "bulletList":[
+                "Create a stunning photo mug of your favorite photos for yourself or someone special",
+                "Ceramic 11oz White Mug",
+                "Microwave and Dishwasher safe"
+            ],
+            "expressCheckoutText":"High quality material prevents leaking and can contain hot and cold beverages, with beautiful white glossy finish"
+        },
+        {
+            "type": "flatcard_3x2",
+            "pid": "FLT70532EFLT57",
+            "shortName": "Flat Card",
+            "class":"standard",
+            "marketingName": "10 Flat Card 7''x5''",
+            "productH": 4.96,
+            "productW": 7.16,
+            "previewImage":"flatcard/previewImage_3x2.png",
+            "previewParams":{
+                "height":4.8,
+                "width":7,
+                "template":false
+            },
+            "minimumDPI": 50,
+            "teaser":true,
+            "tmbHeight": 45,
+            "tmbWidth": 66,
+            "cropRatio": 0.69,
+            "rotate": false,
+            "bulletList":[
+                "10 Photo Flat Cards with 10 envelopes",
+                "Thick paper, varnished for photo-gloss effect",
+                "Send Your dears a personalized card to express your love"
+            ],
+            "expressCheckoutText":"10 Photo Flat cards with 10 envelops, made of thick paper and varnished for photo-glass effect"
+        },
+        {
+            "type": "tshirt_3x2",
+            "pid": "TSHIRTCOTS3X2T",
+            "shortName": "Small White T-Shirt",
+            "marketingName": "Small White T-Shirt",
+            "productH": 8,
+            "productW": 12,
+            "previewParams":{
+                "height":8,
+                "width":12,
+                "template":false,
+                "zoom":1
+            },
+            "minimumDPI": 50,
+            "teaser":false,
+            "tmbHeight": 90,
+            "tmbWidth": 135,
+            "cropRatio": 0.67,
+            "previewImage":"tshirt/previewImage_3x2.png",
+            "bulletList":[
+                "Create a stunning T-Shirt",
+                "100% spun polyester with cotton look and feel",
+                "Machine wash cold"
+            ],
+            "expressCheckoutText":"White 100% cotton offers the best image quality for your personalized image. Perfect for social gatherings of any kind"
+        },
+        {
+            "type": "tshirt_3x2",
+            "pid": "TSHIRTCOTM3X2T",
+            "shortName": "Medium White T-Shirt",
+            "marketingName": "Medium White T-Shirt",
+            "productH": 8,
+            "productW": 12,
+            "previewParams":{
+                "height":8,
+                "width":12,
+                "template":false,
+                "zoom":1
+            },
+            "minimumDPI": 50,
+            "teaser":false,
+            "tmbHeight": 90,
+            "tmbWidth": 135,
+            "cropRatio": 0.67,
+            "previewImage":"tshirt/previewImage_3x2.png",
+            "bulletList":[
+                "Create a stunning T-Shirt",
+                "100% spun polyester with cotton look and feel",
+                "Machine wash cold"
+            ],
+            "expressCheckoutText":"White 100% cotton offers the best image quality for your personalized image. Perfect for social gatherings of any kind"
+        },
+        {
+            "type": "tshirt_3x2",
+            "pid": "TSHIRTCOTL3X2T",
+            "shortName": "Large White T-Shirt",
+            "marketingName": "Large White T-Shirt",
+            "productH": 8,
+            "productW": 12,
+            "previewParams":{
+                "height":8,
+                "width":12,
+                "template":false,
+                "zoom":1
+            },
+            "minimumDPI": 50,
+            "teaser":false,
+            "tmbHeight": 90,
+            "tmbWidth": 135,
+            "cropRatio": 0.67,
+            "previewImage":"tshirt/previewImage_3x2.png",
+            "bulletList":[
+                "Create a stunning T-Shirt",
+                "100% spun polyester with cotton look and feel",
+                "Machine wash cold"
+            ],
+            "expressCheckoutText":"White 100% cotton offers the best image quality for your personalized image. Perfect for social gatherings of any kind"
+        },
+        {
+            "type": "tshirt_3x2",
+            "pid": "TSHIRTCOTXL32T",
+            "shortName": "XL White T-Shirt",
+            "marketingName": "XL White T-Shirt",
+            "productH": 8,
+            "productW": 12,
+            "previewParams":{
+                "height":8,
+                "width":12,
+                "template":false,
+                "zoom":1
+            },
+            "minimumDPI": 50,
+            "teaser":false,
+            "tmbHeight": 90,
+            "tmbWidth": 135,
+            "cropRatio": 0.67,
+            "previewImage":"tshirt/previewImage_3x2.png",
+            "bulletList":[
+                "Create a stunning T-Shirt",
+                "100% spun polyester with cotton look and feel",
+                "Machine wash cold"
+            ],
+            "expressCheckoutText":"White 100% cotton offers the best image quality for your personalized image. Perfect for social gatherings of any kind"
+        },
+        {
+            "type": "tshirt_3x2",
+            "pid": "TSHIRTCOTXXL32",
+            "shortName": "XXL White T-Shirt",
+            "marketingName": "XXL White T-Shirt",
+            "productH": 8,
+            "productW": 12,
+            "previewParams":{
+                "height":8,
+                "width":12,
+                "template":false,
+                "zoom":1
+            },
+            "minimumDPI": 50,
+            "teaser":false,
+            "tmbHeight": 90,
+            "tmbWidth": 135,
+            "cropRatio": 0.67,
+            "previewImage":"tshirt/previewImage_3x2.png",
+            "bulletList":[
+                "Create a stunning T-Shirt",
+                "100% spun polyester with cotton look and feel",
+                "Machine wash cold"
+            ],
+            "expressCheckoutText":"White 100% cotton offers the best image quality for your personalized image. Perfect for social gatherings of any kind"
+        },
+        {
+            "type": "iphone4case_3x2",
+            "pid": "SPIP4SOL01EEI4",
+            "shortName": "iPhone 4/4S",
+            "marketingName": "iPhone 4/4S Case",
+            "productH": 3.23,
+            "productW": 5,
+            "previewImage":"cases/iPhone4/landscapePreview_3x2.png",
+            "minimumDPI": 50,
+            "tmbHeight": 66,
+            "tmbWidth": 120,
+            "previewParams":{
+                "height":2.31,
+                "width":4.54,
+                "offset":{
+                    "top":-5
+                }
+            },
+            "cropRatio": 0.646,
+            "bulletList":[
+                "Slim, lightweight case, made of tough polycarbonate plastic",
+                "Raised edge prevents screen from scratching when placed face down",
+                "No need to remove the case while charging your phone"
+            ],
+            "expressCheckoutText":"Slim, lightweight case, made of tough polycarbonate plastic. Raised edges prevent screen from scratching when placed face down"
+        },
+        {
+            "type": "iphone5case_3x2",
+            "pid": "SPIP5SOL01EEI5",
+            "shortName": "iPhone 5/5S",
+            "marketingName": "iPhone 5/5S Case",
+            "productH": 3.15,
+            "productW": 5.28,
+            "minimumDPI": 50,
+            "teaser":true,
+            "previewImage":"cases/iPhone5/landscapePreview_3x2.png",
+            "previewParams":{
+                "height":2.31,
+                "width":4.87,
+                "offset":{
+                    "top":-5
+                }
+            },
+            "tmbHeight": 66,
+            "tmbWidth": 120,
+            "cropRatio": 0.595,
+            "bulletList":[
+                "Slim, lightweight case, made of tough polycarbonate plastic",
+                "Raised edge prevents screen from scratching when placed face down",
+                "No need to remove the case while charging your phone"
+            ],
+            "expressCheckoutText":"Slim, lightweight case, made of tough polycarbonate plastic. Raised edges prevent screen from scratching when placed face down"
+        },
+        {
+            "type": "iphone5Ccase_3x2",
+            "pid": "SPIP5CSOL01I5C",
+            "shortName": "iPhone 5C",
+            "marketingName": "iPhone 5C Case",
+            "productH": 3.23,
+            "productW": 5.51,
+             "minimumDPI": 50,
+            "teaser":true,
+            "previewImage":"cases/iPhone5C/landscapePreview_3x2.png",
+            "previewParams":{
+                "height":2.33,
+                "width":4.9,
+                "offset":{
+                    "top":-5
+                }
+            },
+            "tmbHeight": 66,
+            "tmbWidth": 120,
+            "cropRatio": 0.586,
+            "bulletList":[
+                "Slim, lightweight case, made of tough polycarbonate plastic",
+                "Raised edge prevents screen from scratching when placed face down",
+                "No need to remove the case while charging your phone"
+            ],
+            "expressCheckoutText":"Slim, lightweight case, made of tough polycarbonate plastic. Raised edges prevent screen from scratching when placed face down"
+        },
+        {
+            "type": "iphone6case_3x2",
+            "pid": "SPIP6SOL01EEI6",
+            "shortName": "iPhone 6/6S",
+            "marketingName": "iPhone 6/6S Case",
+            "productH": 3.46,
+            "productW": 6.06,
+            "previewImage":"cases/iPhone6/landscapePreview_3x2.png",
+            "previewParams":{
+                "height":2.64,
+                "width":5.44,
+                "offset":{
+                    "top":-10
+                }
+            },
+             "minimumDPI": 50,
+            "tmbHeight": 66,
+            "tmbWidth": 120,
+            "cropRatio": 0.57,
+            "bulletList":[
+                "Slim, lightweight case, made of tough polycarbonate plastic",
+                "Raised edge prevents screen from scratching when placed face down",
+                "No need to remove the case while charging your phone"
+            ],
+            "expressCheckoutText":"Slim, lightweight case, made of tough polycarbonate plastic. Raised edges prevent screen from scratching when placed face down"
+        },
+        {
+            "type": "iphone6pluscase_3x2",
+            "pid": "SPIP6PSOL01I6P",
+            "shortName": "iPhone 6+/6S+",
+            "marketingName": "iPhone 6+/6S+ Case",
+            "productH": 3.62,
+            "productW": 6.54,
+            "previewImage":"cases/iPhone6plus/landscapePreview_3x2.png",
+            "previewParams":{
+                "height":3.06,
+                "width":6.22,
+                "offset":{
+                    "top":-10
+                }
+            },
+             "minimumDPI": 50,
+            "tmbHeight": 66,
+            "tmbWidth": 120,
+            "cropRatio": 0.553,
+            "bulletList":[
+                "Slim, lightweight case, made of tough polycarbonate plastic",
+                "Raised edge prevents screen from scratching when placed face down",
+                "No need to remove the case while charging your phone"
+            ],
+            "expressCheckoutText":"Slim, lightweight case, made of tough polycarbonate plastic. Raised edges prevent screen from scratching when placed face down"
+        },
+        {
+            "type": "samsungS3case_3x2",
+            "pid": "SPSG3SOL01ESG3",
+            "shortName": "Samsung S3",
+            "marketingName": "Samsung S3 Case",
+            "productH": 3.50,
+            "productW": 5.63,
+            "previewImage":"cases/SamsungS3/landscapePreview_3x2.png",
+            "previewParams":{
+                "height":2.78,
+                "width":5.38,
+                "offset":{
+                    "top":-10
+                }
+            },
+             "minimumDPI": 50,
+            "tmbHeight": 66,
+            "tmbWidth": 120,
+            "cropRatio": 0.619,
+            "bulletList":[
+                "Slim, lightweight case, made of tough polycarbonate plastic",
+                "Raised edge prevents screen from scratching when placed face down",
+                "No need to remove the case while charging your phone"
+            ],
+            "expressCheckoutText":"Slim, lightweight case, made of tough polycarbonate plastic. Raised edges prevent screen from scratching when placed face down"
+        },
+        {
+            "type": "samsungS4case_3x2",
+            "pid": "SPSG4SOL01ESG4",
+            "class":"childProduct",
+            "shortName": "Samsung S4",
+            "marketingName": "Samsung S4 Case",
+            "previewImage":"cases/SamsungS4/landscapePreview_3x2.png",
+            "productH": 3.62,
+            "productW": 6.14,
+            "previewParams":{
+                "height":2.75,
+                "width":5.38,
+                "offset":{
+                    "top":-40
+                }
+            },
+            "minimumDPI": 50,
+            "tmbHeight": 66,
+            "tmbWidth": 120,
+            "cropRatio": 0.589,
+            "bulletList":[
+                "Slim, lightweight case, made of tough polycarbonate plastic",
+                "Raised edge prevents screen from scratching when placed face down",
+                "No need to remove the case while charging your phone"
+            ],
+            "expressCheckoutText":"Slim, lightweight case, made of tough polycarbonate plastic. Raised edges prevent screen from scratching when placed face down"
+        },
+        {
+            "type": "samsungS5case_3x2",
+            "pid": "SPSG5SOL01ESG5",
+            "class":"childProduct",
+            "shortName": "Samsung S5",
+            "marketingName": "Samsung S5 Case",
+            "previewImage":"cases/SamsungS5/landscapePreview_3x2.png",
+            "productH": 3.78,
+            "productW": 6.3,
+            "previewParams":{
+                "height":2.85,
+                "width":5.59,
+                "offset":{
+                    "top":-2
+                }
+            },
+            "minimumDPI": 50,
+            "tmbHeight": 66,
+            "tmbWidth": 120,
+            "cropRatio": 0.6,
+            "bulletList":[
+                "Slim, lightweight case, made of tough polycarbonate plastic",
+                "Raised edge prevents screen from scratching when placed face down",
+                "No need to remove the case while charging your phone"
+            ],
+            "expressCheckoutText":"Slim, lightweight case, made of tough polycarbonate plastic. Raised edges prevent screen from scratching when placed face down"
+        },
+        {
+            "type": "canvas0812_white",
+            "pid": "CNVS081201CWB1",
+            "shortName": "8'' X 12''",
+            "marketingName": "Canvas 8''x12''",
+            "productH": 12,
+            "productW": 8,
+            "previewParams":{
+                "height":12,
+                "width":8,
+                "zoom":0.5
+            },
+            "minimumDPI": 50,
+            "teaser":true,
+            "tmbHeight": 120,
+            "tmbWidth": 74,
+            "cropRatio": 1.5,
+            "previewImage":"canvases/8x12/preview.png",
+            "rotate":["CNVS120801CWB1","CNVS081201CWB1"],
+            "bulletList":[
+                "Create a stunning photo canvas of your favorite photos",
+                "White-wrapped edges allow you to hang on a wall",
+                "Depth 0.75 inch"
+            ]
+        },
+        {
+            "type": "canvas1208_white",
+            "pid": "CNVS120801CWB1",
+            "shortName": "12'' X 8''",
+            "marketingName": "Canvas 12''x8''",
+            "productH": 8,
+            "productW": 12,
+            "previewParams":{
+                "height":8,
+                "width":12,
+                "zoom":0.3
+            },
+            "minimumDPI": 50,
+            "teaser":true,
+            "tmbHeight": 80,
+            "tmbWidth": 120,
+            "cropRatio": 0.67,
+            "previewImage":"canvases/12x8/preview.png",
+            "rotate":["CNVS120801CWB1","CNVS081201CWB1"],
+            "bulletList":[
+                "Create a stunning photo canvas of your favorite photos",
+                "White-wrapped edges allow you to hang on a wall",
+                "Depth 0.75 inch"
+            ],
+            "expressCheckoutText":"Create a stunning, 0.75 inch deep photo canvas of your favorite scenic, travel, or occasion photos. White-wrapped edges allow you to hang on any wall"
+
+        },
+        {
+            "type": "canvas1410_white",
+            "pid": "CNVS141001CWB2",
+            "shortName": "14'' X 10''",
+            "marketingName": "Canvas 14''x10''",
+            "productH": 10,
+            "productW": 14,
+            "previewParams":{
+                "height":10,
+                "width":14,
+                "zoom":1
+            },
+            "minimumDPI": 50,
+            "teaser":true,
+            "tmbHeight": 90,
+            "tmbWidth": 120,
+            "cropRatio":  0.71,
+            "previewImage":"canvases/14x10/preview.png",
+            "rotate":["CNVS141001CWB2","CNVS101401CWB2"],
+            "bulletList":[
+                "Create a stunning photo canvas of your favorite photos",
+                "White-wrapped edges allow you to hang on a wall",
+                "Depth 0.75 inch"
+            ],
+            "expressCheckoutText":"Create a stunning, 0.75 inch deep photo canvas of your favorite scenic, travel, or occasion photos. White-wrapped edges allow you to hang on any wall"
+
+        },
+        {
+            "type": "canvas1014_white",
+            "pid": "CNVS101401CWB2",
+            "shortName": "10'' X 14''",
+            "marketingName": "Canvas 10''x14''",
+            "productH": 14,
+            "productW": 10,
+            "previewParams":{
+                "height":14,
+                "width":10,
+                "zoom":1
+            },
+            "minimumDPI": 50,
+            "teaser":true,
+            "tmbHeight": 120,
+            "tmbWidth": 90,
+            "cropRatio": 1.4,
+            "previewImage":"canvases/10x14/preview.png",
+            "rotate":["CNVS141001CWB2","CNVS101401CWB2"],
+            "bulletList":[
+                "Create a stunning photo canvas of your favorite photos",
+                "White-wrapped edges allow you to hang on a wall",
+                "Depth 0.75 inch"
+            ]
+        },
+        {
+            "type": "canvas1624_white",
+            "pid": "CNVS162401CWB5",
+            "shortName": "16'' X 24''",
+            "marketingName": "Canvas 16''x24''",
+            "productH": 24,
+            "productW": 16,
+            "minimumDPI": 50,
+            "previewParams":{
+                "height":24,
+                "width":16,
+                "zoom":1
+            },
+            "teaser":true,
+            "tmbHeight": 120,
+            "tmbWidth": 85,
+            "cropRatio": 1.5,
+            "previewImage":"canvases/16x24/preview.png",
+            "rotate": ["CNVS241601CWB5","CNVS162401CWB5"],
+            "bulletList":[
+                "Create a stunning photo canvas of your favorite photos",
+                "White-wrapped edges allow you to hang on a wall",
+                "Depth 0.75 inch"
+            ],
+            "expressCheckoutText":"Create a stunning, 0.75 inch deep photo canvas of your favorite scenic, travel, or occasion photos. White-wrapped edges allow you to hang on any wall"
+        },
+        {
+            "type": "canvas2416_white",
+            "pid": "CNVS241601CWB5",
+            "shortName": "24'' X 16''",
+            "marketingName": "Canvas 24''x16''",
+            "productH": 16,
+            "productW": 24,
+            "minimumDPI": 50,
+            "previewParams":{
+                "height":16,
+                "width":24,
+                "zoom":1
+            },
+            "teaser":true,
+            "tmbHeight": 80,
+            "tmbWidth": 120,
+            "cropRatio": 0.67,
+            "previewImage":"canvases/24x16/preview.png",
+            "rotate": ["CNVS241601CWB5","CNVS162401CWB5"],
+            "bulletList":[
+                "Create a stunning photo canvas of your favorite photos",
+                "White-wrapped edges allow you to hang on a wall",
+                "Depth 0.75 inch"
+            ],
+            "expressCheckoutText":"Create a stunning, 0.75 inch deep photo canvas of your favorite scenic, travel, or occasion photos. White-wrapped edges allow you to hang on any wall"
+        },
+        {
+            "type": "canvas3020_white",
+            "pid": "CNVS302001CWB6",
+            "shortName": "30'' X 20''",
+            "marketingName": "Canvas 30''x20''",
+            "productH": 20,
+            "productW": 30,
+            "minimumDPI": 50,
+            "previewParams":{
+                "height":20,
+                "width":30,
+                "zoom":1
+            },
+            "teaser":true,
+            "tmbHeight": 80,
+            "tmbWidth": 120,
+            "cropRatio": 0.67,
+            "previewImage":"canvases/30x20/preview.png",
+            "rotate": ["CNVS302001CWB6","CNVS203001CWB6"],
+            "bulletList":[
+                "Create a stunning photo canvas of your favorite photos",
+                "White-wrapped edges allow you to hang on a wall",
+                "Depth 0.75 inch"
+            ],
+            "expressCheckoutText":"Create a stunning, 0.75 inch deep photo canvas of your favorite scenic, travel, or occasion photos. White-wrapped edges allow you to hang on any wall"
+        },
+        {
+            "type": "canvas2030_white",
+            "pid": "CNVS203001CWB6",
+            "shortName": "20'' X 30''",
+            "marketingName": "Canvas 20''x30''",
+            "productH": 30,
+            "productW": 20,
+            "minimumDPI": 50,
+            "previewParams":{
+                "height":30,
+                "width":20,
+                "zoom":1
+            },
+            "teaser":true,
+            "tmbHeight": 120,
+            "tmbWidth": 85,
+            "cropRatio": 1.5,
+            "previewImage":"canvases/20x30/preview.png",
+            "rotate": ["CNVS302001CWB6","CNVS203001CWB6"],
+            "bulletList":[
+                "Create a stunning photo canvas of your favorite photos",
+                "White-wrapped edges allow you to hang on a wall",
+                "Depth 0.75 inch"
+            ],
+            "expressCheckoutText":"Create a stunning, 0.75 inch deep photo canvas of your favorite scenic, travel, or occasion photos. White-wrapped edges allow you to hang on any wall"
+        }
+    ]
+}
