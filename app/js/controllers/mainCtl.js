@@ -1,4 +1,4 @@
-angular.module('app').controller('mainCtl', function(message,$uibModal){
+angular.module('app').controller('mainCtl', function(message, $uibModal, $state){
 	var vm = this;
 
 	vm.close = function(){
@@ -12,4 +12,27 @@ angular.module('app').controller('mainCtl', function(message,$uibModal){
 		    backdrop:'static',
 		});
 	}
+
+	vm.stateIsShop = function(){
+		if ($state.current.name == 'app.shop') {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+  	vm.goBack = function(){
+  		if ($state.current.name == 'app.preview') {
+  			$state.go('app.shop');
+  		}
+  		if ($state.current.name == 'app.edit') {
+  			$state.go('app.preview');
+  		}
+  		if ($state.current.name == 'app.orderDetails') {
+  			$state.go('app.preview');
+  		}
+  		if ($state.current.name == 'app.checkout') {
+  			$state.go('app.orderDetails');
+  		}
+  	}
 });

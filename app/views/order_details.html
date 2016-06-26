@@ -61,12 +61,12 @@
         </div>
         <div class="col-sm-8 col-xs-12 checkbox">
             <label>
-              <input type="checkbox">
+              <input type="checkbox" ng-click="vm.termsAgreed = !vm.termsAgreed">
               I agree to the <a target="_blank" href="http://pixter.me/terms_of_use.html">terms</a> and confirm I have the rights to upload and use the image.
             </label>
         </div>
         <div class="col-sm-4 col-xs-12">
-            <div class="next-button">Next</div>
+            <div class="next-button" ng-click="vm.goToCeckout()">Next</div>
         </div>
     </div>
 

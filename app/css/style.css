@@ -74,6 +74,7 @@ select[type="number"]:active {
 .header-back-button {
   width: 64px;
   font-size: 20px;
+  cursor: pointer;
   margin-top: -4px;
 }
 .store-header {
@@ -250,6 +251,7 @@ select[type="number"]:active {
   position: relative;
   color: #32bafa;
   font-size: 19px;
+  z-index: 1;
 }
 .preview-edit-btn .glyphicon {
   font-size: 14px;

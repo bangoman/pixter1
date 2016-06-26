@@ -1,7 +1,7 @@
 <div id="pixter-responsive-store">
     <div class="row store-header" style="margin:0">
         <div class="col-xs-3">
-            <div class="header-back-button"><</div>
+            <div class="header-back-button" ng-if="!vm.stateIsShop()" ng-click="vm.goBack()"><</div>
         </div>
         <div class="col-xs-6">
             CLICK A PRODUCT TO GET STARTED <!-- if .state is shop -->
