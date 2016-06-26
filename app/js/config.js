@@ -58,11 +58,11 @@ angular.module('app').config(function($stateProvider,$urlRouterProvider){
             },
         })
         .state('app.sliderShop',{
-            url:'/shop',
+            url:'/sliderShop',
             views:{
                 main:{
                     templateUrl:'app/views/slider_shop.html',
-                    title:'CLICK A PRODUCT TO GET STARTED',
+                    title:'Choose Your Photo Product',
                     controller:'sliderShopCtl as vm'
                 }
             },
