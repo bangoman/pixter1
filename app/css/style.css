@@ -576,10 +576,10 @@ select[type="number"]:active {
   background-repeat: no-repeat;
 }
 .slider-shop-top-part {
-  height: 80%;
+  height: 80vw;
 }
 .slider-shop-bottom-part {
-  height: 20%;
+  height: 20vw;
 }
 
 
