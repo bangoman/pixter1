@@ -57,5 +57,15 @@ angular.module('app').config(function($stateProvider,$urlRouterProvider){
                 }
             },
         })
+        .state('app.sliderShop',{
+            url:'/shop',
+            views:{
+                main:{
+                    templateUrl:'app/views/slider_shop.html',
+                    title:'CLICK A PRODUCT TO GET STARTED',
+                    controller:'sliderShopCtl as vm'
+                }
+            },
+        })
     ;
 });
