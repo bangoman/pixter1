@@ -23,10 +23,10 @@
 			iframe = document.createElement('iframe');
 			iframe.src = '../#/app/sliderShop';
 			iframe.style.position = 'fixed';
-			iframe.style.left = '20vw';
+			iframe.style.left = '18vw';
 			iframe.style.top = '20vh';
-			iframe.style.width = '32vw';
-			iframe.style.height = '27.85vw';
+			iframe.style.width = '64vw';
+			iframe.style.height = '55.7vw';
 		}
 		document.body.appendChild(iframe);
 		changeImage(url);
