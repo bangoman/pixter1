@@ -593,7 +593,7 @@ select[type="number"]:active {
 }
 .slider-shop-top-part,
 .slider-shop-bottom-part {
-  background-color: #888;
+  background-color: rgba(0,0,0,0.5);
 }
 .slider-shop-top-part {
   height: 59vw;
