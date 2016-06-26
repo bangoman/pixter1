@@ -613,7 +613,11 @@ select[type="number"]:active {
   border-radius: 4px 4px 0 0;
 }
 .slider-shop-bottom-image {
-
+  height: 86%;
+  top: 8%;
+}
+.slider-shop-product-info {
+  
 }
 
 /*================
