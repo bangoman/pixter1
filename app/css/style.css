@@ -71,11 +71,16 @@ select[type="number"]:active {
   border-radius: 4px;
   font-family: Roboto, 'CalibriRegular', 'Gill Sans', Verdana, Arial !important;
 } 
+.header-back-button {
+  width: 64px;
+  font-size: 20px;
+  margin-top: -4px;
+}
 .store-header {
   color: #92aaaa;
-  text-align: center;
   font-size: 14px;
   padding: 32px 0;
+  text-align: center;
 }
 .learn-more-button {
   height: 20px;
