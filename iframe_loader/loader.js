@@ -24,9 +24,9 @@
 			iframe.src = '../#/app/sliderShop';
 			iframe.style.position = 'fixed';
 			iframe.style.left = '18vw';
-			iframe.style.top = '20vh';
+			iframe.style.top = '10vh';
 			iframe.style.width = '64vw';
-			iframe.style.height = '55.7vw';
+			iframe.style.height = '62vw';
 		}
 		document.body.appendChild(iframe);
 		changeImage(url);
