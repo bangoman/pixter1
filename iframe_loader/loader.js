@@ -21,7 +21,7 @@
 	function loadIframe(url){
 		if( !iframe ){
 			iframe = document.createElement('iframe');
-			iframe.src = '../';
+			iframe.src = '../#/sliderShop';
 			iframe.style.position = 'fixed';
 			iframe.style.left = '20vw';
 			iframe.style.top = '20vh';
