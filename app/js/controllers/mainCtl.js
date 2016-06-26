@@ -22,7 +22,7 @@ angular.module('app').controller('mainCtl', function(message, $uibModal, $state)
 	}
 	
   	vm.getViewHeader = function() {
-  		return $state.title;
+  		return $state.current.title;
   	}
 
   	vm.goBack = function(){

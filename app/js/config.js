@@ -9,60 +9,60 @@ angular.module('app').config(function($stateProvider,$urlRouterProvider){
         })
 		.state('app.shop',{
 			url:'/shop',
+            title:'CLICK A PRODUCT TO GET STARTED',
             views:{
                 main:{
-                    templateUrl:'app/views/shop.html',
-                    title:'CLICK A PRODUCT TO GET STARTED',
+                    templateUrl:'app/views/shop.html',                    
                     controller:'shopCtl as vm'
                 }
             },
 		})
         .state('app.preview',{
             url:'/preview',
+            title:'PREVIEW YOUR PRODUCT',
             views:{
                 main:{
-                    templateUrl:'app/views/preview.html',
-                    title:'PREVIEW YOUR PRODUCT',
+                    templateUrl:'app/views/preview.html',                    
                     controller:'previewCtl as vm'
                 }
             },
         })
         .state('app.edit',{
             url:'/edit',
+            title:'EDIT YOUR IMAGE',
             views:{
                 main:{
-                    templateUrl:'app/views/edit.html',
-                    title:'EDIT YOUR IMAGE',
+                    templateUrl:'app/views/edit.html',                    
                     controller:'editCtl as vm'
                 }
             },
         })
         .state('app.orderDetails',{
             url:'/orderDetails',
+            title:'ORDER DETAILS',
             views:{
                 main:{
-                    templateUrl:'app/views/order_details.html',
-                    title:'ORDER DETAILS',
+                    templateUrl:'app/views/order_details.html',                    
                     controller:'orderDetailsCtl as vm'
                 }
             },
         })
         .state('app.checkout',{
             url:'/checkout',
+            title:'CHECKOUT INFORMATION',
             views:{
                 main:{
-                    templateUrl:'app/views/checkout.html',
-                    title:'CHECKOUT INFORMATION',
+                    templateUrl:'app/views/checkout.html',                    
                     controller:'checkoutCtl as vm'
                 }
             },
         })
         .state('app.sliderShop',{
             url:'/sliderShop',
+            title:'Choose Your Photo Product',
             views:{
                 main:{
-                    templateUrl:'app/views/slider_shop.html',
-                    title:'Choose Your Photo Product',
+                    templateUrl:'app/views/slider_shop.html',                    
                     controller:'sliderShopCtl as vm'
                 }
             },
