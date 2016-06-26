@@ -21,12 +21,12 @@
 	function loadIframe(url){
 		if( !iframe ){
 			iframe = document.createElement('iframe');
-			iframe.src = '../';
+			iframe.src = '../#/app/sliderShop';
 			iframe.style.position = 'fixed';
-			iframe.style.left = '20vw';
-			iframe.style.top = '20vh';
-			iframe.style.width = '60vw';
-			iframe.style.height = '60vh';
+			iframe.style.left = '18vw';
+			iframe.style.top = '10vh';
+			iframe.style.width = '64vw';
+			iframe.style.height = '62vw';
 		}
 		document.body.appendChild(iframe);
 		changeImage(url);
