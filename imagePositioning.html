@@ -1,0 +1,49 @@
+
+<div id="product" style="border:1px solid #000;width:600;height:300;overflow:hidden">
+	<img id="img" src="http://previews.123rf.com/images/warrengoldswain/warrengoldswain1308/warrengoldswain130800088/21858514-group-of-real-confident-people-smiling-arms-crossed-isolated-on-white-Stock-Photo.jpg" style="height:633;border:1px solid #000">	
+</div>
+<img id="img" src="http://previews.123rf.com/images/warrengoldswain/warrengoldswain1308/warrengoldswain130800088/21858514-group-of-real-confident-people-smiling-arms-crossed-isolated-on-white-Stock-Photo.jpg" style="height:633;border:1px solid #000">	
+
+
+<script>
+	var img ;
+	function getImgSize(imgSrc) {
+	    var newImg = new Image();
+
+	    newImg.onload = function() {
+	      var height = newImg.height;
+	      var width = newImg.width;
+	      
+	      calculatePosition(newImg);
+	      //alert ('The image size is '+width+'*'+height);
+	    }
+
+	    newImg.src = imgSrc; // this must be done AFTER setting onload
+	}
+	var product = {width:600,height:300};
+	function calculatePosition(img){
+		var imgDisplay = document.getElementById("img");
+		var imgRatio = img.height/img.width;
+		var productRatio = product.height/product.width;
+		if(productRatio >= imgRatio){
+			imgDisplay.style.height = product.height + "px";
+			imgDisplay.style.width = "auto";
+			imgDisplay.style.position = "relative";
+			imgDisplay.style.left = (product.width - imgDisplay.width)/2 + "px";			
+			
+		}else{
+			imgDisplay.style.width = product.width + "px";
+			imgDisplay.style.height = "auto";
+			imgDisplay.style.position = "relative";
+			imgDisplay.style.top = (product.height - imgDisplay.height)/2 + "px";
+
+
+		}
+		
+
+
+	}
+	
+	getImgSize(document.getElementById("img").src) ;	
+
+</script>
