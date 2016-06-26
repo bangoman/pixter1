@@ -647,7 +647,9 @@ select[type="number"]:active {
 }
 .slider-shop-bottom-button {
   position: absolute;
-  width: 220px;
+  width: 30vw;
+  min-width: 160px;
+  max-width: 220px;
   height: 45px;
   left: 60vw;
   top: 65vw;
