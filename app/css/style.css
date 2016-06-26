@@ -61,13 +61,8 @@ select[type="number"]:active {
   border: solid 1px red;
 }
 
-/*.row {
-    margin-right: 0;
-    margin-left: 0;
-}*/
 
-
-/* store frame (header, modal/close buttons, discount-info) */
+/* store frame (header, modal/close buttons, discount-info) style */
 
 #pixter-responsive-store {
   width: 100%;
@@ -138,7 +133,7 @@ select[type="number"]:active {
 }
 
 
-/* learn-more-modal */
+/* learn-more-modal style */
 
 #learn-more-modal .modal-content {
   padding: 16px;
@@ -168,14 +163,14 @@ select[type="number"]:active {
   border-right: solid 1px #8b8b8b;
   text-decoration: underline;
 }
-#learn-more-modal .modal-header,
-#learn-more-modal .modal-footer,
+.modal-header,
+.modal-footer,
 .learn-more-modal-links li:last-child {
   border: none;
 }
 
 
-/* shop view (first view) */
+/* shop view (first view) style */
 
 #shop-view-responsive .product {
   height: 200px;
@@ -219,12 +214,12 @@ select[type="number"]:active {
 }
 
 #shop-view-responsive .product-buy-now .next-button {
-  padding: 2px 44px;
+  width: 120px;
+  margin: 0 auto;
   line-height: 22px;
-  background-color: #32bafa;
 }
 
-/* preview view */
+/* preview view style */
 
 #preview-view-responsive {
   padding-top: 32px;
@@ -302,7 +297,7 @@ select[type="number"]:active {
   line-height: 28px;
 }
 
-/* edit view */
+/* edit view style */
 
 #edit-view-responsive {
   padding: 8px 12px;
@@ -381,7 +376,7 @@ select[type="number"]:active {
   line-height: 38px;
 }
 
-/* pay-flow (order_details & checkout views) */
+/* pay-flow (order_details & checkout views) style */
 #checkout-view-responsive {
     margin: 0;
     padding: 0px 28px;
@@ -394,7 +389,7 @@ select[type="number"]:active {
   width: 100%;
 }
 
-/* order details view */
+/* order-details view style */
 
 #order-details-view-responsive {
   padding: 20px 52px;
@@ -433,7 +428,7 @@ select[type="number"]:active {
 }
 
 
-/* checkout view */
+/* checkout view style */
 
 #checkout-view-responsive .pay-flow-product-thumbnail {
   margin-top: 64px;
@@ -527,6 +522,36 @@ select[type="number"]:active {
   background-position: -16px -6px !important;
   background: url('https://pixter-loader-assets.s3.amazonaws.com/1_8_1_stg/files/images/checkout_paypal.png');
 }
+/* cupon-modal style */
+
+#cupon-modal < .modal-dialog {
+  width: 320px;
+  top: calc(50vh - 162px);
+}
+#cupon-modal .modal-title {
+  font-size: 22px;
+  color: #4d4d4d;
+  font-weight: normal;
+  font-family: Calibri, "CalibriRegular", "Gill Sans", Verdana, Arial;  
+}
+#cupon-modal .modal-body p {
+  color: #32bafa;
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 10px;
+  font-family: Calibri, "CalibriRegular", "Gill Sans", Verdana, Arial;
+}
+.cupon-modal-input {
+  width: 224px;
+  height: 36px;
+  margin: 0 auto;
+  border: 1px solid #8b8b8b;
+}
+#cupon-modal .modal-footer button {
+  width: 108px; 
+  padding: 4px 12px;
+}
+
 
 /*================
     @media style
