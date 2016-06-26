@@ -560,6 +560,30 @@ select[type="number"]:active {
 }
 
 
+/* slider-shop-view-responsive style */
+
+#slider-shop-view-responsive {
+  height: 100vh;
+}
+.slider-shop-product-container {
+  height: 100%;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+.slider-shop-top-part,
+.slider-shop-bottom-part {
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+.slider-shop-top-part {
+  height: 80%;
+}
+.slider-shop-bottom-part {
+  height: 20%;
+}
+
+
+
 /*================
     @media style
   ================*/
