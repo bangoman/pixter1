@@ -1,0 +1,29 @@
+{
+    "manifest_version": 2,
+    "name": "Pixter.me",
+    "description":"Get printed products for any image online",
+    "version": "1.2.0.0",
+    "permissions": [
+        "http://*/*","storage"
+    ],
+    "icons": {"128": "icon128.png" },
+    "background": {
+        "page": "partials/background.html"
+    },
+    "content_scripts"	: [{
+        "matches"			: ["*://pixter.me/*","*://imgur.com/*","*://www.dropbox.com/*","*://demo.pixter-media.com/*","https://www.flickr.com/*","https://www.facebook.com/*"],
+        "exclude_globs"		: [ "*.webp","*.css","*.swf","*.js","*.zip","*.rar","*.tar","*.tar.gz","*.tgz","*.tar.bz2","*.tbz2",
+            "*.doc","*.docx","*.ppt","*.pptx","*.xls","*.xlsx","*.pdf","*.xml","*.txt","*.gif",
+            "*.mpg","*.mpeg","*.qt","*.mp4","*.m4v","*.m4a","*.mp3","*.ogv","*.ogm","*.ogg","*.oga","*.webm","*.wav",
+            "*.","*."
+        ],
+        "css": ["css/style.css"],
+        "js": ["scripts/loader.js","scripts/p_framework.js","scripts/script.js","scripts/initloader.js"],
+        "run_at":"document_idle"
+    }],
+    "web_accessible_resources": [
+        "scripts/background.js"                
+    ],
+    "content_security_policy": "script-src 'self' https://ssl.google-analytics.com https://www.google-analytics.com; object-src 'self'"
+}
+

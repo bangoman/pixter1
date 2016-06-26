@@ -1,0 +1,543 @@
+{
+  "categories":{
+    "magnet_square": "6.99",
+    "flatcard_square" : "8.99",
+    "tshirt" : "14.99",
+    "mug_square" : "8.99",
+    "canvas_white" : "36.99",
+    "toteBag" : "29.99"
+  },
+  "products": {
+    "MAGN030304EEEE": {
+      "price": "6.99",
+      "shipping": {
+        "US": [
+          {
+            "name": "standard shipping",
+            "price": "6.18",
+            "text": "Ships in 3-7 days via USPS, once produced",
+            "id": "reg"
+          },
+          {
+            "name": "express shipping",
+            "price": "13.94",
+            "text": "Ships in 1-2 days via USPS Priority, once produced",
+            "id": "exp"
+          }
+        ],
+        "CA": [
+          {
+            "name": "standard shipping",
+            "price": "9.62",
+            "text": "Ships in 5-14 days via USPS, once produced",
+            "id": "reg"
+          }
+        ],
+        "EU": [
+          {
+            "name": "standard shipping",
+            "price": "9.62",
+            "text": "Ships in 5-14 days via USPS, once produced",
+            "id": "reg"
+          }
+        ],
+        "IL": [
+          {
+            "name": "standard shipping",
+            "price": "9.62",
+            "text": "Ships in 5-14 days via USPS, once produced",
+            "id": "reg"
+          }
+        ],
+        "ROW": [
+          {
+            "name": "standard shipping",
+            "price": "9.62",
+            "text": "Ships in 5-14 days via USPS, once produced",
+            "id": "reg"
+          }
+        ]
+      }
+    },
+    "FLAT050510EEEE": {
+      "price": "14.99",
+      "shipping": {
+        "US": [
+          {
+            "name": "standard shipping",
+            "price": "6.65",
+            "text": "Ships in 3-7 days via USPS, once produced",
+            "id": "reg"
+          },
+          {
+            "name": "express shipping",
+            "price": "9.03",
+            "text": "Ships in 1-2 days via USPS Priority, once produced",
+            "id": "exp"
+          }
+        ],
+        "CA": [
+          {
+            "name": "standard shipping",
+            "price": "6.98",
+            "text": "Ships in 5-14 days via USPS, once produced",
+            "id": "reg"
+          }
+        ],
+        "EU": [
+          {
+            "name": "standard shipping",
+            "price": "9.85",
+            "text": "Ships in 5-14 days via USPS, once produced",
+            "id": "reg"
+          }
+        ],
+        "IL": [
+          {
+            "name": "standard shipping",
+            "price": "9.85",
+            "text": "Ships in 5-14 days via USPS, once produced",
+            "id": "reg"
+          }
+        ],
+        "ROW": [
+          {
+            "name": "standard shipping",
+            "price": "9.85",
+            "text": "Ships in 5-14 days via USPS, once produced",
+            "id": "reg"
+          }
+        ]
+      }
+    },
+    "TSHIRTCOTSMALT": {
+      "price": "14.99",
+      "shipping": {
+        "US": [
+          {
+            "name": "standard shipping",
+            "price": "5.00",
+            "text": "Ships in 3-5 days via USPS, once produced",
+            "id": "reg"
+          }
+        ],
+        "CA": [
+          {
+            "name": "standard shipping",
+            "price": "12.00",
+            "text": "Ships in 5-14 days via USPS, once produced",
+            "id": "reg"
+          }
+        ],
+        "EU": [
+          {
+            "name": "standard shipping",
+            "price": "12.00",
+            "text": "Ships in 5-14 days via USPS, once produced",
+            "id": "reg"
+          }
+        ],
+        "IL": [
+          {
+            "name": "standard shipping",
+            "price": "2.50",
+            "text": "Ships in 3-10 days via Carrier, once produced",
+            "id": "reg"
+          },
+          {
+            "name": "express shipping",
+            "price": "7.50",
+            "text": "Ships in 2-3 days via Carrier, once produced",
+            "id": "exp"
+          }
+        ],
+        "ROW": [
+          {
+            "name": "standard shipping",
+            "price": "12.00",
+            "text": "Ships in 5-14 days via USPS, once produced",
+            "id": "reg"
+          }
+        ]
+      }
+    },
+    "TSHIRTCOTMEDUT": {
+      "price": "14.99",
+      "shipping": {
+        "US": [
+          {
+            "name": "standard shipping",
+            "price": "5.00",
+            "text": "Ships in 3-5 days via USPS, once produced",
+            "id": "reg"
+          }
+        ],
+        "CA": [
+          {
+            "name": "standard shipping",
+            "price": "12.00",
+            "text": "Ships in 5-14 days via USPS, once produced",
+            "id": "reg"
+          }
+        ],
+        "EU": [
+          {
+            "name": "standard shipping",
+            "price": "12.00",
+            "text": "Ships in 5-14 days via USPS, once produced",
+            "id": "reg"
+          }
+        ],
+        "IL": [
+          {
+            "name": "standard shipping",
+            "price": "2.50",
+            "text": "Ships in 3-10 days via Carrier, once produced",
+            "id": "reg"
+          },
+          {
+            "name": "express shipping",
+            "price": "7.50",
+            "text": "Ships in 2-3 days via Carrier, once produced",
+            "id": "exp"
+          }
+        ],
+        "ROW": [
+          {
+            "name": "standard shipping",
+            "price": "12.00",
+            "text": "Ships in 5-14 days via USPS, once produced",
+            "id": "reg"
+          }
+        ]
+      }
+    },
+    "TSHIRTCOTLARGT": {
+      "price": "14.99",
+      "shipping": {
+        "US": [
+          {
+            "name": "standard shipping",
+            "price": "5.00",
+            "text": "Ships in 3-5 days via USPS, once produced",
+            "id": "reg"
+          }
+        ],
+        "CA": [
+          {
+            "name": "standard shipping",
+            "price": "12.00",
+            "text": "Ships in 5-14 days via USPS, once produced",
+            "id": "reg"
+          }
+        ],
+        "EU": [
+          {
+            "name": "standard shipping",
+            "price": "12.00",
+            "text": "Ships in 5-14 days via USPS, once produced",
+            "id": "reg"
+          }
+        ],
+        "IL": [
+          {
+            "name": "standard shipping",
+            "price": "2.50",
+            "text": "Ships in 3-10 days via Carrier, once produced",
+            "id": "reg"
+          },
+          {
+            "name": "express shipping",
+            "price": "7.50",
+            "text": "Ships in 2-3 days via Carrier, once produced",
+            "id": "exp"
+          }
+        ],
+        "ROW": [
+          {
+            "name": "standard shipping",
+            "price": "12.00",
+            "text": "Ships in 5-14 days via USPS, once produced",
+            "id": "reg"
+          }
+        ]
+      }
+    },
+    "TSHIRTCOTXLTTT": {
+      "price": "14.99",
+      "shipping": {
+        "US": [
+          {
+            "name": "standard shipping",
+            "price": "5.00",
+            "text": "Ships in 3-5 days via USPS, once produced",
+            "id": "reg"
+          }
+        ],
+        "CA": [
+          {
+            "name": "standard shipping",
+            "price": "12.00",
+            "text": "Ships in 5-14 days via USPS, once produced",
+            "id": "reg"
+          }
+        ],
+        "EU": [
+          {
+            "name": "standard shipping",
+            "price": "12.00",
+            "text": "Ships in 5-14 days via USPS, once produced",
+            "id": "reg"
+          }
+        ],
+        "IL": [
+          {
+            "name": "standard shipping",
+            "price": "7.00",
+            "text": "Ships in 5-14 days via IPost, once produced",
+            "id": "reg"
+          }
+        ],
+        "ROW": [
+          {
+            "name": "standard shipping",
+            "price": "12.00",
+            "text": "Ships in 5-14 days via USPS, once produced",
+            "id": "reg"
+          }
+        ]
+      }
+    },
+    "TSHIRTCOTXXLTT": {
+      "price": "14.99",
+      "shipping": {
+        "US": [
+          {
+            "name": "standard shipping",
+            "price": "5.00",
+            "text": "Ships in 3-5 days via USPS, once produced",
+            "id": "reg"
+          }
+        ],
+        "CA": [
+          {
+            "name": "standard shipping",
+            "price": "12.00",
+            "text": "Ships in 5-14 days via USPS, once produced",
+            "id": "reg"
+          }
+        ],
+        "EU": [
+          {
+            "name": "standard shipping",
+            "price": "12.00",
+            "text": "Ships in 5-14 days via USPS, once produced",
+            "id": "reg"
+          }
+        ],
+        "IL": [
+          {
+            "name": "standard shipping",
+            "price": "2.50",
+            "text": "Ships in 3-10 days via Carrier, once produced",
+            "id": "reg"
+          },
+          {
+            "name": "express shipping",
+            "price": "7.50",
+            "text": "Ships in 2-3 days via Carrier, once produced",
+            "id": "exp"
+          }
+        ],
+        "ROW": [
+          {
+            "name": "standard shipping",
+            "price": "12.00",
+            "text": "Ships in 5-14 days via USPS, once produced",
+            "id": "reg"
+          }
+        ]
+      }
+    },
+    "CNVS141401CWB8":{
+      "price": "52.99",
+      "shipping": {
+        "US": [
+          {
+            "name": "express shipping",
+            "price": "12.59",
+            "text": "Ships in 1-5 days via Fedex, once produced",
+            "id": "exp"
+          }
+        ],
+        "CA": [
+          {
+            "name": "express shipping",
+            "price": "39.69",
+            "text": "Ships in 1-3 days via Fedex, once produced",
+            "id": "exp"
+          }
+        ],
+        "EU": [
+          {
+            "name": "express shipping",
+            "price": "53.61",
+            "text": "Ships in 2-4 days via DHL, once produced",
+            "id": "exp"
+          }
+        ],
+        "IL": [
+          {
+            "name": "express shipping",
+            "price": "0.00",
+            "text": "Ships in 3-6 days via DHL, once produced",
+            "id": "exp"
+          }
+        ],
+        "ROW": [
+          {
+            "name": "express shipping",
+            "price": "54.91",
+            "text": "Ships in 3-5 days via DHL, once produced",
+            "id": "exp"
+          }
+        ]
+      }
+    },
+    "CNVS101001CWB9":{
+      "price": "36.99",
+      "shipping": {
+        "US": [
+          {
+            "name": "express shipping",
+            "price": "11.73",
+            "text": "Ships in 1-5 days via Fedex, once produced",
+            "id": "exp"
+          }
+        ],
+        "CA": [
+          {
+            "name": "express shipping",
+            "price": "46.09",
+            "text": "Ships in 1-3 days via Fedex, once produced",
+            "id": "exp"
+          }
+        ],
+        "EU": [
+          {
+            "name": "express shipping",
+            "price": "54.63",
+            "text": "Ships in 2-4 days via DHL, once produced",
+            "id": "exp"
+          }
+        ],
+        "IL": [
+          {
+            "name": "express shipping",
+            "price": "0.00",
+            "text": "Ships in 3-6 days via DHL, once produced",
+            "id": "exp"
+          }
+        ],
+        "ROW": [
+          {
+            "name": "express shipping",
+            "price": "57.02",
+            "text": "Ships in 3-5 days via DHL, once produced",
+            "id": "exp"
+          }
+        ]
+      }
+    },
+    "CMUG11OZSQRMUG": {
+      "price": "8.99",
+      "shipping": {
+        "US": [
+          {
+            "name": "standard shipping",
+            "price": "6.00",
+            "text": "Ships in 3-5 days via USPS, once produced",
+            "id": "reg"
+          }
+        ],
+        "CA": [
+          {
+            "name": "standard shipping",
+            "price": "15.00",
+            "text": "Ships in 5-14 days via USPS, once produced",
+            "id": "reg"
+          }
+        ],
+        "EU": [
+          {
+            "name": "standard shipping",
+            "price": "15.00",
+            "text": "Ships in 5-14 days via USPS, once produced",
+            "id": "reg"
+          }
+        ],
+        "IL": [
+          {
+            "name": "standard shipping",
+            "price": "7.00",
+            "text": "Ships in 5-14 days via Israeli Post, once produced",
+            "id": "reg"
+          }
+        ],
+        "ROW": [
+          {
+            "name": "standard shipping",
+            "price": "15.00",
+            "text": "Ships in 5-14 days via USPS, once produced",
+            "id": "reg"
+          }
+        ]
+      }
+    },
+    "TTE12X12TOTE10": {
+      "price": "29.99",
+      "shipping": {
+        "US": [
+          {
+            "name": "standard shipping",
+            "price": "5.00",
+            "text": "Ships in 3-5 days via USPS, once produced",
+            "id": "reg"
+          }
+        ],
+        "CA": [
+          {
+            "name": "standard shipping",
+            "price": "12.00",
+            "text": "Ships in 5-14 days via USPS, once produced",
+            "id": "reg"
+          }
+        ],
+        "EU": [
+          {
+            "name": "standard shipping",
+            "price": "12.00",
+            "text": "Ships in 5-14 days via USPS, once produced",
+            "id": "reg"
+          }
+        ],
+        "IL": [
+          {
+            "name": "standard shipping",
+            "price": "7.00",
+            "text": "Ships in 5-14 days via Israeli Post, once produced",
+            "id": "reg"
+          }
+        ],
+        "ROW": [
+          {
+            "name": "standard shipping",
+            "price": "12.00",
+            "text": "Ships in 5-14 days via USPS, once produced",
+            "id": "reg"
+          }
+        ]
+      }
+    }
+  }
+}

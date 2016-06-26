@@ -1,0 +1,8 @@
+{
+  "share":{
+    "enabled":false,
+    "discount":true,
+    "isOwnerMessage":"Now you can order beautiful photo-products from my Facebook page store!",
+    "isOwnerButtonMessage":"Share & Promote your store"
+  }
+}

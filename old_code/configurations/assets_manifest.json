@@ -1,0 +1,186 @@
+{
+    "scripts":[
+        "files/scripts/p_framework.js",
+        "files/scripts/script.js"
+    ],
+    "css":[
+        "files/css/style.css"
+    ],
+    "partialBaseURL":"files/partials/",
+    "staticsBaseURL":"files/images/",
+    "partials":[
+        "store_pg2_mdl.html",
+        "store_sdl.html",
+        "button.html",
+        "step1.html",
+        "step2.html",
+        "step3.html",
+        "step4.html",
+        "step5.html",
+        "step6.html",
+        "step3.5.html",
+        "store.html",
+        "store_pg1.html"
+    ],
+    "statics": {
+        "alwaysLoad": [
+            "pixtermeWhiteLogo.png",
+            "pixtermeLogo.png",
+
+            "cc.png",
+            "arrow_left.png",
+            "arrow_right.png",
+            "x.png",
+            "miniLoader.gif",
+            "checkout_paypal.png",
+            "loader.gif",
+            "cropZoomIn.png",
+            "cropZoomOut.png",
+            "cropRotateLeft.png",
+            "revertCrop.png",
+            "rotateProduct.png",
+
+            "magnet/preview3x3.png",
+            "magnet/preview_6x4.png",
+            "magnet/previewImage.png",
+
+            "mug/previewImage.png"
+        ],
+        "default": [
+            "modal-bg.png",
+            "checkout_card.png",
+            "seasonal/specialOffer.jpg",
+
+            "banners/pixter_iphone5_oss.png",
+            "banners/pixter_magnet_oss.png",
+            "banners/pixter_canvas_oss.png",
+            "banners/pixter_flatcard_oss.png",
+            "banners/pixter_mug_oss.png",
+            "banners/pixter_tshirt_oss.png",
+
+            "cases/casePreview.png",
+            "mug/previewImage.png",
+            "tshirt/previewImage.png",
+            "canvases/canvasTemplate.png",
+            "magnet/previewImage.png",
+            "flatcard/previewImage.png",
+
+            "canvases/10x14/preview.png",
+            "canvases/14x14/preview.png",
+            "canvases/14x10/preview.png",
+            "canvases/12x8/preview.png",
+            "canvases/8x12/preview.png",
+            "canvases/16x20/preview.png",
+            "canvases/20x16/preview.png",
+            "canvases/16x24/preview.png",
+            "canvases/24x16/preview.png",
+            "canvases/30x20/preview.png",
+            "canvases/20x30/preview.png",
+
+            "crop_canvas812.png",
+            "crop_canvas128.png",
+            "crop_canvas1410.png",
+            "crop_canvas1014.png",
+            "crop_canvas1414.png",
+            "crop_canvas2016.png",
+            "crop_canvas1620.png",
+            "crop_canvas2416.png",
+            "crop_canvas1624.png",
+            "crop_canvas3020.png",
+            "crop_canvas2030.png",
+
+            "cases/iPhone4/preview.png",
+            "cases/iPhone5/preview.png",
+            "cases/iPhone5C/preview.png",
+            "cases/iPhone6/preview.png",
+            "cases/iPhone6plus/preview.png",
+            "cases/SamsungS3/preview.png",
+            "cases/SamsungS4/preview.png",
+            "cases/SamsungS5/preview.png",
+            "cases/SamsungS6/preview.png",
+
+            "crop_iphone4caseTemplate.png",
+            "crop_iphone5caseTemplate.png",
+            "crop_iphone6caseTemplate.png",
+            "crop_iphone6pluscaseTemplate.png",
+            "crop_samsungS3caseTemplate.png",
+            "crop_samsungS4caseTemplate.png",
+            "crop_samsungS5caseTemplate.png",
+            "crop_samsungS6caseTemplate.png"
+        ],
+        "SDKSLIDELY":{
+            "defaultApi" : "SDKSLIDELYREG",
+            "alwaysLoad" : [
+                "checkout_card_slidly.png",
+
+                "mug/previewImage.png",
+
+                "tshirt/previewImage.png",
+
+                "toteBag/previewImage.png",
+
+                "canvases/14x14/preview.png",
+
+                "magnet/preview3x3.png",
+
+                "flatcard/preview5x5.png",
+
+                "tshirt/previewImage_3x2.png",
+                "magnet/preview_6x4.png",
+                "flatcard/previewImage_3x2.png",
+                "cases/casePreview_3x2.png",
+                "canvases/12x8/preview.png"
+
+
+
+            ],
+            "SDKSLIDELY":[
+                "tshirt/previewImage.png",
+
+                "toteBag/previewImage.png",
+
+                "canvases/14x14/preview.png",
+
+                "magnet/preview3x3.png",
+
+                "flatcard/preview5x5.png"
+            ],
+            "SDKSLIDELY3X2":[
+                "tshirt/previewImage_3x2.png",
+                "magnet/preview_6x4.png",
+                "flatcard/previewImage_3x2.png",
+
+                "canvases/12x8/preview.png",
+                "canvases/8x12/preview.png",
+                "canvases/14x10/preview.png",
+                "canvases/10x14/preview.png",
+                "canvases/16x24/preview.png",
+                "canvases/24x16/preview.png",
+                "canvases/30x20/preview.png",
+                "canvases/20x30/preview.png",
+
+                "cases/iPhone4/landscapePreview_3x2.png",
+                "cases/iPhone5/landscapePreview_3x2.png",
+                "cases/iPhone5C/landscapePreview_3x2.png",
+                "cases/iPhone6/landscapePreview_3x2.png",
+                "cases/iPhone6plus/landscapePreview_3x2.png",
+                "cases/SamsungS3/landscapePreview_3x2.png",
+                "cases/SamsungS4/landscapePreview_3x2.png",
+                "cases/SamsungS5/landscapePreview_3x2.png",
+                "cases/SamsungS6/landscapePreview_3x2.png",
+
+                "cases/iPhone4/crop_Template_3x2.png",
+                "cases/iPhone5/crop_Template_3x2.png",
+                "cases/iPhone5C/crop_Template_3x2.png",
+                "cases/iPhone6/crop_Template_3x2.png",
+                "cases/iPhone6plus/crop_Template_3x2.png",
+                "cases/SamsungS3/crop_Template_3x2.png",
+                "cases/SamsungS4/crop_Template_3x2.png",
+                "cases/SamsungS5/crop_Template_3x2.png",
+                "cases/SamsungS6/crop_Template_3x2.png"
+            ]
+        }
+    }
+
+
+}

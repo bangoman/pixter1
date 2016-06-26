@@ -1,0 +1,327 @@
+#p_Store{
+   canvas {
+    image-rendering: optimize-contrast;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: -o-crisp-edges;
+    image-rendering: optimize-contrast;
+    -ms-interpolation-mode: nearest-neighbor;
+    position: fixed;
+    top:0;
+    right:0;
+     &#cropCanvas{
+       display: none;
+     }
+  }
+  #cropImageContainer{
+    height: 310px;
+    width: 500px;
+    overflow: hidden;
+    position: relative;
+    margin: 0 25px 0;
+    &.iphone4case_r #cropRect,&.iphone5case_r #cropRect,&.iphone6case_r #cropRect,&.iphone5Ccase_r #cropRect,&.samsungS3case_r #cropRect,&.samsungS4case_r #cropRect,&.samsungS5case_r #cropRect {
+      border:1px solid transparent;
+      background-size: cover !important;
+    }
+    &.iphone4case #cropRect{
+      background:url("#{$extensionID}/images/crop_iphone4caseTemplate.png") no-repeat center center;
+      border: 1px solid transparent;
+      background-size: cover !important;
+    }
+    &.iphone4case_r #cropRect{
+      background:url("#{$extensionID}/images/cases/iPhone4/crop_iphone4caseTemplate_r.png") no-repeat center center;
+    }
+    &.iphone5case_r #cropRect{
+      background:url("#{$extensionID}/images/cases/iPhone5/crop_iphone5caseTemplate_r.png") no-repeat center center;
+    }
+    &.iphone5Ccase_r #cropRect{
+      background:url("#{$extensionID}/images/cases/iPhone5C/crop_iphone5CcaseTemplate_r.png") no-repeat center center;
+      background-position: 50% 0px !important;
+
+    }
+    &.iphone6case_r #cropRect{
+      background:url("#{$extensionID}/images/cases/iPhone6/crop_iphone6caseTemplate_r.png") no-repeat center center;
+    }
+    &.iphone6pluscase_r #cropRect{
+      background:url("#{$extensionID}/images/cases/iPhone6plus/crop_iphone6pluscaseTemplate_r.png") no-repeat center center;
+      background-size: 97% !important;
+      border: 1px solid transparent;
+    }
+    &.iphone5case #cropRect{
+      background:url("#{$extensionID}/images/crop_iphone5caseTemplate.png") no-repeat center center;
+      border: 1px solid transparent;
+      background-size: cover !important;
+    }
+    &.iphone6case #cropRect{
+      background:url("#{$extensionID}/images/crop_iphone6caseTemplate.png") no-repeat center center;
+      border: 1px solid transparent;
+      background-size: cover !important;
+    }
+    &.iphone5Ccase #cropRect{
+      background:url("#{$extensionID}/images/crop_iphone5CcaseTemplate.png") no-repeat center center;
+      border: 1px solid transparent;
+      background-size: cover !important;
+    }
+    &.iphone6pluscase #cropRect{
+      background:url("#{$extensionID}/images/crop_iphone6pluscaseTemplate.png") no-repeat center center;
+      border: 1px solid transparent;
+      background-size: cover !important;
+    }
+    &.samsungS3case #cropRect{
+      background:url("#{$extensionID}/images/crop_samsungS3caseTemplate.png") no-repeat center center;
+      border: 1px solid transparent;
+      background-size: cover !important;
+    }
+    &.samsungS4case #cropRect{
+      background:url("#{$extensionID}/images/crop_samsungS4caseTemplate.png") no-repeat center center;
+      border: 1px solid transparent;
+      background-size: cover !important;
+    }
+    &.samsungS5case #cropRect{
+      background:url("#{$extensionID}/images/crop_samsungS5caseTemplate.png") no-repeat center center;
+      border: 1px solid transparent;
+      background-size: cover !important;
+    }
+    &.samsungS6case #cropRect{
+      background:url("#{$extensionID}/images/crop_samsungS6caseTemplate.png") no-repeat center center;
+      border: 1px solid transparent;
+      background-size: cover !important;
+    }
+    &.samsungS6Edgecase #cropRect{
+      background:url("#{$extensionID}/images/crop_samsungS6caseTemplate.png") no-repeat center center;
+      border: 1px solid transparent;
+      background-size: cover !important;
+    }
+    &.samsungS3case_r #cropRect{
+      background:url("#{$extensionID}/images/cases/SamsungS3/crop_samsungS3caseTemplate_r.png") no-repeat center center;
+      border: 1px solid transparent;
+      background-size: cover !important;
+    }
+    &.samsungS4case_r #cropRect{
+      background:url("#{$extensionID}/images/cases/SamsungS4/crop_samsungS4caseTemplate_r.png") no-repeat center center;
+      border: 1px solid transparent;
+      background-size: cover !important;
+    }
+    &.samsungS5case_r #cropRect{
+      background:url("#{$extensionID}/images/cases/SamsungS5/crop_samsungS5caseTemplate_r.png") no-repeat center center;
+      border: 1px solid transparent;
+      background-size: cover !important;
+    }
+    &.canvas1014 #cropRect{
+      background:url("#{$extensionID}/images/crop_canvas1014.png") no-repeat center center;
+      border: 1px solid transparent;
+      background-size: 141% !important;
+    }
+    &.canvas1410 #cropRect{
+      background:url("#{$extensionID}/images/crop_canvas1410.png") no-repeat center center;
+      border: 1px solid transparent;
+      background-size: cover !important;
+    }
+    &.canvas1414 #cropRect{
+      background:url("#{$extensionID}/images/crop_canvas1414.png") no-repeat center center;
+      border: 1px solid transparent;
+      background-size: cover !important;
+    }
+    &.canvas2016 #cropRect{
+      background:url("#{$extensionID}/images/crop_canvas2016.png") no-repeat center center;
+      border: 1px solid transparent;
+      background-size: 108% !important;
+    }
+    &.canvas1620 #cropRect{
+      background:url("#{$extensionID}/images/crop_canvas1620.png") no-repeat center center;
+      border: 1px solid transparent;
+      background-size: cover !important;
+    }
+
+    &.canvas1624 #cropRect{
+      background:url("#{$extensionID}/images/crop_canvas1624.png") no-repeat center center;
+      border: 1px solid transparent;
+      background-size: 141% !important;
+    }
+    &.canvas2416 #cropRect{
+      background:url("#{$extensionID}/images/crop_canvas2416.png") no-repeat center center;
+      border: 1px solid transparent;
+      background-size: 103% !important;
+    }
+    &.canvas3020 #cropRect{
+      background:url("#{$extensionID}/images/crop_canvas3020.png") no-repeat center center;
+      border: 1px solid transparent;
+      background-size: 108% !important;
+      background-position: 50% 49% !important;
+    }
+    &.canvas2030 #cropRect{
+      background:url("#{$extensionID}/images/crop_canvas2030.png") no-repeat center center;
+      border: 1px solid transparent;
+      background-size: 165%;
+      background-position: 50% 40% !important;
+    }
+    &.canvas128 #cropRect{
+      background:url("#{$extensionID}/images/crop_canvas128.png") no-repeat center center;
+      border: 1px solid transparent;
+      background-size: 99% !important;
+
+    }
+    &.canvas812 #cropRect{
+      background:url("#{$extensionID}/images/crop_canvas812.png") no-repeat center center;
+      border: 1px solid transparent;
+      background-size: 145% !important;
+      background-position: 50% 45%;
+    }
+    /*****************************3x2 store crop tool********************************/
+
+    &.iphone4case_3x2 #cropRect,&.iphone5case_3x2 #cropRect,&.iphone6case_3x2 #cropRect,
+    &.iphone5Ccase_3x2 #cropRect,&.iphone6pluscase_3x2 #cropRect, &.samsungS3case_3x2 #cropRect,
+    &.samsungS4case_3x2 #cropRect, &.samsungS5case_3x2 #cropRect , &.samsungS6case_3x2 #cropRect, &.samsungS6Edgecase_3x2 #cropRect {
+      border:1px solid transparent;
+      background-size: cover !important;
+    }
+    &.iphone4case_3x2 #cropRect {
+      background:url("#{$extensionID}/images/cases/iPhone4/crop_Template_3x2.png") no-repeat center center;
+    }
+    &.iphone5case_3x2 #cropRect {
+      background:url("#{$extensionID}/images/cases/iPhone5/crop_Template_3x2.png") no-repeat center center;
+    }
+    &.iphone5Ccase_3x2 #cropRect {
+      background:url("#{$extensionID}/images/cases/iPhone5C/crop_Template_3x2.png") no-repeat center center;
+    }
+    &.iphone6case_3x2 #cropRect {
+      background:url("#{$extensionID}/images/cases/iPhone6/crop_Template_3x2.png") no-repeat center center;
+    }
+    &.iphone6pluscase_3x2 #cropRect {
+      background:url("#{$extensionID}/images/cases/iPhone6plus/crop_Template_3x2.png") no-repeat center center;
+    }
+    &.samsungS3case_3x2 #cropRect{
+      background:url("#{$extensionID}/images/cases/SamsungS3/crop_Template_3x2.png") no-repeat center center;
+    }
+    &.samsungS4case_3x2 #cropRect{
+      background:url("#{$extensionID}/images/cases/SamsungS4/crop_Template_3x2.png") no-repeat center center;
+    }
+    &.samsungS5case_3x2 #cropRect{
+      background:url("#{$extensionID}/images/cases/SamsungS5/crop_Template_3x2.png") no-repeat center center;
+    }
+    &.samsungS6case_3x2 #cropRect, &.samsungS6Edgecase_3x2 #cropRect{
+      background:url("#{$extensionID}/images/cases/SamsungS5/crop_Template_3x2.png") no-repeat center center;
+    }
+
+  }
+  #cropWindow{
+    height:100%;
+    width:100%;
+    h2 {
+      font-weight: normal;
+      font-family: $font-family;
+      font-size: 18px;
+      color: #00b22d;
+      padding: 25px 25px 10px;
+    }
+  }
+  #cropOuterContainer {
+    position: relative;
+    height: 310px;
+  }
+  #cropRect {
+    border: 1px solid white;
+    position: absolute;
+    cursor: pointer;
+
+    &:after{
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 5999;
+      opacity: .5;
+      filter: alpha(opacity=5);
+      box-shadow: 0 0 0 500px #666666;;
+    }
+  }
+  #cropBackgroundImage {
+    /*position: absolute;
+    top: 0;
+    left: 0;*/
+    cursor: hand;
+    zoom: 1;
+    border: 1px solid transparent !important;
+  }
+  #cropControls {
+    position: relative;
+    z-index: 100;
+    color: white;
+    height:310px;
+    background: black;
+    list-style-type: none;
+    margin: 0 5% 0 0;
+    float: right;
+    width: 60px;
+    li {
+      width: 100%;
+      height:30px;
+      margin:23.75px 0;
+      text-align: center;
+      font-size: 20px;
+      float: left;
+      cursor: pointer;
+      &#zoomIncrease{
+        background:url("#{$extensionID}/images/cropZoomIn.png") no-repeat center center;
+      }
+      &#zoomDecrease{
+        background:url("#{$extensionID}/images/cropZoomOut.png") no-repeat center center;
+
+      }
+      &#rotateLeft{
+        background:url("#{$extensionID}/images/cropRotateLeft.png")  no-repeat center center;
+        background-size: 45%;
+        position: relative;
+        left: 1px;
+      }
+      &#rotateRight{
+        background:url("#{$extensionID}/images/cropRotateLeft.png")  no-repeat center center;
+        background-size: 45%;
+        position: relative;
+        left:-1px;
+        -webkit-transform:rotateY(180Deg);
+        transform:rotateY(180Deg);
+      }
+    }
+  }
+
+  #cropWindowButtonContainer{
+    width:564px;
+    padding:0 25px;
+  }
+  #applyCrop {
+    float:right;
+    margin-left:14px;
+    width:82px;
+  }
+  #cancelCrop{
+    float:right;
+  }
+  #revertCrop{
+    float:left;
+    width:190px;
+    cursor: pointer;
+    height:17px;
+    display: block;
+    position: relative;
+    top: 8px;
+    .revertCropImage {
+      background:url("#{$extensionID}/images/revertCrop.png") no-repeat center center;
+      display: inline-block;
+      height: 13px;
+      width: 9px;
+      position: relative;
+      left: 2px;
+      top: 2px;
+    }
+    .revertCropText {
+      color: #999;
+      text-decoration: underline;
+      font-size: 17px;
+      cursor: pointer;
+    }
+  }
+
+}

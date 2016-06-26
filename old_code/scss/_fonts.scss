@@ -1,0 +1,28 @@
+
+
+@font-face {
+  font-family: 'CalibriRegular';
+  src: url('#{$extensionID}/fonts/CalibriRegular.eot');
+  src: url('#{$extensionID}/fonts/CalibriRegular.eot?#iefix') format('embedded-opentype'),
+  url('#{$extensionID}/fonts/CalibriRegular.woff') format('woff'),
+  url('#{$extensionID}/fonts/CalibriRegular.ttf') format('truetype'),
+  url('#{$extensionID}/fonts/CalibriRegular.otf') format('opentype'),
+  url('#{$extensionID}/fonts/CalibriRegular.svg#CalibriRegular') format('svg');
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  unicode-range: U+000D-25CA;
+  @import url("http://fast.fonts.net/t/1.css?apiType=css&projectid=75b13f40-4397-41a2-bd77-d01aa7326235");
+}
+
+$font-family: Calibri, 'CalibriRegular', 'Gill Sans', Verdana, Arial;
+
+@import url('https://fonts.googleapis.com/css?family=Dosis:400,500');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
+
+
+#preloadFontSpan{
+  font-size:1px;
+  font-family: $font-family;
+  visibility:hidden;
+}

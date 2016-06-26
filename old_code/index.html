@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pixter - Dev site</title>
+	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="stylesheet" href="testing/css/style.css">
+	<link href="//fonts.googleapis.com/css?family=Dosis:200,400,600" rel="stylesheet" type="text/css">
+	<style>
+
+	</style>
+	<script type="text/javascript" src="testing/script/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="testing/script/filterous.js"></script>
+	<script type="text/javascript" src="testing/script/filterousEffects.js"></script>
+</head>
+<body style="background:rgba(0,0,0,0.6); font-family: 'Times New Roman';">
+<div class="page_header">
+	<div class="page_logo"></div>
+	<h2 class="page_title">Easy Effects</h2>
+
+	<h3 class="page_name_title">SDK Implementation Demo</h3>
+</div>
+
+<div id="contentContainer">
+	<div id="content">
+		<div class="effects_bar">
+			<div class="effect file_upload">Upload</div>
+			<div class="effect memphis">Emboss</div>
+			<div class="effect grayscale">Black &amp; White</div>
+			<div class="effect rockstar">Rockstar</div>
+			<div class="effect reset">Revert</div>
+		</div>
+		<!--<canvas id="demo_canvas" height="500" width="500"></canvas>-->
+		<div class="image_container">
+			<img class="original_image" src=""/>
+		</div>
+		<div id="sideBarContainer"></div>
+		<br style="clear:both;"/>
+		<div style="width: 50%;margin: 0 auto; text-align: left	">
+			<span >Select API</span>
+			<select id="apiSelect" onchange="changeApi(this)" style="margin: 0 1em">
+				<option value="SDKSLIDELY">SDK SLIDELY</option>
+				<option value="SDKPIXDEMO03">Pixter demo</option>
+				<option value="SDKPIXSTORE">SDK PIXSTORE</option>
+				<option value="SRH52UW01V">FaceBook test</option>
+				<option value="PFBSEIMM1V">Edden</option>
+				<!--TODO Add WordPress json-->
+				<option value="WP6V9K001A">Word press (Little duck)</option>
+				<option value="PFBSEIMM1V">FaceBook - Edden</option>
+			</select>
+			<span class="apiChangedText" style="visibility: hidden">Api Changed succesfully !!! </span>
+			</br>
+			<span style="margin-right: 1em;">FitToRatio</span>
+			<select id="fitToRatioSelect" onchange="if(this.value === 'true'){fitToRatio = true;}else{fitToRatio = false;}">
+				<option value='true'>True</option>
+				<option value='false'>False</option>
+			</select>
+		</div>
+		<button id="initSdkBtn" onclick="pLoader.initSDK(dataURL, null, fitToRatio);
+		" style="padding: 1em; background: blue ; color: white; border-radius: 10px; font-size: 20px;">INIT SDK</button>
+		<div class="image-picker">
+			<img src="testing/images/1x1.jpg" onclick="setImage(this)">
+			<img src="testing/images/3x2.jpg" onclick="setImage(this)">
+			<img src="testing/images/3x2_collage.jpg" onclick="setImage(this)">
+			<img src="testing/images/4x3.jpg" onclick="setImage(this)">
+		</div>
+	</div>
+	<div class="footer"></div>
+</div>
+<script>
+
+	var demoImg = $('.original_image'); //new Image();
+	var filters;
+	demoImg.attr('crossOrigin', 'anonymous');
+	demoImg.on('load', function () {
+		var top = 0;
+		var left = 0;
+		if (demoImg.height() < 508) {
+			top = ((508 - demoImg.height()) / 2) - 4;
+		}
+		if (demoImg.width() < 670) {
+			left = ((670 - demoImg.width()) / 2) - 4;
+		}
+		demoImg.css({'top': top + 'px', 'left': left + 'px'});
+		filters = new Filterous(demoImg[0], 'jpeg');
+		filters.render();
+		$('#filteredPhoto').css({'top': top + 'px', 'left': left + 'px'});
+		window.dataURL = $('#filteredPhoto')[0].src;
+		if (typeof pLoader != 'undefined' && typeof pLoader.showSideBar != 'undefined') {
+			pLoader.showSideBar('#sideBarContainer', dataURL, clickCB);
+		}
+	});
+	demoImg.attr('src', 'testing/images/demo.jpg');
+
+	var renderCb = function () {
+		if (typeof pLoader != 'undefined' && typeof pLoader.showSideBar != 'undefined') {
+			//window.dataURL = document.getElementById('demo_canvas').toDataURL("image/jpeg");
+			//pLoader.showSideBar('#sideBarContainer', , clickCB);
+		}
+	};
+
+	$('#content').find('.effects_bar .effect.file_upload').on('click', function () {
+		console.log('hello');
+		//file upload
+		var $fileInput = $('<input type="file" id="fileInput">');
+		$fileInput.on('change', function () {
+			var file = $fileInput[0].files[0];
+			var reader = new FileReader();
+			reader.onload = function (e) {
+				demoImg.attr('src', reader.result);
+			};
+			reader.readAsDataURL(file);
+		});
+		$fileInput.click();
+	});
+
+	$('#content').find('.effects_bar .effect.memphis').on('click', function () {
+		resetToOriginal();
+		filters.filterImage('rgbAdjust', [1.2, 1, 1.1]);
+		filters.filterImage('convolute',
+				[-2, -1, 0,
+					-1, 1, 1,
+					0, 1, 2]
+		);
+		filters.render();
+		window.dataURL = $('#filteredPhoto')[0].src;
+		if (typeof pLoader != 'undefined' && typeof pLoader.showSideBar != 'undefined') {
+			pLoader.showSideBar('#sideBarContainer', dataURL, clickCB);
+		}
+
+	});
+	$('#content').find('.effects_bar .effect.grayscale').on('click', function () {
+		resetToOriginal();
+		filters.filterImage('grayscale');
+		filters.render();
+		window.dataURL = $('#filteredPhoto')[0].src;
+		if (typeof pLoader != 'undefined' && typeof pLoader.showSideBar != 'undefined') {
+			pLoader.showSideBar('#sideBarContainer', dataURL, clickCB);
+		}
+
+	});
+	$('#content').find('.effects_bar .effect.rockstar').on('click', function () {
+		var rockstarLayer = new Image();
+		rockstarLayer.src = './script/effects/bokeh-stars.png';
+
+		resetToOriginal();
+		filters.applyLayer(rockstarLayer);
+		filters.render();
+		window.dataURL = $('#filteredPhoto')[0].src;
+		if (typeof pLoader != 'undefined' && typeof pLoader.showSideBar != 'undefined') {
+			pLoader.showSideBar('#sideBarContainer', dataURL, clickCB);
+		}
+
+	});
+	$('#content').find('.effects_bar .effect.reset').on('click', function () {
+		resetToOriginal();
+	});
+
+	function resetToOriginal() {
+		var top = 0;
+		var left = 0;
+		if (demoImg.height() < 508) {
+			top = ((508 - demoImg.height()) / 2) - 4;
+		}
+		if (demoImg.width() < 670) {
+			left = ((670 - demoImg.width()) / 2) - 4;
+		}
+		filters = new Filterous(demoImg[0], 'jpeg');
+		filters.render();
+		$('#filteredPhoto').css({'top': top + 'px', 'left': left + 'px'});
+		window.dataURL = $('#filteredPhoto')[0].src;
+		if (typeof pLoader != 'undefined' && typeof pLoader.showSideBar != 'undefined') {
+			pLoader.showSideBar('#sideBarContainer', dataURL, clickCB);
+		}
+	}
+</script>
+<script>
+	var clickCB = function () {
+		pLoader.initSDK(dataURL, null, fitToRatio);
+	};
+	var initDone = function () {
+		pLoader.showSideBar('#sideBarContainer', dataURL, clickCB);
+		//delete pLoader.data.brandingDetails.marketingData;
+	};
+
+	var body=document.getElementsByTagName("body")[0],scriptTag=document.createElement("script");
+	scriptTag.setAttribute("type","text/javascript");
+	scriptTag.setAttribute("src","dist/loader.js");
+	body.appendChild(scriptTag);
+
+	var onDemand = true;
+	var fitToRatio = true;
+	var api_key = document.getElementById("apiSelect").value;
+	if(api_key.substr(0,3) === 'PW6'){
+		onDemand = false;
+	}
+
+	scriptTag.onload=function(){
+		initPloaderApi();
+	};
+
+
+	function initPloaderApi(){
+		pLoader.initiate(api_key,null,true,onDemand,initDone,{lang: 'en_US',currency:'USD'});
+	}
+
+	function setImage(image){
+		demoImg.attr('src', image.src)
+	}
+	function changeApi(apiSelect){
+		api_key = apiSelect.value;initPloaderApi();
+		$('.apiChangedText').css('visibility','visible');
+		reinitStore();
+		setTimeout(function(){
+			$('.apiChangedText').css('visibility','hidden');
+		},2000);
+	}
+	function reinitStore (){
+		//disable the button
+		console.log('Reinitializing Store');
+		$('.p_side_banner_action_button, #initSdkBtn').attr('disabled', true);
+		$('.p_side_banner_action_button, #initSdkBtn').css('background', 'grey');
+		pLoader.initiate(api_key,null,true,onDemand, function () {
+			setTimeout(function(){
+				$('.p_side_banner_action_button').css('background-color', '#e83fa3');
+				$('#initSdkBtn').css('background-color', 'blue');
+				$('.p_side_banner_action_button, #initSdkBtn').attr('disabled', false);
+			},500);
+
+		});
+	}
+</script>
+</body>
+</html>

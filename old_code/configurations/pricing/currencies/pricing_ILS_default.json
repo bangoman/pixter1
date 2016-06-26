@@ -1,0 +1,4470 @@
+{
+  "categories": {
+    "mug": {
+      "price": "34.58"
+    },
+    "mug_3x2": {
+      "price": "34.58"
+    },
+    "mug_square": {
+      "price": "34.58"
+    },
+    "canvas_white": {
+      "price": "134.60"
+    },
+    "canvas": {
+      "price": "134.60"
+    },
+    "canvas_white_3x2": {
+      "price": "134.60"
+    },
+    "flatcard_square": {
+      "price": "57.67"
+    },
+    "flatcard": {
+      "price": "57.67"
+    },
+    "flatcard_3x2": {
+      "price": "57.67"
+    },
+    "invitation": {
+      "price": "6.16"
+    },
+    "magnet_square": {
+      "price": "26.89"
+    },
+    "magnet": {
+      "price": "26.89"
+    },
+    "magnet_6x4": {
+      "price": "26.89"
+    },
+    "panel": {
+      "price": "0.04"
+    },
+    "puzzle": {
+      "price": "57.67"
+    },
+    "RSVP": {
+      "price": "6.16"
+    },
+    "iphonecase": {
+      "price": "107.67"
+    },
+    "phonecase_3x2": {
+      "price": "107.67"
+    },
+    "tshirt_3x2": {
+      "price": "57.67"
+    },
+    "tshirt": {
+      "price": "57.67"
+    },
+    "toteBag": {
+      "price": "115.37"
+    }
+  },
+  "products": {
+    "CMUG11OZ111MUG": {
+      "price": "34.58",
+      "shipping": {
+        "US": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 5,
+              "carrier": "USPS"
+            },
+            "price": "23.08",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "CA": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "57.70",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "EU": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "57.70",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "IL": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 10,
+              "carrier": "Israel Post"
+            },
+            "price": "9.62",
+            "name": "standard shipping",
+            "id": "reg"
+          },
+          {
+            "text": "Ships in [minDays]-[maxDays] once produced.",
+            "textVariables": {
+              "minDays": 2,
+              "maxDays": 3,
+              "carrier": "Israel Post Courier service"
+            },
+            "price": "28.85",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "ROW": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "57.70",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ]
+      }
+    },
+    "CMUG11OZ3X2MUG": {
+      "price": "34.58",
+      "shipping": {
+        "US": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 7,
+              "carrier": "USPS"
+            },
+            "price": "23.08",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "CA": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "57.70",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "EU": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "57.70",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "IL": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "26.93",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "ROW": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "57.70",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ]
+      }
+    },
+    "CMUG11OZSQRMUG": {
+      "price": "34.58",
+      "shipping": {
+        "US": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 7,
+              "carrier": "USPS"
+            },
+            "price": "23.08",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "CA": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "57.70",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "EU": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "57.70",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "IL": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "26.93",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "ROW": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "57.70",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ]
+      }
+    },
+    "CNVS081201CWB1": {
+      "price": "134.60",
+      "shipping": {
+        "US": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 1,
+              "maxDays": 5,
+              "carrier": "Fedex"
+            },
+            "price": "43.16",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "CA": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 1,
+              "maxDays": 3,
+              "carrier": "DHL"
+            },
+            "price": "147.41",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "EU": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 2,
+              "maxDays": 4,
+              "carrier": "DHL"
+            },
+            "price": "177.38",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "IL": [
+          {
+            "text": "Ships in [minDays]-[maxDays] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 6,
+              "carrier": "Israel Post Courier service"
+            },
+            "price": "0.00",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "ROW": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 5,
+              "carrier": "DHL"
+            },
+            "price": "190.11",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ]
+      }
+    },
+    "CNVS081201WRE2": {
+      "price": "134.60",
+      "shipping": {
+        "US": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 1,
+              "maxDays": 5,
+              "carrier": "Fedex"
+            },
+            "price": "43.16",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "CA": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 1,
+              "maxDays": 3,
+              "carrier": "DHL"
+            },
+            "price": "147.41",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "EU": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 2,
+              "maxDays": 4,
+              "carrier": "DHL"
+            },
+            "price": "177.38",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "IL": [
+          {
+            "text": "Ships in [minDays]-[maxDays] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 6,
+              "carrier": "Israel Post Courier service"
+            },
+            "price": "0.00",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "ROW": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 5,
+              "carrier": "DHL"
+            },
+            "price": "190.11",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ]
+      }
+    },
+    "CNVS101001CWB9": {
+      "price": "142.30",
+      "shipping": {
+        "US": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 1,
+              "maxDays": 5,
+              "carrier": "Fedex"
+            },
+            "price": "45.12",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "CA": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 1,
+              "maxDays": 3,
+              "carrier": "DHL"
+            },
+            "price": "177.30",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "EU": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 2,
+              "maxDays": 4,
+              "carrier": "DHL"
+            },
+            "price": "210.16",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "IL": [
+          {
+            "text": "Ships in [minDays]-[maxDays] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 6,
+              "carrier": "Israel Post Courier service"
+            },
+            "price": "0.00",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "ROW": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 5,
+              "carrier": "DHL"
+            },
+            "price": "219.35",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ]
+      }
+    },
+    "CNVS101401CWB2": {
+      "price": "142.30",
+      "shipping": {
+        "US": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 1,
+              "maxDays": 5,
+              "carrier": "Fedex"
+            },
+            "price": "45.12",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "CA": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 1,
+              "maxDays": 3,
+              "carrier": "DHL"
+            },
+            "price": "177.30",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "EU": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 2,
+              "maxDays": 4,
+              "carrier": "DHL"
+            },
+            "price": "210.16",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "IL": [
+          {
+            "text": "Ships in [minDays]-[maxDays] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 6,
+              "carrier": "Israel Post Courier service"
+            },
+            "price": "0.00",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "ROW": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 5,
+              "carrier": "DHL"
+            },
+            "price": "219.35",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ]
+      }
+    },
+    "CNVS101401WRE0": {
+      "price": "142.30",
+      "shipping": {
+        "US": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 1,
+              "maxDays": 5,
+              "carrier": "Fedex"
+            },
+            "price": "45.12",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "CA": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 1,
+              "maxDays": 3,
+              "carrier": "DHL"
+            },
+            "price": "177.30",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "EU": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 2,
+              "maxDays": 4,
+              "carrier": "DHL"
+            },
+            "price": "210.16",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "IL": [
+          {
+            "text": "Ships in [minDays]-[maxDays] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 6,
+              "carrier": "Israel Post Courier service"
+            },
+            "price": "0.00",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "ROW": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 5,
+              "carrier": "DHL"
+            },
+            "price": "219.35",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ]
+      }
+    },
+    "CNVS120801CWB1": {
+      "price": "134.60",
+      "shipping": {
+        "US": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 1,
+              "maxDays": 5,
+              "carrier": "Fedex"
+            },
+            "price": "43.16",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "CA": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 1,
+              "maxDays": 3,
+              "carrier": "DHL"
+            },
+            "price": "147.41",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "EU": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 2,
+              "maxDays": 4,
+              "carrier": "DHL"
+            },
+            "price": "177.38",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "IL": [
+          {
+            "text": "Ships in [minDays]-[maxDays] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 6,
+              "carrier": "Israel Post Courier service"
+            },
+            "price": "0.00",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "ROW": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 5,
+              "carrier": "DHL"
+            },
+            "price": "190.11",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ]
+      }
+    },
+    "CNVS120801WRE2": {
+      "price": "134.60",
+      "shipping": {
+        "US": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 1,
+              "maxDays": 5,
+              "carrier": "Fedex"
+            },
+            "price": "43.16",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "CA": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 1,
+              "maxDays": 3,
+              "carrier": "DHL"
+            },
+            "price": "147.41",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "EU": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 2,
+              "maxDays": 4,
+              "carrier": "DHL"
+            },
+            "price": "177.38",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "IL": [
+          {
+            "text": "Ships in [minDays]-[maxDays] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 6,
+              "carrier": "Israel Post Courier service"
+            },
+            "price": "0.00",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "ROW": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 5,
+              "carrier": "DHL"
+            },
+            "price": "190.11",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ]
+      }
+    },
+    "CNVS141001CWB2": {
+      "price": "142.30",
+      "shipping": {
+        "US": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 1,
+              "maxDays": 5,
+              "carrier": "Fedex"
+            },
+            "price": "45.12",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "CA": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 1,
+              "maxDays": 3,
+              "carrier": "DHL"
+            },
+            "price": "177.30",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "EU": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 2,
+              "maxDays": 4,
+              "carrier": "DHL"
+            },
+            "price": "210.16",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "IL": [
+          {
+            "text": "Ships in [minDays]-[maxDays] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 6,
+              "carrier": "Israel Post Courier service"
+            },
+            "price": "0.00",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "ROW": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 5,
+              "carrier": "DHL"
+            },
+            "price": "219.35",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ]
+      }
+    },
+    "CNVS141001WRE0": {
+      "price": "142.30",
+      "shipping": {
+        "US": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 1,
+              "maxDays": 5,
+              "carrier": "Fedex"
+            },
+            "price": "45.12",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "CA": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 1,
+              "maxDays": 3,
+              "carrier": "DHL"
+            },
+            "price": "177.30",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "EU": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 2,
+              "maxDays": 4,
+              "carrier": "DHL"
+            },
+            "price": "210.16",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "IL": [
+          {
+            "text": "Ships in [minDays]-[maxDays] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 6,
+              "carrier": "Israel Post Courier service"
+            },
+            "price": "0.00",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "ROW": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 5,
+              "carrier": "DHL"
+            },
+            "price": "219.35",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ]
+      }
+    },
+    "CNVS141401CWB8": {
+      "price": "203.85",
+      "shipping": {
+        "US": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 1,
+              "maxDays": 5,
+              "carrier": "Fedex"
+            },
+            "price": "48.43",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "CA": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 1,
+              "maxDays": 3,
+              "carrier": "DHL"
+            },
+            "price": "152.68",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "EU": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 2,
+              "maxDays": 4,
+              "carrier": "DHL"
+            },
+            "price": "206.23",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "IL": [
+          {
+            "text": "Ships in [minDays]-[maxDays] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 6,
+              "carrier": "Israel Post Courier service"
+            },
+            "price": "0.00",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "ROW": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 5,
+              "carrier": "DHL"
+            },
+            "price": "211.23",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ]
+      }
+    },
+    "CNVS141401WRE1": {
+      "price": "203.85",
+      "shipping": {
+        "US": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 1,
+              "maxDays": 5,
+              "carrier": "Fedex"
+            },
+            "price": "48.43",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "CA": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 1,
+              "maxDays": 3,
+              "carrier": "DHL"
+            },
+            "price": "152.68",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "EU": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 2,
+              "maxDays": 4,
+              "carrier": "DHL"
+            },
+            "price": "206.23",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "IL": [
+          {
+            "text": "Ships in [minDays]-[maxDays] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 6,
+              "carrier": "Israel Post Courier service"
+            },
+            "price": "0.00",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "ROW": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 5,
+              "carrier": "DHL"
+            },
+            "price": "211.23",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ]
+      }
+    },
+    "CNVS162001WRE6": {
+      "price": "219.23",
+      "shipping": {
+        "US": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 1,
+              "maxDays": 5,
+              "carrier": "Fedex"
+            },
+            "price": "62.44",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "CA": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 1,
+              "maxDays": 3,
+              "carrier": "DHL"
+            },
+            "price": "174.38",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "EU": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 2,
+              "maxDays": 4,
+              "carrier": "DHL"
+            },
+            "price": "226.62",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "IL": [
+          {
+            "text": "Ships in [minDays]-[maxDays] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 6,
+              "carrier": "Israel Post Courier service"
+            },
+            "price": "0.00",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "ROW": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 5,
+              "carrier": "DHL"
+            },
+            "price": "235.74",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ]
+      }
+    },
+    "CNVS162401CWB5": {
+      "price": "230.78",
+      "shipping": {
+        "US": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 1,
+              "maxDays": 5,
+              "carrier": "Fedex"
+            },
+            "price": "62.63",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "CA": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 1,
+              "maxDays": 3,
+              "carrier": "DHL"
+            },
+            "price": "202.42",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "EU": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 2,
+              "maxDays": 4,
+              "carrier": "DHL"
+            },
+            "price": "265.36",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "IL": [
+          {
+            "text": "Ships in [minDays]-[maxDays] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 6,
+              "carrier": "Israel Post Courier service"
+            },
+            "price": "0.00",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "ROW": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 5,
+              "carrier": "DHL"
+            },
+            "price": "281.86",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ]
+      }
+    },
+    "CNVS162401WRE4": {
+      "price": "230.78",
+      "shipping": {
+        "US": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 1,
+              "maxDays": 5,
+              "carrier": "Fedex"
+            },
+            "price": "62.63",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "CA": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 1,
+              "maxDays": 3,
+              "carrier": "DHL"
+            },
+            "price": "202.42",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "EU": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 2,
+              "maxDays": 4,
+              "carrier": "DHL"
+            },
+            "price": "265.36",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "IL": [
+          {
+            "text": "Ships in [minDays]-[maxDays] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 6,
+              "carrier": "Israel Post Courier service"
+            },
+            "price": "0.00",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "ROW": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 5,
+              "carrier": "DHL"
+            },
+            "price": "281.86",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ]
+      }
+    },
+    "CNVS201601WRE6": {
+      "price": "219.23",
+      "shipping": {
+        "US": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 1,
+              "maxDays": 5,
+              "carrier": "Fedex"
+            },
+            "price": "62.44",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "CA": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 1,
+              "maxDays": 3,
+              "carrier": "DHL"
+            },
+            "price": "174.38",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "EU": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 2,
+              "maxDays": 4,
+              "carrier": "DHL"
+            },
+            "price": "226.62",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "IL": [
+          {
+            "text": "Ships in [minDays]-[maxDays] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 6,
+              "carrier": "Israel Post Courier service"
+            },
+            "price": "0.00",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "ROW": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 5,
+              "carrier": "DHL"
+            },
+            "price": "235.74",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ]
+      }
+    },
+    "CNVS203001CWB6": {
+      "price": "365.42",
+      "shipping": {
+        "US": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 1,
+              "maxDays": 5,
+              "carrier": "Fedex"
+            },
+            "price": "86.40",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "CA": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 1,
+              "maxDays": 3,
+              "carrier": "DHL"
+            },
+            "price": "192.27",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "EU": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 2,
+              "maxDays": 4,
+              "carrier": "DHL"
+            },
+            "price": "261.09",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "IL": [
+          {
+            "text": "Ships in [minDays]-[maxDays] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 6,
+              "carrier": "Israel Post Courier service"
+            },
+            "price": "0.00",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "ROW": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 5,
+              "carrier": "DHL"
+            },
+            "price": "285.13",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ]
+      }
+    },
+    "CNVS203001WRE0": {
+      "price": "365.42",
+      "shipping": {
+        "US": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 1,
+              "maxDays": 5,
+              "carrier": "Fedex"
+            },
+            "price": "86.40",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "CA": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 1,
+              "maxDays": 3,
+              "carrier": "DHL"
+            },
+            "price": "192.27",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "EU": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 2,
+              "maxDays": 4,
+              "carrier": "DHL"
+            },
+            "price": "261.09",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "IL": [
+          {
+            "text": "Ships in [minDays]-[maxDays] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 6,
+              "carrier": "Israel Post Courier service"
+            },
+            "price": "0.00",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "ROW": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 5,
+              "carrier": "DHL"
+            },
+            "price": "285.13",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ]
+      }
+    },
+    "CNVS241601CWB5": {
+      "price": "230.78",
+      "shipping": {
+        "US": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 1,
+              "maxDays": 5,
+              "carrier": "Fedex"
+            },
+            "price": "62.63",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "CA": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 1,
+              "maxDays": 3,
+              "carrier": "DHL"
+            },
+            "price": "202.42",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "EU": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 2,
+              "maxDays": 4,
+              "carrier": "DHL"
+            },
+            "price": "265.36",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "IL": [
+          {
+            "text": "Ships in [minDays]-[maxDays] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 6,
+              "carrier": "Israel Post Courier service"
+            },
+            "price": "0.00",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "ROW": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 5,
+              "carrier": "DHL"
+            },
+            "price": "281.86",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ]
+      }
+    },
+    "CNVS241601WRE4": {
+      "price": "230.78",
+      "shipping": {
+        "US": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 1,
+              "maxDays": 5,
+              "carrier": "Fedex"
+            },
+            "price": "62.63",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "CA": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 1,
+              "maxDays": 3,
+              "carrier": "DHL"
+            },
+            "price": "202.42",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "EU": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 2,
+              "maxDays": 4,
+              "carrier": "DHL"
+            },
+            "price": "265.36",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "IL": [
+          {
+            "text": "Ships in [minDays]-[maxDays] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 6,
+              "carrier": "Israel Post Courier service"
+            },
+            "price": "0.00",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "ROW": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 5,
+              "carrier": "DHL"
+            },
+            "price": "281.86",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ]
+      }
+    },
+    "CNVS302001CWB6": {
+      "price": "365.42",
+      "shipping": {
+        "US": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 1,
+              "maxDays": 5,
+              "carrier": "Fedex"
+            },
+            "price": "86.40",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "CA": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 1,
+              "maxDays": 3,
+              "carrier": "DHL"
+            },
+            "price": "192.27",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "EU": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 2,
+              "maxDays": 4,
+              "carrier": "DHL"
+            },
+            "price": "261.09",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "IL": [
+          {
+            "text": "Ships in [minDays]-[maxDays] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 6,
+              "carrier": "Israel Post Courier service"
+            },
+            "price": "0.00",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "ROW": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 5,
+              "carrier": "DHL"
+            },
+            "price": "285.13",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ]
+      }
+    },
+    "CNVS302001WRE0": {
+      "price": "365.42",
+      "shipping": {
+        "US": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 1,
+              "maxDays": 5,
+              "carrier": "Fedex"
+            },
+            "price": "86.40",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "CA": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 1,
+              "maxDays": 3,
+              "carrier": "DHL"
+            },
+            "price": "192.27",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "EU": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 2,
+              "maxDays": 4,
+              "carrier": "DHL"
+            },
+            "price": "261.09",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "IL": [
+          {
+            "text": "Ships in [minDays]-[maxDays] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 6,
+              "carrier": "Israel Post Courier service"
+            },
+            "price": "0.00",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "ROW": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 5,
+              "carrier": "DHL"
+            },
+            "price": "285.13",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ]
+      }
+    },
+    "FLAT050510EEEE": {
+      "price": "57.67",
+      "shipping": {
+        "US": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 7,
+              "carrier": "USPS"
+            },
+            "price": "25.58",
+            "name": "standard shipping",
+            "id": "reg"
+          },
+          {
+            "text": "Ships in [minDays]-[maxDays] once produced.",
+            "textVariables": {
+              "minDays": 2,
+              "maxDays": 4,
+              "carrier": "USPS PRIORITY"
+            },
+            "price": "34.74",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "CA": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "26.85",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "EU": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "37.89",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "IL": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "37.89",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "ROW": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "37.89",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ]
+      }
+    },
+    "FLAT660510EEEE": {
+      "price": "57.67",
+      "shipping": {
+        "US": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 7,
+              "carrier": "USPS"
+            },
+            "price": "25.58",
+            "name": "standard shipping",
+            "id": "reg"
+          },
+          {
+            "text": "Ships in [minDays]-[maxDays] once produced.",
+            "textVariables": {
+              "minDays": 2,
+              "maxDays": 4,
+              "carrier": "USPS PRIORITY"
+            },
+            "price": "34.74",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "CA": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "26.85",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "EU": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "37.89",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "IL": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "37.89",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "ROW": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "37.89",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ]
+      }
+    },
+    "FLT70532EFLT57": {
+      "price": "57.67",
+      "shipping": {
+        "US": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 7,
+              "carrier": "USPS"
+            },
+            "price": "25.58",
+            "name": "standard shipping",
+            "id": "reg"
+          },
+          {
+            "text": "Ships in [minDays]-[maxDays] once produced.",
+            "textVariables": {
+              "minDays": 2,
+              "maxDays": 4,
+              "carrier": "USPS PRIORITY"
+            },
+            "price": "34.74",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "CA": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "26.85",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "EU": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "37.89",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "IL": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "37.89",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "ROW": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "37.89",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ]
+      }
+    },
+    "INV50500EINV55": {
+      "price": "6.16",
+      "shipping": {
+        "US": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 4,
+              "maxDays": 8,
+              "carrier": "USPS"
+            },
+            "price": "23.08",
+            "name": "standard shipping",
+            "id": "reg"
+          },
+          {
+            "text": "Ships in [minDays]-[maxDays] once produced.",
+            "textVariables": {
+              "minDays": 1,
+              "maxDays": 3,
+              "carrier": "USPS PRIORITY"
+            },
+            "price": "46.16",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "CA": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 15,
+              "carrier": "USPS"
+            },
+            "price": "30.78",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "EU": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 15,
+              "carrier": "USPS"
+            },
+            "price": "30.78",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "IL": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 15,
+              "carrier": "USPS"
+            },
+            "price": "30.78",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "ROW": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 15,
+              "carrier": "USPS"
+            },
+            "price": "30.78",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ]
+      }
+    },
+    "INV50730EINV57": {
+      "price": "6.16",
+      "shipping": {
+        "US": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 4,
+              "maxDays": 8,
+              "carrier": "USPS"
+            },
+            "price": "23.08",
+            "name": "standard shipping",
+            "id": "reg"
+          },
+          {
+            "text": "Ships in [minDays]-[maxDays] once produced.",
+            "textVariables": {
+              "minDays": 1,
+              "maxDays": 3,
+              "carrier": "USPS PRIORITY"
+            },
+            "price": "46.16",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "CA": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 15,
+              "carrier": "USPS"
+            },
+            "price": "30.78",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "EU": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 15,
+              "carrier": "USPS"
+            },
+            "price": "30.78",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "IL": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 15,
+              "carrier": "USPS"
+            },
+            "price": "30.78",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "ROW": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 15,
+              "carrier": "USPS"
+            },
+            "price": "30.78",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ]
+      }
+    },
+    "INV70500EINV57": {
+      "price": "6.16",
+      "shipping": {
+        "US": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 4,
+              "maxDays": 8,
+              "carrier": "USPS"
+            },
+            "price": "23.08",
+            "name": "standard shipping",
+            "id": "reg"
+          },
+          {
+            "text": "Ships in [minDays]-[maxDays] once produced.",
+            "textVariables": {
+              "minDays": 1,
+              "maxDays": 3,
+              "carrier": "USPS PRIORITY"
+            },
+            "price": "46.16",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "CA": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 15,
+              "carrier": "USPS"
+            },
+            "price": "30.78",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "EU": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 15,
+              "carrier": "USPS"
+            },
+            "price": "30.78",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "IL": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 15,
+              "carrier": "USPS"
+            },
+            "price": "30.78",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "ROW": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 15,
+              "carrier": "USPS"
+            },
+            "price": "30.78",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ]
+      }
+    },
+    "MAGN030304EEEE": {
+      "price": "26.89",
+      "shipping": {
+        "US": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 7,
+              "carrier": "USPS"
+            },
+            "price": "23.77",
+            "name": "standard shipping",
+            "id": "reg"
+          },
+          {
+            "text": "Ships in [minDays]-[maxDays] once produced.",
+            "textVariables": {
+              "minDays": 2,
+              "maxDays": 4,
+              "carrier": "USPS PRIORITY"
+            },
+            "price": "53.63",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "CA": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "37.01",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "EU": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "37.01",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "IL": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "37.01",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "ROW": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "37.01",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ]
+      }
+    },
+    "MAGN040304EEEE": {
+      "price": "26.89",
+      "shipping": {
+        "US": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 7,
+              "carrier": "USPS"
+            },
+            "price": "23.77",
+            "name": "standard shipping",
+            "id": "reg"
+          },
+          {
+            "text": "Ships in [minDays]-[maxDays] once produced.",
+            "textVariables": {
+              "minDays": 2,
+              "maxDays": 4,
+              "carrier": "USPS PRIORITY"
+            },
+            "price": "53.63",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "CA": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "37.01",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "EU": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "37.01",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "IL": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "37.01",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "ROW": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "37.01",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ]
+      }
+    },
+    "MAGN060404EEEE": {
+      "price": "26.89",
+      "shipping": {
+        "US": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 7,
+              "carrier": "USPS"
+            },
+            "price": "23.77",
+            "name": "standard shipping",
+            "id": "reg"
+          },
+          {
+            "text": "Ships in [minDays]-[maxDays] once produced.",
+            "textVariables": {
+              "minDays": 2,
+              "maxDays": 4,
+              "carrier": "USPS PRIORITY"
+            },
+            "price": "53.63",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "CA": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "37.01",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "EU": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "37.01",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "IL": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "37.01",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "ROW": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "37.01",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ]
+      }
+    },
+    "PNL05070ZPNL57": {
+      "price": "0.04",
+      "shipping": {
+        "US": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 5,
+              "carrier": "Fedex"
+            },
+            "price": "0.04",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "CA": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "Fedex"
+            },
+            "price": "0.04",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "EU": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "Fedex"
+            },
+            "price": "0.04",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "IL": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "Fedex"
+            },
+            "price": "0.04",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "ROW": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "Fedex"
+            },
+            "price": "0.04",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ]
+      }
+    },
+    "PNL07050ZPNL75": {
+      "price": "0.04",
+      "shipping": {
+        "US": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 5,
+              "carrier": "Fedex"
+            },
+            "price": "0.04",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "CA": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "Fedex"
+            },
+            "price": "0.04",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "EU": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "Fedex"
+            },
+            "price": "0.04",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "IL": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "Fedex"
+            },
+            "price": "0.04",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "ROW": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "Fedex"
+            },
+            "price": "0.04",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ]
+      }
+    },
+    "PUZ106078PUZ20": {
+      "price": "57.67",
+      "shipping": {
+        "US": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 7,
+              "carrier": "Israel Post"
+            },
+            "price": "23.08",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "CA": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "Israel Post"
+            },
+            "price": "26.93",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "EU": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "Israel Post"
+            },
+            "price": "23.08",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "IL": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 10,
+              "carrier": "Israel Post"
+            },
+            "price": "9.62",
+            "name": "standard shipping",
+            "id": "reg"
+          },
+          {
+            "text": "Ships in [minDays]-[maxDays] once produced.",
+            "textVariables": {
+              "minDays": 2,
+              "maxDays": 3,
+              "carrier": "Israel Post Courier service"
+            },
+            "price": "28.85",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "ROW": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "Israel Post"
+            },
+            "price": "30.78",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ]
+      }
+    },
+    "RSVP35X5JIVP59": {
+      "price": "6.16",
+      "shipping": {
+        "US": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 4,
+              "maxDays": 8,
+              "carrier": "USPS"
+            },
+            "price": "30.78",
+            "name": "standard shipping",
+            "id": "reg"
+          },
+          {
+            "text": "Ships in [minDays]-[maxDays] once produced.",
+            "textVariables": {
+              "minDays": 1,
+              "maxDays": 3,
+              "carrier": "USPS Priority"
+            },
+            "price": "57.70",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "CA": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 4,
+              "maxDays": 8,
+              "carrier": "USPS"
+            },
+            "price": "30.78",
+            "name": "standard shipping",
+            "id": "reg"
+          },
+          {
+            "text": "Ships in [minDays]-[maxDays] once produced.",
+            "textVariables": {
+              "minDays": 1,
+              "maxDays": 3,
+              "carrier": "USPS Priority"
+            },
+            "price": "57.70",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "EU": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 4,
+              "maxDays": 8,
+              "carrier": "USPS"
+            },
+            "price": "30.78",
+            "name": "standard shipping",
+            "id": "reg"
+          },
+          {
+            "text": "Ships in [minDays]-[maxDays] once produced.",
+            "textVariables": {
+              "minDays": 1,
+              "maxDays": 3,
+              "carrier": "USPS Priority"
+            },
+            "price": "57.70",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "IL": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 4,
+              "maxDays": 8,
+              "carrier": "USPS"
+            },
+            "price": "30.78",
+            "name": "standard shipping",
+            "id": "reg"
+          },
+          {
+            "text": "Ships in [minDays]-[maxDays] once produced.",
+            "textVariables": {
+              "minDays": 1,
+              "maxDays": 3,
+              "carrier": "USPS Priority"
+            },
+            "price": "57.70",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "ROW": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 4,
+              "maxDays": 8,
+              "carrier": "USPS"
+            },
+            "price": "30.78",
+            "name": "standard shipping",
+            "id": "reg"
+          },
+          {
+            "text": "Ships in [minDays]-[maxDays] once produced.",
+            "textVariables": {
+              "minDays": 1,
+              "maxDays": 3,
+              "carrier": "USPS Priority"
+            },
+            "price": "57.70",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ]
+      }
+    },
+    "RSVP5X35JIVP59": {
+      "price": "6.16",
+      "shipping": {
+        "US": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 4,
+              "maxDays": 8,
+              "carrier": "USPS"
+            },
+            "price": "30.78",
+            "name": "standard shipping",
+            "id": "reg"
+          },
+          {
+            "text": "Ships in [minDays]-[maxDays] once produced.",
+            "textVariables": {
+              "minDays": 1,
+              "maxDays": 3,
+              "carrier": "USPS Priority"
+            },
+            "price": "57.70",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "CA": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 4,
+              "maxDays": 8,
+              "carrier": "USPS"
+            },
+            "price": "30.78",
+            "name": "standard shipping",
+            "id": "reg"
+          },
+          {
+            "text": "Ships in [minDays]-[maxDays] once produced.",
+            "textVariables": {
+              "minDays": 1,
+              "maxDays": 3,
+              "carrier": "USPS Priority"
+            },
+            "price": "57.70",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "EU": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 4,
+              "maxDays": 8,
+              "carrier": "USPS"
+            },
+            "price": "30.78",
+            "name": "standard shipping",
+            "id": "reg"
+          },
+          {
+            "text": "Ships in [minDays]-[maxDays] once produced.",
+            "textVariables": {
+              "minDays": 1,
+              "maxDays": 3,
+              "carrier": "USPS Priority"
+            },
+            "price": "57.70",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "IL": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 4,
+              "maxDays": 8,
+              "carrier": "USPS"
+            },
+            "price": "30.78",
+            "name": "standard shipping",
+            "id": "reg"
+          },
+          {
+            "text": "Ships in [minDays]-[maxDays] once produced.",
+            "textVariables": {
+              "minDays": 1,
+              "maxDays": 3,
+              "carrier": "USPS Priority"
+            },
+            "price": "57.70",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "ROW": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 4,
+              "maxDays": 8,
+              "carrier": "USPS"
+            },
+            "price": "30.78",
+            "name": "standard shipping",
+            "id": "reg"
+          },
+          {
+            "text": "Ships in [minDays]-[maxDays] once produced.",
+            "textVariables": {
+              "minDays": 1,
+              "maxDays": 3,
+              "carrier": "USPS Priority"
+            },
+            "price": "57.70",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ]
+      }
+    },
+    "SPIP4SOL01EEI4": {
+      "price": "107.67",
+      "shipping": {
+        "US": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 7,
+              "carrier": "USPS"
+            },
+            "price": "24.00",
+            "name": "standard shipping",
+            "id": "reg"
+          },
+          {
+            "text": "Ships in [minDays]-[maxDays] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 4,
+              "carrier": "USPS 3 Day Select"
+            },
+            "price": "76.90",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "CA": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 7,
+              "carrier": "USPS"
+            },
+            "price": "30.93",
+            "name": "standard shipping",
+            "id": "reg"
+          },
+          {
+            "text": "Ships in [minDays]-[maxDays] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 4,
+              "carrier": "USPS 3 Day Select"
+            },
+            "price": "121.37",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "EU": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 7,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "36.01",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "IL": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 7,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "36.01",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "ROW": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 7,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "36.01",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ]
+      }
+    },
+    "SPIP5CSOL01I5C": {
+      "price": "107.67",
+      "shipping": {
+        "US": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 7,
+              "carrier": "USPS"
+            },
+            "price": "24.00",
+            "name": "standard shipping",
+            "id": "reg"
+          },
+          {
+            "text": "Ships in [minDays]-[maxDays] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 4,
+              "carrier": "USPS 3 Day Select"
+            },
+            "price": "76.90",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "CA": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 7,
+              "carrier": "USPS"
+            },
+            "price": "30.93",
+            "name": "standard shipping",
+            "id": "reg"
+          },
+          {
+            "text": "Ships in [minDays]-[maxDays] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 4,
+              "carrier": "USPS 3 Day Select"
+            },
+            "price": "121.37",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "EU": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 7,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "36.01",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "IL": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 7,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "36.01",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "ROW": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 7,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "36.01",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ]
+      }
+    },
+    "SPIP5SOL01EEI5": {
+      "price": "107.67",
+      "shipping": {
+        "US": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 7,
+              "carrier": "USPS"
+            },
+            "price": "24.00",
+            "name": "standard shipping",
+            "id": "reg"
+          },
+          {
+            "text": "Ships in [minDays]-[maxDays] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 4,
+              "carrier": "USPS 3 Day Select"
+            },
+            "price": "76.90",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "CA": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 7,
+              "carrier": "USPS"
+            },
+            "price": "30.93",
+            "name": "standard shipping",
+            "id": "reg"
+          },
+          {
+            "text": "Ships in [minDays]-[maxDays] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 4,
+              "carrier": "USPS 3 Day Select"
+            },
+            "price": "121.37",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "EU": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 7,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "36.01",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "IL": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 7,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "36.01",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "ROW": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 7,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "36.01",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ]
+      }
+    },
+    "SPIP6PSOL01I6P": {
+      "price": "107.67",
+      "shipping": {
+        "US": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 7,
+              "carrier": "USPS"
+            },
+            "price": "24.00",
+            "name": "standard shipping",
+            "id": "reg"
+          },
+          {
+            "text": "Ships in [minDays]-[maxDays] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 4,
+              "carrier": "USPS 3 Day Select"
+            },
+            "price": "76.90",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "CA": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 7,
+              "carrier": "USPS"
+            },
+            "price": "30.93",
+            "name": "standard shipping",
+            "id": "reg"
+          },
+          {
+            "text": "Ships in [minDays]-[maxDays] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 4,
+              "carrier": "USPS 3 Day Select"
+            },
+            "price": "121.37",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "EU": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 7,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "36.01",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "IL": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 7,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "36.01",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "ROW": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 7,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "36.01",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ]
+      }
+    },
+    "SPIP6SOL01EEI6": {
+      "price": "107.67",
+      "shipping": {
+        "US": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 7,
+              "carrier": "USPS"
+            },
+            "price": "24.00",
+            "name": "standard shipping",
+            "id": "reg"
+          },
+          {
+            "text": "Ships in [minDays]-[maxDays] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 4,
+              "carrier": "USPS 3 Day Select"
+            },
+            "price": "76.90",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "CA": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 7,
+              "carrier": "USPS"
+            },
+            "price": "30.93",
+            "name": "standard shipping",
+            "id": "reg"
+          },
+          {
+            "text": "Ships in [minDays]-[maxDays] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 4,
+              "carrier": "USPS 3 Day Select"
+            },
+            "price": "121.37",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "EU": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 7,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "36.01",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "IL": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 7,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "36.01",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "ROW": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 7,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "36.01",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ]
+      }
+    },
+    "SPSG3SOL01ESG3": {
+      "price": "107.67",
+      "shipping": {
+        "US": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 7,
+              "carrier": "USPS"
+            },
+            "price": "24.00",
+            "name": "standard shipping",
+            "id": "reg"
+          },
+          {
+            "text": "Ships in [minDays]-[maxDays] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 4,
+              "carrier": "USPS 3 Day Select"
+            },
+            "price": "76.90",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "CA": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 7,
+              "carrier": "USPS"
+            },
+            "price": "30.93",
+            "name": "standard shipping",
+            "id": "reg"
+          },
+          {
+            "text": "Ships in [minDays]-[maxDays] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 4,
+              "carrier": "USPS 3 Day Select"
+            },
+            "price": "121.37",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "EU": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 7,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "36.01",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "IL": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 7,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "36.01",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "ROW": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 7,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "36.01",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ]
+      }
+    },
+    "SPSG4SOL01ESG4": {
+      "price": "107.67",
+      "shipping": {
+        "US": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 7,
+              "carrier": "USPS"
+            },
+            "price": "24.00",
+            "name": "standard shipping",
+            "id": "reg"
+          },
+          {
+            "text": "Ships in [minDays]-[maxDays] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 4,
+              "carrier": "USPS 3 Day Select"
+            },
+            "price": "76.90",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "CA": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 7,
+              "carrier": "USPS"
+            },
+            "price": "30.93",
+            "name": "standard shipping",
+            "id": "reg"
+          },
+          {
+            "text": "Ships in [minDays]-[maxDays] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 4,
+              "carrier": "USPS 3 Day Select"
+            },
+            "price": "121.37",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "EU": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 7,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "36.01",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "IL": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 7,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "36.01",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "ROW": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 7,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "36.01",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ]
+      }
+    },
+    "SPSG5SOL01ESG5": {
+      "price": "107.67",
+      "shipping": {
+        "US": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 7,
+              "carrier": "USPS"
+            },
+            "price": "24.00",
+            "name": "standard shipping",
+            "id": "reg"
+          },
+          {
+            "text": "Ships in [minDays]-[maxDays] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 4,
+              "carrier": "USPS 3 Day Select"
+            },
+            "price": "76.90",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "CA": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 7,
+              "carrier": "USPS"
+            },
+            "price": "30.93",
+            "name": "standard shipping",
+            "id": "reg"
+          },
+          {
+            "text": "Ships in [minDays]-[maxDays] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 4,
+              "carrier": "USPS 3 Day Select"
+            },
+            "price": "121.37",
+            "name": "express shipping",
+            "id": "exp"
+          }
+        ],
+        "EU": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 7,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "36.01",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "IL": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 7,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "36.01",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "ROW": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 7,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "36.01",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ]
+      }
+    },
+    "TSHIRTCOTL3X2T": {
+      "price": "57.67",
+      "shipping": {
+        "US": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 5,
+              "carrier": "USPS"
+            },
+            "price": "19.23",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "CA": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "46.16",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "EU": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "46.16",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "IL": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "26.93",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "ROW": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "46.16",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ]
+      }
+    },
+    "TSHIRTCOTLARGT": {
+      "price": "57.67",
+      "shipping": {
+        "US": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 5,
+              "carrier": "USPS"
+            },
+            "price": "19.23",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "CA": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "46.16",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "EU": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "46.16",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "IL": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "26.93",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "ROW": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "46.16",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ]
+      }
+    },
+    "TSHIRTCOTM3X2T": {
+      "price": "57.67",
+      "shipping": {
+        "US": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 5,
+              "carrier": "USPS"
+            },
+            "price": "19.23",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "CA": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "46.16",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "EU": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "46.16",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "IL": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "26.93",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "ROW": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "46.16",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ]
+      }
+    },
+    "TSHIRTCOTMEDUT": {
+      "price": "57.67",
+      "shipping": {
+        "US": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 5,
+              "carrier": "USPS"
+            },
+            "price": "19.23",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "CA": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "46.16",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "EU": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "46.16",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "IL": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "26.93",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "ROW": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "46.16",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ]
+      }
+    },
+    "TSHIRTCOTS3X2T": {
+      "price": "57.67",
+      "shipping": {
+        "US": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 5,
+              "carrier": "USPS"
+            },
+            "price": "19.23",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "CA": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "46.16",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "EU": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "46.16",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "IL": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "26.93",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "ROW": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "46.16",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ]
+      }
+    },
+    "TSHIRTCOTSMALT": {
+      "price": "57.67",
+      "shipping": {
+        "US": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 5,
+              "carrier": "USPS"
+            },
+            "price": "19.23",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "CA": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "46.16",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "EU": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "46.16",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "IL": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "26.93",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "ROW": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "46.16",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ]
+      }
+    },
+    "TSHIRTCOTXL32T": {
+      "price": "57.67",
+      "shipping": {
+        "US": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 5,
+              "carrier": "USPS"
+            },
+            "price": "19.23",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "CA": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "46.16",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "EU": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "46.16",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "IL": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "26.93",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "ROW": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "46.16",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ]
+      }
+    },
+    "TSHIRTCOTXLTTT": {
+      "price": "57.67",
+      "shipping": {
+        "US": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 5,
+              "carrier": "USPS"
+            },
+            "price": "19.23",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "CA": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "46.16",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "EU": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "46.16",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "IL": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "26.93",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "ROW": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "46.16",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ]
+      }
+    },
+    "TSHIRTCOTXXL32": {
+      "price": "57.67",
+      "shipping": {
+        "US": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 5,
+              "carrier": "USPS"
+            },
+            "price": "19.23",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "CA": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "46.16",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "EU": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "46.16",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "IL": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "26.93",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "ROW": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "46.16",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ]
+      }
+    },
+    "TSHIRTCOTXXLTT": {
+      "price": "57.67",
+      "shipping": {
+        "US": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 5,
+              "carrier": "USPS"
+            },
+            "price": "19.23",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "CA": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "46.16",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "EU": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "46.16",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "IL": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "26.93",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "ROW": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "46.16",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ]
+      }
+    },
+    "TTE12X12TOTE10": {
+      "price": "115.37",
+      "shipping": {
+        "US": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 3,
+              "maxDays": 7,
+              "carrier": "USPS"
+            },
+            "price": "19.23",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "CA": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "46.16",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "EU": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "46.16",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "IL": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "26.93",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ],
+        "ROW": [
+          {
+            "text": "Ships in [minDays]-[maxDays] via [carrier] once produced.",
+            "textVariables": {
+              "minDays": 5,
+              "maxDays": 14,
+              "carrier": "USPS"
+            },
+            "price": "46.16",
+            "name": "standard shipping",
+            "id": "reg"
+          }
+        ]
+      }
+    }
+  },
+  "currency": {
+    "sign": "\u20aa",
+    "name": "ILS"
+  }
+}
