@@ -181,28 +181,21 @@ select[type="number"]:active {
 
 /* shop view (first view) style */
 
-#shop-view-responsive .product {
-  height: 200px;
+#shop-view-responsive .shop-view-product-container {
   margin: 20px 0;
   padding: 12px;
 }
-#shop-view-responsive .product .product_cover_image {
+#shop-view-responsive .product_image_container {
   width: 100%;      
   height: 140px;
   background-size: 84px;
   background-repeat: no-repeat;
   background-position: center center;
 }
-#shop-view-responsive .image_thumbnail {
-  text-align: center;
-  height: 0;
+.shop-view-product-image-display div {
+  margin: 0 auto;
 } 
-#shop-view-responsive img.product_inner-image {  
-  position: relative;
-  width: 64px;
-  top: 40px;
-  top: -100px;
-}
+
 
 #shop-view-responsive .product-data {
   padding: 12px 0;
