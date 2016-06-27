@@ -1,8 +1,5 @@
 <div ng-style="imageStyle">
-<!--<li ng-drag="true" ng-drag-data="{obj}"  ng-drag-start="onDragComplete($data,$event)" ng-drag-success="onDragComplete($data,$event)" >
-  Draggable div
-</li>	-->
-	<div on-drag="onDrag($event)">123123</div>
-	<img ng-src="app/products_images/{{product.previewImage}}" style="height:{{product.tmbHeight}}px;">
+	<div   on-drag="onDrag($event)" style="height:{{product.tmbHeight}}px;width:{{product.tmbWidth}}px;background:url('app/products_images/{{product.previewImage}}');background-size:{{product.tmbWidth}}px {{product.tmbHeight}}px"> 
+	</div>
 
 </div>

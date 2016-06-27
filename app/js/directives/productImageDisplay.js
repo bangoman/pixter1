@@ -5,10 +5,18 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 	  }
   	return {	    
 	    restrict: 'E',
+	    scope:{},
 	  	controller: ['$scope','$http','$attrs','$document','$element','$compile', function($scope,$http,$attrs,$document,$element,$compile) {
 
 		    $scope.onDrag=function(event){
-		       console.log("deltaY", event.gesture.deltaY);
+		       var remain =   (($scope.currentImg.height/$scope.imageSizeRatio) - $scope.product.window.h);
+		       console.log(remain);
+		       $scope.currentBackgroundPosition.top = (parseInt($scope.backgroundPosition.top) + event.gesture.deltaY) +"px "; 
+		       if(event.gesture.deltaY < 0 && event.gesture.deltaY > (($scope.currentImg.height/$scope.imageSizeRatio) - $scope.product.window.h)){
+		       		$scope.imageStyle["backgroundPosition"] = $scope.backgroundPosition.left + $scope.currentBackgroundPosition.top	
+		       }
+		       
+		       console.log("ps", $scope.currentBackgroundPosition.top,event.gesture.deltaY);
 		       
 		    }	  		
 
@@ -32,11 +40,12 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 				
 
 				var productRatio = $scope.product.window.h/$scope.product.window.w;
-
+				$scope.currentImg = img;
 				$scope.product.tmbWidth = parseInt($attrs.tmbwidth);
 				$scope.product.tmbHeight = $scope.product.tmbWidth * ($scope.product.height/$scope.product.width) ;
 				$scope.sizeRatio = $scope.product.width/$scope.product.tmbWidth;			
-				$scope.backgroundPosition = {top:"",left:""}								
+				$scope.backgroundPosition = {top:"",left:""}
+				$scope.currentBackgroundPosition = {top:"",left:""}								
 				if(productRatio >= imgRatio){ // Left case
 					$scope.imageSizeRatio = img.height/($scope.product.window.h/ $scope.sizeRatio) ;			
 
@@ -54,7 +63,8 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 					console.log((img.width/$scope.imageSizeRatio) ,  $scope.product.window.w/$scope.sizeRatio);
 					$scope.$apply();				
 				}else{ // top case
-					$scope.imageSizeRatio = img.width/($scope.product.window.w/ $scope.sizeRatio) ;		
+					$scope.imageSizeRatio = img.width/($scope.product.window.w/ $scope.sizeRatio) ;	
+
 					$scope.backgroundPosition.top = ($scope.product.window.y/$scope.sizeRatio) - (((img.height/$scope.imageSizeRatio) - ($scope.product.window.h/$scope.sizeRatio))/2 ) + "px "	
 					$scope.backgroundPosition.left = $scope.product.window.x / $scope.sizeRatio + "px ";
 					$scope.imageStyle = {					
@@ -70,9 +80,9 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 
 				}
 				
-
-
 			}
+
+
 		  	
 		  	//$scope.imageStyle={"width":"500px","height":"400px","background":"pink"}
 		  	$scope.product = {"type":"mug","window":{"w":200,"h":200,"x":175,"y":107},"width":600,"height":360,"shortName":"Mug","marketingName":"11oz White Mug","teaser":true,"cropRatio":0.75,"previewImage":"mug/previewImage.png","categoryText":"Ceramic 11oz MUG","children":["CMUG11OZ111MUG"],"index":1};
