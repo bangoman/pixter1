@@ -1,3 +1,5 @@
 <div ng-style="imageStyle">
+	<div  ng-drag="true" ng-drag-move="onDragComplete($data,$event)"> dragging {{obj}}</div>
 	<img ng-src="app/products_images/{{product.previewImage}}" style="height:{{product.tmbHeight}}px;">
+
 </div>
