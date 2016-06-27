@@ -1,15 +1,16 @@
 angular.module('app').controller('shopCtl',function($state, $http){
 	var vm = this;
     
-    vm.getProductsData = function(){
+    vm.getProducts = function(){
         $http.get('app/json/products.json')
             .then(function(res){
-                vm.productsData = res.data;                
+                vm.products = res.data.products;                
             }).then(function(){
-                console.log('vm.productsData = ',vm.productsData);
+                console.log('vm.products = ',vm.products);
             });
     }
-    vm.getProductsData();
+    vm.getProducts();
+
         
 
     vm.goToPreview = function () {
