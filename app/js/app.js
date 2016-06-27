@@ -3,4 +3,5 @@ var app = angular.module('app',[
     'ngAnimate',
     'ui.bootstrap',
     'angular-carousel',
+    'ngDraggable',
 ]);
