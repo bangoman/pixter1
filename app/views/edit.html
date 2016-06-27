@@ -4,10 +4,10 @@
     </h2>
     <div class="col-lg-6 col-lg-offset-3 col-sm-8 col-sm-offset-2 col-xs-12">
         <ul class="crop-controls horizontal">
-            <li class="crop-control-button">
+            <li class="crop-control-button" ng-click="initZoom(zoomFactor)">
                 <img src="https://pixter-loader-assets.s3.amazonaws.com/1_8_1_stg/files/images/cropZoomIn.png">
             </li>
-            <li class="crop-control-button">
+            <li class="crop-control-button" ng-click="initZoom(-zoomFactor)">
                 <img src="https://pixter-loader-assets.s3.amazonaws.com/1_8_1_stg/files/images/cropZoomOut.png">
             </li>
             <li class="crop-control-button">
@@ -20,8 +20,11 @@
     </div>                
     <div class="col-lg-6 col-lg-offset-3 col-sm-8 col-sm-offset-2 col-xs-12">
         <div class="crop-image-container">
-            <div class="image-inner-container">
-                <img src="app/images/image1.jpg" style="width:100%">
+            <div class="image-inner-container" >
+            {{zoom}}
+                <product-image-display class="shop-view-product-image-display" zoom="zoom" imageUrl="https://fbcdn-sphotos-g-a.akamaihd.net/hphotos-ak-xfa1/t31.0-8/13246160_961327897315228_9219812989318561441_o.jpg" tmbWidth="500">
+                </product-image-display>
+
             </div>
         </div>
     </div>
