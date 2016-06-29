@@ -11,9 +11,7 @@ angular.module('app').controller('shopCtl',function($state, $http){
     }
     vm.getProducts();
 
-        
-
-    vm.goToPreview = function () {
+    vm.goToPreview = function (product) {
         $state.go('app.preview');
     }
 });
