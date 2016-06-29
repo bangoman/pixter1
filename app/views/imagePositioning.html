@@ -1,8 +1,11 @@
-
-<div style="border:1px solid #000;width:500;height:400"></div>
-<img id="product" src="https://upload.wikimedia.org/wikipedia/commons/2/20/Saimiri_sciureus-1_Luc_Viatour.jpg" style="height:633">
+<canvas id="myCanvas" width="300" height="150" style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML5 canvas tag.</canvas>
 
 <script>
-	
+
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+ctx.rotate(20 * Math.PI / 180);
+ctx.fillRect(50, 20, 100, 50);
 
 </script>

@@ -1,4 +1,5 @@
-<div id="edit-view-responsive" class="row" style="margin:0" ng-if="editMode">            
+<div id="edit-view-responsive" class="row" style="margin:0" ng-if="editMode">     
+    <canvas id="canvas" width=1000 height=800 style="display:none"></canvas>
     <h2 class="edit-header" >
         You can resize and move the picture to your liking
     </h2>
@@ -10,10 +11,10 @@
             <li class="crop-control-button" ng-click="triggerZoom(0.95)">
                 <img src="https://pixter-loader-assets.s3.amazonaws.com/1_8_1_stg/files/images/cropZoomOut.png">
             </li>
-            <li class="crop-control-button">
+            <li class="crop-control-button" ng-click="rotateBackgroundImage(-90)">
                 <img src="https://pixter-loader-assets.s3.amazonaws.com/1_8_1_stg/files/images/cropRotateLeft.png">
             </li>
-            <li class="crop-control-button">
+            <li class="crop-control-button" ng-click="rotateBackgroundImage(90)">
                 <img src="https://pixter-loader-assets.s3.amazonaws.com/1_8_1_stg/files/images/cropRotateLeft.png" class="rotate-right">
             </li>
         </ul>
