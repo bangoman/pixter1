@@ -87,6 +87,7 @@ select[type="number"]:active {
 .store-header-buttons-container {
   position: absolute;
   right: 20px;
+  top: 8px;
 }
 .store-header-back-button {
   position: absolute;
@@ -117,6 +118,8 @@ select[type="number"]:active {
   color: #92aaaa;
   font-size: 14px;
   font-weight: 400;
+  border: none;
+  background: transparent;
 }
 .user-messaging {
   position: absolute;
@@ -694,7 +697,11 @@ select[type="number"]:active {
     margin-top: 28px;
   }
 }
-
+@media screen and (max-width: 480px) {
+  .store-header {
+    padding: 40px 0 36px;
+  }
+}
 @media screen and (max-width: 435px) {
   .user-messaging {
     font-size: 12px;
