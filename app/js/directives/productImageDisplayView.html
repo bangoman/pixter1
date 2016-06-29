@@ -1,7 +1,64 @@
-<div ng-style="imageStyle">
-	<div   on-drag="onDrag($event)" on-release="onRelease($event)" style="height:{{product.tmbHeight}}px;width:{{product.tmbWidth}}px;background:url('app/products_images/{{product.previewImage}}');background-size:{{product.tmbWidth}}px {{product.tmbHeight}}px"> 
-	</div>
+<div id="edit-view-responsive" class="row" style="margin:0">            
+    <h2 class="edit-header">
+        You can resize and move the picture to your liking
+    </h2>
+    <div class="col-lg-6 col-lg-offset-3 col-sm-8 col-sm-offset-2 col-xs-12">
+        <ul class="crop-controls horizontal">
+            <li class="crop-control-button" ng-click="initZoom(zoomFactor)">
+                <img src="https://pixter-loader-assets.s3.amazonaws.com/1_8_1_stg/files/images/cropZoomIn.png">
+            </li>
+            <li class="crop-control-button" ng-click="initZoom(-zoomFactor)">
+                <img src="https://pixter-loader-assets.s3.amazonaws.com/1_8_1_stg/files/images/cropZoomOut.png">
+            </li>
+            <li class="crop-control-button">
+                <img src="https://pixter-loader-assets.s3.amazonaws.com/1_8_1_stg/files/images/cropRotateLeft.png">
+            </li>
+            <li class="crop-control-button">
+                <img src="https://pixter-loader-assets.s3.amazonaws.com/1_8_1_stg/files/images/cropRotateLeft.png" class="rotate-right">
+            </li>
+        </ul>
+    </div>                
+    <div class="col-lg-6 col-lg-offset-3 col-sm-8 col-sm-offset-2 col-xs-12">
+        <div class="crop-image-container">
+            <div class="image-inner-container" >
+            {{zoom}}
+                <!-- <product-image-display class="shop-view-product-image-display" zoom="zoom" editMode="true" imageUrl="https://fbcdn-sphotos-g-a.akamaihd.net/hphotos-ak-xfa1/t31.0-8/13246160_961327897315228_9219812989318561441_o.jpg" tmbWidth="500">
+                </product-image-display> -->
+                <div ng-style="imageStyle">
+                    <div   on-drag="onDrag($event)" on-release="onRelease($event)" style="height:{{product.tmbHeight}}px;width:{{product.tmbWidth}}px;background:url('app/products_images/{{product.previewImage}}');background-size:{{product.tmbWidth}}px {{product.tmbHeight}}px"> 
+                    </div>
+                </div>
+                <button ng-click="triggerZoom()" ng-if="editMode">Zoom </button>
 
-
+            </div>
+        </div>
+    </div>
+    <!-- <div class="col-sm-3 col-xs-2 crop-outer-container">
+        <ul class="crop-controls">
+            <li class="crop-control-button">
+                <img src="cropZoomIn.png">
+            </li>
+            <li class="crop-control-button">
+                <img src="cropZoomOut.png">
+            </li>
+            <li class="crop-control-button">
+                <img src="cropRotateLeft.png">
+            </li>
+            <li class="crop-control-button">
+                <img src="cropRotateLeft.png" class="rotate-right">
+            </li>
+        </ul>
+    </div> -->
+    <div class="col-lg-6 col-lg-offset-3 col-sm-8 col-sm-offset-2 col-xs-12 edit-bottom-buttons-container">
+        <div class="revert-changes-button">
+            <img src="https://pixter-loader-assets.s3.amazonaws.com/1_8_1_stg/files/images/revertCrop.png">
+            <span style="text-decoration: underline">
+                Revert changes
+            </span>
+        </div>
+        <div class="pull-right right-buttons-group">
+            <div class="white-button">Cancel</div>
+            <div class="next-button">Apply</div>
+        </div>
+    </div>   
 </div>
-<button ng-click="triggerZoom()" ng-if="editMode">Zoom </button>
