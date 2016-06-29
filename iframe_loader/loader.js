@@ -28,7 +28,7 @@
 			document.body.appendChild(overlay);
 
 			iframe = document.createElement('iframe');
-			iframe.src = '../';  //  add this:  #/app/sliderShop  to see the slideShop
+			iframe.src = '../#/app/sliderShop';  //  add this:  #/app/sliderShop  to see the slideShop
 			iframe.style.position = 'fixed';
 			iframe.style.left = '18vw';
 			iframe.style.top = '10vh';

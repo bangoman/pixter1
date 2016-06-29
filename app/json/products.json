@@ -2,6 +2,9 @@
     "categories":[
         {
             "type": "magnet",
+            "window":{"w":239,"h":180,"x":20,"y":18},
+            "width":280,
+            "height":220,
             "shortName": "4 Magnets",
             "marketingName": "Magnet 4''x3''",
             "teaser":true,
@@ -15,6 +18,9 @@
         },
         {
             "type": "flatcard",
+            "window":{"w":202,"h":172,"x":53,"y":53},
+            "width":280,
+            "height":300,
             "shortName": "Flat Cards",
             "marketingName": "Flat Card 7''x5''",
             "teaser":true,
@@ -29,6 +35,9 @@
 
         {
             "type": "iphonecase",
+            "window":{"w":111,"h":253,"x":104,"y":18},
+            "width":310,
+            "height":290,            
             "shortName": "Phone Case",
             "marketingName": "Smart Phone Cases",
             "teaser":true,
@@ -53,6 +62,9 @@
         },
         {
             "type": "canvas",
+            "window":{"w":192,"h":267,"x":49,"y":8},
+            "width":290,
+            "height":290,            
             "shortName": "Canvas",
             "marketingName": "Canvas 10''x14''",
             "teaser":true,
@@ -81,6 +93,9 @@
         },
         {
             "type": "tshirt",
+            "window":{"w":114,"h":114,"x":246,"y":113},
+            "width":600,
+            "height":360,           
             "shortName": "T-Shirt",
             "marketingName": "T-Shirt all sizes",
             "teaser":false,
@@ -102,6 +117,9 @@
         },
         {
             "type": "mug",
+            "window":{"w":198,"h":200,"x":174,"y":105},
+            "width":600,
+            "height":360,   
             "shortName": "Mug",
             "marketingName": "11oz White Mug",
             "teaser":true,
@@ -117,7 +135,7 @@
     "products": [
         {
             "type": "magnet",
-            "window":{"w":238,"h":180,"x":20,"y":18},
+            "window":{"w":239,"h":180,"x":20,"y":18},
             "width":280,
             "height":220,
             "pid": "MAGN040304EEEE",
