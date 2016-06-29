@@ -9,8 +9,43 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 	  	controller: ['$scope','$http','$attrs','$document','$element','$compile', function($scope,$http,$attrs,$document,$element,$compile) {
 
 		//	setInterval(function(){console.log($attrs.zoom) },1000)
+			var lastHeight ,lastWidth,canvas,ctx;
 			$scope.editMode = $attrs.editmode;
+			setTimeout(function(){
+				canvas= document.getElementById("canvas");
+				console.log(canvas);
+				ctx=canvas.getContext("2d");
+				$scope.angleInDegrees=0;
+				
+				lastWidth = $scope.currentImg.width;
+				lastHeight = $scope.currentImg.height;
 
+
+
+			},1000)
+
+			$scope.rotateBackgroundImage = function(degrees){
+
+
+				canvas.height = lastWidth;	
+				canvas.width = lastHeight;
+				lastWidth = canvas.width;
+				lastHeight = canvas.height;
+
+			    ctx.clearRect(0,0,canvas.width,canvas.height);
+			    ctx.save();
+			    ctx.translate(canvas.width/2,canvas.height/2);
+			    ctx.rotate(degrees*Math.PI/180);
+			    ctx.drawImage($scope.currentImg,-$scope.currentImg.width/2,-$scope.currentImg.height/2);
+			    ctx.restore();
+			    ctx.save()
+			    dataURL  = canvas.toDataURL();
+			    $attrs.imageurl = dataURL;
+			    getImgSize(dataURL);
+			    console.log($scope.angleInDegrees);
+			    $scope.angleInDegrees += degrees;
+
+			}
 			$scope.findWindowCenterPositonOnBackground = function(){
 				var wx = $scope.product.window.x/$scope.sizeRatio;
 				var wy = $scope.product.window.y / $scope.sizeRatio;
