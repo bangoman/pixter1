@@ -11,6 +11,7 @@
             "previewImage":"magnet/previewImage.png",
             "categoryText":"Fine printed magnets",
             "children":["MAGN040304EEEE"],
+            "price": "6.99",
             "index":0
         },
         {
@@ -24,6 +25,7 @@
             "previewImage":"flatcard/previewImage.png",
             "categoryText":"Fine printed flat cards",
             "children":["FLAT660510EEEE"],
+            "price": "10.99",
             "index":3
         },
 
@@ -49,6 +51,7 @@
                 "SPSG4SOL01ESG4",
                 "SPSG5SOL01ESG5"
             ],
+            "price": "27.99",
             "index":2
         },
         {
@@ -76,6 +79,7 @@
                 "CNVS162401WRE4",
                 "CNVS203001WRE0"
             ],
+            "price": "32.99",
             "index":5
 
         },
@@ -98,6 +102,7 @@
                 "TSHIRTCOTXLTTT",
                 "TSHIRTCOTXXLTT"
             ],
+            "price": "14.99",
             "index":4
         },
         {
@@ -111,6 +116,7 @@
             "previewImage":"mug/previewImage.png",
             "categoryText":"Ceramic 11oz MUG",
             "children":["CMUG11OZ111MUG"],
+            "price": "8.99",
             "index":1
         }
     ],

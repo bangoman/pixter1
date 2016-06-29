@@ -10,6 +10,8 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 
 		//	setInterval(function(){console.log($attrs.zoom) },1000)
 			$scope.zoom = 1.1;
+			$scope.editMode = $attrs.editmode;
+			console.log($attrs);
 			$scope.triggerZoom = function(){
 				var preW,preH
 				preW = $scope.backgroundSize.w;
