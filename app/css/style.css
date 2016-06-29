@@ -318,8 +318,8 @@ select[type="number"]:active {
   text-align: center;
   background-color: #b3b3b3;
 }
-.image-inner-container {
-  max-width: 260px;
+.edit-image-inner-container {
+  max-width: 500px;
   margin: 0 auto;
 }
 .crop-controls {
