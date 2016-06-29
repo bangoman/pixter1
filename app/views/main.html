@@ -1,30 +1,27 @@
 <div id="pixter-responsive-store">
     <div class="row store-header" style="margin:0">
         <div class="col-xs-3">
-            <div class="header-back-button" ng-if="!vm.stateIsShop()" ng-click="vm.goBack()"><</div>
+            <div class="store-header-back-button" ng-if="!vm.stateIsShop()" ng-click="vm.goBack()">
+                <span><</span>
+            </div>
         </div>
-        <div class="col-xs-6">
-            {{ vm.getViewHeader() }}
-            <!-- CLICK A PRODUCT TO GET STARTED if .state is shop -->
-            <!-- PREVIEW YOUR PRODUCT if .state is preview -->
-            <!-- EDIT YOUR IMAGE  if .state is edit -->
-            <!-- ORDER DETAILS  if .state is orderDetails -->
-            <!-- CHECKOUT INFORMATION if .state is checkout -->      
+        <div class="col-xs-12">
+            {{ vm.getViewHeader() }}    
         </div>
-        <div class="col-xs-3">
-            <button class="learn-more-button" ng-click="vm.learnMore()">?</button>
-            <button class="close-btn" ng-click="vm.close()">Close</button>
+        <div class="store-header-buttons-container">
+            <button class="store-header-learn-more-button" ng-click="vm.learnMore()">?</button>
+            <button class="store-header-close-button" ng-click="vm.close()">Close</button>
         </div>
-    </div>
-    <div class="user-messaging">
-        Summer Sale Special - 
-        <span class="colorizedSpan">
-            40% OFF
-        </span>
-         on 
-         <span class="colorizedSpan">
-            all products
-        </span>            
+        <div class="col-xs-12 user-messaging">
+            Summer Sale Special - 
+            <span class="colorizedSpan">
+                40% OFF
+            </span>
+             on 
+             <span class="colorizedSpan">
+                all products
+            </span>            
+        </div>
     </div>
     <div ui-view="main"></div>
 </div>
