@@ -184,6 +184,7 @@ select[type="number"]:active {
 #shop-view-responsive .shop-view-product-container {
   margin: 20px 0;
   padding: 12px;
+  overflow: hidden;
 }
 #shop-view-responsive .product_image_container {
   width: 100%;      
@@ -317,6 +318,7 @@ select[type="number"]:active {
   min-height: 300px;
   text-align: center;
   background-color: #b3b3b3;
+  overflow: hidden;
 }
 .edit-image-inner-container {
   max-width: 500px;
