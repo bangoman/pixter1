@@ -40,7 +40,7 @@
 			console.log(iframeW,screenW);
 			var offsetLeft = (screenW - iframeW)/2;
 			iframe = document.createElement('iframe');
-			iframe.src = '../#/app/sliderShop';  //  add this:  #/app/sliderShop  to see the slideShop
+			iframe.src = '../#/app/shop';  //  add this:  #/app/sliderShop  to see the slideShop
 			iframe.style.position = 'fixed';
 			iframe.style.left = offsetLeft + "px";
 			iframe.style.top = '10vh';
