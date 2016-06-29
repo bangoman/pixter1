@@ -14,13 +14,13 @@
         </div>
     </div> -->
     <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 shop-view-product-container"
-        ng-repeat="product in vm.products">
+        ng-repeat="category in vm.productsData.categories">
         <div class="product_image_container">
             <product-image-display class="shop-view-product-image-display" imageUrl="http://3v6x691yvn532gp2411ezrib.wpengine.netdna-cdn.com/wp-content/uploads/sites/default/files/story_images/112602_fg5.jpg" tmbWidth="180">
             </product-image-display>
         </div>
         <div class="product-data">
-            <span class="product-name">{{ product.marketingName }}</span>
+            <span class="product-name">{{ category.shortName }}</span>
             <span class="product-price">$6.99</span>
         </div>
         <div class="shop-view-next-button-container">

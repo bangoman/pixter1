@@ -4,7 +4,7 @@ angular.module('app').controller('shopCtl',function($state, $http){
     vm.getProducts = function(){
         $http.get('app/json/products.json')
             .then(function(res){
-                vm.products = res.data.products;                
+                vm.productsData = res.data;                
             }).then(function(){
                 console.log('vm.products = ',vm.products);
             });
