@@ -1,4 +1,4 @@
-angular.module('app').controller('shopCtl',function($state, $http){
+angular.module('app').controller('shopCtl',function($state, $http,$rootScope){
 	var vm = this;
     
     vm.getProducts = function(){
@@ -12,6 +12,7 @@ angular.module('app').controller('shopCtl',function($state, $http){
     vm.getProducts();
 
     vm.goToPreview = function (product) {
+        $rootScope.product = product
         $state.go('app.preview');
     }
 });
