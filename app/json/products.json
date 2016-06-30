@@ -514,9 +514,9 @@
 
         {
             "type": "canvas1410",
-            "window":{"w":901,"h":643,"x":68,"y":63},
+            "window":{"w":852,"h":648,"x":71,"y":194},
             "width":1033,
-            "height":768,            
+            "height":1033,            
             "pid": "CNVS141001WRE0",
             "shortName": "14'' X 10''",
             "marketingName": "Canvas 14''x10''",
@@ -532,7 +532,7 @@
             "tmbHeight": 90,
             "tmbWidth": 118,
             "cropRatio": 0.75,
-            "previewImage":"canvases/14x10/preview.png",
+            "previewImage":"canvases/14x10/canvas14x10_1033px.png",
             "rotate": ["CNVS141001WRE0","CNVS101401WRE0"],
             "bulletList":[
                 "Create a stunning photo canvas of your favorite scenic, travel, or occasion photos",
@@ -543,8 +543,8 @@
         },
         {
             "type": "canvas1014",
-            "window":{"w":647,"h":900,"x":65,"y":71},
-            "width":768,
+            "window":{"w":649,"h":906,"x":197,"y":68},
+            "width":1033,
             "height":1033,
             "pid": "CNVS101401WRE0",
             "shortName": "10'' X 14''",
@@ -561,7 +561,7 @@
             "tmbHeight": 120,
             "tmbWidth": 90,
             "cropRatio": 1.33,
-            "previewImage":"canvases/10x14/preview.png",
+            "previewImage":"canvases/10x14/canvas10x14_1033px.png",
             "rotate": ["CNVS141001WRE0","CNVS101401WRE0"],
             "bulletList":[
                 "Create a stunning photo canvas of your favorite scenic, travel, or occasion photos",
@@ -572,8 +572,8 @@
         },
         {
             "type": "canvas1624",
-            "window":{"w":760,"h":1134,"x":88,"y":86},
-            "width":900,
+            "window":{"w":764,"h":1140,"x":282,"y":82},
+            "width":1300,
             "height":1300,        
             "pid": "CNVS162401WRE4",
             "shortName": "16'' X 24''",
@@ -590,7 +590,7 @@
             "tmbHeight": 120,
             "tmbWidth": 85,
             "cropRatio": 1.44,
-            "previewImage":"canvases/16x24/preview.png",
+            "previewImage":"canvases/16x24/canvas16x24_1300px.png",
             "rotate": ["CNVS162401WRE4","CNVS241601WRE4"],
             "bulletList":[
                 "Create a stunning photo canvas of your favorite scenic, travel, or occasion photos",
@@ -601,9 +601,9 @@
         },
         {
             "type": "canvas2416",
-            "window":{"w":1135,"h":758,"x":84,"y":59},
+            "window":{"w":1140,"h":762,"x":80,"y":256},
             "width":1300,
-            "height":900,            
+            "height":1300,            
             "pid": "CNVS241601WRE4",
             "shortName": "24'' X 16''",
             "marketingName": "Canvas 24''x16''",
@@ -619,7 +619,7 @@
             "tmbHeight": 80,
             "tmbWidth": 118,
             "cropRatio": 0.69,
-            "previewImage":"canvases/24x16/preview.png",
+            "previewImage":"canvases/24x16/canvas24x16_1300px.png",
             "rotate": ["CNVS241601WRE4","CNVS162401WRE4"],
             "bulletList":[
                 "Create a stunning photo canvas of your favorite scenic, travel, or occasion photos",
@@ -630,9 +630,9 @@
         },
         {
             "type": "canvas2016",
-            "window":{"w":931,"h":761,"x":183,"y":59},
+            "window":{"w":938,"h":766,"x":183,"y":258},
             "width":1300,
-            "height":900,            
+            "height":1300,            
             "pid": "CNVS201601WRE6",
             "shortName": "20'' x 16''",
             "marketingName": "Canvas 20''x16''",
@@ -651,7 +651,7 @@
             "tmbHeight": 96,
             "tmbWidth": 118,
             "cropRatio": 0.82,
-            "previewImage":"canvases/20x16/preview.png",
+            "previewImage":"canvases/20x16/canvas20x16_1300px.png",
             "rotate": ["CNVS201601WRE6","CNVS162001WRE6"],
             "bulletList":[
                 "Create a stunning photo canvas of your favorite scenic, travel, or occasion photos",
