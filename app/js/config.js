@@ -9,7 +9,7 @@ angular.module('app').config(function($stateProvider,$urlRouterProvider){
         })
 		.state('app.shop',{
 			url:'/shop',
-            title:'CLICK A PRODUCT TO GET STARTED',
+            title:'CLICK A PRODUCT',// TO GET STARTED
             views:{
                 main:{
                     templateUrl:'app/views/shop.html',                    

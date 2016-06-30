@@ -1,18 +1,4 @@
-<div id="shop-view-responsive" class="row" style="margin:0">
-
-    <!-- <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 shop-view-product-container">
-        <div class="product_image_container">
-            <product-image-display class="shop-view-product-image-display" imageUrl="https://fbcdn-sphotos-g-a.akamaihd.net/hphotos-ak-xfa1/t31.0-8/13246160_961327897315228_9219812989318561441_o.jpg" tmbWidth="180">
-            </product-image-display>
-        </div>
-        <div class="product-data">
-            <span class="product-name">4 Magnets</span>
-            <span class="product-price">$6.99</span>
-        </div>
-        <div class="shop-view-next-button-container">
-            <div class="next-button" ng-click="vm.goToPreview()">Next</div>
-        </div>
-    </div> -->
+<div id="shop-view-responsive" class="row">
     <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 shop-view-product-container"
         ng-repeat="category in vm.productsData.categories">
         <div class="product_image_container">
@@ -27,6 +13,4 @@
             <div class="next-button" ng-click="vm.goToPreview(category)">Next</div>
         </div>
     </div>
-
-           
 </div>

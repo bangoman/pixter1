@@ -415,7 +415,7 @@ select[type="number"]:active {
 /* order-details view style */
 
 #order-details-view-responsive {
-  padding: 84px 52px 20px;
+  padding: 72px 52px 20px;
 }
 .order-details-header {
   color: #4d4d4d;
@@ -698,11 +698,11 @@ select[type="number"]:active {
   }
 }
 @media screen and (max-width: 480px) {
-  .store-header {
-    padding: 40px 0 36px;
-  }
 }
 @media screen and (max-width: 435px) {
+  .store-header {
+    font-size:10px;
+  }
   .user-messaging {
     font-size: 12px;
   }
