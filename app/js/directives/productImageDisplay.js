@@ -5,25 +5,23 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 	  }
   	return {	    
 	    restrict: 'E',
-	    scope: { },
+	    scope: {
+	    
+	    },
 	  	controller: ['$scope','$http','$attrs','$document','$element','$compile', function($scope,$http,$attrs,$document,$element,$compile) {
 
 		//	setInterval(function(){console.log($attrs.zoom) },1000)
 			var lastHeight ,lastWidth,canvas,ctx;
 			$scope.editMode = $attrs.editmode;
-			setTimeout(function(){
+			$scope.initCanvas = function(){
 				canvas= document.getElementById("canvas");
 				console.log(canvas);
 				ctx=canvas.getContext("2d");
-				$scope.angleInDegrees=0;
-				
+				$scope.angleInDegrees=0;				
 				lastWidth = $scope.currentImg.width;
-				lastHeight = $scope.currentImg.height;
+				lastHeight = $scope.currentImg.height;				
 
-
-
-			},1000)
-
+			}
 			$scope.rotateBackgroundImage = function(degrees){
 
 
@@ -202,6 +200,7 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 		  	
 		  	//$scope.imageStyle={"width":"500px","height":"400px","background":"pink"}
 		  	$scope.product = {"type":"mug","window":{"w":200,"h":200,"x":175,"y":107},"width":600,"height":360,"shortName":"Mug","marketingName":"11oz White Mug","teaser":true,"cropRatio":0.75,"previewImage":"mug/previewImage.png","categoryText":"Ceramic 11oz MUG","children":["CMUG11OZ111MUG"],"index":1};
+		  	console.log($scope.product);
 		  	getImgSize($attrs.imageurl);
 
 	  	
