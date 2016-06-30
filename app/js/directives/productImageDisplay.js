@@ -6,22 +6,23 @@ angular.module('app').directive('productImageDisplay', function ($http) {
   	return {	    
 	    restrict: 'E',
 	    scope: {
-	    
-	    },
+	    	product:'=',
+	    	withCanvas: '='
+
+	     },
 	  	controller: ['$scope','$http','$attrs','$document','$element','$compile', function($scope,$http,$attrs,$document,$element,$compile) {
 
 		//	setInterval(function(){console.log($attrs.zoom) },1000)
 			var lastHeight ,lastWidth,canvas,ctx;
 			$scope.editMode = $attrs.editmode;
-			$scope.initCanvas = function(){
-				canvas= document.getElementById("canvas");
-				console.log(canvas);
+			$scope.initCanvas = function (){
+				canvas= document.getElementById("canvas");					
 				ctx=canvas.getContext("2d");
 				$scope.angleInDegrees=0;				
 				lastWidth = $scope.currentImg.width;
-				lastHeight = $scope.currentImg.height;				
-
+				lastHeight = $scope.currentImg.height;
 			}
+
 			$scope.rotateBackgroundImage = function(degrees){
 
 
@@ -108,31 +109,33 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 	  		}
 	  		var currentBackgroundPosition = {top:"",left:""};
 		    $scope.onDrag=function(event){
-		    	 currentBackgroundPosition = {top:"",left:""};
-			   var limitVertical =   (($scope.currentImg.height/$scope.imageSizeRatio) - ($scope.product.window.h/$scope.sizeRatio));		       
-		       var limitHorizontal =   (($scope.currentImg.width/$scope.imageSizeRatio) - ($scope.product.window.w/$scope.sizeRatio));		       
-		       currentBackgroundPosition.top = (parseInt($scope.backgroundPosition.top) + event.gesture.deltaY) +"px "; 
-		       currentBackgroundPosition.left = (parseInt($scope.backgroundPosition.left) + event.gesture.deltaX) +"px "; 
-		       var remainVertical =  limitVertical - (($scope.product.window.y/$scope.sizeRatio) -  parseInt(currentBackgroundPosition.top) ) ;
-		       var remainHorizontal =  limitHorizontal - (($scope.product.window.x/$scope.sizeRatio) -  parseInt(currentBackgroundPosition.left) ) ;
-		     //  console.log("vertical",remainVertical,limitVertical);
-		      //	 console.log("horizontal",remainHorizontal,limitHorizontal);
-		       if(remainVertical <= 0 ){
-		       		currentBackgroundPosition.top =  (- limitVertical) + ($scope.product.window.y/$scope.sizeRatio) + "px";
-		       }else if( remainVertical > limitVertical){
-		       		currentBackgroundPosition.top = ($scope.product.window.y/$scope.sizeRatio) + "px";
-		       }
+		    	if($attrs.editmode){
+			    	currentBackgroundPosition = {top:"",left:""};
+				    var limitVertical =   (($scope.currentImg.height/$scope.imageSizeRatio) - ($scope.product.window.h/$scope.sizeRatio));		       
+			        var limitHorizontal =   (($scope.currentImg.width/$scope.imageSizeRatio) - ($scope.product.window.w/$scope.sizeRatio));		       
+			        currentBackgroundPosition.top = (parseInt($scope.backgroundPosition.top) + event.gesture.deltaY) +"px "; 
+			        currentBackgroundPosition.left = (parseInt($scope.backgroundPosition.left) + event.gesture.deltaX) +"px "; 
+			        var remainVertical =  limitVertical - (($scope.product.window.y/$scope.sizeRatio) -  parseInt(currentBackgroundPosition.top) ) ;
+			        var remainHorizontal =  limitHorizontal - (($scope.product.window.x/$scope.sizeRatio) -  parseInt(currentBackgroundPosition.left) ) ;
+			     //  console.log("vertical",remainVertical,limitVertical);
+			      //	 console.log("horizontal",remainHorizontal,limitHorizontal);
+			       if(remainVertical <= 0 ){
+			       		currentBackgroundPosition.top =  (- limitVertical) + ($scope.product.window.y/$scope.sizeRatio) + "px";
+			       }else if( remainVertical > limitVertical){
+			       		currentBackgroundPosition.top = ($scope.product.window.y/$scope.sizeRatio) + "px";
+			       }
 
-		       if(remainHorizontal <= 0 ){
-		       		currentBackgroundPosition.left =  (- limitHorizontal) + ($scope.product.window.x/$scope.sizeRatio) + "px ";
-		       }else if( remainHorizontal > limitHorizontal){
-		       		currentBackgroundPosition.left = ($scope.product.window.x/$scope.sizeRatio) + "px ";
-		       }
+			       if(remainHorizontal <= 0 ){
+			       		currentBackgroundPosition.left =  (- limitHorizontal) + ($scope.product.window.x/$scope.sizeRatio) + "px ";
+			       }else if( remainHorizontal > limitHorizontal){
+			       		currentBackgroundPosition.left = ($scope.product.window.x/$scope.sizeRatio) + "px ";
+			       }
 
 
-		        console.log(currentBackgroundPosition.top);
-				$scope.imageStyle["background-position"] = currentBackgroundPosition.left + currentBackgroundPosition.top			       	
-		       
+			        console.log(currentBackgroundPosition.top);
+					$scope.imageStyle["background-position"] = currentBackgroundPosition.left + currentBackgroundPosition.top			       				       
+		    	}
+
 		    }	  		
 
 			function getImgSize(imgSrc) {
@@ -191,7 +194,10 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 					"width":$attrs.tmbwidth + "px",
 
 				}
+				if($scope.withCanvas){
+					$scope.initCanvas();
 
+				}
 				$scope.$apply();
 //				$scope.triggerZoom();
 			}
@@ -199,8 +205,7 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 
 		  	
 		  	//$scope.imageStyle={"width":"500px","height":"400px","background":"pink"}
-		  	$scope.product = {"type":"mug","window":{"w":200,"h":200,"x":175,"y":107},"width":600,"height":360,"shortName":"Mug","marketingName":"11oz White Mug","teaser":true,"cropRatio":0.75,"previewImage":"mug/previewImage.png","categoryText":"Ceramic 11oz MUG","children":["CMUG11OZ111MUG"],"index":1};
-		  	console.log($scope.product);
+		  	//$scope.product = {"type":"mug","window":{"w":200,"h":200,"x":175,"y":107},"width":600,"height":360,"shortName":"Mug","marketingName":"11oz White Mug","teaser":true,"cropRatio":0.75,"previewImage":"mug/previewImage.png","categoryText":"Ceramic 11oz MUG","children":["CMUG11OZ111MUG"],"index":1};
 		  	getImgSize($attrs.imageurl);
 
 	  	
