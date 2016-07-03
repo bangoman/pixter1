@@ -230,7 +230,7 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 				if($scope.withCanvas){
 					$scope.initCanvas();
 				}
-				if(appliedCangesFlag){
+				if($scope.appliedCangesFlag){
 					$scope.laodAppliedCanges()
 
 				}
