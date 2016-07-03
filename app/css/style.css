@@ -289,9 +289,14 @@ select[type="number"]:active {
   font-weight: normal;
   letter-spacing: -0.25px;
   font-size: 22px;
-  line-height: 32px;
+  line-height: 22px;
   text-align: center;
   border-bottom: 1px solid #d9d9d9;
+}
+.preview-product-select {
+  height: 25px;
+  min-width: 128px;
+  font-size: 18px;
 }
 .preview-details-header .preview-price {
   font-size: 18px;
