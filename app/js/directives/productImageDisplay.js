@@ -25,8 +25,7 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 			$scope.applyChanges = function(){
 				$rootScope.backgroundPositionLeft = parseInt($scope.backgroundPosition.left)*$scope.imageSizeRatio + "px ";
 				$rootScope.backgroundPositionTop = parseInt($scope.backgroundPosition.top)*$scope.imageSizeRatio + "px";
-				$rootScope.backgroundSizeW = $scope.backgroundSize.w*$scope.imageSizeRatio + "px ";
-                $rootScope.backgroundSizeH = $scope.backgroundSize.h*$scope.imageSizeRatio + "px";
+				$rootScope.zoomRatio = ($scope.product.window.w/$scope.sizeRatio) / $scope.backgroundSize.w ;
                 $state.go('app.orderDetails');
                  console.log( $rootScope.backgroundPositionLeft, $rootScope.backgroundPositionTop,$rootScope.backgroundSizeW,$rootScope.backgroundSizeH)
                
@@ -34,8 +33,8 @@ angular.module('app').directive('productImageDisplay', function ($http) {
             $scope.laodAppliedChanges = function(){
             	$scope.backgroundPosition.left = parseInt($rootScope.backgroundPositionLeft) / $scope.imageSizeRatio;
 				$scope.backgroundPosition.top = parseInt($rootScope.backgroundPositionTop) / $scope.imageSizeRatio;
-				$scope.backgroundSize.w = parseInt($rootScope.backgroundSizeW) / $scope.imageSizeRatio;
-                $scope.backgroundSize.h = parseInt($rootScope.backgroundSizeH) / $scope.imageSizeRatio;
+				$scope.backgroundSize.w = parseInt($scope.backgroundSize.w)/$rootScope.zoomRatio;
+				$scope.backgroundSize.h = parseInt($scope.backgroundSize.h)/$rootScope.zoomRatio;
                 $scope.imageStyle = {					
 					"background-image":"url('" + $scope.imageUrl  + "')",
 					"background-size": $scope.backgroundSize.w + "px "  + $scope.backgroundSize.h + "px",
@@ -44,7 +43,7 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 					"width":$attrs.tmbwidth + "px",
 				}
 				$scope.$apply();
-				console.log("la", $scope.sizeRatio)
+				console.log("la", $scope.imageSizeRatio)
                 console.log("apply=", $scope.imageStyle)
             }
 			$scope.initCanvas = function (){
