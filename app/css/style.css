@@ -337,6 +337,7 @@ select[type="number"]:active {
   padding: 20px 24px;
   font-family: Calibri, "CalibriRegular", "Gill Sans", Verdana, Arial;
 }
+
 .crop-image-container {
   /*padding: 36px 20px;*/
   min-height: 300px;
@@ -346,6 +347,9 @@ select[type="number"]:active {
 }
 .edit-image-inner-container {
   max-width: 500px;
+  margin: 0 auto;
+}
+.edit-image-inner-container > div {
   margin: 0 auto;
 }
 .crop-controls {
@@ -707,7 +711,8 @@ select[type="number"]:active {
     height: 0;
   }
   #edit-view-responsive,
-  .edit-crop-controls-container {
+  #edit-view-responsive .edit-crop-controls-container,
+  #edit-view-responsive .edit-image-outer-container {
     padding: 0;
   }
   .store-header {
