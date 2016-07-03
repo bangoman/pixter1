@@ -259,6 +259,7 @@ select[type="number"]:active {
 .preview-edit-row {
   width: 280px;
   text-align: right;
+  padding: 0 20px;
   margin: 0 auto;
 }
 .preview-edit-btn {
@@ -283,6 +284,7 @@ select[type="number"]:active {
 }
 .preview-details-header {
   display: -webkit-inline-box;
+  width: 100%;
   margin-bottom: 12px;
   font-weight: normal;
   letter-spacing: -0.25px;
