@@ -21,7 +21,20 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 				getImgSize($scope.imageUrl);
 			        
 			});
+			$scope.applyChanges = function(){
+				$rootScope.backgroundPositionLeft = $scope.backgroundPosition.left;
+				$rootScope.backgroundPositionTop = $scope.backgroundPosition.top;
+				$rootScope.backgroundSizeW = $scope.backgroundSize.w;
+                $rootScope.backgroundSizeH = $scope.backgroundSize.h;
+                console.log( $scope.backgroundPosition.left, $scope.backgroundPosition.top,$scope.backgroundSize.w,$scope.backgroundSize.h)
+			}
+            $scope.laodAppliedCanges = function(){
+            	$scope.backgroundPosition.left = $rootScope.backgroundPositionLeft / $scope.sizeRatio;
+				$scope.backgroundPosition.top = $rootScope.backgroundPositionTop / $scope.sizeRatio;
+				$scope.backgroundSize.w = $rootScope.backgroundSizeW / $scope.imageSizeRatio;
+                $scope.backgroundSize.h = $rootScope.backgroundSizeH / $scope.imageSizeRatio;
 
+            }
 			$scope.initCanvas = function (){
 				canvas= document.getElementById("canvas");					
 				ctx=canvas.getContext("2d");
@@ -68,12 +81,11 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 			}
 
 			$scope.triggerZoom = function(zoom){
-				console.log("center",$scope.findWindowCenterPositonOnBackground());
 				var center = $scope.findWindowCenterPositonOnBackground();
 				var preW,preH
 				preW = $scope.backgroundSize.w;
 				preH = $scope.backgroundSize.h;				
-
+                console.log( $scope.backgroundPosition.left, $scope.backgroundPosition.top,$scope.backgroundSize.w,$scope.backgroundSize.h)
 				var tmpImageSizeRatio = $scope.imageSizeRatio / zoom
 				if(($scope.currentImg.height/tmpImageSizeRatio) < parseInt($scope.product.window.h/$scope.sizeRatio) || ($scope.currentImg.width/tmpImageSizeRatio) < parseInt($scope.product.window.w/$scope.sizeRatio)){
 					return false;
@@ -100,7 +112,6 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 
 
 				$scope.imageStyle["background-position"] =  $scope.backgroundPosition.left  + $scope.backgroundPosition.top ;				
-				console.log($scope.imageStyle["background-position"]);
 				//console.log("bakcgroundPositionn",$scope.backgroundPosition,"background-size:",$scope.backgroundSize);				
 				//$scope.backgroundPosition.top
 				
@@ -110,7 +121,8 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 	  		$scope.onRelease = function(event){	  			
 	  			$scope.backgroundPosition.top = currentBackgroundPosition.top  //(parseInt($scope.backgroundPosition.top) + event.gesture.deltaY) + "px"  ;
 	  			$scope.backgroundPosition.left = currentBackgroundPosition.left// (parseInt($scope.backgroundPosition.left) + event.gesture.deltaX) + "px "  ;
-
+                console.log("bpldb",$scope.backgroundPosition.left);
+				console.log("bptdb",$scope.backgroundPosition.top);
 
 
 	  		}
@@ -140,7 +152,9 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 
 
 			        console.log(currentBackgroundPosition.top);
-					$scope.imageStyle["background-position"] = currentBackgroundPosition.left + currentBackgroundPosition.top			       				       
+					$scope.imageStyle["background-position"] = currentBackgroundPosition.left + currentBackgroundPosition.top
+					console.log("bplda",$scope.backgroundPosition.left);
+				    console.log("bptda",$scope.backgroundPosition.top);			       				       
 		    	}
 
 		    }	  		
@@ -199,7 +213,6 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 					"background-repeat":"no-repeat", 
 					"background-position": $scope.backgroundPosition.left + $scope.backgroundPosition.top,
 					"width":$attrs.tmbwidth + "px",
-
 				}
 				if($scope.withCanvas){
 					$scope.initCanvas();
