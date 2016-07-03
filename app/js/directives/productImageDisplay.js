@@ -110,25 +110,24 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 	  		$scope.onRelease = function(event){	  			
 	  			$scope.backgroundPosition.top = currentBackgroundPosition.top  //(parseInt($scope.backgroundPosition.top) + event.gesture.deltaY) + "px"  ;
 	  			$scope.backgroundPosition.left = currentBackgroundPosition.left// (parseInt($scope.backgroundPosition.left) + event.gesture.deltaX) + "px "  ;
-				document.body.removeEventListener('touchmove', function(event) {
-			      //if (event.source == document.body)
-//			        event.preventDefault();
-			    }, false);		    	
 
 
 
 
 	  		}
 	  		var currentBackgroundPosition = {top:"",left:""};
+			document.body.addEventListener('touchmove', function(event) {
+		      console.log(event.source);
+		      //if (event.source == document.body)
+		    	if($attrs.editmode){		      
+		        	event.preventDefault();
+		        }
+		    }, false);		    	
+
 
 		    $scope.onDrag=function(event){
 		    	if($attrs.editmode){
-					document.body.addEventListener('touchmove', function(event) {
-				      console.log(event.source);
-				      //if (event.source == document.body)
-				        event.preventDefault();
-				    }, false);		    	
-		    		
+
 			    	currentBackgroundPosition = {top:"",left:""};
 				    var limitVertical =   (($scope.currentImg.height/$scope.imageSizeRatio) - ($scope.product.window.h/$scope.sizeRatio));		       
 			        var limitHorizontal =   (($scope.currentImg.width/$scope.imageSizeRatio) - ($scope.product.window.w/$scope.sizeRatio));		       
