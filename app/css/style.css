@@ -754,6 +754,13 @@ select[type="number"]:active {
   }
 }
 @media screen and (max-width: 375px) {
+  .preview-details-header {
+    margin-bottom: 4px;
+  }
+  .preview-bullet-list li {
+    line-height: 16px;
+    margin-bottom: 8px;
+  }
   #order-details-view-responsive,
   #checkout-view-responsive {
     padding: 72px 32px 20px;

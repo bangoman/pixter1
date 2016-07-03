@@ -9,7 +9,7 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 	    	product:'=',
 	    	withCanvas: '=',
 	    	imageUrl: '=',
-	    	appliedCangesFlag: '='
+	    	appliedChangesFlag: '='
 
 	     },
 	  	controller: ['$scope','$http','$attrs','$document','$element','$compile','$rootScope','$state', function($scope,$http,$attrs,$document,$element,$compile,$rootScope,$state) {
@@ -30,12 +30,19 @@ angular.module('app').directive('productImageDisplay', function ($http) {
                 $state.go('app.orderDetails');
                 console.log( $rootScope.backgroundPositionLeft, $rootScope.backgroundPositionTop,$rootScope.backgroundSizeW,$rootScope.backgroundSizeH)
 			}
-            $scope.laodAppliedCanges = function(){
+            $scope.laodAppliedChanges = function(){
             	$scope.backgroundPosition.left = $rootScope.backgroundPositionLeft / $scope.sizeRatio;
 				$scope.backgroundPosition.top = $rootScope.backgroundPositionTop / $scope.sizeRatio;
 				$scope.backgroundSize.w = $rootScope.backgroundSizeW / $scope.imageSizeRatio;
                 $scope.backgroundSize.h = $rootScope.backgroundSizeH / $scope.imageSizeRatio;
-
+                $scope.imageStyle = {					
+					"background-image":"url('" + $scope.imageUrl  + "')",
+					"background-size": $scope.backgroundSize.w + "px "  + $scope.backgroundSize.h + "px",
+					"background-repeat":"no-repeat", 
+					"background-position": $scope.backgroundPosition.left + $scope.backgroundPosition.top,
+					"width":$attrs.tmbwidth + "px",
+				}
+                console.log( $rootScope.backgroundPositionLeft, $rootScope.backgroundPositionTop,$rootScope.backgroundSizeW,$rootScope.backgroundSizeH)
             }
 			$scope.initCanvas = function (){
 				canvas= document.getElementById("canvas");					
@@ -230,15 +237,20 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 				if($scope.withCanvas){
 					$scope.initCanvas();
 				}
+
 				if($scope.appliedCangesFlag){
 					setTimeout(function(){
 						$scope.laodAppliedCanges()	
 					},200)
 					
 
+
 				}
 				$scope.$apply();
 //				$scope.triggerZoom();
+                console.log($scope.appliedChangesFlag)
+                console.log( $rootScope.backgroundPositionLeft, $rootScope.backgroundPositionTop,$rootScope.backgroundSizeW,$rootScope.backgroundSizeH)
+
 			}
     
 
