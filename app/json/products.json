@@ -2,44 +2,33 @@
     "categories":[
         {
             "type": "magnet",
-            "window":{"w":239,"h":180,"x":25,"y":53},
-            "width":290,
-            "height":290,
             "shortName": "4 Magnets",
             "marketingName": "Magnet 4''x3''",
             "teaser":true,
             "tmbHeight": 63,
             "tmbWidth": 84,
             "cropRatio": 0.75,
-            "previewImage":"magnet/magnet_290.png",
+            "previewImage":"magnet/previewImage.png",
             "categoryText":"Fine printed magnets",
             "children":["MAGN040304EEEE"],
-            "price": "6.99",
             "index":0
         },
         {
             "type": "flatcard",
-            "window":{"w":206,"h":172,"x":54,"y":54},
-            "width":290,
-            "height":290,
             "shortName": "Flat Cards",
             "marketingName": "Flat Card 7''x5''",
             "teaser":true,
             "tmbHeight": 60,
             "tmbWidth": 84,
             "cropRatio": 0.76,
-            "previewImage":"flatcard/flatcard_290.png",
+            "previewImage":"flatcard/previewImage.png",
             "categoryText":"Fine printed flat cards",
             "children":["FLAT660510EEEE"],
-            "price": "10.99",
             "index":3
         },
 
         {
             "type": "iphonecase",
-            "window":{"w":113,"h":254,"x":91,"y":18},
-            "width":290,
-            "height":290,            
             "shortName": "Phone Case",
             "marketingName": "Smart Phone Cases",
             "teaser":true,
@@ -47,7 +36,7 @@
             "tmbWidth": 80,
             "cropRatio": 1.675,
             "isRenderAsOne": true,
-            "previewImage":"cases/case_290.png",
+            "previewImage":"cases/casePreview.png",
             "categoryText":"Choose your high quality 3D phone case",
             "defaultDropDownItem":"SPIP6SOL01EEI6",
             "children":[
@@ -60,14 +49,10 @@
                 "SPSG4SOL01ESG4",
                 "SPSG5SOL01ESG5"
             ],
-            "price": "27.99",
             "index":2
         },
         {
             "type": "canvas",
-            "window":{"w":192,"h":267,"x":49,"y":8},
-            "width":290,
-            "height":290,            
             "shortName": "Canvas",
             "marketingName": "Canvas 10''x14''",
             "teaser":true,
@@ -91,15 +76,11 @@
                 "CNVS162401WRE4",
                 "CNVS203001WRE0"
             ],
-            "price": "32.99",
             "index":5
 
         },
         {
             "type": "tshirt",
-            "window":{"w":116,"h":116,"x":85,"y":78},
-            "width":290,
-            "height":290,           
             "shortName": "T-Shirt",
             "marketingName": "T-Shirt all sizes",
             "teaser":false,
@@ -107,7 +88,7 @@
             "categoryText":"Choose the size of your t-shirt",
             "tmbWidth": 40,
             "cropRatio": 1,
-            "previewImage":"tshirt/tshirt_290.png",
+            "previewImage":"tshirt/previewImage.png",
             "isRenderAsOne": true,
             "defaultDropDownItem":"TSHIRTCOTLARGT",
             "children":[
@@ -117,31 +98,26 @@
                 "TSHIRTCOTXLTTT",
                 "TSHIRTCOTXXLTT"
             ],
-            "price": "14.99",
             "index":4
         },
         {
             "type": "mug",
-            "window":{"w":199,"h":199,"x":11,"y":49},
-            "width":290,
-            "height":290,   
             "shortName": "Mug",
             "marketingName": "11oz White Mug",
             "teaser":true,
             "tmbHeight": 67,
             "tmbWidth": 90,
             "cropRatio": 0.75,
-            "previewImage":"mug/mug_290.png",
+            "previewImage":"mug/previewImage.png",
             "categoryText":"Ceramic 11oz MUG",
             "children":["CMUG11OZ111MUG"],
-            "price": "8.99",
             "index":1
         }
     ],
     "products": [
         {
             "type": "magnet",
-            "window":{"w":239,"h":180,"x":20,"y":18},
+            "window":{"w":238,"h":180,"x":20,"y":18},
             "width":280,
             "height":220,
             "pid": "MAGN040304EEEE",

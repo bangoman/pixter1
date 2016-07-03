@@ -1,31 +1,39 @@
 <div id="preview-view-responsive" class="row" style="margin:0">
     <div class="col-sm-6 col-xs-12 preview-product-image">
         <div class="preview-product-border">
-            <product-image-display  product="product"  imageUrl="app/images/image1.jpg" tmbWidth="300">
+            <product-image-display  product="currentProduct"  image-url="imageUrl" tmbWidth="300">
             </product-image-display>
 
             <div class="row preview-edit-row">
                 <div class="col-xs-4 col-xs-push-8 preview-edit-btn" ng-click="vm.goToEdit()">
                     <i class="glyphicon glyphicon-scissors"></i>
                     <span>Edit</span>
+                    
                 </div>
             </div>
         </div>
     </div>
     <div class="col-sm-6 col-xs-12 preview-product-details">
         <div class="preview-details-header">    
-            {{product.shortName}}
+            {{currentProduct.shortName}}
             <span class="preview-price">
-                 {{product.price}}
+                 {{prices.products[currentProduct.pid].price}}
             </span>
         </div>
         <ul class="preview-bullet-list">
-            <li><span>Create a stunning photo mug of your favorite photos for yourself or someone special</span></li>
-            <li><span>Ceramic 11oz White Mug</span></li>
-            <li><span>Microwave and Dishwasher safe</span></li>
+            <li ng-repeat="bullet in currentProduct.bulletList"><span>{{bullet}}</span></li>
         </ul>
+
+
         <div class="row preview-next-row">
             <div class="next-button" ng-click="vm.goToOrderDetails()">Next</div>
         </div>
+
+        <div class="row ">        
+            <select ng-model="currentProduct"  ng-options="product.shortName for product in category.products">
+                
+            </select>
+        </div>
+
     </div>
 </div>

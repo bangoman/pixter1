@@ -7,7 +7,8 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 	    restrict: 'E',
 	    scope: {
 	    	product:'=',
-	    	withCanvas: '='
+	    	withCanvas: '=',
+	    	imageUrl: '='
 
 	     },
 	  	controller: ['$scope','$http','$attrs','$document','$element','$compile', function($scope,$http,$attrs,$document,$element,$compile) {
@@ -15,6 +16,12 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 		//	setInterval(function(){console.log($attrs.zoom) },1000)
 			var lastHeight ,lastWidth,canvas,ctx;
 			$scope.editMode = $attrs.editmode;
+			$scope.$watch('product', function() {
+				console.log("product changed");
+				getImgSize($scope.imageUrl);
+			        
+			});
+
 			$scope.initCanvas = function (){
 				canvas= document.getElementById("canvas");					
 				ctx=canvas.getContext("2d");
@@ -39,7 +46,7 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 			    ctx.restore();
 			    ctx.save()
 			    dataURL  = canvas.toDataURL();
-			    $attrs.imageurl = dataURL;
+			    $scope.imageUrl = dataURL;
 			    getImgSize(dataURL);
 			    console.log($scope.angleInDegrees);
 			    $scope.angleInDegrees += degrees;
@@ -187,7 +194,7 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 				$scope.backgroundSize.w = img.width/$scope.imageSizeRatio;
 
 				$scope.imageStyle = {					
-					"background-image":"url('" + $attrs.imageurl  + "')",
+					"background-image":"url('" + $scope.imageUrl  + "')",
 					"background-size": $scope.backgroundSize.w + "px "  + $scope.backgroundSize.h + "px",
 					"background-repeat":"no-repeat", 
 					"background-position": $scope.backgroundPosition.left + $scope.backgroundPosition.top,
@@ -206,7 +213,7 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 		  	
 		  	//$scope.imageStyle={"width":"500px","height":"400px","background":"pink"}
 		  	//$scope.product = {"type":"mug","window":{"w":200,"h":200,"x":175,"y":107},"width":600,"height":360,"shortName":"Mug","marketingName":"11oz White Mug","teaser":true,"cropRatio":0.75,"previewImage":"mug/previewImage.png","categoryText":"Ceramic 11oz MUG","children":["CMUG11OZ111MUG"],"index":1};
-		  	getImgSize($attrs.imageurl);
+		  	getImgSize($scope.imageUrl);
 
 	  	
 	    }],    
