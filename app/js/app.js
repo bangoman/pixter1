@@ -4,5 +4,5 @@ var app = angular.module('app',[
     'ui.bootstrap',
     'angular-carousel',
     'ngDraggable',
-    'ionic',
+    'ionic',    
 ]);
