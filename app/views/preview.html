@@ -24,8 +24,8 @@
             <li ng-repeat="bullet in currentProduct.bulletList"><span>{{bullet}}</span></li>
         </ul>
 
-        <div class="row">        
-            <select ng-model="currentProduct"  ng-options="product.shortName for product in category.products">
+        <div class="row" ng-show="category.products.length >1">        
+            <select ng-model="selectedProduct"   ng-options="product.shortName for product in category.products">
             </select>
         </div>
 
