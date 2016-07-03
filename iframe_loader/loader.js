@@ -37,6 +37,7 @@
 				iframeW = screenW;
 
 			} 
+
 			console.log(iframeW,screenW);
 			var offsetLeft = (screenW - iframeW)/2;
 			iframe = document.createElement('iframe');
@@ -45,6 +46,7 @@
 			iframe.style.left = offsetLeft + "px";
 			iframe.style.top = '10vh';
 			iframe.style.width = iframeW  +  "px";
+
 			iframe.style.height = '80vh';
 			iframe.style.maxWidth = "800px";
 		}

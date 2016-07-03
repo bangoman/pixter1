@@ -1,6 +1,7 @@
-angular.module('app').controller('previewCtl',function($state){
+angular.module('app').controller('previewCtl',function($state,$rootScope){
     var vm = this;
 
+    console.log($rootScope.category.products);
     vm.goToEdit = function() {
         $state.go('app.edit');
     }
