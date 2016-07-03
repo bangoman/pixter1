@@ -1,5 +1,5 @@
 <div id="pixter-responsive-store">
-    <div class="row store-header" style="margin:0">
+    <div class="row store-header" style="margin:0" ng-class="{'hide-on-mobile': vm.state.current.name == 'app.edit'}">
         <div class="col-xs-3">
             <div class="store-header-back-button" ng-if="!vm.stateIsShop()" ng-click="vm.goBack()">
                 <span><</span>
