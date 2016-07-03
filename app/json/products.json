@@ -472,7 +472,7 @@
             "products":[
                 {
                     "type": "canvas1410",
-                    "window":{"w":852,"h":648,"x":71,"y":194},
+                    "window":{"w":912,"h":648,"x":69,"y":194},
                     "width":1033,
                     "height":1033,            
                     "pid": "CNVS141001WRE0",
@@ -1393,7 +1393,7 @@
 
         {
             "type": "canvas1410",
-            "window":{"w":852,"h":648,"x":71,"y":194},
+            "window":{"w":912,"h":648,"x":69,"y":194},
             "width":1033,
             "height":1033,            
             "pid": "CNVS141001WRE0",
