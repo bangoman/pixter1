@@ -57,7 +57,7 @@
                         standard shipping
                     </span> 
             </label>
-            <label class="radio-inline">
+            <label class="radio-inline express-shipping-checkbox-lable">
                 <input type="radio" name="ship-method-radios" ng-model="vm.shipmentMethod" value="express">
                     <span class="checkout-ship-type-radio-text">
                         express shipping
@@ -85,10 +85,10 @@
             <div class="checkout-cupon-modal-button" ng-click="vm.openCuponModal()">Have A Coupon?</div>
         </div>
         <div class="row checkout-pay-buttons-row" dir="ltr">
-            <div class="col-xs-6">
+            <div class="col-xs-12">
                 <div class="checkout-pay-button credit"></div>
             </div>
-            <div class="col-xs-6 col-xs-offset-6 col-xs-pull-6 col-sm-offset-0 col-sm-pull-0">
+            <div class="col-xs-12"><!-- col-xs-6 col-xs-offset-6 col-xs-pull-6 col-sm-offset-0 col-sm-pull-0 -->
                 <div class="checkout-pay-button paypal"></div>
             </div>
         </div>

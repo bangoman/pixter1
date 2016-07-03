@@ -253,10 +253,8 @@ select[type="number"]:active {
 }
 .preview-product-border {
   width: 280px;
-  height: 300px;
-  padding: 5px;
   float: right;
-  border: 1px solid #c4c4c4;
+  /*border: 1px solid #c4c4c4;*/
 }
 .preview-edit-row {
   position: relative;
@@ -409,7 +407,7 @@ select[type="number"]:active {
 /* pay-flow (order_details & checkout views) style */
 #checkout-view-responsive {
     margin: 0;
-    padding: 64px 28px 0;
+    padding: 72px 28px 0;
 }
 .pay-flow-product-thumbnail {
   max-width: 120px;
@@ -701,7 +699,11 @@ select[type="number"]:active {
     text-align: left;
   }
   #checkout-view-responsive .pay-flow-product-thumbnail {
-    margin-top: 28px;
+    margin-top: 0px;
+  }
+  .checkout-view-header {
+    margin-top: 0;
+    padding-bottom: 0;
   }
 }
 @media screen and (max-width: 435px) {
@@ -738,8 +740,15 @@ select[type="number"]:active {
   .order-details-input {
     height: 36px;
   }
+  .checkout-view-responsive .pay-flow-product-thumbnail {
+    margin-top: 8px;
+  }
 }
 @media screen and (max-width: 375px) {
+  #order-details-view-responsive,
+  #checkout-view-responsive {
+    padding: 72px 32px 20px;
+  }
   .order-details-input {
     height: 32px;
     margin-bottom: -8px;
@@ -747,18 +756,48 @@ select[type="number"]:active {
   .pay-flow-product-thumbnail {
     max-width: 65px;
   }
+  #checkout-view-responsive .pay-flow-product-thumbnail {
+    margin-top: 0px;
+  }
+  .checkout-view-header {
+    font-size: 28px;
+    line-height: 38px;
+    margin-top: 12px;
+    margin-bottom: 0px;
+    padding-bottom: 28px;
+  }
 }
 @media screen and (max-width: 320px) {
   .order-details-header {
-    /*color: #4d4d4d;
-    font-size: 26px*/;
+    font-size: 22px;
+    margin-bottom: -4px;
+  }
+  .order-details-input {
+    height: 26px;
+    margin-bottom: -12px;
   }
   .checkout-view-header {
-    font-size: 24px;
-    line-height: 42px;
-    margin-top: 8px;
+    font-size: 22px;
+    line-height: 32px;
+    margin-top: 4px;
     margin-bottom: 0;
     padding-bottom: 0;
+  }  
+  .express-shipping-checkbox-lable {
+    margin-left: 0 !important;
+  }
+  .checkout-view-price-row {
+    padding: 4px 10px 4px 0;
+  }
+  .checkout-cupon-modal-button {
+    padding: 4px 0;
+  }
+  .checkout-pay-buttons-row {
+    margin-top: 8px;
+  }
+  .checkout-pay-button {
+    height: 48px;
+    margin: 4px auto;
   }
 }
 
