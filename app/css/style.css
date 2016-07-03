@@ -338,7 +338,7 @@ select[type="number"]:active {
   font-family: Calibri, "CalibriRegular", "Gill Sans", Verdana, Arial;
 }
 .crop-image-container {
-  padding: 36px 20px;
+  /*padding: 36px 20px;*/
   min-height: 300px;
   text-align: center;
   /*background-color: #b3b3b3;*/
@@ -706,8 +706,9 @@ select[type="number"]:active {
     display: none;
     height: 0;
   }
-  #edit-view-responsive {
-    padding: 32px 12px 8px;
+  #edit-view-responsive,
+  .edit-crop-controls-container {
+    padding: 0;
   }
   .store-header {
     font-size:10px;
