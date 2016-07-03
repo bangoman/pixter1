@@ -231,7 +231,10 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 					$scope.initCanvas();
 				}
 				if($scope.appliedCangesFlag){
-					$scope.laodAppliedCanges()
+					setTimeout(function(){
+						$scope.laodAppliedCanges()	
+					},200)
+					
 
 				}
 				$scope.$apply();
