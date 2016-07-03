@@ -116,6 +116,7 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 	  		}
 	  		var currentBackgroundPosition = {top:"",left:""};
 		    $scope.onDrag=function(event){
+		    	event.preventDefault();
 		    	if($attrs.editmode){
 			    	currentBackgroundPosition = {top:"",left:""};
 				    var limitVertical =   (($scope.currentImg.height/$scope.imageSizeRatio) - ($scope.product.window.h/$scope.sizeRatio));		       
@@ -210,7 +211,6 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 			}
 
 
-		  	
 		  	//$scope.imageStyle={"width":"500px","height":"400px","background":"pink"}
 		  	//$scope.product = {"type":"mug","window":{"w":200,"h":200,"x":175,"y":107},"width":600,"height":360,"shortName":"Mug","marketingName":"11oz White Mug","teaser":true,"cropRatio":0.75,"previewImage":"mug/previewImage.png","categoryText":"Ceramic 11oz MUG","children":["CMUG11OZ111MUG"],"index":1};
 		  	getImgSize($scope.imageUrl);
