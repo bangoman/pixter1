@@ -5,7 +5,7 @@
             </product-image-display>
 
             <div class="row preview-edit-row">
-                <div class="col-xs-4 col-xs-push-8 preview-edit-btn" ng-click="vm.goToEdit()">
+                <div class="preview-edit-btn" ng-click="vm.goToEdit()">
                     <i class="glyphicon glyphicon-scissors"></i>
                     <span>Edit</span>
                     
@@ -15,19 +15,23 @@
     </div>
     <div class="col-sm-6 col-xs-12 preview-product-details">
         <div class="preview-details-header">    
-            {{currentProduct.shortName}}
+            <!-- {{currentProduct.shortName}} -->
+            <div class="form-group" ng-show="category.products.length > 1">       
+            <select class="form-control" ng-model="selectedProduct" ng-options="product.shortName for product in category.products">
+            </select>
+        </div>
             <span class="preview-price">
-                 {{prices.products[currentProduct.pid].price}}
+                 {{prices.products[currentProduct.pid].price}} $
             </span>
         </div>
         <ul class="preview-bullet-list">
             <li ng-repeat="bullet in currentProduct.bulletList"><span>{{bullet}}</span></li>
         </ul>
 
-        <div class="row form-group" ng-show="category.products.length > 1">       
+        <!-- <div class="row form-group" ng-show="category.products.length > 1">       
             <select class="form-control" ng-model="selectedProduct" ng-options="product.shortName for product in category.products">
             </select>
-        </div>
+        </div> -->
 
         <div class="row preview-next-row">
             <button class="btn next-button" ng-click="vm.goToOrderDetails()">Next</button>
