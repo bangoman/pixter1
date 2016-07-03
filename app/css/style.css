@@ -691,7 +691,7 @@ select[type="number"]:active {
   }
   .preview-next-row {
     bottom: auto;
-    margin-bottom: 32px;
+    margin: 12px 0;
   }
   .edit-header {
     text-align: left;
