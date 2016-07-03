@@ -1,6 +1,6 @@
 angular.module('app').controller('shopCtl',function($state, $http,$rootScope){
 	var vm = this;
-    $rootScope.imageUrl = "http://3v6x691yvn532gp2411ezrib.wpengine.netdna-cdn.com/wp-content/uploads/sites/default/files/story_images/112602_fg5.jpg"
+    $rootScope.imageUrl = "image.jpg"
     vm.getProducts = function(){
         $http.get('app/json/products.json')
             .then(function(res){
@@ -17,7 +17,7 @@ angular.module('app').controller('shopCtl',function($state, $http,$rootScope){
             });
 
     }
-    
+
     vm.getProducts();
 
     vm.goToPreview = function (category) {

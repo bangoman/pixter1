@@ -59,7 +59,12 @@
     </div>
     <div class="pull-right right-buttons-group">
         <button class="btn white-button" ui-sref="app.preview">Cancel</button>
-        <button class="btn next-button" ng-click="applyChanges()">Apply</button>
+        <button class="btn next-button" ng-click="applyChanges(backgroundPosition.left,
+                            backgroundPosition.top,
+                            backgroundSize.h,
+                            backgroundSize.w,
+                            imageSizeRatio)">
+            Apply</button>
     </div>
 </div>       
 </div>
