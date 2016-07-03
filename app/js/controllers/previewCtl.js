@@ -12,7 +12,6 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope)
     }
 
     $scope.$watch("selectedProduct",function(){
-
     	$rootScope.currentProduct =  $scope.selectedProduct;
     })
 });
