@@ -204,7 +204,7 @@
                 },
                 {
                     "type": "iphone6case",
-                    "window":{"w":1340,"h":274,"x":80,"y":12},
+                    "window":{"w":134,"h":274,"x":80,"y":12},
                     "width":300,
                     "height":300,            
                     "pid": "SPIP6SOL01EEI6",
@@ -841,7 +841,7 @@
                     "tmbHeight": 40,
                     "tmbWidth": 40,
                     "cropRatio": 1,
-                    "previewImage":"tshirt_290.png",
+                    "previewImage":"tshirt/tshirt_290.png",
                     "bulletList":[
                         "Create a stunning T-Shirt",
                         "100% spun polyester with cotton look and feel",
@@ -870,7 +870,7 @@
                     "tmbHeight": 40,
                     "tmbWidth": 40,
                     "cropRatio": 1,
-                    "previewImage":"tshirt_290.png",
+                    "previewImage":"tshirt/tshirt_290.png",
                     "bulletList":[
                         "Create a stunning T-Shirt",
                         "100% spun polyester with cotton look and feel",
@@ -1157,7 +1157,7 @@
         },
         {
             "type": "iphone6case",
-            "window":{"w":1340,"h":274,"x":80,"y":12},
+            "window":{"w":134,"h":274,"x":80,"y":12},
             "width":300,
             "height":300,            
             "pid": "SPIP6SOL01EEI6",
@@ -1793,7 +1793,7 @@
             "tmbHeight": 40,
             "tmbWidth": 40,
             "cropRatio": 1,
-            "previewImage":"tshirt_290.png",
+            "previewImage":"tshirt/tshirt_290.png",
             "bulletList":[
                 "Create a stunning T-Shirt",
                 "100% spun polyester with cotton look and feel",
