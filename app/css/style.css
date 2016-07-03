@@ -249,7 +249,7 @@ select[type="number"]:active {
 }
 .preview-product-image {
   text-align: center;
-  margin-bottom: 52px;
+  margin-bottom: 12px;
 }
 .preview-product-border {
   width: 280px;
@@ -280,7 +280,7 @@ select[type="number"]:active {
   float: left;
 }
 .preview-details-header {
-  margin-bottom:20px;
+  margin-bottom: 12px;
   font-weight: normal;
   letter-spacing: -0.25px;
   font-size: 22px;
@@ -686,9 +686,18 @@ select[type="number"]:active {
   ================*/
 
 @media screen and (max-width:767px) {
+  #preview-view-responsive {
+    padding-top: 64px;
+  }
   .preview-product-border,
   .preview-product-details {
     float: none;    
+    margin: 0 auto;
+  }
+  .preview-product-border {
+    width: 100%;
+  }
+  .preview-product-border div:first-child {
     margin: 0 auto;
   }
   .preview-next-row {
