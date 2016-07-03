@@ -1,5 +1,6 @@
 angular.module('app').controller('mainCtl', function(message, $uibModal, $state){
 	var vm = this;
+    vm.state = $state;
 
 	vm.close = function(){
 		message('close');
