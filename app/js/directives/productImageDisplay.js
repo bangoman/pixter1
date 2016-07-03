@@ -18,31 +18,34 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 			var lastHeight ,lastWidth,canvas,ctx;
 			$scope.editMode = $attrs.editmode;
 			$scope.$watch('product', function() {
-				console.log("product changed");
+				//console.log("product changed");
 				getImgSize($scope.imageUrl);
 			        
 			});
 			$scope.applyChanges = function(){
-				$rootScope.backgroundPositionLeft = $scope.backgroundPosition.left;
-				$rootScope.backgroundPositionTop = $scope.backgroundPosition.top;
-				$rootScope.backgroundSizeW = $scope.backgroundSize.w + "px ";
-                $rootScope.backgroundSizeH = $scope.backgroundSize.h + "px";
+				$rootScope.backgroundPositionLeft = parseInt($scope.backgroundPosition.left)*$scope.imageSizeRatio + "px ";
+				$rootScope.backgroundPositionTop = parseInt($scope.backgroundPosition.top)*$scope.imageSizeRatio + "px";
+				$rootScope.backgroundSizeW = $scope.backgroundSize.w*$scope.imageSizeRatio + "px ";
+                $rootScope.backgroundSizeH = $scope.backgroundSize.h*$scope.imageSizeRatio + "px";
                 $state.go('app.orderDetails');
-                console.log( $rootScope.backgroundPositionLeft, $rootScope.backgroundPositionTop,$rootScope.backgroundSizeW,$rootScope.backgroundSizeH)
+                 console.log( $rootScope.backgroundPositionLeft, $rootScope.backgroundPositionTop,$rootScope.backgroundSizeW,$rootScope.backgroundSizeH)
+               
 			}
             $scope.laodAppliedChanges = function(){
-            	$scope.backgroundPosition.left = $rootScope.backgroundPositionLeft / $scope.sizeRatio;
-				$scope.backgroundPosition.top = $rootScope.backgroundPositionTop / $scope.sizeRatio;
-				$scope.backgroundSize.w = $rootScope.backgroundSizeW / $scope.imageSizeRatio;
-                $scope.backgroundSize.h = $rootScope.backgroundSizeH / $scope.imageSizeRatio;
+            	$scope.backgroundPosition.left = parseInt($rootScope.backgroundPositionLeft) / $scope.imageSizeRatio;
+				$scope.backgroundPosition.top = parseInt($rootScope.backgroundPositionTop) / $scope.imageSizeRatio;
+				$scope.backgroundSize.w = parseInt($rootScope.backgroundSizeW) / $scope.imageSizeRatio;
+                $scope.backgroundSize.h = parseInt($rootScope.backgroundSizeH) / $scope.imageSizeRatio;
                 $scope.imageStyle = {					
 					"background-image":"url('" + $scope.imageUrl  + "')",
 					"background-size": $scope.backgroundSize.w + "px "  + $scope.backgroundSize.h + "px",
 					"background-repeat":"no-repeat", 
-					"background-position": $scope.backgroundPosition.left + $scope.backgroundPosition.top,
+					"background-position": $scope.backgroundPosition.left + "px " + $scope.backgroundPosition.top + "px",
 					"width":$attrs.tmbwidth + "px",
 				}
-                console.log( $rootScope.backgroundPositionLeft, $rootScope.backgroundPositionTop,$rootScope.backgroundSizeW,$rootScope.backgroundSizeH)
+				$scope.$apply();
+				console.log("la", $scope.sizeRatio)
+                console.log("apply=", $scope.imageStyle)
             }
 			$scope.initCanvas = function (){
 				canvas= document.getElementById("canvas");					
@@ -94,7 +97,7 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 				var preW,preH
 				preW = $scope.backgroundSize.w;
 				preH = $scope.backgroundSize.h;				
-                console.log( $scope.backgroundPosition.left, $scope.backgroundPosition.top,$scope.backgroundSize.w,$scope.backgroundSize.h)
+               // console.log( $scope.backgroundPosition.left, $scope.backgroundPosition.top,$scope.backgroundSize.w,$scope.backgroundSize.h)
 				var tmpImageSizeRatio = $scope.imageSizeRatio / zoom
 				if(($scope.currentImg.height/tmpImageSizeRatio) < parseInt($scope.product.window.h/$scope.sizeRatio) || ($scope.currentImg.width/tmpImageSizeRatio) < parseInt($scope.product.window.w/$scope.sizeRatio)){
 					return false;
@@ -121,7 +124,7 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 
 
 				$scope.imageStyle["background-position"] =  $scope.backgroundPosition.left  + $scope.backgroundPosition.top ;				
-				console.log("bakcgroundPositionn",$scope.backgroundPosition,"background-size:",$scope.backgroundSize);				
+				//console.log("bakcgroundPositionn",$scope.backgroundPosition,"background-size:",$scope.backgroundSize);				
 				//$scope.backgroundPosition.top
 				
 
@@ -130,8 +133,8 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 	  		$scope.onRelease = function(event){	  			
 	  			$scope.backgroundPosition.top = currentBackgroundPosition.top  //(parseInt($scope.backgroundPosition.top) + event.gesture.deltaY) + "px"  ;
 	  			$scope.backgroundPosition.left = currentBackgroundPosition.left// (parseInt($scope.backgroundPosition.left) + event.gesture.deltaX) + "px "  ;
-                console.log("bpldb",$scope.backgroundPosition.left);
-				console.log("bptdb",$scope.backgroundPosition.top);
+               //console.log("bpldb",$scope.backgroundPosition.left);
+			   //console.log("bptdb",$scope.backgroundPosition.top);
 
 
 
@@ -171,10 +174,10 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 			       }
 
 
-			        console.log(currentBackgroundPosition.top);
+			       // console.log(currentBackgroundPosition.top);
 					$scope.imageStyle["background-position"] = currentBackgroundPosition.left + currentBackgroundPosition.top
-					console.log("bplda",$scope.backgroundPosition.left);
-				    console.log("bptda",$scope.backgroundPosition.top);			       				       
+					//console.log("bplda",$scope.backgroundPosition.left);
+				  //  console.log("bptda",$scope.backgroundPosition.top);			       				       
 		    	}
 
 		    }	  		
@@ -234,20 +237,20 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 					"background-position": $scope.backgroundPosition.left + $scope.backgroundPosition.top,
 					"width":$attrs.tmbwidth + "px",
 				}
+				// console.log( $scope.imageStyle)
 				if($scope.withCanvas){
 					$scope.initCanvas();
 				}
 
-				if($scope.appliedCangesFlag){
+				if($scope.appliedChangesFlag){
 					setTimeout(function(){
-						$scope.laodAppliedCanges()	
-					},500)					
-
+						$scope.laodAppliedChanges()	
+					},1000)
+					
 				}
 				$scope.$apply();
 //				$scope.triggerZoom();
-                console.log($scope.appliedChangesFlag)
-                console.log( $rootScope.backgroundPositionLeft, $rootScope.backgroundPositionTop,$rootScope.backgroundSizeW,$rootScope.backgroundSizeH)
+               // console.log($scope.appliedChangesFlag)
 
 			}
     
