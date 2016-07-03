@@ -54,7 +54,6 @@ select[type="number"]:active {
   box-shadow: none;
   outline: 0 !important;
 }
-
 /* generic classes */ 
 
 .borderR {
@@ -337,15 +336,19 @@ select[type="number"]:active {
   padding: 20px 24px;
   font-family: Calibri, "CalibriRegular", "Gill Sans", Verdana, Arial;
 }
+
 .crop-image-container {
-  padding: 36px 20px;
+  /*padding: 36px 20px;*/
   min-height: 300px;
   text-align: center;
-  background-color: #b3b3b3;
+  /*background-color: #b3b3b3;*/
   overflow: hidden;
 }
 .edit-image-inner-container {
   max-width: 500px;
+  margin: 0 auto;
+}
+.edit-image-inner-container > div {
   margin: 0 auto;
 }
 .crop-controls {
@@ -706,8 +709,14 @@ select[type="number"]:active {
     display: none;
     height: 0;
   }
-  #edit-view-responsive {
-    padding: 32px 12px 8px;
+  .crop-controls .crop-control-button {
+    height: 50px;
+    line-height: 50px;
+  }
+  #edit-view-responsive,
+  #edit-view-responsive .edit-crop-controls-container,
+  #edit-view-responsive .edit-image-outer-container {
+    padding: 0;
   }
   .store-header {
     font-size:10px;

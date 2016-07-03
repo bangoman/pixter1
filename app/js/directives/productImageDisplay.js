@@ -125,10 +125,21 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 				console.log("bptdb",$scope.backgroundPosition.top);
 
 
+
 	  		}
 	  		var currentBackgroundPosition = {top:"",left:""};
+			document.body.addEventListener('touchmove', function(event) {
+		      console.log(event.source);
+		      //if (event.source == document.body)
+		    	if($attrs.editmode){		      
+		        	event.preventDefault();
+		        }
+		    }, false);		    	
+
+
 		    $scope.onDrag=function(event){
 		    	if($attrs.editmode){
+
 			    	currentBackgroundPosition = {top:"",left:""};
 				    var limitVertical =   (($scope.currentImg.height/$scope.imageSizeRatio) - ($scope.product.window.h/$scope.sizeRatio));		       
 			        var limitHorizontal =   (($scope.currentImg.width/$scope.imageSizeRatio) - ($scope.product.window.w/$scope.sizeRatio));		       
@@ -221,9 +232,8 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 				$scope.$apply();
 //				$scope.triggerZoom();
 			}
+    
 
-
-		  	
 		  	//$scope.imageStyle={"width":"500px","height":"400px","background":"pink"}
 		  	//$scope.product = {"type":"mug","window":{"w":200,"h":200,"x":175,"y":107},"width":600,"height":360,"shortName":"Mug","marketingName":"11oz White Mug","teaser":true,"cropRatio":0.75,"previewImage":"mug/previewImage.png","categoryText":"Ceramic 11oz MUG","children":["CMUG11OZ111MUG"],"index":1};
 		  	getImgSize($scope.imageUrl);

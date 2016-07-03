@@ -3,7 +3,7 @@
     <h2 class="edit-header hide-on-mobile">
         You can resize and move the picture to your liking
     </h2>
-    <div class="col-lg-8 col-lg-offset-2 col-xs-12">
+    <div class="col-lg-8 col-lg-offset-2 col-xs-12 edit-crop-controls-container">
         <ul class="crop-controls horizontal">
             <li class="crop-control-button" ng-click="triggerZoom(1.05)">
                 <img src="https://pixter-loader-assets.s3.amazonaws.com/1_8_1_stg/files/images/cropZoomIn.png">
@@ -19,7 +19,7 @@
             </li>
         </ul>
     </div>                
-    <div class="col-lg-8 col-lg-offset-2 col-xs-12">
+    <div class="col-lg-8 col-lg-offset-2 col-xs-12 edit-image-outer-container">
         <div class="crop-image-container">
             <div class="edit-image-inner-container" >
                 <!-- <product-image-display class="shop-view-product-image-display" zoom="zoom" editMode="true" imageUrl="https://fbcdn-sphotos-g-a.akamaihd.net/hphotos-ak-xfa1/t31.0-8/13246160_961327897315228_9219812989318561441_o.jpg" tmbWidth="500">
@@ -45,6 +45,22 @@
             <div class="next-button">Apply</div>
         </div>
     </div> -->   
+    <div ng-style="imageStyle" ng-if="!editMode">
+        <div   on-drag="onDrag($event)" on-release="onRelease($event)" style="height:{{product.tmbHeight}}px;width:{{product.tmbWidth}}px;background:url('app/products_images/{{product.previewImage}}');background-size:{{product.tmbWidth}}px {{product.tmbHeight}}px"> 
+        </div>
+    </div>
+<div class="col-lg-8 col-lg-offset-2 col-xs-12 edit-bottom-buttons-container">
+    <div class="revert-changes-button">
+        <img src="https://pixter-loader-assets.s3.amazonaws.com/1_8_1_stg/files/images/revertCrop.png">
+        <span style="text-decoration: underline">
+            Revert changes
+        </span>
+    </div>
+    <div class="pull-right right-buttons-group">
+        <button class="btn white-button" ui-sref="app.preview">Cancel</button>
+        <button class="btn next-button" ng-click="applyChanges()">Apply</button>
+    </div>
+</div>       
 </div>
 
     <div ng-style="imageStyle" ng-if="!editMode">
