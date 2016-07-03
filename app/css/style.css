@@ -257,8 +257,8 @@ select[type="number"]:active {
   /*border: 1px solid #c4c4c4;*/
 }
 .preview-edit-row {
-  position: relative;
-  top: 32px;
+  /*position: relative;
+  top: 32px;*/
 }
 .preview-edit-btn {
   cursor: pointer;
