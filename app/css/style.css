@@ -149,6 +149,7 @@ select[type="number"]:active {
 }
 .white-button {
   color: #8b8b8b;
+  line-height: 0;
   font-size: 18px;
   cursor: pointer;
   background: white;
@@ -178,6 +179,7 @@ select[type="number"]:active {
 }
 #learn-more-modal .next-button {
   width: 120px;
+  height: 36px;
 }
 .learn-more-modal-links {
   display: -webkit-inline-box;
@@ -384,7 +386,6 @@ select[type="number"]:active {
 .edit-bottom-buttons-container .next-button,
 .edit-bottom-buttons-container .white-button {
   height: 38px;
-  line-height: 0;
 }
 .edit-bottom-buttons-container .next-button {
   padding: 0px 48px;
@@ -574,6 +575,7 @@ select[type="number"]:active {
 #cupon-modal .modal-footer button {
   width: 108px; 
   padding: 4px 12px;
+  height: 36px;
 }
 
 
