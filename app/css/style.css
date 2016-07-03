@@ -710,6 +710,10 @@ select[type="number"]:active {
     display: none;
     height: 0;
   }
+  .crop-controls .crop-control-button {
+    height: 50px;
+    line-height: 50px;
+  }
   #edit-view-responsive,
   #edit-view-responsive .edit-crop-controls-container,
   #edit-view-responsive .edit-image-outer-container {
