@@ -278,7 +278,7 @@ select[type="number"]:active {
 }
 .preview-product-details {
   width: 280px;
-  height: 300px;
+  height: 324px;
   float: left;
   padding-top: 24px;
 }
@@ -289,12 +289,11 @@ select[type="number"]:active {
   font-weight: normal;
   letter-spacing: -0.25px;
   font-size: 22px;
-  line-height: 22px;
+  line-height: 36px;
   text-align: center;
   border-bottom: 1px solid #d9d9d9;
 }
 .preview-product-select {
-  height: 25px;
   min-width: 128px;
   font-size: 18px;
 }
