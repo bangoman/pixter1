@@ -8,10 +8,11 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 	    scope: {
 	    	product:'=',
 	    	withCanvas: '=',
-	    	imageUrl: '='
+	    	imageUrl: '=',
+	    	appliedCangesFlag: '='
 
 	     },
-	  	controller: ['$scope','$http','$attrs','$document','$element','$compile', function($scope,$http,$attrs,$document,$element,$compile) {
+	  	controller: ['$scope','$http','$attrs','$document','$element','$compile','$rootScope','$state', function($scope,$http,$attrs,$document,$element,$compile,$rootScope,$state) {
 
 		//	setInterval(function(){console.log($attrs.zoom) },1000)
 			var lastHeight ,lastWidth,canvas,ctx;
@@ -24,9 +25,10 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 			$scope.applyChanges = function(){
 				$rootScope.backgroundPositionLeft = $scope.backgroundPosition.left;
 				$rootScope.backgroundPositionTop = $scope.backgroundPosition.top;
-				$rootScope.backgroundSizeW = $scope.backgroundSize.w;
-                $rootScope.backgroundSizeH = $scope.backgroundSize.h;
-                console.log( $scope.backgroundPosition.left, $scope.backgroundPosition.top,$scope.backgroundSize.w,$scope.backgroundSize.h)
+				$rootScope.backgroundSizeW = $scope.backgroundSize.w + "px ";
+                $rootScope.backgroundSizeH = $scope.backgroundSize.h + "px";
+                $state.go('app.orderDetails');
+                console.log( $rootScope.backgroundPositionLeft, $rootScope.backgroundPositionTop,$rootScope.backgroundSizeW,$rootScope.backgroundSizeH)
 			}
             $scope.laodAppliedCanges = function(){
             	$scope.backgroundPosition.left = $rootScope.backgroundPositionLeft / $scope.sizeRatio;
@@ -112,7 +114,7 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 
 
 				$scope.imageStyle["background-position"] =  $scope.backgroundPosition.left  + $scope.backgroundPosition.top ;				
-				//console.log("bakcgroundPositionn",$scope.backgroundPosition,"background-size:",$scope.backgroundSize);				
+				console.log("bakcgroundPositionn",$scope.backgroundPosition,"background-size:",$scope.backgroundSize);				
 				//$scope.backgroundPosition.top
 				
 
@@ -227,6 +229,9 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 				}
 				if($scope.withCanvas){
 					$scope.initCanvas();
+				}
+				if(appliedCangesFlag){
+					$scope.laodAppliedCanges()
 
 				}
 				$scope.$apply();
