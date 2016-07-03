@@ -289,7 +289,7 @@ select[type="number"]:active {
   font-weight: normal;
   letter-spacing: -0.25px;
   font-size: 22px;
-  line-height: 44px;
+  line-height: 32px;
   text-align: center;
   border-bottom: 1px solid #d9d9d9;
 }
@@ -298,7 +298,7 @@ select[type="number"]:active {
   padding-left: 32px;
 }
 .preview-bullet-list {
-  padding-left: 8px;
+  padding-left: 16px;
 }
 .preview-bullet-list li {
   color: #32bafa;
