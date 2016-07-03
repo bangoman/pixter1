@@ -841,7 +841,7 @@
                     "tmbHeight": 40,
                     "tmbWidth": 40,
                     "cropRatio": 1,
-                    "previewImage":"tshirt_290.png",
+                    "previewImage":"tshirt/tshirt_290.png",
                     "bulletList":[
                         "Create a stunning T-Shirt",
                         "100% spun polyester with cotton look and feel",
