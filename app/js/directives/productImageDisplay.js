@@ -18,18 +18,46 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 		//	setInterval(function(){console.log($attrs.zoom) },1000)
 			var lastHeight ,lastWidth,canvas,ctx;
 			$scope.editMode = $attrs.editmode;
+			$scope.finalImagePosition = {};
+			$scope.finalWindowPosition = {};
+			$scope.finalWindowSize = {};
 			$scope.$watch('product', function() {
 				//console.log("product changed");
 				getImgSize($rootScope.imageUrl);
 			        
 			});
-			$scope.backToReality = function(bakcgroundPosition,productWindow,sizeRatio,imageSizeRatio){
+			$scope.backToReality = function(backgroundPosition,productWindow,sizeRatio,imageSizeRatio){
+				backgroundPosition.top = parseInt(backgroundPosition.top);
+				backgroundPosition.left = parseInt(backgroundPosition.left);
+				productWindow.x = parseInt(productWindow.x);
+				productWindow.y = parseInt(productWindow.y);
+				productWindow.w = parseInt(productWindow.w);
+				productWindow.h = parseInt(productWindow.h);
+
 				$scope.finalImagePosition.top = (backgroundPosition.top) * imageSizeRatio;
                 $scope.finalImagePosition.left = (backgroundPosition.left) *  imageSizeRatio;
-                $scope.finalWindowPosition.y = ($scope.finalImagePosition.top + productWindow.y) * imageSizeRatio;
-                $scope.finalWindowPosition.x = ($scope.finalImagePosition.left + productWindow.x) * imageSizeRatio;
-                $scope.finalWindowSize.height = productWindow.h * imageSizeRatio;
-                $scope.finalWindowSize.width = productWindow.w * imageSizeRatio;
+
+                $scope.finalWindowPosition.y = (((productWindow.y) / sizeRatio) * imageSizeRatio) - $scope.finalImagePosition.top ;
+                $scope.finalWindowPosition.x = (((productWindow.x) / sizeRatio) * imageSizeRatio) - $scope.finalImagePosition.left ;
+
+                $scope.finalWindowSize.height = (productWindow.h / sizeRatio)* imageSizeRatio;
+                $scope.finalWindowSize.width = (productWindow.w / sizeRatio) * imageSizeRatio;
+
+
+                // dealing with canvas export
+                canvas= document.getElementById("canvas");					
+				ctx= canvas.getContext("2d");
+				canvas.height = $scope.finalWindowSize.height;
+				canvas.width =  $scope.finalWindowSize.width ;
+				console.log(canvas);
+			    ctx.clearRect(0,0,$scope.currentImg.width,$scope.currentImg.height);
+			    ctx.save();
+			    ctx.drawImage($scope.currentImg,-$scope.finalWindowPosition.x,-$scope.finalWindowPosition.y);
+			    ctx.restore();
+			    ctx.save()			    
+			    dataURL  = canvas.toDataURL();			    
+			    $rootScope.finalCroppedImageUrl = dataURItoBlob(dataURL);
+
 
                 console.log("finalImagePosition", $scope.finalImagePosition)
                 console.log("finalWindowPosition", $scope.finalWindowPosition)
@@ -44,36 +72,38 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 				$rootScope.zoomAmountW = width / ($scope.product.window.w/$scope.sizeRatio);				
                 $rootScope.zoomAmountH = height / ($scope.product.window.h/$scope.sizeRatio);
                 $state.go('app.orderDetails');
-                $scope.backToReality($scope.bakcgroundPosition,$scope.product.window,$scope.sizeRatio,$scope.imageSizeRatio)
+                $scope.backToReality($scope.backgroundPosition,$scope.product.window,$scope.sizeRatio,$scope.imageSizeRatio)
                
 			}
             $scope.laodAppliedChanges = function(){
-            	$scope.finalImagePosition = {top:"",left:""}
-            	$scope.finalWindowPosition = {x:"",y:""}
-            	if(($scope.product.window.w/$scope.product.window.h)>=($scope.backgroundSize.w/$scope.backgroundSize.h)){
-	            	$scope.imageSizeRatio = $scope.imageSizeRatio /	 $rootScope.zoomAmountW;	
-				}
-				else{
-	            	$scope.imageSizeRatio = $scope.imageSizeRatio /	 $rootScope.zoomAmountH;						
-                }
-            		$scope.backgroundSize.w = parseInt($rootScope.backgroundSizeW)/$scope.imageSizeRatio;
-					$scope.backgroundSize.h = parseInt($rootScope.backgroundSizeH)/$scope.imageSizeRatio;
-				//var lastToCurrentRatio = parseInt($rootScope.lastBackgroundSize.w) / parseInt($scope.backgroundSize.w) ;
-				console.log("image size ratio!!",$scope.imageSizeRatio);
-            	$scope.backgroundPosition.left = parseInt($rootScope.backgroundPositionLeft) / $scope.imageSizeRatio;
-				$scope.backgroundPosition.top = parseInt($rootScope.backgroundPositionTop) / $scope.imageSizeRatio;
+            	if($rootScope.backgroundSizeW){
+	            	if(($scope.product.window.w/$scope.product.window.h)>=($scope.backgroundSize.w/$scope.backgroundSize.h)){
+		            	$scope.imageSizeRatio = $scope.imageSizeRatio /	 $rootScope.zoomAmountW;	
+					}
+					else{
+		            	$scope.imageSizeRatio = $scope.imageSizeRatio /	 $rootScope.zoomAmountH;						
+	                }
+	            		$scope.backgroundSize.w = parseInt($rootScope.backgroundSizeW)/$scope.imageSizeRatio;
+						$scope.backgroundSize.h = parseInt($rootScope.backgroundSizeH)/$scope.imageSizeRatio;
+					//var lastToCurrentRatio = parseInt($rootScope.lastBackgroundSize.w) / parseInt($scope.backgroundSize.w) ;
+					console.log("image size ratio!!",$scope.imageSizeRatio);
+	            	$scope.backgroundPosition.left = parseInt($rootScope.backgroundPositionLeft) / $scope.imageSizeRatio;
+					$scope.backgroundPosition.top = parseInt($rootScope.backgroundPositionTop) / $scope.imageSizeRatio;
 
-                $scope.imageStyle = {					
-					"background-image":"url('" + $scope.imageUrl  + "')",
-					"background-size": $scope.backgroundSize.w + "px "  + $scope.backgroundSize.h + "px",
-					"background-repeat":"no-repeat", 
-					"background-position": $scope.backgroundPosition.left + "px " + $scope.backgroundPosition.top + "px",
-					"width":$attrs.tmbwidth + "px",
-				}
-				$scope.$apply();
-				console.log("backgroundSize", $scope.backgroundSize)
-                console.log("backgroundPosition", $scope.backgroundPosition)
-                console.log("sizeRatio", $scope.sizeRatio)
+	                $scope.imageStyle = {					
+						"background-image":"url('" + $scope.imageUrl  + "')",
+						"background-size": $scope.backgroundSize.w + "px "  + $scope.backgroundSize.h + "px",
+						"background-repeat":"no-repeat", 
+						"background-position": $scope.backgroundPosition.left + "px " + $scope.backgroundPosition.top + "px",
+						"width":$attrs.tmbwidth + "px",
+					}
+					$scope.$apply();
+					console.log("backgroundSize", $scope.backgroundSize)
+	                console.log("backgroundPosition", $scope.backgroundPosition)
+	                console.log("sizeRatio", $scope.sizeRatio)
+
+
+            	}
             }
 			$scope.initCanvas = function (){
 				canvas= document.getElementById("canvas");					
@@ -112,6 +142,7 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 			    var blob = new Blob( [ ia ], {
 			        type: mimeString
 			    });
+			    console.log(blob)
 			    return DOMURL.createObjectURL( blob )
 			}
 			$scope.rotateBackgroundImage = function(degrees){
@@ -307,7 +338,7 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 
 				}
 				if($scope.finalStep){
-					 $scope.backToReality($scope.bakcgroundPosition,$scope.product.window,$scope.sizeRatio,$scope.imageSizeRatio)
+					 $scope.backToReality($scope.backgroundPosition,$scope.product.window,$scope.sizeRatio,$scope.imageSizeRatio)
 				}
 				$scope.$apply();
 //				$scope.triggerZoom();
