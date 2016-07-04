@@ -85,10 +85,10 @@
         </div>
         <div class="row checkout-pay-buttons-row" dir="ltr">
             <div class="col-xs-12">
-                <div class="checkout-pay-button credit"></div>
+                <div class="checkout-pay-button credit" ng-click="vm.checkout('cc')"></div>
             </div>
             <div class="col-xs-12"><!-- col-xs-6 col-xs-offset-6 col-xs-pull-6 col-sm-offset-0 col-sm-pull-0 -->
-                <div class="checkout-pay-button paypal"></div>
+                <div class="checkout-pay-button paypal" ng-click="vm.checkout('paypal')"></div>
             </div>
         </div>
     </div>
