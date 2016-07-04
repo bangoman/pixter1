@@ -56,7 +56,9 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 			    ctx.restore();
 			    ctx.save()			    
 			    dataURL  = canvas.toDataURL();			    
-			    $rootScope.finalCroppedImageUrl = dataURItoBlob(dataURL);
+			    $rootScope.finalCroppedImageData = dataURL;
+			    //$rootScope.finalCroppedImageUrl = dataURItoBlob(dataURL);
+
 
 
                 console.log("finalImagePosition", $scope.finalImagePosition)
