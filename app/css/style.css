@@ -721,6 +721,9 @@ select[type="number"]:active {
   .edit-header {
     text-align: left;
   }
+  .order-details-input {
+    margin-bottom: 0;
+  }
   #checkout-view-responsive .pay-flow-product-thumbnail {
     margin-top: 0px;
   }
@@ -753,16 +756,18 @@ select[type="number"]:active {
     width: 100%;
   }
   .order-details-header {
-    font-size: 26px;
+    font-size: 24px;
     margin-bottom: 0px;
     border-bottom: none;
   }
-  .order-details-input {
-    height: 32px;
-    margin-bottom: -8px;
+  #order-details-view-responsive .form-group {
+    margin-bottom: 12px;
   }
-  .order-details-input.country-select {
-    margin-top: -8px; 
+  .order-details-input {
+    height: 27px;
+  }  
+  .order-details-personal-information .checkbox {
+    margin-top: 0px;
   }
   .checkout-view-responsive .pay-flow-product-thumbnail {
     margin-top: 8px;
@@ -778,11 +783,16 @@ select[type="number"]:active {
   }
   #order-details-view-responsive,
   #checkout-view-responsive {
-    padding: 72px 32px 20px;
+    padding: 56px 32px 20px;
+  }
+  .order-details-header {
+    font-size: 22px;
+  }
+  #order-details-view-responsive .form-group {
+    margin-bottom: 8px;
   }
   .order-details-input {
-    height: 32px;
-    margin-bottom: -8px;
+    height: 24px;
   }
   #checkout-view-responsive .pay-flow-product-thumbnail {
     margin-top: 0px;
@@ -790,9 +800,12 @@ select[type="number"]:active {
   .checkout-view-header {
     font-size: 28px;
     line-height: 38px;
-    margin-top: 12px;
-    margin-bottom: 0px;
-    padding-bottom: 28px;
+    margin-top: 8px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+  .checkout-view-price-row {
+    padding: 4px 8px 4px 0;
   }
 }
 @media screen and (max-width: 320px) {
@@ -802,7 +815,6 @@ select[type="number"]:active {
   }
   .order-details-input {
     height: 26px;
-    margin-bottom: -12px;
   }
   .checkout-view-header {
     font-size: 22px;
