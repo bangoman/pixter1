@@ -1,4 +1,4 @@
-angular.module('app').controller('checkoutCtl', function ($uibModal, $rootScope,apiService) {
+angular.module('app').controller('checkoutCtl', function ($uibModal, $rootScope, apiService, $filter) {
     var vm = this;
 
     vm.shipmentMethod = $rootScope.currentProduct.priceObject.shipping.US[0];
@@ -28,15 +28,20 @@ angular.module('app').controller('checkoutCtl', function ($uibModal, $rootScope,
     };
 
     vm.checkout = function (paymentType) {
-        return apiService.validateOrder(angular.extend({
-            price:vm.getDiscountProductPrice(),
-            curr:'USD',
-            quantity:1,
-            shipping_method: vm.shipmentMethod.id,
-            shipping_price:vm.getDiscountShippingPrice(),
-            payment_type:paymentType,
-            key:'93934b52adbf7fab23579391cd7e891d.jpg',
-            coupon_string: $rootScope.coupon.coupon_code.replace(/'/g,'')
-        },$rootScope.order));
+        return apiService
+            .validateOrder(angular.extend({
+                product_id: $rootScope.currentProduct.pid,
+                price: $filter('number')(vm.getDiscountProductPrice(), 2),
+                curr: 'USD',
+                quantity: 1,
+                shipping_method: vm.shipmentMethod.id,
+                shipping_price: $filter('number')(vm.getDiscountShippingPrice(), 2),
+                payment_type: paymentType,
+                key: '93934b52adbf7fab23579391cd7e891d.jpg',
+                coupon_string: $rootScope.coupon.coupon_code.replace(/'/g, '')
+            }, $rootScope.order))
+            .then(function (data) {
+                window.open(data.url, "", "width=500, height=500");
+            });
     };
 });
