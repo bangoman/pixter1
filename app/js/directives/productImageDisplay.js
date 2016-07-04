@@ -9,7 +9,8 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 	    	product:'=',
 	    	withCanvas: '=',
 	    	imageUrl: '=',
-	    	appliedChangesFlag: '='
+	    	appliedChangesFlag: '=',
+	    	finalStep: '='
 
 	     },
 	  	controller: ['$scope','$http','$attrs','$document','$element','$compile','$rootScope','$state', function($scope,$http,$attrs,$document,$element,$compile,$rootScope,$state) {
@@ -22,19 +23,33 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 				getImgSize($scope.imageUrl);
 			        
 			});
+			$scope.backToReality = function(bakcgroundPosition,productWindow,sizeRatio,imageSizeRatio){
+				$scope.finalImagePosition.top = (backgroundPosition.top) * imageSizeRatio;
+                $scope.finalImagePosition.left = (backgroundPosition.left) *  imageSizeRatio;
+                $scope.finalWindowPosition.y = ($scope.finalImagePosition.top + productWindow.y) * imageSizeRatio;
+                $scope.finalWindowPosition.x = ($scope.finalImagePosition.left + productWindow.x) * imageSizeRatio;
+                $scope.finalWindowSize.height = productWindow.h * imageSizeRatio;
+                $scope.finalWindowSize.width = productWindow.w * imageSizeRatio;
+
+                console.log("finalImagePosition", $scope.finalImagePosition)
+                console.log("finalWindowPosition", $scope.finalWindowPosition)
+                console.log("finalWindowSize", $scope.finalWindowSize)
+			}
 			$scope.applyChanges = function(positionLeft,positionTop,height,width,ratio){
 				
 				$rootScope.backgroundPositionLeft = parseInt(positionLeft) * ratio;
 				$rootScope.backgroundPositionTop = parseInt(positionTop) * ratio;
-				console.log($rootScope.backgroundPositionTop, "!@#");
 				$rootScope.backgroundSizeW = width * ratio;
 				$rootScope.backgroundSizeH = height * ratio;
 				$rootScope.zoomAmountW = width / ($scope.product.window.w/$scope.sizeRatio);				
                 $rootScope.zoomAmountH = height / ($scope.product.window.h/$scope.sizeRatio);
                 $state.go('app.orderDetails');
+                $scope.backToReality($scope.bakcgroundPosition,$scope.product.window,$scope.sizeRatio,$scope.imageSizeRatio)
                
 			}
             $scope.laodAppliedChanges = function(){
+            	$scope.finalImagePosition = {top:"",left:""}
+            	$scope.finalWindowPosition = {x:"",y:""}
             	if(($scope.product.window.w/$scope.product.window.h)>=($scope.backgroundSize.w/$scope.backgroundSize.h)){
 	            	$scope.imageSizeRatio = $scope.imageSizeRatio /	 $rootScope.zoomAmountW;	
 				}
@@ -56,8 +71,9 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 					"width":$attrs.tmbwidth + "px",
 				}
 				$scope.$apply();
-				console.log("la", $scope.imageSizeRatio)
-                console.log("apply=", $scope.imageStyle)
+				console.log("backgroundSize", $scope.backgroundSize)
+                console.log("backgroundPosition", $scope.backgroundPosition)
+                console.log("sizeRatio", $scope.sizeRatio)
             }
 			$scope.initCanvas = function (){
 				canvas= document.getElementById("canvas");					
@@ -66,6 +82,7 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 				lastWidth = $scope.currentImg.width;
 				lastHeight = $scope.currentImg.height;
 			}
+
 			function dataURItoBlob( uri ) {
 			    // convert base64/URLEncoded data component to raw binary data held in a string
 			    var DOMURL = window.URL || window.webkitURL || window;
@@ -116,7 +133,7 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 
 			    $rootScope.imageUrl = dataURItoBlob( dataURL );
 			    getImgSize($rootScope.imageUrl);
-			    console.log($scope.angleInDegrees);
+			   //console.log($scope.angleInDegrees);
 			    $scope.angleInDegrees += degrees;
 
 			}
@@ -184,7 +201,7 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 	  		}
 	  		var currentBackgroundPosition = {top:"",left:""};
 			document.body.addEventListener('touchmove', function(event) {
-		      console.log(event.source);
+		     // console.log(event.source);
 		      //if (event.source == document.body)
 		    	if($attrs.editmode){		      
 		        	event.preventDefault();
@@ -286,8 +303,11 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 				}
 
 				if($scope.appliedChangesFlag){
-						$scope.laodAppliedChanges();	
+					$scope.laodAppliedChanges();	
 
+				}
+				if($scope.finalStep){
+					 $scope.backToReality($scope.bakcgroundPosition,$scope.product.window,$scope.sizeRatio,$scope.imageSizeRatio)
 				}
 				$scope.$apply();
 //				$scope.triggerZoom();
