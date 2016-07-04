@@ -457,7 +457,6 @@ select[type="number"]:active {
 .order-details-input::-webkit-input-placeholder { 
   color: #888;
 }
-
 #order-details-view-responsive  .next-button {
   float: right;
   width: 164px;
@@ -760,6 +759,10 @@ select[type="number"]:active {
   }
   .order-details-input {
     height: 32px;
+    margin-bottom: -8px;
+  }
+  .order-details-input.country-select {
+    margin-top: -8px; 
   }
   .checkout-view-responsive .pay-flow-product-thumbnail {
     margin-top: 8px;

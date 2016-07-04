@@ -15,8 +15,9 @@
     </div>
     <div class="col-sm-6 col-xs-12 preview-product-details">
         <div class="preview-details-header">    
-            <span ng-if="category.products.length == 1"></span>
-            {{currentProduct.shortName}}
+            <span ng-show="category.products.length == 1">
+                {{currentProduct.shortName}}
+            </span>
             <div class="form-group" ng-show="category.products.length > 1">       
                 <select class="form-control preview-product-select" ng-model="selectedProduct" ng-options="product.shortName for product in category.products">
                 </select>
