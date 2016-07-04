@@ -14,10 +14,10 @@
             </span>
             <div class="pull-right">
                 <span class="checkout-price checkout-old-price">
-                    ${{currentProduct.priceObject.price}}
+                    ${{currentProduct.priceObject.price | number : 2}}
                 </span>
                 <span class="checkout-price checkout-new-price">
-                    ${{vm.getDiscountProductPrice()}}
+                    ${{vm.getDiscountProductPrice() | number : 2}}
                 </span>
             </div>
         </div>
@@ -31,7 +31,7 @@
                         {{vm.shipmentMethod.price}}$
                     </span>
                     <span class="checkout-price checkout-new-price">
-                        ${{vm.getDiscountShoppingPrice()}}
+                        ${{vm.getDiscountShippingPrice()}}
                     </span>
                 </div>
             </div>
@@ -51,7 +51,7 @@
             <div class="checkout-shipping-method-info">
                 {{vm.shipmentMethod.text}}
             </div>
-            <label class="radio-inline" ng-repeat="shipmentMethod in currentProduct.priceObject.shipping.US">
+            <label class="radio-inline" ng-repeat="shipmentMethod in currentProduct.priceObject.shipping[order.country]">
                 <input type="radio" name="ship-method-radios" ng-model="vm.shipmentMethod" ng-value="shipmentMethod">
                     <span class="checkout-ship-type-radio-text">
                         {{shipmentMethod.name}}
@@ -69,14 +69,14 @@
                 You saved:
             </span>
              <span class="checkout-price checkout-saved-price">
-                 <span>{{vm.getSaving()}}</span>
+                 <span>{{vm.getSaving() | number : 2}}</span>
             </span>
             <div class="pull-right">
                 <span class="checkout-price-title bigger-title checkout-total-title">
                     Total:
                 </span>
                  <span class="checkout-price checkout-total-price">
-                    ${{vm.getTotal()}}
+                    ${{vm.getTotal() | number : 2}}
                 </span>
             </div>
         </div>

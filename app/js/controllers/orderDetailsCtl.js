@@ -1,10 +1,8 @@
-angular.module('app').controller('orderDetailsCtl',function($state){
+angular.module('app').controller('orderDetailsCtl',function($state,$rootScope){
     var vm = this;
 
-    vm.termsAgreed = false;
-
-    vm.goToCeckout = function(){
-        if (vm.termsAgreed == true) {
+    vm.goToCheckout = function(){
+        if ($rootScope.order.TOC == true) {
             $state.go('app.checkout');
         }
     }
