@@ -37,14 +37,12 @@ angular.module('app').directive('productImageDisplay', function ($http) {
             $scope.laodAppliedChanges = function(){
             	if(($scope.product.window.w/$scope.product.window.h)>=($scope.backgroundSize.w/$scope.backgroundSize.h)){
 	            	$scope.imageSizeRatio = $scope.imageSizeRatio /	 $rootScope.zoomAmountW;	
-					$scope.backgroundSize.w = parseInt($rootScope.backgroundSizeW)/$scope.imageSizeRatio;
-					$scope.backgroundSize.h = parseInt($rootScope.backgroundSizeH)/$scope.imageSizeRatio;
 				}
 				else{
-	            	$scope.imageSizeRatio = $scope.imageSizeRatio /	 $rootScope.zoomAmountH;	
-					$scope.backgroundSize.w = parseInt($rootScope.backgroundSizeW)/$scope.imageSizeRatio;
-					$scope.backgroundSize.h = parseInt($rootScope.backgroundSizeH)/$scope.imageSizeRatio;					
+	            	$scope.imageSizeRatio = $scope.imageSizeRatio /	 $rootScope.zoomAmountH;						
                 }
+            		$scope.backgroundSize.w = parseInt($rootScope.backgroundSizeW)/$scope.imageSizeRatio;
+					$scope.backgroundSize.h = parseInt($rootScope.backgroundSizeH)/$scope.imageSizeRatio;
 				//var lastToCurrentRatio = parseInt($rootScope.lastBackgroundSize.w) / parseInt($scope.backgroundSize.w) ;
 				console.log("image size ratio!!",$scope.imageSizeRatio);
             	$scope.backgroundPosition.left = parseInt($rootScope.backgroundPositionLeft) / $scope.imageSizeRatio;
