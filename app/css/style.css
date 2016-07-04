@@ -182,7 +182,7 @@ select[type="number"]:active {
   height: 36px;
 }
 .learn-more-modal-links {
-  display: -webkit-inline-box;
+  display: inline-flex;
   list-style: none;
   padding: 20px 0;
 }
