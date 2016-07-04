@@ -3,4 +3,8 @@ angular.module('app').controller('cuponModalCtl',function($uibModalInstance){
 
     vm.close = $uibModalInstance.close;
     vm.dismiss = $uibModalInstance.dismiss;
+    
+    vm.apply = function () {
+        
+    }
 });

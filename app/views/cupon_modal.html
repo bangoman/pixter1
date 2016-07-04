@@ -9,7 +9,7 @@
             Paste in your coupon code
         </p>
         <div class="form-group">
-            <input type="text" class="form-control cupon-modal-input" name="cupon_code">
+            <input type="text" class="form-control cupon-modal-input" ng-model="vm.couponString" name="cupon_code">
         </div>
     </div>
     <div class="modal-footer" style="text-align:center">
@@ -17,7 +17,7 @@
             <button type="button" class="btn white-button" ng-click="vm.dismiss()">
                 Cancel
             </button>            
-            <button type="button" class="btn next-button" ng-click="vm.close()">
+            <button type="button" class="btn next-button" ng-click="vm.apply()">
                 OK
             </button>
         </div>
