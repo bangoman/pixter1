@@ -66,7 +66,37 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 				lastWidth = $scope.currentImg.width;
 				lastHeight = $scope.currentImg.height;
 			}
+			function dataURItoBlob( uri ) {
+			    // convert base64/URLEncoded data component to raw binary data held in a string
+			    var DOMURL = window.URL || window.webkitURL || window;
+			    var byteString,
+			        mimeString,
+			        ia;
 
+			    if ( uri.split( ',' )[0].indexOf( 'base64' ) >= 0 ) {
+
+			        byteString = atob( uri.split(',')[1] );
+			    }
+			    else {
+
+			        byteString = unescape( uri.split(',')[1] );
+			    }
+			    // separate out the mime component
+			    mimeString = uri.split( ',' )[ 0 ].split( ':' )[ 1 ].split( ';' )[ 0 ];
+
+			    // write the bytes of the string to a typed array
+			    ia = new Uint8Array( byteString.length );
+
+			    for ( var i = 0; i < byteString.length; i++ ) {
+			        
+			        ia[ i ] = byteString.charCodeAt( i );
+			    }
+
+			    var blob = new Blob( [ ia ], {
+			        type: mimeString
+			    });
+			    return DOMURL.createObjectURL( blob )
+			}
 			$scope.rotateBackgroundImage = function(degrees){
 
 
@@ -81,10 +111,11 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 			    ctx.rotate(degrees*Math.PI/180);
 			    ctx.drawImage($scope.currentImg,-$scope.currentImg.width/2,-$scope.currentImg.height/2);
 			    ctx.restore();
-			    ctx.save()
+			    ctx.save()			    
 			    dataURL  = canvas.toDataURL();
-			    $scope.imageUrl = dataURL;
-			    getImgSize(dataURL);
+
+			    $rootScope.imageUrl = dataURItoBlob( dataURL );
+			    getImgSize($rootScope.imageUrl);
 			    console.log($scope.angleInDegrees);
 			    $scope.angleInDegrees += degrees;
 
