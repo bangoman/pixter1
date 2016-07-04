@@ -420,7 +420,7 @@ select[type="number"]:active {
     padding: 72px 28px 0;
 }
 .pay-flow-product-thumbnail {
-  max-width: 120px;
+  max-width: 180px;
   margin: 0 auto;
 }
 .pay-flow-product-thumbnail img {
@@ -430,7 +430,7 @@ select[type="number"]:active {
 /* order-details view style */
 
 #order-details-view-responsive {
-  padding: 72px 52px 20px;
+  padding: 60px 52px 20px;
 }
 .order-details-header {
   color: #4d4d4d;
@@ -457,7 +457,6 @@ select[type="number"]:active {
 .order-details-input::-webkit-input-placeholder { 
   color: #888;
 }
-
 #order-details-view-responsive  .next-button {
   float: right;
   width: 164px;
@@ -722,6 +721,9 @@ select[type="number"]:active {
   .edit-header {
     text-align: left;
   }
+  .order-details-input {
+    margin-bottom: 0;
+  }
   #checkout-view-responsive .pay-flow-product-thumbnail {
     margin-top: 0px;
   }
@@ -753,16 +755,19 @@ select[type="number"]:active {
   .shop-view-product-container {
     width: 100%;
   }
-  .pay-flow-product-thumbnail {
-    max-width: 82px;
-  }
   .order-details-header {
-    font-size: 26px;
+    font-size: 24px;
     margin-bottom: 0px;
     border-bottom: none;
   }
+  #order-details-view-responsive .form-group {
+    margin-bottom: 12px;
+  }
   .order-details-input {
-    height: 36px;
+    height: 27px;
+  }  
+  .order-details-personal-information .checkbox {
+    margin-top: 0px;
   }
   .checkout-view-responsive .pay-flow-product-thumbnail {
     margin-top: 8px;
@@ -778,14 +783,16 @@ select[type="number"]:active {
   }
   #order-details-view-responsive,
   #checkout-view-responsive {
-    padding: 72px 32px 20px;
+    padding: 56px 32px 20px;
+  }
+  .order-details-header {
+    font-size: 22px;
+  }
+  #order-details-view-responsive .form-group {
+    margin-bottom: 8px;
   }
   .order-details-input {
-    height: 32px;
-    margin-bottom: -8px;
-  }
-  .pay-flow-product-thumbnail {
-    max-width: 65px;
+    height: 24px;
   }
   #checkout-view-responsive .pay-flow-product-thumbnail {
     margin-top: 0px;
@@ -793,9 +800,12 @@ select[type="number"]:active {
   .checkout-view-header {
     font-size: 28px;
     line-height: 38px;
-    margin-top: 12px;
-    margin-bottom: 0px;
-    padding-bottom: 28px;
+    margin-top: 8px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+  .checkout-view-price-row {
+    padding: 4px 8px 4px 0;
   }
 }
 @media screen and (max-width: 320px) {
@@ -805,7 +815,6 @@ select[type="number"]:active {
   }
   .order-details-input {
     height: 26px;
-    margin-bottom: -12px;
   }
   .checkout-view-header {
     font-size: 22px;
