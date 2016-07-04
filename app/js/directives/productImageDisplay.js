@@ -29,16 +29,22 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 				console.log($rootScope.backgroundPositionTop, "!@#");
 				$rootScope.backgroundSizeW = width * ratio;
 				$rootScope.backgroundSizeH = height * ratio;
-				$rootScope.zoomAmount = width / ($scope.product.window.w/$scope.sizeRatio);				
-
+				$rootScope.zoomAmountW = width / ($scope.product.window.w/$scope.sizeRatio);				
+                $rootScope.zoomAmountH = height / ($scope.product.window.h/$scope.sizeRatio);
                 $state.go('app.orderDetails');
                
 			}
             $scope.laodAppliedChanges = function(){
-            	$scope.imageSizeRatio = $scope.imageSizeRatio /	 $rootScope.zoomAmount;	
-				$scope.backgroundSize.w = parseInt($rootScope.backgroundSizeW)/$scope.imageSizeRatio;
-				$scope.backgroundSize.h = parseInt($rootScope.backgroundSizeH)/$scope.imageSizeRatio;
-
+            	if(($scope.product.window.w/$scope.product.window.h)>=($scope.backgroundSize.w/$scope.backgroundSize.h)){
+	            	$scope.imageSizeRatio = $scope.imageSizeRatio /	 $rootScope.zoomAmountW;	
+					$scope.backgroundSize.w = parseInt($rootScope.backgroundSizeW)/$scope.imageSizeRatio;
+					$scope.backgroundSize.h = parseInt($rootScope.backgroundSizeH)/$scope.imageSizeRatio;
+				}
+				else{
+	            	$scope.imageSizeRatio = $scope.imageSizeRatio /	 $rootScope.zoomAmountH;	
+					$scope.backgroundSize.w = parseInt($rootScope.backgroundSizeW)/$scope.imageSizeRatio;
+					$scope.backgroundSize.h = parseInt($rootScope.backgroundSizeH)/$scope.imageSizeRatio;					
+                }
 				//var lastToCurrentRatio = parseInt($rootScope.lastBackgroundSize.w) / parseInt($scope.backgroundSize.w) ;
 				console.log("image size ratio!!",$scope.imageSizeRatio);
             	$scope.backgroundPosition.left = parseInt($rootScope.backgroundPositionLeft) / $scope.imageSizeRatio;
