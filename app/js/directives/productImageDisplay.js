@@ -19,7 +19,7 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 			$scope.editMode = $attrs.editmode;
 			$scope.$watch('product', function() {
 				//console.log("product changed");
-				getImgSize($scope.imageUrl);
+				getImgSize($rootScope.imageUrl);
 			        
 			});
 			$scope.applyChanges = function(positionLeft,positionTop,height,width,ratio){
