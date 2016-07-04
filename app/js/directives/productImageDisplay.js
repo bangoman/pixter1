@@ -1,8 +1,5 @@
 
-angular.module('app').directive('productImageDisplay', function ($http) {
-	function link(scope, element, attrs,$http) {
-		//console.log(attrs.moduleid);
-	  }
+angular.module('app').directive('productImageDisplay', function () {
   	return {	    
 	    restrict: 'E',
 	    scope: {
@@ -13,7 +10,7 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 	    	finalStep: '='
 
 	     },
-	  	controller: ['$scope','$http','$attrs','$document','$element','$compile','$rootScope','$state', function($scope,$http,$attrs,$document,$element,$compile,$rootScope,$state) {
+	  	controller: function($scope,$attrs,apiService,$rootScope,$state) {
 
 		//	setInterval(function(){console.log($attrs.zoom) },1000)
 			var lastHeight ,lastWidth,canvas,ctx;
@@ -54,17 +51,18 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 			    ctx.save();
 			    ctx.drawImage($scope.currentImg,-$scope.finalWindowPosition.x,-$scope.finalWindowPosition.y);
 			    ctx.restore();
-			    ctx.save()			    
-			    dataURL  = canvas.toDataURL();			    
-			    $rootScope.finalCroppedImageData = dataURL;
-			    //$rootScope.finalCroppedImageUrl = dataURItoBlob(dataURL);
+			    ctx.save();
+			    var dataURL  = canvas.toDataURL();
 
 
 
                 console.log("finalImagePosition", $scope.finalImagePosition)
                 console.log("finalWindowPosition", $scope.finalWindowPosition)
                 console.log("finalWindowSize", $scope.finalWindowSize)
-			}
+				return apiService.upload(dataURL).then(function (data) {
+					$rootScope.order.key = data.key;
+				});
+			};
 			$scope.applyChanges = function(positionLeft,positionTop,height,width,ratio){
 				
 				$rootScope.backgroundPositionLeft = parseInt(positionLeft) * ratio;
@@ -354,7 +352,7 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 		  	getImgSize($scope.imageUrl);
 
 	  	
-	    }],    
+	    },
     	templateUrl: 'app/js/directives/productImageDisplayView.html'
   };	
 });
