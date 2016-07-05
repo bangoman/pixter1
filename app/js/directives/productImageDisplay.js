@@ -1,7 +1,6 @@
 
 angular.module('app').directive('productImageDisplay', function ($http) {
 	function link(scope, element, attrs,$http) {
-		//console.log(attrs.moduleid);
 	  }
   	return {	    
 	    restrict: 'E',
@@ -14,9 +13,8 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 
 	     },
 	    controllerAs:'vm',
-	  	controller: ['$scope','$http','$attrs','$document','$element','$compile','$rootScope','$state','$q', function($scope,$http,$attrs,$document,$element,$compile,$rootScope,$state,$q) {
+	  	controller: function($scope,$http,$attrs,$document,$element,$compile,$rootScope,$state,$q) {
 
-		//	setInterval(function(){console.log($attrs.zoom) },1000)
 			var vm = this;
 			var lastHeight ,lastWidth,canvas,ctx;
 
@@ -25,12 +23,10 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 			$scope.finalWindowPosition = {};
 			$scope.finalWindowSize = {};
 			$scope.$watch('product', function() {
-				console.log("product changed");
 				getImgSize($rootScope.imageUrl);
 			        
 			});
 			$scope.$watch('finalStep', function() {
-				//console.log("product changed");
 				if($scope.finalStep){
 					$scope.backToReality($scope.backgroundPosition,$scope.product.window,$scope.sizeRatio,$scope.imageSizeRatio)
 
@@ -72,7 +68,6 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 
 			    $rootScope.finalCroppedImageUrl = dataURItoBlob(dataURL);
 			    $state.go('app.orderDetails');
-			    console.log($rootScope.finalCroppedImageUrl);
 
 			}
 			$scope.applyChanges = function(positionLeft,positionTop,height,width,ratio){
@@ -145,7 +140,6 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 			        type: mimeString
 			    });
 
-			    //console.log(blob)
 			    return DOMURL.createObjectURL( blob )
 			}
 			$scope.rotateInProgress = false;
@@ -212,7 +206,6 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 				var preW,preH
 				preW = $scope.backgroundSize.w;
 				preH = $scope.backgroundSize.h;				
-               // console.log( $scope.backgroundPosition.left, $scope.backgroundPosition.top,$scope.backgroundSize.w,$scope.backgroundSize.h)
 				var tmpImageSizeRatio = $scope.imageSizeRatio / zoom
 				if(($scope.currentImg.height/tmpImageSizeRatio) < parseInt($scope.product.window.h/$scope.sizeRatio) || ($scope.currentImg.width/tmpImageSizeRatio) < parseInt($scope.product.window.w/$scope.sizeRatio)){
 					return false;
@@ -239,26 +232,20 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 				}
 
 
-				$scope.imageStyle["background-position"] =  $scope.backgroundPosition.left  + $scope.backgroundPosition.top ;				
-				//console.log("bakcgroundPositionn",$scope.backgroundPosition,"background-size:",$scope.backgroundSize);				
-				//$scope.backgroundPosition.top
+				$scope.imageStyle["background-position"] =  $scope.backgroundPosition.left  + $scope.backgroundPosition.top ;	
 				
-
-			}
+		   	}
 
 	  		$scope.onRelease = function(event){	  			
 	  			$scope.backgroundPosition.top = currentBackgroundPosition.top  //(parseInt($scope.backgroundPosition.top) + event.gesture.deltaY) + "px"  ;
 	  			$scope.backgroundPosition.left = currentBackgroundPosition.left// (parseInt($scope.backgroundPosition.left) + event.gesture.deltaX) + "px "  ;
-               //console.log("bpldb",$scope.backgroundPosition.left);
-			   //console.log("bptdb",$scope.backgroundPosition.top);
-
-
-
 	  		}
+
 	  		var currentBackgroundPosition = {top:"",left:""};
 	  		if($attrs.editmode){
 				$rootScope.disableScroll  = true;	  			
 	  		}
+
 			document.body.addEventListener('touchmove', function(event) {
 		    	if($rootScope.disableScroll){	
 		        	event.preventDefault();
@@ -275,8 +262,7 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 			        currentBackgroundPosition.left = (parseInt($scope.backgroundPosition.left) + event.gesture.deltaX) +"px "; 
 			        var remainVertical =  limitVertical - (($scope.product.window.y/$scope.sizeRatio) -  parseInt(currentBackgroundPosition.top) ) ;
 			        var remainHorizontal =  limitHorizontal - (($scope.product.window.x/$scope.sizeRatio) -  parseInt(currentBackgroundPosition.left) ) ;
-			     //  console.log("vertical",remainVertical,limitVertical);
-			      //	 console.log("horizontal",remainHorizontal,limitHorizontal);
+
 			       if(remainVertical <= 0 ){
 			       		currentBackgroundPosition.top =  (- limitVertical) + ($scope.product.window.y/$scope.sizeRatio) + "px";
 			       }else if( remainVertical > limitVertical){
@@ -289,11 +275,8 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 			       		currentBackgroundPosition.left = ($scope.product.window.x/$scope.sizeRatio) + "px ";
 			       }
 
-
-			       // console.log(currentBackgroundPosition.top);
 					$scope.imageStyle["background-position"] = currentBackgroundPosition.left + currentBackgroundPosition.top
-					//console.log("bplda",$scope.backgroundPosition.left);
-				  //  console.log("bptda",$scope.backgroundPosition.top);			       				       
+			       				       
 		    	}
 
 		    }	  		
@@ -305,7 +288,6 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 			      var height = newImg.height;
 			      var width = newImg.width;			      
 			      calculatePosition(newImg);
-			      //alert ('The image size is '+width+'*'+height);
 			    }
 
 			    newImg.src = imgSrc; // this must be done AFTER setting onload
@@ -313,8 +295,6 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 
 
 			function calculatePosition(img){
-				//console.log($scope.product);
-				//var imgDisplay = document.getElementById("img");
 				var imgRatio = img.height/img.width;
 				
 
@@ -323,8 +303,7 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 				$scope.product.tmbWidth = parseInt($attrs.tmbwidth);
 				$scope.product.tmbHeight = $scope.product.tmbWidth * ($scope.product.height/$scope.product.width) ;
 				$scope.sizeRatio = $scope.product.width/$scope.product.tmbWidth;			
-				$scope.backgroundPosition = {top:"",left:""}
-				//$scope.currentBackgroundPosition = {top:"",left:""}								
+				$scope.backgroundPosition = {top:"",left:""}								
 				$scope.backgroundSize = {w:"",h:""}
 				var bpl,vpt
 
@@ -343,7 +322,6 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 					$scope.backgroundPosition.left = bpt
 
 				}
-				//$scope.currentBackgroundPosition = {top:bpt,left:bpl};
 
 				$scope.backgroundSize.h = img.height/$scope.imageSizeRatio;
 				$scope.backgroundSize.w = img.width/$scope.imageSizeRatio;
@@ -355,7 +333,7 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 					"background-position": $scope.backgroundPosition.left + $scope.backgroundPosition.top,
 					"width":$attrs.tmbwidth + "px",
 				}
-				// console.log( $scope.imageStyle)
+
 				if($scope.withCanvas){
 					$scope.initCanvas();
 				}
@@ -365,18 +343,10 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 
 				}
 				$scope.$apply();
-//				$scope.triggerZoom();
-               // console.log($scope.appliedChangesFlag)
 
 			}
-    
-
-		  	//$scope.imageStyle={"width":"500px","height":"400px","background":"pink"}
-		  	//$scope.product = {"type":"mug","window":{"w":200,"h":200,"x":175,"y":107},"width":600,"height":360,"shortName":"Mug","marketingName":"11oz White Mug","teaser":true,"cropRatio":0.75,"previewImage":"mug/previewImage.png","categoryText":"Ceramic 11oz MUG","children":["CMUG11OZ111MUG"],"index":1};
-		  //	getImgSize($rootScope.imageUrl);
-
 	  	
-	    }],    
+	    },    
     	templateUrl: 'app/js/directives/productImageDisplayView.html'
   };	
 });

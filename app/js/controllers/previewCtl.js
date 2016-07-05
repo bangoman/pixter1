@@ -1,4 +1,4 @@
-angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,$q,apiService){
+angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,$q){
     var vm = this;
     $rootScope.disableScroll = false;
     $scope.finalStep = false
@@ -9,12 +9,14 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,
     };
 
     vm.goToOrderDetails = function() {
-
     	$scope.finalStep = true;
-        //$state.go('app.orderDetails');
-        return getDataUrlFromImageUrl($rootScope.imageUrl).then(apiService.upload).then(function (data) {
-            $rootScope.order.key = data.key;
-            $state.go('app.orderDetails');
+        var unbind = $scope.$watch(function () {
+           return $rootScope.finalCroppedImageData; 
+        },function () {
+            if( $rootScope.finalCroppedImageData ){
+                $state.go('app.orderDetails');
+                unbind();
+            }
         });
     };
 
@@ -22,28 +24,5 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,
     	$rootScope.currentProduct =  $scope.selectedProduct;
     });
 
-    function getDataUrlFromImageUrl(url) {
-        return $q(function (resolve,reject) {
-            try{
-                var img = new Image();
-
-                img.setAttribute('crossOrigin', 'anonymous');
-
-                img.onload = function () {
-                    var canvas = document.createElement("canvas");
-                    canvas.width =this.width;
-                    canvas.height =this.height;
-
-                    var ctx = canvas.getContext("2d");
-                    ctx.drawImage(this, 0, 0);
-
-                    resolve(canvas.toDataURL("image/png"));
-                };
-
-                img.src = url;
-            }catch (e){
-                reject(e);
-            }
-        });
-    }
+    
 });
