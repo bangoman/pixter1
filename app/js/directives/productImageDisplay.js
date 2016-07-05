@@ -140,7 +140,6 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 			        type: mimeString
 			    });
 
-			    //console.log(blob)
 			    return DOMURL.createObjectURL( blob )
 			}
 			$scope.rotateInProgress = false;
@@ -207,7 +206,6 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 				var preW,preH
 				preW = $scope.backgroundSize.w;
 				preH = $scope.backgroundSize.h;				
-               // console.log( $scope.backgroundPosition.left, $scope.backgroundPosition.top,$scope.backgroundSize.w,$scope.backgroundSize.h)
 				var tmpImageSizeRatio = $scope.imageSizeRatio / zoom
 				if(($scope.currentImg.height/tmpImageSizeRatio) < parseInt($scope.product.window.h/$scope.sizeRatio) || ($scope.currentImg.width/tmpImageSizeRatio) < parseInt($scope.product.window.w/$scope.sizeRatio)){
 					return false;
@@ -297,7 +295,6 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 
 
 			function calculatePosition(img){
-				//var imgDisplay = document.getElementById("img");
 				var imgRatio = img.height/img.width;
 				
 
@@ -306,8 +303,7 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 				$scope.product.tmbWidth = parseInt($attrs.tmbwidth);
 				$scope.product.tmbHeight = $scope.product.tmbWidth * ($scope.product.height/$scope.product.width) ;
 				$scope.sizeRatio = $scope.product.width/$scope.product.tmbWidth;			
-				$scope.backgroundPosition = {top:"",left:""}
-				//$scope.currentBackgroundPosition = {top:"",left:""}								
+				$scope.backgroundPosition = {top:"",left:""}								
 				$scope.backgroundSize = {w:"",h:""}
 				var bpl,vpt
 
@@ -326,7 +322,6 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 					$scope.backgroundPosition.left = bpt
 
 				}
-				//$scope.currentBackgroundPosition = {top:bpt,left:bpl};
 
 				$scope.backgroundSize.h = img.height/$scope.imageSizeRatio;
 				$scope.backgroundSize.w = img.width/$scope.imageSizeRatio;
@@ -348,7 +343,6 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 
 				}
 				$scope.$apply();
-//				$scope.triggerZoom();
 
 			}
 	  	
