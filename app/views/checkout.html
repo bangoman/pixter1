@@ -33,7 +33,7 @@
                     <span class="checkout-price checkout-old-price">
                         {{vm.shipmentMethod.price}}$
                     </span>
-                    <span class="checkout-price checkout-new-price">
+                    <span class="checkout-price checkout-new-price" ng-show="vm.getDiscountShippingPrice() < vm.shipmentMethod.price">
                         ${{vm.getDiscountShippingPrice()}}
                     </span>
                 </div>
