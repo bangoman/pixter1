@@ -1,4 +1,4 @@
-<div id="order-details-view-responsive" name="forms.form">
+<div id="order-details-view-responsive" name="forms.form" ng-submit="vm.goToCheckout()">
     <div class="visible-xs">
         <div class="pay-flow-product-thumbnail">
             <product-image-display class="shop-view-product-image-display" product="currentProduct" image-url="imageUrl"
@@ -89,7 +89,7 @@
             </label>
         </div>
         <div class="col-sm-4 col-xs-12">
-            <input type="submit" class="btn next-button" ng-click="vm.goToCheckout()">Next</input>
+            <input type="submit" class="btn next-button">Next</input>
         </div>
     </div>
 
