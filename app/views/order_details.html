@@ -19,14 +19,14 @@
                                required/>
                     </div>
                     <div class="form-group">
-                        <div ng-if="form.user_name.$error">yo</div>
+                        <div ng-show="form.user_name.$error">yo</div>
                     </div>
                     <div class="form-group">
-                        <input type="email" class="form-control order-details-input error" name="user_email" placeholder="E-Mail*"
+                        <input type="email" class="form-control order-details-input error-input" name="user_email" placeholder="E-Mail*"
                                ng-model="order.user_email"
                                required/>
                     </div>
-                    <div class="error">erro text</div>
+                    <div class="error-input">erro text</div>
                 </div>
             </div>
             <div class="col-sm-6 hidden-xs">
