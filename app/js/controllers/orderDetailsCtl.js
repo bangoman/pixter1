@@ -5,5 +5,6 @@ angular.module('app').controller('orderDetailsCtl',function($state,$rootScope){
         if ($rootScope.order.TOC == true) {
             $state.go('app.checkout');
         }
-    }
+    };
+    
 });        

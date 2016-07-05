@@ -1,10 +1,10 @@
 angular.module('app').run(function($rootScope,message){
-	$rootScope.sourceImg = 'app/images/image1.jpg';
+    $rootScope.imageUrl = "image.jpg";
 	message('init');
     window.addEventListener('message', function(e) {
         if (e.source !== window && e.data) {
             $rootScope.$apply(function(){
-                $rootScope.sourceImg = e.data;
+                $rootScope.imageUrl = e.data;
             });
         }
     }, false);

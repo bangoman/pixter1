@@ -1,7 +1,6 @@
 angular.module('app').controller('shopCtl', function ($state, $http, $rootScope) {
     var vm = this;
     window.$state = $state;
-    $rootScope.imageUrl = "image.jpg";
     vm.getProducts = function () {
         $http.get('app/json/products.json')
             .then(function (res) {
