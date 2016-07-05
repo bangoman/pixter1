@@ -17,16 +17,10 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 
 			var vm = this;
 			var lastHeight ,lastWidth,canvas,ctx;
-/*			
-		    $scope.$watch(function() {
-		        return $ionicScrollDelegate._instances[0].getScrollView().__zoomLevel;
-		    }, function(current, original) {
-		    	if(current){
-		    		console.log(current);
-		    	}
-		    	
-		    });
-*/			
+//			setInterval(function(){				
+//				$scope.triggerPinchZoom($ionicScrollDelegate.getScrollPosition().zoom)
+//			},100)
+			
 			$scope.editMode = $attrs.editmode;
 			$scope.finalImagePosition = {};
 			$scope.finalWindowPosition = {};
@@ -42,19 +36,36 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 				}
 				
 			});			
-			$scope.getPinchZoom = function(){
-				if($ionicScrollDelegate.getScrollPosition().zoom > $scope.lastZoom ){
-					$scope.triggerZoom(1.01)
 
-				}else{
-					$scope.triggerZoom(0.99)
-				}				 
-				setTimeout(function(){
-					$scope.$apply();
-				},10)
-				console.log($ionicScrollDelegate.getScrollPosition().zoom);
-				$scope.lastZoom = $ionicScrollDelegate.getScrollPosition().zoom;
-			}
+		    $scope.onDrag=function(event){		    	
+		    	if($attrs.editmode){	
+		    		//$scope.getPinchZoom();
+			    	currentBackgroundPosition = {top:"",left:""};
+				    var limitVertical =   (($scope.currentImg.height/$scope.imageSizeRatio) - ($scope.product.window.h/$scope.sizeRatio));		       
+			        var limitHorizontal =   (($scope.currentImg.width/$scope.imageSizeRatio) - ($scope.product.window.w/$scope.sizeRatio));		       
+			        currentBackgroundPosition.top = (parseInt($scope.backgroundPosition.top) + event.gesture.deltaY) +"px "; 
+			        currentBackgroundPosition.left = (parseInt($scope.backgroundPosition.left) + event.gesture.deltaX) +"px "; 
+			        var remainVertical =  limitVertical - (($scope.product.window.y/$scope.sizeRatio) -  parseInt(currentBackgroundPosition.top) ) ;
+			        var remainHorizontal =  limitHorizontal - (($scope.product.window.x/$scope.sizeRatio) -  parseInt(currentBackgroundPosition.left) ) ;
+
+			       if(remainVertical <= 0 ){
+			       		currentBackgroundPosition.top =  (- limitVertical) + ($scope.product.window.y/$scope.sizeRatio) + "px";
+			       }else if( remainVertical > limitVertical){
+			       		currentBackgroundPosition.top = ($scope.product.window.y/$scope.sizeRatio) + "px";
+			       }
+
+			       if(remainHorizontal <= 0 ){
+			       		currentBackgroundPosition.left =  (- limitHorizontal) + ($scope.product.window.x/$scope.sizeRatio) + "px ";
+			       }else if( remainHorizontal > limitHorizontal){
+			       		currentBackgroundPosition.left = ($scope.product.window.x/$scope.sizeRatio) + "px ";
+			       }
+
+					$scope.imageStyle["background-position"] = currentBackgroundPosition.left + currentBackgroundPosition.top
+			       				       
+		    	}
+
+		    }	  		
+
 
 			$scope.backToReality = function(backgroundPosition,productWindow,sizeRatio,imageSizeRatio){
 				backgroundPosition.top = parseInt(backgroundPosition.top);
@@ -258,7 +269,7 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 				
 		   	}
 
-	  		$scope.onRelease = function(event){	  			
+	  		$scope.onRelease = function(event){	  		  			
 	  			$scope.backgroundPosition.top = currentBackgroundPosition.top  //(parseInt($scope.backgroundPosition.top) + event.gesture.deltaY) + "px"  ;
 	  			$scope.backgroundPosition.left = currentBackgroundPosition.left// (parseInt($scope.backgroundPosition.left) + event.gesture.deltaX) + "px "  ;
 	  		}
@@ -274,34 +285,6 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 		        }
 		    }, false);		    	
 
-
-		    $scope.onDrag=function(event){
-		    	if($attrs.editmode){	
-			    	currentBackgroundPosition = {top:"",left:""};
-				    var limitVertical =   (($scope.currentImg.height/$scope.imageSizeRatio) - ($scope.product.window.h/$scope.sizeRatio));		       
-			        var limitHorizontal =   (($scope.currentImg.width/$scope.imageSizeRatio) - ($scope.product.window.w/$scope.sizeRatio));		       
-			        currentBackgroundPosition.top = (parseInt($scope.backgroundPosition.top) + event.gesture.deltaY) +"px "; 
-			        currentBackgroundPosition.left = (parseInt($scope.backgroundPosition.left) + event.gesture.deltaX) +"px "; 
-			        var remainVertical =  limitVertical - (($scope.product.window.y/$scope.sizeRatio) -  parseInt(currentBackgroundPosition.top) ) ;
-			        var remainHorizontal =  limitHorizontal - (($scope.product.window.x/$scope.sizeRatio) -  parseInt(currentBackgroundPosition.left) ) ;
-
-			       if(remainVertical <= 0 ){
-			       		currentBackgroundPosition.top =  (- limitVertical) + ($scope.product.window.y/$scope.sizeRatio) + "px";
-			       }else if( remainVertical > limitVertical){
-			       		currentBackgroundPosition.top = ($scope.product.window.y/$scope.sizeRatio) + "px";
-			       }
-
-			       if(remainHorizontal <= 0 ){
-			       		currentBackgroundPosition.left =  (- limitHorizontal) + ($scope.product.window.x/$scope.sizeRatio) + "px ";
-			       }else if( remainHorizontal > limitHorizontal){
-			       		currentBackgroundPosition.left = ($scope.product.window.x/$scope.sizeRatio) + "px ";
-			       }
-
-					$scope.imageStyle["background-position"] = currentBackgroundPosition.left + currentBackgroundPosition.top
-			       				       
-		    	}
-
-		    }	  		
 
 			function getImgSize(imgSrc) {
 				$rootScope.imageUrl = imgSrc;
