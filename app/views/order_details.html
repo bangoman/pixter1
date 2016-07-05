@@ -1,96 +1,101 @@
-<div id="order-details-view-responsive" name="forms.form">
-    <div class="visible-xs">
-        <div class="pay-flow-product-thumbnail">
-            <product-image-display class="shop-view-product-image-display" product="currentProduct" image-url="imageUrl"
-                                   tmbWidth="180" applied-changes-flag="true">
-            </product-image-display>
-        </div>
-    </div>
-    <div class="order-details-header">
-        Contact Information
-    </div>
-    <div class="row order-details-personal-information">
-        <div class="col-sm-6 col-xs-12">
-            <form>
-                <div class="form-group">
-                    <input type="text" class="form-control order-details-input" name="user_name" placeholder="FullName*"
-                           ng-model="order.user_name"
-                           required/>
-                </div>
-                <div class="form-group">
-                    <input type="email" class="form-control order-details-input" name="user_email" placeholder="E-Mail*"
-                           ng-model="order.user_email"
-                           required/>
-                </div>
-            </form>
-        </div>
-        <div class="col-sm-6 hidden-xs">
+<div id="order-details-view-responsive">
+    <form>
+        <div class="visible-xs" name="form" novalidate>
             <div class="pay-flow-product-thumbnail">
-                <product-image-display class="shop-view-product-image-display" product="currentProduct" image-url="imageUrl" tmbWidth="180" applied-changes-flag="true">
+                <product-image-display class="shop-view-product-image-display" product="currentProduct" image-url="imageUrl"
+                                       tmbWidth="180" applied-changes-flag="true">
                 </product-image-display>
             </div>
         </div>
-    </div>
-    <div class="order-details-header">
-        Shipping Address
-    </div>
-    <div class="row order-details-personal-information">
-        <div class="col-sm-6 col-xs-12">
-            <form>
-                <div class="form-group">
-                    <input type="text" class="form-control order-details-input" name="recipient_name"
-                           ng-model="order.recipient_name"
-                           placeholder="Recipient Name">
-                </div>
-                <div class="form-group">
-                    <input type="text" class="form-control order-details-input" name="address" placeholder="Address 1"
-                           ng-model="order.address"
-                    />
-                </div>
-                <div class="form-group">
-                    <input type="text" class="form-control order-details-input" name="address2" placeholder="Address 2"
-                           ng-model="order.address2"
-                    />
-                </div>
-            </form>
+        <div class="order-details-header">
+            Contact Information
         </div>
-        <div class="col-sm-6 col-xs-12">
-            <form>
-                <div class="form-group">
-                    <input type="text" class="form-control order-details-input" name="city" placeholder="City"
-                           ng-model="order.city"
-                    />
+        <div class="row order-details-personal-information">
+            <div class="col-sm-6 col-xs-12">
+                <div>
+                    <div class="form-group">
+                        <input type="text" class="form-control order-details-input" name="user_name" placeholder="FullName*"
+                               ng-model="order.user_name"
+                               required/>
+                    </div>
+                    <div class="form-group">
+                        <div ng-show="form.user_name.$error">yo</div>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control order-details-input error-input" name="user_email" placeholder="E-Mail*"
+                               ng-model="order.user_email"
+                               required/>
+                    </div>
+                    <div class="error-input">erro text</div>
                 </div>
-                <div class="form-group order-details-state-zip-inputs">
-                    <input type="text" class="form-control order-details-input" style="width:59%; margin-bottom:0"
-                           ng-model="order.state"
-                           name="state;" placeholder="State"/>
-                    <input type="text" class="form-control order-details-input"
-                           ng-model="order.zip"
-                           style="width:39%; margin-left: 2%; margin-bottom:0" name="zip" id="p_ZipInput"
-                           placeholder="ZIP"/>
+            </div>
+            <div class="col-sm-6 hidden-xs">
+                <div class="pay-flow-product-thumbnail">
+                    <product-image-display class="shop-view-product-image-display" product="currentProduct" image-url="imageUrl" tmbWidth="180" applied-changes-flag="true">
+                    </product-image-display>
                 </div>
-                <div class="form-group">
-                    <select class="order-details-input country-select" id="p_UserLocale" name="country"
-                            ng-model="order.country"
-                    >
-                        <option value="US" selected> United State</option>
-                        <option value="#"> other</option>
-                        <option value="#"> more other</option>
-                    </select>
+            </div>
+        </div>
+        <div class="order-details-header">
+            Shipping Address
+        </div>
+        <div class="row order-details-personal-information">
+            <div class="col-sm-6 col-xs-12">
+                <div>
+                    <div class="form-group">
+                        <input type="text" class="form-control order-details-input" name="recipient_name"
+                               ng-model="order.recipient_name"
+                               placeholder="Recipient Name">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control order-details-input" name="address" placeholder="Address 1"
+                               ng-model="order.address"
+                        />
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control order-details-input" name="address2" placeholder="Address 2"
+                               ng-model="order.address2"
+                        />
+                    </div>
                 </div>
-            </form>
+            </div>
+            <div class="col-sm-6 col-xs-12">
+                <div>
+                    <div class="form-group">
+                        <input type="text" class="form-control order-details-input" name="city" placeholder="City"
+                               ng-model="order.city"
+                        />
+                    </div>
+                    <div class="form-group order-details-state-zip-inputs">
+                        <input type="text" class="form-control order-details-input" style="width:59%; margin-bottom:0"
+                               ng-model="order.state"
+                               name="state;" placeholder="State"/>
+                        <input type="text" class="form-control order-details-input"
+                               ng-model="order.zip"
+                               style="width:39%; margin-left: 2%; margin-bottom:0" name="zip" id="p_ZipInput"
+                               placeholder="ZIP"/>
+                    </div>
+                    <div class="form-group">
+                        <select class="order-details-input country-select" id="p_UserLocale" name="country"
+                                ng-model="order.country"
+                        >
+                            <option value="US" selected> United State</option>
+                            <option value="#"> other</option>
+                            <option value="#"> more other</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-8 col-xs-12 checkbox">
+                <label>
+                    <input type="checkbox"
+                           ng-model="order.TOC"/>
+                        I agree to the <a target="_blank" href="http://pixter.me/terms_of_use.html">terms</a> and confirm I have the rights to upload and use the image.
+                </label>
+            </div>
+            <div class="col-sm-4 col-xs-12">
+                <button type="submit" class="btn next-button" ng-click="vm.goToCheckout()">Next</button>
+            </div>
         </div>
-        <div class="col-sm-8 col-xs-12 checkbox">
-            <label>
-                <input type="checkbox"
-                       ng-model="order.TOC"/>
-                    I agree to the <a target="_blank" href="http://pixter.me/terms_of_use.html">terms</a> and confirm I have the rights to upload and use the image.
-            </label>
-        </div>
-        <div class="col-sm-4 col-xs-12">
-            <input type="submit" class="btn next-button" ng-click="vm.goToCheckout()">Next</input>
-        </div>
-    </div>
-
+    </form>
 </div>
