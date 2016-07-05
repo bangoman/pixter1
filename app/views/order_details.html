@@ -1,6 +1,6 @@
 <div id="order-details-view-responsive">
     <form>
-        <div class="visible-xs" name="forms.form" novalidate>
+        <div class="visible-xs" name="form" novalidate>
             <div class="pay-flow-product-thumbnail">
                 <product-image-display class="shop-view-product-image-display" product="currentProduct" image-url="imageUrl"
                                        tmbWidth="180" applied-changes-flag="true">
@@ -12,18 +12,22 @@
         </div>
         <div class="row order-details-personal-information">
             <div class="col-sm-6 col-xs-12">
-                <form>
+                <div>
                     <div class="form-group">
                         <input type="text" class="form-control order-details-input" name="user_name" placeholder="FullName*"
                                ng-model="order.user_name"
                                required/>
                     </div>
                     <div class="form-group">
-                        <input type="email" class="form-control order-details-input" name="user_email" placeholder="E-Mail*"
+                        <div ng-if="form.user_name.$error">yo</div>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control order-details-input error" name="user_email" placeholder="E-Mail*"
                                ng-model="order.user_email"
                                required/>
                     </div>
-                </form>
+                    <div class="error">erro text</div>
+                </div>
             </div>
             <div class="col-sm-6 hidden-xs">
                 <div class="pay-flow-product-thumbnail">
@@ -37,7 +41,7 @@
         </div>
         <div class="row order-details-personal-information">
             <div class="col-sm-6 col-xs-12">
-                <form>
+                <div>
                     <div class="form-group">
                         <input type="text" class="form-control order-details-input" name="recipient_name"
                                ng-model="order.recipient_name"
@@ -53,10 +57,10 @@
                                ng-model="order.address2"
                         />
                     </div>
-                </form>
+                </div>
             </div>
             <div class="col-sm-6 col-xs-12">
-                <form>
+                <div>
                     <div class="form-group">
                         <input type="text" class="form-control order-details-input" name="city" placeholder="City"
                                ng-model="order.city"
@@ -80,7 +84,7 @@
                             <option value="#"> more other</option>
                         </select>
                     </div>
-                </form>
+                </div>
             </div>
             <div class="col-sm-8 col-xs-12 checkbox">
                 <label>
