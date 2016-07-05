@@ -19,13 +19,14 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 			var lastHeight ,lastWidth,canvas,ctx;
 			setTimeout(function(){
 				var  h = $ionicScrollDelegate
+				console.log($ionicScrollDelegate);
 				//$scope.pinchZooom = h._instances[0].getScrollPosition().zoom;
 
 
 			},500)
 
 		    $scope.$watch(function() {
-		        return $ionicScrollDelegate._instances[0].getScrollPosition().zoom;
+		        return $ionicScrollDelegate._instances[0].getScrollView().__zoomLevel;
 		    }, function(current, original) {
 		    	if(current){
 		    		console.log(current);
