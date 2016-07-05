@@ -17,18 +17,20 @@
                         <input type="text" class="form-control order-details-input" name="user_name" placeholder="FullName*"
                                ng-model="order.user_name"
                                required
-                               ng-class="!form.user_name.$valid ? 'error-input' : ''"/>
+                               ng-class="!form.user_name.$valid && (form.$submitted || form.user_name.$touched) ? 'error-input' : ''"/>
                     </div>
-                    <div class="form-group error-input" ng-show="form.$submitted || form.user_name.$touched">
+                    <div class="form-group error-text" ng-show="form.$submitted || form.user_name.$touched">
                         <div ng-show="form.user_name.$error.required">Required feild</div>
                     </div>
                     <div class="form-group">
                         <input type="email" class="form-control order-details-input" name="user_email" placeholder="E-Mail*"
                                ng-model="order.user_email"
-                               required/>
+                               required
+                               ng-class="!form.user_email.$valid && (form.$submitted || form.user_email.$touched) ? 'error-input' : ''"/>
                     </div>
-                    <div class="form-group" ng-show="form.$submitted || form.user_name.$touched">
-                        <div ng-show="form.user_name.$error.required">yo</div>
+                    <div class="form-group error-text" ng-show="form.$submitted || form.user_email.$touched">
+                        <div ng-show="form.user_email.$error.required">Required feild</div>
+                        <div ng-show="form.user_email.$error.email">Please type valid email</div>
                     </div>
                 </div>
                 
@@ -93,12 +95,15 @@
             <div class="col-sm-8 col-xs-12 checkbox">
                 <label>
                     <input type="checkbox"
-                           ng-model="order.TOC"/>
+                           ng-model="order.TOC"
+                           required
+                           name="terms"
+                           ng-class="!form.terms.$valid && (form.$submitted || form.terms.$touched) ? 'error-input' : ''"/>
                         I agree to the <a target="_blank" href="http://pixter.me/terms_of_use.html">terms</a> and confirm I have the rights to upload and use the image.
                 </label>
             </div>
             <div class="col-sm-4 col-xs-12">
-                <button type="submit" class="btn next-button" ng-click="vm.goToCheckout()">Next</button>
+                <button type="submit" class="btn next-button" ng-click="vm.goToCheckout() ng-disabled='!form.$valid'">Next</button>
             </div>
         </div>
     </form>

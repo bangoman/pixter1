@@ -7,6 +7,7 @@ angular.module('app').controller('orderDetailsCtl',function($state,$rootScope,ap
     });
 
     vm.goToCheckout = function(){
+    	console.log("form submit");
         if ($rootScope.order.TOC == true) {
             $state.go('app.checkout');
         }
