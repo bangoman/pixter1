@@ -761,6 +761,9 @@ select[type="number"]:active {
   .store-header {
     font-size:10px;
   }
+  .store-header-buttons-container {
+    top: 4px;
+  }
   .user-messaging {
     font-size: 12px;
   }
