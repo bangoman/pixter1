@@ -1,6 +1,7 @@
 angular.module('app').controller('previewCtl',function($state,$rootScope,$scope){
     var vm = this;
-
+    $rootScope.disableScroll = false;
+    $scope.finalStep = false
     console.log($rootScope.category.products);
     $scope.selectedProduct = $rootScope.category.products[0];
     vm.goToEdit = function() {
@@ -8,7 +9,8 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope)
     }
 
     vm.goToOrderDetails = function() {
-        $state.go('app.orderDetails');
+    	$scope.finalStep = true;
+        //$state.go('app.orderDetails');
     }
 
     $scope.$watch("selectedProduct",function(){

@@ -13,19 +13,31 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 	    	finalStep: '='
 
 	     },
-	  	controller: ['$scope','$http','$attrs','$document','$element','$compile','$rootScope','$state', function($scope,$http,$attrs,$document,$element,$compile,$rootScope,$state) {
+	    controllerAs:'vm',
+	  	controller: ['$scope','$http','$attrs','$document','$element','$compile','$rootScope','$state','$q', function($scope,$http,$attrs,$document,$element,$compile,$rootScope,$state,$q) {
 
 		//	setInterval(function(){console.log($attrs.zoom) },1000)
+			var vm = this;
 			var lastHeight ,lastWidth,canvas,ctx;
+
 			$scope.editMode = $attrs.editmode;
 			$scope.finalImagePosition = {};
 			$scope.finalWindowPosition = {};
 			$scope.finalWindowSize = {};
 			$scope.$watch('product', function() {
-				//console.log("product changed");
+				console.log("product changed");
 				getImgSize($rootScope.imageUrl);
 			        
 			});
+			$scope.$watch('finalStep', function() {
+				//console.log("product changed");
+				if($scope.finalStep){
+					$scope.backToReality($scope.backgroundPosition,$scope.product.window,$scope.sizeRatio,$scope.imageSizeRatio)
+
+				}
+				
+			});			
+
 			$scope.backToReality = function(backgroundPosition,productWindow,sizeRatio,imageSizeRatio){
 				backgroundPosition.top = parseInt(backgroundPosition.top);
 				backgroundPosition.left = parseInt(backgroundPosition.left);
@@ -49,7 +61,7 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 				ctx= canvas.getContext("2d");
 				canvas.height = $scope.finalWindowSize.height;
 				canvas.width =  $scope.finalWindowSize.width ;
-				console.log(canvas);
+
 			    ctx.clearRect(0,0,$scope.currentImg.width,$scope.currentImg.height);
 			    ctx.save();
 			    ctx.drawImage($scope.currentImg,-$scope.finalWindowPosition.x,-$scope.finalWindowPosition.y);
@@ -57,16 +69,14 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 			    ctx.save()			    
 			    dataURL  = canvas.toDataURL();			    
 			    $rootScope.finalCroppedImageData = dataURL;
-			    //$rootScope.finalCroppedImageUrl = dataURItoBlob(dataURL);
 
+			    $rootScope.finalCroppedImageUrl = dataURItoBlob(dataURL);
+			    $state.go('app.orderDetails');
+			    console.log($rootScope.finalCroppedImageUrl);
 
-
-                console.log("finalImagePosition", $scope.finalImagePosition)
-                console.log("finalWindowPosition", $scope.finalWindowPosition)
-                console.log("finalWindowSize", $scope.finalWindowSize)
 			}
 			$scope.applyChanges = function(positionLeft,positionTop,height,width,ratio){
-				
+				$rootScope.disableScroll = false;
 				$rootScope.backgroundPositionLeft = parseInt(positionLeft) * ratio;
 				$rootScope.backgroundPositionTop = parseInt(positionTop) * ratio;
 				$rootScope.backgroundSizeW = width * ratio;
@@ -88,7 +98,7 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 	            		$scope.backgroundSize.w = parseInt($rootScope.backgroundSizeW)/$scope.imageSizeRatio;
 						$scope.backgroundSize.h = parseInt($rootScope.backgroundSizeH)/$scope.imageSizeRatio;
 					//var lastToCurrentRatio = parseInt($rootScope.lastBackgroundSize.w) / parseInt($scope.backgroundSize.w) ;
-					console.log("image size ratio!!",$scope.imageSizeRatio);
+
 	            	$scope.backgroundPosition.left = parseInt($rootScope.backgroundPositionLeft) / $scope.imageSizeRatio;
 					$scope.backgroundPosition.top = parseInt($rootScope.backgroundPositionTop) / $scope.imageSizeRatio;
 
@@ -100,9 +110,6 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 						"width":$attrs.tmbwidth + "px",
 					}
 					$scope.$apply();
-					console.log("backgroundSize", $scope.backgroundSize)
-	                console.log("backgroundPosition", $scope.backgroundPosition)
-	                console.log("sizeRatio", $scope.sizeRatio)
 
 
             	}
@@ -121,53 +128,68 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 			    var byteString,
 			        mimeString,
 			        ia;
-
 			    if ( uri.split( ',' )[0].indexOf( 'base64' ) >= 0 ) {
-
 			        byteString = atob( uri.split(',')[1] );
 			    }
 			    else {
-
 			        byteString = unescape( uri.split(',')[1] );
 			    }
 			    // separate out the mime component
 			    mimeString = uri.split( ',' )[ 0 ].split( ':' )[ 1 ].split( ';' )[ 0 ];
-
 			    // write the bytes of the string to a typed array
 			    ia = new Uint8Array( byteString.length );
-
-			    for ( var i = 0; i < byteString.length; i++ ) {
-			        
+			    for ( var i = 0; i < byteString.length; i++ ) {			        
 			        ia[ i ] = byteString.charCodeAt( i );
 			    }
-
 			    var blob = new Blob( [ ia ], {
 			        type: mimeString
 			    });
-			    console.log(blob)
+
+			    //console.log(blob)
 			    return DOMURL.createObjectURL( blob )
+			}
+			$scope.rotateInProgress = false;
+			vm.showLoader = false;
+
+			$scope.startRotateLoader = function(degrees){
+				vm.degrees = degrees;
+				vm.showLoader = true;
+				setTimeout(function(){
+					$scope.$apply();
+					$scope.rotateBackgroundImage(vm.degrees);											
+					
+				},100)
+				
+			}
+			$scope.rotateCanvas = function(degrees){
+				return $q(function(resolve, reject) {
+					canvas.height = lastWidth;	
+					canvas.width = lastHeight;
+					lastWidth = canvas.width;
+					lastHeight = canvas.height;
+				    ctx.clearRect(0,0,canvas.width,canvas.height);
+				    ctx.translate(canvas.width/2,canvas.height/2);
+				    ctx.rotate(degrees * Math.PI/180);
+				    ctx.drawImage($scope.currentImg,-$scope.currentImg.width/2,-$scope.currentImg.height/2);
+				    ctx.save()			    
+				    dataURL  = canvas.toDataURL();					
+				    var src = dataURItoBlob( dataURL );				    		    
+					resolve(src);
+				})
+
 			}
 			$scope.rotateBackgroundImage = function(degrees){
 
+				if(!$scope.rotateInProgress){
+					$scope.rotateInProgress = true;
 
-				canvas.height = lastWidth;	
-				canvas.width = lastHeight;
-				lastWidth = canvas.width;
-				lastHeight = canvas.height;
+					$scope.rotateCanvas(degrees).then(function(data){						
+						getImgSize(data);
+				    	vm.showLoader = false;				
+						$scope.rotateInProgress = false;
 
-			    ctx.clearRect(0,0,canvas.width,canvas.height);
-			    ctx.save();
-			    ctx.translate(canvas.width/2,canvas.height/2);
-			    ctx.rotate(degrees*Math.PI/180);
-			    ctx.drawImage($scope.currentImg,-$scope.currentImg.width/2,-$scope.currentImg.height/2);
-			    ctx.restore();
-			    ctx.save()			    
-			    dataURL  = canvas.toDataURL();
-
-			    $rootScope.imageUrl = dataURItoBlob( dataURL );
-			    getImgSize($rootScope.imageUrl);
-			   //console.log($scope.angleInDegrees);
-			    $scope.angleInDegrees += degrees;
+					})				    				    
+				}
 
 			}
 			$scope.findWindowCenterPositonOnBackground = function(){
@@ -203,6 +225,7 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 				$scope.imageStyle["background-size"] = $scope.backgroundSize.w + "px "  + $scope.backgroundSize.h + "px";
 				$scope.backgroundPosition.left = parseInt($scope.backgroundPosition.left) - (($scope.backgroundSize.w -  preW) * (center.x)/$scope.backgroundSize.w) + "px " ;//  $scope.backgroundSizeW * (($scope.zoom -1)/2) + "px ";				
 				$scope.backgroundPosition.top = parseInt($scope.backgroundPosition.top) -  (($scope.backgroundSize.h -  preH)* (center.y)/$scope.backgroundSize.h) + "px"//$scope.backgroundSize.h  * (($scope.zoom -1)/2) + "px";		
+
 				if(parseInt($scope.backgroundPosition.left) > ($scope.product.window.x/$scope.sizeRatio)){
 					$scope.backgroundPosition.left = ($scope.product.window.x/$scope.sizeRatio) + "px ";
 				}else if(parseInt($scope.backgroundPosition.left) + parseInt($scope.backgroundSize.w) < ($scope.product.window.x/$scope.sizeRatio) + ($scope.product.window.w/$scope.sizeRatio)   ){
@@ -233,18 +256,18 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 
 	  		}
 	  		var currentBackgroundPosition = {top:"",left:""};
+	  		if($attrs.editmode){
+				$rootScope.disableScroll  = true;	  			
+	  		}
 			document.body.addEventListener('touchmove', function(event) {
-		     // console.log(event.source);
-		      //if (event.source == document.body)
-		    	if($attrs.editmode){		      
+		    	if($rootScope.disableScroll){	
 		        	event.preventDefault();
 		        }
 		    }, false);		    	
 
 
 		    $scope.onDrag=function(event){
-		    	if($attrs.editmode){
-
+		    	if($attrs.editmode){	
 			    	currentBackgroundPosition = {top:"",left:""};
 				    var limitVertical =   (($scope.currentImg.height/$scope.imageSizeRatio) - ($scope.product.window.h/$scope.sizeRatio));		       
 			        var limitHorizontal =   (($scope.currentImg.width/$scope.imageSizeRatio) - ($scope.product.window.w/$scope.sizeRatio));		       
@@ -276,11 +299,11 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 		    }	  		
 
 			function getImgSize(imgSrc) {
+				$rootScope.imageUrl = imgSrc;
 			    var newImg = new Image();
 			    newImg.onload = function() {
 			      var height = newImg.height;
-			      var width = newImg.width;
-			      
+			      var width = newImg.width;			      
 			      calculatePosition(newImg);
 			      //alert ('The image size is '+width+'*'+height);
 			    }
@@ -290,6 +313,7 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 
 
 			function calculatePosition(img){
+				//console.log($scope.product);
 				//var imgDisplay = document.getElementById("img");
 				var imgRatio = img.height/img.width;
 				
@@ -303,6 +327,7 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 				//$scope.currentBackgroundPosition = {top:"",left:""}								
 				$scope.backgroundSize = {w:"",h:""}
 				var bpl,vpt
+
 				if(productRatio >= imgRatio){ // Left case
 					$scope.imageSizeRatio = img.height/($scope.product.window.h/ $scope.sizeRatio) ;
 					bpl = ($scope.product.window.x/$scope.sizeRatio) -  (((img.width/$scope.imageSizeRatio) - ($scope.product.window.w/$scope.sizeRatio))/2 )     + "px ";
@@ -339,9 +364,6 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 					$scope.laodAppliedChanges();	
 
 				}
-				if($scope.finalStep){
-					 $scope.backToReality($scope.backgroundPosition,$scope.product.window,$scope.sizeRatio,$scope.imageSizeRatio)
-				}
 				$scope.$apply();
 //				$scope.triggerZoom();
                // console.log($scope.appliedChangesFlag)
@@ -351,7 +373,7 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 
 		  	//$scope.imageStyle={"width":"500px","height":"400px","background":"pink"}
 		  	//$scope.product = {"type":"mug","window":{"w":200,"h":200,"x":175,"y":107},"width":600,"height":360,"shortName":"Mug","marketingName":"11oz White Mug","teaser":true,"cropRatio":0.75,"previewImage":"mug/previewImage.png","categoryText":"Ceramic 11oz MUG","children":["CMUG11OZ111MUG"],"index":1};
-		  	getImgSize($scope.imageUrl);
+		  //	getImgSize($rootScope.imageUrl);
 
 	  	
 	    }],    

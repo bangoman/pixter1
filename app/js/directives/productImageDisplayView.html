@@ -1,4 +1,4 @@
-<canvas  id="canvas" width=1000 height=800 style="display:none" ng-if="editMode || finalStep"></canvas>
+<canvas  id="canvas" width=1000 height=800 style="display:none"  ></canvas>
 <div id="edit-view-responsive" class="row" style="margin:0" ng-if="editMode">     
     
     <h2 class="edit-header hide-on-mobile">
@@ -12,10 +12,10 @@
             <li class="crop-control-button" ng-click="triggerZoom(0.95)">
                 <img src="https://pixter-loader-assets.s3.amazonaws.com/1_8_1_stg/files/images/cropZoomOut.png">
             </li>
-            <li class="crop-control-button" ng-click="rotateBackgroundImage(-90)">
+            <li class="crop-control-button" ng-click="startRotateLoader(-90)">
                 <img src="https://pixter-loader-assets.s3.amazonaws.com/1_8_1_stg/files/images/cropRotateLeft.png">
             </li>
-            <li class="crop-control-button" ng-click="rotateBackgroundImage(90)">
+            <li class="crop-control-button" ng-click="startRotateLoader(90)">
                 <img src="https://pixter-loader-assets.s3.amazonaws.com/1_8_1_stg/files/images/cropRotateLeft.png" class="rotate-right">
             </li>
         </ul>
@@ -23,6 +23,7 @@
     <div class="col-lg-8 col-lg-offset-2 col-xs-12 edit-image-outer-container">
         <div class="crop-image-container">
             <div class="edit-image-inner-container" >
+                <span ng-show="vm.showLoader" style="position:absolute">Please wait..</span>
                 <!-- <product-image-display class="shop-view-product-image-display" zoom="zoom" editMode="true" imageUrl="https://fbcdn-sphotos-g-a.akamaihd.net/hphotos-ak-xfa1/t31.0-8/13246160_961327897315228_9219812989318561441_o.jpg" tmbWidth="500">
                 </product-image-display> -->
                 <div ng-style="imageStyle">
@@ -46,10 +47,7 @@
             <div class="next-button">Apply</div>
         </div>
     </div> -->   
-    <div ng-style="imageStyle" ng-if="!editMode">
-        <div   on-drag="onDrag($event)" on-release="onRelease($event)" style="height:{{product.tmbHeight}}px;width:{{product.tmbWidth}}px;background:url('app/products_images/{{product.previewImage}}');background-size:{{product.tmbWidth}}px {{product.tmbHeight}}px"> 
-        </div>
-    </div>
+
 <div class="col-lg-8 col-lg-offset-2 col-xs-12 edit-bottom-buttons-container">
     <div class="revert-changes-button">
 <!--        <img src="https://pixter-loader-assets.s3.amazonaws.com/1_8_1_stg/files/images/revertCrop.png">
@@ -65,9 +63,11 @@
                             backgroundSize.h,
                             backgroundSize.w,
                             imageSizeRatio)">
-            Apply</button>
+            Apply
+        </button>
     </div>
 </div>       
+
 </div>
 
     <div ng-style="imageStyle" ng-if="!editMode">

@@ -1,7 +1,7 @@
 angular.module('app').controller('mainCtl', function(message, $uibModal, $state){
 	var vm = this;
     vm.state = $state;
-
+    $state.go('app.shop');
 	vm.close = function(){
 		message('close');
 	}
