@@ -286,7 +286,7 @@ select[type="number"]:active {
   padding-top: 24px;
 }
 .preview-details-header {
-  display: -webkit-inline-box;
+  display: flex;
   width: 100%;
   margin-bottom: 12px;
   font-weight: normal;
@@ -356,7 +356,7 @@ select[type="number"]:active {
   overflow: hidden;
 }
 .edit-image-inner-container {
-  max-width: 500px;
+  /*max-width: 500px;*/
   margin: 0 auto;
 }
 .edit-image-inner-container > div {
@@ -460,6 +460,15 @@ select[type="number"]:active {
 .order-details-input::-webkit-input-placeholder { 
   color: #888;
 }
+.order-details-state-zip-inputs {
+  width: 100%;
+  display: flex;
+}
+
+#order-details-view-responsive .checkbox label {
+  line-height: 14px;
+}
+
 #order-details-view-responsive  .next-button {
   float: right;
   width: 164px;
@@ -813,11 +822,17 @@ select[type="number"]:active {
 }
 @media screen and (max-width: 320px) {
   .order-details-header {
-    font-size: 22px;
-    margin-bottom: -4px;
+    font-size: 20px;
+    margin-bottom: -6px;
+  }
+  #order-details-view-responsive .form-group {
+    margin-bottom: 4px;
   }
   .order-details-input {
-    height: 26px;
+    height: 22px;
+  }
+  #order-details-view-responsive .checkbox label {
+    line-height: 12px;
   }
   .checkout-view-header {
     font-size: 22px;
