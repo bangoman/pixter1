@@ -8,7 +8,7 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,
     if($scope.tmbWidth > 300){
     	$scope.tmbWidth = 300;
     }
-    alert($scope.tmbWidth);
+
     vm.goToEdit = function() {
         $state.go('app.edit');
     };

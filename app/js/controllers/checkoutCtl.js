@@ -1,4 +1,4 @@
-angular.module('app').controller('checkoutCtl', function ($uibModal, $rootScope, apiService, $filter) {
+angular.module('app').controller('checkoutCtl', function ($uibModal, $rootScope, apiService, $filter,$scope) {
     var vm = this;
     $scope.tmbWidth = $rootScope.screenW*0.35;
     if($scope.tmbWidth > 180){
