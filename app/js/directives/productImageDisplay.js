@@ -26,7 +26,7 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 
 			$scope.$watch('pinchZooom', function() {
 				console.log($scope.pinchZooom,"!@#");
-				alert($scope.pinchZooom);
+				//alert($scope.pinchZooom);
 			        
 			});
 			
