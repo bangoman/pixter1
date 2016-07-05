@@ -1,4 +1,4 @@
-<div id="order-details-view-responsive">
+<div id="order-details-view-responsive" name="forms.form" ng-submit="vm.goToCheckout()">
     <div class="visible-xs">
         <div class="pay-flow-product-thumbnail">
             <product-image-display class="shop-view-product-image-display" product="currentProduct" image-url="imageUrl"
@@ -26,8 +26,7 @@
         </div>
         <div class="col-sm-6 hidden-xs">
             <div class="pay-flow-product-thumbnail">
-                <product-image-display class="shop-view-product-image-display" product="currentProduct"
-                                       image-url="imageUrl" tmbWidth="180" applied-changes-flag="true">
+                <product-image-display class="shop-view-product-image-display" product="currentProduct" image-url="imageUrl" tmbWidth="180" applied-changes-flag="true">
                 </product-image-display>
             </div>
         </div>
@@ -85,14 +84,12 @@
         <div class="col-sm-8 col-xs-12 checkbox">
             <label>
                 <input type="checkbox"
-                       ng-model="order.TOC"
-                />
-                I agree to the <a target="_blank" href="http://pixter.me/terms_of_use.html">terms</a> and confirm I have
-                the rights to upload and use the image.
+                       ng-model="order.TOC"/>
+                    I agree to the <a target="_blank" href="http://pixter.me/terms_of_use.html">terms</a> and confirm I have the rights to upload and use the image.
             </label>
         </div>
         <div class="col-sm-4 col-xs-12">
-            <button class="btn next-button" ng-click="vm.goToCheckout()">Next</button>
+            <input type="submit" class="btn next-button">Next</input>
         </div>
     </div>
 
