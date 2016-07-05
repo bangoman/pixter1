@@ -256,6 +256,9 @@ select[type="number"]:active {
   float: right;
   /*border: 1px solid #c4c4c4;*/
 }
+.preview-product-border div {
+  margin: 0 auto;
+}
 .preview-edit-row {
   width: 280px;
   text-align: right;
