@@ -19,16 +19,19 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 			var lastHeight ,lastWidth,canvas,ctx;
 			setTimeout(function(){
 				var  h = $ionicScrollDelegate
-				$scope.pinchZooom = h._instances[0].getScrollPosition().zoom;
+				//$scope.pinchZooom = h._instances[0].getScrollPosition().zoom;
 
 
 			},500)
 
-			$scope.$watch('pinchZooom', function() {
-				console.log($scope.pinchZooom,"!@#");
-				//alert($scope.pinchZooom);
-			        
-			});
+		    $scope.$watch(function() {
+		        return $ionicScrollDelegate._instances[0].getScrollPosition().zoom;
+		    }, function(current, original) {
+		    	if(current){
+		    		console.log(current);
+		    	}
+		    	
+		    });
 			
 			$scope.editMode = $attrs.editmode;
 			$scope.finalImagePosition = {};
