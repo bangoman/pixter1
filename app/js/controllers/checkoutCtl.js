@@ -1,5 +1,10 @@
 angular.module('app').controller('checkoutCtl', function ($uibModal, $rootScope, apiService, $filter) {
     var vm = this;
+    $scope.tmbWidth = $rootScope.screenW*0.35;
+    if($scope.tmbWidth > 180){
+        $scope.tmbWidth = 180
+
+    }
 
     vm.shipmentMethod = $rootScope.currentProduct.priceObject.shipping.US[0];
     console.log($rootScope.currentProduct);

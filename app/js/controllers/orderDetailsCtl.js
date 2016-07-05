@@ -1,8 +1,11 @@
 angular.module('app').controller('orderDetailsCtl',function($state,$rootScope,apiService){
     var vm = this;
-    vm.test = "yo";
 	$rootScope.disableScroll = false;
+	$scope.tmbWidth = $rootScope.screenW*0.35;
+	if($scope.tmbWidth > 180){
+		$scope.tmbWidth = 180
 
+	}
     apiService.upload($rootScope.finalCroppedImageData).then(function (data) {
         $rootScope.order.key = data.key;
     });
