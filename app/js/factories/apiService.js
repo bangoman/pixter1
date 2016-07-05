@@ -1,7 +1,7 @@
 /**
  * Created by ori on 04/07/16.
  */
-angular.module('app').factory('apiService', function ($http, uuidService, $q) {
+angular.module('app').factory('apiService', function ($http, uuidService, $q, $httpParamSerializerJQLike) {
     return {
         validateCoupon: validateCoupon,
         validateOrder: validateOrder,
@@ -25,12 +25,15 @@ angular.module('app').factory('apiService', function ($http, uuidService, $q) {
         var config = {
             url: baseUrl + endPoint,
             method: method,
-            paramSerializer: '$httpParamSerializerJQLike'
+            paramSerializer: '$httpParamSerializerJQLike',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+            },
         };
         if( method === 'get' ){
             config.params = data;
         }else{
-            config.data = data;
+            config.data = $httpParamSerializerJQLike(data);
         }
         return $http(config).then(function (res) {
             var data = res.data;
