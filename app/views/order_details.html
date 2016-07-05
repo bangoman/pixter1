@@ -93,16 +93,15 @@
                 </div>
             </div>
             <div class="col-sm-8 col-xs-12 checkbox">
-                <label>
+                <label ng-class="!order.TOC && (vm.form.$submitted || vm.form.terms.$touched) ? 'error-input' : ''">
                     <input type="checkbox"
                            ng-model="order.TOC"
                            required
-                           name="terms"
-                           ng-class="!order.TOC && (vm.form.$submitted || vm.form.terms.$touched) ? 'error-input' : ''"/>
+                           name="terms"/>
                         I agree to the <a target="_blank" href="http://pixter.me/terms_of_use.html">terms</a> and confirm I have the rights to upload and use the image.
                 </label>
                 <div class="form-group error-text" ng-show="vm.form.$submitted || vm.form.terms.$touched">
-                    <div ng-show="!order.TOC">You have to check this checkbox to continue</div>
+                    <div ng-show="!order.TOC">You must agree to the terms</div>
                 </div>
             </div>
             <div class="col-sm-4 col-xs-12">
