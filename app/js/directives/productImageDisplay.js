@@ -49,6 +49,9 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 				}else{
 					$scope.triggerZoom(0.99)
 				}				 
+				setTimeout(function(){
+					$scope.$apply();
+				},10)
 				console.log($ionicScrollDelegate.getScrollPosition().zoom);
 				$scope.lastZoom = $ionicScrollDelegate.getScrollPosition().zoom;
 			}
