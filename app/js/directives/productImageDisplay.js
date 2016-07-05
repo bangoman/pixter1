@@ -43,10 +43,13 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 				
 			});			
 			$scope.getPinchZoom = function(){
+				if($ionicScrollDelegate.getScrollPosition().zoom > $scope.lastZoom ){
+					$scope.triggerZoom(1.05)
 
-				 console.log($ionicScrollDelegate.getScrollPosition().zoom);
-				 $scope.triggerZoom($ionicScrollDelegate.getScrollPosition().zoom)
-
+				}else{
+					$scope.triggerZoom(0.95)
+				}				 
+				$scope.lastZoom = $ionicScrollDelegate.getScrollPosition().zoom;
 			}
 
 			$scope.backToReality = function(backgroundPosition,productWindow,sizeRatio,imageSizeRatio){
