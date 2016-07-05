@@ -2,7 +2,7 @@ angular.module('app').controller('checkoutCtl', function ($uibModal, $rootScope,
     var vm = this;
 
     vm.shipmentMethod = $rootScope.currentProduct.priceObject.shipping.US[0];
-
+    console.log($rootScope.currentProduct);
     vm.openCuponModal = function () {
         $uibModal.open({
             templateUrl: 'app/views/cupon_modal.html',
