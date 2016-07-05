@@ -526,7 +526,7 @@ select[type="number"]:active {
   color: #6e6e6e;
   font-size: 17px;
   line-height: 17px;
-  margin: 4px 0 15px;
+  margin: 4px 0 8px;
   font-family: Calibri, "CalibriRegular", "Gill Sans", Verdana, Arial;
 }
 .checkout-ship-type-radio-text {
@@ -841,8 +841,17 @@ select[type="number"]:active {
   .express-shipping-checkbox-lable {
     margin-left: 0 !important;
   }
+  #checkout-view-responsive .radio-inline+.radio-inline {
+    margin-left: 0;
+  }
   .checkout-view-price-row {
-    padding: 4px 10px 4px 0;
+    padding: 4px 8px 4px 0;
+  }
+  .checkout-old-price {
+    margin-right: 16px;
+  }
+  .checkout-total-title {
+    margin-right: 0;
   }
   .checkout-cupon-modal-button {
     padding: 4px 0;
