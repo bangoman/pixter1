@@ -14,7 +14,7 @@
             <div class="col-sm-6 col-xs-12">
                 <div>
                     <div class="form-group">
-                        <input type="text" class="form-control order-details-input" name="user_name" placeholder="FullName*" value="A name to make things easier"
+                        <input type="text" class="form-control order-details-input" name="user_name" placeholder="FullName*"
                                ng-model="order.user_name"
                                required
                                ng-class="!vm.form.user_name.$valid && (vm.form.$submitted || vm.form.user_name.$touched) ? 'error-input' : ''"/>
@@ -23,7 +23,7 @@
                         <div ng-show="vm.form.user_name.$error.required">Required feild</div>
                     </div>
                     <div class="form-group">
-                        <input type="email" class="form-control order-details-input" name="user_email" placeholder="E-Mail*" value="make@things.easier" 
+                        <input type="email" class="form-control order-details-input" name="user_email" placeholder="E-Mail*" 
                                ng-model="order.user_email"
                                required
                                ng-class="!vm.form.user_email.$valid && (vm.form.$submitted || vm.form.user_email.$touched) ? 'error-input' : ''"/>
@@ -97,7 +97,7 @@
                     <input type="checkbox"
                            ng-model="order.TOC"
                            required
-                           name="terms" value="true" />
+                           name="terms" />
                         I agree to the <a target="_blank" href="http://pixter.me/terms_of_use.html">terms</a> and confirm I have the rights to upload and use the image.
                 </label>
                 <div class="form-group error-text" ng-show="vm.form.$submitted || vm.form.terms.$touched">
