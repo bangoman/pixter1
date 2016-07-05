@@ -12,7 +12,7 @@ angular.module('app').directive('productImageDisplay', function () {
         controller: function ($scope, $attrs, $rootScope, $state,apiService) {
             //	setInterval(function(){console.log($attrs.zoom) },1000)
             var lastHeight, lastWidth, canvas, ctx;
-            var dataUrl;
+            var dataURL;
             $scope.editMode = $attrs.editmode;
             $scope.finalImagePosition = {};
             $scope.finalWindowPosition = {};
