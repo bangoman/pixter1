@@ -17,14 +17,7 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 
 			var vm = this;
 			var lastHeight ,lastWidth,canvas,ctx;
-			setTimeout(function(){
-				var  h = $ionicScrollDelegate
-				console.log($ionicScrollDelegate);
-				//$scope.pinchZooom = h._instances[0].getScrollPosition().zoom;
-
-
-			},500)
-
+/*			
 		    $scope.$watch(function() {
 		        return $ionicScrollDelegate._instances[0].getScrollView().__zoomLevel;
 		    }, function(current, original) {
@@ -33,7 +26,7 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 		    	}
 		    	
 		    });
-			
+*/			
 			$scope.editMode = $attrs.editmode;
 			$scope.finalImagePosition = {};
 			$scope.finalWindowPosition = {};
@@ -49,6 +42,10 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 				}
 				
 			});			
+			$scoep.getPinchZoom = function(){
+				 console.log($ionicScrollDelegate.getScrollPosition().zoom);
+
+			}
 
 			$scope.backToReality = function(backgroundPosition,productWindow,sizeRatio,imageSizeRatio){
 				backgroundPosition.top = parseInt(backgroundPosition.top);
