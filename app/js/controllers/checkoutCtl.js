@@ -28,6 +28,8 @@ angular.module('app').controller('checkoutCtl', function ($uibModal, $rootScope,
     };
 
     vm.checkout = function (paymentType) {
+        var win = window.open('', "", "width=500, height=500");
+        win.document.body.innerHTML = 'Processing...';
         return apiService
             .validateOrder(angular.extend({
                 product_id: $rootScope.currentProduct.pid,
@@ -37,11 +39,12 @@ angular.module('app').controller('checkoutCtl', function ($uibModal, $rootScope,
                 shipping_method: vm.shipmentMethod.id,
                 shipping_price: $filter('number')(vm.getDiscountShippingPrice(), 2),
                 payment_type: paymentType,
-                key: '93934b52adbf7fab23579391cd7e891d.jpg',
                 coupon_string: $rootScope.coupon ? $rootScope.coupon.coupon_code.replace(/'/g, '') : undefined,
             }, $rootScope.order))
             .then(function (data) {
-                window.open(data.url, "", "width=500, height=500");
+                win.location.href = data.url;
+            },function () {
+                win.close();
             });
     };
 });
