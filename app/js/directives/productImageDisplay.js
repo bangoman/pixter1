@@ -13,11 +13,23 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 
 	     },
 	    controllerAs:'vm',
-	  	controller: function($scope,$http,$attrs,$document,$element,$compile,$rootScope,$state,$q) {
+	  	controller: function($scope,$http,$attrs,$document,$element,$compile,$rootScope,$state,$q,$ionicScrollDelegate) {
 
 			var vm = this;
 			var lastHeight ,lastWidth,canvas,ctx;
+			setTimeout(function(){
+				var  h = $ionicScrollDelegate
+				$scope.pinchZooom = h._instances[0].getScrollPosition().zoom;
 
+
+			},500)
+
+			$scope.$watch('pinchZooom', function() {
+				console.log($scope.pinchZooom,"!@#");
+				alert($scope.pinchZooom);
+			        
+			});
+			
 			$scope.editMode = $attrs.editmode;
 			$scope.finalImagePosition = {};
 			$scope.finalWindowPosition = {};
