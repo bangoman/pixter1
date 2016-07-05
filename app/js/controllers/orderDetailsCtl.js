@@ -9,7 +9,7 @@ angular.module('app').controller('orderDetailsCtl',function($state,$rootScope,ap
 
     vm.goToCheckout = function(){
     	if (!vm.form.$valid) {
-    		return;
+    		//return;
     	};
         if ($rootScope.order.TOC == true) {
             $state.go('app.checkout');
