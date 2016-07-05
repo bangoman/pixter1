@@ -43,7 +43,9 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 				
 			});			
 			$scope.getPinchZoom = function(){
+
 				 console.log($ionicScrollDelegate.getScrollPosition().zoom);
+				 $scope.triggerZoom($ionicScrollDelegate.getScrollPosition().zoom)
 
 			}
 
