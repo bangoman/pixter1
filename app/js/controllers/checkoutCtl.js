@@ -43,8 +43,9 @@ angular.module('app').controller('checkoutCtl', function ($uibModal, $rootScope,
             }, $rootScope.order))
             .then(function (data) {
                 win.location.href = data.url;
-            },function () {
+            },function (data) {
                 win.close();
+                alert(data.error.message);
             });
     };
 });

@@ -702,6 +702,14 @@ select[type="number"]:active {
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
 }
 
+.error-text {
+  color: #E53935
+}
+
+.error-input {
+  color: #E53935;
+  border: 1px solid #E53935;
+}
 /*================
     @media style
   ================*/
