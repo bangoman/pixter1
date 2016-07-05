@@ -776,7 +776,7 @@ select[type="number"]:active {
     margin-bottom: 12px;
   }
   .order-details-input {
-    height: 27px;
+    height: 28px;
   }  
   .order-details-personal-information .checkbox {
     margin-top: 0px;
@@ -803,9 +803,6 @@ select[type="number"]:active {
   #order-details-view-responsive .form-group {
     margin-bottom: 8px;
   }
-  .order-details-input {
-    height: 24px;
-  }
   #checkout-view-responsive .pay-flow-product-thumbnail {
     margin-top: 0px;
   }
@@ -827,9 +824,6 @@ select[type="number"]:active {
   }
   #order-details-view-responsive .form-group {
     margin-bottom: 4px;
-  }
-  .order-details-input {
-    height: 22px;
   }
   #order-details-view-responsive .checkbox label {
     line-height: 12px;
