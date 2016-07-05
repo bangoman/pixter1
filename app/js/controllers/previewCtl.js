@@ -1,6 +1,7 @@
 angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,$q,apiService){
     var vm = this;
-
+    $rootScope.disableScroll = false;
+    $scope.finalStep = false
     console.log($rootScope.category.products);
     $scope.selectedProduct = $rootScope.category.products[0];
     vm.goToEdit = function() {
@@ -8,6 +9,9 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,
     };
 
     vm.goToOrderDetails = function() {
+
+    	$scope.finalStep = true;
+        //$state.go('app.orderDetails');
         return getDataUrlFromImageUrl($rootScope.imageUrl).then(apiService.upload).then(function (data) {
             $rootScope.order.key = data.key;
             $state.go('app.orderDetails');
