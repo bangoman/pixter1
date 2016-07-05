@@ -14,7 +14,7 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 
 	     },
 	    controllerAs:'vm',
-	  	controller: ['$scope','$http','$attrs','$document','$element','$compile','$rootScope','$state','$q', function($scope,$http,$attrs,$document,$element,$compile,$rootScope,$state,$q) {
+	  	controller: function($scope,$http,$attrs,$document,$element,$compile,$rootScope,$state,$q) {
 
 		//	setInterval(function(){console.log($attrs.zoom) },1000)
 			var vm = this;
@@ -376,7 +376,7 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 		  //	getImgSize($rootScope.imageUrl);
 
 	  	
-	    }],    
+	    },    
     	templateUrl: 'app/js/directives/productImageDisplayView.html'
   };	
 });
