@@ -4,6 +4,10 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,
     $scope.finalStep = false
     console.log($rootScope.category.products);
     $scope.selectedProduct = $rootScope.category.products[0];
+    $scope.tmbWidth  = $rootScope.screenW * 0.67; 
+    if($scope.tmbWidth > 300){
+    	$scope.tmbWidth = 300;
+    }
     vm.goToEdit = function() {
         $state.go('app.edit');
     };

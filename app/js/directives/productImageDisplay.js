@@ -9,7 +9,8 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 	    	withCanvas: '=',
 	    	imageUrl: '=',
 	    	appliedChangesFlag: '=',
-	    	finalStep: '='
+	    	finalStep: '=',
+	    	tmbWidth: '=',
 
 	     },
 	    controllerAs:'vm',
@@ -135,7 +136,7 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 						"background-size": $scope.backgroundSize.w + "px "  + $scope.backgroundSize.h + "px",
 						"background-repeat":"no-repeat", 
 						"background-position": $scope.backgroundPosition.left + "px " + $scope.backgroundPosition.top + "px",
-						"width":$attrs.tmbwidth + "px",
+						"width":$scope.tmbwidth + "px",
 					}
 					$scope.$apply();
 
@@ -305,7 +306,7 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 
 				var productRatio = $scope.product.window.h/$scope.product.window.w;
 				$scope.currentImg = img;
-				$scope.product.tmbWidth = parseInt($attrs.tmbwidth);
+				$scope.product.tmbWidth = parseInt($scope.tmbwidth);
 				$scope.product.tmbHeight = $scope.product.tmbWidth * ($scope.product.height/$scope.product.width) ;
 				$scope.sizeRatio = $scope.product.width/$scope.product.tmbWidth;			
 				$scope.backgroundPosition = {top:"",left:""}								
@@ -336,7 +337,7 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 					"background-size": $scope.backgroundSize.w + "px "  + $scope.backgroundSize.h + "px",
 					"background-repeat":"no-repeat", 
 					"background-position": $scope.backgroundPosition.left + $scope.backgroundPosition.top,
-					"width":$attrs.tmbwidth + "px",
+					"width":$scope.tmbwidth + "px",
 				}
 
 				if($scope.withCanvas){
