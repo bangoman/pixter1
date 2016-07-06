@@ -345,6 +345,10 @@ select[type="number"]:active {
   line-height: 28px;
 }
 
+.preview-title{
+  font-size: 18px;  
+  color: #32bafa;
+}
 /* edit view style */
 
 #edit-view-responsive {
@@ -767,9 +771,10 @@ select[type="number"]:active {
 
 .btn-rotate{
   margin-left: 10px;
-  height: 34px;
+  height: 30px;
   background-color: #32bafa;
   color: #fff;
+  margin: auto;
 }
 
 /*================

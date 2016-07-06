@@ -1,4 +1,4 @@
-angular.module('app').controller('mainCtl', function(message, $uibModal, $state){
+angular.module('app').controller('mainCtl', function(message, $uibModal, $state,$rootScope){
 	var vm = this;
     vm.state = $state;
     $state.go('app.shop');
@@ -28,11 +28,19 @@ angular.module('app').controller('mainCtl', function(message, $uibModal, $state)
 
   	vm.goBack = function(){
   		if ($state.current.name == 'app.preview') {
-  			$state.go('app.shop');
+        if ($rootScope.previewCatalogParams.previewCatalog && $rootScope.category.products.length != 1) {
+            $state.go('app.previewCatalog');          
+        }
+        else{
+            $state.go('app.shop',$rootScope.previewCatalogParams);
+        }
+  		}
+  		if ($state.current.name == 'app.previewCatalog') {
+  			$state.go('app.shop',$rootScope.previewCatalogParams);
   		}
   		if ($state.current.name == 'app.edit') {
-  			$state.go('app.preview');
-  		}
+            $state.go('app.preview');
+      }
   		if ($state.current.name == 'app.orderDetails') {
   			$state.go('app.preview');
   		}

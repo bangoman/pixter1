@@ -1,5 +1,5 @@
 angular.module('app').config(function($stateProvider,$urlRouterProvider){
-	$urlRouterProvider.otherwise('/app/shop');
+	$urlRouterProvider.otherwise('/app/shop/');
 	$stateProvider
         .state('app', {
             url: '/app',
@@ -8,7 +8,6 @@ angular.module('app').config(function($stateProvider,$urlRouterProvider){
             controller:'mainCtl as vm',
         })
 		.state('app.shop',{
-			url:'/shop',
             title:'CLICK A PRODUCT',// TO GET STARTED
             views:{
                 main:{
@@ -24,6 +23,12 @@ angular.module('app').config(function($stateProvider,$urlRouterProvider){
                 main:{
                     templateUrl:'app/views/preview.html',                    
                     controller:'previewCtl as vm'
+                }
+            },
+        })
+            title:'PREVIEW YOUR PRODUCT',
+            views:{
+                main:{
                 }
             },
         })
