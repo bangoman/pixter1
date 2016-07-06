@@ -578,7 +578,7 @@
                     "tmbWidth": 118,
                     "cropRatio": 0.69,
                     "previewImage":"canvases/24x16/canvas24x16_1300px.png",
-                    "rotate": ["CNVS241601WRE4","CNVS162401WRE4"],
+                    "rotate": ["CNVS162401WRE4","CNVS241601WRE4"],
                     "bulletList":[
                         "Create a stunning photo canvas of your favorite scenic, travel, or occasion photos",
                         "Gallery-wrapped edges allow you to hang on a wall",
@@ -756,7 +756,7 @@
                     "tmbWidth": 120,
                     "cropRatio": 0.71,
                     "previewImage":"canvases/12x8/canvas12x8_280px.png",
-                    "rotate": ["CNVS081201WRE2","CNVS120801WRE2"],
+                    "rotate": ["CNVS120801WRE2","CNVS081201WRE2"],
                     "bulletList":[
                         "Create a stunning photo canvas of your favorite scenic, travel, or occasion photos",
                         "Gallery-wrapped edges allow you to hang on a wall",
@@ -784,7 +784,7 @@
                     "tmbWidth": 80,
                     "cropRatio": 1.4,
                     "previewImage":"canvases/8x12/canvas8x12_300px.png",
-                    "rotate": ["CNVS081201WRE2","CNVS120801WRE2"],
+                    "rotate": ["CNVS120801WRE2","CNVS081201WRE2"],
                     "bulletList":[
                         "Create a stunning photo canvas of your favorite scenic, travel, or occasion photos",
                         "Gallery-wrapped edges allow you to hang on a wall",
