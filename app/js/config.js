@@ -67,5 +67,15 @@ angular.module('app').config(function($stateProvider,$urlRouterProvider){
                 }
             },
         })
+        .state('app.thankYou',{
+            url:'/thankYou',
+            title:'THANK YOU FOR YOUR ORDER!',
+            views:{
+                main:{
+                    templateUrl:'app/views/thank_you.html',                    
+                    controller:'thankYouCtl as vm'
+                }
+            },
+        })
     ;
 });

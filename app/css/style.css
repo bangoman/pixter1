@@ -371,7 +371,7 @@ select[type="number"]:active {
   background-color: #000;
 }
 .crop-controls.horizontal {
-  display: -webkit-inline-box;
+  display: flex;
   width: 100%;
 }
 .crop-controls .crop-control-button {
@@ -710,6 +710,14 @@ select[type="number"]:active {
   color: #E53935;
   border: 1px solid #E53935;
 }
+
+.btn-rotate{
+  margin-left: 10px;
+  height: 34px;
+  background-color: #32bafa;
+  color: #fff;
+}
+
 /*================
     @media style
   ================*/
