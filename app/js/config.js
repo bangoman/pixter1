@@ -8,6 +8,7 @@ angular.module('app').config(function($stateProvider,$urlRouterProvider){
             controller:'mainCtl as vm',
         })
 		.state('app.shop',{
+			url:'/shop/:previewCatalog',
             title:'CLICK A PRODUCT',// TO GET STARTED
             views:{
                 main:{
@@ -26,9 +27,13 @@ angular.module('app').config(function($stateProvider,$urlRouterProvider){
                 }
             },
         })
+        .state('app.previewCatalog',{
+            url:'/previewCatalog',
             title:'PREVIEW YOUR PRODUCT',
             views:{
                 main:{
+                    templateUrl:'app/views/preview_catalog.html',                    
+                    controller:'previewCatalogCtl as vm'
                 }
             },
         })
