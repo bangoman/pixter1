@@ -17,19 +17,19 @@
                         <input type="text" class="form-control order-details-input" name="user_name" placeholder="FullName*"
                                ng-model="order.user_name"
                                required
-                               ng-class="!vm.form.user_name.$valid && (vm.form.$submitted || vm.form.user_name.$touched) ? 'error-input' : ''"/>
+                               ng-class="!vm.form.user_name.$valid && vm.form.$submitted ? 'error-input' : ''"/>
                     </div>
-                    <div class="form-group error-text" ng-show="vm.form.$submitted || vm.form.user_name.$touched">
-                        <div ng-show="vm.form.user_name.$error.required">Required feild</div>
+                    <div class="form-group error-text" ng-show="vm.form.$submitted">
+                        <div ng-show="vm.form.user_name.$error.required">Required Field</div>
                     </div>
                     <div class="form-group">
                         <input type="email" class="form-control order-details-input" name="user_email" placeholder="E-Mail*" 
                                ng-model="order.user_email"
                                required
-                               ng-class="!vm.form.user_email.$valid && (vm.form.$submitted || vm.form.user_email.$touched) ? 'error-input' : ''"/>
+                               ng-class="!vm.form.user_email.$valid && vm.form.$submitted ? 'error-input' : ''"/>
                     </div>
-                    <div class="form-group error-text" ng-show="vm.form.$submitted || vm.form.user_email.$touched">
-                        <div ng-show="vm.form.user_email.$error.required">Required feild</div>
+                    <div class="form-group error-text" ng-show="vm.form.$submitted">
+                        <div ng-show="vm.form.user_email.$error.required">Required Field</div>
                         <div ng-show="vm.form.user_email.$error.email">Please type valid email</div>
                     </div>
                 </div>
@@ -51,12 +51,23 @@
                     <div class="form-group">
                         <input type="text" class="form-control order-details-input" name="recipient_name"
                                ng-model="order.recipient_name"
-                               placeholder="Recipient Name">
+                               placeholder="Recipient Name*"
+                               required 
+                               ng-class="!vm.form.recipient_name.$valid && vm.form.$submitted ? 'error-input' : ''"
+                        />
+                    </div>
+                    <div class="form-group error-text" ng-show="vm.form.$submitted">
+                        <div ng-show="vm.form.recipient_name.$error.required">Required Field</div>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control order-details-input" name="address" placeholder="Address 1"
+                        <input type="text" class="form-control order-details-input" name="address" placeholder="Address 1*"
                                ng-model="order.address" 
+                               required 
+                               ng-class="!vm.form.address.$valid && vm.form.$submitted ? 'error-input' : ''"
                         />
+                    <div class="form-group error-text" ng-show="vm.form.$submitted">
+                        <div ng-show="vm.form.address.$error.required">Required Field</div>
+                    </div>
                     </div>
                     <div class="form-group">
                         <input type="text" class="form-control order-details-input" name="address2" placeholder="Address 2"
@@ -68,9 +79,14 @@
             <div class="col-sm-6 col-xs-12">
                 <div>
                     <div class="form-group">
-                        <input type="text" class="form-control order-details-input" name="city" placeholder="City"
+                        <input type="text" class="form-control order-details-input" name="city" placeholder="City*"
                                ng-model="order.city"
+                               required 
+                               ng-class="!vm.form.city.$valid && vm.form.$submitted ? 'error-input' : ''"
                         />
+                        <div class="form-group error-text" ng-show="vm.form.$submitted">
+                            <div ng-show="vm.form.city.$error.required">Required Field</div>
+                        </div>
                     </div>
                     <div class="form-group order-details-state-zip-inputs">
                         <input type="text" class="form-control order-details-input" style="width:59%; margin-bottom:0"
@@ -79,7 +95,14 @@
                         <input type="text" class="form-control order-details-input"
                                ng-model="order.zip"
                                style="width:39%; margin-left: 2%; margin-bottom:0" name="zip" id="p_ZipInput"
-                               placeholder="ZIP"/>
+                               placeholder="ZIP*"
+                               required 
+                               ng-class="!vm.form.zip.$valid && vm.form.$submitted ? 'error-input' : ''"
+                        />
+                        <div class="form-group error-text" ng-show="vm.form.$submitted">
+                            <div ng-show="vm.form.zip.$error.required">Required Field</div>
+                        </div>
+
                     </div>
                     <div class="form-group">
                         <select class="order-details-input country-select" id="p_UserLocale" name="country"
@@ -93,14 +116,14 @@
                 </div>
             </div>
             <div class="col-sm-8 col-xs-12 checkbox">
-                <label ng-class="!order.TOC && (vm.form.$submitted || vm.form.terms.$touched) ? 'error-text' : ''">
+                <label ng-class="!order.TOC && vm.form.$submitted ? 'error-text' : ''">
                     <input type="checkbox"
                            ng-model="order.TOC"
                            required
                            name="terms" />
                         I agree to the <a target="_blank" href="http://pixter.me/terms_of_use.html">terms</a> and confirm I have the rights to upload and use the image.
                 </label>
-                <div class="form-group error-text" ng-show="vm.form.$submitted || vm.form.terms.$touched">
+                <div class="form-group error-text" ng-show="vm.form.$submitted">
                     <div ng-show="!order.TOC">You must agree to the terms</div>
                 </div>
             </div>
