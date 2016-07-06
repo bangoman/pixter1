@@ -710,6 +710,14 @@ select[type="number"]:active {
   color: #E53935;
   border: 1px solid #E53935;
 }
+
+.btn-rotate{
+  margin-left: 10px;
+  height: 34px;
+  background-color: #32bafa;
+  color: #fff;
+}
+
 /*================
     @media style
   ================*/
