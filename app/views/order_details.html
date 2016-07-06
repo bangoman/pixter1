@@ -79,9 +79,14 @@
             <div class="col-sm-6 col-xs-12">
                 <div>
                     <div class="form-group">
-                        <input type="text" class="form-control order-details-input" name="city" placeholder="City"
+                        <input type="text" class="form-control order-details-input" name="city" placeholder="City*"
                                ng-model="order.city"
+                               required 
+                               ng-class="!vm.form.city.$valid && vm.form.$submitted ? 'error-input' : ''"
                         />
+                        <div class="form-group error-text" ng-show="vm.form.$submitted">
+                            <div ng-show="vm.form.city.$error.required">Required Field</div>
+                        </div>
                     </div>
                     <div class="form-group order-details-state-zip-inputs">
                         <input type="text" class="form-control order-details-input" style="width:59%; margin-bottom:0"
