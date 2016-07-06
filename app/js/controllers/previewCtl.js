@@ -9,6 +9,9 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,
     	$scope.tmbWidth = 300;
     }
 
+    if ($scope.selectedProduct.rotate) {
+        console.log("victory");
+    }
     vm.goToEdit = function() {
         $state.go('app.edit');
     };
