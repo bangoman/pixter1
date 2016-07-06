@@ -33,8 +33,6 @@ angular.module('app').controller('checkoutCtl', function ($uibModal, $rootScope,
     };
 
     vm.checkout = function (paymentType) {
-        var win = window.open('', "", "width=500, height=500");
-        win.document.body.innerHTML = 'Processing...';
         return apiService
             .validateOrder(angular.extend({
                 product_id: $rootScope.currentProduct.pid,
@@ -47,9 +45,8 @@ angular.module('app').controller('checkoutCtl', function ($uibModal, $rootScope,
                 coupon_string: $rootScope.coupon ? $rootScope.coupon.coupon_code.replace(/'/g, '') : undefined,
             }, $rootScope.order))
             .then(function (data) {
-                win.location.href = data.url;
+                location.href = data.url;
             },function (data) {
-                win.close();
                 alert(data.error.message);
             });
     };
