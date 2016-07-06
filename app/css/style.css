@@ -371,7 +371,7 @@ select[type="number"]:active {
   background-color: #000;
 }
 .crop-controls.horizontal {
-  display: -webkit-inline-box;
+  display: flex;
   width: 100%;
 }
 .crop-controls .crop-control-button {
