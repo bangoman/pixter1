@@ -21,14 +21,15 @@
         </ul>
     </div>                
     <div class="col-lg-8 col-lg-offset-2 col-xs-12 edit-image-outer-container">
+                    <span ng-show="vm.showLoader" style="position:absolute;left:15px;"><b>Please Wait...<b></span>
         <div class="crop-image-container">
             <div class="edit-image-inner-container" >
-                <span ng-show="vm.showLoader" style="position:absolute">Please wait..</span>
+
                 <!-- <product-image-display class="shop-view-product-image-display" zoom="zoom" editMode="true" imageUrl="https://fbcdn-sphotos-g-a.akamaihd.net/hphotos-ak-xfa1/t31.0-8/13246160_961327897315228_9219812989318561441_o.jpg" tmbWidth="500">
                 </product-image-display> -->
                 <div ng-style="imageStyle">
                     <div   on-drag="onDrag($event)" on-release="onRelease($event)" style="height:{{product.tmbHeight}}px;width:{{product.tmbWidth}}px;background:url('app/products_images/{{product.previewImage}}');background-size:{{product.tmbWidth}}px {{product.tmbHeight}}px"> 
-                    
+
                     </div>
                 </div>
 
