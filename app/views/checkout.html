@@ -68,10 +68,14 @@
             <!--</label>-->
         </div>
         <div class="row checkout-view-price-row">
-            <span class="checkout-price-title">
+            <span class="checkout-price-title" 
+                ng-show="(vm.getDiscountProductPrice() < currentProduct.priceObject.price) || (vm.getDiscountShippingPrice() < vm.shipmentMethod.price)"
+                >
                 You saved:
             </span>
-             <span class="checkout-price checkout-saved-price">
+             <span class="checkout-price checkout-saved-price"
+                ng-show="(vm.getDiscountProductPrice() < currentProduct.priceObject.price) || (vm.getDiscountShippingPrice() < vm.shipmentMethod.price)"
+             >
                  <span>{{vm.getSaving() | number : 2}}</span>
             </span>
             <div class="pull-right">
