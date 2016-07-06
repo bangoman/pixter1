@@ -1,1 +1,31 @@
-thankYou.html
+<div id="thank-you-view-responsive">
+    <div class="thank-you-content-container">
+        <div class="thank-you-header">
+            Thank you for your order, {{user_name}}!
+        </div>
+        <div class="thank-you-content-text">
+            <p>
+                You should receive a confirmation email from us soon.
+            </p>
+            <p class="thank-you-second-paragraph">
+                We are in the process of producing and shipping your order<br>
+                and will update you once it has been posted.                
+            </p>  
+            <span class="thank-you-if-no-mail-text">
+                (if you didn't get the email, please check in your "spam" folder)
+            </span>
+        </div>
+        <div class="thank-you-buttons-row row">
+            <div class="col-xs-5 thank-you-button-container">
+                <button class="btn white-button" ng-click="vm.close()">
+                    Close
+                </button>
+            </div>
+            <div class="col-xs-6 thank-you-button-container">
+                <button class="btn next-button" ng-click="vm.goToShopView()">
+                    Continue Shopping
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -7,6 +7,19 @@
 
   =============================== */ 
 
+@import url("http://fast.fonts.net/t/1.css?apiType=css&projectid=75b13f40-4397-41a2-bd77-d01aa7326235");
+@import url("https://fonts.googleapis.com/css?family=Dosis:400,500");
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700");
+@font-face {
+  font-family: 'CalibriRegular';
+  src: url("https://pixter-loader-assets.s3.amazonaws.com/1_8_2_stg/files/fonts/CalibriRegular.eot");
+  src: url("https://pixter-loader-assets.s3.amazonaws.com/1_8_2_stg/files/fonts/CalibriRegular.eot?#iefix") format("embedded-opentype"), url("https://pixter-loader-assets.s3.amazonaws.com/1_8_2_stg/files/fonts/CalibriRegular.woff") format("woff"), url("https://pixter-loader-assets.s3.amazonaws.com/1_8_2_stg/files/fonts/CalibriRegular.ttf") format("truetype"), url("https://pixter-loader-assets.s3.amazonaws.com/1_8_2_stg/files/fonts/CalibriRegular.otf") format("opentype"), url("https://pixter-loader-assets.s3.amazonaws.com/1_8_2_stg/files/fonts/CalibriRegular.svg#CalibriRegular") format("svg");
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  unicode-range: U+000D-25CA; 
+}
+
 
 /* outline & box-shadow fixes */
 
@@ -601,7 +614,48 @@ select[type="number"]:active {
   height: 36px;
 }
 
+/* thank-you-view-responsive style */
 
+#thank-you-view-responsive {
+  padding-top: 148px;
+}
+.thank-you-content-container {
+  width: 520px;
+  margin: 0 auto;
+}
+.thank-you-header {
+  color: #92aaaa;
+  font-size: 20px;
+  line-height: 20px;
+  margin-bottom: 32px;
+  font-weight: 600;
+}
+.thank-you-content-text p {
+  color: #92aaaa;
+  font-size: 17px;
+  line-height: 17px;
+  font-family: Calibri, "CalibriRegular", "Gill Sans", Verdana, Arial;
+}
+.thank-you-content-text p.thank-you-second-paragraph {
+  margin-bottom: -4px;
+}
+.thank-you-if-no-mail-text {
+  color: gray;
+  font-size: 12px;
+}
+.thank-you-buttons-row {
+  margin-top: 28px;
+}
+.thank-you-buttons-row button {
+  height: 36px;
+  margin: 12px 0;
+}
+.thank-you-buttons-row button.white-button {
+  width: 172px;
+}
+.thank-you-buttons-row button.next-button {
+  width: 200px;
+}
 /* slider-shop-view-responsive style */
 
 #slider-shop-view-responsive {
@@ -750,6 +804,17 @@ select[type="number"]:active {
   .checkout-view-header {
     margin-top: 0;
     padding-bottom: 0;
+  }
+  #thank-you-view-responsive {
+    padding: 148px 16% 0;
+  }
+  .thank-you-content-container {
+    width: auto;
+  }
+}
+@media screen and (max-width:640px) {
+  .thank-you-button-container {
+    width: 100%;
   }
 }
 @media screen and (max-width: 435px) {
