@@ -9,7 +9,6 @@
                 <div class="preview-edit-btn" ng-click="vm.goToEdit()">
                     <i class="glyphicon glyphicon-scissors"></i>
                     <span>Edit</span>
-                    
                 </div>
             </div>
         </div>
@@ -23,6 +22,8 @@
                 <select class="form-control preview-product-select" ng-model="selectedProduct" ng-options="product.shortName for product in category.products">
                 </select>
             </div>
+            <button>Check</button>
+            <!-- ng-show="selectedProduct.pid == selectedProduct.rotate[0]" -->
             <span class="preview-price">
                  {{prices.products[currentProduct.pid].price}} $
             </span>
