@@ -2,7 +2,7 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,
     var vm = this;
     $rootScope.disableScroll = false;
     $scope.finalStep = false;
-    console.log($rootScope.category.products);
+   // console.log($rootScope.category.products);
     $scope.tmbWidth  = $rootScope.screenW * 0.67; 
     $scope.productsToDisplay = [];
     $scope.productsToDisplayOriginal = [];    
@@ -13,8 +13,8 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,
     }
     $scope.displayDropdown = !$rootScope.previewCatalogParams.previewCatalog;
     
-    console.log($scope.displayDropdown);
-    console.log("product",$rootScope.currentProduct);
+   // console.log($scope.displayDropdown);
+   // console.log("product",$rootScope.currentProduct);
     $scope.selectedProduct = $rootScope.currentProduct;
 
     // selectedProduct : the final product after rotation calculation (AKA the output product).

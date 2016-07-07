@@ -18,7 +18,7 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 
             var vm = this;
             var lastHeight, lastWidth, canvas, ctx;
-            console.log($scope.tmbWidth);
+          //  console.log($scope.tmbWidth);
 //			setInterval(function(){				
 //				$scope.triggerPinchZoom($ionicScrollDelegate.getScrollPosition().zoom)
 //			},100)
