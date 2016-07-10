@@ -49,29 +49,36 @@
         </div>
     </div> -->   
 
-<div class="col-lg-8 col-lg-offset-2 col-xs-12 edit-bottom-buttons-container">
-    <div class="revert-changes-button">
-<!--        <img src="https://pixter-loader-assets.s3.amazonaws.com/1_8_1_stg/files/images/revertCrop.png">
-        <span style="text-decoration: underline">
-            Revert changes
-        </span>
-        -->
-    </div>
-    <div class="pull-right right-buttons-group">
-        <button class="btn white-button" ui-sref="app.preview">Cancel</button>
-        <button class="btn next-button" ng-click="applyChanges(backgroundPosition.left,
-                            backgroundPosition.top,
-                            backgroundSize.h,
-                            backgroundSize.w,
-                            imageSizeRatio)">
-            Apply
-        </button>
-    </div>
-</div>       
+    <div class="col-lg-8 col-lg-offset-2 col-xs-12 edit-bottom-buttons-container">
+        <div class="revert-changes-button">
+    <!--        <img src="https://pixter-loader-assets.s3.amazonaws.com/1_8_1_stg/files/images/revertCrop.png">
+            <span style="text-decoration: underline">
+                Revert changes
+            </span>
+            -->
+        </div>
+        <div class="pull-right right-buttons-group">
+            <button class="btn white-button" ui-sref="app.preview">Cancel</button>
+            <button class="btn next-button" ng-click="applyChanges(backgroundPosition.left,
+                                backgroundPosition.top,
+                                backgroundSize.h,
+                                backgroundSize.w,
+                                imageSizeRatio)">
+                Apply
+            </button>
+        </div>
+    </div>       
 
 </div>
+<div ng-if="catalogMode" style="height:{{product.tmbHeight}}px;width:{{product.tmbWidth}}px;overflow:hidden;position:absolute;">
 
-    <div ng-style="imageStyle" ng-if="!editMode">
-        <div   on-drag="onDrag($event)" on-release="onRelease($event)" style="height:{{product.tmbHeight}}px;width:{{product.tmbWidth}}px;background:url('app/products_images/{{product.previewImage}}');background-size:{{product.tmbWidth}}px {{product.tmbHeight}}px"> 
-        </div>
+    <div ng-style="imageStyle"></div>
+
+    <div id="product-box-{{product.type}}" on-drag="onDrag($event)" on-release="onRelease($event)" style="height:{{product.tmbHeight}}px;width:{{product.tmbWidth}}px;background:url('app/products_images/{{product.previewImage}}');background-size:{{product.tmbWidth}}px {{product.tmbHeight}}px; position: absolute;"> 
     </div>
+</div>
+
+<div ng-style="imageStyle" ng-if="!editMode && !catalogMode">
+    <div   on-drag="onDrag($event)" on-release="onRelease($event)" style="height:{{product.tmbHeight}}px;width:{{product.tmbWidth}}px;background:url('app/products_images/{{product.previewImage}}');background-size:{{product.tmbWidth}}px {{product.tmbHeight}}px"> 
+    </div>
+</div>

@@ -57,6 +57,7 @@
             "tmbHeight": 60,
             "tmbWidth": 84,
             "cropRatio": 0.76,
+            "rotation":-13,
             "previewImage":"flatcard/flatcard_290.png",
             "categoryText":"Fine printed flat cards",
             "children":["FLAT660510EEEE"],
@@ -85,6 +86,7 @@
                     "tmbHeight": 60,
                     "tmbWidth": 84,
                     "cropRatio": 0.7566,
+                    "rotation":-13,
                     "rotate": false,
                     "bulletList":[
                         "10 Photo Flat Cards with 10 envelopes",
