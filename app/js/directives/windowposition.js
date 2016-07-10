@@ -1,4 +1,4 @@
-           function getImgSizeforwindow(imgSrc) {
+           function getImgSizeForWindow(imgSrc) {
 			    var newImg = new Image();
 			    newImg.onload = function () {
 			        var height = newImg.height;
@@ -27,6 +27,16 @@
 			    calculatePosition(image)
 
 			} 
+
+			function calculateDpi(){
+				
+			}
+
+
+	        function dpiAllert(dpi){
+            	if dpi < $scope.product.min_dpi;
+            	allert("The picture is too small!");
+            }
 
 			$scope.newProduct = {
 				"localization" : {
@@ -242,4 +252,4 @@
 			}
 			getImgSizeforwindow($scope.newProduct.images.oss)
 
-        },
+        
