@@ -356,7 +356,7 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 				    $scope.imageStyle["position"]="absolute",
 				   // $scope.imageStyle["left"] = 0  + "px ",
 				   // $scope.imageStyle["top"] = $scope.product.window.y/$scope.sizeRatio + "px",
-				    $scope.imageStyle["height"] = $scope.product.tmbHeight + "px"
+				    $scope.imageStyle["height"] = $scope.product.tmbHeight  + "px"
 
 
                   }
