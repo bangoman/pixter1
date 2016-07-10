@@ -40,6 +40,26 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 
             });
 
+            function catalogRotaition (){
+        	    var productBox = document.getElementById("product-box-" + $scope.product.type)
+            	var rect = productBox.getBoundingClientRect();
+            	var xCenterWindow = ($scope.product.window.x + ($scope.product.window.w/2))/$scope.sizeRatio;
+			    var yCenterWindow = ($scope.product.window.y + ($scope.product.window.h/2))/$scope.sizeRatio;
+            	console.log($scope.product,"here!!!");
+            	console.log(rect.top, rect.right, rect.bottom, rect.left);
+            	$scope.imageStyle["-ms-transform"] = "rotate(" + $scope.product.rotation + "deg)", /* IE 9 */
+			    $scope.imageStyle["-webkit-transform"]="rotate(" + $scope.product.rotation + "deg)", /* Chrome, Safari, Opera */
+			    $scope.imageStyle["transform"]= "rotate(" + $scope.product.rotation + "deg)",
+			    $scope.imageStyle["position"]="absolute",
+			   // $scope.imageStyle["left"] = 0  + "px ",
+			   // $scope.imageStyle["top"] = $scope.product.window.y/$scope.sizeRatio + "px",
+			    $scope.imageStyle["height"] = $scope.product.tmbHeight  + "px"
+
+            }
+      console.log($scope.product.window.x/$scope.sizeRatio,"window")
+      console.log($scope.imageStyle)
+           
+
 
             $scope.onDrag = function (event) {
                 if ($attrs.editmode) {
@@ -344,24 +364,9 @@ angular.module('app').directive('productImageDisplay', function ($http) {
                     "width": $scope.tmbWidth + "px",
                 }
                 if($scope.catalogMode){
-                	var productBox = document.getElementById("product-box-" + $scope.product.type)
-                	var rect = productBox.getBoundingClientRect();
-                	var xCenterWindow = ($scope.product.window.x + ($scope.product.window.w/2))/$scope.sizeRatio;
-				    var yCenterWindow = ($scope.product.window.y + ($scope.product.window.h/2))/$scope.sizeRatio;
-                	console.log($scope.product,"here!!!");
-                	console.log(rect.top, rect.right, rect.bottom, rect.left);
-                	$scope.imageStyle["-ms-transform"] = "rotate(" + $scope.product.rotation + "deg)", /* IE 9 */
-				    $scope.imageStyle["-webkit-transform"]="rotate(" + $scope.product.rotation + "deg)", /* Chrome, Safari, Opera */
-				    $scope.imageStyle["transform"]= "rotate(" + $scope.product.rotation + "deg)",
-				    $scope.imageStyle["position"]="absolute",
-				   // $scope.imageStyle["left"] = 0  + "px ",
-				   // $scope.imageStyle["top"] = $scope.product.window.y/$scope.sizeRatio + "px",
-				    $scope.imageStyle["height"] = $scope.product.tmbHeight  + "px"
-
-
-                  }
-      console.log($scope.product.window.x/$scope.sizeRatio,"window")
-      console.log($scope.imageStyle)
+                	catalogRotaition()
+                }
+            
 
                 if ($scope.withCanvas) {
                     $scope.initCanvas();
