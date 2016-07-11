@@ -22,6 +22,12 @@ angular.module('app').controller('shopCtl', function ($state, $http, $rootScope,
             }).then(function () {
             console.log('vm.products = ', vm.products);
         });
+            $http.get('app/json/branding_default.json')
+            .then(function (res) {
+                $rootScope.branding = res.data;
+            }).then(function () {
+            console.log('vm.products = ', vm.products);
+        });
 
     };
 

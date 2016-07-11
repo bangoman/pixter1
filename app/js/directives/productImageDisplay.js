@@ -51,8 +51,6 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 			    $scope.imageStyle["-webkit-transform"]="rotate(" + $scope.product.rotation + "deg)", /* Chrome, Safari, Opera */
 			    $scope.imageStyle["transform"]= "rotate(" + $scope.product.rotation + "deg)",
 			    $scope.imageStyle["position"]="absolute",
-			   // $scope.imageStyle["left"] = 0  + "px ",
-			   // $scope.imageStyle["top"] = $scope.product.window.y/$scope.sizeRatio + "px",
 			    $scope.imageStyle["height"] = $scope.product.tmbHeight  + "px"
 
             }
