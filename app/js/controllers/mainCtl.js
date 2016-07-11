@@ -1,7 +1,38 @@
-angular.module('app').controller('mainCtl', function(message, $uibModal, $state,$rootScope){
+angular.module('app').controller('mainCtl', function(message, $uibModal, $state,$rootScope,$http, $stateParams){
 	var vm = this;
     vm.state = $state;
-    $state.go('app.shop');
+  vm.getProducts = function () {
+        $http.get('app/json/products.json')
+            .then(function (res) {
+                vm.productsData = res.data;
+                $rootScope.productsData = res.data;
+            }).then(function () {
+            console.log('vm.products = ', vm.products);
+        });
+        $http.get('app/json/pricing.json')
+            .then(function (res) {
+                $rootScope.prices = res.data;
+            }).then(function () {
+            console.log('vm.products = ', vm.products);
+        });
+            $http.get('app/json/branding_default.json')
+            .then(function (res) {
+                $rootScope.branding = res.data;
+            }).then(function () {
+            console.log($rootScope.branding.marketingData.ossData , "branding");
+        });
+
+    };
+    window.$state = $state;
+    $rootScope.screenW = document.body.clientWidth;
+    $rootScope.disableScroll = false;
+    $rootScope.imageUrl = "image.jpg";
+
+    $rootScope.previewCatalogParams = $stateParams;
+    
+    vm.getProducts();
+
+    //$state.go('app.shop');
 	vm.close = function(){
 		message('close');
 	}

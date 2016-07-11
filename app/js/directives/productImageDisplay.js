@@ -42,11 +42,6 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 
             function catalogRotaition (){
         	    var productBox = document.getElementById("product-box-" + $scope.product.type)
-            	var rect = productBox.getBoundingClientRect();
-            	var xCenterWindow = ($scope.product.window.x + ($scope.product.window.w/2))/$scope.sizeRatio;
-			    var yCenterWindow = ($scope.product.window.y + ($scope.product.window.h/2))/$scope.sizeRatio;
-            	console.log($scope.product,"here!!!");
-            	console.log(rect.top, rect.right, rect.bottom, rect.left);
             	$scope.imageStyle["-ms-transform"] = "rotate(" + $scope.product.rotation + "deg)", /* IE 9 */
 			    $scope.imageStyle["-webkit-transform"]="rotate(" + $scope.product.rotation + "deg)", /* Chrome, Safari, Opera */
 			    $scope.imageStyle["transform"]= "rotate(" + $scope.product.rotation + "deg)",
@@ -334,9 +329,10 @@ angular.module('app').directive('productImageDisplay', function ($http) {
                 $scope.backgroundPosition = {top: "", left: ""}
                 $scope.backgroundSize = {w: "", h: ""}
                 var bpl, vpt
-
+                console.log($scope.product.window);               
                 if (productRatio >= imgRatio) { // Left case
                     $scope.imageSizeRatio = img.height / ($scope.product.window.h / $scope.sizeRatio);
+
                     bpl = ($scope.product.window.x / $scope.sizeRatio) - (((img.width / $scope.imageSizeRatio) - ($scope.product.window.w / $scope.sizeRatio)) / 2 ) + "px ";
                     bpt = $scope.product.window.y / $scope.sizeRatio + "px";
                     $scope.backgroundPosition.left = bpl

@@ -1,74 +1,20 @@
-<ul rn-carousel id="slider-shop-view-responsive" class="image" rn-carousel-controls rn-carousel-transition="fadeAndSlide">
-    <li>
-        <div class="slider-shop-top-part">
-            <img src="app/images/pixter_tshirt_oss.png" class="slider-shop-top-back-image">
-            <div class="slider-shop-product-info">
-                <div class="product-info-top">
-                    Phone Case <span class="orenge_text">$16.79</span>
-                </div>
-                <div class="product-info-bottom">
-                    <span class="orenge_text">40% OFF</span> & FREE SHIPPING
-                </div>
+<div id="shop-view-responsive" class="row">
+    <div class="col-xs-12"  ng-repeat="product in productsData.categories track by $index"  ng-show="currentIndex == $index">
+        <div style="height:{{bannerHeight}}px" >
+            <product-image-display   class="shop-view-product-image-display" product="product.catalog" image-url="imageUrl"  tmb-width="bannerWidth" catalog-mode="true">
+            </product-image-display>
+            <div style="position:absolute;background:rgba(5,5,8,0.4);color:#fff;padding:5px;">
+                <h5>{{product.catalog.h2}} {{product.price}}</h5>
+
             </div>
-            <div class="slider-shop-product-inner-image-container" style="width: 18vw;
-                                                                          top: 18vh;
-                                                                          left: 59vw;">
-                <img src="app/images/product_inner_image.jpeg">            
-            </div>
+            <div style="position:absolute; top:{{bannerHeight/2}}px;;font-size:68px;color:#fff;background:rgba(5,5,8,0.4);padding:3px;cursor:pointer" ng-click="changeBanner(-1)" ng-show="currentIndex > 0 "><</div>
+
+            <div style="position:absolute; top:{{bannerHeight/2}}px;right:10px;font-size:68px;color:#fff;background:rgba(5,5,8,0.4);padding:3px;cursor:pointer" ng-click="changeBanner(1)" ng-show="currentIndex < branding.marketingData.ossData.length-1">></div>
+
+            <img style="width:{{bannerWidth}}px;position:absolute;left:calc(50% - {{bannerWidth}}px/2 );top:{{bannerHeight}}px" src="https://pixter-loader-assets.s3.amazonaws.com/v1_statics/files/images/seasonal/specialOffer.jpg">                    
+            <button class="btn btn-default" ng-click="goToPreview(product)" style="position:absolute;top:{{bannerHeight + bannerHeight/7.2  - 15}}px;right:calc(50% - {{bannerWidth}}px/2  + 20px );">{{ product.catalog.buttonText}}</button>
         </div>
-        <div class="slider-shop-bottom-part">
-            <img class="slider-shop-bottom-back-image" src="app/images/edden_bottom_background.jpg">
-            <div class="slider-shop-bottom-button">
-                Choose T-Shirt Size
-            </div>
-        </div>
-    </li>
-    <li>
-        <div class="slider-shop-top-part">
-            <img src="app/images/pixter_tshirt_oss.png" class="slider-shop-top-back-image">
-            <div class="slider-shop-product-info">
-                <div class="product-info-top">
-                    Phone Case <span class="orenge_text">$16.79</span>
-                </div>
-                <div class="product-info-bottom">
-                    <span class="orenge_text">40% OFF</span> & FREE SHIPPING
-                </div>
-            </div>
-            <div class="slider-shop-product-inner-image-container" style="width: 18vw;
-                                                                          top: 18vh;
-                                                                          left: 59vw;">
-                <img src="app/images/product_inner_image.jpeg">            
-            </div>
-        </div>
-        <div class="slider-shop-bottom-part">
-            <img class="slider-shop-bottom-back-image" src="app/images/edden_bottom_background.jpg">
-            <div class="slider-shop-bottom-button">
-                Choose T-Shirt Size
-            </div>
-        </div>
-    </li>
-    <li>
-        <div class="slider-shop-top-part">
-            <img src="app/images/pixter_tshirt_oss.png" class="slider-shop-top-back-image">
-            <div class="slider-shop-product-info">
-                <div class="product-info-top">
-                    Phone Case <span class="orenge_text">$16.79</span>
-                </div>
-                <div class="product-info-bottom">
-                    <span class="orenge_text">40% OFF</span> & FREE SHIPPING
-                </div>
-            </div>
-            <div class="slider-shop-product-inner-image-container" style="width: 18vw;
-                                                                          top: 18vh;
-                                                                          left: 59vw;">
-                <img src="app/images/product_inner_image.jpeg">            
-            </div>
-        </div>
-        <div class="slider-shop-bottom-part">
-            <img class="slider-shop-bottom-back-image" src="app/images/edden_bottom_background.jpg">
-            <div class="slider-shop-bottom-button">
-                Choose T-Shirt Size
-            </div>
-        </div>
-    </li>
-</ul>
+    </div>
+</div>
+
+

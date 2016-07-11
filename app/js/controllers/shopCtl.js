@@ -26,7 +26,7 @@ angular.module('app').controller('shopCtl', function ($state, $http, $rootScope,
             .then(function (res) {
                 $rootScope.branding = res.data;
             }).then(function () {
-            console.log('vm.products = ', vm.products);
+            console.log($rootScope.branding.marketingData.ossData , "branding");
         });
 
     };
