@@ -15,11 +15,18 @@ angular.module('app').controller('mainCtl', function(message, $uibModal, $state,
             }).then(function () {
             console.log('vm.products = ', vm.products);
         });
-            $http.get('app/json/branding_default.json')
+        $http.get('app/json/branding_default.json')
             .then(function (res) {
                 $rootScope.branding = res.data;
             }).then(function () {
             console.log($rootScope.branding.marketingData.ossData , "branding");
+        });
+        $http.get('http://ec2-52-201-250-90.compute-1.amazonaws.com:8000/api/v2/category/get_list?user=demo')
+            .then(function (res) {
+              console.log("res",res)
+               // $rootScope.branding = res.data;
+            }).then(function () {
+            
         });
 
     };

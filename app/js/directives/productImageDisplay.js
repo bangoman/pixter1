@@ -49,8 +49,6 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 			    $scope.imageStyle["height"] = $scope.product.tmbHeight  + "px"
 
             }
-      console.log($scope.product.window.x/$scope.sizeRatio,"window")
-      console.log($scope.imageStyle)
            
 
 
@@ -304,7 +302,7 @@ angular.module('app').directive('productImageDisplay', function ($http) {
             }, false);
 
 
-            function getImgSize(imgSrc) {
+         /*   function getImgSize(imgSrc) {
                 $rootScope.imageUrl = imgSrc;
                 var newImg = new Image();
                 newImg.onload = function () {
@@ -314,7 +312,36 @@ angular.module('app').directive('productImageDisplay', function ($http) {
                 }
 
                 newImg.src = imgSrc; // this must be done AFTER setting onload
-            }
+            }*/
+            function getImgSize(imgSrc) {
+			    var newImg = new Image();
+			    newImg.onload = function () {
+			        var height = newImg.height;
+			        var width = newImg.width;
+			        windowPositionSize(newImg);
+			        console.log("newimg",newImg)
+
+			    }
+
+			    newImg.src = $scope.newProduct.images.oss.image; // this must be done AFTER setting onload
+			}
+
+
+			function windowPositionSize(image){
+			 	$scope.product.window ={};
+			 	$scope.product.width = image.width;
+			 	$scope.product.height = image.height
+				$scope.product.window.x = $scope.product.width * $scope.newProduct.images.oss.top_left_coord.x/100;
+				$scope.product.window.y = $scope.product.height * $scope.newProduct.images.oss.top_left_coord.y/100;
+				$scope.product.window.w = $scope.product.width * ($scope.newProduct.images.oss.bottom_right_coord.x - $scope.newProduct.images.oss.top_left_coord.x)/100;
+				$scope.product.window.h = $scope.product.height * ($scope.newProduct.images.oss.bottom_right_coord.y - $scope.newProduct.images.oss.top_left_coord.y)/100;
+			    console.log("windowx",$scope.product.window.x)
+			    console.log("windowy",$scope.product.window.y)
+			    console.log("windoww",$scope.product.window.w)
+			    console.log("windowh",$scope.product.window.h)
+			    calculatePosition(image)
+
+			} 
 
 
             function calculatePosition(img) {
@@ -329,7 +356,7 @@ angular.module('app').directive('productImageDisplay', function ($http) {
                 $scope.backgroundPosition = {top: "", left: ""}
                 $scope.backgroundSize = {w: "", h: ""}
                 var bpl, vpt
-                console.log($scope.product.window);               
+              
                 if (productRatio >= imgRatio) { // Left case
                     $scope.imageSizeRatio = img.height / ($scope.product.window.h / $scope.sizeRatio);
 
