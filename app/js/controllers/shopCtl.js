@@ -31,7 +31,7 @@ angular.module('app').controller('shopCtl', function ($state, $http, $rootScope,
 
     };
 
-    vm.getProducts();
+//    vm.getProducts();
 
     vm.goToPreview = function (category) {
         $rootScope.category = category;
