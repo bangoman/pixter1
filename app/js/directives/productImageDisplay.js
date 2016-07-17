@@ -331,10 +331,10 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 			 	$scope.product.window ={};
 			 	$scope.product.width = image.width;
 			 	$scope.product.height = image.height
-				$scope.product.window.x = $scope.product.width * $scope.newProduct.images.oss.top_left_coord.x/100;
-				$scope.product.window.y = $scope.product.height * $scope.newProduct.images.oss.top_left_coord.y/100;
-				$scope.product.window.w = $scope.product.width * ($scope.newProduct.images.oss.bottom_right_coord.x - $scope.newProduct.images.oss.top_left_coord.x)/100;
-				$scope.product.window.h = $scope.product.height * ($scope.newProduct.images.oss.bottom_right_coord.y - $scope.newProduct.images.oss.top_left_coord.y)/100;
+				$scope.product.window.x = $scope.product.width * $scope.roduct.images.oss.top_left_coord.x/100;
+				$scope.product.window.y = $scope.product.height * $scope.Product.images.oss.top_left_coord.y/100;
+				$scope.product.window.w = $scope.product.width * ($scope.Product.images.oss.bottom_right_coord.x - $scope.newProduct.images.oss.top_left_coord.x)/100;
+				$scope.product.window.h = $scope.product.height * ($scope.Product.images.oss.bottom_right_coord.y - $scope.newProduct.images.oss.top_left_coord.y)/100;
 			    console.log("windowx",$scope.product.window.x)
 			    console.log("windowy",$scope.product.window.y)
 			    console.log("windoww",$scope.product.window.w)
