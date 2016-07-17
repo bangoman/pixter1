@@ -2,7 +2,7 @@
 
     <div class="col-sm-6 col-xs-12 preview-product-image">
         <div class="preview-product-border">
-            <product-image-display  product="currentProduct"  image-url="imageUrl" tmb-width="tmbWidth"  final-step="finalStep" >
+            <product-image-display  product="currentProduct.images.preview"  image-url="imageUrl" tmb-width="tmbWidth"  final-step="finalStep" >
             </product-image-display>
 
             <div class="row preview-edit-row">
@@ -16,7 +16,7 @@
     <div class="col-sm-6 col-xs-12 preview-product-details">
         <div class="preview-details-header">    
             <span ng-show="category.products.length == 1 || !displayDropdown">
-                {{currentProduct.shortName}}
+                {{currentProduct.name}}
             </span>
             <div class="form-group" ng-show="category.products.length > 1">       
                 <select class="form-control preview-product-select" ng-model="chosenProduct" 
@@ -27,11 +27,11 @@
             <button class="btn btn-rotate" style="margin-top:1px;margin-left:3px;" ng-show="selectedProduct.rotate" ng-click="vm.rotateProduct()"><i class="glyphicon glyphicon-repeat"></i></button>
             <!-- ng-show="selectedProduct.pid == selectedProduct.rotate[0]" -->
             <span class="preview-price">
-                 {{prices.products[currentProduct.pid].price}} $
+                 {{currentProduct.quantities[0].price}}{{localization.currency.symbol}}
             </span>
         </div>
         <ul class="preview-bullet-list">
-            <li ng-repeat="bullet in currentProduct.bulletList"><span>{{bullet}}</span></li>
+            <li ng-repeat="bullet in currentProduct.information"><span>{{bullet}}</span></li>
         </ul>
 
         <!-- <div class="row form-group" ng-show="category.products.length > 1">       

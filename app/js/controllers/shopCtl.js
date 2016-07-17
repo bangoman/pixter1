@@ -34,9 +34,13 @@ angular.module('app').controller('shopCtl', function ($state, $http, $rootScope,
 //    vm.getProducts();
 
     vm.goToPreview = function (category) {
-        $rootScope.category = category;
-        $rootScope.currentProduct = category.products[0];
-        $rootScope.currentProduct.priceObject = $rootScope.prices.products[$rootScope.currentProduct.pid];
+        $http.get($rootScope.baseApi + '/api/v2/product/preview?user=demo&product_id=' +  category.next.storestage.id)
+            .then(function (res) {
+                console.log(res);
+                $rootScope.currentProduct = res.data;        
+                console.log($rootScope.products,"!!!!!!!");
+            });        
+        
         if ($rootScope.previewCatalogParams.previewCatalog) {
             $state.go('app.previewCatalog');
         }

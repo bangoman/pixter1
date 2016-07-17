@@ -18,6 +18,7 @@ angular.module('app').directive('productImageDisplay', function ($http) {
         controller: function ($scope, $http, $attrs, $document, $element, $compile, $rootScope, $state, $q, $ionicScrollDelegate) {
 
             var vm = this;
+            vm.baseApi = $rootScope.baseApi;
             var lastHeight, lastWidth, canvas, ctx;
           //  console.log($scope.tmbWidth);
 //			setInterval(function(){				
@@ -29,7 +30,7 @@ angular.module('app').directive('productImageDisplay', function ($http) {
             $scope.finalWindowPosition = {};
             $scope.finalWindowSize = {};
             $scope.$watch('product', function () {
-                getImgSize($rootScope.imageUrl);
+                getProductImgSize($rootScope.baseApi + $scope.product.image);
 
             });
             $scope.$watch('finalStep', function () {
@@ -42,9 +43,9 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 
             function catalogRotaition (){
         	    var productBox = document.getElementById("product-box-" + $scope.product.type)
-            	$scope.imageStyle["-ms-transform"] = "rotate(" + $scope.product.rotation + "deg)", /* IE 9 */
-			    $scope.imageStyle["-webkit-transform"]="rotate(" + $scope.product.rotation + "deg)", /* Chrome, Safari, Opera */
-			    $scope.imageStyle["transform"]= "rotate(" + $scope.product.rotation + "deg)",
+            	$scope.imageStyle["-ms-transform"] = "rotate(" + -$scope.product.rotation + "deg)", /* IE 9 */
+			    $scope.imageStyle["-webkit-transform"]="rotate(" + -$scope.product.rotation + "deg)", /* Chrome, Safari, Opera */
+			    $scope.imageStyle["transform"]= "rotate(" + -$scope.product.rotation + "deg)",
 			    $scope.imageStyle["position"]="absolute",
 			    $scope.imageStyle["height"] = $scope.product.tmbHeight  + "px"
 
@@ -227,7 +228,8 @@ angular.module('app').directive('productImageDisplay', function ($http) {
                     $scope.rotateInProgress = true;
 
                     $scope.rotateCanvas(degrees).then(function (data) {
-                        getImgSize(data);
+                        $rootScope.imageUrl = data;
+                        getProductImgSize($rootScope.baseApi  + $scope.product.image);
                         vm.showLoader = false;
                         $scope.rotateInProgress = false;
 
@@ -319,26 +321,39 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 			        var height = newImg.height;
 			        var width = newImg.width;
 			        windowPositionSize(newImg);
-			        console.log("newimg",newImg)
 
 			    }
 
-			    newImg.src = $scope.newProduct.images.oss.image; // this must be done AFTER setting onload
+			    newImg.src = $rootScope.imageUrl;
+            ; // this must be done AFTER setting onload
 			}
 
+            function getProductImgSize(imgSrc) {
+                var newImg = new Image();
+                newImg.onload = function () {
+                    var height = newImg.height;
+                    var width = newImg.width;
+                    $scope.product.width = newImg.width;
+                    $scope.product.height = newImg.height;
 
+                    getImgSize($rootScope.imageUrl);
+
+                }
+
+                newImg.src =imgSrc;            
+            }
+            
 			function windowPositionSize(image){
 			 	$scope.product.window ={};
-			 	$scope.product.width = image.width;
-			 	$scope.product.height = image.height
-				$scope.product.window.x = $scope.product.width * $scope.newProduct.images.oss.top_left_coord.x/100;
-				$scope.product.window.y = $scope.product.height * $scope.newProduct.images.oss.top_left_coord.y/100;
-				$scope.product.window.w = $scope.product.width * ($scope.newProduct.images.oss.bottom_right_coord.x - $scope.newProduct.images.oss.top_left_coord.x)/100;
-				$scope.product.window.h = $scope.product.height * ($scope.newProduct.images.oss.bottom_right_coord.y - $scope.newProduct.images.oss.top_left_coord.y)/100;
-			    console.log("windowx",$scope.product.window.x)
-			    console.log("windowy",$scope.product.window.y)
-			    console.log("windoww",$scope.product.window.w)
-			    console.log("windowh",$scope.product.window.h)
+////			 	$scope.product.width = image.width;
+//			 	$scope.product.height = image.height
+				$scope.product.window.x = $scope.product.width * $scope.product.top_left_coord.X/100;
+                console.log($scope.product.width,$scope.product.top_left_coord.X , "!!!");
+				$scope.product.window.y = $scope.product.height * $scope.product.top_left_coord.Y/100;
+				$scope.product.window.w = $scope.product.width * ($scope.product.bottom_right_coord.X - $scope.product.top_left_coord.X)/100;
+				$scope.product.window.h = $scope.product.height * ($scope.product.bottom_right_coord.Y - $scope.product.top_left_coord.Y)/100;
+                console.log($scope.product);
+
 			    calculatePosition(image)
 
 			} 
