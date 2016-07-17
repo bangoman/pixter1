@@ -28,7 +28,7 @@
                 <!-- <product-image-display class="shop-view-product-image-display" zoom="zoom" editMode="true" imageUrl="https://fbcdn-sphotos-g-a.akamaihd.net/hphotos-ak-xfa1/t31.0-8/13246160_961327897315228_9219812989318561441_o.jpg" tmbWidth="500">
                 </product-image-display> -->
                 <div ng-style="imageStyle">
-                    <div   on-drag="onDrag($event)" on-release="onRelease($event)" style="height:{{product.tmbHeight}}px;width:{{product.tmbWidth}}px;background:url('app/products_images/{{product.previewImage}}');background-size:{{product.tmbWidth}}px {{product.tmbHeight}}px"> 
+                    <div   on-drag="onDrag($event)" on-release="onRelease($event)" style="height:{{product.tmbHeight}}px;width:{{product.tmbWidth}}px;background:url('{{vm.baseApi}}{{product.image}}');background-size:{{product.tmbWidth}}px {{product.tmbHeight}}px"> 
 
                     </div>
                 </div>
@@ -60,7 +60,7 @@
         </div>
         <div class="pull-right right-buttons-group">
             <button class="btn white-button" ui-sref="app.preview">Cancel</button>
-            <button class="btn next-button" ng-click="applyChanges(backgroundPosition.left,
+            <button class="btn next-button" ng-style="brandingStyle.generalButton" ng-click="applyChanges(backgroundPosition.left,
                                 backgroundPosition.top,
                                 backgroundSize.h,
                                 backgroundSize.w,
@@ -75,11 +75,11 @@
 
     <div ng-style="imageStyle"></div>
 
-    <div id="product-box-{{product.type}}" on-drag="onDrag($event)" on-release="onRelease($event)" style="height:{{product.tmbHeight}}px;width:{{product.tmbWidth}}px;background:url('app/products_images/{{product.previewImage}}');background-size:{{product.tmbWidth}}px {{product.tmbHeight}}px; position: absolute;"> 
+    <div id="product-box-{{product.type}}" on-drag="onDrag($event)" on-release="onRelease($event)" style="height:{{product.tmbHeight}}px;width:{{product.tmbWidth}}px;background:url('{{vm.baseApi}}{{product.image}}');background-size:{{product.tmbWidth}}px {{product.tmbHeight}}px; position: absolute;"> 
     </div>
 </div>
 
 <div ng-style="imageStyle" ng-if="!editMode && !catalogMode">
-    <div   on-drag="onDrag($event)" on-release="onRelease($event)" style="height:{{product.tmbHeight}}px;width:{{product.tmbWidth}}px;background:url('app/products_images/{{product.previewImage}}');background-size:{{product.tmbWidth}}px {{product.tmbHeight}}px"> 
+    <div   on-drag="onDrag($event)" on-release="onRelease($event)" style="height:{{product.tmbHeight}}px;width:{{product.tmbWidth}}px;background:url('{{vm.baseApi}}{{product.previewImage}}');background-size:{{product.tmbWidth}}px {{product.tmbHeight}}px"> 
     </div>
 </div>

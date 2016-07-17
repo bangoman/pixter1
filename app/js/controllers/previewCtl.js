@@ -16,6 +16,7 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,
    // console.log($scope.displayDropdown);
    // console.log("product",$rootScope.currentProduct);
     $scope.selectedProduct = $rootScope.currentProduct;
+    console.log("selected product",$scope.selectedProduct)
 
     // selectedProduct : the final product after rotation calculation (AKA the output product).
     // chosenProduct : the product user selected in the options menu, without the rotation or not.
@@ -88,6 +89,7 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,
 
     $scope.$watch("selectedProduct",function(){
         console.log("selectedProduct",$scope.selectedProduct.pid);
+        console.log("selected product",$scope.selectedProduct)
     	$rootScope.currentProduct =  $scope.selectedProduct;
     });
 

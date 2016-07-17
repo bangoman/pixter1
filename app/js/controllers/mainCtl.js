@@ -1,37 +1,70 @@
 angular.module('app').controller('mainCtl', function(message, $uibModal, $state,$rootScope,$http, $stateParams){
 	var vm = this;
     vm.state = $state;
+    $rootScope.baseApi = 'http://ec2-52-201-250-90.compute-1.amazonaws.com:8000';
   vm.getProducts = function () {
-        $http.get('http://ec2-52-201-250-90.compute-1.amazonaws.com:8000/api/v2/category/get_list?user=demo')
+        $http.get($rootScope.baseApi + '/api/v2/category/get_list?user=demo')
             .then(function (res) {
-                console.log(res);
+                console.log("product res",res);
                 //vm.productsData = res.data;
                 //console.log(vm.productsData.objects,"!!");
                 $rootScope.productsData = res.data;
+                $rootScope.currencySymbol = res.data.localization.currency.symbol
             }).then(function () {
-            console.log('vm.products = ', vm.products);
+
+
         });
-        $http.get('app/json/pricing.json')
-            .then(function (res) {
-                $rootScope.prices = res.data;
-            }).then(function () {
-            console.log('vm.products = ', vm.products);
-        });
-        $http.get('app/json/branding_default.json')
-            .then(function (res) {
-                $rootScope.branding = res.data;
-            }).then(function () {
-            console.log($rootScope.branding.marketingData.ossData , "branding");
-        });
-        $http.get('http://ec2-52-201-250-90.compute-1.amazonaws.com:8000/api/v2/category/get_list?user=demo')
-            .then(function (res) {
-              console.log("res",res)
-               // $rootScope.branding = res.data;
-            }).then(function () {
-            
-        });
+    };
+    vm.getBranding = function () {
+    $http.get($rootScope.baseApi + '/api/v2/store/init?user=demo')
+        .then(function (res) {
+            console.log("res",res);
+            //vm.productsData = res.data;
+            //console.log(vm.productsData.objects,"!!");
+            $rootScope.brandingData = res.data;
+            generateBrandingStyle()
+            console.log("branding1111",$rootScope.brandingData);
+        }).then(function () {
+
+
+      });
+
 
     };
+    function generateBrandingStyle(){
+        $rootScope.brandingStyle = {
+          generalButton:{
+            "background-color" : $rootScope.brandingData.branding.buttons.backgroundcolor,
+            "color" : $rootScope.brandingData.branding.buttons.textcolor
+          },
+          header : {
+            "background-color" : $rootScope.brandingData.branding.headers.backgroundcolor,
+            "color" : $rootScope.brandingData.branding.headers.textcolor,
+            button : {
+              "color" : $rootScope.brandingData.branding.headers.linkcolor
+            }
+          },
+          oss : {
+            description : {
+              "background-color" : $rootScope.brandingData.branding.oss_product.description.backgroundcolor
+            },
+            title : {
+              "background-color" : $rootScope.brandingData.branding.oss_product.title.backgroundcolor
+            },
+          },
+          spcialOffer : {
+            "background-color" : $rootScope.brandingData.branding.special_offer.backgroundcolor,
+            "color" : $rootScope.brandingData.branding.special_offer.textcolor
+          },
+          text : {
+            "color" : $rootScope.brandingData.branding.text.textcolor
+          },
+          logo :  $rootScope.brandingData.branding.logo
+          
+        }
+        console.log($rootScope.brandingStyle,"brandingStyle");
+    }
+
     window.$state = $state;
     $rootScope.screenW = document.body.clientWidth;
     $rootScope.disableScroll = false;
@@ -40,6 +73,7 @@ angular.module('app').controller('mainCtl', function(message, $uibModal, $state,
     $rootScope.previewCatalogParams = $stateParams;
     
     vm.getProducts();
+    vm.getBranding();
 
     //$state.go('app.shop');
 	vm.close = function(){

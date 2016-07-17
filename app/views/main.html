@@ -1,6 +1,7 @@
 <div id="pixter-responsive-store">
-    <div class="row store-header" style="margin:0" ng-class="{'hide-on-mobile': vm.state.current.name == 'app.edit'}">
+    <div class="row store-header" ng-style="brandingStyle.header" ng-class="{'hide-on-mobile': vm.state.current.name == 'app.edit'}">
         <div class="col-xs-3">
+            <div ><img ng-src={{brandingStyle.logo}} alt="Logo" style="height:40px;position:absolute"></div>
             <div class="store-header-back-button" ng-if="!vm.stateIsShop()" ng-click="vm.goBack()">
                 <span><</span>
             </div>
@@ -9,10 +10,10 @@
             {{ vm.getViewHeader() }}    
         </div>
         <div class="store-header-buttons-container">
-            <button class="store-header-learn-more-button" ng-click="vm.learnMore()">?</button>
-            <button class="store-header-close-button" ng-click="vm.close()">Close</button>
+            <button class="store-header-learn-more-button" ng-style="brandingStyle.header.button" ng-click="vm.learnMore()">?</button>
+            <button class="store-header-close-button" ng-style="brandingStyle.header.button" ng-click="vm.close()">Close</button>
         </div>
-        <div class="col-xs-12 user-messaging">
+        <div class="col-xs-12 user-messaging" ng-style="brandingStyle.spcialOffer">
             Summer Sale Special - 
             <span class="colorizedSpan">
                 40% OFF

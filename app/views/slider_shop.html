@@ -1,10 +1,10 @@
 <div id="shop-view-responsive" class="row">
-    <div class="col-xs-12"  ng-repeat="product in productsData.categories track by $index"  ng-show="currentIndex == $index">
+    <div class="col-xs-12"  ng-repeat="category in productsData.objects"  ng-show="currentIndex == $index">
         <div style="height:{{bannerHeight}}px" >
-            <product-image-display   class="shop-view-product-image-display" product="product.catalog" image-url="imageUrl"  tmb-width="bannerWidth" catalog-mode="true">
+            <product-image-display   class="shop-view-product-image-display" product="category.images['OSS']" image-url="imageUrl"  tmb-width="bannerWidth" catalog-mode="true">
             </product-image-display>
             <div style="position:absolute;background:rgba(5,5,8,0.4);color:#fff;padding:5px;">
-                <h5>{{product.catalog.h2}} {{product.price}}</h5>
+                <h5>{{category.description}} {{category.pricing.price}} {{currencySymbol}}</h5>
 
             </div>
             <div style="position:absolute; top:{{bannerHeight/2}}px;;font-size:68px;color:#fff;background:rgba(5,5,8,0.4);padding:3px;cursor:pointer" ng-click="changeBanner(-1)" ng-show="currentIndex > 0 "><</div>
