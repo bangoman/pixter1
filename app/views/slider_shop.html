@@ -3,16 +3,17 @@
         <div style="height:{{bannerHeight}}px" >
             <product-image-display   class="shop-view-product-image-display" product="category.images['OSS']" image-url="imageUrl"  tmb-width="bannerWidth" catalog-mode="true">
             </product-image-display>
-            <div style="position:absolute;background:rgba(5,5,8,0.4);color:#fff;padding:5px;">
-                <h5>{{category.description}} {{category.pricing.price}} {{currencySymbol}}</h5>
+            <div ng-style="brandingStyle.oss.description" style="position:absolute;background:rgba(5,5,8,0.4);color:#fff;padding:5px;">
+                <h5>{{category.shortname}} : {{category.pricing.price}} {{currencySymbol}}</h5>
+                <h5>{{category.description}}</h5>
 
             </div>
             <div style="position:absolute; top:{{bannerHeight/2}}px;;font-size:68px;color:#fff;background:rgba(5,5,8,0.4);padding:3px;cursor:pointer" ng-click="changeBanner(-1)" ng-show="currentIndex > 0 "><</div>
 
-            <div style="position:absolute; top:{{bannerHeight/2}}px;right:10px;font-size:68px;color:#fff;background:rgba(5,5,8,0.4);padding:3px;cursor:pointer" ng-click="changeBanner(1)" ng-show="currentIndex < branding.marketingData.ossData.length-1">></div>
+            <div style="position:absolute; top:{{bannerHeight/2}}px;right:10px;font-size:68px;color:#fff;background:rgba(5,5,8,0.4);padding:3px;cursor:pointer" ng-click="changeBanner(1)" ng-show="currentIndex < productsData.objects.length-1">></div>
 
             <img style="width:{{bannerWidth}}px;position:absolute;left:calc(50% - {{bannerWidth}}px/2 );top:{{bannerHeight}}px" src="https://pixter-loader-assets.s3.amazonaws.com/v1_statics/files/images/seasonal/specialOffer.jpg">                    
-            <button class="btn btn-default" ng-click="goToPreview(product)" style="position:absolute;top:{{bannerHeight + bannerHeight/7.2  - 15}}px;right:calc(50% - {{bannerWidth}}px/2  + 20px );">{{ product.catalog.buttonText}}</button>
+            <button class="btn btn-default" ng-style="brandingStyle.generalButton" ng-click="goToPreview(category)" style="position:absolute;top:{{bannerHeight + bannerHeight/7.2  - 15}}px;right:calc(50% - {{bannerWidth}}px/2  + 20px );">Continue</button>
         </div>
     </div>
 </div>

@@ -14,14 +14,7 @@
             <button class="store-header-close-button" ng-style="brandingStyle.header.button" ng-click="vm.close()">Close</button>
         </div>
         <div class="col-xs-12 user-messaging" ng-style="brandingStyle.spcialOffer">
-            Summer Sale Special - 
-            <span class="colorizedSpan">
-                40% OFF
-            </span>
-             on 
-             <span class="colorizedSpan">
-                all products
-            </span>            
+           {{brandingData.campaign.message}}            
         </div>
     </div>
     <div ui-view="main"></div>

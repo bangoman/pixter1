@@ -7,7 +7,7 @@ angular.module('app').controller('cuponModalCtl', function ($uibModalInstance, a
     vm.apply = function () {
         return apiService
             .validateCoupon({
-                product_id: $rootScope.currentProduct.pid,
+                product_id: $rootScope.currentProduct.id,
                 coupon_string: vm.couponString,
                 quantity:1,
             })

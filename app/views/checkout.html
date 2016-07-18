@@ -9,18 +9,18 @@
     </div>
     <div class="col-sm-9 col-xs-12">
         <div class="row checkout-view-header">
-            {{currentProduct.shortName}}
+            {{currentProduct.shortname}}
         </div>
         <div class="row checkout-view-price-row">
             <span class="checkout-price-title">
                 Product Price:
             </span>
             <div class="pull-right">
-                <span class="checkout-price checkout-old-price" ng-show="vm.getDiscountProductPrice() < currentProduct.priceObject.price">
-                    ${{currentProduct.priceObject.price | number : 2}}
+                <span class="checkout-price checkout-old-price" ng-show="vm.getDiscountProductPrice() < currentProduct.quantities[quantity].price">
+                    {{currencySymbol}}{{currentProduct.quantities[quantity].price | number : 2}} 
                 </span>
                 <span class="checkout-price checkout-new-price">
-                    ${{vm.getDiscountProductPrice() | number : 2}}
+                    {{currencySymbol}}{{vm.getDiscountProductPrice() | number : 2}} 
                 </span>
             </div>
         </div>
@@ -31,10 +31,10 @@
                 </span>
                 <div class="pull-right">
                     <span class="checkout-price checkout-old-price" ng-show="vm.getDiscountShippingPrice() < vm.shipmentMethod.price">
-                        {{vm.shipmentMethod.price}}$
+                        {{currencySymbol}}{{vm.shipmentMethod.price}}
                     </span>
                     <span class="checkout-price checkout-new-price">
-                        ${{vm.getDiscountShippingPrice()}}
+                        {{currencySymbol}}{{vm.getDiscountShippingPrice()}} 
                     </span>
                 </div>
             </div>
@@ -54,7 +54,7 @@
             <div class="checkout-shipping-method-info">
                 {{vm.shipmentMethod.text}}
             </div>
-            <label class="radio-inline" ng-repeat="shipmentMethod in currentProduct.priceObject.shipping[order.country]">
+            <label class="radio-inline" ng-repeat="shipmentMethod in currentProduct.quantities[quantity].pricing.shipping">
                 <input type="radio" name="ship-method-radios" ng-model="vm.shipmentMethod" ng-value="shipmentMethod">
                     <span class="checkout-ship-type-radio-text">
                         {{shipmentMethod.name}}
@@ -69,21 +69,21 @@
         </div>
         <div class="row checkout-view-price-row">
             <span class="checkout-price-title" 
-                ng-show="(vm.getDiscountProductPrice() < currentProduct.priceObject.price) || (vm.getDiscountShippingPrice() < vm.shipmentMethod.price)"
+                ng-show="(vm.getDiscountProductPrice() < currentProduct.quantities[quantity].price) || (vm.getDiscountShippingPrice() < vm.shipmentMethod.price)"
                 >
                 You saved:
             </span>
              <span class="checkout-price checkout-saved-price"
-                ng-show="(vm.getDiscountProductPrice() < currentProduct.priceObject.price) || (vm.getDiscountShippingPrice() < vm.shipmentMethod.price)"
+                ng-show="(vm.getDiscountProductPrice() < currentProduct.quantities[quantity].price) || (vm.getDiscountShippingPrice() < vm.shipmentMethod.price)"
              >
-                 <span>{{vm.getSaving() | number : 2}}</span>
+                 <span>{{currencySymbol}}{{vm.getSaving() | number : 2}}</span>
             </span>
             <div class="pull-right">
                 <span class="checkout-price-title bigger-title checkout-total-title">
                     Total:
                 </span>
                  <span class="checkout-price checkout-total-price">
-                    ${{vm.getTotal() | number : 2}}
+                    {{currencySymbol}}{{vm.getTotal() | number : 2}}
                 </span>
             </div>
         </div>

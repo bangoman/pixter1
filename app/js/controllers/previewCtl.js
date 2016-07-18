@@ -23,7 +23,7 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,
 
     for (var i = 0; i < $rootScope.category.products.length; i++) {
         if ($rootScope.category.products[i].rotate) {
-            if ($rootScope.category.products[i].rotate[0] == $rootScope.category.products[i].pid) {
+            if ($rootScope.category.products[i].rotate[0] == $rootScope.category.products[i].id) {
                 $scope.productsToDisplayOriginal.push($rootScope.category.products[i]);
             }   
         }
@@ -34,7 +34,7 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,
 
     for (var i = 0; i < $rootScope.category.products.length; i++) {
         if ($rootScope.category.products[i].rotate) {
-            if ($rootScope.category.products[i].rotate[1] == $rootScope.category.products[i].pid) {
+            if ($rootScope.category.products[i].rotate[1] == $rootScope.category.products[i].id) {
                 $scope.productsToDisplayRotated.push($rootScope.category.products[i]);
             }   
         }
@@ -64,7 +64,7 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,
 
         }
         for (var i = 0; i < $rootScope.category.products.length; i++) {
-            if ($rootScope.category.products[i].pid == pidToSearch) {                
+            if ($rootScope.category.products[i].id == pidToSearch) {                
                 $scope.selectedProduct = $rootScope.category.products[i];
             }
         }
