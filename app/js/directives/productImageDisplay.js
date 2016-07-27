@@ -42,9 +42,9 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 
             function catalogRotaition (){
         	    var productBox = document.getElementById("product-box-" + $scope.product.type)
-            	$scope.imageStyle["-ms-transform"] = "rotate(" + -$scope.product.rotation + "deg)", /* IE 9 */
-			    $scope.imageStyle["-webkit-transform"]="rotate(" + -$scope.product.rotation + "deg)", /* Chrome, Safari, Opera */
-			    $scope.imageStyle["transform"]= "rotate(" + -$scope.product.rotation + "deg)",
+            	$scope.imageStyle["-ms-transform"] = "rotate(" + $scope.product.rotation + "deg)", /* IE 9 */
+			    $scope.imageStyle["-webkit-transform"]="rotate(" + $scope.product.rotation + "deg)", /* Chrome, Safari, Opera */
+			    $scope.imageStyle["transform"]= "rotate(" + $scope.product.rotation + "deg)",
 			    $scope.imageStyle["position"]="absolute",
 			    $scope.imageStyle["height"] = $scope.product.tmbHeight  + "px"
 
