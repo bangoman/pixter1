@@ -2,25 +2,43 @@ angular.module('app').controller('mainCtl', function(message, $uibModal, $state,
 	var vm = this;
     vm.state = $state;
     $rootScope.baseApi = 'http://ec2-52-201-250-90.compute-1.amazonaws.com:8000';
-  vm.getProducts = function () {
-        $http.get($rootScope.baseApi + '/api/v2/category/get_list?user=demo')
+    $rootScope.imageUrl = "image.jpg";
+    $rootScope.apiKey = "d0d01fe4ebaca56ab78cab9e9c5476e569276784";
+    $rootScope.storeId = "87CD192192A547"
+
+    vm.getProducts = function (w,h) {
+        $http.get($rootScope.baseApi + '/api/v2/category/get_list?api_key=' + $rootScope.apiKey + '&store_id=' + $rootScope.storeId + '&add_products=true&img_w=' + w + '&img_h=' + h)
             .then(function (res) {
                 console.log("product res",res);
-                //vm.productsData = res.data;
-                //console.log(vm.productsData.objects,"!!");
                 $rootScope.productsData = res.data;
+                if(res.data.display.type == "OSS"){
+                  $state.go('app.sliderShop');
+                }
+                else{
+                  $state.go('app.shop');
+                }
                 $rootScope.currencySymbol = res.data.localization.currency.symbol
             }).then(function () {
 
 
         });
     };
+    function getImgSize() {
+        var newImg = new Image();
+        newImg.onload = function () {
+            var height = newImg.height;
+            var width = newImg.width;
+            vm.getProducts(width,height);
+        }
+        newImg.src = $rootScope.imageUrl;
+          // this must be done AFTER setting onload
+
+    }
+
+
     vm.getBranding = function () {
-    $http.get($rootScope.baseApi + '/api/v2/store/init?user=demo')
+    $http.get($rootScope.baseApi + '/api/v2/store/init?api_key=' + $rootScope.apiKey + '&store_id=' + $rootScope.storeId )
         .then(function (res) {
-            console.log("res",res);
-            //vm.productsData = res.data;
-            //console.log(vm.productsData.objects,"!!");
             $rootScope.brandingData = res.data;
             generateBrandingStyle()
             console.log("branding1111",$rootScope.brandingData);
@@ -62,7 +80,6 @@ angular.module('app').controller('mainCtl', function(message, $uibModal, $state,
           logo :  $rootScope.brandingData.branding.logo
           
         }
-        console.log($rootScope.brandingStyle,"brandingStyle");
     }
 
     window.$state = $state;
@@ -72,7 +89,7 @@ angular.module('app').controller('mainCtl', function(message, $uibModal, $state,
 
     $rootScope.previewCatalogParams = $stateParams;
     
-    vm.getProducts();
+    getImgSize();
     vm.getBranding();
 
     //$state.go('app.shop');

@@ -27,7 +27,7 @@
         <div class="row checkout-view-price-row">
             <div>
                 <span class="checkout-price-title bigger-title">
-                    {{vm.shipmentMethod.name}}
+                   shipping method:
                 </span>
                 <div class="pull-right">
                     <span class="checkout-price checkout-old-price" ng-show="vm.getDiscountShippingPrice() < vm.shipmentMethod.price">
@@ -54,10 +54,10 @@
             <div class="checkout-shipping-method-info">
                 {{vm.shipmentMethod.text}}
             </div>
-            <label class="radio-inline" ng-repeat="shipmentMethod in currentProduct.quantities[quantity].pricing.shipping">
+            <label class="radio-inline" ng-repeat="shipmentMethod in vm.shipmentMethods">
                 <input type="radio" name="ship-method-radios" ng-model="vm.shipmentMethod" ng-value="shipmentMethod">
                     <span class="checkout-ship-type-radio-text">
-                        {{shipmentMethod.name}}
+                        {{shipmentMethod.type}}
                     </span> 
             </label>
             <!--<label class="radio-inline express-shipping-checkbox-lable">-->

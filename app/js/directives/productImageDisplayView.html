@@ -60,7 +60,7 @@
         </div>
         <div class="pull-right right-buttons-group">
             <button class="btn white-button" ui-sref="app.preview">Cancel</button>
-            <button class="btn next-button" ng-style="brandingStyle.generalButton" ng-click="applyChanges(backgroundPosition.left,
+            <button class="btn next-button" ng-style="brandingStyle.generalButton" ng-click="applyChanges       (backgroundPosition.left,
                                 backgroundPosition.top,
                                 backgroundSize.h,
                                 backgroundSize.w,
@@ -80,6 +80,6 @@
 </div>
 
 <div ng-style="imageStyle" ng-if="!editMode && !catalogMode">
-    <div   on-drag="onDrag($event)" on-release="onRelease($event)" style="height:{{product.tmbHeight}}px;width:{{product.tmbWidth}}px;background:url('{{vm.baseApi}}{{product.previewImage}}');background-size:{{product.tmbWidth}}px {{product.tmbHeight}}px"> 
+    <div   on-drag="onDrag($event)" on-release="onRelease($event)" style="height:{{product.tmbHeight}}px;width:{{product.tmbWidth}}px;background:url('{{vm.baseApi}}{{product.image}}');background-size:{{product.tmbWidth}}px {{product.tmbHeight}}px"> 
     </div>
 </div>

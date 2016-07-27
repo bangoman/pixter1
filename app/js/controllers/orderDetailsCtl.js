@@ -1,4 +1,4 @@
-angular.module('app').controller('orderDetailsCtl',function($state,$rootScope,apiService,$scope){
+angular.module('app').controller('orderDetailsCtl',function($state,$rootScope,apiService,$scope,$http){
     var vm = this;
 	$rootScope.disableScroll = false;
 	$scope.tmbWidth = $rootScope.screenW*0.35;
@@ -6,6 +6,19 @@ angular.module('app').controller('orderDetailsCtl',function($state,$rootScope,ap
 		$scope.tmbWidth = 180
 
 	}
+    $scope.countryApi = 'http://ec2-52-201-250-90.compute-1.amazonaws.com:8000/api/v2/country/?user=demo';
+    
+    function getCountry () {
+        $http.get($scope.countryApi)
+            .then(function (res) {
+             console.log("country",res);
+             $rootScope.countries = res.data.objects;
+             console.log("$rootScope.country",$rootScope.countries);
+            }); 
+    }  
+    getCountry();
+
+    
     apiService.upload($rootScope.finalCroppedImageData).then(function (data) {
         $rootScope.order.key = data.key;
     });

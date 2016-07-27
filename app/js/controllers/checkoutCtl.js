@@ -7,7 +7,15 @@ angular.module('app').controller('checkoutCtl', function ($uibModal, $rootScope,
 
     }
 console.log($rootScope.currentProduct.quantities,"currentProduct");
-    vm.shipmentMethod = $rootScope.currentProduct.quantities[$rootScope.quantity].pricing.shipping[0];
+   
+    vm.shipmentMethods = [];
+    angular.forEach($rootScope.currentProduct.quantities[$rootScope.quantity].pricing.shipping, function(value, key) {
+        if(value.region_id == $rootScope.order.country.region.id){
+            vm.shipmentMethods.push(value)
+        }
+      
+    });
+    vm.shipmentMethod = vm.shipmentMethods[0];
     
     vm.openCuponModal = function () {
         $uibModal.open({

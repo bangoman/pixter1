@@ -95,13 +95,12 @@
                         </div>
 
                     </div>
-                    <div class="form-group">
-                        <select class="order-details-input country-select" id="p_UserLocale" name="country" ng-model="order.country">
-                            <option value="US" selected> United State</option>
-                            <option value="#"> other </option>
-                            <option value="#"> more other </option>
+                    <div class="form-group" ng-show="countries.length > 1">    
+                        <select class="order-details-input country-select" ng-model="order.country" 
+                                ng-options="country.name for country in countries" >
                         </select>
                     </div>
+                  
                 </div>
             </div>
             <div class="col-sm-8 col-xs-12 checkbox">

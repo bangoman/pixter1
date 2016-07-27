@@ -30,7 +30,9 @@ angular.module('app').directive('productImageDisplay', function ($http) {
             $scope.finalWindowSize = {};
             $scope.$watch('product', function () {
                 getProductImgSize($rootScope.baseApi + $scope.product.image);
-    
+//    console.log("baseApi",$rootScope.baseApi);
+//    console.log("Api",$rootScope.baseApi + $scope.product.image);
+//    console.log("productsData",$rootScope.productsData);
             });
             $scope.$watch('finalStep', function () {
                 if ($scope.finalStep) {
@@ -336,7 +338,6 @@ angular.module('app').directive('productImageDisplay', function ($http) {
                     $scope.product.height = newImg.height;
 
                     getImgSize($rootScope.imageUrl);
-
                 }
 
                 newImg.src =imgSrc;            

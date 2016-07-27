@@ -2,7 +2,7 @@
 
     <div class="col-sm-6 col-xs-12 preview-product-image">
         <div class="preview-product-border">
-            <product-image-display  product="category.images['Preview']"  image-url="imageUrl" tmb-width="tmbWidth"  final-step="finalStep" >
+            <product-image-display  product="currentProduct.images['Preview']"  image-url="imageUrl" tmb-width="tmbWidth"  final-step="finalStep" >
             </product-image-display>
             <div class="row preview-edit-row">
                 <div class="preview-edit-btn" ng-style="brandingStyle.generalButton" ng-click="vm.goToEdit()">
@@ -26,7 +26,7 @@
             <button class="btn btn-rotate"  style="margin-top:1px;margin-left:3px;" ng-show="selectedProduct.rotate" ng-click="vm.rotateProduct()"><i class="glyphicon glyphicon-repeat"></i></button>
             <!-- ng-show="selectedProduct.pid == selectedProduct.rotate[0]" -->
             <span class="preview-price">
-                 {{currentProduct.quantities[0].price}}{{localization.currency.symbol}}
+                 {{currentProduct.quantities[0].price}}{{currencySymbol}}
             </span>
         </div>
         <ul class="preview-bullet-list">
