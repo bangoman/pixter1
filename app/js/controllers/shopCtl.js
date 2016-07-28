@@ -14,7 +14,6 @@ angular.module('app').controller('shopCtl', function ($state, $http, $rootScope,
     vm.goToPreview = function (category) {
         if(category.subcategories){
             $scope.categories = category.subcategories.objects;
-            console.log("subcategories1",$rootScope.productsData.objects.subcategories);
         }
         else
         {

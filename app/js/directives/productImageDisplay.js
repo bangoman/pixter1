@@ -31,6 +31,8 @@ angular.module('app').directive('productImageDisplay', function ($http) {
             $scope.branding = $rootScope.brandingStyle;
 
             });
+            console.log("$scope.product", $scope.product);
+             console.log("$rootScope.category", $rootScope.category);
             $scope.$watch('finalStep', function () {
                 if ($scope.finalStep) {
                     $scope.backToReality($scope.backgroundPosition, $scope.product.window, $scope.sizeRatio, $scope.imageSizeRatio)

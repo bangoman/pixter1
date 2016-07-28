@@ -45,7 +45,14 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,
 }
 
     $scope.chosenProduct = $scope.productsToDisplay[0];
-
+    $scope.findRotatedProduct = function (productId){
+        for (var i = $rootScope.category.products.length - 1; i >= 0; i--) {
+            if ($rootScope.category.products[i].id == productId){
+                 $scope.chosenProduct = $rootScope.category.products[i];
+                return;
+            };
+        };
+    };
     vm.rotateProduct = function(){
         var index = $scope.productsToDisplay.indexOf($scope.chosenProduct);
         if ($scope.selectedProduct.rotate[0] == $scope.selectedProduct.pid){
