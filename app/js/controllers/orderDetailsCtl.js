@@ -11,9 +11,7 @@ angular.module('app').controller('orderDetailsCtl',function($state,$rootScope,ap
     function getCountry () {
         $http.get($scope.countryApi)
             .then(function (res) {
-             console.log("country",res);
              $rootScope.countries = res.data.objects;
-             console.log("$rootScope.country",$rootScope.countries);
             }); 
     }  
     getCountry();

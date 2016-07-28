@@ -1,4 +1,4 @@
-angular.module('app').controller('mainCtl', function(message, $uibModal, $state,$rootScope,$http, $stateParams){
+angular.module('app').controller('mainCtl', function(message, $uibModal, $state,$rootScope,$http, $stateParams,$scope){
 	var vm = this;
     vm.state = $state;
     $rootScope.baseApi = 'http://ec2-52-201-250-90.compute-1.amazonaws.com:8000';
@@ -7,11 +7,15 @@ angular.module('app').controller('mainCtl', function(message, $uibModal, $state,
     $rootScope.storeId = "87CD192192A547"
    $state.go('app.shop')
     vm.getProducts = function (w,h) {
+        $scope.louding = true;
+        console.log("$scope.louding",$scope.louding);
         $http.get($rootScope.baseApi + '/api/v2/category/get_list?api_key=' + $rootScope.apiKey + '&store_id=' + $rootScope.storeId + '&add_products=true&img_w=' + w + '&img_h=' + h)
             .then(function (res) {
                 console.log("product res",res);
                 $rootScope.productsData = res.data;
+                $scope.louding = false;
                 $rootScope.$broadcast("productArrive");
+                console.log("$scope.louding",$scope.louding);
                 if(res.data.display.type == "OSS"){
                   $state.go('app.sliderShop');
                 }
