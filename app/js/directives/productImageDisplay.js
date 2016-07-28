@@ -19,20 +19,17 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 
             var vm = this;
             vm.baseApi = $rootScope.baseApi;
+
             var lastHeight, lastWidth, canvas, ctx;
-          //  console.log($scope.tmbWidth);
-//			setInterval(function(){				
-//				$scope.triggerPinchZoom($ionicScrollDelegate.getScrollPosition().zoom)
-//			},100)
+
             $scope.editMode = $attrs.editmode;
             $scope.finalImagePosition = {};
             $scope.finalWindowPosition = {};
             $scope.finalWindowSize = {};
             $scope.$watch('product', function () {
                 getProductImgSize($rootScope.baseApi + $scope.product.image);
-//    console.log("baseApi",$rootScope.baseApi);
-//    console.log("Api",$rootScope.baseApi + $scope.product.image);
-//    console.log("productsData",$rootScope.productsData);
+            $scope.branding = $rootScope.brandingStyle;
+
             });
             $scope.$watch('finalStep', function () {
                 if ($scope.finalStep) {

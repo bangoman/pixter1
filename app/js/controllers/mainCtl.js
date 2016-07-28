@@ -5,12 +5,13 @@ angular.module('app').controller('mainCtl', function(message, $uibModal, $state,
     $rootScope.imageUrl = "image.jpg";
     $rootScope.apiKey = "d0d01fe4ebaca56ab78cab9e9c5476e569276784";
     $rootScope.storeId = "87CD192192A547"
-
+   $state.go('app.shop')
     vm.getProducts = function (w,h) {
         $http.get($rootScope.baseApi + '/api/v2/category/get_list?api_key=' + $rootScope.apiKey + '&store_id=' + $rootScope.storeId + '&add_products=true&img_w=' + w + '&img_h=' + h)
             .then(function (res) {
                 console.log("product res",res);
                 $rootScope.productsData = res.data;
+                $rootScope.$broadcast("productArrive");
                 if(res.data.display.type == "OSS"){
                   $state.go('app.sliderShop');
                 }
