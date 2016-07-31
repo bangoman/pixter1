@@ -49,7 +49,7 @@
             iframe.style.top = '10vh';
             iframe.style.width = iframeW + "px";
 
-            iframe.style.height = '80vh';
+            iframe.style.height = '550px';
             iframe.style.maxWidth = "800px";
         }
         document.body.appendChild(iframe);
