@@ -30,9 +30,12 @@
             </span>
         </div>
         <div class="preview-details-header">
+            <h5>
+                Back Side Color:
+            </h5>
         <product-params params="currentProduct.params"></product-params>
-           <h5>{{chosenProduct.name}}</h5>
         </div>
+        <h5>{{chosenProduct.name}}</h5>
         <ul class="preview-bullet-list">
             <li ng-repeat="bullet in currentProduct.information"><span>{{bullet}}</span></li>
         </ul>

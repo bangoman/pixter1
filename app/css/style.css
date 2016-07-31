@@ -780,10 +780,11 @@ select[type="number"]:active {
 
 /* invitation-background-choose-button */
 .invitation-background-choose-button {
-  transition: border 200ms ease-out;
-  border: solid 2px transparent;
-  border-radius: 2px;
   padding: 4px;
+  border-radius: 2px;
+  background-color: #f9f9f9;
+  border: solid 2px transparent;
+  transition: border 200ms ease-out;
 }
 .invitation-background-choose-button:hover {
   border: solid 2px #a288bf; 
