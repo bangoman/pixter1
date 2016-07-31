@@ -79,6 +79,7 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,
 
     vm.goToOrderDetails = function() {
     	$scope.finalStep = true;
+        $rootScope.currentProduct = $scope.chosenProduct;
         var unbind = $scope.$watch(function () {
            return $rootScope.finalCroppedImageData; 
         },function () {
