@@ -1,0 +1,11 @@
+<div ng-if="params">
+   <div ng-repeat="param in params">
+   		<div ng-if="param.key == 'background'">
+   			<ul>
+   				<li ng-repeat="option in param.options track by $index" style= "background:{{option.rgb}}" ng-click="setBackground(option)">
+   					{{param.key}}
+   				</li>
+   			</ul>
+   		</div>
+   </div>
+</div>
