@@ -31,10 +31,10 @@
             document.body.appendChild(overlay);
             var screenW = document.body.clientWidth;
             var iframeW = (screenW / 100) * 64;
-            if (iframeW > 800) {
-                iframeW = 800;
+            if (iframeW > 615) {
+                iframeW = 615;
             }
-            if (screenW < 800) {
+            if (screenW < 615) {
                 iframeW = screenW;
 
             }
