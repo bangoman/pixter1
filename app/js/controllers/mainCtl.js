@@ -1,11 +1,26 @@
-angular.module('app').controller('mainCtl', function(message, $uibModal, $state,$rootScope,$http, $stateParams,$scope){
+angular.module('app').controller('mainCtl', function(message, $uibModal, $state,$rootScope,$http, $stateParams,$scope,$location){
 	var vm = this;
-    vm.state = $state;
+    vm.state = $state;    
     $rootScope.baseApi = 'http://ec2-52-201-250-90.compute-1.amazonaws.com:8000';
-    $rootScope.imageUrl = "image.jpg";
-    $rootScope.apiKey = "d0d01fe4ebaca56ab78cab9e9c5476e569276784";
-    $rootScope.storeId = "87CD192192A547"
-   $state.go('app.shop')
+    function getParameterByName(name, url) {
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+    }    
+    setTimeout(function(){
+      $rootScope.imageUrl = getParameterByName("imageUrl",location.search);//"image.jpg";
+      $rootScope.apiKey = getParameterByName("apiKey",location.search);//"d0d01fe4ebaca56ab78cab9e9c5476e569276784";
+      $rootScope.storeId = getParameterByName("storeId",location.search); //"87CD192192A547"
+      vm.getBranding();
+      getImgSize()
+      $state.go('app.shop')
+
+    }, 1500);    
+    
     vm.getProducts = function (w,h) {
         $scope.loading = true;
         $http.get($rootScope.baseApi + '/api/v2/category/get_list?api_key=' + $rootScope.apiKey + '&store_id=' + $rootScope.storeId + '&add_products=true&img_w=' + w + '&img_h=' + h)
@@ -40,15 +55,15 @@ angular.module('app').controller('mainCtl', function(message, $uibModal, $state,
 
 
     vm.getBranding = function () {
-    $http.get($rootScope.baseApi + '/api/v2/store/init?api_key=' + $rootScope.apiKey + '&store_id=' + $rootScope.storeId )
-        .then(function (res) {
-            $rootScope.brandingData = res.data;
-            generateBrandingStyle()
-            console.log("branding1111",$rootScope.brandingData);
-        }).then(function () {
+      $http.get($rootScope.baseApi + '/api/v2/store/init?api_key=' + $rootScope.apiKey + '&store_id=' + $rootScope.storeId )
+          .then(function (res) {
+              $rootScope.brandingData = res.data;
+              generateBrandingStyle()
+              console.log("branding1111",$rootScope.brandingData);
+          }).then(function () {
 
 
-      });
+        });
 
 
     };
@@ -88,12 +103,12 @@ angular.module('app').controller('mainCtl', function(message, $uibModal, $state,
     window.$state = $state;
     $rootScope.screenW = document.body.clientWidth;
     $rootScope.disableScroll = false;
-    $rootScope.imageUrl = "image.jpg";
+    //$rootScope.imageUrl = "image.jpg";
 
     $rootScope.previewCatalogParams = $stateParams;
     
-    getImgSize();
-    vm.getBranding();
+    
+    
 
     //$state.go('app.shop');
 	vm.close = function(){

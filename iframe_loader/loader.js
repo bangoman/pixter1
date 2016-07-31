@@ -18,7 +18,7 @@
         }
     }, false);
 
-    function loadIframe(url) {
+    function loadIframe(imgUrl,apiKey,storeId) {
         if (!iframe) {
             overlay = document.createElement('div');
             overlay.style.width = "100vw";
@@ -41,7 +41,7 @@
             console.log(iframeW, screenW);
             var offsetLeft = (screenW - iframeW) / 2;
             iframe = document.createElement('iframe');
-            iframe.src = '../#/app/shop';  //  add this:  #/app/sliderShop  to see the slideShop
+            iframe.src = 'http://localhost/pixter1/index.html?imageUrl=' + imgUrl + '&apiKey=' + apiKey +'&storeId=' + storeId;  //  add this:  #/app/sliderShop  to see the slideShop
             iframe.style.position = 'fixed';
             iframe.style.left = offsetLeft + "px";
             iframe.style.top = '10vh';
@@ -51,7 +51,7 @@
             iframe.style.maxWidth = "800px";
         }
         document.body.appendChild(iframe);
-        changeImage(url);
+     //   changeImage(url);
     }
 
     function changeImage(url) {
