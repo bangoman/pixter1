@@ -1,16 +1,24 @@
+
 <div ng-if="params">
    <div ng-repeat="param in params">
    		<div ng-if="param.key == 'background'">
-   			<ul style="list-style:none; display:flex;">
-   				<li ng-repeat="option in param.options track by $index" 
-                    ng-click="setBackground(option)"
-                    class="invitation-background-choose-button"
-                    ng-class="{'active': currentProduct.backSideColor.rgb ==  option.rgb}">
-                    <div class="invitation-background-choose-inner"
-                         style="background:{{option.rgb}}">       					    
-                    </div>
-   				</li>
-   			</ul>
+        <div class="preview-details-header">
+            <h5>
+                Back Side Color:
+            </h5>
+            <ul style="list-style:none; display:flex;">
+              <li ng-repeat="option in param.options track by $index" 
+                        ng-click="setBackground(option)"
+                        class="invitation-background-choose-button"
+                        ng-class="{'active': currentProduct.backSideColor.rgb ==  option.rgb}">
+                        <div class="invitation-background-choose-inner"
+                             style="background:{{option.rgb}}">                     
+                        </div>
+              </li>
+            </ul>
+
+        </div>
+
    		</div>
    </div>
 </div>
