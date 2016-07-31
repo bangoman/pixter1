@@ -10,11 +10,22 @@ console.log($rootScope.currentProduct.quantities,"currentProduct");
    
     vm.shipmentMethods = [];
     angular.forEach($rootScope.currentProduct.quantities[$rootScope.quantity].pricing.shipping, function(value, key) {
-        if(value.region_id == $rootScope.order.country.region.id){
-            vm.shipmentMethods.push(value)
+        $scope.restOfWorld = true;
+
+        if($rootScope.currentProduct.quantities[$rootScope.quantity].pricing.shipping[key].region_id == 7){
+            $scope.key = key;
+
         }
-      
+        if(value.region_id == $rootScope.order.country.region.id){
+            vm.shipmentMethods.push(value);
+            $scope.restOfWorld = false;
+        }
     });
+
+    if($scope.restOfWorld){
+        vm.shipmentMethods.push($rootScope.currentProduct.quantities[$rootScope.quantity].pricing.shipping[$scope.key]);
+    }
+
     vm.shipmentMethod = vm.shipmentMethods[0];
     
     vm.openCuponModal = function () {
@@ -40,7 +51,7 @@ console.log($rootScope.currentProduct.quantities,"currentProduct");
     vm.getSaving = function () {
         return parseFloat(vm.shipmentMethod.price) + parseFloat($rootScope.currentProduct.quantities[$rootScope.quantity].price) - vm.getTotal();
     };
- 
+ console.log($rootScope.currentProduct.quantities[$rootScope.quantity].price,vm.shipmentMethod.id,"id");
     vm.checkout = function (paymentType) {
         var win = window.open('', "", "width=500, height=500");
         win.document.body.innerHTML = 'Processing...';
