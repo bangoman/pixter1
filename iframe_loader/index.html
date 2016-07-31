@@ -2,5 +2,26 @@
 <head>
 	<script src="loader.js"></script>
 </head>
-<body onload="pixter.loadIframe('app/images/image1.jpg');"></body>
+<script>
+var backgrounds = {"background": [
+                                    {
+                                        "price": 0,
+                                        "name": "custom",
+                                        "rgb": "#D93D47"
+                                    },
+                                    {
+                                        "price": 0,
+                                        "name": "custom2",
+                                        "rgb": "#DEDEDE"
+                                    },
+                                    {
+                                        "price": 0,
+                                        "name": "white",
+                                        "rgb": "#fff"
+                                    }
+                                ]};
+</script>
+
+<body onload="pixter.loadIframe('image.jpg','d0d01fe4ebaca56ab78cab9e9c5476e569276784','87CD192192A547',backgrounds); "></body>
 </html>
+
