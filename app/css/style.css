@@ -777,6 +777,25 @@ select[type="number"]:active {
   margin: auto;
 }
 
+
+/* invitation-background-choose-button */
+.invitation-background-choose-button {
+  transition: border 200ms ease-out;
+  padding: 4px;
+}
+.invitation-background-choose-button:hover {
+  border: solid 2px #a288bf; 
+}
+
+.invitation-background-choose-button.active {
+  border: solid 2px red;
+}
+
+.invitation-background-choose-inner {
+  width: 28px;
+  height: 36px;
+}
+
 /*================
     @media style
   ================*/
