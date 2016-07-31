@@ -30,6 +30,7 @@
             overlay.style.background = "rgba(0,0,0,0.4)";
             document.body.appendChild(overlay);
             var screenW = document.body.clientWidth;
+            var screenH = document.body.clientHeight
             var iframeW = (screenW / 100) * 64;
             if (iframeW > 800) {
                 iframeW = 800;
@@ -46,10 +47,11 @@
             iframe.src = 'http://localhost/pixter1/index.html?imageUrl=' + imgUrl + '&apiKey=' + apiKey +'&storeId=' + storeId + '&bgs=' + backgroundsString ;  //  add this:  #/app/sliderShop  to see the slideShop
             iframe.style.position = 'fixed';
             iframe.style.left = offsetLeft + "px";
-            iframe.style.top = '10vh';
+
+            iframe.style.top = (screenH - 675) /2;
             iframe.style.width = iframeW + "px";
 
-            iframe.style.height = '660px';
+            iframe.style.height = '675px';
             iframe.style.maxWidth = "800px";
         }
         document.body.appendChild(iframe);
