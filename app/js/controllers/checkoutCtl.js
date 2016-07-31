@@ -40,7 +40,7 @@ console.log($rootScope.currentProduct.quantities,"currentProduct");
     vm.getSaving = function () {
         return parseFloat(vm.shipmentMethod.price) + parseFloat($rootScope.currentProduct.quantities[$rootScope.quantity].price) - vm.getTotal();
     };
- console.log($rootScope.currentProduct.quantities[$rootScope.quantity].price,vm.shipmentMethod.id,"id");
+ 
     vm.checkout = function (paymentType) {
         var win = window.open('', "", "width=500, height=500");
         win.document.body.innerHTML = 'Processing...';
