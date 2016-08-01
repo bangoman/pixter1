@@ -30,12 +30,15 @@
             </span>
         </div>
 
-        <product-params params="currentProduct.params"></product-params>
-
-        <h5>{{chosenProduct.name}}</h5>
-        <ul class="preview-bullet-list">
-            <li ng-repeat="bullet in currentProduct.information"><span>{{bullet}}</span></li>
-        </ul>
+        <div class="row">
+            <product-params params="currentProduct.params"></product-params>
+        </div>
+        <div class="row">
+            <h5>{{chosenProduct.name}}</h5>
+            <ul class="preview-bullet-list">
+                <li ng-repeat="bullet in currentProduct.information"><span>{{bullet}}</span></li>
+            </ul>
+        </div>
 
         <!-- <div class="row form-group" ng-show="category.products.length > 1">       
             <select class="form-control" ng-model="selectedProduct" ng-options="product.shortName for product in category.products">
