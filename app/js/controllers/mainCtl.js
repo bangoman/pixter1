@@ -1,4 +1,4 @@
-angular.module('app').controller('mainCtl', function(message, $uibModal, $state,$rootScope,$http, $stateParams,$scope,$location){
+angular.module('app').controller('mainCtl', function(message, $uibModal, $state,$rootScope,$http, $stateParams,$scope,$location,$window){
 	var vm = this;
     vm.state = $state;    
     $scope.loading = true;
@@ -140,7 +140,10 @@ angular.module('app').controller('mainCtl', function(message, $uibModal, $state,
   		return $state.current.title;
   	}
 
+
   	vm.goBack = function(){
+      $window.history.back();
+      /*
   		if ($state.current.name == 'app.preview') {
         if ($rootScope.previewCatalogParams.previewCatalog && $rootScope.category.products.length != 1) {
             $state.go('app.previewCatalog');          
@@ -161,6 +164,7 @@ angular.module('app').controller('mainCtl', function(message, $uibModal, $state,
   		if ($state.current.name == 'app.checkout') {
   			$state.go('app.orderDetails');
   		}
+      */
   	}
 
 });

@@ -73,7 +73,7 @@ angular.module('app').config(function($stateProvider,$urlRouterProvider){
             views:{
                 main:{
                     templateUrl:'app/views/slider_shop.html',                    
-                    controller:'sliderShopCtl as vm'
+                    controller:'shopCtl as vm'
                 }
             },
         })
