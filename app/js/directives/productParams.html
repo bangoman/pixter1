@@ -17,16 +17,27 @@
                         </div>
               </li>
             </ul>
-
         </div>
-        <div class="preview-details-header">
+        </div>
+        <div   ng-if="param.type == 'singleradio'&&param.key !== 'background'">
           <h5>
-          	Paper type:
+          	{{param.title}}
           </h5>
-		  <input type="radio" ng-model="paperType" value="matte" checked>Matte
-		  <input type="radio" ng-model="paperType" value="gloss">Gloss
-        </div>
-
+          <div ng-repeat="option in param.options track by $index">
+			  <input  type="radio" ng-model="paperType" value="option.key">{{option.name}}
+          </div>
+        
    		</div>
+        <div   ng-if="param.type == 'singledropdown'&&param.key !== 'background'">
+          <h5>
+          	{{param.title}}
+          </h5>
+          <div>
+            <select class="form-control preview-product-select" ng-model="chosenQuantity" 
+                    ng-options="option.name for option in param.options">
+            </select>
+          </div>
+	        
+   		</div>   		
    </div>
 </div>

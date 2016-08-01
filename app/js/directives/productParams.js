@@ -24,6 +24,12 @@ angular.module('app').directive('productParams', function () {
 				$rootScope.choosenParams.backSideColor = option;
 				
 			}
+			function setParamsArrey(){
+				$rootScope.choosenParams.paperType = $scope.paperType;
+				$rootScope.choosenParams.quantity = $scope.chosenQuantity.option;
+
+			}
+			console.log("$rootScope.choosenParams",$rootScope.choosenParams);
 		},
 		templateUrl:'app/js/directives/productParams.html'	
 	};
