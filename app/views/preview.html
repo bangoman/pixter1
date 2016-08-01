@@ -2,14 +2,21 @@
 
     <div class="col-sm-6 col-xs-12 preview-product-image">
         <div class="preview-product-border">
-            <product-image-display  product="currentProduct.images['Preview']"  image-url="imageUrl" tmb-width="tmbWidth"  final-step="finalStep" >
+            <product-image-display back-side-flag="bsf"  product="currentProduct.images['Preview']"  image-url="imageUrl" tmb-width="tmbWidth"  final-step="finalStep" >
             </product-image-display>
-            <div class="row preview-edit-row">
+            <div ng-if="!currentProduct.params" class="row preview-edit-row">
                 <div class="preview-edit-btn" ng-style="brandingStyle.generalButton" ng-click="vm.goToEdit()">
                     <i class="glyphicon glyphicon-scissors"></i>
                     <span>Edit</span>
                 </div>
             </div>
+            <div ng-if="currentProduct.params" class="row preview-edit-row">
+                <div class="preview-edit-btn" ng-style="brandingStyle.generalButton" ng-click="changeBackSideFlag()">
+                    <i class="glyphicon glyphicon-scissors"></i>
+                    <span>Back side</span>
+                </div>
+            </div>            
+
         </div>
     </div>
     <div class="col-sm-6 col-xs-12 preview-product-details">
@@ -31,7 +38,6 @@
         </div>
 
         <div class="col-xs-12">        
-
             <product-params params="currentProduct.params"></product-params>
         </div>
         <div class="col-xs-12">

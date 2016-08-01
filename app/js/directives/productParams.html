@@ -36,8 +36,9 @@
           	{{param.title}}
           </h5>
           <div>
-            <select class="form-control preview-product-select" ng-model="option.default" ng-change="setParamsArrey(option.name)" 
+            <select class="form-control preview-product-select" ng-model="param.chosenOption" ng-change="setParamsArrey(option.name)" 
                     ng-options="option.name for option in param.options">
+                    <option value=''>{{param.chosenOption}}</option>
             </select>
           </div>
 	        

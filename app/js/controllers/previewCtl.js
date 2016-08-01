@@ -2,6 +2,7 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,
     var vm = this;
     $rootScope.disableScroll = false;
     $scope.finalStep = false;
+    $scope.bsf = false;
    // console.log($rootScope.category.products);
     $scope.tmbWidth  = $rootScope.screenW * 0.67; 
     $scope.productsToDisplay = [];
@@ -45,6 +46,9 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,
 }
 
     $scope.chosenProduct = $scope.productsToDisplay[0];
+    $scope.changeBackSideFlag = function(){
+        $scope.bsf = !$scope.bsf;
+    }
     $scope.findRotatedProduct = function (productId){
         for (var i = $rootScope.category.products.length - 1; i >= 0; i--) {
             if ($rootScope.category.products[i].id == productId){

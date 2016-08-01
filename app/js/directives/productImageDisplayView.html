@@ -79,8 +79,15 @@
     <div id="product-box-{{product.type}}" on-drag="onDrag($event)" on-release="onRelease($event)" style="height:{{product.tmbHeight}}px;width:{{product.tmbWidth}}px;background:url('{{vm.baseApi}}{{product.image}}');background-size:{{product.tmbWidth}}px {{product.tmbHeight}}px; position: absolute;"> 
     </div>
 </div>
+<div ng-if="backSideFlag" >
+    <div ng-style="imageStyle" >
+        <div    style="height:{{product.tmbHeight}}px;width:{{product.tmbWidth}}px;background:url('{{vm.baseApi}}{{product.image}}');background-size:{{product.tmbWidth}}px {{product.tmbHeight}}px"> 
+        </div>
+    </div>
+    
+</div>
 
-<div ng-style="imageStyle" ng-if="!editMode && !catalogMode">
+<div ng-style="imageStyle" ng-if="!editMode && !catalogMode && !backSideFlag">
     <div   on-drag="onDrag($event)" on-release="onRelease($event)" style="height:{{product.tmbHeight}}px;width:{{product.tmbWidth}}px;background:url('{{vm.baseApi}}{{product.image}}');background-size:{{product.tmbWidth}}px {{product.tmbHeight}}px"> 
     </div>
 </div>

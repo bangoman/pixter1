@@ -24,9 +24,8 @@ angular.module('app').directive('productParams', function () {
 				$rootScope.choosenParams.backSideColor = option;
 			//	console.log("$rootScope.choosenParams",$rootScope.choosenParams);
 			}
-			$scope.setParamsArrey = function(option){
-				$rootScope.choosenParams.paperType = option;
-				$rootScope.choosenParams.quantity = $scope.chosenQuantity;	
+			$scope.setParamsArrey = function(){
+	
 				console.log("$scope.params",$scope.params);
 			//	console.log("$scope.chosenQuantity;",$scope.chosenQuantity);
 				//console.log("$rootScope.choosenParams",$rootScope.choosenParams);
@@ -40,7 +39,7 @@ angular.module('app').directive('productParams', function () {
 						console.log("!!!",$scope.checked); 
 					}
 				}
-			}
+			}			
 			$scope.setDefaultRadio()
 		},
 		templateUrl:'app/js/directives/productParams.html'	

@@ -12,6 +12,7 @@ angular.module('app').directive('productImageDisplay', function ($http) {
             finalStep: '=',
             tmbWidth: '=',
             catalogMode: '=',
+            backSideFlag: '=',
 
         },
         controllerAs: 'vm',
@@ -28,9 +29,26 @@ angular.module('app').directive('productImageDisplay', function ($http) {
             $scope.finalWindowSize = {};
             $scope.$watch('product', function () {
                 getProductImgSize($rootScope.baseApi + $scope.product.image);
-            $scope.branding = $rootScope.brandingStyle;
+                $scope.branding = $rootScope.brandingStyle;
 
             });
+            $rootScope.$watch('choosenParams.backSideColor.rgb', function () {
+                if($scope.backSideFlag){
+                    $scope.imageStyle["background-image"] = "none";
+                    $scope.imageStyle["background-color"] = $rootScope.choosenParams.backSideColor.rgb;                    
+                }
+            });
+            $scope.$watch('backSideFlag', function () {
+                console.log("backSideFlag",$scope.backSideFlag)
+                if($scope.backSideFlag){
+                    $scope.imageStyle["background-image"] = "none";
+                    $scope.imageStyle["background-color"] = $rootScope.choosenParams.backSideColor.rgb;                    
+                }
+                else{
+                    $scope.imageStyle["background-image"] = "url('" + $scope.imageUrl + "')";
+
+                }
+            });            
 
             $scope.$watch('finalStep', function () {
                 if ($scope.finalStep) {
@@ -39,6 +57,7 @@ angular.module('app').directive('productImageDisplay', function ($http) {
                 }
 
             });
+
 
             function catalogRotaition (){
         	    var productBox = document.getElementById("product-box-" + $scope.product.type)
