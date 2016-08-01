@@ -13,7 +13,7 @@
             <div style="position:absolute; top:{{bannerHeight/2 -correction }}px;right:2px;font-size:68px;color:#fff;background:rgba(5,5,8,0.4);padding:3px;cursor:pointer" ng-click="changeBanner(1)" ng-show="currentIndex < productsData.objects.length-1">></div>
 
             <img style="width:{{bannerWidth}}px;position:absolute;left:calc(50% - {{bannerWidth}}px/2 );top:{{bannerHeight -correction}}px" src="https://pixter-loader-assets.s3.amazonaws.com/v1_statics/files/images/seasonal/specialOffer.jpg">                    
-            <button class="btn btn-default" ng-style="brandingStyle.generalButton" ng-click="goToPreview(category)" style="position:absolute;top:{{(bannerHeight + bannerHeight/7.2 - 15) - +correction}}px;right:calc(50% - {{bannerWidth}}px/2  + 20px );">Continue</button>
+            <button class="btn btn-default" ng-style="brandingStyle.generalButton" ng-click="vm.goToPreview(category)" style="position:absolute;top:{{(bannerHeight + bannerHeight/7.2 - 15) - +correction}}px;right:calc(50% - {{bannerWidth}}px/2  + 20px );">Continue</button>
         </div>
     </div>
 </div>
