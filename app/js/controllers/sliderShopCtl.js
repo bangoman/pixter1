@@ -2,9 +2,11 @@ angular.module('app').controller('sliderShopCtl',function($scope,$rootScope){
     var vm = this;
     $scope.bannerRatio = 600/360;
     $scope.currentIndex = 0;
+    $scope.correction  = 49;
+    ;
     if($rootScope.screenW > 600){
-        $scope.bannerWidth = 800;
-        $scope.bannerHeight = 480;        
+        $scope.bannerWidth = window.innerWidth;
+        $scope.bannerHeight = $scope.bannerWidth / $scope.bannerRatio;
     }else{
         $scope.bannerWidth = $rootScope.screenW;
         $scope.bannerHeight = $scope.bannerWidth / $scope.bannerRatio;

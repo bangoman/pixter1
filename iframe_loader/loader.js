@@ -32,6 +32,7 @@
             var screenW = document.body.clientWidth;
             var screenH = document.body.clientHeight
             var iframeW = (screenW / 100) * 64;
+            var iframeH = 628;
             if (iframeW > 800) {
                 iframeW = 800;
             }
@@ -48,10 +49,10 @@
             iframe.style.position = 'fixed';
             iframe.style.left = offsetLeft + "px";
 
-            iframe.style.top = (screenH - 675) /2;
+            iframe.style.top = (screenH - iframeH) /2;
             iframe.style.width = iframeW + "px";
 
-            iframe.style.height = '675px';
+            iframe.style.height = iframeH + 'px';
             iframe.style.maxWidth = "800px";
         }
         document.body.appendChild(iframe);

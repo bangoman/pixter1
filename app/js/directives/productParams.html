@@ -10,9 +10,10 @@
               <li ng-repeat="option in param.options track by $index" 
                         ng-click="setBackground(option)"
                         class="invitation-background-choose-button"
-                        ng-class="{'active': currentProduct.backSideColor.rgb ==  option.rgb}">
+                        ng-class="{'active': $root.choosenParams.backSideColor.rgb ===  option.rgb}">
                         <div class="invitation-background-choose-inner"
-                             style="background:{{option.rgb}}">                     
+                             style="background:{{option.rgb}}">        
+                             
                         </div>
               </li>
             </ul>

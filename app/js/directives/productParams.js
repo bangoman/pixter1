@@ -5,15 +5,21 @@ angular.module('app').directive('productParams', function () {
             params: '=',
         },
 		controller: function ($scope,$rootScope){
+			$rootScope.choosenParams = {}
 			console.log($scope.params,"params");
-			for (var i = $scope.params.length - 1; i >= 0; i--) {
-				if($scope.params[i].key == "background"){
-					$scope.params[i].options = $rootScope.bgs
-				}
+			if($scope.params){
+				generateBackgrounds();
+			}
+			function generateBackgrounds(){
+				for (var i = $scope.params.length - 1; i >= 0; i--) {
+					if($scope.params[i].key == "background"){
+						$scope.params[i].options = $rootScope.bgs
+					}
+				}				
 			}
 			$scope.setBackground = function(option){
-				$rootScope.currentProduct.backSideColor = option;
-				console.log("backSideColor",$rootScope.currentProduct.backSideColor);
+				$rootScope.choosenParams.backSideColor = option;
+				
 			}
 		},
 		templateUrl:'app/js/directives/productParams.html'	

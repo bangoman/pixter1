@@ -1,6 +1,7 @@
 angular.module('app').controller('mainCtl', function(message, $uibModal, $state,$rootScope,$http, $stateParams,$scope,$location){
 	var vm = this;
     vm.state = $state;    
+    $scope.loading = true;
     $rootScope.baseApi = 'http://ec2-52-201-250-90.compute-1.amazonaws.com:8000';
     function getParameterByName(name, url) {
         if (!url) url = window.location.href;
@@ -26,7 +27,7 @@ angular.module('app').controller('mainCtl', function(message, $uibModal, $state,
     }, 1500);    
     
     vm.getProducts = function (w,h) {
-        $scope.loading = true;
+        
         $http.get($rootScope.baseApi + '/api/v2/category/get_list?api_key=' + $rootScope.apiKey + '&store_id=' + $rootScope.storeId + '&add_products=true&img_w=' + w + '&img_h=' + h)
             .then(function (res) {
                 console.log("product res",res);
