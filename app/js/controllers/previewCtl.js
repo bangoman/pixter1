@@ -8,8 +8,8 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,
     $scope.productsToDisplayOriginal = [];    
     $scope.productsToDisplayRotated = [];    
     $scope.productsArrayForNames = $rootScope.category.products;
-    if($scope.tmbWidth > 300){
-    	$scope.tmbWidth = 300;
+    if($scope.tmbWidth > 420){
+    	$scope.tmbWidth = 420;
     }
 
     $scope.displayDropdown = !$rootScope.previewCatalogParams.previewCatalog;
