@@ -30,10 +30,11 @@
             </span>
         </div>
 
-        <div class="row">
+        <div class="col-xs-12">        
+
             <product-params params="currentProduct.params"></product-params>
         </div>
-        <div class="row">
+        <div class="col-xs-12">
             <h5>{{chosenProduct.name}}</h5>
             <ul class="preview-bullet-list">
                 <li ng-repeat="bullet in currentProduct.information"><span>{{bullet}}</span></li>
@@ -45,7 +46,7 @@
             </select>
         </div> -->
 
-        <div class="row preview-next-row">
+        <div class="col-xs-12">
             <button class="btn next-button" ng-style="brandingStyle.generalButton" ng-click="vm.goToOrderDetails()">Next</button>
         </div>
 
