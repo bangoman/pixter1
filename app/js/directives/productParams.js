@@ -22,14 +22,26 @@ angular.module('app').directive('productParams', function () {
 			$rootScope.choosenParams.backSideColor = $rootScope.bgs[0];
 			$scope.setBackground = function(option){
 				$rootScope.choosenParams.backSideColor = option;
-				
+			//	console.log("$rootScope.choosenParams",$rootScope.choosenParams);
 			}
-			function setParamsArrey(){
-				$rootScope.choosenParams.paperType = $scope.paperType;
-				$rootScope.choosenParams.quantity = $scope.chosenQuantity.option;
-
+			$scope.setParamsArrey = function(option){
+				$rootScope.choosenParams.paperType = option;
+				$rootScope.choosenParams.quantity = $scope.chosenQuantity;	
+				console.log("$scope.params",$scope.params);
+			//	console.log("$scope.chosenQuantity;",$scope.chosenQuantity);
+				//console.log("$rootScope.choosenParams",$rootScope.choosenParams);
 			}
-			console.log("$rootScope.choosenParams",$rootScope.choosenParams);
+			$scope.setDefaultRadio = function(){
+				for (var i = $scope.params.length - 1; i >= 0; i--) {
+					for (var j = $scope.params[i].options.length - 1; j >= 0; j--) {
+						if($scope.params[i].options[j].default){
+							$scope.params[i].chosenOption = $scope.params[i].options[j].name;
+						}
+						console.log("!!!",$scope.checked); 
+					}
+				}
+			}
+			$scope.setDefaultRadio()
 		},
 		templateUrl:'app/js/directives/productParams.html'	
 	};
