@@ -31,7 +31,7 @@
             document.body.appendChild(overlay);
             var screenW = document.body.clientWidth;
             var screenH = document.body.clientHeight
-            var iframeW = (screenW / 100) * 64;
+            var iframeW = 800//(screenW / 100) * 64;
             var iframeH = 628;
             if (iframeW > 800) {
                 iframeW = 800;
