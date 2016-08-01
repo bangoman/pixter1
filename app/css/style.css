@@ -96,6 +96,7 @@ select[type="number"]:active {
   text-align: center;
   z-index: 100;
   background: #fff;
+  border-radius: 15px;
 }
 .store-header-buttons-container {
   position: absolute;
