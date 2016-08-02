@@ -36,10 +36,12 @@ angular.module('app').directive('productParams', function () {
 						var quantity = $scope.params[i].chosenOption.quantity;
 						for (var i = $scope.params.length - 1; i >= 0; i--) {
 							if($scope.params[i].key != "background"){
-								$scope.price += $scope.params[i].chosenOption.pricing.price * quantity;
+								$scope.price += parseInt($scope.params[i].chosenOption.pricing.price) * parseInt(quantity);
+								console.log("pricing.price",$scope.params[i].chosenOption.pricing.price);
+								console.log("quantity",quantity);
 							}
 						}
-						console.log("pricing.price",$scope.params[i].chosenOption.pricing.price)
+						
 						console.log($scope.params,"params2");
 					}
 				}	
