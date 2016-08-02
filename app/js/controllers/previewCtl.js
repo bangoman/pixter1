@@ -45,9 +45,11 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,
 }
 
     $scope.chosenProduct = $scope.productsToDisplay[0];
-    $scope.changeBackSideFlag = function(){
-        $scope.bsf = !$scope.bsf;
+    
+    $scope.changeBackSideFlag = function(ifBackSide){
+        $scope.bsf = ifBackSide;
     }
+
     $scope.findRotatedProduct = function (productId){
         for (var i = $rootScope.category.products.length - 1; i >= 0; i--) {
             if ($rootScope.category.products[i].id == productId){

@@ -13,17 +13,12 @@
                     <span>Edit</span>
                 </div>
             </div>
-            <div ng-if="currentProduct.params" class="row preview-edit-row">
-                <!-- <h5 class="chosen-product-title">
-                    {{chosenProduct.name}}
-                </h5> -->
-                <div class="btn" ng-style="brandingStyle.generalButton" ng-click="changeBackSideFlag()">                    
-                    <span ng-if="!bsf">
+            <div ng-if="currentProduct.params" class="row front-back-buttons-row">
+                <div class="btn pull-left" ng-style="brandingStyle.generalButton" ng-click="changeBackSideFlag(true)" ng-disabled="bsf">                    
                         Back side
-                    </span>
-                    <span ng-if="bsf">
+                </div>
+                <div class="btn pull-right" ng-style="brandingStyle.generalButton" ng-click="changeBackSideFlag(false)" ng-disabled="!bsf">                    
                         Front side
-                    </span>
                 </div>
             </div>            
 
@@ -64,7 +59,7 @@
 
 
     </div>
-    <div class="row">
+    <div class="row no-margin">
         <div class="col-xs-12 col-sm-6 col-sm-offset-6">
             <button class="btn next-button" ng-style="brandingStyle.generalButton" ng-click="vm.goToOrderDetails()">Next</button>
         </div>
