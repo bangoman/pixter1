@@ -84,6 +84,10 @@ select[type="number"]:active {
   box-shadow: 1px 1px 1px 1px #888888;
 }
 
+.no-margin {
+  margin: 0 auto;
+}
+
 /* store frame (header, modal/close buttons, discount-info) style */
 
 #pixter-responsive-store {
@@ -268,6 +272,9 @@ select[type="number"]:active {
 .preview-product-border div {
   margin: 0 auto;
 }
+.chosen-product-title {
+  float: left;
+}
 .preview-edit-row {
   width: 280px;
   text-align: right;
@@ -289,6 +296,10 @@ select[type="number"]:active {
 }
 .preview-edit-btn span {
   text-decoration: underline;
+}
+
+.front-back-buttons-row {
+  padding-top: 4px;
 }
 .preview-product-details {
   width: 280px;
@@ -337,7 +348,8 @@ select[type="number"]:active {
 
 #preview-view-responsive .next-button {
   position: relative;
-  left: 84px;
+  left: calc(50% - 82px);
+  top: -48px;
   width: 164px;
   padding: 4px 0;
   line-height: 28px;
@@ -832,7 +844,10 @@ select[type="number"]:active {
     margin-top: 12px;
   }
   #preview-view-responsive .next-button {
-    left: calc(50% - 82px);
+    width: 84%;
+    left: 8%;
+    top: 0;
+    margin: 20px 0;
   }
   .edit-header {
     text-align: left;
