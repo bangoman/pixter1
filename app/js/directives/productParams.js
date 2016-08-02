@@ -57,7 +57,9 @@ angular.module('app').directive('productParams', function () {
 				$rootScope.currentProduct.quantities[0].price = $scope.tempPrice + $scope.price;				
 				
 			}
+
 			$scope.setDefaultRadio = function(){
+				if($scope.params){}
 				for (var i = $scope.params.length - 1; i >= 0; i--) {
 					for (var j = $scope.params[i].options.length - 1; j >= 0; j--) {
 						if($scope.params[i].options[j].default){
@@ -66,8 +68,10 @@ angular.module('app').directive('productParams', function () {
 					}
 				}
 				$scope.getQuantity()
+			}
+			if($scope.params){
+				$scope.setDefaultRadio()
 			}			
-			$scope.setDefaultRadio()
 		},
 		templateUrl:'app/js/directives/productParams.html'	
 	};
