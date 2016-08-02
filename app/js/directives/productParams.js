@@ -33,9 +33,10 @@ angular.module('app').directive('productParams', function () {
 			$scope.setPrice = function(){
 				$rootScope.currentProduct.quantities[0].price
 				for (var i = $scope.params.length - 1; i >= 0; i--) {
-					if($scope.params[i].chosenOption.quantity ){
+					if($scope.params[i].title != "Background" && $scope.params[i].chosenOption.quantity){
 						var quantity = $scope.params[i].chosenOption.quantity
-						console.log("quantity",quantity;
+						console.log("quantity",$scope.params[i].title);
+						console.log($scope.params,"params2");
 					}
 				}	
 				
@@ -44,7 +45,8 @@ angular.module('app').directive('productParams', function () {
 				for (var i = $scope.params.length - 1; i >= 0; i--) {
 					for (var j = $scope.params[i].options.length - 1; j >= 0; j--) {
 						if($scope.params[i].options[j].default){
-							$scope.params[i].chosenOption = $scope.params[i].options[j].name;
+							$scope.init = $scope.params[i].options[j].name;
+						//	$scope.params[i].chosenOption = $scope.params[i].options[j].name;
 						}						
 					}
 				}
