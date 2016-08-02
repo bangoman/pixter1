@@ -823,7 +823,10 @@ select[type="number"]:active {
 .params-checkbox-container:not(:first-child) {
   padding-left: 12px;
 }
-.params-checkbox-container input {
+.params-checkbox-container label {
+  display: flex;
+}
+.params-checkbox-container input[type="radio"] {
   margin-right: 4px;
 }
 /*================
