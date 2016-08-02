@@ -84,14 +84,18 @@
                         <input type="text" class="form-control order-details-input" style="width:59%; margin-bottom:0"
                                ng-model="order.state"
                                name="state;" placeholder="State"/>
-                        <input type="text" class="form-control order-details-input"
-                               ng-model="order.zip"
-                               style="width:39%; margin-left: 2%; margin-bottom:0" name="zip" id="p_ZipInput"
-                               placeholder="ZIP*"
-                               required 
-                               ng-class="!vm.form.zip.$valid && vm.form.$submitted ? 'error-input' : ''" />
-                        <div class="form-group error-text" ng-show="vm.form.$submitted">
-                            <div ng-show="vm.form.zip.$error.required">Required Field</div>
+                        <div>
+                          <input type="text" class="form-control order-details-input"
+                                 ng-model="order.zip"
+                                 style="width:98%; margin-left: 2%;"
+                                 ng-class=" {'no-margin-bottm':!vm.form.zip.$error.required}"
+                                 name="zip" id="p_ZipInput"
+                                 placeholder="ZIP*"
+                                 required 
+                                 ng-class="!vm.form.zip.$valid && vm.form.$submitted ? 'error-input' : ''" />
+                          <div class="error-text" ng-show="vm.form.$submitted">
+                              <div ng-show="vm.form.zip.$error.required">Required Field</div>
+                          </div>
                         </div>
 
                     </div>

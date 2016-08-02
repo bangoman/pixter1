@@ -87,6 +87,9 @@ select[type="number"]:active {
 .no-margin {
   margin: 0 auto;
 }
+.no-margin-bottm {
+  margin-bottom: 0; 
+}
 
 /* store frame (header, modal/close buttons, discount-info) style */
 
