@@ -141,7 +141,8 @@ angular.module('app').controller('mainCtl', function(message, $uibModal, $state,
 
 
   	vm.goBack = function(){
-      $window.history.back();
+      //$window.history.back();
+      $state.go('app.shop');
       /*
   		if ($state.current.name == 'app.preview') {
         if ($rootScope.previewCatalogParams.previewCatalog && $rootScope.category.products.length != 1) {

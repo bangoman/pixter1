@@ -2,8 +2,8 @@ angular.module('app').controller('orderDetailsCtl',function($state,$rootScope,ap
     var vm = this;
 	$rootScope.disableScroll = false;
 	$scope.tmbWidth = $rootScope.screenW*0.35;
-	if($scope.tmbWidth > 180){
-		$scope.tmbWidth = 180
+	if($scope.tmbWidth > 120){
+		$scope.tmbWidth = 120
 
 	}
     $scope.countryApi = 'http://ec2-52-201-250-90.compute-1.amazonaws.com:8000/api/v2/country/?user=demo';
