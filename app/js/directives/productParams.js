@@ -30,13 +30,10 @@ angular.module('app').directive('productParams', function () {
 			$scope.setBackground = function(option){
 				$rootScope.choosenParams.backSideColor = option;
 			}
-			function getQantity(){
-				
-			}
 			$scope.setPrice = function(){
 				$scope.price = 0;
 				for (var i = $scope.params.length - 1; i >= 0; i--) {
-					if($scope.params[i].key != "background" && $scope.params[i].chosenOption.quantity &&){
+					if($scope.params[i].key != "background" && $scope.params[i].chosenOption.quantity){
 						var quantity = $scope.params[i].chosenOption.quantity;
 						for (var i = $scope.params.length - 1; i >= 0; i--) {
 							if($scope.params[i].key != "background" && $scope.params[i].key != "quantity"){
