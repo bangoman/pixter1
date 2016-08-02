@@ -64,7 +64,6 @@ angular.module('app').controller('mainCtl', function(message, $uibModal, $state,
           .then(function (res) {
               $rootScope.brandingData = res.data;
               generateBrandingStyle()
-              console.log("branding1111",$rootScope.brandingData);
           }).then(function () {
 
 

@@ -40,7 +40,6 @@ angular.module('app').directive('productImageDisplay', function ($http) {
                 }
             });
             $scope.$watch('backSideFlag', function () {
-                console.log("backSideFlag",$scope.backSideFlag)
                 if($scope.backSideFlag){
                     $scope.imageStyle["background-image"] = "none";
                     $scope.imageStyle["background-color"] = $rootScope.choosenParams.backSideColor.rgb;                    
@@ -364,13 +363,11 @@ angular.module('app').directive('productImageDisplay', function ($http) {
             
 			function windowPositionSize(image){
 			 	$scope.product.window ={};
-////			 	$scope.product.width = image.width;
-//			 	$scope.product.height = image.height
 				$scope.product.window.x = $scope.product.width * $scope.product.top_left_coord.X/100;
 				$scope.product.window.y = $scope.product.height * $scope.product.top_left_coord.Y/100;
 				$scope.product.window.w = $scope.product.width * ($scope.product.bottom_right_coord.X - $scope.product.top_left_coord.X)/100;
 				$scope.product.window.h = $scope.product.height * ($scope.product.bottom_right_coord.Y - $scope.product.top_left_coord.Y)/100;
- //               console.log($scope.product);
+ 
 
 			    calculatePosition(image)
 

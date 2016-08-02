@@ -3,7 +3,6 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,
     $rootScope.disableScroll = false;
     $scope.finalStep = false;
     $scope.bsf = false;
-   // console.log($rootScope.category.products);
     $scope.tmbWidth  = $rootScope.screenW * 0.67; 
     $scope.productsToDisplay = [];
     $scope.productsToDisplayOriginal = [];    
