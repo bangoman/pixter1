@@ -30,14 +30,18 @@ angular.module('app').directive('productParams', function () {
 			$scope.setBackground = function(option){
 				$rootScope.choosenParams.backSideColor = option;
 			}
+			function getQantity(){
+
+			}
+			
 			$scope.setPrice = function(){
 				$scope.price = 0;
 				for (var i = $scope.params.length - 1; i >= 0; i--) {
-					if($scope.params[i].key != "background" && $scope.params[i].chosenOption.quantity){
+					if($scope.params[i].key != "background" && $scope.params[i].chosenOption.quantity &&){
 						var quantity = $scope.params[i].chosenOption.quantity;
 						for (var i = $scope.params.length - 1; i >= 0; i--) {
-							if($scope.params[i].key != "background"){
-								$scope.price += parseInt($scope.params[i].chosenOption.pricing.price) * parseInt(quantity);
+							if($scope.params[i].key != "background" && $scope.params[i].key != "quantity"){
+								$scope.price += $scope.params[i].chosenOption.pricing.price * quantity;
 								console.log("pricing.price",$scope.params[i].chosenOption.pricing.price);
 								console.log("quantity",quantity);
 								console.log("price",$scope.price)
@@ -48,7 +52,7 @@ angular.module('app').directive('productParams', function () {
 					}
 				}	
 				$rootScope.currentProduct.quantities[0].price += $scope.price;
-				console.log("price",$scope.price)
+				console.log("totalprice",$rootScope.currentProduct.quantities[0].price)
 			}
 			$scope.setDefaultRadio = function(){
 				for (var i = $scope.params.length - 1; i >= 0; i--) {
