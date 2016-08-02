@@ -54,7 +54,6 @@ angular.module('app').directive('productParams', function () {
 				for (var i = $scope.params.length - 1; i >= 0; i--) {
 					for (var j = $scope.params[i].options.length - 1; j >= 0; j--) {
 						if($scope.params[i].options[j].default){
-		
 							$scope.params[i].chosenOption = $scope.params[i].options[j];
 						}						
 					}
