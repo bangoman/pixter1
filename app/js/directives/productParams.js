@@ -30,29 +30,25 @@ angular.module('app').directive('productParams', function () {
 			$scope.setBackground = function(option){
 				$rootScope.choosenParams.backSideColor = option;
 			}
-			function getQantity(){
-
+			$scope.getQuantity = function(){
+				for (var i = $scope.params.length - 1; i >= 0; i--) {
+					if($scope.params[i].key != "background" && $scope.params[i].chosenOption.quantity){
+						$scope.quantity = $scope.params[i].chosenOption.quantity;
+						$scope.tempPrice = $scope.params[i].chosenOption.pricing.price;
+					}
+				}
+				$scope.setPrice()				
 			}
 			
 			$scope.setPrice = function(){
 				$scope.price = 0;
 				for (var i = $scope.params.length - 1; i >= 0; i--) {
-					if($scope.params[i].key != "background" && $scope.params[i].chosenOption.quantity &&){
-						var quantity = $scope.params[i].chosenOption.quantity;
-						for (var i = $scope.params.length - 1; i >= 0; i--) {
-							if($scope.params[i].key != "background" && $scope.params[i].key != "quantity"){
-								$scope.price += $scope.params[i].chosenOption.pricing.price * quantity;
-								console.log("pricing.price",$scope.params[i].chosenOption.pricing.price);
-								console.log("quantity",quantity);
-								console.log("price",$scope.price)
-							}
-						}
-						
-						console.log($scope.params,"params2");
+					if($scope.params[i].key != "background" && $scope.params[i].key != "quantity"){
+						$scope.price += $scope.params[i].chosenOption.pricing.price * $scope.quantity;
 					}
-				}	
-				$rootScope.currentProduct.quantities[0].price += $scope.price;
-				console.log("totalprice",$rootScope.currentProduct.quantities[0].price)
+				}
+				$rootScope.currentProduct.quantities[0].price = $scope.tempPrice + $scope.price;				
+				
 			}
 			$scope.setDefaultRadio = function(){
 				for (var i = $scope.params.length - 1; i >= 0; i--) {
@@ -62,6 +58,7 @@ angular.module('app').directive('productParams', function () {
 						}						
 					}
 				}
+				$scope.getQuantity()
 			}			
 			$scope.setDefaultRadio()
 		},
