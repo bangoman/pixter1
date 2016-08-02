@@ -105,6 +105,7 @@ select[type="number"]:active {
   position: fixed;
   width: 100%;
   min-height: 64px;
+  line-height: 20px;
   color: #92aaaa;
   font-size: 14px;
   padding: 7px 0 36px;
@@ -151,6 +152,12 @@ select[type="number"]:active {
   border: none;
   background: transparent;
 }
+.header-logo-image {
+  position:absolute;
+  height:30px;
+  top:-2px;
+}
+
 .user-messaging {
   position: absolute;
   bottom: 0;
@@ -256,8 +263,6 @@ select[type="number"]:active {
   text-align: center;
 }
 
-.shop-view-next-button-container .next-button {
-  }
 
 /* preview view style */
 
@@ -826,6 +831,11 @@ select[type="number"]:active {
     @media style
   ================*/
 
+@media screen and (min-width:768px) {
+  .preview-product-details {
+    min-height: 520px;
+  }
+}
 @media screen and (max-width:767px) {
   #preview-view-responsive {
     padding-top: 64px;
@@ -877,6 +887,11 @@ select[type="number"]:active {
   .thank-you-button-container {
     width: 100%;
   }
+  .header-logo-image {
+    width: 16vw;
+    height: auto;
+    max-height: 30px;
+  }
 }
 @media screen and (max-width: 435px) {
   .hide-on-mobile {
@@ -893,10 +908,16 @@ select[type="number"]:active {
     padding: 0;
   }
   .store-header {
-    font-size:10px;
+    font-size:12px;
   }
   .store-header-buttons-container {
     top: 4px;
+  }
+  .header-logo-image {
+    width: 14vw;
+    height: auto;
+    max-height: 30px;
+    top: 3px;
   }
   .user-messaging {
     font-size: 12px;
