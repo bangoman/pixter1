@@ -7,29 +7,36 @@ angular.module('app').directive('productParams', function () {
 		controller: function ($scope,$rootScope){
 			$rootScope.choosenParams = {}
 			console.log($scope.params,"params");
-			if($scope.params){
-				generateBackgrounds();
-			}
 
             $scope.$watch('params', function () {
                 if ($scope.params) {
-                   generateBackgrounds();
+                   $scope.generateBackgrounds();
                    $scope.setDefaultRadio();
                 }
             });
+			$scope.setBackground = function(option){
+				for (var i = $scope.params.length - 1; i >= 0; i--) {
+					if($scope.params[i].key == "background" ){
+						$scope.params[i].chosenOption = option;
+						$rootScope.choosenParams.backSideColor = option;
+					}
+				}
+
+			}
 			
-			function generateBackgrounds(){
+			$scope.generateBackgrounds = function(){
 				for (var i = $scope.params.length - 1; i >= 0; i--) {
 					if($scope.params[i].key == "background"){
 						$scope.params[i].options = $rootScope.bgs
 
 					}
 				}				
+				$scope.setBackground($rootScope.bgs[0]);
 			}
-			$rootScope.choosenParams.backSideColor = $rootScope.bgs[0];
-			$scope.setBackground = function(option){
-				$rootScope.choosenParams.backSideColor = option;
+			if($scope.params){
+				$scope.generateBackgrounds();
 			}
+			
 			$scope.getQuantity = function(){
 				for (var i = $scope.params.length - 1; i >= 0; i--) {
 					if($scope.params[i].key != "background" && $scope.params[i].chosenOption.quantity){
