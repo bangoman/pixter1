@@ -1,7 +1,9 @@
 <div id="pixter-responsive-store">
     <div class="store-header"  ng-show="!loading" ng-style="brandingStyle.header" ng-class="{'hide-on-mobile': vm.state.current.name == 'app.edit'}">
         <div class="col-xs-3">
-            <div ><img ng-src={{brandingStyle.logo}} alt="Logo" style="height:30px;position:absolute;top:-2px;">  </div>
+            <div >
+                <img ng-src={{brandingStyle.logo}} alt="Logo" style="height:30px;position:absolute;top:-2px;">  
+            </div>
             <div class="store-header-back-button" ng-if="!vm.stateIsShop()" ng-click="vm.goBack()">
                 <span><</span>
             </div>
