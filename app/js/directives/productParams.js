@@ -31,8 +31,9 @@ angular.module('app').directive('productParams', function () {
 				$rootScope.choosenParams.backSideColor = option;
 			}
 			function getQantity(){
-				
+
 			}
+			
 			$scope.setPrice = function(){
 				$scope.price = 0;
 				for (var i = $scope.params.length - 1; i >= 0; i--) {
