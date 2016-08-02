@@ -357,10 +357,9 @@ select[type="number"]:active {
 
 #preview-view-responsive .next-button {
   position: relative;
-  left: calc(50% - 82px);
+  left: calc(50% - 100px);
   top: -48px;
-  width: 164px;
-  padding: 4px 0;
+  width: 200px;
   line-height: 28px;
 }
 
@@ -507,7 +506,7 @@ select[type="number"]:active {
 
 #order-details-view-responsive  .next-button {
   float: right;
-  width: 100%;
+  width: 200px;
   line-height: 28px;
 }
 
@@ -862,6 +861,9 @@ select[type="number"]:active {
     left: 8%;
     top: 0;
     margin: 20px 0;
+  }
+  #order-details-view-responsive  .next-button {
+    width: 100%;
   }
   .edit-header {
     text-align: left;
