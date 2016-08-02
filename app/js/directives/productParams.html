@@ -24,7 +24,7 @@
           	{{param.title}}
           </h5>
           <div ng-repeat="option in param.options track by $index">
-			  <input  type="radio" name="{{param.title}}" ng-model="param.chosenOption" ng-value="option.name" ng-change="setParamsArrey()">{{option.name}}
+			  <input  type="radio" name="{{param.title}}" ng-model="param.chosenOption" ng-value="option.name" ng-change="setPrice()">{{option.name}}
 			  <div ng-if="param.chosenOption == option.name && option.additional_data">
 			  	<input class="form-control"  type="text" ng-model="option.additional_data.data" placeholder="{{option.additional_data.placeholder}}" >
 			  </div>
@@ -36,7 +36,7 @@
           	{{param.title}}
           </h5>
           <div>
-            <select class="form-control preview-product-select" ng-model="param.chosenOption" ng-change="setParamsArrey(option.name)" 
+            <select class="form-control preview-product-select" ng-model="param.chosenOption" ng-change="setPrice()" 
                     ng-options="option.name for option in param.options">
                     <option value=''>{{param.chosenOption}}</option>
             </select>

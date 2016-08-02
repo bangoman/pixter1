@@ -10,6 +10,13 @@ angular.module('app').directive('productParams', function () {
 			if($scope.params){
 				generateBackgrounds();
 			}
+
+            $scope.$watch('params', function () {
+                if ($scope.params) {
+                   generateBackgrounds();
+                   $scope.setDefaultRadio();
+                }
+            });
 			
 			function generateBackgrounds(){
 				for (var i = $scope.params.length - 1; i >= 0; i--) {
@@ -22,13 +29,10 @@ angular.module('app').directive('productParams', function () {
 			$rootScope.choosenParams.backSideColor = $rootScope.bgs[0];
 			$scope.setBackground = function(option){
 				$rootScope.choosenParams.backSideColor = option;
-			//	console.log("$rootScope.choosenParams",$rootScope.choosenParams);
 			}
-			$scope.setParamsArrey = function(){
+			$scope.setPrice = function(){
 	
 				console.log("$scope.params",$scope.params);
-			//	console.log("$scope.chosenQuantity;",$scope.chosenQuantity);
-				//console.log("$rootScope.choosenParams",$rootScope.choosenParams);
 			}
 			$scope.setDefaultRadio = function(){
 				for (var i = $scope.params.length - 1; i >= 0; i--) {
@@ -36,7 +40,6 @@ angular.module('app').directive('productParams', function () {
 						if($scope.params[i].options[j].default){
 							$scope.params[i].chosenOption = $scope.params[i].options[j].name;
 						}
-						console.log("!!!",$scope.checked); 
 					}
 				}
 			}			
