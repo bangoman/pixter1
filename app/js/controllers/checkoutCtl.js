@@ -63,7 +63,10 @@ angular.module('app').controller('checkoutCtl', function ($uibModal, $rootScope,
                 shipping_price: $filter('number')(vm.getDiscountShippingPrice(), 2),
                 payment_type: paymentType,
                 coupon_string: $rootScope.coupon ? $rootScope.coupon.coupon_code.replace(/'/g, '') : undefined,
-            }, $rootScope.order))
+                properties:getProperties(),
+            }, $rootScope.order,{
+                country: $rootScope.order.country.code,
+            }))
             .then(function (data) {
                 win.location.href = data.url;
             },function (data) {
@@ -71,4 +74,17 @@ angular.module('app').controller('checkoutCtl', function ($uibModal, $rootScope,
                 alert(data.error.message);
             });
     };
+
+    function getProperties() {
+        var properties = {};
+        $rootScope.currentProduct.params.forEach(function (param) {
+            var property = angular.extend({},param.chosenOption);
+            if(property.pricing) {
+                angular.extend(property, property.pricing);
+                delete property.pricing;
+            }
+            properties[param.key] = property;
+        });
+        return properties;
+    }
 });
