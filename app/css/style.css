@@ -795,6 +795,15 @@ select[type="number"]:active {
   height: 36px;
 }
 
+.params-inputs-container {
+  display: inline-flex; 
+}
+.params-checkbox-container:not(:first-child) {
+  padding-left: 12px;
+}
+.params-checkbox-container input {
+  margin-right: 4px;
+}
 /*================
     @media style
   ================*/
