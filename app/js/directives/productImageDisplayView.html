@@ -88,7 +88,7 @@
     
 </div>
 
-<div ng-style="imageStyle" ng-if="!editMode && !catalogMode && !backSideFlag">
+<div ng-style="imageStyle" ng-if="!editMode && !catalogMode && !backSideFlag" style="min-height:40vh">
     <div   on-drag="onDrag($event)" on-release="onRelease($event)" style="height:{{product.tmbHeight}}px;width:{{product.tmbWidth}}px;background:url('{{vm.baseApi}}{{product.image}}');background-size:{{product.tmbWidth}}px {{product.tmbHeight}}px"> 
     </div>
 </div>

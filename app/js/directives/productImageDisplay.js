@@ -29,6 +29,7 @@ angular.module('app').directive('productImageDisplay', function ($http) {
             $scope.finalWindowSize = {};
             $scope.loading = true;
             $scope.$watch('product', function () {
+                $scope.loading = true;
                 getProductImgSize($rootScope.baseApi + $scope.product.image);
                 $scope.branding = $rootScope.brandingStyle;
 
