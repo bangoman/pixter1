@@ -23,12 +23,14 @@
           <h5>
           	{{param.title}}
           </h5>
-          <div ng-repeat="option in param.options track by $index">
-			  <input  type="radio" name="{{param.title}}" ng-model="param.chosenOption" ng-value="option.name" ng-change="setPrice()">{{option.name}}
-			  <div ng-if="param.chosenOption == option.name && option.additional_data">
-			  	<input class="form-control"  type="text" ng-model="option.additional_data.data" placeholder="{{option.additional_data.placeholder}}" >
-			  </div>
-          </div>
+      <div class="params-inputs-container">
+        <div class="params-checkbox-container" ng-repeat="option in param.options track by $index">
+          <input  type="radio" name="{{param.title}}" ng-model="param.chosenOption" ng-value="option.name" ng-change="setPrice()">{{option.name}}
+          <div ng-if="param.chosenOption == option.name && option.additional_data">
+            <input class="form-control"  type="text" ng-model="option.additional_data.data" placeholder="{{option.additional_data.placeholder}}" >
+          </div>        
+        </div>
+      </div>    
         
    		</div>
         <div   ng-if="param.type == 'singledropdown'&&param.key !== 'background'">

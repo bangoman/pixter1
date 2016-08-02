@@ -272,7 +272,7 @@ select[type="number"]:active {
   width: 280px;
   text-align: right;
   padding: 0 20px;
-  margin: 0 auto;
+  margin: 4px auto 0 !important;
 }
 .preview-edit-btn {
   cursor: pointer;
@@ -281,6 +281,8 @@ select[type="number"]:active {
   color: #32bafa;
   font-size: 19px;
   z-index: 1;
+  padding: 0 4px;
+  border-radius: 4px;
 }
 .preview-edit-btn .glyphicon {
   font-size: 14px;
@@ -795,6 +797,15 @@ select[type="number"]:active {
   height: 36px;
 }
 
+.params-inputs-container {
+  display: inline-flex; 
+}
+.params-checkbox-container:not(:first-child) {
+  padding-left: 12px;
+}
+.params-checkbox-container input {
+  margin-right: 4px;
+}
 /*================
     @media style
   ================*/
