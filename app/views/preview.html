@@ -5,12 +5,18 @@
             <product-image-display back-side-flag="bsf"  product="currentProduct.images['Preview']"  image-url="imageUrl" tmb-width="tmbWidth"  final-step="finalStep" >
             </product-image-display>
             <div ng-if="!currentProduct.params" class="row preview-edit-row">
+                <!-- <h5 class="chosen-product-title">
+                    {{chosenProduct.name}}
+                </h5> -->
                 <div class="preview-edit-btn" ng-style="brandingStyle.generalButton" ng-click="vm.goToEdit()">
                     <i class="glyphicon glyphicon-scissors"></i>
                     <span>Edit</span>
                 </div>
             </div>
             <div ng-if="currentProduct.params" class="row preview-edit-row">
+                <!-- <h5 class="chosen-product-title">
+                    {{chosenProduct.name}}
+                </h5> -->
                 <div class="preview-edit-btn" ng-style="brandingStyle.generalButton" ng-click="changeBackSideFlag()">                    
                     <span ng-if="!bsf" style="text-decoration:none">
                         Back side
@@ -44,8 +50,7 @@
         <div class="col-xs-12">        
             <product-params params="currentProduct.params"></product-params>
         </div>
-        <div class="col-xs-12">
-            <h5>{{chosenProduct.name}}</h5>
+        <div class="col-xs-12" ng-if="!currentProduct.params">
             <ul class="preview-bullet-list">
                 <li ng-repeat="bullet in currentProduct.information"><span>{{bullet}}</span></li>
             </ul>
@@ -56,10 +61,12 @@
             </select>
         </div> -->
 
-        <div class="col-xs-12">
+
+
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-sm-offset-6">
             <button class="btn next-button" ng-style="brandingStyle.generalButton" ng-click="vm.goToOrderDetails()">Next</button>
         </div>
-
-
     </div>
 </div>

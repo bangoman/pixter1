@@ -268,6 +268,9 @@ select[type="number"]:active {
 .preview-product-border div {
   margin: 0 auto;
 }
+.chosen-product-title {
+  float: left;
+}
 .preview-edit-row {
   width: 280px;
   text-align: right;
@@ -290,6 +293,7 @@ select[type="number"]:active {
 .preview-edit-btn span {
   text-decoration: underline;
 }
+
 .preview-product-details {
   width: 280px;
   height: 324px;
@@ -337,7 +341,8 @@ select[type="number"]:active {
 
 #preview-view-responsive .next-button {
   position: relative;
-  left: 84px;
+  left: calc(50% - 82px);
+  top: -48px;
   width: 164px;
   padding: 4px 0;
   line-height: 28px;
@@ -833,6 +838,8 @@ select[type="number"]:active {
   }
   #preview-view-responsive .next-button {
     left: calc(50% - 82px);
+    top: 0;
+    margin: 20px 0;
   }
   .edit-header {
     text-align: left;
