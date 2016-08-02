@@ -7,29 +7,36 @@ angular.module('app').directive('productParams', function () {
 		controller: function ($scope,$rootScope){
 			$rootScope.choosenParams = {}
 			console.log($scope.params,"params");
-			if($scope.params){
-				generateBackgrounds();
-			}
 
             $scope.$watch('params', function () {
                 if ($scope.params) {
-                   generateBackgrounds();
+                   $scope.generateBackgrounds();
                    $scope.setDefaultRadio();
                 }
             });
+			$scope.setBackground = function(option){
+				for (var i = $scope.params.length - 1; i >= 0; i--) {
+					if($scope.params[i].key == "background" ){
+						$scope.params[i].chosenOption = option;
+						$rootScope.choosenParams.backSideColor = option;
+					}
+				}
+
+			}
 			
-			function generateBackgrounds(){
+			$scope.generateBackgrounds = function(){
 				for (var i = $scope.params.length - 1; i >= 0; i--) {
 					if($scope.params[i].key == "background"){
 						$scope.params[i].options = $rootScope.bgs
 
 					}
 				}				
+				$scope.setBackground($rootScope.bgs[0]);
 			}
-			$rootScope.choosenParams.backSideColor = $rootScope.bgs[0];
-			$scope.setBackground = function(option){
-				$rootScope.choosenParams.backSideColor = option;
+			if($scope.params){
+				$scope.generateBackgrounds();
 			}
+			
 			$scope.getQuantity = function(){
 				for (var i = $scope.params.length - 1; i >= 0; i--) {
 					if($scope.params[i].key != "background" && $scope.params[i].chosenOption.quantity){
@@ -50,7 +57,9 @@ angular.module('app').directive('productParams', function () {
 				$rootScope.currentProduct.quantities[0].price = $scope.tempPrice + $scope.price;				
 				
 			}
+
 			$scope.setDefaultRadio = function(){
+				if($scope.params){}
 				for (var i = $scope.params.length - 1; i >= 0; i--) {
 					for (var j = $scope.params[i].options.length - 1; j >= 0; j--) {
 						if($scope.params[i].options[j].default){
@@ -59,8 +68,10 @@ angular.module('app').directive('productParams', function () {
 					}
 				}
 				$scope.getQuantity()
+			}
+			if($scope.params){
+				$scope.setDefaultRadio()
 			}			
-			$scope.setDefaultRadio()
 		},
 		templateUrl:'app/js/directives/productParams.html'	
 	};

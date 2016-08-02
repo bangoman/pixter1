@@ -45,7 +45,7 @@ angular.module('app').directive('productImageDisplay', function ($http) {
                     $scope.imageStyle["background-image"] = "none";
                     $scope.imageStyle["background-color"] = $rootScope.choosenParams.backSideColor.rgb;                    
                 }
-                else{
+                else if($scope.imageStyle){
                     $scope.imageStyle["background-image"] = "url('" + $scope.imageUrl + "')";
 
                 }
