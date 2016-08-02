@@ -23,7 +23,7 @@
           <h5>
           	{{param.title}}
           </h5>
-          <div ng-init="init" ng-repeat="option in param.options track by $index">
+          <div  ng-repeat="option in param.options track by $index">
 			  <input  type="radio" name="{{param.title}}" ng-model="param.chosenOption" ng-value="option" ng-change="setPrice()">{{option.name}}
 			  <div ng-if="param.chosenOption == option.name && option.additional_data">
 			  	<input class="form-control"  type="text" ng-model="option.additional_data.data" placeholder="{{option.additional_data.placeholder}}" >
