@@ -12,8 +12,12 @@
             </div>
             <div ng-if="currentProduct.params" class="row preview-edit-row">
                 <div class="preview-edit-btn" ng-style="brandingStyle.generalButton" ng-click="changeBackSideFlag()">                    
-                    <span ng-if="!bsf">Back side</span>
-                    <span ng-if="bsf">Front side</span>
+                    <span ng-if="!bsf" style="text-decoration:none">
+                        Back side
+                    </span>
+                    <span ng-if="bsf" style="text-decoration:none">
+                        Front side
+                    </span>
                 </div>
             </div>            
 
