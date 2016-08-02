@@ -498,7 +498,7 @@ select[type="number"]:active {
 
 #order-details-view-responsive  .next-button {
   float: right;
-  width: 164px;
+  width: 100%;
   height: 34px;
 }
 

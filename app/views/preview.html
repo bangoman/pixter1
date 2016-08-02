@@ -13,7 +13,7 @@
                     <span>Edit</span>
                 </div>
             </div>
-            <div ng-if="currentProduct.params" class="row front-back-buttons-row">
+            <div ng-if="currentProduct.params" class="row front-back-buttons-row" style="width:{{tmbWidth}}px">
                 <div class="btn pull-left" ng-style="brandingStyle.generalButton" ng-click="changeBackSideFlag(true)" ng-disabled="bsf">                    
                         Back side
                 </div>
