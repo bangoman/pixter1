@@ -31,8 +31,14 @@ angular.module('app').directive('productParams', function () {
 				$rootScope.choosenParams.backSideColor = option;
 			}
 			$scope.setPrice = function(){
-	
-				console.log("$scope.params",$scope.params);
+				$rootScope.currentProduct.quantities[0].price
+				for (var i = $scope.params.length - 1; i >= 0; i--) {
+					if($scope.params[i].chosenOption.quantity ){
+						var quantity = $scope.params[i].chosenOption.quantity
+						console.log("quantity",quantity;
+					}
+				}	
+				
 			}
 			$scope.setDefaultRadio = function(){
 				for (var i = $scope.params.length - 1; i >= 0; i--) {
