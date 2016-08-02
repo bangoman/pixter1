@@ -837,7 +837,8 @@ select[type="number"]:active {
     margin-top: 12px;
   }
   #preview-view-responsive .next-button {
-    left: calc(50% - 82px);
+    width: 84%;
+    left: 8%;
     top: 0;
     margin: 20px 0;
   }
