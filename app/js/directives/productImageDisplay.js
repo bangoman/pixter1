@@ -27,6 +27,7 @@ angular.module('app').directive('productImageDisplay', function ($http) {
             $scope.finalImagePosition = {};
             $scope.finalWindowPosition = {};
             $scope.finalWindowSize = {};
+            $scope.loading = true;
             $scope.$watch('product', function () {
                 getProductImgSize($rootScope.baseApi + $scope.product.image);
                 $scope.branding = $rootScope.brandingStyle;
@@ -336,6 +337,7 @@ angular.module('app').directive('productImageDisplay', function ($http) {
             function getImgSize(imgSrc) {
 			    var newImg = new Image();
 			    newImg.onload = function () {
+                    $scope.loading = false;
 			        var height = newImg.height;
 			        var width = newImg.width;
 			        windowPositionSize(newImg);
