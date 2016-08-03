@@ -50,7 +50,7 @@
             console.log(iframeW, screenW);
             var offsetLeft = (screenW - iframeW) / 2;
             iframe = document.createElement('iframe');
-            var url =" http://pixter-v1-responsive.s3-website-us-east-1.amazonaws.com/index.html?imageUrl=' + imgUrl + '&apiKey=' + apiKey +'&storeId=' + storeId + '&bgs=' + backgroundsString ;"  //   add this:  #/app/sliderShop  to see the slideShop
+            var url ='http://pixter-v1-responsive.s3-website-us-east-1.amazonaws.com/index.html?imageUrl=' + imgUrl + '&apiKey=' + apiKey +'&storeId=' + storeId + '&bgs=' + backgroundsString ;  //   add this:  #/app/sliderShop  to see the slideShop
             iframe.src = url;
             if(mobileAndTabletcheck()){
                 window.open(url,'_blank');
