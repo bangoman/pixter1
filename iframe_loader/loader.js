@@ -65,8 +65,6 @@
                 iframe.style.height = iframeH + 'px';
                 iframe.style.maxWidth = "800px";
                 iframe.style.border = "none";
-                iframe.style.borderTopLeftRadius ="15px"
-                iframe.style.borderTopRightRadius ="15px"
                 document.body.appendChild(iframe);
 
 
