@@ -62,35 +62,41 @@ angular.module('app').controller('checkoutCtl', function ($uibModal, $rootScope,
     vm.checkout = function (paymentType) {
         var win = window.open('', "", "width=500, height=500");
         win.document.body.innerHTML = 'Processing...';
-        returnAddressPrice = 0;
-        quantity = 1;
+        var returnAddressPrice = 0;
+        var quantity = 1;
         if( properties ){
             quantity = properties.quantity.quantity;
             properties.return_address.discountedPrice = quantity * properties.return_address.discount_price;
             properties.return_address.totalPrice = properties.return_address.discountedPrice;
             returnAddressPrice = properties.return_address.totalPrice;
         }
-        return apiService
-            .validateOrder(angular.extend({
-                product_id: $rootScope.currentProduct.id,
-                price: $filter('number')(vm.getDiscountProductPrice() + returnAddressPrice, 2),
-                curr: $rootScope.productsData.localization.currency.code,
-                quantity: quantity,
-                shipping_method: vm.shipmentMethod.method,
-                shipping_id: vm.shipmentMethod.id,
-                shipping_price: $filter('number')(vm.getDiscountShippingPrice(), 2),
-                payment_type: paymentType,
-                coupon_string: $rootScope.coupon ? $rootScope.coupon.coupon_code.replace(/'/g, '') : undefined,
-                properties:properties,
-            }, $rootScope.order,{
-                country: $rootScope.order.country.code,
-            }))
-            .then(function (data) {
-                win.location.href = data.url;
-            },function (data) {
-                win.close();
-                alert(data.error.message);
-            });
+        var watch = $rootScope.$watch('order.key',function () {
+            if( $rootScope.order.key ){
+                watch();
+                apiService
+                    .validateOrder(angular.extend({
+                        product_id: $rootScope.currentProduct.id,
+                        price: $filter('number')(vm.getDiscountProductPrice() + returnAddressPrice, 2),
+                        curr: $rootScope.productsData.localization.currency.code,
+                        quantity: quantity,
+                        shipping_method: vm.shipmentMethod.method,
+                        shipping_id: vm.shipmentMethod.id,
+                        shipping_price: $filter('number')(vm.getDiscountShippingPrice(), 2),
+                        payment_type: paymentType,
+                        coupon_string: $rootScope.coupon ? $rootScope.coupon.coupon_code.replace(/'/g, '') : undefined,
+                        properties:properties,
+                    }, $rootScope.order,{
+                        country: $rootScope.order.country.code,
+                    }))
+                    .then(function (data) {
+                        win.location.href = data.url;
+                    },function (data) {
+                        win.close();
+                        alert(data.error.message);
+                    });
+            }
+        });
+
     };
 
     var properties = getProperties();
