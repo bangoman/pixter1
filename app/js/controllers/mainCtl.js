@@ -128,7 +128,7 @@ angular.module('app').controller('mainCtl', function(message, $uibModal, $state,
 	}
 
 	vm.stateIsShop = function(){
-		if ($state.current.name == 'app.shop') {
+		if ($state.current.name == 'app.shop' && $state.params.subcategories != "true") {
 			return true;
 		} else {
 			return false;
@@ -150,6 +150,14 @@ angular.module('app').controller('mainCtl', function(message, $uibModal, $state,
           $state.go('app.shop');
         } 
       }     
+      if ($state.params.subcategories == 'true') {
+        if($rootScope.productsData.display.type == "OSS"){
+          $state.go('app.sliderShop');
+        }
+        else{
+          $state.go('app.shop',{subcategories:false});
+        }         
+      }
   		if ($state.current.name == 'app.edit') {
         $state.go('app.preview');
       }
