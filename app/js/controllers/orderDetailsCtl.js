@@ -1,5 +1,8 @@
 angular.module('app').controller('orderDetailsCtl',function($state,$rootScope,apiService,$scope,$http){
     var vm = this;
+    if(!$rootScope.order){
+        $rootScope.order = {};
+    }
 	$rootScope.disableScroll = false;
 	$scope.tmbWidth = $rootScope.screenW*0.35;
 	if($scope.tmbWidth > 120){
@@ -13,10 +16,12 @@ angular.module('app').controller('orderDetailsCtl',function($state,$rootScope,ap
             .then(function (res) {
              $rootScope.countries = res.data.objects;
             }); 
+    }
+    if(!$rootScope.order.country){
+       getCountry(); 
     }  
-    getCountry();
+    console.log("$rootScope.order111",$rootScope.order);
 
-    
     apiService.upload($rootScope.finalCroppedImageData).then(function (data) {
         $rootScope.order.key = data.key;
     });
