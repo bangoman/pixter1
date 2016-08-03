@@ -74,7 +74,7 @@ angular.module('app').controller('checkoutCtl', function ($uibModal, $rootScope,
             .validateOrder(angular.extend({
                 product_id: $rootScope.currentProduct.id,
                 price: $filter('number')(vm.getDiscountProductPrice() + returnAddressPrice, 2),
-                curr: 'USD',
+                curr: $rootScope.productsData.localization.currency.code,
                 quantity: quantity,
                 shipping_method: vm.shipmentMethod.method,
                 shipping_id: vm.shipmentMethod.id,
