@@ -141,22 +141,16 @@ angular.module('app').controller('mainCtl', function(message, $uibModal, $state,
 
 
   	vm.goBack = function(){
-      //$window.history.back();
-      $state.go('app.shop');
-      /*
   		if ($state.current.name == 'app.preview') {
-        if ($rootScope.previewCatalogParams.previewCatalog && $rootScope.category.products.length != 1) {
-            $state.go('app.previewCatalog');          
+        if($rootScope.productsData.display.type == "OSS"){
+          $state.go('app.sliderShop');
         }
         else{
-            $state.go('app.shop',$rootScope.previewCatalogParams);
-        }
-  		}
-  		if ($state.current.name == 'app.previewCatalog') {
-  			$state.go('app.shop',$rootScope.previewCatalogParams);
-  		}
+          $state.go('app.shop');
+        } 
+      }     
   		if ($state.current.name == 'app.edit') {
-            $state.go('app.preview');
+        $state.go('app.preview');
       }
   		if ($state.current.name == 'app.orderDetails') {
   			$state.go('app.preview');
@@ -164,7 +158,6 @@ angular.module('app').controller('mainCtl', function(message, $uibModal, $state,
   		if ($state.current.name == 'app.checkout') {
   			$state.go('app.orderDetails');
   		}
-      */
   	}
 
 });
