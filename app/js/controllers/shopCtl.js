@@ -4,6 +4,8 @@ angular.module('app').controller('shopCtl', function ($state, $http, $rootScope,
     $scope.bannerRatio = 600/360;
     $scope.currentIndex = 0;
     $scope.correction  = 49;
+    console.log($state.params);
+
     ;
     if($rootScope.screenW > 600){
         $scope.bannerWidth = window.innerWidth;
@@ -35,13 +37,8 @@ angular.module('app').controller('shopCtl', function ($state, $http, $rootScope,
 
     vm.goToPreview = function (category) {
         if(category.subcategories){
-            if($state.current.name == "app.sliderShop"){
-                $rootScope.subcategories  = category.subcategories.objects;
-                $state.go('app.shop')
-            }else{
-                $scope.categories = category.subcategories.objects;    
-            }
-            
+            $rootScope.subcategories  = category.subcategories.objects;                
+            $state.go('app.shop',{subcategories:true})            
         }
         else
         {
