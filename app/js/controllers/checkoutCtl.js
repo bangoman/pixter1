@@ -13,8 +13,11 @@ angular.module('app').controller('checkoutCtl', function ($uibModal, $rootScope,
 
         if($rootScope.currentProduct.quantities[$rootScope.quantity].pricing.shipping[key].region_id == 7){
             $scope.key = key;
-
         }
+             console.log("$rootScope.quantity",$rootScope.quantity);
+             console.log("$scope.key = key;",$scope.key);
+             console.log("$rootScope.order",$rootScope.order);
+
         if(value.region_id == $rootScope.order.country.region.id){
             vm.shipmentMethods.push(value);
             $scope.restOfWorld = false;
