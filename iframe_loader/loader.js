@@ -45,7 +45,7 @@
             var offsetLeft = (screenW - iframeW) / 2;
             iframe = document.createElement('iframe');
 
-            iframe.src = 'http://localhost/pixter1/index.html?imageUrl=' + imgUrl + '&apiKey=' + apiKey +'&storeId=' + storeId + '&bgs=' + backgroundsString ;  //  add this:  #/app/sliderShop  to see the slideShop
+            iframe.src = '../index.html?imageUrl=' + imgUrl + '&apiKey=' + apiKey +'&storeId=' + storeId + '&bgs=' + backgroundsString ;  //  add this:  #/app/sliderShop  to see the slideShop
             iframe.style.position = 'fixed';
             iframe.style.left = offsetLeft + "px";
 
