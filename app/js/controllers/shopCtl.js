@@ -20,8 +20,8 @@ angular.module('app').controller('shopCtl', function ($state, $http, $rootScope,
     $rootScope.disableScroll = false;
     $rootScope.previewCatalogParams = $stateParams;
      if($rootScope.productsData){
-        if($rootScope.subcategories){
-            $scope.categories = $rootScope.subcategories
+        if($rootScope.subcategories){    
+            $scope.categories = $rootScope.subcategories;
             $rootScope.subcategories = null;
 
         }else{

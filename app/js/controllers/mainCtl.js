@@ -142,6 +142,7 @@ angular.module('app').controller('mainCtl', function(message, $uibModal, $state,
 
   	vm.goBack = function(){
   		if ($state.current.name == 'app.preview') {
+        
         if($rootScope.productsData.display.type == "OSS"){
           $state.go('app.sliderShop');
         }
