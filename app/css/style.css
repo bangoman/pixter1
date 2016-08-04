@@ -857,8 +857,9 @@ select[type="number"]:active {
 }
 
 #shop-view-responsive.mobile .slider-shop-continue-button {
-  position: relative;
-  top: 156px;
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
 }
 
 /* invitation-background-choose-button */
