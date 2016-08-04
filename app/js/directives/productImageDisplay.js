@@ -13,8 +13,6 @@ angular.module('app').directive('productImageDisplay', function ($http) {
             tmbWidth: '=',
             catalogMode: '=',
             backSideFlag: '=',
-            editFlag: '=',
-
         },
         controllerAs: 'vm',
         controller: function ($scope, $http, $attrs, $document, $element, $compile, $rootScope, $state, $q, $ionicScrollDelegate) {
@@ -152,7 +150,6 @@ angular.module('app').directive('productImageDisplay', function ($http) {
                 $rootScope.backgroundSizeH = height * ratio;
                 $rootScope.zoomAmountW = width / ($scope.product.window.w / $scope.sizeRatio);
                 $rootScope.zoomAmountH = height / ($scope.product.window.h / $scope.sizeRatio);
-                $editFlag = "true";
                 $state.go('app.preview');
                 $scope.backToReality($scope.backgroundPosition, $scope.product.window, $scope.sizeRatio, $scope.imageSizeRatio)
 

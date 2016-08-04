@@ -38,7 +38,7 @@ angular.module('app').controller('shopCtl', function ($state, $http, $rootScope,
 
     vm.goToPreview = function (category) {
         if(category.subcategories){
-            $rootScope.subcategories  = category.subcategories.objects;                
+            $rootScope.subcategories  = category.subcategories.objects;             
             $state.go('app.shop',{subcategories:true})            
         }
         else
