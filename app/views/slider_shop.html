@@ -32,7 +32,7 @@
                     ng-click="vm.goToPreview(category)" 
                     ng-style="brandingStyle.generalButton" 
                     style="background-color:{{brandingStyle.generalButton['background-color']}};
-                           color:{{brandingStyle.generalButton['color']}}">
+                           color:{{brandingStyle.generalButton['color']}};">
                            Continue
             </button><!-- top:{{(bannerHeight + bannerHeight/7.2 - 15) - +correction}}px;
                         right:calc(50% - {{bannerWidth}}px/2  + 20px ); -->
@@ -42,7 +42,7 @@
 
 
 <div id="shop-view-responsive" class="row mobile visible-xs">
-    <div class="col-xs-12"  ng-repeat="category in productsData.objects"  >
+    <div class="col-xs-12 mobile-slider-product-box"  ng-repeat="category in productsData.objects"  >
         <div style="height:{{bannerHeight}}px">
             <product-image-display class="shop-view-product-image-display" product="category.images['OSS']" image-url="imageUrl"  tmb-width="bannerWidth" catalog-mode="true">
             </product-image-display>
