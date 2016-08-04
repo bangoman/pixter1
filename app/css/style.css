@@ -851,9 +851,14 @@ select[type="number"]:active {
   opacity: .65;
 }
 
+
+.mobile-slider-product-box {
+  margin-bottom: 20px;
+}
+
 #shop-view-responsive.mobile .slider-shop-continue-button {
   position: relative;
-  top: 130px;
+  top: 156px;
 }
 
 /* invitation-background-choose-button */
