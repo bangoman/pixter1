@@ -42,7 +42,6 @@ angular.module('app').directive('productParams', function () {
 					if($scope.params[i].key != "background" && $scope.params[i].chosenOption.quantity){
 						$scope.quantity = $scope.params[i].chosenOption.quantity;
 						$scope.tempPrice = $scope.params[i].chosenOption.pricing.price;
-						console.log("!!!",$scope.params[i].type,$scope.params[i].key)
 					}
 				}
 				$scope.setPrice()				
