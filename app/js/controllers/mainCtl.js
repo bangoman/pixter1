@@ -25,6 +25,8 @@ angular.module('app').controller('mainCtl', function(message, $uibModal, $state,
       $state.go('app.shop')
 
     }, 1500);    
+
+    $rootScope.originalImageUrl = $rootScope.imageUrl;
     
     vm.getProducts = function (w,h) {
         

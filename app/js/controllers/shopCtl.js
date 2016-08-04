@@ -4,6 +4,7 @@ angular.module('app').controller('shopCtl', function ($state, $http, $rootScope,
     $scope.bannerRatio = 600/360;
     $scope.currentIndex = 0;
     $scope.correction  = 49;
+    $rootScope.imageUrl = $rootScope.originalImageUrl;
     console.log($state.params);
 
     ;
