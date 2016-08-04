@@ -13,6 +13,7 @@ angular.module('app').directive('productImageDisplay', function ($http) {
             tmbWidth: '=',
             catalogMode: '=',
             backSideFlag: '=',
+            editFlag: '=',
 
         },
         controllerAs: 'vm',
@@ -140,7 +141,7 @@ angular.module('app').directive('productImageDisplay', function ($http) {
                 $rootScope.finalCroppedImageData = dataURL;
 
                 $rootScope.finalCroppedImageUrl = dataURItoBlob(dataURL);
-                $state.go('app.orderDetails');
+                $state.go('app.preview');
 
             }
             $scope.applyChanges = function (positionLeft, positionTop, height, width, ratio) {
@@ -151,7 +152,8 @@ angular.module('app').directive('productImageDisplay', function ($http) {
                 $rootScope.backgroundSizeH = height * ratio;
                 $rootScope.zoomAmountW = width / ($scope.product.window.w / $scope.sizeRatio);
                 $rootScope.zoomAmountH = height / ($scope.product.window.h / $scope.sizeRatio);
-                $state.go('app.orderDetails');
+                $editFlag = "true";
+                $state.go('app.preview');
                 $scope.backToReality($scope.backgroundPosition, $scope.product.window, $scope.sizeRatio, $scope.imageSizeRatio)
 
             }
