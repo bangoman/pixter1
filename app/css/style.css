@@ -837,6 +837,11 @@ select[type="number"]:active {
 .params-checkbox-container input[type="radio"] {
   margin-right: 4px;
 }
+
+.params-inputs-container textarea {
+  min-width: 160px; 
+  min-height: 72px;
+}
 /*================
     @media style
   ================*/

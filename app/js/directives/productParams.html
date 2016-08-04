@@ -30,7 +30,7 @@
               {{option.name}}
             </label>
             <div ng-if="param.chosenOption == option && option.additional_data">
-              <input class="form-control" type="text" ng-model="option.additional_data.data" placeholder="{{option.additional_data.placeholder}}" >
+              <textarea class="form-control" type="text" rows="3" ng-model="option.additional_data.data" placeholder="{{option.additional_data.placeholder}}"/>
             </div>        
           </div>
 	      </div>  
