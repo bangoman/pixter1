@@ -5,7 +5,7 @@
     <h2 class="edit-header hide-on-mobile">
         You can resize and move the picture to your liking
     </h2>
-    <div class="col-lg-8 col-lg-offset-2 col-xs-12 edit-crop-controls-container">
+    <div class="col-lg-8 col-lg-offset-2 col-xs-12 edit-crop-controls-container visible-xs" >
         <ul class="crop-controls horizontal">
             <li class="crop-control-button" ng-click="triggerZoom(1.05)">
                 <img src="https://pixter-loader-assets.s3.amazonaws.com/1_8_1_stg/files/images/cropZoomIn.png">
@@ -59,6 +59,24 @@
             </span>
             -->
         </div>
+    <div class="col-lg-8 col-lg-offset-2 col-xs-12 edit-crop-controls-container hidden-xs" >
+        <ul class="crop-controls horizontal">
+            <li class="crop-control-button" ng-click="triggerZoom(1.05)">
+                <img src="https://pixter-loader-assets.s3.amazonaws.com/1_8_1_stg/files/images/cropZoomIn.png">
+            </li>
+            <li class="crop-control-button" ng-click="triggerZoom(0.95)">
+                <img src="https://pixter-loader-assets.s3.amazonaws.com/1_8_1_stg/files/images/cropZoomOut.png">
+            </li>
+            <li class="crop-control-button" ng-click="startRotateLoader(-90)">
+                <img src="https://pixter-loader-assets.s3.amazonaws.com/1_8_1_stg/files/images/cropRotateLeft.png">
+            </li>
+            <li class="crop-control-button" ng-click="startRotateLoader(90)">
+                <img src="https://pixter-loader-assets.s3.amazonaws.com/1_8_1_stg/files/images/cropRotateLeft.png" class="rotate-right">
+            </li>
+        </ul>
+    </div>                
+
+
         <div class="pull-right right-buttons-group">
             <button class="btn white-button" ui-sref="app.preview">Cancel</button>
             <button class="btn next-button" ng-style="branding.generalButton" ng-click="applyChanges                        
