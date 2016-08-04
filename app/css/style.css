@@ -275,7 +275,6 @@ select[type="number"]:active {
 }
 .shop-view-next-button-container .btn.next-button {
   width: 120px;
-  padding: 0px 12px;
 }
 
 /* preview view style */
@@ -861,7 +860,7 @@ select[type="number"]:active {
 #shop-view-responsive.mobile .slider-shop-continue-button {
   position: absolute;
   right: 20px;
-  bottom: 20px;
+  bottom: 12px;
 }
 
 /* invitation-background-choose-button */
