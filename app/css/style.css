@@ -935,10 +935,11 @@ select[type="number"]:active {
     top: 0;
   }
   .header-logo-image {
-    width: 14vw;
+    width: 16vw;
     height: auto;
     max-height: 30px;
     top: 3px;
+    margin-left:-25px;
   }
   .user-messaging {
     font-size: 12px;

@@ -4,7 +4,7 @@
             <div class="header-logo-image-container">
                 <img ng-src={{brandingStyle.logo}} alt="Logo" class="header-logo-image">  
             </div>
-            <div class="store-header-back-button" ng-if="!vm.stateIsShop()" ng-click="vm.goBack()">
+            <div class="store-header-back-button"  style="margin-left:-15px;" ng-if="!vm.stateIsShop()" ng-click="vm.goBack()">
                 <span><</span>
             </div>
         </div>
@@ -12,14 +12,14 @@
             {{ vm.getViewHeader() }}    
         </div>
         <div class="store-header-buttons-container">
-            <button class="store-header-learn-more-button" ng-style="brandingStyle.header.button" ng-click="vm.learnMore()">?</button>
-            <button class="store-header-close-button" ng-style="brandingStyle.header.button" ng-click="vm.close()">Close</button>
+            <button class="store-header-learn-more-button" style="margin-right:-4px;" ng-style="brandingStyle.header.button" ng-click="vm.learnMore()">?</button>
+            <button class="store-header-close-button" ng-style="brandingStyle.header.button" style="margin-right:-16px;" ng-click="vm.close()">Close</button>
         </div>
         <div class="col-xs-12 user-messaging" ng-style="brandingStyle.spcialOffer">
            {{brandingData.campaign.message}}            
         </div>
     </div>
     <div ui-view="main"></div>
-    <amazing-loader loader-color="brandingStyle.header['background-color']" loader-is-active="loading"></amazing-loader>
+    <amazing-loader loader-color="'#ccc'" loader-is-active="loading"></amazing-loader>
 
 </div>
