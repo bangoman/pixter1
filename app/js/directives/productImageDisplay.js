@@ -59,6 +59,11 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 
             });
 
+            $scope.editCancel = function () {
+                $rootScope.imageUrl = $rootScope.originalImageUrl;
+                $state.go('app.preview');
+            }
+
 
             function catalogRotaition (){
         	    var productBox = document.getElementById("product-box-" + $scope.product.type)
