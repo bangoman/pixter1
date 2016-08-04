@@ -275,6 +275,7 @@ select[type="number"]:active {
 }
 .shop-view-next-button-container .btn.next-button {
   width: 120px;
+  padding: 4px 12px;
 }
 
 /* preview view style */
