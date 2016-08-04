@@ -41,12 +41,12 @@
                 document.body.appendChild(overlay);
                 var screenW = document.body.clientWidth;
                 var screenH = document.body.clientHeight
-                var iframeW = 800//(screenW / 100) * 64;
-                var iframeH = 628;
-                if (iframeW > 800) {
-                    iframeW = 800;
+                var iframeW = 920//(screenW / 100) * 64;
+                var iframeH = 620;
+                if (iframeW > 920) {
+                    iframeW = 920;
                 }
-                if (screenW < 800) {
+                if (screenW < 920) {
                     iframeW = screenW;
 
                 }
@@ -63,7 +63,7 @@
                 iframe.style.width = iframeW + "px";
 
                 iframe.style.height = iframeH + 'px';
-                iframe.style.maxWidth = "800px";
+                iframe.style.maxWidth = "920px";
                 iframe.style.border = "none";
                 document.body.appendChild(iframe);
 
