@@ -233,7 +233,7 @@ select[type="number"]:active {
 }
 
 #shop-view-responsive .shop-view-product-container {
-  margin: 10px 0;
+  /*margin: 10px 0;*/
   padding: 12px;
   overflow: hidden;
 }
