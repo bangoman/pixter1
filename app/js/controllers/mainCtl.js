@@ -161,6 +161,7 @@ angular.module('app').controller('mainCtl', function(message, $uibModal, $state,
         }         
       }
   		if ($state.current.name == 'app.edit') {
+        $rootScope.imageUrl = $rootScope.originalImageUrl;
         $state.go('app.preview');
       }
   		if ($state.current.name == 'app.orderDetails') {
