@@ -9,7 +9,7 @@ angular.module('app').controller('shopCtl', function ($state, $http, $rootScope,
 
     ;
     if($rootScope.screenW > 600){
-        $scope.bannerWidth = 890;
+        $scope.bannerWidth = window.innerWidth - 50;
         $scope.bannerHeight = $scope.bannerWidth / $scope.bannerRatio;
     }else{
         $scope.bannerWidth = $rootScope.screenW;
