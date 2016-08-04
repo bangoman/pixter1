@@ -1,11 +1,12 @@
 
-<div id="shop-view-responsive" class="row">
+<div id="shop-view-responsive" class="row" >
     <div class="col-lg-2 col-sm-4 col-xs-6 shop-view-product-container"     
         ng-repeat="category in categories" ng-click="vm.goToPreview(category)" style="border:1px solid #eee;cursor:pointer"
-        ng-class="{'col-sm-6 col-lg-6':categories.length < 3,
-                   'col-sm-12 col-lg-12':categories.length < 2}">
+        ng-class="{'width-50':categories.length < 3,
+                   'width-100':categories.length < 2}">
+
         <div class="product_image_container">
-            <product-image-display class="shop-view-product-image-display" product="category.images['Preview']" image-url="imageUrl"  tmb-width="150" catalog-mode="true">
+            <product-image-display class="shop-view-product-image-display" product="category.images['Preview']" image-url="imageUrl"  tmb-width="140" catalog-mode="true">
             </product-image-display>
         </div>
         <div class="product-data">
