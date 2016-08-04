@@ -371,7 +371,7 @@ select[type="number"]:active {
 #preview-view-responsive .next-button {
   position: relative;
   left: calc(50% - 100px);
-  top: -48px;
+  top: -52px;
   width: 200px;
   line-height: 28px;
 }
@@ -906,9 +906,9 @@ select[type="number"]:active {
   ================*/
 
 @media screen and (min-width:768px) {
-  .preview-product-details {
-    min-height: 520px;
-  }
+  /*.preview-product-details {
+    min-height: 500px;
+  }*/
 }
 @media screen and (max-width:767px) {
   #preview-view-responsive {
