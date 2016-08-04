@@ -87,6 +87,14 @@ select[type="number"]:active {
   margin-bottom: 0; 
 }
 
+.col-sm-6,
+.col-lg-6 {
+  width: 50% !important;
+}
+.col-sm-12,
+.col-lg-12 {
+  width: 100% !important;
+}
 /* store frame (header, modal/close buttons, discount-info) style */
 
 #pixter-responsive-store {
@@ -837,6 +845,7 @@ select[type="number"]:active {
 .slider-shop-continue-button {
   float: right;
   width: 140px;
+  z-index: 10;
 }
 .slider-shop-continue-button:hover {
   opacity: .65;
