@@ -1,19 +1,71 @@
-<div id="shop-view-responsive" class="row">
+<div id="shop-view-responsive" class="row hidden-xs">
     <div class="col-xs-12"  ng-repeat="category in productsData.objects"  ng-show="currentIndex == $index">
-        <div style="height:{{bannerHeight}}px" >
-            <product-image-display   class="shop-view-product-image-display" product="category.images['OSS']" image-url="imageUrl"  tmb-width="bannerWidth" catalog-mode="true">
+        <div style="height:{{bannerHeight}}px">
+            <product-image-display class="shop-view-product-image-display" product="category.images['OSS']" image-url="imageUrl"  tmb-width="bannerWidth" catalog-mode="true">
             </product-image-display>
-            <div ng-style="brandingStyle.oss.description" style="position:absolute;background:rgba(5,5,8,0.4);color:#fff;padding:5px;">
-                <h5>{{category.shortname}} : {{category.pricing.price}} {{currencySymbol}}</h5>
-                <h5>{{category.description}}</h5>
+            <div class="slider-shop-description-box" ng-style="brandingStyle.oss.description">
+                <h2>{{category.pricing.price}} {{currencySymbol}}</h2>
+                <h4>{{category.shortname}}</h4>
+                <h4 style="color:{{brandingStyle.header.color}}">
+                    {{category.description}}
+                </h4>
 
             </div>
-            <div style="position:absolute; top:{{bannerHeight/2 -correction}}px;;font-size:68px;color:#fff;background:rgba(5,5,8,0.4);padding:3px;cursor:pointer;left:2px;" ng-click="changeBanner(-1)" ng-show="currentIndex > 0 "><</div>
+            <div ng-click="changeBanner(-1)" ng-show="currentIndex > 0 "
+                 class="slider-shop-next-back-button back"
+                 style="top:{{bannerHeight/2 - 40}}px;">
+                 <span class="glyphicon glyphicon-menu-left"></span>
+             </div>
 
-            <div style="position:absolute; top:{{bannerHeight/2 -correction }}px;right:2px;font-size:68px;color:#fff;background:rgba(5,5,8,0.4);padding:3px;cursor:pointer" ng-click="changeBanner(1)" ng-show="currentIndex < productsData.objects.length-1">></div>
+            <div ng-click="changeBanner(1)" 
+                 ng-show="currentIndex < productsData.objects.length-1"
+                 class="slider-shop-next-back-button next"
+            style="
+            top:{{bannerHeight/2 - 40 }}px;">
+                <span class="glyphicon glyphicon-menu-right"></span>
+            </div>
 
-            <img style="width:{{bannerWidth}}px;position:absolute;left:calc(50% - {{bannerWidth}}px/2 );top:{{bannerHeight -correction}}px" src="https://pixter-loader-assets.s3.amazonaws.com/v1_statics/files/images/seasonal/specialOffer.jpg">                    
-            <button class="btn btn3" ng-style="brandingStyle.generalButton" ng-click="vm.goToPreview(category)" style="position:absolute;top:{{(bannerHeight + bannerHeight/7.2 - 15) - +correction}}px;right:calc(50% - {{bannerWidth}}px/2  + 20px );background-color:{{brandingStyle.generalButton['background-color']}};color:{{brandingStyle.generalButton['color']}}">Continue</button>
+            <!-- <img style="width:{{bannerWidth}}px;position:absolute;left:calc(50% - {{bannerWidth}}px/2 );top:{{bannerHeight -correction}}px" src="https://pixter-loader-assets.s3.amazonaws.com/v1_statics/files/images/seasonal/specialOffer.jpg"> -->                    
+        </div>
+        <div class="slider-shop-continue-button-container">
+            <button class="btn btn3 slider-shop-continue-button" 
+                    ng-click="vm.goToPreview(category)" 
+                    ng-style="brandingStyle.generalButton" 
+                    style="background-color:{{brandingStyle.generalButton['background-color']}};
+                           color:{{brandingStyle.generalButton['color']}}">
+                           Continue
+            </button><!-- top:{{(bannerHeight + bannerHeight/7.2 - 15) - +correction}}px;
+                        right:calc(50% - {{bannerWidth}}px/2  + 20px ); -->
+        </div>
+    </div>
+</div>
+
+
+<div id="shop-view-responsive" class="row mobile visible-xs">
+    <div class="col-xs-12"  ng-repeat="category in productsData.objects"  >
+        <div style="height:{{bannerHeight}}px">
+            <product-image-display class="shop-view-product-image-display" product="category.images['OSS']" image-url="imageUrl"  tmb-width="bannerWidth" catalog-mode="true">
+            </product-image-display>
+            <div class="slider-shop-description-box" ng-style="brandingStyle.oss.description">
+                <h4>{{category.pricing.price}} {{currencySymbol}}</h4>
+                <h5>{{category.shortname}}</h5>
+                <h5 style="color:{{brandingStyle.header.color}}">
+                    {{category.description}}
+                </h5>
+
+            </div>
+
+            <!-- <img style="width:{{bannerWidth}}px;position:absolute;left:calc(50% - {{bannerWidth}}px/2 );top:{{bannerHeight -correction}}px" src="https://pixter-loader-assets.s3.amazonaws.com/v1_statics/files/images/seasonal/specialOffer.jpg"> -->                    
+            <div class="slider-shop-continue-button-container">
+                <button class="btn btn3 slider-shop-continue-button" 
+                        ng-click="vm.goToPreview(category)" 
+                        ng-style="brandingStyle.generalButton" 
+                        style="background-color:{{brandingStyle.generalButton['background-color']}};
+                               color:{{brandingStyle.generalButton['color']}}">
+                               Continue
+                </button><!-- top:{{(bannerHeight + bannerHeight/7.2 - 15) - +correction}}px;
+                            right:calc(50% - {{bannerWidth}}px/2  + 20px ); -->
+            </div>
         </div>
     </div>
 </div>
