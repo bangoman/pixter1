@@ -123,14 +123,15 @@ select[type="number"]:active {
   position: absolute;
   left: 20px;
   width: 20px;
-  font-size: 20px;
+  font-size: 28px;
   cursor: pointer;
-  margin-top: -4px;
   z-index: 1;
+  
 }
 .store-header-learn-more-button {
   height: 20px;
   width: 20px;
+  padding: 3px;
   margin: 0 8px;
   color: #92aaaa;
   line-height: 1;
@@ -152,10 +153,13 @@ select[type="number"]:active {
   border: none;
   background: transparent;
 }
-.header-logo-image {
-  position:absolute;
-  height:28px;
+.header-logo-image-container {
   top:-2px;
+  left: 60px;
+  position:absolute;
+}
+.header-logo-image {
+  height:28px;
 }
 
 .user-messaging {
@@ -295,17 +299,17 @@ select[type="number"]:active {
   display: inline-block;
   position: relative;
   color: #32bafa;
-  font-size: 19px;
+  font-size: 18px;
   z-index: 1;
-  padding: 0 4px;
+  padding: 4px 12px;
   border-radius: 4px;
 }
 .preview-edit-btn .glyphicon {
   font-size: 14px;
 }
-.preview-edit-btn span {
+/*.preview-edit-btn span {
   text-decoration: underline;
-}
+}*/
 
 .front-back-buttons-row {
   padding-top: 4px;
@@ -917,6 +921,9 @@ select[type="number"]:active {
   }
   .store-header-buttons-container {
     top: 4px;
+  }
+  .header-logo-image-container {
+    top: 0;
   }
   .header-logo-image {
     width: 14vw;

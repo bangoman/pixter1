@@ -15,16 +15,24 @@ angular.module('app').controller('orderDetailsCtl',function($state,$rootScope,ap
         $http.get($scope.countryApi)
             .then(function (res) {
              $rootScope.countries = res.data.objects;
+              setDefaultCountry ();
             }); 
     }
     if(!$rootScope.order.country){
-       getCountry(); 
+       getCountry();
     }  
-    console.log("$rootScope.order111",$rootScope.order);
 
     apiService.upload($rootScope.finalCroppedImageData).then(function (data) {
         $rootScope.order.key = data.key;
     });
+
+    function setDefaultCountry () {
+        for (var i = $rootScope.countries.length - 1; i >= 0; i--) {
+            if($rootScope.countries[i].id == 113){
+               $rootScope.order.country = $rootScope.countries[i];
+            };
+        };
+    };
 
     vm.goToCheckout = function(){
     	if (!vm.form.$valid) {
