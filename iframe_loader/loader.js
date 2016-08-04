@@ -27,7 +27,7 @@
     function loadIframe(imgUrl,apiKey,storeId,backgrounds) {
         if (!iframe) {
             backgroundsString = encodeURIComponent(JSON.stringify(backgrounds.background))
-            var url ='http://localhost/pixter1/index.html?imageUrl=' + imgUrl + '&apiKey=' + apiKey +'&storeId=' + storeId + '&bgs=' + backgroundsString ;  //   add this:  #/app/sliderShop  to see the slideShop
+            var url ='http://10.0.0.19/pixter1/index.html?imageUrl=' + imgUrl + '&apiKey=' + apiKey +'&storeId=' + storeId + '&bgs=' + backgroundsString ;  //   add this:  #/app/sliderShop  to see the slideShop
             if(mobileAndTabletcheck()){
                 window.open(url,'_blank');
             }else{
