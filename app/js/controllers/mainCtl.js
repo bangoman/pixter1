@@ -37,10 +37,10 @@ angular.module('app').controller('mainCtl', function(message, $uibModal, $state,
                 $scope.loading = false;
                 $rootScope.$broadcast("productArrive");
                 if(res.data.display.type == "OSS"){
-                  $state.go('app.sliderShop');
+                  $state.go('app.shop');
                 }
                 else{
-                  $state.go('app.shop');
+                  $state.go('app.sliderShop');
                 }
                 $rootScope.currencySymbol = res.data.localization.currency.symbol
             }).then(function () {
