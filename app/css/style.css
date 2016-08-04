@@ -76,10 +76,6 @@ select[type="number"]:active {
   color: #FF7A01;
 }
 
-.btn.btn3:hover {
-   box-shadow: 1px 1px 1px 1px #888888;
-
-}
 .next-button:hover {
   opacity: .65;
 }
@@ -237,7 +233,7 @@ select[type="number"]:active {
 }
 
 #shop-view-responsive .shop-view-product-container {
-  margin: 10px 0;
+  /*margin: 10px 0;*/
   padding: 12px;
   overflow: hidden;
 }
@@ -808,7 +804,7 @@ select[type="number"]:active {
   left: 0;
   top: 32px;
   color:#fff;
-  padding:5px;
+  padding: 4px 20px;
   opacity:0.7;
   background:rgba(5,5,8,0.7);
 }
@@ -817,27 +813,38 @@ select[type="number"]:active {
 }
 
 .slider-shop-next-back-button {
-  position:absolute; 
+  position: absolute; 
   color:#fff;
-  padding:4px 8px;
-  font-size:52px;
+  width: 40px;
+  height: 80px;
+  line-height: 80px;
+  padding: 0px 8px;
+  font-size:24px;
   cursor:pointer;
   background:rgba(5,5,8,0.4);
 }
 .slider-shop-next-back-button.back {
   left:0px;
+  border-radius: 0 4px 4px 0;
 }
 .slider-shop-next-back-button.next {
   right:0px;
+  border-radius: 4px 0 0 4px;
 }
 .slider-shop-continue-button-container {
+  padding: 16px 0;
 }
 .slider-shop-continue-button {
-  position:relative;
-  top: 16px;
   float: right;
   width: 140px;
+}
+.slider-shop-continue-button:hover {
+  opacity: .65;
+}
 
+#shop-view-responsive.mobile .slider-shop-continue-button {
+  position: relative;
+  top: 130px;
 }
 
 /* invitation-background-choose-button */
@@ -979,9 +986,9 @@ select[type="number"]:active {
   .user-messaging {
     font-size: 12px;
   }
-/*  .shop-view-product-container {
+  .shop-view-product-container {
     width: 100%;
-  }*/
+  }
   .order-details-header {
     font-size: 24px;
     margin-bottom: 0px;

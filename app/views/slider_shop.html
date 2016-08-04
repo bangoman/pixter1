@@ -1,18 +1,20 @@
-<div id="shop-view-responsive" class="row">
+<div id="shop-view-responsive" class="row hidden-xs">
     <div class="col-xs-12"  ng-repeat="category in productsData.objects"  ng-show="currentIndex == $index">
         <div style="height:{{bannerHeight}}px">
             <product-image-display class="shop-view-product-image-display" product="category.images['OSS']" image-url="imageUrl"  tmb-width="bannerWidth" catalog-mode="true">
             </product-image-display>
             <div class="slider-shop-description-box" ng-style="brandingStyle.oss.description">
                 <h2>{{category.pricing.price}} {{currencySymbol}}</h2>
-                <h5>{{category.shortname}}</h5>
-                <h5>{{category.description}}</h5>
+                <h4>{{category.shortname}}</h4>
+                <h4 style="color:{{brandingStyle.header.color}}">
+                    {{category.description}}
+                </h4>
 
             </div>
             <div ng-click="changeBanner(-1)" ng-show="currentIndex > 0 "
                  class="slider-shop-next-back-button back"
                  style="top:{{bannerHeight/2 - 40}}px;">
-                 <
+                 <span class="glyphicon glyphicon-menu-left"></span>
              </div>
 
             <div ng-click="changeBanner(1)" 
@@ -20,7 +22,7 @@
                  class="slider-shop-next-back-button next"
             style="
             top:{{bannerHeight/2 - 40 }}px;">
-                >
+                <span class="glyphicon glyphicon-menu-right"></span>
             </div>
 
             <!-- <img style="width:{{bannerWidth}}px;position:absolute;left:calc(50% - {{bannerWidth}}px/2 );top:{{bannerHeight -correction}}px" src="https://pixter-loader-assets.s3.amazonaws.com/v1_statics/files/images/seasonal/specialOffer.jpg"> -->                    
@@ -34,6 +36,36 @@
                            Continue
             </button><!-- top:{{(bannerHeight + bannerHeight/7.2 - 15) - +correction}}px;
                         right:calc(50% - {{bannerWidth}}px/2  + 20px ); -->
+        </div>
+    </div>
+</div>
+
+
+<div id="shop-view-responsive" class="row mobile visible-xs">
+    <div class="col-xs-12"  ng-repeat="category in productsData.objects"  >
+        <div style="height:{{bannerHeight}}px">
+            <product-image-display class="shop-view-product-image-display" product="category.images['OSS']" image-url="imageUrl"  tmb-width="bannerWidth" catalog-mode="true">
+            </product-image-display>
+            <div class="slider-shop-description-box" ng-style="brandingStyle.oss.description">
+                <h4>{{category.pricing.price}} {{currencySymbol}}</h4>
+                <h5>{{category.shortname}}</h5>
+                <h5 style="color:{{brandingStyle.header.color}}">
+                    {{category.description}}
+                </h5>
+
+            </div>
+
+            <!-- <img style="width:{{bannerWidth}}px;position:absolute;left:calc(50% - {{bannerWidth}}px/2 );top:{{bannerHeight -correction}}px" src="https://pixter-loader-assets.s3.amazonaws.com/v1_statics/files/images/seasonal/specialOffer.jpg"> -->                    
+            <div class="slider-shop-continue-button-container">
+                <button class="btn btn3 slider-shop-continue-button" 
+                        ng-click="vm.goToPreview(category)" 
+                        ng-style="brandingStyle.generalButton" 
+                        style="background-color:{{brandingStyle.generalButton['background-color']}};
+                               color:{{brandingStyle.generalButton['color']}}">
+                               Continue
+                </button><!-- top:{{(bannerHeight + bannerHeight/7.2 - 15) - +correction}}px;
+                            right:calc(50% - {{bannerWidth}}px/2  + 20px ); -->
+            </div>
         </div>
     </div>
 </div>
