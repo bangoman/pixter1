@@ -5,7 +5,8 @@
         <h2 class="modal-title">Have a coupon?</h2>
     </div>
     <div class="modal-body">
-        <p>
+    <p style="color:{{brandingStyle.header.color}}">
+
             Paste in your coupon code
         </p>
         <div class="form-group">
@@ -17,7 +18,7 @@
             <button type="button" class="btn white-button" ng-click="vm.dismiss()">
                 Cancel
             </button>            
-            <button type="button" class="btn next-button" ng-click="vm.apply()">
+            <button type="button" class="btn next-button" ng-style="brandingStyle.generalButton" ng-click="vm.apply()">
                 OK
             </button>
         </div>
