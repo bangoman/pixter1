@@ -1,50 +1,50 @@
 
 <div ng-if="params">
-   <div ng-repeat="param in params">
+    <div ng-repeat="param in params">
    		<div ng-if="param.key == 'background'">
-        <div class="preview-details-header">
+            <div class="preview-details-header">
+                <h5>
+                    Back Side Color:
+                </h5>
+                <ul style="list-style:none; display:flex; padding-left:12px">
+                    <li ng-repeat="option in param.options track by $index" 
+                        ng-click="setBackground(option)"
+                        class="invitation-background-choose-button"
+                        ng-class="{'active': $root.choosenParams.backSideColor.rgb ===  option.rgb}">
+                        <div class="invitation-background-choose-inner"
+                            style="background:{{option.rgb}}">        
+                               
+                        </div> 
+                    </li>  
+                </ul>
+            </div>
+        </div>
+        <div ng-if="param.type == 'singleradio'&&param.key !== 'background'">
             <h5>
-                Back Side Color:
+          	  {{param.title}}
             </h5>
-            <ul style="list-style:none; display:flex; padding-left:12px">
-              <li ng-repeat="option in param.options track by $index" 
-                  ng-click="setBackground(option)"
-                  class="invitation-background-choose-button"
-                  ng-class="{'active': $root.choosenParams.backSideColor.rgb ===  option.rgb}">
-                  <div class="invitation-background-choose-inner"
-                       style="background:{{option.rgb}}">        
-                       
-                  </div>
-              </li>
-            </ul>
-        </div>
-        </div>
-        <div   ng-if="param.type == 'singleradio'&&param.key !== 'background'">
-          <h5>
-          	{{param.title}}
-          </h5>
-	      <div class="params-inputs-container">
-	        <div class="params-checkbox-container" ng-repeat="option in param.options track by $index">
-	          <label for="{{param.title}}">
-            <input  type="radio" id="{{option.title}}" name="{{param.title}}" ng-model="param.chosenOption" ng-value="option" ng-change="getQuantity()">
-              {{option.name}}
-            </label>
-            <div ng-if="param.chosenOption == option && option.additional_data">
-              <textarea class="form-control" type="text" rows="3" ng-model="option.additional_data.data" placeholder="{{option.additional_data.placeholder}}"/>
-            </div>        
-          </div>
-	      </div>  
+  	        <div class="params-inputs-container">
+   	            <div class="params-checkbox-container" ng-repeat="option in param.options track by $index">
+  	                <label for="{{param.title}}">
+                    <input  type="radio" id="{{option.title}}" name="{{param.title}}" ng-model="param.chosenOption" ng-value="option" ng-change="getQuantity()">
+                        {{option.name}}
+                    </label>
+                    <div ng-if="param.chosenOption == option && option.additional_data">
+                        <textarea class="form-control" type="text" rows="3" ng-model="option.additional_data.data" placeholder="{{option.additional_data.placeholder}}"></textarea>
+                    </div>        
+                </div>
+  	        </div>  
    		</div>
-        <div   ng-if="param.type == 'singledropdown'&&param.key !== 'background'">
-          <h5>
-          	{{param.title}}
-          </h5>
-          <div>
-            <select class="form-control preview-product-select" ng-model="param.chosenOption" ng-change="getQuantity()" 
+        <div   ng-if="param.type == 'singledropdown' && param.key !== 'background'">
+            <h5>
+            	{{param.title}}
+            </h5>
+            <div>
+                <select class="form-control preview-product-select" ng-model="param.chosenOption" ng-change="getQuantity()" 
                     ng-options="option.name for option in param.options">                    
-            </select>
-          </div>
+                </select>
+            </div>
 	        
    		</div>   		
-   </div>
+    </div>
 </div>

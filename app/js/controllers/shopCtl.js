@@ -4,12 +4,12 @@ angular.module('app').controller('shopCtl', function ($state, $http, $rootScope,
     $scope.bannerRatio = 600/360;
     $scope.currentIndex = 0;
     $scope.correction  = 150;
-    $rootScope.imageUrl = $rootScope.originalImageUrl;
+    $rootScope.imageUrl = $rootScope.originalImageUrl;  
     console.log($state.params);
 
     ;
     if($rootScope.screenW > 600){
-        $scope.bannerWidth = 890;
+        $scope.bannerWidth = window.innerWidth - 30;
         $scope.bannerHeight = $scope.bannerWidth / $scope.bannerRatio;
     }else{
         $scope.bannerWidth = $rootScope.screenW;
@@ -38,7 +38,7 @@ angular.module('app').controller('shopCtl', function ($state, $http, $rootScope,
 
     vm.goToPreview = function (category) {
         if(category.subcategories){
-            $rootScope.subcategories  = category.subcategories.objects;                
+            $rootScope.subcategories  = category.subcategories.objects;             
             $state.go('app.shop',{subcategories:true})            
         }
         else
