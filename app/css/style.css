@@ -122,6 +122,7 @@ select[type="number"]:active {
 .store-header-back-button {
   position: absolute;
   left: 20px;
+  top: 2px;
   width: 20px;
   font-size: 28px;
   cursor: pointer;
@@ -266,7 +267,10 @@ select[type="number"]:active {
 .shop-view-next-button-container {
   text-align: center;
 }
-
+.shop-view-next-button-container .btn.next-button {
+  width: 120px;
+  padding: 4px 12px;
+}
 
 /* preview view style */
 
