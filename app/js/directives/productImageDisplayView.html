@@ -1,9 +1,9 @@
 <canvas  id="canvas" width=1000 height=800 style="display:none"  ></canvas>
-<amazing-loader loader-color="'#ccc'" loader-is-active="loading"></amazing-loader>
+<amazing-loader loader-color="'brandingData.branding.loader.textcolor'" loader-is-active="loading"></amazing-loader>
 <div id="edit-view-responsive" class="row" style="margin:0" ng-if="editMode">     
     
     <h2 class="edit-header hide-on-mobile">
-        You can resize and move the picture to your liking
+        {{brandingData.branding.screens.edit.title}}
     </h2>
     <div class="col-lg-8 col-lg-offset-2 col-xs-12 edit-crop-controls-container visible-xs" >
         <ul class="crop-controls horizontal">

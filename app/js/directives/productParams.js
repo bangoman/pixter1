@@ -41,21 +41,23 @@ angular.module('app').directive('productParams', function () {
 				for (var i = $scope.params.length - 1; i >= 0; i--) {
 					if($scope.params[i].key != "background" && $scope.params[i].chosenOption.quantity){
 						$scope.quantity = $scope.params[i].chosenOption.quantity;
-						$scope.tempPrice = $scope.params[i].chosenOption.pricing.price;
 					}
 				}
-				$scope.setPrice()				
+				$scope.setParamPrice()				
 			}
 			
-			$scope.setPrice = function(){
+			$scope.setParamPrice = function(){
 				$scope.price = 0;
 				for (var i = $scope.params.length - 1; i >= 0; i--) {
-					if($scope.params[i].key != "background" && $scope.params[i].key != "quantity"){
+					if($scope.params[i].key != "background"){
 						$scope.price += $scope.params[i].chosenOption.pricing.price * $scope.quantity;
 					}
 				}
-				$rootScope.currentProduct.quantities[0].price = $scope.tempPrice + $scope.price;				
+				//$rootScope.currentProduct.quantities[0].price = $scope.tempPrice + $scope.price;				
 				
+			}
+			$scope.setTotalPrice = function(){
+
 			}
 
 			$scope.setDefaultRadio = function(){

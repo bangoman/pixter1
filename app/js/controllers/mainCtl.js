@@ -65,10 +65,10 @@ angular.module('app').controller('mainCtl', function(message, $uibModal, $state,
       $http.get($rootScope.baseApi + '/api/v2/store/init?api_key=' + $rootScope.apiKey + '&store_id=' + $rootScope.storeId )
           .then(function (res) {
               $rootScope.brandingData = res.data;
-              generateBrandingStyle()
+              generateBrandingStyle();
           }).then(function () {
 
-
+         console.log("branding", $rootScope.brandingData);
         });
 
 
@@ -117,30 +117,49 @@ angular.module('app').controller('mainCtl', function(message, $uibModal, $state,
     
 
     //$state.go('app.shop');
-	vm.close = function(){
-		message('close');
-	}
-
-	vm.learnMore = function(){
-		$uibModal.open({
-		    templateUrl: 'app/views/learn_more.html',
-		    controller: 'learnMoreCtl as vm',
-		    backdrop:'static',
-		});
-	}
-
-	vm.stateIsShop = function(){
-		if ($state.current.name == 'app.shop' && $state.params.subcategories != "true") {
-			return true;
-		} else {
-			return false;
-		}
-	}
-	
-  	vm.getViewHeader = function() {
-  		return $state.current.title;
+  	vm.close = function(){
+  		message('close');
   	}
 
+  	vm.learnMore = function(){
+  		$uibModal.open({
+  		    templateUrl: 'app/views/learn_more.html',
+  		    controller: 'learnMoreCtl as vm',
+  		    backdrop:'static',
+  		});
+  	}
+
+  	vm.stateIsShop = function(){
+  		if ($state.current.name == 'app.shop' && $state.params.subcategories != "true") {
+  			return true;
+  		} else {
+  			return false;
+  		}
+  	}
+	 
+      vm.getViewHeader = function() {
+        if ($rootScope.brandingData){  
+          if ($state.current.name == 'app.shop') {
+            return $rootScope.brandingData.branding.screens.catalog.title;    
+          }
+          if ($state.current.name == 'app.sliderShop') {
+            return $rootScope.brandingData.branding.screens.catalog.title;  
+          }                
+          if ($state.current.name == 'app.preview') {
+            return $rootScope.brandingData.branding.screens.preview.title;
+          }     
+          if ($state.current.name == 'app.edit') {
+            return $rootScope.brandingData.branding.screens.edit.title;
+          }
+          if ($state.current.name == 'app.orderDetails') {
+            return $rootScope.brandingData.branding.screens.summary.title;
+          }
+          if ($state.current.name == 'app.checkout') {
+            return $rootScope.brandingData.branding.screens.checkout.title;
+          }
+        }
+      } 
+  
 
   	vm.goBack = function(){
   		if ($state.current.name == 'app.preview') {
