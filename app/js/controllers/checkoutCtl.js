@@ -2,17 +2,17 @@ angular.module('app').controller('checkoutCtl', function ($uibModal, $rootScope,
     var vm = this;
 
     $scope.tmbWidth = $rootScope.screenW*0.35;
-    $rootScope.quantity = 0;
+    //$rootScope.quantity = 0;
     if($scope.tmbWidth > 180){
         $scope.tmbWidth = 180
 
     }
    
     vm.shipmentMethods = [];
-    angular.forEach($rootScope.currentProduct.quantities[$rootScope.quantity].pricing.shipping, function(value, key) {
+    angular.forEach($rootScope.currentProduct.finalPrice.shipping, function(value, key) {
         $scope.restOfWorld = true;
 
-        if($rootScope.currentProduct.quantities[$rootScope.quantity].pricing.shipping[key].region_id == 7){
+        if($rootScope.currentProduct.finalPrice.shipping[key].region_id == 7){
             $scope.key = key;
         }
              console.log("$rootScope.order",$rootScope.order);
@@ -24,7 +24,7 @@ angular.module('app').controller('checkoutCtl', function ($uibModal, $rootScope,
     });
 
     if($scope.restOfWorld){
-        vm.shipmentMethods.push($rootScope.currentProduct.quantities[$rootScope.quantity].pricing.shipping[$scope.key]);
+        vm.shipmentMethods.push($rootScope.currentProduct.finalPrice.shipping[$scope.key]);
     }
 
     vm.shipmentMethod = vm.shipmentMethods[0];
@@ -38,7 +38,7 @@ angular.module('app').controller('checkoutCtl', function ($uibModal, $rootScope,
     };
     
     vm.getDiscountProductPrice = function () {
-        return $rootScope.coupon ? $rootScope.currentProduct.quantities[$rootScope.quantity].price * (100 - $rootScope.coupon.product_discount) / 100 : parseFloat($rootScope.currentProduct.quantities[$rootScope.quantity].price);
+        return $rootScope.coupon ? $rootScope.currentProduct.finalPrice.price * (100 - $rootScope.coupon.product_discount) / 100 : parseFloat($rootScope.currentProduct.finalPrice.price);
     };
 
     vm.getDiscountShippingPrice = function () {
@@ -50,7 +50,7 @@ angular.module('app').controller('checkoutCtl', function ($uibModal, $rootScope,
     };
 
     vm.getSaving = function () {
-        return parseFloat(vm.shipmentMethod.price) + parseFloat($rootScope.currentProduct.quantities[$rootScope.quantity].price) - vm.getTotal();
+        return parseFloat(vm.shipmentMethod.price) + parseFloat($rootScope.currentProduct.finalPrice.price) - vm.getTotal();
     };
 
     vm.getDiscountPrice = function (price) {

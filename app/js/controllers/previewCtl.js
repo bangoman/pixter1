@@ -45,7 +45,16 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,
 }
 
     $scope.chosenProduct = $scope.productsToDisplay[0];
-    
+    console.log("$rootScope.category",$rootScope.category);
+    console.log("$currentProduc",$rootScope.currentProduct);
+
+    $scope.getFinalPrice = function(){
+        if (!$rootScope.currentProduct.params){
+            $rootScope.currentProduct.finalPrice = $rootScope.currentProduct.quantities[0].pricing;
+        }
+    }
+    $scope.getFinalPrice();
+
     $scope.changeBackSideFlag = function(ifBackSide){
         $scope.bsf = ifBackSide;
     }

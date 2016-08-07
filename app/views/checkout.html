@@ -16,8 +16,8 @@
                 Product Price:
             </span>
             <div class="pull-right">
-                <span class="checkout-price checkout-old-price" ng-show="vm.getDiscountProductPrice() < currentProduct.quantities[quantity].price">
-                    {{currencySymbol}}{{currentProduct.quantities[quantity].price | number : 2}} 
+                <span class="checkout-price checkout-old-price" ng-show="vm.getDiscountProductPrice() < currentProduct.finalPrice.price">
+                    {{currencySymbol}}{{currentProduct.finalPrice.price | number : 2}} 
                 </span>
                 <span class="checkout-price checkout-new-price">
                     {{currencySymbol}}{{vm.getDiscountProductPrice() | number : 2}} 
@@ -69,12 +69,12 @@
         </div>
         <div class="row checkout-view-price-row">
             <span class="checkout-price-title" 
-                ng-show="(vm.getDiscountProductPrice() < currentProduct.quantities[quantity].price) || (vm.getDiscountShippingPrice() < vm.shipmentMethod.price)"
+                ng-show="(vm.getDiscountProductPrice() < currentProduct.finalPrice.price) || (vm.getDiscountShippingPrice() < vm.shipmentMethod.price)"
                 >
                 You saved:
             </span>
              <span class="checkout-price checkout-saved-price"
-                ng-show="(vm.getDiscountProductPrice() < currentProduct.quantities[quantity].price) || (vm.getDiscountShippingPrice() < vm.shipmentMethod.price)"
+                ng-show="(vm.getDiscountProductPrice() < currentProduct.finalPrice.price) || (vm.getDiscountShippingPrice() < vm.shipmentMethod.price)"
              >
                  <span>{{currencySymbol}}{{vm.getSaving() | number : 2}}</span>
             </span>
