@@ -120,26 +120,37 @@ select[type="number"]:active {
   background: #fff;
   
 }
-.store-header-buttons-container {
-  position: absolute;
-  right: 20px;
-  top: 8px;
-}
+.header-back-button-and-logo-container {}
+
 .store-header-back-button {
-  position: absolute;
   left: 20px;
-  top: 2px;
+  z-index: 1;
   width: 20px;
   font-size: 28px;
   cursor: pointer;
-  z-index: 1;
+  position: absolute;
   
+}
+.header-logo-image-container {
+  position:absolute;
+  top: 4px;
+  left: 11%;
+}
+.header-logo-image {
+  height:28px;
+}
+
+
+.store-header-buttons-container {
+  position: absolute;
+  right: 20px;
+  top: 6px;
 }
 .store-header-learn-more-button {
   height: 20px;
   width: 20px;
   padding: 3px;
-  margin: 0 8px;
+  margin: 0 -4px 0 8px;
   color: #92aaaa;
   line-height: 1;
   font-size: 15px;
@@ -159,14 +170,6 @@ select[type="number"]:active {
   font-weight: 400;
   border: none;
   background: transparent;
-}
-.header-logo-image-container {
-  top:-2px;
-  left: 60px;
-  position:absolute;
-}
-.header-logo-image {
-  height:28px;
 }
 
 .user-messaging {
@@ -350,16 +353,19 @@ select[type="number"]:active {
   padding-left: 20px;
 }
 .preview-bullet-list {
+  padding-top: 20px;
   padding-left: 16px;
 }
 .preview-bullet-list li {
   color: #32bafa;
-  font-size: 17px;
-  line-height: 17px;
+  font-size: 20px;
+  line-height: 32px;
+  padding-right: 20%;
   margin-bottom: 12px;
   letter-spacing: -0.5px;
   font-family: Calibri, "CalibriRegular", "Gill Sans", Verdana, Arial;
 }
+
 .preview-bullet-list span {
   color: #5a5a5a;
 }
@@ -928,6 +934,14 @@ select[type="number"]:active {
   .preview-product-border div:first-child {
     margin: 0 auto;
   }
+  .preview-bullet-list {
+    padding-top: 0;
+  }
+  .preview-bullet-list li {
+    font-size: 17px;
+    line-height: 17px;
+    padding-right: 0;
+  }
   .preview-next-row {
     bottom: auto;
     margin-top: 12px;
@@ -965,10 +979,16 @@ select[type="number"]:active {
   .thank-you-button-container {
     width: 100%;
   }
+  .header-logo-image-container {
+    left: 32px;
+  }
   .header-logo-image {
-    width: 16vw;
+    width: 15vw;
     height: auto;
     max-height: 30px;
+  }
+  .store-header-back-button {
+    line-height: 18px;
   }
 }
 @media screen and (max-width: 435px) {
@@ -992,14 +1012,15 @@ select[type="number"]:active {
     top: 4px;
   }
   .header-logo-image-container {
-    top: 0;
+    top: 5px;
+    left: 52px;
   }
   .header-logo-image {
     width: 16vw;
     height: auto;
     max-height: 30px;
     top: 3px;
-    margin-left:-25px;
+    margin-left:-20px;
   }
   .user-messaging {
     font-size: 12px;
