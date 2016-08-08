@@ -13,11 +13,12 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,
 
     $scope.displayDropdown = !$rootScope.previewCatalogParams.previewCatalog;
     $scope.selectedProduct = $rootScope.currentProduct;
+    $scope.chosenProduct = $scope.selectedProduct;
 
     // selectedProduct : the final product after rotation calculation (AKA the output product).
     // chosenProduct : the product user selected in the options menu, without the rotation or not.
 
-    for (var i = 0; i < $rootScope.category.products.length; i++) {
+/*    for (var i = 0; i < $rootScope.category.products.length; i++) {
         if ($rootScope.category.products[i].rotate) {
             if ($rootScope.category.products[i].rotate[0] == $rootScope.category.products[i].id) {
                 $scope.productsToDisplayOriginal.push($rootScope.category.products[i]);
@@ -34,7 +35,7 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,
                 $scope.productsToDisplayRotated.push($rootScope.category.products[i]);
             }   
         }
-    }
+    }*/
 
     $scope.productsToDisplay = $scope.productsToDisplayOriginal;
     if ($scope.displayDropdown) {
@@ -45,13 +46,12 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,
         });
     }
 
-    $scope.chosenProduct = $scope.productsToDisplay[0];
 
     $scope.setLandscapeOrPortrait = function(currentProductWidth,currentProductHeight){
-        if(currentProductWidth < currentProductHeight){
+        if(currentProductWidth <= currentProductHeight){
             $scope.productsToDisplay = [];
             for (var i = $rootScope.category.products.length - 1; i >= 0; i--) {
-                if (parseInt($rootScope.category.products[i].size_width) < parseInt($rootScope.category.products[i].size_height)){
+                if (parseInt($rootScope.category.products[i].size_width) <= parseInt($rootScope.category.products[i].size_height)){
                     $scope.productsToDisplay.push($rootScope.category.products[i]);
                 }
             }; 
@@ -63,7 +63,7 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,
 
     $scope.getFinalPrice = function(){
         if (!$rootScope.currentProduct.params){
-            $scope.selectedProduct.finalPrice = $rootScope.currentProduct.quantities[0].pricing;
+            $scope.selectedProduct.finalPrice = $scope.chosenProduct.quantities[0].pricing;
         }
     }
     $scope.getFinalPrice();
