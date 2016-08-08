@@ -40,7 +40,7 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,
     $scope.productsToDisplay = $scope.productsToDisplayOriginal;
     if ($scope.displayDropdown) {
         $scope.$watch("chosenProduct",function(){
-            $scope.getFinalPrice()
+            //$scope.getFinalPrice()
             console.log("$currentProduc",$rootScope.currentProduct);
             $scope.selectedProduct = $scope.chosenProduct;
         });
