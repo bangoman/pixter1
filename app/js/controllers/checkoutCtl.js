@@ -16,6 +16,8 @@ angular.module('app').controller('checkoutCtl', function ($uibModal, $rootScope,
             $scope.key = key;
         }
              console.log("$rootScope.order",$rootScope.order);
+             console.log("key",key);
+             console.log("value",value);
 
         if(value.region_id == $rootScope.order.country.region.id){
             vm.shipmentMethods.push(value);
@@ -25,6 +27,7 @@ angular.module('app').controller('checkoutCtl', function ($uibModal, $rootScope,
 
     if($scope.restOfWorld){
         vm.shipmentMethods.push($rootScope.currentProduct.finalPrice.shipping[$scope.key]);
+        console.log("$rootScope.order111",$rootScope.order);
     }
 
     vm.shipmentMethod = vm.shipmentMethods[0];

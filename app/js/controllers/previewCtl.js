@@ -39,14 +39,15 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,
 
     $scope.productsToDisplay = $scope.productsToDisplayOriginal;
     if ($scope.displayDropdown) {
-    $scope.$watch("chosenProduct",function(){
-        $scope.selectedProduct =  $scope.chosenProduct;
-    });
-}
+        $scope.$watch("chosenProduct",function(){
+            $scope.getFinalPrice()
+            console.log("$currentProduc",$rootScope.currentProduct);
+            $scope.selectedProduct = $scope.chosenProduct;
+        });
+    }
 
     $scope.chosenProduct = $scope.productsToDisplay[0];
     console.log("$rootScope.category",$rootScope.category);
-    console.log("$currentProduc",$rootScope.currentProduct);
 
     $scope.getFinalPrice = function(){
         if (!$rootScope.currentProduct.params){
