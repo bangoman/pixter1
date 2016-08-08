@@ -8,7 +8,6 @@ angular.module('app').directive('productImageDisplay', function ($http) {
             product: '=',
             withCanvas: '=',
             imageUrl: '=',
-            appliedChangesFlag: '=',
             finalStep: '=',
             tmbWidth: '=',
             catalogMode: '=',
@@ -146,18 +145,11 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 
             }
             $scope.applyChanges = function (positionLeft, positionTop, height, width, ratio) {
-                $rootScope.disableScroll = false;
-                $rootScope.backgroundPositionLeft = parseInt(positionLeft) * ratio;
-                $rootScope.backgroundPositionTop = parseInt(positionTop) * ratio;
-                $rootScope.backgroundSizeW = width * ratio;
-                $rootScope.backgroundSizeH = height * ratio;
-                $rootScope.zoomAmountW = width / ($scope.product.window.w / $scope.sizeRatio);
-                $rootScope.zoomAmountH = height / ($scope.product.window.h / $scope.sizeRatio);
-                $state.go('app.orderDetails');
+
                 $scope.backToReality($scope.backgroundPosition, $scope.product.window, $scope.sizeRatio, $scope.imageSizeRatio)
 
             }
-            $scope.laodAppliedChanges = function () {
+          /*  $scope.laodAppliedChanges = function () {
                 if ($rootScope.backgroundSizeW) {
                     if (($scope.product.window.w / $scope.product.window.h) >= ($scope.backgroundSize.w / $scope.backgroundSize.h)) {
                         $scope.imageSizeRatio = $scope.imageSizeRatio / $rootScope.zoomAmountW;
@@ -183,7 +175,7 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 
 
                 }
-            }
+            }*/
             $scope.initCanvas = function () {
                 canvas = document.getElementById("canvas");
                 ctx = canvas.getContext("2d");
