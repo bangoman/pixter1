@@ -6,8 +6,7 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,
     $scope.tmbWidth  = $rootScope.screenW * 0.67; 
     $scope.productsToDisplay = [];
     $scope.productsToDisplayOriginal = [];    
-    $scope.productsToDisplayRotated = [];    
-    $scope.productsArrayForNames = $rootScope.category.products;    
+    $scope.productsToDisplayRotated = [];       
     if($scope.tmbWidth > 320){
     	$scope.tmbWidth = 320;
     }
@@ -47,7 +46,20 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,
     }
 
     $scope.chosenProduct = $scope.productsToDisplay[0];
-    console.log("$rootScope.category",$rootScope.category);
+
+    $scope.setLandscapeOrPortrait = function(currentProductWidth,currentProductHeight){
+        if(currentProductWidth < currentProductHeight){
+            $scope.productsToDisplay = [];
+            for (var i = $rootScope.category.products.length - 1; i >= 0; i--) {
+                if (parseInt($rootScope.category.products[i].size_width) < parseInt($rootScope.category.products[i].size_height)){
+                    $scope.productsToDisplay.push($rootScope.category.products[i]);
+                }
+            }; 
+            console.log("$rootScope.category.products",$rootScope.category.products)
+            console.log("$scope.productsToDisplay",$scope.productsToDisplay)           
+        }
+    }
+    $scope.setLandscapeOrPortrait(parseInt($rootScope.currentProduct.size_width),parseInt($rootScope.currentProduct.size_height));
 
     $scope.getFinalPrice = function(){
         if (!$rootScope.currentProduct.params){

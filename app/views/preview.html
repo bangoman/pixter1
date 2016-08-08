@@ -31,7 +31,7 @@
             </span>
             <div class="form-group"  ng-show="category.products.length > 1">       
                 <select class="form-control preview-product-select" ng-model="chosenProduct" 
-                        ng-options="product.shortname for product in category.products"
+                        ng-options="product.shortname for product in productsToDisplay"
                         ng-show="displayDropdown">
                 </select>
             </div>
