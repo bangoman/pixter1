@@ -10,6 +10,9 @@ angular.module('app').controller('checkoutCtl', function ($uibModal, $rootScope,
    
     vm.shipmentMethods = [];
 
+
+
+
     function generateShippingMethods(){
         $scope.restOfWorld = true;
         angular.forEach($rootScope.currentProduct.finalPrice.shipping, function(value, key) {            
