@@ -354,7 +354,7 @@ pLoader.pLogic.initExternalCheckout = function (productData, type) {
             "user_email": "N/A",
             "recipient_name": "N/A",
             "city": "N/A",
-            "address": "N/A",git 
+            "address": "N/A",
             "state": "",
             "zip": "N/A",
             "address2": "",
