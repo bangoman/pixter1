@@ -118,8 +118,8 @@
                     <!-- <div ng-show="!order.TOC">You must agree to the terms</div> -->
                 </div>
             </div>
-            <div class="form-group error-text" ng-show="!vm.form.$valid && showErrorMessage">Please fill in the highlighted fields</div>
             <div class="col-sm-4 col-xs-12">
+               <div class="form-group error-text" ng-show="!vm.form.$valid && showErrorMessage" style="position:absolute ; top:-20px">Please fill in the highlighted fields</div>
                 <button type="submit" class="btn next-button" ng-style="brandingStyle.generalButton" ng-click="vm.goToCheckout()">Next</button>
             </div>
         </div>
