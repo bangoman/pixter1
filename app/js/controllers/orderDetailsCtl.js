@@ -36,6 +36,12 @@ angular.module('app').controller('orderDetailsCtl',function($state,$rootScope,ap
 
     vm.goToCheckout = function(){
     	if (!vm.form.$valid) {
+            $scope.showErrorMessage = true;
+            setTimeout(function(){
+                $scope.showErrorMessage = false;
+                $scope.$apply()
+            },5000);
+
     		return;
     	};
         if ($rootScope.order.TOC == true) {
