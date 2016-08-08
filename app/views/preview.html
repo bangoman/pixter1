@@ -4,7 +4,7 @@
         <div class="preview-product-border">
             <product-image-display back-side-flag="bsf"  product="currentProduct.images['Preview']"  image-url="imageUrl" tmb-width="tmbWidth"  final-step="finalStep" catalog-mode="true" >
             </product-image-display>
-            <div ng-if="!currentProduct.params" class="row preview-edit-row">
+            <div ng-if="!currentProduct.params" class="row preview-edit-row" style="margin-top:{{tmbWidth}}px;">
                 <!-- <h5 class="chosen-product-title">
                     {{chosenProduct.name}}
                 </h5> -->
@@ -13,7 +13,7 @@
                     <span>Edit</span>
                 </div>
             </div>
-            <div ng-if="currentProduct.params" class="row front-back-buttons-row" style="width:{{tmbWidth}}px">
+            <div ng-if="currentProduct.params" class="row front-back-buttons-row" style="width:{{tmbWidth}}px;margin-top:{{tmbWidth}}px;">
                 <div class="btn pull-left" ng-style="brandingStyle.generalButton" ng-click="changeBackSideFlag(true)" ng-disabled="bsf">                    
                         Back side
                 </div>
