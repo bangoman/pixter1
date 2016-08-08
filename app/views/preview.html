@@ -4,11 +4,8 @@
         <div class="preview-product-border">
             <product-image-display back-side-flag="bsf"  product="currentProduct.images['Preview']"  image-url="imageUrl" tmb-width="tmbWidth"  final-step="finalStep" catalog-mode="true" >
             </product-image-display>
-            <div ng-if="!currentProduct.params" class="row preview-edit-row" style="margin-top:{{tmbWidth}}px;">
-                <!-- <h5 class="chosen-product-title">
-                    {{chosenProduct.name}}
-                </h5> -->
-                <div class="preview-edit-btn" style="color:{{brandingData.branding.buttons.backgroundcolor}}" ng-click="vm.goToEdit()">
+            <div ng-if="!currentProduct.params" class="row preview-edit-row" >
+                <div class="preview-edit-btn" style="color:{{brandingData.branding.buttons.backgroundcolor}};margin-top:{{tmbWidth}}px;" ng-click="vm.goToEdit()">
                     <i class="glyphicon glyphicon-scissors"></i>
                     <span>Edit</span>
                 </div>
