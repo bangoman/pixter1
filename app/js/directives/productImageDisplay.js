@@ -140,7 +140,9 @@ angular.module('app').directive('productImageDisplay', function ($http) {
                 $rootScope.finalCroppedImageData = dataURL;
 
                 $rootScope.finalCroppedImageUrl = dataURItoBlob(dataURL);
-                $state.go('app.orderDetails');
+                $rootScope.imageUrl = $rootScope.finalCroppedImageUrl;
+
+                $state.go('app.preview');
 
             }
             $scope.applyChanges = function (positionLeft, positionTop, height, width, ratio) {
