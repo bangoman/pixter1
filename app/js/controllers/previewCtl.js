@@ -40,9 +40,14 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,
     $scope.productsToDisplay = $scope.productsToDisplayOriginal;
     if ($scope.displayDropdown) {
         $scope.$watch("chosenProduct",function(){
+<<<<<<< HEAD
             //$scope.getFinalPrice()
+=======
+
+>>>>>>> 4899993d0f4baa125c907b2aeb3ab58344ded7f0
             console.log("$currentProduc",$rootScope.currentProduct);
             $scope.selectedProduct = $scope.chosenProduct;
+            $scope.getFinalPrice()
         });
     }
 
@@ -51,7 +56,7 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,
 
     $scope.getFinalPrice = function(){
         if (!$rootScope.currentProduct.params){
-            $rootScope.currentProduct.finalPrice = $rootScope.currentProduct.quantities[0].pricing;
+            $scope.selectedProduct.finalPrice = $rootScope.currentProduct.quantities[0].pricing;
         }
     }
     $scope.getFinalPrice();

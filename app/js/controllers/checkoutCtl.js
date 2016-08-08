@@ -9,29 +9,33 @@ angular.module('app').controller('checkoutCtl', function ($uibModal, $rootScope,
     }
    
     vm.shipmentMethods = [];
-    angular.forEach($rootScope.currentProduct.finalPrice.shipping, function(value, key) {
+
+    function generateShippingMethods(){
         $scope.restOfWorld = true;
+        angular.forEach($rootScope.currentProduct.finalPrice.shipping, function(value, key) {            
+            if($rootScope.currentProduct.finalPrice.shipping[key].region_id == 7){
+                $scope.key = key;
+            }
+                 console.log("$rootScope.order",$rootScope.order);
+                 console.log("key",key);
+                 console.log("value",value);
 
-        if($rootScope.currentProduct.finalPrice.shipping[key].region_id == 7){
-            $scope.key = key;
+            if(value.region_id == $rootScope.order.country.region.id){
+                vm.shipmentMethods.push(value);
+                $scope.restOfWorld = false;
+            }
+        });
+
+        if($scope.restOfWorld){
+            vm.shipmentMethods.push($rootScope.currentProduct.finalPrice.shipping[$scope.key]);
+            console.log("$rootScope.order111",$rootScope.order);
         }
-             console.log("$rootScope.order",$rootScope.order);
-             console.log("key",key);
-             console.log("value",value);
 
-        if(value.region_id == $rootScope.order.country.region.id){
-            vm.shipmentMethods.push(value);
-            $scope.restOfWorld = false;
-        }
-    });
+        vm.shipmentMethod = vm.shipmentMethods[0];
 
-    if($scope.restOfWorld){
-        vm.shipmentMethods.push($rootScope.currentProduct.finalPrice.shipping[$scope.key]);
-        console.log("$rootScope.order111",$rootScope.order);
+
     }
-
-    vm.shipmentMethod = vm.shipmentMethods[0];
-    
+    generateShippingMethods();
     vm.openCuponModal = function () {
         $uibModal.open({
             templateUrl: 'app/views/cupon_modal.html',
