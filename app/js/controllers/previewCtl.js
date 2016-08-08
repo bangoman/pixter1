@@ -37,7 +37,7 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,
         }
     }*/
 
-    $scope.productsToDisplay = $scope.productsToDisplayOriginal;
+    $scope.productsToDisplay = $rootScope.category.products;
     if ($scope.displayDropdown) {
         $scope.$watch("chosenProduct",function(){
             $scope.selectedProduct = $scope.chosenProduct;
