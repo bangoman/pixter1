@@ -22,8 +22,9 @@
         </ul>
     </div>                
     <div class="col-lg-8 col-lg-offset-2 col-xs-12 edit-image-outer-container">
-                    <span ng-show="vm.showLoader" style="position:absolute;left:15px;"><b>Please Wait...<b></span>
-        <div class="crop-image-container">
+        <amazing-loader loader-color="'brandingData.branding.loader.textcolor'" loader-is-active="vm.showLoader"></amazing-loader>
+
+        <div class="crop-image-container" ng-show="!vm.showLoader">
             <div class="edit-image-inner-container" >
 
                 <!-- <product-image-display class="shop-view-product-image-display" zoom="zoom" editMode="true" imageUrl="https://fbcdn-sphotos-g-a.akamaihd.net/hphotos-ak-xfa1/t31.0-8/13246160_961327897315228_9219812989318561441_o.jpg" tmbWidth="500">
