@@ -1,5 +1,5 @@
 <canvas  id="canvas" width=1000 height=800 style="display:none"  ></canvas>
-<amazing-loader loader-color="'brandingData.branding.loader.textcolor'" loader-is-active="loading"></amazing-loader>
+<amazing-loader loader-color="loaderColor" loader-is-active="loading"></amazing-loader>
 <div id="edit-view-responsive" class="row" style="margin:0" ng-if="editMode">     
     
     <h2 class="edit-header hide-on-mobile">
@@ -22,8 +22,7 @@
         </ul>
     </div>                
     <div class="col-lg-8 col-lg-offset-2 col-xs-12 edit-image-outer-container">
-        <amazing-loader loader-color="'brandingData.branding.loader.textcolor'" loader-is-active="vm.showLoader"></amazing-loader>
-
+        <amazing-loader loader-color="loaderColor" loader-is-active="vm.showLoader"></amazing-loader>
         <div class="crop-image-container" ng-show="!vm.showLoader">
             <div class="edit-image-inner-container" >
 

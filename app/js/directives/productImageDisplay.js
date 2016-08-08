@@ -23,6 +23,7 @@ angular.module('app').directive('productImageDisplay', function ($http) {
             var lastHeight, lastWidth, canvas, ctx;
 
             $scope.editMode = $attrs.editmode;
+            $scope.loaderColor = $rootScope.brandingData.branding.loader.textcolor
             $scope.finalImagePosition = {};
             $scope.finalWindowPosition = {};
             $scope.finalWindowSize = {};

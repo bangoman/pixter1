@@ -48,16 +48,46 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,
 
     $scope.setLandscapeOrPortrait = function(currentProductWidth,currentProductHeight){
         if(currentProductWidth <= currentProductHeight){
+            console.log("1")
             $scope.productsToDisplay = [];
             for (var i = $rootScope.category.products.length - 1; i >= 0; i--) {
-                if (parseInt($rootScope.category.products[i].size_width) <= parseInt($rootScope.category.products[i].size_height)){
-                    $scope.productsToDisplay.push($rootScope.category.products[i]);
+                if (parseInt($rootScope.category.products[i].size_width) <= parseInt($rootScope.category.products[i].size_height) && $scope.removeDoubles($rootScope.category.products[i]) ){
+                console.log("2");
+                    $scope.productsToDisplay.push($rootScope.category.products[i]);     
                 }
-            }; 
-            console.log("$rootScope.category.products",$rootScope.category.products)
-            console.log("$scope.productsToDisplay",$scope.productsToDisplay)           
+            };            
+        }else{
+            for (var i = $rootScope.category.products.length - 1; i >= 0; i--) {
+                if ($scope.removeDoubles($rootScope.category.products[i])){
+                    console.log("3");
+                    console.log("$scope.productsToDisplay2.5",$scope.productsToDisplay)
+                    $scope.productsToDisplay.push($rootScope.category.products[i]);
+                    
+                }
+            } 
+            console.log("$rootScope.category.products2",$rootScope.category.products)
+            console.log("$scope.productsToDisplay2",$scope.productsToDisplay)              
         }
     }
+   
+    $scope.removeDoubles = function(productI) {
+
+        if ($scope.productsToDisplay.length == 0){
+            console.log("4");
+            return true
+        }
+        for (var i = $scope.productsToDisplay.length - 1; i >= 0; i--) {
+        console.log("productI.shortname",productI.shortname);
+        console.log("$scope.productsToDisplay",$scope.productsToDisplay);
+            if (productI.shortname == $scope.productsToDisplay[i].shortname){
+                console.log("5");
+                return false;
+            }else{
+                console.log("6");
+                return true;
+            }
+        };
+    }    
     $scope.setLandscapeOrPortrait(parseInt($rootScope.currentProduct.size_width),parseInt($rootScope.currentProduct.size_height));
 
     $scope.getFinalPrice = function(){
