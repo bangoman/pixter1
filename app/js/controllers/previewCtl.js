@@ -40,7 +40,6 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,
     $scope.productsToDisplay = $scope.productsToDisplayOriginal;
     if ($scope.displayDropdown) {
         $scope.$watch("chosenProduct",function(){
-            console.log("$currentProduc",$rootScope.currentProduct);
             $scope.selectedProduct = $scope.chosenProduct;
             $scope.getFinalPrice()
         });
@@ -64,6 +63,7 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,
     $scope.getFinalPrice = function(){
         if (!$rootScope.currentProduct.params){
             $scope.selectedProduct.finalPrice = $scope.chosenProduct.quantities[0].pricing;
+            console.log("$currentProduc",$rootScope.currentProduct);
         }
     }
     $scope.getFinalPrice();
