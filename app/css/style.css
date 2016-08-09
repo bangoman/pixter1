@@ -242,10 +242,12 @@ select[type="number"]:active {
 .modal-sm {
   width: 300px;
   margin: 0 auto;
+  margin-top: calc(50vh - 128px)
 }
 .dpi-worning-modal-ok-button {
   width: 64px;
   height: 32px;
+  padding: 0;
 }
 
 
