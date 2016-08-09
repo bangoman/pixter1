@@ -480,6 +480,7 @@ select[type="number"]:active {
   border: none;
   cursor: pointer;
   font-size: 19px;
+  margin-bottom: 12px;
   background: transparent;
   text-decoration: underline;
 }
