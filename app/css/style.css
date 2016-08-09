@@ -462,9 +462,6 @@ select[type="number"]:active {
   padding: 0px 48px;
   margin-left: 16px;
 }
-/*.edit-bottom-buttons-container .white-button {
-  width: 76px;
-}*/
 .edit-bottom-buttons-container .revert-changes-button {
   float: left;
   color: #999;
