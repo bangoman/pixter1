@@ -60,8 +60,7 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,
                 $scope.productsToDisplayLandscape.push($rootScope.category.products[i]);     
             }                
         };
-        $scope.chooseLandscapeOrPortrait();
-        console.log($scope.productsToDisplayLandscape,$scope.productsToDisplayPortrait,"ptd");            
+        $scope.chooseLandscapeOrPortrait();           
     }
 
     $scope.chooseLandscapeOrPortrait = function(){
@@ -80,7 +79,6 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,
     $scope.getFinalPrice = function(){
         if (!$rootScope.currentProduct.params){
             $scope.selectedProduct.finalPrice = $scope.chosenProduct.quantities[0].pricing;
-            console.log("$currentProduc",$rootScope.currentProduct);
         }
     }
     $scope.getFinalPrice();

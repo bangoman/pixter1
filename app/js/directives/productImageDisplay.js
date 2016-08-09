@@ -53,11 +53,15 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 
             $scope.$watch('finalStep', function () {
                 if ($scope.finalStep) {
-                    $scope.backToReality($scope.backgroundPosition, $scope.product.window, $scope.sizeRatio, $scope.imageSizeRatio)
-
+                    $scope.backToReality($scope.backgroundPosition, $scope.product.window, $scope.sizeRatio, $scope.imageSizeRatio);
                 }
 
             });
+
+            $scope.revertChanges = function () {
+                $rootScope.imageUrl = $rootScope.originalImageUrl;
+                getProductImgSize($rootScope.baseApi + $scope.product.image);
+            }
 
             $scope.editCancel = function () {
                 $rootScope.imageUrl = $rootScope.originalImageUrl;
@@ -355,6 +359,7 @@ angular.module('app').directive('productImageDisplay', function ($http) {
                     var width = newImg.width;
                     $scope.product.width = newImg.width;
                     $scope.product.height = newImg.height;
+                    console.log(" $scope.product", $scope.product)
 
                     getImgSize($rootScope.imageUrl);
                 }
