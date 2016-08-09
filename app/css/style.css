@@ -238,6 +238,19 @@ select[type="number"]:active {
   border: none;
 }
 
+/* dpi worning modal */
+.modal-sm {
+  width: 300px;
+  margin: 0 auto;
+  margin-top: calc(50vh - 128px)
+}
+.dpi-worning-modal-ok-button {
+  width: 64px;
+  height: 32px;
+  padding: 0;
+}
+
+
 
 /* shop view (first view) style */
 #shop-view-responsive {

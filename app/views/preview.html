@@ -6,11 +6,19 @@
             </product-image-display>
         </div>
         <div style="margin-top:{{tmbWidth}}px;">
-            <div ng-if="!currentProduct.params && brandingData.behaviour.cropping" class="row preview-edit-row" >
-                <div class="preview-edit-btn" style="color:{{brandingData.branding.buttons.backgroundcolor}};" ng-click="vm.goToEdit()">
+
+            <div  class="row preview-edit-row" >
+                <div class="preview-edit-btn pull-left" ng-show="currentProduct.rotate_product.length > 0" ng-click="findRotatedProduct(currentProduct.rotate_product[0].id)" style="color:{{brandingData.branding.buttons.backgroundcolor}};" >
+                    <i class="glyphicon glyphicon-repeat"></i>
+                    <span>Rotate</span>
+                    
+                </div>
+
+                <div class="preview-edit-btn" style="color:{{brandingData.branding.buttons.backgroundcolor}};" ng-click="vm.goToEdit()" ng-if="!currentProduct.params && brandingData.behaviour.cropping">
                     <i class="glyphicon glyphicon-scissors"></i>
                     <span>Edit</span>
                 </div>
+
             </div>
             <div ng-if="currentProduct.params" class="row front-back-buttons-row" style="width:{{tmbWidth}}px;">
                 <div class="btn pull-left" ng-style="brandingStyle.generalButton" ng-click="changeBackSideFlag(true)" ng-disabled="bsf">                    
@@ -33,7 +41,6 @@
                         ng-show="displayDropdown">
                 </select>
             </div>
-            <button class="btn btn-rotate"  style="margin-top:1px;margin-left:3px;" ng-show="currentProduct.rotate_product.length > 0" ng-click="findRotatedProduct(currentProduct.rotate_product[0].id)"><i class="glyphicon glyphicon-repeat"></i></button>
             <!-- ng-show="selectedProduct.pid == selectedProduct.rotate[0]" -->
             <span class="preview-price">
                 {{currentProduct.finalPrice.price}}{{currencySymbol}}
