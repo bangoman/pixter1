@@ -19,9 +19,6 @@ angular.module('app').controller('checkoutCtl', function ($uibModal, $rootScope,
             if($rootScope.currentProduct.finalPrice.shipping[key].region_id == 7){
                 $scope.key = key;
             }
-                 console.log("$rootScope.order",$rootScope.order);
-                 console.log("key",key);
-                 console.log("value",value);
 
             if(value.region_id == $rootScope.order.country.region.id){
                 vm.shipmentMethods.push(value);
