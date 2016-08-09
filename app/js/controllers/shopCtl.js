@@ -1,7 +1,7 @@
 angular.module('app').controller('shopCtl', function ($state, $http, $rootScope,$stateParams,$scope) {
     var vm = this;
     window.$state = $state;
-    $rootScope.dpiAproved = 
+    $rootScope.dpiAproved = true
     $scope.bannerRatio = 600/360;
     $scope.currentIndex = 0;
     $scope.correction  = 150;

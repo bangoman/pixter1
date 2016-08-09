@@ -135,6 +135,7 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,
     };
 
     $scope.$watch("selectedProduct",function(){
+        $rootScope.dpiAproved = true;
     	$rootScope.currentProduct =  $scope.selectedProduct;
     });
 

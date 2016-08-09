@@ -156,14 +156,18 @@ angular.module('app').directive('productImageDisplay', function ($http) {
                 $rootScope.finalCroppedImageUrl = dataURItoBlob(dataURL);
                 $rootScope.imageUrl = $rootScope.finalCroppedImageUrl;
                 console.log("$scope.currentImg",$scope.currentImg);
-                console.log("$scope.currentImg",$rootScope.currentProduct); 
+                console.log("$scope.currentImg",$rootScope.currentProduct);
+
                 if($scope.dpiCheck($scope.currentImg.width, $scope.currentImg.height, parseInt($rootScope.currentProduct.size_width), parseInt($rootScope.currentProduct.size_height), $rootScope.currentProduct.min_dpi)){
                     $state.go('app.preview');
-                }else{
+                }else if($rootScope.dpiAproved){
+                    $rootScope.dpiAproved = false;
                     alert("meheheheh");
                     $state.go('app.preview');
+                }else{
+                    $state.go('app.preview');
                 }  
-                             
+
                 
 
                 
