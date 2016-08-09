@@ -77,8 +77,11 @@
     </div>                
 
 
+        <button class="revert-changes-button" ng-click="revertChanges()">
+            <i class="glyphicon glyphicon-repeat"></i>
+            Revert changes 
+        </button>
         <div class="pull-right right-buttons-group">
-            <button class="revert-changes-button" ng-click="revertChanges()">Revert changes</button>
             <button class="btn white-button" ng-click="editCancel()">Cancel</button>
             <button class="btn next-button" ng-style="branding.generalButton" ng-click="applyChanges                        
                                 (backgroundPosition.left,

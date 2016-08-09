@@ -477,9 +477,10 @@ select[type="number"]:active {
 }
 .edit-bottom-buttons-container .revert-changes-button {
   color: #999;
+  border: none;
   cursor: pointer;
   font-size: 19px;
-  /*line-height: 38px;*/
+  background: transparent;
   text-decoration: underline;
 }
 
