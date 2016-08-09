@@ -55,7 +55,6 @@ angular.module('app').directive('productParams', function () {
 					}
 				}
 
-				console.log("$scope.quantity",$scope.quantity);
 				$scope.setTotalPrice ();				
 				
 			}
