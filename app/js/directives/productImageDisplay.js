@@ -57,6 +57,16 @@ angular.module('app').directive('productImageDisplay', function ($http) {
                 }
 
             });
+            $scope.dpiCheck = function (imgWidth, imgHeight, printWidth, printHeight, minDpi){
+                var result;
+                if((imgWidth / printWidth) > minDpi && (imgHeight / printHeight) > minDpi) {
+                    result = true;
+                }
+                else{
+                    result = false;
+                }
+                return result;
+            };            
 
             $scope.revertChanges = function () {
                 $rootScope.imageUrl = $rootScope.originalImageUrl;
@@ -145,9 +155,18 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 
                 $rootScope.finalCroppedImageUrl = dataURItoBlob(dataURL);
                 $rootScope.imageUrl = $rootScope.finalCroppedImageUrl;
-                console.log("$scope.currentImg",$scope.currentImg)
+                console.log("$scope.currentImg",$scope.currentImg);
+                console.log("$scope.currentImg",$rootScope.currentProduct); 
+                if($scope.dpiCheck($scope.currentImg.width, $scope.currentImg.height, parseInt($rootScope.currentProduct.size_width), parseInt($rootScope.currentProduct.size_height), $rootScope.currentProduct.min_dpi)){
+                    $state.go('app.preview');
+                }else{
+                    alert("meheheheh");
+                    $state.go('app.preview');
+                }  
+                             
+                
 
-                $state.go('app.preview');
+                
 
             }
             $scope.applyChanges = function (positionLeft, positionTop, height, width, ratio) {
