@@ -41,7 +41,6 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,
     if ($scope.displayDropdown) {
         $scope.$watch("chosenProduct",function(){
             $scope.selectedProduct = $scope.chosenProduct;
-            $rootScope.dpiAproved = true;
             $scope.getFinalPrice()
             if($rootScope.currentProduct.rotate_product){
                 $scope.setLandscapeOrPortrait();
@@ -136,6 +135,9 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,
     };
 
     $scope.$watch("selectedProduct",function(){
+        if($scope.chosenProduct !== $rootScope.currentProduct && $scope.chosenProduct !== undefined){
+            $rootScope.dpiNotAproved = true
+        }
     	$rootScope.currentProduct =  $scope.selectedProduct;
     });
 
