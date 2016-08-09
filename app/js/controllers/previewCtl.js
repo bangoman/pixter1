@@ -139,13 +139,5 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,
     	$rootScope.currentProduct =  $scope.selectedProduct;
     });
 
-    vm.openDpiWorningModal = function () {
-        $uibModal.open({
-            templateUrl: 'app/views/dpi_worning_modal.html',
-            controller: 'dpiWorningModalCtl as vm',
-            backdrop: 'static',
-        });
-    };
-
     
 });

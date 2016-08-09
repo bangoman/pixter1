@@ -15,7 +15,7 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 
         },
         controllerAs: 'vm',
-        controller: function ($scope, $http, $attrs, $document, $element, $compile, $rootScope, $state, $q, $ionicScrollDelegate) {
+        controller: function ($scope, $http, $attrs, $document, $element, $compile, $rootScope, $state, $q, $ionicScrollDelegate, $uibModal) {
 
             var vm = this;
             vm.baseApi = $rootScope.baseApi;
@@ -66,7 +66,14 @@ angular.module('app').directive('productImageDisplay', function ($http) {
                     result = false;
                 }
                 return result;
-            };            
+            };
+            $scope.openDpiWorningModal = function () {
+                $uibModal.open({
+                    templateUrl: 'app/views/dpi_worning_modal.html',
+                    controller: 'dpiWorningModalCtl as vm',
+                    backdrop: 'static',
+                });
+            };                        
 
             $scope.revertChanges = function () {
                 $rootScope.imageUrl = $rootScope.originalImageUrl;
@@ -163,7 +170,8 @@ angular.module('app').directive('productImageDisplay', function ($http) {
                     $state.go('app.preview');
                 }else if($rootScope.dpiAproved){
                     $rootScope.dpiAproved = false;
-                    vm.openDpiWorningModal();
+                    alert("meheheheh");
+                    $scope.openDpiWorningModal();
                     $state.go('app.preview');
                 }else{
                     $state.go('app.preview');
