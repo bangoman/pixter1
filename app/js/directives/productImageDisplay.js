@@ -83,6 +83,7 @@ angular.module('app').directive('productImageDisplay', function ($http) {
             }
 
             $scope.editCancel = function () {
+                $rootScope.dpiAproved = true;
                 $rootScope.imageUrl = $rootScope.originalImageUrl;
                 $state.go('app.preview');
             }
