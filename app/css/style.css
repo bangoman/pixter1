@@ -238,6 +238,11 @@ select[type="number"]:active {
   border: none;
 }
 
+#dpi-worning-modal {
+  width: 300px;
+}
+
+
 
 /* shop view (first view) style */
 #shop-view-responsive {
