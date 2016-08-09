@@ -53,7 +53,8 @@ angular.module('app').controller('mainCtl', function(message, $uibModal, $state,
         newImg.onload = function () {
             var height = newImg.height;
             var width = newImg.width;
-            
+            $rootScope.imageHeight = height;
+            $rootScope.imageWidth = width;
             vm.getProducts(width,height);
         }
         newImg.src = $rootScope.imageUrl;

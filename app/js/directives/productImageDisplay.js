@@ -145,6 +145,7 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 
                 $rootScope.finalCroppedImageUrl = dataURItoBlob(dataURL);
                 $rootScope.imageUrl = $rootScope.finalCroppedImageUrl;
+                console.log("$scope.currentImg",$scope.currentImg)
 
                 $state.go('app.preview');
 
@@ -307,7 +308,6 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 
 
                 $scope.imageStyle["background-position"] = $scope.backgroundPosition.left + $scope.backgroundPosition.top;
-
             }
 
             $scope.onRelease = function (event) {
@@ -359,8 +359,6 @@ angular.module('app').directive('productImageDisplay', function ($http) {
                     var width = newImg.width;
                     $scope.product.width = newImg.width;
                     $scope.product.height = newImg.height;
-                    console.log(" $scope.product", $scope.product)
-
                     getImgSize($rootScope.imageUrl);
                 }
 

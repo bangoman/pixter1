@@ -48,7 +48,9 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,
         });
     }
 
-   
+
+
+   $scope.windowArea = parseInt($scope.chosenProduct.size_width) * parseInt($scope.chosenProduct.size_height);
     $scope.setLandscapeOrPortrait = function(){
         $scope.productsToDisplayPortrait = [];
         $scope.productsToDisplayLandscape = [];
@@ -120,7 +122,6 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,
     };
 
     vm.goToOrderDetails = function() {
-        console.log("currentProduct",$rootScope.currentProduct);
     	$scope.finalStep = true;
         $rootScope.currentProduct = $scope.chosenProduct;
         var unbind = $scope.$watch(function () {
