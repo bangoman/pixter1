@@ -170,7 +170,6 @@ angular.module('app').directive('productImageDisplay', function ($http) {
                     $state.go('app.preview');
                 }else if($rootScope.dpiAproved){
                     $rootScope.dpiAproved = false;
-                    alert("meheheheh");
                     $scope.openDpiWorningModal();
                     $state.go('app.preview');
                 }else{
