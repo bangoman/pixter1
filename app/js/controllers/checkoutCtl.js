@@ -95,6 +95,7 @@ angular.module('app').controller('checkoutCtl', function ($uibModal, $rootScope,
                     }))
                     .then(function (data) {
                         win.location.href = data.url;
+                                                 
                     },function (data) {
                         win.close();
                         alert(data.error.message);
