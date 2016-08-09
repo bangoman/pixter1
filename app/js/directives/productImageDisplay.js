@@ -70,6 +70,7 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 
             $scope.revertChanges = function () {
                 $rootScope.imageUrl = $rootScope.originalImageUrl;
+                $rootScope.dpiAproved = true;
                 getProductImgSize($rootScope.baseApi + $scope.product.image);
             }
 
@@ -162,7 +163,7 @@ angular.module('app').directive('productImageDisplay', function ($http) {
                     $state.go('app.preview');
                 }else if($rootScope.dpiAproved){
                     $rootScope.dpiAproved = false;
-                    alert("meheheheh");
+                    vm.openDpiWorningModal();
                     $state.go('app.preview');
                 }else{
                     $state.go('app.preview');
