@@ -476,11 +476,13 @@ select[type="number"]:active {
   margin-left: 16px;
 }
 .edit-bottom-buttons-container .revert-changes-button {
-  float: left;
   color: #999;
+  border: none;
   cursor: pointer;
   font-size: 19px;
-  line-height: 38px;
+  margin-bottom: 12px;
+  background: transparent;
+  text-decoration: underline;
 }
 
 /* pay-flow (order_details & checkout views) style */
