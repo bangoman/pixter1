@@ -950,9 +950,6 @@ select[type="number"]:active {
   .preview-product-border div:first-child {
     margin: 0 auto;
   }
-  .preview-bullet-list {
-    padding-top: 0;
-  }
   .preview-bullet-list li {
     font-size: 17px;
     line-height: 17px;
