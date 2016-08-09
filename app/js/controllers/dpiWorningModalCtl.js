@@ -5,7 +5,7 @@ angular.module('app').controller('dpiWorningModalCtl', function ($uibModalInstan
     vm.dismiss = $uibModalInstance.dismiss;
 
     vm.apply = function () {
-
+        
     }
 
 
