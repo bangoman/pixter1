@@ -72,6 +72,7 @@ angular.module('app').directive('productImageDisplay', function ($http) {
                     templateUrl: 'app/views/dpi_worning_modal.html',
                     controller: 'dpiWorningModalCtl as vm',
                     backdrop: 'static',
+                    size: 'sm',
                 });
             };                        
 

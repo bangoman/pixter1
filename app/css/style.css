@@ -238,8 +238,14 @@ select[type="number"]:active {
   border: none;
 }
 
-#dpi-worning-modal {
-
+/* dpi worning modal */
+.modal-sm {
+  width: 300px;
+  margin: 0 auto;
+}
+.dpi-worning-modal-ok-button {
+  width: 64px;
+  height: 32px;
 }
 
 
