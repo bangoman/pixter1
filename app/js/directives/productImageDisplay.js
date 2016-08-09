@@ -78,12 +78,12 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 
             $scope.revertChanges = function () {
                 $rootScope.imageUrl = $rootScope.originalImageUrl;
-                $rootScope.dpiAproved = true;
+                $rootScope.dpiNotAproved = true;
                 getProductImgSize($rootScope.baseApi + $scope.product.image);
             }
 
             $scope.editCancel = function () {
-                $rootScope.dpiAproved = true;
+                $rootScope.dpiNotAproved = true;
                 $rootScope.imageUrl = $rootScope.originalImageUrl;
                 $state.go('app.preview');
             }
@@ -170,8 +170,9 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 
                 if($scope.dpiCheck($scope.currentImg.width, $scope.currentImg.height, parseInt($rootScope.currentProduct.size_width), parseInt($rootScope.currentProduct.size_height), $rootScope.currentProduct.min_dpi)){
                     $state.go('app.preview');
-                }else if($rootScope.dpiAproved){
-                    $rootScope.dpiAproved = false;
+                }else if($rootScope.dpiNotAproved){
+                    console.log($rootScope.dpiNotAproved)
+                    $rootScope.dpiNotAproved = false;
                     $scope.openDpiWorningModal();
                     $state.go('app.preview');
                 }else{
