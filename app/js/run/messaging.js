@@ -4,7 +4,7 @@ angular.module('app').run(function($rootScope,message){
     window.addEventListener('message', function(e) {
         if (e.source !== window && e.data) {
             $rootScope.$apply(function(){
-                $rootScope.imageUrl = e.data;
+                //$rootScope.imageUrl = e.data;
             });
         }
     }, false);
