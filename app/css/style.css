@@ -120,7 +120,6 @@ select[type="number"]:active {
   background: #fff;
   
 }
-.header-back-button-and-logo-container {}
 
 .store-header-back-button {
   left: 20px;
@@ -134,7 +133,7 @@ select[type="number"]:active {
 .header-logo-image-container {
   position:absolute;
   top: 4px;
-  left: 11%;
+  left: 32px;
 }
 .header-logo-image {
   height:28px;
@@ -300,6 +299,7 @@ select[type="number"]:active {
   text-align: center;
 }
 .shop-view-next-button-container .btn.next-button {
+  line-height: 1;
   width: 120px;
   padding: 4px 12px;
 }
@@ -540,6 +540,7 @@ select[type="number"]:active {
   box-sizing: border-box !important;  
 }
 .order-details-input::-webkit-input-placeholder { 
+  line-height: 18px;
   color: #888;
 }
 .order-details-state-zip-inputs {
@@ -1068,6 +1069,7 @@ select[type="number"]:active {
   }
   .order-details-input {
     height: 28px;
+    padding-top: 2px;
   }  
   .checkout-view-responsive .pay-flow-product-thumbnail {
     margin-top: 8px;
