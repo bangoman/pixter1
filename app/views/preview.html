@@ -57,18 +57,17 @@
             </ul>
         </div>
 
-        <div class="col-xs-12 visible-xs" ng-if="!currentProduct.params && !seeFullListOnMobile">
+        <div class="col-xs-12 visible-xs" ng-if="!currentProduct.params && !vm.seeFullListOnMobile">
             <ul class="preview-bullet-list">
                 <li><span>{{currentProduct.information[0]}}</span></li>
             </ul>
             <button class="preview-list-more-button" 
                 style="color:{{brandingData.branding.buttons.backgroundcolor}};"
-                ng-click="seeFullListOnMobile = !seeFullListOnMobile">
+                ng-click="vm.seeFullListOnMobile = !vm.seeFullListOnMobile">
                 More
             </button>
         </div>
-        {{seeFullListOnMobile}}
-        <div class="col-xs-12 visible-xs" ng-if="!currentProduct.params && seeFullListOnMobile">
+        <div class="col-xs-12 visible-xs" ng-if="!currentProduct.params && vm.seeFullListOnMobile">
             <ul class="preview-bullet-list">
                 <li ng-repeat="bullet in currentProduct.information"><span>{{bullet}}</span></li>
             </ul>
