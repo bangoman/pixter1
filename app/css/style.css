@@ -243,19 +243,15 @@ select[type="number"]:active {
   margin: 0 auto;
   margin-top: calc(50vh - 128px)
 }
-.dpi-worning-modal-ok-button {
-  padding: 0;
-  width: 92px;
+.dpi-worning-modal-ok-button,
+.dpi-worning-modal-cancel-button {
   height: 32px;
+  padding: 0 8px;
   border-radius: 4px;
 }
 .dpi-worning-modal-cancel-button {
-  width: 64px;
-  height: 32px;
-  padding: 0;
-  background-color: #fff;
   color: #8b8b8b;
-  border-radius: 4px;
+  background-color: #fff;
   border: 1px solid #8b8b8b;
 }
 
