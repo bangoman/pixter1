@@ -50,16 +50,30 @@
         <div class="col-xs-12">        
             <product-params params="currentProduct.params"></product-params>
         </div>
-        <div class="col-xs-12" ng-if="!currentProduct.params">
+        
+        <div class="col-xs-12 hidden-xs" ng-if="!currentProduct.params">
             <ul class="preview-bullet-list">
                 <li ng-repeat="bullet in currentProduct.information"><span>{{bullet}}</span></li>
             </ul>
         </div>
 
-        <!-- <div class="row form-group" ng-show="category.products.length > 1">       
-            <select class="form-control" ng-model="selectedProduct" ng-options="product.shortName for product in category.products">
-            </select>
-        </div> -->
+        <div class="col-xs-12 visible-xs" ng-if="!currentProduct.params && !vm.seeFullListOnMobile">
+            <ul class="preview-bullet-list">
+                <li><span>{{currentProduct.information[0]}}</span></li>
+            </ul>
+            <button class="preview-list-more-button" 
+                style="color:{{brandingData.branding.buttons.backgroundcolor}};"
+                ng-click="vm.seeFullListOnMobile = !vm.seeFullListOnMobile">
+                More
+            </button>
+        </div>
+        <div class="col-xs-12 visible-xs" ng-if="!currentProduct.params && vm.seeFullListOnMobile">
+            <ul class="preview-bullet-list">
+                <li ng-repeat="bullet in currentProduct.information"><span>{{bullet}}</span></li>
+            </ul>
+        </div>
+
+
 
 
 

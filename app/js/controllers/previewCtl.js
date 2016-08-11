@@ -15,6 +15,8 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,
     $scope.selectedProduct = $rootScope.currentProduct;
     $scope.chosenProduct = $scope.selectedProduct;
 
+    vm.seeFullListOnMobile = false;
+
     // selectedProduct : the final product after rotation calculation (AKA the output product).
     // chosenProduct : the product user selected in the options menu, without the rotation or not.
 
