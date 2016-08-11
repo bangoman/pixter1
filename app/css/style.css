@@ -245,9 +245,9 @@ select[type="number"]:active {
   margin-top: calc(50vh - 128px)
 }
 .dpi-worning-modal-ok-button {
+  padding: 0;
   width: 92px;
   height: 32px;
-  padding: 0;
   border-radius: 4px;
 }
 .dpi-worning-modal-cancel-button {
@@ -389,10 +389,14 @@ select[type="number"]:active {
   letter-spacing: -0.5px;
   font-family: Calibri, "CalibriRegular", "Gill Sans", Verdana, Arial;
 }
-
 .preview-bullet-list span {
   color: #5a5a5a;
 }
+.preview-list-more-button {
+  float: right;
+  font-weight: 600;
+}
+
 .preview-next-row {
   position: absolute;
   bottom: 0;
