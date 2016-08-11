@@ -59,9 +59,9 @@
                                ng-model="order.address" 
                                required 
                                ng-class="!vm.form.address.$valid && vm.form.$submitted ? 'error-input' : ''"/>
-                    <div class="form-group error-text" ng-show="vm.form.$submitted">
+                        <div class="form-group error-text" ng-show="vm.form.$submitted">
               <!--           <div ng-show="vm.form.address.$error.required">Required Field</div> -->
-                    </div>
+                        </div>
                     </div>
                     <div class="form-group">
                         <input type="text" class="form-control order-details-input" name="address2" placeholder="Address 2"
@@ -70,7 +70,11 @@
                 </div>
             </div>
             <div class="col-sm-6 col-xs-12">
-                <div>                  
+                <div>
+                    <div class="form-group">
+                        <input type="text" class="form-control order-details-input" name="telephoneNo" placeholder="Tel No."
+                               ng-model="order.telephoneNo"/>
+                    </div>                                  
                     <div class="form-group">
                         <input type="text" class="form-control order-details-input" name="city" placeholder="City*"
                                ng-model="order.city"
@@ -92,9 +96,9 @@
                                  placeholder="ZIP*"
                                  required 
                                  ng-class="!vm.form.zip.$valid && vm.form.$submitted ? 'error-input' : ''" />
-                          <div class="error-text" ng-show="vm.form.$submitted">
-                             <!--  <div ng-show="vm.form.zip.$error.required">Required Field</div> -->
-                          </div>
+                            <div class="error-text" ng-show="vm.form.$submitted">
+                               <!--  <div ng-show="vm.form.zip.$error.required">Required Field</div> -->
+                            </div>
                         </div>
 
                     </div>
