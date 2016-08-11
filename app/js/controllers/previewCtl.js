@@ -124,13 +124,14 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,
     vm.goToOrderDetails = function() {
     	$scope.finalStep = true;
         $rootScope.currentProduct = $scope.chosenProduct;
-        if($rootScope.finalCroppedImageData){
+        console.log(" && $rootScope.dpiNotAproved ",$rootScope.dpiNotAproved )
+        if($rootScope.finalCroppedImageData && !$rootScope.dpiNotAproved ){
             $state.go('app.orderDetails');
         }
         var unbind = $scope.$watch(function () {
            return $rootScope.finalCroppedImageData; 
         },function () {
-            if( $rootScope.finalCroppedImageData ){
+            if( $rootScope.finalCroppedImageData && !$rootScope.dpiNotAproved ){
                 $state.go('app.orderDetails');
                 unbind();
             }
