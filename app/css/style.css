@@ -245,7 +245,7 @@ select[type="number"]:active {
   margin-top: calc(50vh - 128px)
 }
 .dpi-worning-modal-ok-button {
-  width: 64px;
+  width: 92px;
   height: 32px;
   padding: 0;
   border-radius: 4px;
