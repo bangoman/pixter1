@@ -13,6 +13,7 @@ angular.module('app').controller('sliderShopCtl',function($scope,$rootScope){
     }
     $scope.changeBanner = function(i){
         $scope.currentIndex += i;
+       
 
     }
     $scope.goToPreview = function(category){

@@ -1,4 +1,4 @@
-angular.module('app').controller('dpiWorningModalCtl', function ($uibModalInstance, apiService, $rootScope) {
+angular.module('app').controller('dpiWorningModalCtl', function ($uibModalInstance, apiService, $rootScope, $scope) {
     var vm = this;
 
     vm.close = $uibModalInstance.close;

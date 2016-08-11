@@ -16,7 +16,12 @@ angular.module('app').controller('shopCtl', function ($state, $http, $rootScope,
     }
     $scope.changeBanner = function(i){
         $scope.currentIndex += i;
-
+        if($scope.currentIndex > $rootScope.productsData.objects.length-1){
+            $scope.currentIndex = 0;
+        }
+        if($scope.currentIndex < 0){
+            $scope.currentIndex = $rootScope.productsData.objects.length-1;
+        } 
     }
     $rootScope.screenW = document.body.clientWidth;
     $rootScope.disableScroll = false;
