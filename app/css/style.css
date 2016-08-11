@@ -249,6 +249,12 @@ select[type="number"]:active {
   height: 32px;
   padding: 0;
 }
+.dpi-worning-modal-cancel-button {
+  width: 64px;
+  height: 32px;
+  padding: 0;
+  background-color: #fff;
+}
 
 
 
