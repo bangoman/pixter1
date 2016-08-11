@@ -169,8 +169,10 @@ angular.module('app').directive('productImageDisplay', function ($http) {
                 if($scope.dpiCheck($scope.currentImg.width, $scope.currentImg.height, parseInt($rootScope.currentProduct.size_width), parseInt($rootScope.currentProduct.size_height), $rootScope.currentProduct.min_dpi)){
                     $state.go('app.preview');
                 }else if($rootScope.dpiNotAproved){
-                    $rootScope.dpiNotAproved = false;
                     $scope.openDpiWorningModal();
+                    if($rootScope.editToPreview){
+                        $state.go('app.preview');
+                    }
                 }else{
                     $state.go('app.preview');
                 }  

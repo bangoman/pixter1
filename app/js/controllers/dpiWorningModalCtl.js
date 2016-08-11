@@ -4,7 +4,8 @@ angular.module('app').controller('dpiWorningModalCtl', function ($uibModalInstan
     vm.close = $uibModalInstance.close;
     vm.dismiss = $uibModalInstance.dismiss;
     $scope.approved = function(){
-        $state.go('app.preview');
+        $rootScope.editToPreview = true;
+        $scope.approved = $uibModalInstance.dismiss;
         $rootScope.dpiNotAproved = false;
     }
 
