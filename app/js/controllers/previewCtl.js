@@ -45,6 +45,7 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,
     if ($scope.displayDropdown) {
         $scope.$watch("chosenProduct",function(){
             $scope.selectedProduct = $scope.chosenProduct;
+            $scope.imageToPreview = $scope.chosenProduct.images['Preview'];            
             $scope.getFinalPrice()
             if($rootScope.currentProduct.rotate_product){
                 $scope.setLandscapeOrPortrait();
@@ -69,6 +70,16 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,
         $scope.chooseLandscapeOrPortrait();           
     }
 
+    $scope.getBestMatchedOriantation = function(){
+        if ($scope.currentProduct.rotate_product.length > 0) {
+            var ratio1 = parseInt($scope.currentProduct.size_height) / parseInt($scope.currentProduct.size_width);
+            var ratio2 = parseInt($scope.currentProduct.rotate_product[0].size_height) / parseInt($scope.currentProduct.rotate_product[0].size_width);
+            var imageRatio = $rootScope.imageHeight / $rootScope.imageWidth;
+            if (imageRatio >= 1 && ratio1 > ratio2) {
+
+            }
+        }
+    }
     $scope.chooseLandscapeOrPortrait = function(){
         if (parseInt($scope.chosenProduct.size_width) <= parseInt($scope.chosenProduct.size_height)){
             $scope.productsToDisplay = $scope.productsToDisplayPortrait;
@@ -108,9 +119,12 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,
     }
 
     $scope.findRotatedProduct = function (productId){
+        $scope.isLoading = true;
+        $timeout(function() {$scope.isLoading = false;}, 1000);
         for (var i = $rootScope.category.products.length - 1; i >= 0; i--) {
             if ($rootScope.category.products[i].id == productId){
                  $scope.chosenProduct = $rootScope.category.products[i];
+                 $scope.imageToPreview = $scope.chosenProduct.images['Preview'];
                 return;
             };
         };
@@ -134,7 +148,7 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,
                 $scope.selectedProduct = $rootScope.category.products[i];
             }
         }
-
+        console.log($scope.chosenProduct);
     }
     vm.goToEdit = function() {
         $state.go('app.edit');
