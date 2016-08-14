@@ -848,7 +848,7 @@ select[type="number"]:active {
   opacity:0.7;
   background:rgba(5,5,8,0.7);
 }
-.slider-shop-description-box h2 {
+.slider-shop-description-price {
   margin: 10px 0;
 }
 
