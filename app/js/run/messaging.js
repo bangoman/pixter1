@@ -1,5 +1,5 @@
 angular.module('app').run(function($rootScope,message){
-    $rootScope.imageUrl = "image.jpg";
+    //$rootScope.imageUrl = "image.jpg";
 	message('init');
     window.addEventListener('message', function(e) {
         if (e.source !== window && e.data) {
