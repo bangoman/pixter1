@@ -32,6 +32,7 @@ angular.module('app').controller('checkoutCtl', function ($uibModal, $rootScope,
         }
 
         vm.shipmentMethod = vm.shipmentMethods[0];
+        console.log(" vm.shipmentMethod", vm.shipmentMethod)
 
 
     }
