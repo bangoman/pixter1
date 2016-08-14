@@ -322,8 +322,7 @@ select[type="number"]:active {
 }
 .preview-edit-row {
   width: 280px;
-  text-align: right;
-  padding: 0 20px;
+  text-align: right;  
   margin: 4px auto 0 !important;
 }
 .preview-edit-btn {
