@@ -2,20 +2,23 @@
 
     <div class="col-sm-5 col-xs-12 preview-product-image">
         <div class="preview-product-border">
-            <product-image-display back-side-flag="bsf"  product="currentProduct.images['Preview']"  image-url="imageUrl" tmb-width="tmbWidth"  final-step="finalStep" catalog-mode="true" >
+            <product-image-display back-side-flag="bsf"  product="imageToPreview"  image-url="imageUrl" tmb-width="tmbWidth"  final-step="finalStep" catalog-mode="true" ng-show="!isLoading">
             </product-image-display>
+        </div>
+        <div class="preview-product-border">
+            <amazing-loader loader-color="'#000'" loader-is-active="isLoading"></amazing-loader>
         </div>
         <div style="margin-top:{{tmbWidth}}px;">
 
             <div class="row preview-edit-row" >
-                <div class="preview-edit-btn pull-left" ng-show="currentProduct.rotate_product.length > 0 || currentProduct.rotate_images.Preview" ng-click="findRotatedProduct(currentProduct.rotate_product[0].id)" style="color:{{brandingData.branding.buttons.backgroundcolor}};" >
+                <div class="preview-edit-btn pull-left" ng-show="currentProduct.rotate_product.length > 0" ng-click="findRotatedProduct(currentProduct.rotate_product[0].id)" style="color:{{brandingData.branding.buttons.backgroundcolor}};" >
                     <i class="glyphicon glyphicon-repeat"></i>
                     <span>Rotate</span>
                     
                 </div>
             <div class="preview-edit-btn pull-left" 
                 ng-show="currentProduct.rotate_images.Preview" 
-                ng-click="TODO" 
+                ng-click="rotateImage()" 
                 style="color:{{brandingData.branding.buttons.backgroundcolor}};" >
                 <i class="glyphicon glyphicon-repeat"></i>
                 <span>Rotate Image</span>

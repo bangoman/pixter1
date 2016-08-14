@@ -1,4 +1,4 @@
-angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,$q,$stateParams){
+angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,$q,$stateParams,$timeout){
     var vm = this;
     $rootScope.disableScroll = false;
     $scope.finalStep = false;
@@ -10,11 +10,12 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,
     if($scope.tmbWidth > 320){
     	$scope.tmbWidth = 320;
     }
-
+    $scope.isImageRotated = false;
+    $scope.isLoading = false;
     $scope.displayDropdown = !$rootScope.previewCatalogParams.previewCatalog;
     $scope.selectedProduct = $rootScope.currentProduct;
     $scope.chosenProduct = $scope.selectedProduct;
-
+    $scope.imageToPreview = $rootScope.currentProduct.images['Preview'];
     vm.seeFullListOnMobile = false;
     console.log($rootScope.category);
 
@@ -81,12 +82,19 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,
     }
 
     $scope.rotateImage = function(){
-        if ($scope.chosenProduct.isImageRotated) {
-            $scope.chosenProduct.isImageRotated = true;            
+        $scope.isLoading = true;
+        $timeout(function() {$scope.isLoading = false;}, 1000);
+
+        console.log("rotateImage called");
+        if ($scope.isImageRotated) {
+            $scope.isImageRotated = false;
+            $scope.imageToPreview = $rootScope.currentProduct.images['Preview'];
         }
         else{
-            $scope.chosenProduct.isImageRotated = false;            
+            $scope.isImageRotated = true;
+            $scope.imageToPreview = $rootScope.currentProduct.rotate_images['Preview'];
         }
+        console.log($scope.imageToPreview);
     }
     $scope.getFinalPrice = function(){
         if (!$rootScope.currentProduct.params){
