@@ -3,7 +3,9 @@ angular.module('app').run(function($rootScope,message){
     //$rootScope.imageUrl = "image.jpg";
       function getDataUri(url, callback) {
             var image = new Image();        
+            //image.crossOrigin = "anonymous";
             image.onload = function () {
+
                 var canvas = document.createElement('canvas');
                 canvasContext = canvas.getContext("2d");
                 canvas.width = image.width;

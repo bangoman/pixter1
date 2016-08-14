@@ -71,7 +71,7 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,
     }
 
     $scope.getBestMatchedOriantation = function(){
-        if ($scope.currentProduct.rotate_product.length > 0) {
+        if ($scope.currentProduct.rotate_product && $scope.currentProduct.rotate_product.length > 0) {
             var ratio1 = parseInt($scope.currentProduct.size_height) / parseInt($scope.currentProduct.size_width);
             var ratio2 = parseInt($scope.currentProduct.rotate_product[0].size_height) / parseInt($scope.currentProduct.rotate_product[0].size_width);
             var imageRatio = $rootScope.imageHeight / $rootScope.imageWidth;
