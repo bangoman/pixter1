@@ -7,8 +7,6 @@ angular.module('app').directive('productParams', function () {
 		controller: function ($scope,$rootScope){
 			$rootScope.choosenParams = {};
 			$scope.paramPrice = 0 ;
-			console.log($scope.params,"params");
-
             $scope.$watch('params', function () {
                 if ($scope.params) {
                    $scope.generateBackgrounds();

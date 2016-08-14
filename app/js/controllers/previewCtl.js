@@ -122,22 +122,19 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,
     }
     vm.goToEdit = function() {
         $state.go('app.edit');
+        $rootScope.editModeOn = true;
     };
 
     vm.goToOrderDetails = function() {
     	$scope.finalStep = true;
         $rootScope.currentProduct = $scope.chosenProduct;
-        console.log(" && $rootScope.dpiNotAproved ",$rootScope.dpiNotAproved)
         if($rootScope.finalCroppedImageData && !$rootScope.dpiNotAproved){
-            console.log("1")
             $state.go('app.orderDetails');
         }
         var unbind = $scope.$watch(function () {
            return $rootScope.finalCroppedImageData; 
         },function () {
-             console.log(" && $rootScope.dpiNotAproved 2",$rootScope.dpiNotAproved)
             if($rootScope.finalCroppedImageData && !$rootScope.dpiNotAproved){
-                console.log(2)
                 $state.go('app.orderDetails');
                 unbind();
             }
