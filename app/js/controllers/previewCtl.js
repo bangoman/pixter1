@@ -75,8 +75,13 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,
             var ratio1 = parseInt($scope.currentProduct.size_height) / parseInt($scope.currentProduct.size_width);
             var ratio2 = parseInt($scope.currentProduct.rotate_product[0].size_height) / parseInt($scope.currentProduct.rotate_product[0].size_width);
             var imageRatio = $rootScope.imageHeight / $rootScope.imageWidth;
-            if (imageRatio >= 1 && ratio1 > ratio2) {
+            if (imageRatio >= 1 && ratio1 >= ratio2) {
 
+
+            }
+            else{
+                $scope.selectedProduct = $scope.currentProduct.rotate_product[0];
+                $scope.imageToPreview = $scope.currentProduct.rotate_product[0].images['Preview'];                
             }
         }
     }
