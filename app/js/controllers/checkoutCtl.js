@@ -24,8 +24,6 @@ angular.module('app').controller('checkoutCtl', function ($uibModal, $rootScope,
                 vm.shipmentMethods.push(value);
                 $scope.restOfWorld = false;
             }
-            console.log("key",key);
-            console.log("value",value);
         });
 
         if($scope.restOfWorld){
@@ -34,9 +32,6 @@ angular.module('app').controller('checkoutCtl', function ($uibModal, $rootScope,
         }
 
         vm.shipmentMethod = vm.shipmentMethods[0];
-        console.log("$rootScope.currentProduct.finalPrice.shipping",$rootScope.currentProduct.finalPrice.shipping)
-        console.log(" vm.shipmentMethods", vm.shipmentMethods)
-        console.log(" vm.shipmentMethod", vm.shipmentMethod)
 
 
     }
