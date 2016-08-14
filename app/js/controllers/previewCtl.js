@@ -100,6 +100,7 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,
         };
     };
     vm.rotateProduct = function(){
+        console.log($scope.productsToDisplay);
         var index = $scope.productsToDisplay.indexOf($scope.chosenProduct);
         if ($scope.selectedProduct.rotate[0] == $scope.selectedProduct.pid){
             var pidToSearch = $scope.selectedProduct.rotate[1];

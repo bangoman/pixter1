@@ -1,7 +1,10 @@
-angular.module('app').controller('orderDetailsCtl',function($state,$rootScope,apiService,$scope,$http){
+angular.module('app').controller('orderDetailsCtl',function($state,$rootScope,apiService,$scope,$http,$window){
     var vm = this;
     if(!$rootScope.order){
         $rootScope.order = {};
+    }
+    if (JSON.parse($window.localStorage.getItem("orderDetails"))) {
+        $rootScope.order = JSON.parse($window.localStorage.getItem("orderDetails"));        
     }
 	$rootScope.disableScroll = false;
 	$scope.tmbWidth = $rootScope.screenW*0.35;
@@ -35,6 +38,7 @@ angular.module('app').controller('orderDetailsCtl',function($state,$rootScope,ap
     };
 
     vm.goToCheckout = function(){
+        $window.localStorage.setItem("orderDetails", JSON.stringify($rootScope.order));
     	if (!vm.form.$valid) {
             $scope.showErrorMessage = true;
             setTimeout(function(){
