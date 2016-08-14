@@ -6,7 +6,7 @@
             </product-image-display>
         </div>
         <div class="preview-product-border">
-            <amazing-loader loader-color="'#000'" loader-is-active="isLoading"></amazing-loader>
+            <amazing-loader loader-color="brandingData.branding.loader.textcolor" loader-is-active="isLoading"></amazing-loader>
         </div>
         <div style="margin-top:{{tmbWidth}}px;">
 
@@ -17,7 +17,7 @@
                     
                 </div>
             <div class="preview-edit-btn pull-left" 
-                ng-show="currentProduct.rotate_images.Preview" 
+                ng-show="currentProduct.rotate_images.Preview && !currentProduct.params" 
                 ng-click="rotateImage()" 
                 style="color:{{brandingData.branding.buttons.backgroundcolor}};" >
                 <i class="glyphicon glyphicon-repeat"></i>
@@ -30,7 +30,7 @@
                 </div>
 
             </div>
-            <div ng-if="currentProduct.params" class="row front-back-buttons-row" style="width:{{tmbWidth}}px;">
+            <div ng-if="currentProduct.params" class="row front-back-buttons-row" style="width:{{tmbWidth}}px; margin-left: 5px">
                 <div class="btn pull-left" ng-style="brandingStyle.generalButton" ng-click="changeBackSideFlag(true)" ng-disabled="bsf">                    
                         Back side
                 </div>
@@ -89,8 +89,10 @@
 
     </div>
     <div class="row no-margin">
-        <div class="col-xs-12 col-sm-7 col-sm-offset-5">
-            <button class="btn next-button" ng-style="brandingStyle.generalButton" ng-click="vm.goToOrderDetails()">Next</button>
+        <div class="col-xs-12 col-sm-7 col-sm-offset-5" style="margin-top: 40px;">
+            
+        </style>>
+            <button class="btn next-button" ng-style="brandingStyle.generalButton" ng-click="vm.goToOrderDetails()" style="margin-top: 10px">Next</button>
         </div>
     </div>
 </div>
