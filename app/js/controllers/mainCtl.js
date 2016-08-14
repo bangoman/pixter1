@@ -18,7 +18,7 @@ angular.module('app').controller('mainCtl', function(message, $uibModal, $state,
       $rootScope.storeId = getParameterByName("storeId",location.search); //"87CD192192A547"
       $rootScope.bgs = getParameterByName("bgs",location.search); //"87CD192192A547"      
       $rootScope.bgs = JSON.parse($rootScope.bgs);
-      
+      $rootScope.originalImageUrl = $rootScope.imageUrl;      
 
       vm.getBranding();
       getImgSize()

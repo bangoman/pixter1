@@ -48,7 +48,7 @@
             <div class="form-group"  ng-show="category.products.length > 1">       
                 <select class="form-control preview-product-select" ng-model="chosenProduct" 
                         ng-options="product.shortname for product in productsToDisplay"
-                        ng-show="displayDropdown" style="margin-bottom: 20px">
+                        ng-show="displayDropdown">
                 </select>
             </div>
             <!-- ng-show="selectedProduct.pid == selectedProduct.rotate[0]" -->
@@ -89,7 +89,9 @@
 
     </div>
     <div class="row no-margin">
-        <div class="col-xs-12 col-sm-7 col-sm-offset-5">
+        <div class="col-xs-12 col-sm-7 col-sm-offset-5" style="margin-top: 40px;">
+            
+        </style>>
             <button class="btn next-button" ng-style="brandingStyle.generalButton" ng-click="vm.goToOrderDetails()" style="margin-top: 10px">Next</button>
         </div>
     </div>

@@ -47,6 +47,7 @@
           function dataURItoBlob(uri) {
                 // convert base64/URLEncoded data component to raw binary data held in a string
                 var DOMURL = window.URL || window.webkitURL || window;
+                // console.log(uri);
                 var byteString,
                     mimeString,
                     ia;
@@ -77,7 +78,7 @@
                 imgUrl = dataURItoBlob(dataUri)
                 if (!iframe) {
                     backgroundsString = encodeURIComponent(JSON.stringify(backgrounds.background))
-                    var url = baseUrl + '/index.html?imageUrl=' + imgUrl + '&apiKey=' + apiKey +'&storeId=' + storeId + '&bgs=' + backgroundsString ;  //   add this:  #/app/sliderShop  to see the slideShop
+                    var url = baseUrl + '/index.html?imageUrl=' + 'image.jpg' + '&apiKey=' + apiKey +'&storeId=' + storeId + '&bgs=' + backgroundsString ;  //   add this:  #/app/sliderShop  to see the slideShop
                     if(mobileAndTabletcheck()){
                         window.open(url,'_blank');
                     }else{
@@ -125,8 +126,6 @@
             // Do whatever you'd like with the Data URI!
         });
 
-
-        
      //   changeImage(url);
     }
 
