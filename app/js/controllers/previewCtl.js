@@ -45,7 +45,7 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,
     if ($scope.displayDropdown) {
         $scope.$watch("chosenProduct",function(){
             $scope.selectedProduct = $scope.chosenProduct;
-            $scope.imageToPreview = $scope.chosenProduct.images['Preview'];            
+            $scope.imageToPreview = $scope.selectedProduct.images['Preview'];            
             $scope.getFinalPrice()
             if($rootScope.currentProduct.rotate_product){
                 $scope.setLandscapeOrPortrait();
@@ -82,9 +82,12 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,
             else{
                 $scope.selectedProduct = $scope.currentProduct.rotate_product[0];
                 $scope.imageToPreview = $scope.currentProduct.rotate_product[0].images['Preview'];                
+                console.log(" $scope.selectedProduct", $scope.imageToPreview)
             }
         }
     }
+    $scope.getBestMatchedOriantation();
+
     $scope.chooseLandscapeOrPortrait = function(){
         if (parseInt($scope.chosenProduct.size_width) <= parseInt($scope.chosenProduct.size_height)){
             $scope.productsToDisplay = $scope.productsToDisplayPortrait;
