@@ -8,7 +8,7 @@ angular.module('app').run(function($rootScope,message){
                 canvasContext = canvas.getContext("2d");
                 canvas.width = image.width;
                 canvas.height = image.height;
-                image.crossOrigin = 'anonymous';
+                image.crossOrigin = 'Anonymous';
 
                 // draw image into canvas element
                 canvasContext.drawImage(image, 0, 0, image.width, image.height);
