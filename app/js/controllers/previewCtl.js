@@ -16,6 +16,7 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,
     $scope.chosenProduct = $scope.selectedProduct;
 
     vm.seeFullListOnMobile = false;
+    console.log($rootScope.category);
 
     // selectedProduct : the final product after rotation calculation (AKA the output product).
     // chosenProduct : the product user selected in the options menu, without the rotation or not.
@@ -79,7 +80,14 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,
         $scope.setLandscapeOrPortrait();
     }
 
-
+    $scope.rotateImage = function(){
+        if ($scope.chosenProduct.isImageRotated) {
+            $scope.chosenProduct.isImageRotated = true;            
+        }
+        else{
+            $scope.chosenProduct.isImageRotated = false;            
+        }
+    }
     $scope.getFinalPrice = function(){
         if (!$rootScope.currentProduct.params){
             $scope.selectedProduct.finalPrice = $scope.chosenProduct.quantities[0].pricing;
