@@ -67,7 +67,9 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,
                 $scope.productsToDisplayLandscape.push($rootScope.category.products[i]);     
             }                
         };
-        $scope.chooseLandscapeOrPortrait();           
+        $scope.chooseLandscapeOrPortrait(); 
+        $scope.getBestMatchedOriantation();
+          
     }
 
     $scope.getBestMatchedOriantation = function(){
@@ -86,7 +88,7 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,
             }
         }
     }
-    $scope.getBestMatchedOriantation();
+   // $scope.getBestMatchedOriantation();
 
     $scope.chooseLandscapeOrPortrait = function(){
         if (parseInt($scope.chosenProduct.size_width) <= parseInt($scope.chosenProduct.size_height)){
