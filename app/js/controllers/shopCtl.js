@@ -6,7 +6,7 @@ angular.module('app').controller('shopCtl', function ($state, $http, $rootScope,
     $scope.currentIndex = 0;
     $scope.correction  = 150;
     $rootScope.imageUrl = $rootScope.originalImageUrl;  
-    
+    console.log($rootScope.imageUrl)
     if($rootScope.screenW > 600){
         $scope.bannerWidth = window.innerWidth - 30;
         $scope.bannerHeight = $scope.bannerWidth / $scope.bannerRatio;
