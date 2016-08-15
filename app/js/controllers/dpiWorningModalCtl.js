@@ -11,7 +11,8 @@ angular.module('app').controller('dpiWorningModalCtl', function ($uibModalInstan
     $scope.approved = function(){        
         $rootScope.dpiApproved = true;
         $rootScope.editToPreview = true;
-        if($state.current == 'app.edit'){
+        console.log($state);
+        if($state.current.name == 'app.edit'){
             $state.go('app.preview');
         }else{
             $state.go('app.orderDetails');

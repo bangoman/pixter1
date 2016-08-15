@@ -172,17 +172,11 @@ angular.module('app').directive('productImageDisplay', function ($http) {
                     if(!$rootScope.dpiApproved && !$scope.dpiCheck(width, height, parseInt($rootScope.currentProduct.size_width), parseInt($rootScope.currentProduct.size_height), $rootScope.currentProduct.min_dpi)){
                         $scope.openDpiWorningModal();
 
-                    }else if($scope.finalStep){
-                        
+                    }else if($scope.finalStep){                        
                         $state.go('app.orderDetails');
-
                     }else{
                         $state.go('app.preview');
-
                     }                                    
-
-
-
                 }
                 newImg.src = $rootScope.imageUrl;
                 
