@@ -5,5 +5,5 @@ var app = angular.module('app',[
     'angular-carousel',
     'ngDraggable',
     'ionic',
-    'ngCookies'
+    'ngCookies',
 ]);
