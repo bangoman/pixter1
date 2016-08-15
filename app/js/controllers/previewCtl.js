@@ -8,20 +8,20 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,
     $scope.productsToDisplay = [];
     $scope.productsToDisplayOriginal = [];    
     $scope.productsToDisplayRotated = [];       
+
     if($scope.tmbWidth > 320){
     	$scope.tmbWidth = 320;
     }
+
     $scope.isImageRotated = false;
     $scope.isLoading = false;
     $scope.displayDropdown = !$rootScope.previewCatalogParams.previewCatalog;
-    
-    
+        
     $scope.imageToPreview = $rootScope.currentProduct.images['Preview'];
     vm.seeFullListOnMobile = false;
     $scope.productsToDisplay = $rootScope.category.products;
-
-    //$rootScope.currentProduct = $rootScope.category.products[0];
     $scope.windowArea = parseInt($rootScope.currentProduct.size_width) * parseInt($rootScope.currentProduct.size_height);
+
     $scope.findRotatedProduct = function (productId){
         $scope.isLoading = true;
         $timeout(function() {$scope.isLoading = false;}, 1000);
@@ -73,7 +73,6 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,
 
             }
             else if(!$rootScope.editToPreview){
-
                 $scope.chooseLandscapeOrPortrait(); 
                 $scope.findRotatedProduct($scope.currentProduct.rotate_product[0].id);
             }
@@ -81,11 +80,6 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,
     }    
     $scope.getBestMatchedOriantation();
     
-    
-
-
-
-
     $scope.rotateImage = function(){
         $scope.isLoading = true;
         $timeout(function() {$scope.isLoading = false;}, 1000);

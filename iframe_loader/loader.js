@@ -28,10 +28,11 @@
 
     function loadIframe(imgUrl,apiKey,storeId,backgrounds) {
         var baseUrl = "http://pixter-v1-responsive.s3-website-us-east-1.amazonaws.com";
-        baseUrl = "http://localhost/pixter1"        
+        //baseUrl = "http://localhost/pixter1"        
                 if (!iframe) {
                     backgroundsString = encodeURIComponent(JSON.stringify(backgrounds.background))
-                    var url = baseUrl + '/index.html?imageUrl=' + imgUrl +'&apiKey=' + apiKey +'&storeId=' + storeId + '&bgs=' + backgroundsString ;  //   add this:  #/app/sliderShop  to see the slideShop
+                    //var url = baseUrl + '/index.html?imageUrl=' + imgUrl +'&apiKey=' + apiKey +'&storeId=' + storeId + '&bgs=' + backgroundsString ;  //   add this:  #/app/sliderShop  to see the slideShop
+                    var url = baseUrl + '/index.html?apiKey=' + apiKey +'&storeId=' + storeId + '&bgs=' + backgroundsString ;  //   add this:  #/app/sliderShop  to see the slideShop
                     if(mobileAndTabletcheck()){
                         window.open(url,'_blank');
                     }else{
@@ -71,8 +72,8 @@
                         iframe.style.border = "none";
 
                         document.body.appendChild(iframe);
+                        localStorage.setItem('imageUrl',imgUrl);
                         
-                        changeImage(imgUrl)
 
                     }
 
