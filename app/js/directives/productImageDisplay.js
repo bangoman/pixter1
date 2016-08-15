@@ -86,6 +86,7 @@ angular.module('app').directive('productImageDisplay', function ($http) {
             $scope.editCancel = function () {
                 
                 $rootScope.imageUrl = $rootScope.originalImageUrl;
+                $rootScope.editToPreview = true;
                 $state.go('app.preview');
             }
 
