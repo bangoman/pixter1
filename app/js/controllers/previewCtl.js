@@ -59,9 +59,9 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,
 
     }
 
-    if($rootScope.currentProduct.rotate_product){
+    //if($rootScope.currentProduct.rotate_product){
         $scope.setLandscapeOrPortrait();
-    }
+   //}
 
 
     $scope.getBestMatchedOriantation = function(){
