@@ -57,4 +57,5 @@ angular.module('app').factory('apiService', function ($http, uuidService, $q, $h
             image_data:dataUrl,
         },'post','https://upload-sg.pixter-media.com/');
     }
+    
 });

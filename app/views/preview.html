@@ -46,7 +46,7 @@
                 {{currentProduct.name}}
             </span>
             <div class="form-group"  ng-show="category.products.length > 1">       
-                <select class="form-control preview-product-select" ng-model="chosenProduct" 
+                <select class="form-control preview-product-select" ng-model="$root.currentProduct" 
                         ng-options="product.shortname for product in productsToDisplay"
                         ng-show="displayDropdown">
                 </select>

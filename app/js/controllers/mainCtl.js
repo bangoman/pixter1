@@ -13,7 +13,7 @@ angular.module('app').controller('mainCtl', function(message, $uibModal, $state,
         return decodeURIComponent(results[2].replace(/\+/g, " "));
     }    
     setTimeout(function(){
-//      $rootScope.imageUrl = getParameterByName("imageUrl",location.search);//"image.jpg";
+      $rootScope.imageUrl = getParameterByName("imageUrl",location.search);//"image.jpg";
       $rootScope.apiKey = getParameterByName("apiKey",location.search);//"d0d01fe4ebaca56ab78cab9e9c5476e569276784";
       $rootScope.storeId = getParameterByName("storeId",location.search); //"87CD192192A547"
       $rootScope.bgs = getParameterByName("bgs",location.search); //"87CD192192A547"      

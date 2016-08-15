@@ -53,6 +53,7 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 
             $scope.$watch('finalStep', function () {
                 if ($scope.finalStep) {
+                    console.log("here11");
                     $scope.backToReality($scope.backgroundPosition, $scope.product.window, $scope.sizeRatio, $scope.imageSizeRatio);
                 }
 
@@ -78,12 +79,11 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 
             $scope.revertChanges = function () {
                 $rootScope.imageUrl = $rootScope.originalImageUrl;
-                $rootScope.dpiNotAproved = true;
                 getProductImgSize($rootScope.baseApi + $scope.product.image);
             }
 
             $scope.editCancel = function () {
-                $rootScope.dpiNotAproved = true;
+                
                 $rootScope.imageUrl = $rootScope.originalImageUrl;
                 $state.go('app.preview');
             }
@@ -165,8 +165,28 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 
                 $rootScope.finalCroppedImageUrl = dataURItoBlob(dataURL);
                 $rootScope.imageUrl = $rootScope.finalCroppedImageUrl;
+                var newImg = new Image();
+                newImg.onload = function () {
+                    var height = newImg.height;
+                    var width = newImg.width;
+                    if(!$rootScope.dpiApproved && !$scope.dpiCheck(width, height, parseInt($rootScope.currentProduct.size_width), parseInt($rootScope.currentProduct.size_height), $rootScope.currentProduct.min_dpi)){
+                        $scope.openDpiWorningModal();
 
-                if($scope.dpiCheck($scope.currentImg.width, $scope.currentImg.height, parseInt($rootScope.currentProduct.size_width), parseInt($rootScope.currentProduct.size_height), $rootScope.currentProduct.min_dpi)){
+                    }else if($scope.finalStep){
+                        
+                        $state.go('app.orderDetails');
+
+                    }else{
+                        $state.go('app.preview');
+
+                    }                                    
+
+
+
+                }
+                newImg.src = $rootScope.imageUrl;
+                
+/*                if($scope.dpiCheck($scope.currentImg.width, $scope.currentImg.height, parseInt($rootScope.currentProduct.size_width), parseInt($rootScope.currentProduct.size_height), $rootScope.currentProduct.min_dpi)){                    
                     $state.go('app.preview');
                 }else if($rootScope.dpiNotAproved){
                     //$rootScope.dpiNotAproved = false;
@@ -175,10 +195,11 @@ angular.module('app').directive('productImageDisplay', function ($http) {
                         $state.go('app.preview');
                     }
                 }else{
+                    //$rootScope.dpiNotAproved = true;
                     $state.go('app.preview');
                 }  
 
-                
+  */              
 
                 
 

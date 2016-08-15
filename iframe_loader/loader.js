@@ -31,7 +31,7 @@
         baseUrl = "http://localhost/pixter1"        
                 if (!iframe) {
                     backgroundsString = encodeURIComponent(JSON.stringify(backgrounds.background))
-                    var url = baseUrl + '/index.html?apiKey=' + apiKey +'&storeId=' + storeId + '&bgs=' + backgroundsString ;  //   add this:  #/app/sliderShop  to see the slideShop
+                    var url = baseUrl + '/index.html?imageUrl=' + imgUrl +'&apiKey=' + apiKey +'&storeId=' + storeId + '&bgs=' + backgroundsString ;  //   add this:  #/app/sliderShop  to see the slideShop
                     if(mobileAndTabletcheck()){
                         window.open(url,'_blank');
                     }else{
