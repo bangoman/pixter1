@@ -3,8 +3,6 @@ angular.module('app').controller('mainCtl', function(message, $uibModal, $state,
     vm.state = $state;    
     $scope.loading = true;
     $rootScope.baseApi = 'http://ec2-52-201-250-90.compute-1.amazonaws.com:8000';
-
-
     function getParameterByName(name, url) {
         if (!url) url = window.location.href;
         name = name.replace(/[\[\]]/g, "\\$&");
@@ -14,75 +12,18 @@ angular.module('app').controller('mainCtl', function(message, $uibModal, $state,
         if (!results[2]) return '';
         return decodeURIComponent(results[2].replace(/\+/g, " "));
     }    
-
-    function getDataUri(url, callback) {
-          var image = new Image();        
-          //image.crossOrigin = "anonymous";
-          image.onload = function () {
-
-              var canvas = document.createElement('canvas');
-              canvasContext = canvas.getContext("2d");
-              canvas.width = image.width;
-              canvas.height = image.height;
-              image.crossOrigin = 'Anonymous';
-
-              // draw image into canvas element
-              canvasContext.drawImage(image, 0, 0, image.width, image.height);
-      
-              // get canvas contents as a data URL (returns png format by default)
-              var dataURL = canvas.toDataURL();
-              callback(dataURL);
-          };
-
-          image.src = url;
-      }
-
-  // Usage
-      function dataURItoBlob(uri){
-          //console.log(uri);
-          // convert base64/URLEncoded data component to raw binary data held in a string
-          var DOMURL = window.URL || window.webkitURL || window;
-          var byteString,
-              mimeString,
-              ia;
-
-          if (uri.split(',')[0].indexOf('base64') >= 0) {
-              byteString = atob(uri.split(',')[1]);
-          }
-          else {
-              byteString = unescape(uri.split(',')[1]);
-          }
-          // separate out the mime component
-          mimeString = uri.split(',')[0].split(':')[1].split(';')[0];
-          // write the bytes of the string to a typed array
-          ia = new Uint8Array(byteString.length);
-          for (var i = 0; i < byteString.length; i++) {
-              ia[i] = byteString.charCodeAt(i);
-          }
-          var blob = new Blob([ia], {
-              type: mimeString
-          });            
-          return DOMURL.createObjectURL(blob)
-          
-      }    
-
     setTimeout(function(){
-      $rootScope.imageUrl = localStorage.imageUrl
-      getDataUri($rootScope.imageUrl,function(dataUrl){                
-          $rootScope.imageUrl = dataURItoBlob(dataUrl);                
-          $rootScope.originalImageUrl = $rootScope.imageUrl;
-          $rootScope.$apply()
-          $rootScope.apiKey = getParameterByName("apiKey",location.search);//"d0d01fe4ebaca56ab78cab9e9c5476e569276784";
-          $rootScope.storeId = getParameterByName("storeId",location.search); //"87CD192192A547"
-          $rootScope.bgs = getParameterByName("bgs",location.search); //"87CD192192A547"      
-          $rootScope.bgs = JSON.parse($rootScope.bgs);
-          $rootScope.originalImageUrl = $rootScope.imageUrl;      
+      //$rootScope.imageUrl = getParameterByName("imageUrl",location.search);//"image.jpg";
+      $rootScope.apiKey = getParameterByName("apiKey",location.search);//"d0d01fe4ebaca56ab78cab9e9c5476e569276784";
+      $rootScope.storeId = getParameterByName("storeId",location.search); //"87CD192192A547"
+      $rootScope.bgs = getParameterByName("bgs",location.search); //"87CD192192A547"      
+      $rootScope.bgs = JSON.parse($rootScope.bgs);
+      $rootScope.originalImageUrl = $rootScope.imageUrl;      
 
-          vm.getBranding();
-          getImgSize()
-          $state.go('app.shop')
-          
-      });
+      vm.getBranding();
+      getImgSize()
+      $state.go('app.shop')
+
     }, 1500);    
 
     $rootScope.originalImageUrl = $rootScope.imageUrl;

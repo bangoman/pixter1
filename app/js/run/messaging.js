@@ -14,7 +14,6 @@ angular.module('app').run(function($rootScope,message){
 
                 // draw image into canvas element
                 canvasContext.drawImage(image, 0, 0, image.width, image.height);
-        
                 // get canvas contents as a data URL (returns png format by default)
                 var dataURL = canvas.toDataURL();
                 callback(dataURL);
@@ -52,12 +51,11 @@ angular.module('app').run(function($rootScope,message){
             
         }    
 	message('init');
-    window.addEventListener('message', function(e) {
-        //console.log(e);
+    window.addEventListener('message', function(e) {        
         if (e.data.type == "pixter") {
-             getDataUri(e.data.img,function(dataUrl){
-                
-                $rootScope.imageUrl =  dataURItoBlob(dataUrl);                
+
+            getDataUri(e.data.img,function(dataUrl){                
+                $rootScope.imageUrl = dataURItoBlob(dataUrl);                
                 $rootScope.originalImageUrl = $rootScope.imageUrl;
                 $rootScope.$apply()
              })
