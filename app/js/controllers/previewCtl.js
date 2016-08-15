@@ -73,7 +73,6 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,
 
             }
             else if(!$rootScope.editToPreview){
-                console.log("hereasdas",$rootScope.editToPreview);
 
                 $scope.chooseLandscapeOrPortrait(); 
                 $scope.findRotatedProduct($scope.currentProduct.rotate_product[0].id);
