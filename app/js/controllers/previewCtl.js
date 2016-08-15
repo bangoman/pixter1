@@ -41,7 +41,7 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,
             if (parseInt($rootScope.category.products[i].size_width) <= parseInt($rootScope.category.products[i].size_height)){
                 $scope.productsToDisplayPortrait.push($rootScope.category.products[i]);     
             }
-            if (parseInt($rootScope.category.products[i].size_width) >= parseInt($rootScope.category.products[i].size_height)){
+            if (parseInt($rootScope.category.products[i].size_width) > parseInt($rootScope.category.products[i].size_height)){
                 $scope.productsToDisplayLandscape.push($rootScope.category.products[i]);     
             }                
 
@@ -53,7 +53,7 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,
         if (parseInt($rootScope.currentProduct.size_width) <= parseInt($rootScope.currentProduct.size_height)){
             $scope.productsToDisplay = $scope.productsToDisplayPortrait;
         }
-        else if (parseInt($rootScope.currentProduct.size_width) >= parseInt($rootScope.currentProduct.size_height)){
+        else if (parseInt($rootScope.currentProduct.size_width) > parseInt($rootScope.currentProduct.size_height)){
             $scope.productsToDisplay = $scope.productsToDisplayLandscape;
         }
 
