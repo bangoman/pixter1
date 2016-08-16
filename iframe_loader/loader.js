@@ -20,14 +20,15 @@
 
         if (e.data === 'pixter_close') {
             document.body.removeChild(iframe);
+            document.body.removeChild(overlay);
             iframe = null;
+            overlay = null;
         }
     }, false);
 
 
     function loadIframe(imgUrl, apiKey, storeId, backgrounds) {
-        var baseUrl;
-        // baseUrl = "http://pixter-v1-responsive.s3-website-us-east-1.amazonaws.com/";
+        var baseUrl = "http://pixter-v1-responsive.s3-website-us-east-1.amazonaws.com/";
         baseUrl = "../";
         if (!iframe) {
             backgroundsString = encodeURIComponent(JSON.stringify(backgrounds.background));
