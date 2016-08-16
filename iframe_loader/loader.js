@@ -80,6 +80,7 @@
         // Do whatever you'd like with the Data URI!
 
         changeImage(imgUrl);
+        showSite();
     }
 
     function changeImage(url) {
