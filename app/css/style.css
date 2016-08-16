@@ -67,6 +67,12 @@ select[type="number"]:active {
   box-shadow: none;
   outline: 0 !important;
 }
+.form-control:focus {
+    border-color: initial;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
 /* generic classes */ 
 
 .btn {
@@ -136,7 +142,7 @@ select[type="number"]:active {
 }
 .header-logo-image-container {
   position:absolute;
-  top: 8px;
+  top: 10px;
   left: 32px;
 }
 .header-logo-image {
@@ -177,7 +183,7 @@ select[type="number"]:active {
 
 .user-messaging {
   position: absolute;
-  bottom: 7px;
+  bottom: 0;
   width: 100%;
   padding: 4px 0;
   font-size: 17px;
@@ -404,7 +410,7 @@ select[type="number"]:active {
 
 #preview-view-responsive .next-button {
   position: relative;
-  left: calc(50% - 100px);
+  left: calc(50% - 32px);
   top: -52px;
   width: 200px;
   line-height: 28px;
@@ -1042,11 +1048,10 @@ select[type="number"]:active {
     top: 8px;
   }
   .header-logo-image-container {
-    top: 10px;
     left: 52px;
   }
   .header-logo-image {
-    width: 16vw;
+    width: 14vw;
     height: auto;
     max-height: 30px;
     margin-left:-20px;
