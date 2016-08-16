@@ -17,10 +17,10 @@
             </span>
             <div class="pull-right">
                 <span class="checkout-price checkout-old-price" ng-show="vm.getDiscountProductPrice() < currentProduct.finalPrice.price">
-                    {{priceCurrencyOrder(currentProduct.finalPrice.price, currencySymbol) | number : 2}} 
+                    {{priceCurrencyOrder(currentProduct.finalPrice.price, currencySymbol)}} 
                 </span>
                 <span class="checkout-price checkout-new-price">
-                    {{currencySymbol}}{{vm.getDiscountProductPrice() | number : 2}} 
+                    {{priceCurrencyOrder(vm.getDiscountProductPrice(), currencySymbol)}} 
                 </span>
             </div>
         </div>
@@ -31,10 +31,10 @@
                 </span>
                 <div class="pull-right">
                     <span class="checkout-price checkout-old-price" ng-show="vm.getDiscountShippingPrice() < vm.shipmentMethod.price">
-                        {{currencySymbol}}{{vm.shipmentMethod.price}}
+                        {{priceCurrencyOrder(vm.shipmentMethod.price, currencySymbol)}}
                     </span>
                     <span class="checkout-price checkout-new-price">
-                        {{currencySymbol}}{{vm.getDiscountShippingPrice()}} 
+                        {{priceCurrencyOrder(vm.getDiscountShippingPrice(), currencySymbol)}}
                     </span>
                 </div>
             </div>
@@ -76,14 +76,14 @@
              <span class="checkout-price checkout-saved-price"
                 ng-show="(vm.getDiscountProductPrice() < currentProduct.finalPrice.price) || (vm.getDiscountShippingPrice() < vm.shipmentMethod.price)"
              >
-                 <span>{{currencySymbol}}{{vm.getSaving() | number : 2}}</span>
+                 <span>{{priceCurrencyOrder(vm.getSaving(), currencySymbol)}}</span>
             </span>
             <div class="pull-right">
                 <span class="checkout-price-title bigger-title checkout-total-title">
                     Total:
                 </span>
                  <span class="checkout-price checkout-total-price">
-                    {{currencySymbol}}{{vm.getTotal() | number : 2}}
+                    {{priceCurrencyOrder(vm.getTotal(), currencySymbol)}}
                 </span>
             </div>
         </div>

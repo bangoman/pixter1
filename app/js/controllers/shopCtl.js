@@ -1,4 +1,4 @@
-angular.module('app').controller('shopCtl', function ($state, $http, $rootScope,$stateParams,$scope) {
+angular.module('app').controller('shopCtl', function ($state, $http, $rootScope,$stateParams,$scope, formatPriceCurrency) {
     var vm = this;
     window.$state = $state;
     $rootScope.dpiApproved = false;    
@@ -14,6 +14,9 @@ angular.module('app').controller('shopCtl', function ($state, $http, $rootScope,
         $scope.bannerWidth = $rootScope.screenW;
         $scope.bannerHeight = $scope.bannerWidth / $scope.bannerRatio;
     }
+    $scope.priceCurrencyOrder = formatPriceCurrency;
+    console.log("$scope.priceCurrencyOrder",formatPriceCurrency(100,"$"));
+ 
     $scope.changeBanner = function(i){
         $scope.currentIndex += i;
         if($scope.currentIndex > $rootScope.productsData.objects.length-1){

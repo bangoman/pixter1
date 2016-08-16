@@ -1,4 +1,4 @@
-angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,$q,$stateParams,$timeout){
+angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,$q,$stateParams,$timeout, formatPriceCurrency){
     var vm = this;
     $rootScope.disableScroll = false;
     $rootScope.finalStep = false;
@@ -21,6 +21,8 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,
     vm.seeFullListOnMobile = false;
     $scope.productsToDisplay = $rootScope.category.products;
     $scope.windowArea = parseInt($rootScope.currentProduct.size_width) * parseInt($rootScope.currentProduct.size_height);
+
+    $scope.priceCurrencyOrder = formatPriceCurrency;
 
     $scope.findRotatedProduct = function (productId){
         $scope.isLoading = true;
@@ -96,9 +98,12 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,
     $scope.getFinalPrice = function(){
         if (!$rootScope.currentProduct.params){
             $rootScope.currentProduct.finalPrice = $rootScope.currentProduct.quantities[0].pricing;
+            
         }
     }
     $scope.getFinalPrice();
+   
+
 
     $scope.changeBackSideFlag = function(ifBackSide){
         $scope.bsf = ifBackSide;

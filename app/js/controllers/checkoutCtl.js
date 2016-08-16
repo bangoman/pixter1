@@ -11,9 +11,10 @@ angular.module('app').controller('checkoutCtl', function ($uibModal, $rootScope,
     vm.shipmentMethods = [];
 
 
-    scope.priceCurrencyOrder = function(price, currency){
-        formatPriceCurrency(price, currency);
-    }
+    $scope.priceCurrencyOrder = formatPriceCurrency;
+    console.log("$scope.priceCurrencyOrder",$scope.priceCurrencyOrder(100,"$"));
+
+    
 
 
     function generateShippingMethods(){

@@ -9,7 +9,7 @@
                 <h4>
                     {{category.description}}
                 </h4>
-                 <h2>{{category.pricing.price}} {{currencySymbol}}</h2>
+                 <h2>{{priceCurrencyOrder(category.pricing.price, currencySymbol)}}</h2>
 
             </div>
             <div ng-click="changeBanner(-1)" 

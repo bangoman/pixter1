@@ -53,7 +53,7 @@
             </div>
             <!-- ng-show="selectedProduct.pid == selectedProduct.rotate[0]" -->
             <span class="preview-price">
-                {{currentProduct.finalPrice.price}}{{currencySymbol}}
+                {{priceCurrencyOrder(currentProduct.finalPrice.price, currencySymbol)}}
             </span>
         </div>
 
