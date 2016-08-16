@@ -27,7 +27,7 @@
 
     function loadIframe(imgUrl, apiKey, storeId, backgrounds) {
         var baseUrl = "http://pixter-v1-responsive.s3-website-us-east-1.amazonaws.com/";
-        baseUrl = "../";
+        //baseUrl = "../";
         if (!iframe) {
             backgroundsString = encodeURIComponent(JSON.stringify(backgrounds.background));
             // var url = baseUrl + '/index.html?imageUrl=' + imgUrl + '&apiKey=' + apiKey + '&storeId=' + storeId + '&bgs=' + backgroundsString;  //   add this:  #/app/sliderShop  to see the slideShop
@@ -39,9 +39,9 @@
                 overlay = document.createElement('div');
                 overlay.style.width = "100vw";
                 overlay.style.height = "100vh";
-
-
                 overlay.style.position = "fixed";
+                overlay.style.top = "0px"
+                overlay.style.left = "0px"
                 overlay.style.background = "rgba(0,0,0,0.4)";
                 document.body.appendChild(overlay);
                 var screenW = document.body.clientWidth;
@@ -62,7 +62,7 @@
                 iframe.style.position = 'fixed';
                 iframe.style.left = offsetLeft + "px";
 
-                iframe.style.top = (screenH - iframeH) / 2;
+                iframe.style.top = (screenH - iframeH) / 2  + "px";
                 iframe.style.width = iframeW + "px";
 
                 iframe.style.height = iframeH + 'px';
@@ -79,6 +79,7 @@
         // Do whatever you'd like with the Data URI!
 
         changeImage(imgUrl);
+        showSite();
     }
 
     function changeImage(url) {
