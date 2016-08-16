@@ -300,4 +300,15 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
         }
     }
 
+    $scope.countryApi = 'http://ec2-52-201-250-90.compute-1.amazonaws.com:8000/api/v2/country/?user=demo';
+    
+    function getCountry () {
+        $http.get($scope.countryApi)
+        .then(function (res) {
+            $rootScope.countries = res.data.objects;
+            console.log("$rootScope.countries2",$rootScope.countries);                
+        }); 
+    }
+    getCountry();    
+
 });

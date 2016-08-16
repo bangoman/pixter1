@@ -4,7 +4,8 @@ angular.module('app').controller('orderDetailsCtl',function($state,$rootScope,ap
         $rootScope.order = {};
     }
     if (JSON.parse($window.localStorage.getItem("orderDetails"))) {
-        $rootScope.order = JSON.parse($window.localStorage.getItem("orderDetails"));        
+        $rootScope.order = JSON.parse($window.localStorage.getItem("orderDetails"));
+         console.log("$rootScope.order1",$rootScope.order.country);         
     }
 	$rootScope.disableScroll = false;
 	$scope.tmbWidth = $rootScope.screenW*0.35;
@@ -12,32 +13,41 @@ angular.module('app').controller('orderDetailsCtl',function($state,$rootScope,ap
 		$scope.tmbWidth = 120
 
 	}
-    $scope.countryApi = 'http://ec2-52-201-250-90.compute-1.amazonaws.com:8000/api/v2/country/?user=demo';
+ /*   $scope.countryApi = 'http://ec2-52-201-250-90.compute-1.amazonaws.com:8000/api/v2/country/?user=demo';
     
     function getCountry () {
         $http.get($scope.countryApi)
         .then(function (res) {
             $rootScope.countries = res.data.objects;
-            if(!$rootScope.order.country){  
+            console.log("$rootScope.countries2",$rootScope.countries);
+            console.log("$rootScope.order.country2",$rootScope.order.country);    
+            if(!$rootScope.order.country){
                 setDefaultCountry ();
             }
+              
+
         }); 
     }
-
-       getCountry();
-  
+    getCountry(); */
 
     apiService.upload($rootScope.finalCroppedImageData).then(function (data) {
         $rootScope.order.key = data.key;
-    });   
+    });
+    
+    console.log("$rootScope.countries1",$rootScope.countries);   
+    console.log("$rootScope.order",$rootScope.order.country);    
 
     function setDefaultCountry () {
         for (var i = $rootScope.countries.length - 1; i >= 0; i--) {
-            if($rootScope.countries[i].id == 113){                
+            if($rootScope.countries[i].id == 113){             
                 $rootScope.order.country = $rootScope.countries[i];
+                 console.log("$rootScope.order3",$rootScope.order.country); 
             };
         };
     };
+    if(!$rootScope.order.country){
+        setDefaultCountry ();
+    }    
 
     vm.goToCheckout = function(){
         $window.localStorage.setItem("orderDetails", JSON.stringify($rootScope.order));

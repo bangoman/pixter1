@@ -9,7 +9,6 @@
     window.addEventListener('message', function (e) {
         if (e.data === 'pixter_init') {
             postImage();
-            console.log("!!");
         }
 
         if (e.data === 'pixter_image_received') {
