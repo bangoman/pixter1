@@ -17,7 +17,7 @@
             </span>
             <div class="pull-right">
                 <span class="checkout-price checkout-old-price" ng-show="vm.getDiscountProductPrice() < currentProduct.finalPrice.price">
-                    {{currencySymbol}}{{currentProduct.finalPrice.price | number : 2}} 
+                    {{priceCurrencyOrder(currentProduct.finalPrice.price, currencySymbol) | number : 2}} 
                 </span>
                 <span class="checkout-price checkout-new-price">
                     {{currencySymbol}}{{vm.getDiscountProductPrice() | number : 2}} 

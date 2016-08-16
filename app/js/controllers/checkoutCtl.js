@@ -1,4 +1,4 @@
-angular.module('app').controller('checkoutCtl', function ($uibModal, $rootScope, apiService, $filter,$scope) {
+angular.module('app').controller('checkoutCtl', function ($uibModal, $rootScope, apiService, $filter,$scope, formatPriceCurrency) {
     var vm = this;
 
     $scope.tmbWidth = $rootScope.screenW*0.35;
@@ -11,6 +11,9 @@ angular.module('app').controller('checkoutCtl', function ($uibModal, $rootScope,
     vm.shipmentMethods = [];
 
 
+    scope.priceCurrencyOrder = function(price, currency){
+        formatPriceCurrency(price, currency);
+    }
 
 
     function generateShippingMethods(){
