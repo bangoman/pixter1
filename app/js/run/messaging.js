@@ -1,6 +1,18 @@
-angular.module('app').run(function ($rootScope, message, localStorageCommunicator) {
+angular.module('app').run(function ($rootScope, message, localStorageService, $location) {
     //
-    //$rootScope.imageUrl = "image.jpg";
+    message('init');
+    var host = $location.search().host;
+    setImageUrl(localStorageService.get(host + '.imageUrl'));
+    window.addEventListener('message', function (e) {
+        if (e.data.type == "pixter") {
+
+            getDataUri(e.data.img, function (dataUrl) {
+                $rootScope.$apply(setImageUrl.bind(null, dataUrl));
+                message('image_received');
+            });
+        }
+    }, false);
+
     function getDataUri(url, callback) {
         var image = new Image();
         //image.crossOrigin = "anonymous";
@@ -51,18 +63,11 @@ angular.module('app').run(function ($rootScope, message, localStorageCommunicato
 
     }
 
-    message('init');
-    window.addEventListener('message', function (e) {
-        if (e.data.type == "pixter") {
-            localStorageCommunicator.broadcast('set_image', e.data);
+    function setImageUrl(url) {
+        if (url) {
+            localStorageService.set(host + '.imageUrl', url);
+            var blobUrl = dataURItoBlob(url);
+            $rootScope.originalImageUrl = $rootScope.imageUrl = blobUrl;
         }
-    }, false);
-
-    localStorageCommunicator.on('set_image', function (e) {
-        getDataUri(e.data.img, function (dataUrl) {
-            $rootScope.imageUrl = dataURItoBlob(dataUrl);
-            $rootScope.originalImageUrl = $rootScope.imageUrl;
-            $rootScope.$apply()
-        })
-    });
+    }
 });
