@@ -53,7 +53,6 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 
             $scope.$watch('finalStep', function () {
                 if ($scope.finalStep) {
-                    console.log("here11");
                     $scope.backToReality($scope.backgroundPosition, $scope.product.window, $scope.sizeRatio, $scope.imageSizeRatio);
                 }
 
