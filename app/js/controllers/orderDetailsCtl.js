@@ -17,8 +17,9 @@ angular.module('app').controller('orderDetailsCtl',function($state,$rootScope,ap
     function getCountry () {
         $http.get($scope.countryApi)
             .then(function (res) {
-             $rootScope.countries = res.data.objects;
-              setDefaultCountry ();
+            $rootScope.countries = res.data.objects;
+             console.log("$rootScope.countries2",$rootScope.countries); 
+            setDefaultCountry ();
             }); 
     }
     if(!$rootScope.order.country){
@@ -28,11 +29,16 @@ angular.module('app').controller('orderDetailsCtl',function($state,$rootScope,ap
     apiService.upload($rootScope.finalCroppedImageData).then(function (data) {
         $rootScope.order.key = data.key;
     });
+     console.log("$rootScope.order",$rootScope.order);    
+     console.log("$rootScope.countries1",$rootScope.countries);   
+     console.log("$rootScope.order.country1",$rootScope.order.country);    
 
     function setDefaultCountry () {
         for (var i = $rootScope.countries.length - 1; i >= 0; i--) {
             if($rootScope.countries[i].id == 113){
-               $rootScope.order.country = $rootScope.countries[i];
+                 console.log("$rootScope.countries",$rootScope.countries);   
+                 console.log("$rootScope.order.country",$rootScope.order.country);                
+                $rootScope.order.country = $rootScope.countries[i];
             };
         };
     };
