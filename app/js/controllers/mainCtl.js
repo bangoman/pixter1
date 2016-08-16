@@ -246,6 +246,7 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
                 console.log("product res", res);
                 $rootScope.productsData = res.data;
                 $scope.loading = false;
+                $scope.animateOpacity();
                 $rootScope.$broadcast("productArrive");
                 // if (res.data.display.type == "OSS") {
                 //     $state.go('app.sliderShop');
@@ -309,6 +310,10 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
             console.log("$rootScope.countries2",$rootScope.countries);                
         }); 
     }
-    getCountry();    
+    getCountry(); 
+
+    $scope.animateOpacity = function(){
+        document.getElementById('pixter-responsive-store').classList.add('opacity-animation');       
+    }
 
 });
