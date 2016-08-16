@@ -20,7 +20,9 @@
 
         if (e.data === 'pixter_close') {
             document.body.removeChild(iframe);
+            document.body.removeChild(overlay);
             iframe = null;
+            overlay = null;
         }
     }, false);
 
