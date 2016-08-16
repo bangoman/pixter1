@@ -41,8 +41,8 @@
                 overlay.style.width = "100vw";
                 overlay.style.height = "100vh";
                 overlay.style.position = "fixed";
-                overlay.style.top = "0px;"
-                overlay.style.left = "0px;"
+                overlay.style.top = "0px"
+                overlay.style.left = "0px"
                 overlay.style.background = "rgba(0,0,0,0.4)";
                 document.body.appendChild(overlay);
                 var screenW = document.body.clientWidth;
