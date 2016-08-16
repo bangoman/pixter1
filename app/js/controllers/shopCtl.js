@@ -6,7 +6,7 @@ angular.module('app').controller('shopCtl', function ($state, $http, $rootScope,
     $scope.bannerRatio = 600/360;
     $scope.currentIndex = 0;
     $scope.correction  = 150;
-    $rootScope.imageUrl = $rootScope.originalImageUrl;  
+    $rootScope.imageUrl = $rootScope.originalImageUrl;
     if($rootScope.screenW > 600){
         $scope.bannerWidth = window.innerWidth - 30;
         $scope.bannerHeight = $scope.bannerWidth / $scope.bannerRatio;
@@ -22,8 +22,8 @@ angular.module('app').controller('shopCtl', function ($state, $http, $rootScope,
         if($scope.currentIndex < 0){
             $scope.currentIndex = $rootScope.productsData.objects.length-1;
         } 
-    }
-    $rootScope.screenW = document.body.clientWidth;
+    };
+    // $rootScope.screenW = document.body.clientWidth;
     $rootScope.disableScroll = false;
     $rootScope.previewCatalogParams = $stateParams;
      if($rootScope.productsData){
