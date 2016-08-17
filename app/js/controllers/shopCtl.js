@@ -9,10 +9,10 @@ angular.module('app').controller('shopCtl', function ($state, $http, $rootScope,
     $rootScope.imageUrl = $rootScope.originalImageUrl;
     if($rootScope.screenW > 600){
         $scope.bannerWidth = window.innerWidth - 30;
-        $scope.bannerHeight = $scope.bannerWidth / $scope.bannerRatio;
+        $scope.bannerHeight = ($scope.bannerWidth / $scope.bannerRatio) * 0.99;
     }else{
         $scope.bannerWidth = $rootScope.screenW;
-        $scope.bannerHeight = $scope.bannerWidth / $scope.bannerRatio;
+        $scope.bannerHeight = ($scope.bannerWidth / $scope.bannerRatio) * 0.99;
     }
     $scope.priceCurrencyOrder = formatPriceCurrency;
  
