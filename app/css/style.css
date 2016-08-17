@@ -1095,7 +1095,7 @@ select[type="number"]:active {
     margin-bottom: 8px;
   }
   #checkout-view-responsive .pay-flow-product-thumbnail {
-    margin-top: 0px;
+    margin-top: 16px;
   }
   .checkout-view-header {
     font-size: 28px;
