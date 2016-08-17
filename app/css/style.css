@@ -641,22 +641,20 @@ select[type="number"]:active {
   text-decoration: underline;
 }
 .checkout-pay-buttons-row {
+  
 }
 .checkout-pay-button {
-  height: 55px;
-  width: 180px;
   margin: 12px auto;
   cursor: pointer;
   border-radius: 7px;
-  background-repeat: no-repeat !important;
 }
 .checkout-pay-button.credit {
   /*margin-right: 64px;*/
-  background: url('https://pixter-loader-assets.s3.amazonaws.com/1_8_1_stg/files/images/checkout_card_slidly.png');
+  /*background: url('https://pixter-loader-assets.s3.amazonaws.com/1_8_1_stg/files/images/checkout_card_slidly.png');*/
 }
 .checkout-pay-button.paypal {
   background-position: -16px -6px !important;
-  background: url('https://pixter-loader-assets.s3.amazonaws.com/1_8_1_stg/files/images/checkout_paypal.png');
+/*  background: url('https://pixter-loader-assets.s3.amazonaws.com/1_8_1_stg/files/images/checkout_paypal.png');*/
 }
 /* cupon-modal style */
 
@@ -998,6 +996,7 @@ select[type="number"]:active {
     margin-top: 0px;
   }
   .checkout-view-header {
+    font-size:23px;
     margin-top: 0;
     padding-bottom: 0;
   }
