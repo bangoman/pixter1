@@ -13,7 +13,7 @@
 
         if (e.data === 'pixter_image_received') {
             initialized = true;
-            if( readyToShow ){
+            if (readyToShow) {
                 showSite();
             }
         }
@@ -30,54 +30,55 @@
     function loadIframe(imgUrl, apiKey, storeId, backgrounds) {
         var baseUrl = "http://pixter-v1-responsive.s3-website-us-east-1.amazonaws.com/";
         baseUrl = "../";
-        if (!iframe) {
-            backgroundsString = encodeURIComponent(JSON.stringify(backgrounds.background));
-            // var url = baseUrl + '/index.html?imageUrl=' + imgUrl + '&apiKey=' + apiKey + '&storeId=' + storeId + '&bgs=' + backgroundsString;  //   add this:  #/app/sliderShop  to see the slideShop
-            var url = baseUrl + '?apiKey=' + apiKey + '&storeId=' + storeId + '&bgs=' + backgroundsString + '&host=' + encodeURIComponent(location.host);  //   add this:  #/app/sliderShop  to see the slideShop
-            iframe = document.createElement('iframe');
-            iframe.src = url;
-            iframe.style.display = 'none';
-            if (!mobileAndTabletcheck()) {
-                overlay = document.createElement('div');
-                overlay.style.width = "100vw";
-                overlay.style.height = "100vh";
-                overlay.style.position = "fixed";
-                overlay.style.top = "0px"
-                overlay.style.left = "0px"
-                overlay.style.background = "rgba(0,0,0,0.4)";
-                document.body.appendChild(overlay);
-                var screenW = document.body.clientWidth;
-                var screenH = document.body.clientHeight
-                var iframeW = 790;//(screenW / 100) * 64;
-                var iframeH = 580;
-                if (iframeW > 790) {
-                    iframeW = 790;
-                }
-                if (screenW < 790) {
-                    iframeW = screenW;
-
-                }
-
-
-                var offsetLeft = (screenW - iframeW) / 2;
-
-                iframe.style.position = 'fixed';
-                iframe.style.left = offsetLeft + "px";
-
-                iframe.style.top = (screenH - iframeH) / 2  + "px";
-                iframe.style.width = iframeW + "px";
-
-                iframe.style.height = iframeH + 'px';
-                iframe.style.maxWidth = "920px";
-                iframe.style.border = "none";
-
+        if (iframe) {
+            document.removeChild(iframe);
+        }
+        backgroundsString = encodeURIComponent(JSON.stringify(backgrounds.background));
+        // var url = baseUrl + '/index.html?imageUrl=' + imgUrl + '&apiKey=' + apiKey + '&storeId=' + storeId + '&bgs=' + backgroundsString;  //   add this:  #/app/sliderShop  to see the slideShop
+        var url = baseUrl + '?apiKey=' + apiKey + '&storeId=' + storeId + '&bgs=' + backgroundsString + '&host=' + encodeURIComponent(location.host);  //   add this:  #/app/sliderShop  to see the slideShop
+        iframe = document.createElement('iframe');
+        iframe.src = url;
+        iframe.style.display = 'none';
+        if (!mobileAndTabletcheck()) {
+            overlay = document.createElement('div');
+            overlay.style.width = "100vw";
+            overlay.style.height = "100vh";
+            overlay.style.position = "fixed";
+            overlay.style.top = "0px"
+            overlay.style.left = "0px"
+            overlay.style.background = "rgba(0,0,0,0.4)";
+            document.body.appendChild(overlay);
+            var screenW = document.body.clientWidth;
+            var screenH = document.body.clientHeight
+            var iframeW = 790;//(screenW / 100) * 64;
+            var iframeH = 580;
+            if (iframeW > 790) {
+                iframeW = 790;
+            }
+            if (screenW < 790) {
+                iframeW = screenW;
 
             }
-            document.body.appendChild(iframe);
-            localStorage.setItem('imageUrl', imgUrl);
+
+
+            var offsetLeft = (screenW - iframeW) / 2;
+
+            iframe.style.position = 'fixed';
+            iframe.style.left = offsetLeft + "px";
+
+            iframe.style.top = (screenH - iframeH) / 2 + "px";
+            iframe.style.width = iframeW + "px";
+
+            iframe.style.height = iframeH + 'px';
+            iframe.style.maxWidth = "920px";
+            iframe.style.border = "none";
 
 
         }
+        document.body.appendChild(iframe);
+        localStorage.setItem('imageUrl', imgUrl);
+
+
         // Do whatever you'd like with the Data URI!
 
         changeImage(imgUrl);
@@ -104,13 +105,13 @@
     }
 
     function showSite() {
-        if( initialized ){
+        if (initialized) {
             if (mobileAndTabletcheck()) {
                 window.open(iframe.src, '_blank');
             } else {
                 iframe.style.display = 'block';
             }
-        }else{
+        } else {
             readyToShow = true;
         }
     }
