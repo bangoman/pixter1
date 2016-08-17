@@ -84,7 +84,7 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,
     
     $scope.rotateImage = function(){
         $scope.isLoading = true;
-        $timeout(function() {$scope.isLoading = false;}, 1000);
+        $timeout(function() {$scope.isLoading = false;}, 10);
 
         if ($scope.isImageRotated) {
             $scope.isImageRotated = false;
