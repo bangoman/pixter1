@@ -28,6 +28,7 @@
 
     var proxy = "http://pixterebcorsproxy.us-east-1.elasticbeanstalk.com/";
     function loadIframe(imgUrl, apiKey, storeId, backgrounds) {
+        initialized = false;
         var baseUrl = "http://pixter-v1-responsive.s3-website-us-east-1.amazonaws.com/";
         baseUrl = "../";
 //        baseUrl =  proxy + baseUrl;
@@ -77,7 +78,6 @@
 
         }
         document.body.appendChild(iframe);
-        localStorage.setItem('imageUrl', imgUrl);
 
 
         // Do whatever you'd like with the Data URI!

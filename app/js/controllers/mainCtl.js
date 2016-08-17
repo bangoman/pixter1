@@ -5,25 +5,27 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
 
     $rootScope.baseApi = 'http://ec2-52-201-250-90.compute-1.amazonaws.com:8000';
     $scope.loading = true;
-    message('init');
-    var host = $location.search().host;
-    setImageUrl(localStorageService.get(host + '.imageUrl'));
-    if (!inIframe()) {
-        afterImageLoaded();
-    }
+    var locationSearchWatcher = $rootScope.$watch(function () {
+        return $location.search().apiKey;
+    }, function () {
+        locationSearchWatcher();
+        setImageUrl(localStorage.getItem($location.search().host + '.imageUrl'));
+        if (!inIframe()) {
+            afterImageLoaded();
+        }
+        message('init');
+    });
     window.addEventListener('message', function (e) {
         $rootScope.$apply(function () {
             if (e.data.type == "pixter") {
-                getDataUri(e.data.img, function (dataUrl) {
-                    setImageUrl(dataUrl);
-                    message('image_received');
-                    afterImageLoaded();
-                });
+                var url = e.data.img;
+                localStorage.setItem($location.search().host + '.imageUrl', url);
+                setImageUrl(url);
+                message('image_received');
+                afterImageLoaded();
             }
         });
     }, false);
-
-    // $rootScope.originalImageUrl = $rootScope.imageUrl;
 
 
     window.$state = $state;
@@ -83,7 +85,7 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
                 return $rootScope.brandingData.branding.screens.checkout.title;
             }
         }
-    }
+    };
 
 
     vm.goBack = function () {
@@ -114,28 +116,7 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
         if ($state.current.name == 'app.checkout') {
             $state.go('app.orderDetails');
         }
-    }
-
-    function getDataUri(url, callback) {
-        var image = new Image();
-        //image.crossOrigin = "anonymous";
-        image.onload = function () {
-
-            var canvas = document.createElement('canvas');
-            var canvasContext = canvas.getContext("2d");
-            canvas.width = image.width;
-            canvas.height = image.height;
-            image.crossOrigin = 'Anonymous';
-
-            // draw image into canvas element
-            canvasContext.drawImage(image, 0, 0, image.width, image.height);
-            // get canvas contents as a data URL (returns png format by default)
-            var dataURL = canvas.toDataURL();
-            callback(dataURL);
-        };
-
-        image.src = url;
-    }
+    };
 
     // Usage
     function dataURItoBlob(uri) {
@@ -168,10 +149,15 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
 
     function setImageUrl(url) {
         if (url) {
-            localStorageService.set(host + '.imageUrl', url);
-            var blobUrl = dataURItoBlob(url);
-            $rootScope.originalImageUrl = $rootScope.imageUrl = blobUrl;
+            if (isDatauri(url)) {
+                url = dataURItoBlob(url);
+            }
+            $rootScope.originalImageUrl = $rootScope.imageUrl = url;
         }
+    }
+
+    function isDatauri(str) {
+        return str.indexOf('data:') === 0
     }
 
     function inIframe() {
@@ -183,34 +169,29 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
     }
 
     function afterImageLoaded() {
-        $timeout(function () {
-            //$rootScope.imageUrl = getParameterByName("imageUrl",location.search);//"image.jpg";
-            $rootScope.apiKey = getParameterByName("apiKey", location.search);//"d0d01fe4ebaca56ab78cab9e9c5476e569276784";
-            $rootScope.storeId = getParameterByName("storeId", location.search); //"87CD192192A547"
-            $rootScope.bgs = getParameterByName("bgs", location.search); //"87CD192192A547"
-            $rootScope.bgs = JSON.parse($rootScope.bgs);
-            $rootScope.originalImageUrl = $rootScope.imageUrl;
-            var promises = [
-                getBranding(),
-                getImgSize()
-                    .then(function (dimensions) {
-                        var height = dimensions.height;
-                        var width = dimensions.width;
-                        $rootScope.imageHeight = height;
-                        $rootScope.imageWidth = width;
-                        return getProducts(width, height);
-                    }),
-            ];
-            $q.all(promises).then(function () {
-                if ($rootScope.productsData.display.type == "OSS") {
-                    $state.go('app.sliderShop');
-                }
-                else {
-                    $state.go('app.shop');
-                }
-            });
-
-        }, 1500);
+        //$rootScope.imageUrl = getParameterByName("imageUrl",location.search);//"image.jpg";
+        $rootScope.apiKey = getParameterByName("apiKey", location.search);//"d0d01fe4ebaca56ab78cab9e9c5476e569276784";
+        $rootScope.storeId = getParameterByName("storeId", location.search); //"87CD192192A547"
+        $rootScope.bgs = getParameterByName("bgs", location.search); //"87CD192192A547"
+        $rootScope.bgs = JSON.parse($rootScope.bgs);
+        $rootScope.originalImageUrl = $rootScope.imageUrl;
+        var promises = [
+            getBranding(),
+            getImgSize()
+                .then(function (dimensions) {
+                    var height = dimensions.height;
+                    var width = dimensions.width;
+                    $rootScope.imageHeight = height;
+                    $rootScope.imageWidth = width;
+                    return getProducts(width, height);
+                }),
+        ];
+        return $q.all(promises).then(function () {
+            if ($rootScope.productsData.display.type == "OSS") {
+                return $state.go('app.sliderShop');
+            }
+            return $state.go('app.shop');
+        });
     }
 
     function getImgSize() {
@@ -302,17 +283,18 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
     }
 
     $scope.countryApi = 'http://ec2-52-201-250-90.compute-1.amazonaws.com:8000/api/v2/country/?user=demo';
-    
-    function getCountry () {
-        $http.get($scope.countryApi)
-        .then(function (res) {
-            $rootScope.countries = res.data.objects;
-        }); 
-    }
-    getCountry(); 
 
-    $scope.animateOpacity = function(){
-        document.getElementById('pixter-responsive-store').classList.add('opacity-animation');       
+    function getCountry() {
+        $http.get($scope.countryApi)
+            .then(function (res) {
+                $rootScope.countries = res.data.objects;
+            });
+    }
+
+    getCountry();
+
+    $scope.animateOpacity = function () {
+        document.getElementById('pixter-responsive-store').classList.add('opacity-animation');
     }
 
 });
