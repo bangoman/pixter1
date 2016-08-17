@@ -1,6 +1,6 @@
 <div id="checkout-view-responsive" class="row">
     <div class="col-sm-3 col-xs-12">
-        <div class="pay-flow-product-thumbnail">
+        <div class="pay-flow-product-thumbnail" style="min-height:{{tmbWidth}}px">
             <product-image-display class="shop-view-product-image-display" product="currentProduct.images['Preview']" image-url="imageUrl"
                                    tmb-width="tmbWidth" catalog-mode="true">
             </product-image-display>
@@ -92,11 +92,15 @@
         </div>
         <div class="row checkout-pay-buttons-row" dir="ltr">
             <div ng-if="vm.getTotal()">
-                <div class="col-sm-6 col-xs-12">
-                    <div class="checkout-pay-button credit" ng-click="vm.checkout('cc')"></div>
+                <div class="col-sm-6 col-xs-6">
+                    <div class="checkout-pay-button credit" ng-click="vm.checkout('cc')">
+                        <img src="https://pixter-loader-assets.s3.amazonaws.com/1_8_1_stg/files/images/checkout_card_slidly.png" width="100%">
+                    </div>
                 </div>
-                <div class="col-sm-6 col-xs-12"><!-- col-xs-6 col-xs-offset-6 col-xs-pull-6 col-sm-offset-0 col-sm-pull-0 -->
-                    <div class="checkout-pay-button paypal" ng-click="vm.checkout('paypal')"></div>
+                <div class="col-sm-6 col-xs-6"><!-- col-xs-6 col-xs-offset-6 col-xs-pull-6 col-sm-offset-0 col-sm-pull-0 -->
+                    <div class="checkout-pay-button paypal" ng-click="vm.checkout('paypal')">
+                        <img src="https://pixter-loader-assets.s3.amazonaws.com/1_8_1_stg/files/images/checkout_paypal.png" width="100%">
+                    </div>
                 </div>
             </div>
             <div ng-if="!vm.getTotal()">

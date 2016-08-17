@@ -288,7 +288,6 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
         $http.get($scope.countryApi)
             .then(function (res) {
                 $rootScope.countries = res.data.objects;
-                console.log("$rootScope.countries2", $rootScope.countries);
             });
     }
 
