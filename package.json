@@ -1,0 +1,22 @@
+{
+  "name": "pixter1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "create-index": "node ./node_scripts/createIndex.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bangoman/pixter1.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bangoman/pixter1/issues"
+  },
+  "homepage": "https://github.com/bangoman/pixter1#readme",
+  "dependencies": {
+    "mz": "^2.4.0"
+  }
+}
