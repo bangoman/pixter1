@@ -31,7 +31,12 @@
         initialized = false;
         var baseUrl = "http://pixter-v1-responsive.s3-website-us-east-1.amazonaws.com/";
         baseUrl = "../";
-//        baseUrl =  proxy + baseUrl;
+        //baseUrl =  proxy + baseUrl;
+
+        if (imgUrl.indexOf("http://") != -1){
+            imgUrl = proxy  + imgUrl
+        }
+
         if (iframe) {
             document.body.removeChild(iframe);
         }

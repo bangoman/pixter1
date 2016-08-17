@@ -1,8 +1,15 @@
 angular.module('app').controller('orderDetailsCtl',function($state,$rootScope,apiService,$scope,$http,$window){
     var vm = this;
     if(!$rootScope.order){
-        $rootScope.order = {};
+        $rootScope.order = {state:"",address2:""};
     }
+    if(!$rootScope.order.state){
+        $rootScope.order.state = "";
+    }
+    if(!$rootScope.order.address2){
+        $rootScope.order.address2 = "";
+    }
+
     if (JSON.parse($window.localStorage.getItem("orderDetails"))) {
         $rootScope.order = JSON.parse($window.localStorage.getItem("orderDetails"));
         $rootScope.order.country = $rootScope.countries.filter(function (country) {

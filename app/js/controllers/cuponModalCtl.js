@@ -12,8 +12,11 @@ angular.module('app').controller('cuponModalCtl', function ($uibModalInstance, a
                 quantity:1,
             })
             .then(function (coupon) {
+
                 $rootScope.coupon = coupon;
                 $uibModalInstance.close(coupon);
+            },function(data){
+               vm.error = data.error.message ;
             });
     }
 });

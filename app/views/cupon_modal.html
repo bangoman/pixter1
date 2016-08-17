@@ -11,7 +11,9 @@
         </p>
         <div class="form-group">
             <input type="text" class="form-control cupon-modal-input" ng-model="vm.couponString" name="cupon_code">
+            <span class="cupon-modal-input" style="color:red;margin-left: 31%;border:0px">{{vm.error}}</span>
         </div>
+
     </div>
     <div class="modal-footer" style="text-align:center">
         <div class="row">

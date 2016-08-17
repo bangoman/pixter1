@@ -174,6 +174,7 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
         $rootScope.storeId = getParameterByName("storeId", location.search); //"87CD192192A547"
         $rootScope.bgs = getParameterByName("bgs", location.search); //"87CD192192A547"
         $rootScope.bgs = JSON.parse($rootScope.bgs);
+        getCountry();
         $rootScope.originalImageUrl = $rootScope.imageUrl;
         var promises = [
             getBranding(),
@@ -282,16 +283,16 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
         }
     }
 
-    $scope.countryApi = 'http://ec2-52-201-250-90.compute-1.amazonaws.com:8000/api/v2/country/?user=demo';
+    //$scope.countryApi = 'http://ec2-52-201-250-90.compute-1.amazonaws.com:8000/api/v2/country/?user=demo';
 
     function getCountry() {
-        $http.get($scope.countryApi)
+        $http.get($rootScope.baseApi  + '/api/v2/country/?api_key=' + $rootScope.apiKey + '&store_id=' + $rootScope.storeId + '&add_products=true' )
             .then(function (res) {
                 $rootScope.countries = res.data.objects;
             });
     }
 
-    getCountry();
+   
 
     $scope.animateOpacity = function () {
         document.getElementById('pixter-responsive-store').classList.add('opacity-animation');

@@ -30,7 +30,7 @@ angular.module('app').directive('productImageDisplay', function ($http) {
             $scope.loading = true;
             $scope.$watch('product', function () {
                 $scope.loading = true;
-                getProductImgSize($rootScope.baseApi + $scope.product.image);
+                getProductImgSize($scope.product.image);
                 $scope.branding = $rootScope.brandingStyle;
 
             });

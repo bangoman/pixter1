@@ -77,6 +77,7 @@ angular.module('app').controller('checkoutCtl', function ($uibModal, $rootScope,
         }
         var watch = $rootScope.$watch('order.key',function () {
             if( $rootScope.order.key ){
+                console.log($rootScope.order);
                 watch();
                 apiService
                     .validateOrder(angular.extend({

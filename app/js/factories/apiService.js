@@ -49,6 +49,7 @@ angular.module('app').factory('apiService', function ($http, uuidService, $q, $h
     }
 
     function validateOrder(data) {
+        console.log(data);
         return request('order/validate', data);
     }
 
