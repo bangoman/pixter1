@@ -12,9 +12,6 @@ angular.module('app').controller('checkoutCtl', function ($uibModal, $rootScope,
 
 
     $scope.priceCurrencyOrder = formatPriceCurrency;
-    console.log("$scope.priceCurrencyOrder",$scope.priceCurrencyOrder(100,"$"));
-
-    
 
 
     function generateShippingMethods(){
@@ -32,7 +29,6 @@ angular.module('app').controller('checkoutCtl', function ($uibModal, $rootScope,
 
         if($scope.restOfWorld){
             vm.shipmentMethods.push($rootScope.currentProduct.finalPrice.shipping[$scope.key]);
-            console.log("$rootScope.order111",$rootScope.order);
         }
 
         vm.shipmentMethod = vm.shipmentMethods[0];

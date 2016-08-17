@@ -1,13 +1,14 @@
 angular.module('app').factory('formatPriceCurrency',function(){
 
     return function (price, currency){
-      
-            if(currency == "$"){            
-                return (currency + price); 
+
+            if(currency == "$"){ 
+                var p = price.toFixed(2);           
+                return (currency + p); 
             }
             else{
-
-                return (price + currency);
+                var p = price.toFixed(2);
+                return (p + currency);
             }
         }
 

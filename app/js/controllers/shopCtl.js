@@ -15,7 +15,6 @@ angular.module('app').controller('shopCtl', function ($state, $http, $rootScope,
         $scope.bannerHeight = $scope.bannerWidth / $scope.bannerRatio;
     }
     $scope.priceCurrencyOrder = formatPriceCurrency;
-    console.log("$scope.priceCurrencyOrder",formatPriceCurrency(100,"$"));
  
     $scope.changeBanner = function(i){
         $scope.currentIndex += i;
