@@ -31,7 +31,7 @@
         var baseUrl = "http://pixter-v1-responsive.s3-website-us-east-1.amazonaws.com/";
         baseUrl = "../";
         if (iframe) {
-            document.removeChild(iframe);
+            document.body.removeChild(iframe);
         }
         backgroundsString = encodeURIComponent(JSON.stringify(backgrounds.background));
         // var url = baseUrl + '/index.html?imageUrl=' + imgUrl + '&apiKey=' + apiKey + '&storeId=' + storeId + '&bgs=' + backgroundsString;  //   add this:  #/app/sliderShop  to see the slideShop
