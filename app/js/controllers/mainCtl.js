@@ -57,7 +57,7 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
     }
 
     vm.stateIsShop = function () {
-        if ($state.current.name == 'app.shop' && $state.params.subcategories != "true") {
+        if (($state.current.name == 'app.shop' || $state.current.name == 'app.sliderShop') && $state.params.subcategories != "true") {
             return true;
         } else {
             return false;
