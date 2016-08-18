@@ -95,6 +95,7 @@ angular.module('app').controller('checkoutCtl', function ($uibModal, $rootScope,
                         country: $rootScope.order.country.code,
                     }))
                     .then(function (data) {
+                        
                         win.location.href = data.url;
                                                  
                     },function (data) {
