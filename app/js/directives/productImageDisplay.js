@@ -298,10 +298,12 @@ angular.module('app').directive('productImageDisplay', function ($http) {
                     dataURL = canvas.toDataURL();
                     var src = dataURItoBlob(dataURL);
                     resolve(src);
+               
                 })
 
             }
             $scope.rotateBackgroundImage = function (degrees) {
+                console.log("2");
 
                 if (!$scope.rotateInProgress) {
                     $scope.rotateInProgress = true;
@@ -311,6 +313,7 @@ angular.module('app').directive('productImageDisplay', function ($http) {
                         getProductImgSize($rootScope.baseApi  + $scope.product.image);
                         vm.showLoader = false;
                         $scope.rotateInProgress = false;
+                    console.log("1");                         
 
                     })
                 }
