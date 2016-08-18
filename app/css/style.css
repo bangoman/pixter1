@@ -119,6 +119,7 @@ select[type="number"]:active {
 .store-header {
   position: fixed;
   width: 100%;
+  min-height: 44px;
   line-height: 20px;
   color: #92aaaa;
   font-size: 14px;
@@ -311,7 +312,7 @@ select[type="number"]:active {
 /* preview view style */
 
 #preview-view-responsive {
-  padding-top: 72px;
+  padding-top: 80px;
 }
 .preview-product-image {
   text-align: center;
@@ -688,10 +689,10 @@ select[type="number"]:active {
 /* thank-you-view-responsive style */
 
 #thank-you-view-responsive {
-  padding-top: 148px;
+  padding-top: 220px;
 }
 .thank-you-content-container {
-  width: 520px;
+  width: 420px;
   margin: 0 auto;
 }
 .thank-you-header {
