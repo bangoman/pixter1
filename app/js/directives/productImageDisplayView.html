@@ -1,4 +1,4 @@
-<canvas  id="canvas" width=1000 height=800 style="display:none"  ></canvas>
+<canvas  id="canvas" width=1000 height=800 style="display:none"></canvas>
 <amazing-loader loader-color="loaderColor" loader-is-active="loading"></amazing-loader>
 <div id="edit-view-responsive" class="row" style="margin:0" ng-if="editMode">     
     
@@ -25,9 +25,6 @@
         <amazing-loader loader-color="loaderColor" loader-is-active="vm.showLoader"></amazing-loader>
         <div class="crop-image-container" ng-show="!vm.showLoader">
             <div class="edit-image-inner-container" >
-
-                <!-- <product-image-display class="shop-view-product-image-display" zoom="zoom" editMode="true" imageUrl="https://fbcdn-sphotos-g-a.akamaihd.net/hphotos-ak-xfa1/t31.0-8/13246160_961327897315228_9219812989318561441_o.jpg" tmbWidth="500">
-                </product-image-display> -->
                 <div ng-style="imageStyle">
                     <div   on-drag="onDrag($event)" on-release="onRelease($event)" style="height:{{product.tmbHeight}}px;width:{{product.tmbWidth}}px;background:url('{{product.image}}');background-size:{{product.tmbWidth}}px {{product.tmbHeight}}px"> 
 
@@ -38,18 +35,6 @@
         </div>
     </div>
 
-    <!-- <div class="col-lg-6 col-lg-offset-3 col-sm-8 col-sm-offset-2 col-xs-12 edit-bottom-buttons-container">
-        <div class="revert-changes-button">
-            <img src="https://pixter-loader-assets.s3.amazonaws.com/1_8_1_stg/files/images/revertCrop.png">
-            <span style="text-decoration: underline">
-                Revert changes
-            </span>
-        </div>
-        <div class="pull-right right-buttons-group">
-            <div class="white-button">Cancel</div>
-            <div class="next-button">Apply</div>
-        </div>
-    </div> -->   
 
     <div class="col-lg-8 col-lg-offset-2 col-xs-12 edit-bottom-buttons-container">
         <div class="revert-changes-button">
@@ -95,7 +80,7 @@
     </div>       
 
 </div>
-<div ng-if="catalogMode " style="height:{{product.tmbHeight}}px;width:{{product.tmbWidth}}px;overflow:hidden;position:absolute;left: calc(50% - {{product.tmbWidth/2}}px);">
+<div ng-if="catalogMode && !loading" style="height:{{product.tmbHeight}}px;width:{{product.tmbWidth}}px;overflow:hidden;position:absolute;left: calc(50% - {{product.tmbWidth/2}}px);">
 
     <div ng-style="imageStyle"></div>
 
@@ -104,7 +89,7 @@
 </div>
 
 
-<div ng-style="imageStyle" ng-if="!editMode && !catalogMode && !backSideFlag" >
+<div ng-style="imageStyle" ng-if="!editMode && !catalogMode && !backSideFlag && !loading" >
     <div   on-drag="onDrag($event)" on-release="onRelease($event)" style="height:{{product.tmbHeight}}px;width:{{product.tmbWidth}}px;background:url('{{product.image}}');background-size:{{product.tmbWidth}}px {{product.tmbHeight}}px"> 
     </div>
 </div>
