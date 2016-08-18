@@ -15,10 +15,11 @@
             <button class="store-header-learn-more-button" ng-style="brandingStyle.header.button" ng-click="vm.learnMore()">?</button>
             <button class="store-header-close-button" ng-style="brandingStyle.header.button" style="margin-right:-16px;" ng-click="vm.close()">Close</button>
         </div>
-        <div class="col-xs-12 user-messaging" ng-style="brandingStyle.spcialOffer">
-           {{brandingData.campaign.message}}            
-        </div>
     </div>
+    <div class="user-messaging" ng-style="brandingStyle.spcialOffer">
+       {{brandingData.campaign.message}}            
+    </div>
+    
     <div ui-view="main"></div>
 
 </div>
