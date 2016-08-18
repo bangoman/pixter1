@@ -26,7 +26,7 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,
 
     $scope.findRotatedProduct = function (productId){
         $scope.isLoading = true;
-        $timeout(function() {$scope.isLoading = false;}, 1000);
+        $timeout(function() {$scope.isLoading = false;}, 100);
         for (var i = $rootScope.category.products.length - 1; i >= 0; i--) {
             if ($rootScope.category.products[i].id == productId){
                  $rootScope.currentProduct = $rootScope.category.products[i];
@@ -52,11 +52,16 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,
     }
 
     $scope.chooseLandscapeOrPortrait = function(){
-        if (parseInt($rootScope.currentProduct.size_width) <= parseInt($rootScope.currentProduct.size_height)){
+        if (parseInt($rootScope.currentProduct.size_width) < parseInt($rootScope.currentProduct.size_height)){
             $scope.productsToDisplay = $scope.productsToDisplayPortrait;
+            console.log("1",$scope.productsToDisplayPortrait);
         }
-        else if (parseInt($rootScope.currentProduct.size_width) >= parseInt($rootScope.currentProduct.size_height)){
+        else if (parseInt($rootScope.currentProduct.size_width) > parseInt($rootScope.currentProduct.size_height)){
             $scope.productsToDisplay = $scope.productsToDisplayLandscape;
+            console.log("2",$scope.productsToDisplay);
+        }
+        else{
+            $scope.productsToDisplay = $rootScope.category.products;
         }
 
     }
@@ -84,17 +89,15 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,
     
     $scope.rotateImage = function(){
         $scope.isLoading = true;
-        $timeout(function() {$scope.isLoading = false;}, 10);
-
-        if ($scope.isImageRotated) {
-            $scope.isImageRotated = false;
-            $scope.imageToPreview = $rootScope.currentProduct.images['Preview'];
-        }
-        else{
-            $scope.isImageRotated = true;
-            $scope.imageToPreview = $rootScope.currentProduct.rotate_images['Preview'];
-        }
+        $timeout(function() {$scope.isLoading = false;}, 100);
+        var rotatedTarget = {};
+        var mainTarget = {};
+        angular.extend(rotatedTarget, $rootScope.currentProduct.images)
+        angular.extend(mainTarget, $rootScope.currentProduct.rotate_images)
+        $rootScope.currentProduct.rotate_images = rotatedTarget;
+        $rootScope.currentProduct.images = mainTarget;
     }
+
     $scope.getFinalPrice = function(){
         if (!$rootScope.currentProduct.params){
             $rootScope.currentProduct.finalPrice = $rootScope.currentProduct.quantities[0].pricing;
