@@ -4,6 +4,7 @@ angular.module('app').controller('thankYouCtl',function(message, $state){
 
     vm.close = function(){
         message('close');
+        window.close();
     };    
     
     vm.goToShopView = function() {
