@@ -180,6 +180,8 @@ select[type="number"]:active {
 }
 
 .user-messaging {
+  z-index: 99;
+  position: fixed;
   width: 100%;
   padding: 48px 12px 4px;
   font-size: 17px;
@@ -266,6 +268,7 @@ select[type="number"]:active {
 /* shop view (first view) style */
 #shop-view-responsive {
   margin: 0;
+  padding-top: 69px;
 }
 
 #shop-view-responsive .shop-view-product-container {
@@ -308,7 +311,7 @@ select[type="number"]:active {
 /* preview view style */
 
 #preview-view-responsive {
-  padding-top: 52px;
+  padding-top: 72px;
 }
 .preview-product-image {
   text-align: center;
@@ -501,8 +504,8 @@ select[type="number"]:active {
 
 /* pay-flow (order_details & checkout views) style */
 #checkout-view-responsive {
-    margin: 0;
-    padding: 20px 28px 0 0;
+  margin: 0;
+  padding: 92px 28px 0 0;
 }
 .pay-flow-product-thumbnail {
   max-width: 180px;
@@ -515,7 +518,7 @@ select[type="number"]:active {
 /* order-details view style */
 
 #order-details-view-responsive {
-  padding: 4px 52px;
+  padding: 72px 52px 12px;
 }
 .order-details-header {
   color: #4d4d4d;
