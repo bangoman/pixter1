@@ -1,5 +1,5 @@
 (function () {
-    var imgUrl, iframe, overlay, initialized, readyToShow;
+    var imgUrl, iframe, overlay, initialized, readyToShow, win;
     window.pixter = {
         loadIframe: loadIframe,
         changeImage: changeImage,
@@ -27,14 +27,14 @@
     }, false);
 
     var proxy = "http://pixterebcorsproxy.us-east-1.elasticbeanstalk.com/";
+    var baseUrl = "http://pixter-v1-responsive.s3-website-us-east-1.amazonaws.com/";
+    baseUrl = "../";
+    // baseUrl =  proxy + baseUrl;
     function loadIframe(imgUrl, apiKey, storeId, backgrounds) {
         initialized = false;
-        var baseUrl = "http://pixter-v1-responsive.s3-website-us-east-1.amazonaws.com/";
-        baseUrl = "../";
-        //baseUrl =  proxy + baseUrl;
 
-        if (imgUrl.indexOf("http://") != -1){
-            imgUrl = proxy  + imgUrl
+        if (imgUrl.indexOf("http://") != -1) {
+            imgUrl = proxy + imgUrl
         }
 
         if (iframe) {
@@ -88,7 +88,8 @@
         // Do whatever you'd like with the Data URI!
 
         changeImage(imgUrl);
-        showSite();
+
+         showSite();
     }
 
     function changeImage(url) {
@@ -111,9 +112,14 @@
     }
 
     function showSite() {
+        if( mobileAndTabletcheck() && !win ){
+            win = window.open('', '_blank');
+            self.focus();
+        }
         if (initialized) {
             if (mobileAndTabletcheck()) {
-                window.open(iframe.src, '_blank');
+                win.location.href = iframe.src;
+                win.focus();
             } else {
                 iframe.style.display = 'block';
             }

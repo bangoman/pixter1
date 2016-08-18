@@ -1,3 +1,5 @@
 node_modules
 .idea
 .DS_Store
+bundle-style.css
+bundle.js
