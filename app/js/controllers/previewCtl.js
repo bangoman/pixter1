@@ -48,7 +48,7 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,
             }                
 
         };
-        $scope.chooseLandscapeOrPortrait(); 
+        $scope.chooseLandscapeOrPortrait();
     }
 
     $scope.chooseLandscapeOrPortrait = function(){
@@ -62,7 +62,7 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,
     }
 
     //if($rootScope.currentProduct.rotate_product){
-        $scope.setLandscapeOrPortrait();
+    $scope.setLandscapeOrPortrait();
    //}
 
 
