@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "create-index": "node ./node_scripts/createIndex.js"
+    "create-index": "node ./node_scripts/createIndex.js",
+    "create-bundle": "node ./node_scripts/create-bundle.js"
   },
   "repository": {
     "type": "git",
