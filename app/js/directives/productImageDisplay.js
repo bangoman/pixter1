@@ -176,7 +176,7 @@ angular.module('app').directive('productImageDisplay', function ($http) {
                 newImg.onload = function () {
                     var height = newImg.height;
                     var width = newImg.width;
-                    if(!$rootScope.dpiApproved && !$scope.dpiCheck(width, height, parseInt($rootScope.currentProduct.size_width), parseInt($rootScope.currentProduct.size_height), $rootScope.currentProduct.min_dpi)){
+                    if($rootScope.brandingData.behaviour.dpi_warning && !$rootScope.dpiApproved && !$scope.dpiCheck(width, height, parseInt($rootScope.currentProduct.size_width), parseInt($rootScope.currentProduct.size_height), $rootScope.currentProduct.min_dpi)){
                         $scope.openDpiWorningModal();
 
                     }else if($scope.finalStep){                        
