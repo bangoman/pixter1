@@ -24,6 +24,8 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,
 
     $scope.priceCurrencyOrder = formatPriceCurrency;
 
+    console.log($rootScope.brandingData.behaviour.orientation)
+
     $scope.findRotatedProduct = function (productId){
         $scope.isLoading = true;
         $timeout(function() {$scope.isLoading = false;}, 1000);
