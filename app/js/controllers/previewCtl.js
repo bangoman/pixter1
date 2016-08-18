@@ -26,7 +26,7 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,
 
     $scope.findRotatedProduct = function (productId){
         $scope.isLoading = true;
-        $timeout(function() {$scope.isLoading = false;}, 100);
+        $timeout(function() {$scope.isLoading = false;}, 1000);
         for (var i = $rootScope.category.products.length - 1; i >= 0; i--) {
             if ($rootScope.category.products[i].id == productId){
                  $rootScope.currentProduct = $rootScope.category.products[i];
@@ -54,11 +54,9 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,
     $scope.chooseLandscapeOrPortrait = function(){
         if (parseInt($rootScope.currentProduct.size_width) < parseInt($rootScope.currentProduct.size_height)){
             $scope.productsToDisplay = $scope.productsToDisplayPortrait;
-            console.log("1",$scope.productsToDisplayPortrait);
         }
         else if (parseInt($rootScope.currentProduct.size_width) > parseInt($rootScope.currentProduct.size_height)){
             $scope.productsToDisplay = $scope.productsToDisplayLandscape;
-            console.log("2",$scope.productsToDisplay);
         }
         else{
             $scope.productsToDisplay = $rootScope.category.products;
