@@ -27,14 +27,15 @@
     }, false);
 
     var proxy = "http://pixterebcorsproxy.us-east-1.elasticbeanstalk.com/";
+
     function loadIframe(imgUrl, apiKey, storeId, backgrounds) {
         initialized = false;
         var baseUrl = "http://pixter-v1-responsive.s3-website-us-east-1.amazonaws.com/";
         baseUrl = "../";
         //baseUrl =  proxy + baseUrl;
 
-        if (imgUrl.indexOf("http://") != -1){
-            imgUrl = proxy  + imgUrl
+        if (imgUrl.indexOf("http://") != -1) {
+            imgUrl = proxy + imgUrl
         }
 
         if (iframe) {
@@ -88,7 +89,20 @@
         // Do whatever you'd like with the Data URI!
 
         changeImage(imgUrl);
-        showSite();
+        var win = window.open('');
+        win.document.body.setAttribute('ng-app','app');
+        win.document.body.innerHTML = '<div ui-view></div>';
+        var link = document.createElement("link");
+        link.rel = 'stylesheet';
+        link.href = "http://localhost/pixter1/bundle-style.css";
+        win.document.head.appendChild(link);
+        setTimeout(function () {
+            var script = document.createElement("script");
+            script.src = "http://localhost/pixter1/bundle.js";
+
+            win.document.head.appendChild(script);
+        },1000);
+        // showSite();
     }
 
     function changeImage(url) {
