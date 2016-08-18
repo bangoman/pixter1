@@ -26,7 +26,7 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,
 
     $scope.findRotatedProduct = function (productId){
         $scope.isLoading = true;
-        $timeout(function() {$scope.isLoading = false;}, 100);
+        $timeout(function() {$scope.isLoading = false;}, 1000);
         for (var i = $rootScope.category.products.length - 1; i >= 0; i--) {
             if ($rootScope.category.products[i].id == productId){
                  $rootScope.currentProduct = $rootScope.category.products[i];

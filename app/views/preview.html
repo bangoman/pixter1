@@ -10,19 +10,19 @@
         </div>
         <div style="margin-top:{{tmbWidth}}px;">
 
-            <div class="row preview-edit-row" >
-                <div class="preview-edit-btn pull-left" ng-show="currentProduct.rotate_product.length > 0" ng-click="findRotatedProduct(currentProduct.rotate_product[0].id)" style="color:{{brandingData.branding.buttons.backgroundcolor}};" >
+            <div class="row preview-edit-row" ng-if="!brandingData.orientation">
+                <div class="preview-edit-btn pull-left" ng-show="currentProduct.rotate_product.length > 0"  ng-click="findRotatedProduct(currentProduct.rotate_product[0].id)" style="color:{{brandingData.branding.buttons.backgroundcolor}};" >
                     <i class="glyphicon glyphicon-repeat"></i>
                     <span>Rotate</span>
                     
                 </div>
-            <div class="preview-edit-btn pull-left" 
-                ng-show="currentProduct.rotate_images.Preview && !currentProduct.params" 
-                ng-click="rotateImage()" 
-                style="color:{{brandingData.branding.buttons.backgroundcolor}};" >
-                <i class="glyphicon glyphicon-repeat"></i>
-                <span>Rotate</span>
-            </div>
+                <div class="preview-edit-btn pull-left" 
+                    ng-show="currentProduct.rotate_images.Preview && !currentProduct.params" 
+                    ng-click="rotateImage()" 
+                    style="color:{{brandingData.branding.buttons.backgroundcolor}};" >
+                    <i class="glyphicon glyphicon-repeat"></i>
+                    <span>Rotate</span>
+                </div>
 
                 <div class="preview-edit-btn" style="color:{{brandingData.branding.buttons.backgroundcolor}};" ng-click="vm.goToEdit()" ng-if="!currentProduct.params && brandingData.behaviour.cropping">
                     <i class="glyphicon glyphicon-scissors"></i>
