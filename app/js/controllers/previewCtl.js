@@ -26,7 +26,7 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,
 
     $scope.findRotatedProduct = function (productId){
         $scope.isLoading = true;
-        $timeout(function() {$scope.isLoading = false;}, 1000);
+        $timeout(function() {$scope.isLoading = false;}, 100);
         for (var i = $rootScope.category.products.length - 1; i >= 0; i--) {
             if ($rootScope.category.products[i].id == productId){
                  $rootScope.currentProduct = $rootScope.category.products[i];
@@ -89,7 +89,7 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,
     
     $scope.rotateImage = function(){
         $scope.isLoading = true;
-        $timeout(function() {$scope.isLoading = false;}, 10);
+        $timeout(function() {$scope.isLoading = false;}, 100);
         var rotatedTarget = {};
         var mainTarget = {};
         angular.extend(rotatedTarget, $rootScope.currentProduct.images)
