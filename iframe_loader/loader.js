@@ -1,5 +1,6 @@
 (function () {
-    var imgUrl, iframe, overlay, initialized, readyToShow, win;
+    var imgUrl, iframe, overlay, initialized, readyToShow, win, callbacks = {};
+    var noop = function () {};
     window.pixter = {
         loadIframe: loadIframe,
         changeImage: changeImage,
@@ -7,22 +8,26 @@
     };
 
     window.addEventListener('message', function (e) {
-        if (e.data === 'pixter_init') {
-            postImage();
-        }
-
-        if (e.data === 'pixter_image_received') {
-            initialized = true;
-            if (readyToShow) {
-                showSite();
-            }
-        }
-
-        if (e.data === 'pixter_close') {
-            document.body.removeChild(iframe);
-            document.body.removeChild(overlay);
-            iframe = null;
-            overlay = null;
+        switch (e.data) {
+            case 'pixter_init':
+                postImage();
+                break;
+            case 'pixter_image_received':
+                initialized = true;
+                if (readyToShow) {
+                    showSite();
+                }
+                break;
+            case 'pixter_close':
+                callbacks.onClose();
+                document.body.removeChild(iframe);
+                document.body.removeChild(overlay);
+                iframe = null;
+                overlay = null;
+                break;
+            case 'pixter_p_order_complete':
+                callbacks.onOrderComplete();
+                break;
         }
     }, false);
 
@@ -30,7 +35,9 @@
     var baseUrl = "http://pixter-v1-responsive.s3-website-us-east-1.amazonaws.com/";
     baseUrl = "../";
     // baseUrl =  proxy + baseUrl;
-    function loadIframe(imgUrl, apiKey, storeId, backgrounds) {
+    function loadIframe(imgUrl, apiKey, storeId, backgrounds, onClose, onOrderComplete) {
+        callbacks.onClose = onClose || noop;
+        callbacks.onOrderComplete = onOrderComplete || noop;
         initialized = false;
 
         if (imgUrl.indexOf("http://") != -1) {
@@ -40,7 +47,7 @@
         if (iframe) {
             document.body.removeChild(iframe);
         }
-        backgroundsString = encodeURIComponent(JSON.stringify(backgrounds.background));
+        var backgroundsString = encodeURIComponent(JSON.stringify(backgrounds.background));
         // var url = baseUrl + '/index.html?imageUrl=' + imgUrl + '&apiKey=' + apiKey + '&storeId=' + storeId + '&bgs=' + backgroundsString;  //   add this:  #/app/sliderShop  to see the slideShop
         var url = baseUrl + '?apiKey=' + apiKey + '&storeId=' + storeId + '&bgs=' + backgroundsString + '&host=' + encodeURIComponent(location.host);  //   add this:  #/app/sliderShop  to see the slideShop
         iframe = document.createElement('iframe');
@@ -51,12 +58,12 @@
             overlay.style.width = "100vw";
             overlay.style.height = "100vh";
             overlay.style.position = "fixed";
-            overlay.style.top = "0px"
-            overlay.style.left = "0px"
+            overlay.style.top = "0px";
+            overlay.style.left = "0px";
             overlay.style.background = "rgba(0,0,0,0.4)";
             document.body.appendChild(overlay);
             var screenW = document.body.clientWidth;
-            var screenH = document.body.clientHeight
+            var screenH = document.body.clientHeight;
             var iframeW = 790;//(screenW / 100) * 64;
             var iframeH = 580;
             if (iframeW > 790) {
@@ -89,7 +96,7 @@
 
         changeImage(imgUrl);
 
-         showSite();
+        showSite();
     }
 
     function changeImage(url) {
@@ -112,13 +119,16 @@
     }
 
     function showSite() {
-        if( mobileAndTabletcheck() && !win ){
+        if (mobileAndTabletcheck() && !win) {
             win = window.open('', '_blank');
             self.focus();
         }
         if (initialized) {
             if (mobileAndTabletcheck()) {
                 win.location.href = iframe.src;
+                setTimeout(function () {
+                    win.onbeforeunload = callbacks.onClose;
+                },100);
                 win.focus();
             } else {
                 iframe.style.display = 'block';

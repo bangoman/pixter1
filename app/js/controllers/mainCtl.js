@@ -1,4 +1,4 @@
-angular.module('app').controller('mainCtl', function (message, $uibModal, $state, $rootScope, $http, $stateParams, $scope, $location, $timeout, localStorageService, $q) {
+angular.module('app').controller('mainCtl', function (message, $uibModal, $state, $rootScope, $http, $stateParams, $scope, $location, $timeout, localStorageService, $q, crosstab) {
     var vm = this;
     vm.state = $state;
     $scope.loading = true;
@@ -16,8 +16,15 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
         message('init');
     });
     window.addEventListener('message', function (e) {
-        $rootScope.$apply(function () {
-            if (e.data.type == "pixter") {
+        $timeout(function () {
+            if (e.data == "p_order_complete") {
+                crosstab.broadcast('p_order_complete');
+                $state.go('app.thankYou');
+            }
+            else if ((e.data) == "p_order_canceled") {
+                crosstab.broadcast('p_order_canceled');
+            }
+            else if (e.data.type == "pixter") {
                 var url = e.data.img;
                 localStorage.setItem($location.search().host + '.imageUrl', url);
                 setImageUrl(url);
@@ -26,6 +33,14 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
             }
         });
     }, false);
+
+    crosstab.on('p_order_complete', function () {
+        message('p_order_complete');
+    });
+
+    crosstab.on('p_order_canceled', function () {
+        message('p_order_canceled');
+    });
 
 
     window.$state = $state;
@@ -46,7 +61,8 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
     //$state.go('app.shop');
     vm.close = function () {
         message('close');
-    }
+        window.close();
+    };
 
     vm.learnMore = function () {
         $uibModal.open({
@@ -286,13 +302,12 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
     //$scope.countryApi = 'http://ec2-52-201-250-90.compute-1.amazonaws.com:8000/api/v2/country/?user=demo';
 
     function getCountry() {
-        $http.get($rootScope.baseApi  + '/api/v2/country/?api_key=' + $rootScope.apiKey + '&store_id=' + $rootScope.storeId + '&add_products=true' )
+        $http.get($rootScope.baseApi + '/api/v2/country/?api_key=' + $rootScope.apiKey + '&store_id=' + $rootScope.storeId + '&add_products=true')
             .then(function (res) {
                 $rootScope.countries = res.data.objects;
             });
     }
 
-   
 
     $scope.animateOpacity = function () {
         document.getElementById('pixter-responsive-store').classList.add('opacity-animation');

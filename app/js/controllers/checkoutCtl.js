@@ -1,33 +1,33 @@
-angular.module('app').controller('checkoutCtl', function ($uibModal, $rootScope, apiService, $filter,$scope, formatPriceCurrency) {
+angular.module('app').controller('checkoutCtl', function ($uibModal, $rootScope, apiService, $filter, $scope, formatPriceCurrency, crosstab) {
     var vm = this;
 
-    $scope.tmbWidth = $rootScope.screenW*0.35;
+    $scope.tmbWidth = $rootScope.screenW * 0.35;
     //$rootScope.quantity = 0;
-    if($scope.tmbWidth > 180){
+    if ($scope.tmbWidth > 180) {
         $scope.tmbWidth = 180
 
     }
-   
+
     vm.shipmentMethods = [];
 
 
     $scope.priceCurrencyOrder = formatPriceCurrency;
 
 
-    function generateShippingMethods(){
+    function generateShippingMethods() {
         $scope.restOfWorld = true;
-        angular.forEach($rootScope.currentProduct.finalPrice.shipping, function(value, key) {            
-            if($rootScope.currentProduct.finalPrice.shipping[key].region_id == 7){
+        angular.forEach($rootScope.currentProduct.finalPrice.shipping, function (value, key) {
+            if ($rootScope.currentProduct.finalPrice.shipping[key].region_id == 7) {
                 $scope.key = key;
             }
 
-            if(value.region_id == $rootScope.order.country.region.id){
+            if (value.region_id == $rootScope.order.country.region.id) {
                 vm.shipmentMethods.push(value);
                 $scope.restOfWorld = false;
             }
         });
 
-        if($scope.restOfWorld){
+        if ($scope.restOfWorld) {
             vm.shipmentMethods.push($rootScope.currentProduct.finalPrice.shipping[$scope.key]);
         }
 
@@ -35,6 +35,7 @@ angular.module('app').controller('checkoutCtl', function ($uibModal, $rootScope,
 
 
     }
+
     generateShippingMethods();
     vm.openCuponModal = function () {
         $uibModal.open({
@@ -43,7 +44,7 @@ angular.module('app').controller('checkoutCtl', function ($uibModal, $rootScope,
             backdrop: 'static',
         });
     };
-    
+
     vm.getDiscountProductPrice = function () {
         return $rootScope.coupon ? $rootScope.currentProduct.finalPrice.price * (100 - $rootScope.coupon.product_discount) / 100 : parseFloat($rootScope.currentProduct.finalPrice.price);
     };
@@ -69,14 +70,14 @@ angular.module('app').controller('checkoutCtl', function ($uibModal, $rootScope,
         win.document.body.innerHTML = 'Processing...';
         var returnAddressPrice = 0;
         var quantity = 1;
-        if( properties ){
+        if (properties) {
             quantity = properties.quantity.quantity;
             properties.return_address.discountedPrice = quantity * properties.return_address.discount_price;
             properties.return_address.totalPrice = properties.return_address.discountedPrice;
             returnAddressPrice = properties.return_address.totalPrice;
         }
-        var watch = $rootScope.$watch('order.key',function () {
-            if( $rootScope.order.key ){
+        var watch = $rootScope.$watch('order.key', function () {
+            if ($rootScope.order.key) {
                 console.log($rootScope.order);
                 watch();
                 apiService
@@ -90,15 +91,19 @@ angular.module('app').controller('checkoutCtl', function ($uibModal, $rootScope,
                         shipping_price: $filter('number')(vm.getDiscountShippingPrice(), 2),
                         payment_type: paymentType,
                         coupon_string: $rootScope.coupon ? $rootScope.coupon.coupon_code.replace(/'/g, '') : undefined,
-                        properties:properties,
-                    }, $rootScope.order,{
+                        properties: properties,
+                    }, $rootScope.order, {
                         country: $rootScope.order.country.code,
                     }))
                     .then(function (data) {
-                        
-                        win.location.href = data.url;
-                                                 
-                    },function (data) {
+                        if (data.url) {
+                            win.location.href = data.url;
+                        } else {
+                            win.close();
+                            $state.go('app.thankYou');
+                            crosstab.broadcast('p_order_complete');
+                        }
+                    }, function (data) {
                         win.close();
                         alert(data.error.message);
                     });
@@ -110,18 +115,18 @@ angular.module('app').controller('checkoutCtl', function ($uibModal, $rootScope,
     var properties = getProperties();
 
     function getProperties() {
-        if( $rootScope.currentProduct && $rootScope.currentProduct.params ){
+        if ($rootScope.currentProduct && $rootScope.currentProduct.params) {
             var properties = {};
             $rootScope.currentProduct.params.forEach(function (param) {
-                var property = angular.extend({},param.chosenOption);
-                if(property.pricing) {
+                var property = angular.extend({}, param.chosenOption);
+                if (property.pricing) {
                     angular.extend(property, property.pricing);
                     delete property.pricing;
                 }
                 property.discount_price = parseFloat(
                     $filter('number')(
                         vm.getDiscountPrice(property.price
-                        ),2)
+                        ), 2)
                 );
                 properties[param.key] = property;
             });
