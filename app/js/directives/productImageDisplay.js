@@ -101,7 +101,7 @@ angular.module('app').directive('productImageDisplay', function ($http) {
                 $scope.imageStyle["left"] = $scope.backgroundPosition.left ;
                 $scope.imageStyle["top"] = $scope.backgroundPosition.top  ;
                 $scope.imageStyle["background-position"] = "0px 0px"
-                console.log($scope.imageStyle);
+                //console.log($scope.imageStyle);
                 
 
             }
