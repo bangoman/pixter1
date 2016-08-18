@@ -173,6 +173,7 @@ angular.module('app').directive('productImageDisplay', function ($http) {
                 $rootScope.finalCroppedImageUrl = dataURItoBlob(dataURL);
                 $rootScope.imageUrl = $rootScope.finalCroppedImageUrl;
                 var newImg = new Image();
+
                 newImg.onload = function () {
                     var height = newImg.height;
                     var width = newImg.width;
@@ -303,17 +304,14 @@ angular.module('app').directive('productImageDisplay', function ($http) {
 
             }
             $scope.rotateBackgroundImage = function (degrees) {
-                console.log("2");
-
                 if (!$scope.rotateInProgress) {
                     $scope.rotateInProgress = true;
 
                     $scope.rotateCanvas(degrees).then(function (data) {
                         $rootScope.imageUrl = data;
-                        getProductImgSize($rootScope.baseApi  + $scope.product.image);
+                        getProductImgSize($scope.product.image);
                         vm.showLoader = false;
                         $scope.rotateInProgress = false;
-                    console.log("1");                         
 
                     })
                 }
@@ -398,6 +396,7 @@ angular.module('app').directive('productImageDisplay', function ($http) {
             }*/
             function getImgSize(imgSrc) {
 			    var newImg = new Image();
+                newImg.crossOrigin = "Anonymous";
 			    newImg.onload = function () {
                     $scope.loading = false;
 			        var height = newImg.height;

@@ -26,10 +26,10 @@
         }
     }, false);
 
-    var proxy = "http://pixterebcorsproxy.us-east-1.elasticbeanstalk.com/";
+    var proxy = "https://pixprox.pixter.me/";
     var baseUrl = "http://pixter-v1-responsive.s3-website-us-east-1.amazonaws.com/";
     baseUrl = "../";
-    // baseUrl =  proxy + baseUrl;
+     //baseUrl =  proxy + baseUrl;
     function loadIframe(imgUrl, apiKey, storeId, backgrounds) {
         initialized = false;
 
