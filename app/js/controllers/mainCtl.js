@@ -114,6 +114,7 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
             $state.go('app.preview');
         }
         if ($state.current.name == 'app.checkout') {
+             $rootScope.coupon = undefined;
             $state.go('app.orderDetails');
         }
     };
