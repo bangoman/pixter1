@@ -119,11 +119,10 @@ select[type="number"]:active {
 .store-header {
   position: fixed;
   width: 100%;
-  min-height: 64px;
   line-height: 20px;
   color: #92aaaa;
   font-size: 14px;
-  padding: 12px 0 36px;
+  padding: 12px 0;
   text-align: center;
   z-index: 100;
   background: #fff;
@@ -181,10 +180,8 @@ select[type="number"]:active {
 }
 
 .user-messaging {
-  position: absolute;
-  bottom: 0;
   width: 100%;
-  padding: 4px 0;
+  padding: 48px 12px 4px;
   font-size: 17px;
   line-height: 17px;
   text-align: center; 
@@ -269,7 +266,6 @@ select[type="number"]:active {
 /* shop view (first view) style */
 #shop-view-responsive {
   margin: 0;
-  padding-top: 64px;
 }
 
 #shop-view-responsive .shop-view-product-container {
