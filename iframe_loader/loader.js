@@ -33,19 +33,21 @@
 
     var proxy = "https://pixprox.pixter.me/";
     var baseUrl = "http://pixter-v1-responsive.s3-website-us-east-1.amazonaws.com/";
-    baseUrl = "../";
+      //baseUrl = "../";
     // baseUrl =  proxy + baseUrl;
     function loadIframe(imgUrl, apiKey, storeId, backgrounds, onClose, onOrderComplete) {
         callbacks.onClose = onClose || noop;
         callbacks.onOrderComplete = onOrderComplete || noop;
         initialized = false;
 
-        if (imgUrl.indexOf("http://") != -1) {
+        if (imgUrl.indexOf("http://") != -1 || imgUrl.indexOf("https://") != -1 || imgUrl.indexOf("ftp://") != -1) {
             imgUrl = proxy + imgUrl
         }
 
         if (iframe) {
+            console.log("removing iframe");
             document.body.removeChild(iframe);
+            win = null;
         }
         var backgroundsString = encodeURIComponent(JSON.stringify(backgrounds.background));
         // var url = baseUrl + '/index.html?imageUrl=' + imgUrl + '&apiKey=' + apiKey + '&storeId=' + storeId + '&bgs=' + backgroundsString;  //   add this:  #/app/sliderShop  to see the slideShop
@@ -60,6 +62,7 @@
             overlay.style.position = "fixed";
             overlay.style.top = "0px";
             overlay.style.left = "0px";
+            overlay.style.zIndex = "99999";
             overlay.style.background = "rgba(0,0,0,0.4)";
             document.body.appendChild(overlay);
             var screenW = document.body.clientWidth;
@@ -82,7 +85,7 @@
 
             iframe.style.top = (screenH - iframeH) / 2 + "px";
             iframe.style.width = iframeW + "px";
-
+            iframe.style.zIndex = "999999";
             iframe.style.height = iframeH + 'px';
             iframe.style.maxWidth = "920px";
             iframe.style.border = "none";
@@ -123,6 +126,7 @@
             win = window.open('', '_blank');
             self.focus();
         }
+
         if (initialized) {
             if (mobileAndTabletcheck()) {
                 win.location.href = iframe.src;

@@ -79,7 +79,7 @@ angular.module('app').directive('productImageDisplay', function ($http) {
             $scope.revertChanges = function () {
                 $rootScope.dpiApproved = false;
                 $rootScope.imageUrl = $rootScope.originalImageUrl;
-                getProductImgSize($rootScope.baseApi + $scope.product.image);
+                getProductImgSize($scope.product.image);
             }
 
             $scope.editCancel = function () {
