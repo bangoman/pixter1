@@ -232,6 +232,7 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
         return $http.get($rootScope.baseApi + '/api/v2/store/init?api_key=' + $rootScope.apiKey + '&store_id=' + $rootScope.storeId)
             .then(function (res) {
                 $rootScope.brandingData = res.data;
+                $rootScope.pixKey = res.data.initdata.pix_apikey;
                 generateBrandingStyle();
             }).then(function () {
 

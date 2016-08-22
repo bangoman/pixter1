@@ -33,9 +33,10 @@
 
     var proxy = "https://pixprox.pixter.me/";
     var baseUrl = "http://pixter-v1-responsive.s3-website-us-east-1.amazonaws.com/";
-      //baseUrl = "../";
+    //baseUrl = "../";
     // baseUrl =  proxy + baseUrl;
-    function loadIframe(imgUrl, apiKey, storeId, backgrounds, onClose, onOrderComplete) {
+    function loadIframe(imgUrl, apiKey, storeId, backgrounds, onClose, onOrderComplete) {        
+
         callbacks.onClose = onClose || noop;
         callbacks.onOrderComplete = onOrderComplete || noop;
         initialized = false;
@@ -49,7 +50,13 @@
             document.body.removeChild(iframe);
             win = null;
         }
-        var backgroundsString = encodeURIComponent(JSON.stringify(backgrounds.background));
+        var backgroundsString ; 
+        if(backgrounds !== null){
+            backgroundsString = encodeURIComponent(JSON.stringify(backgrounds.background));
+        }else{
+            backgroundsString = "{}";
+        }
+        
         // var url = baseUrl + '/index.html?imageUrl=' + imgUrl + '&apiKey=' + apiKey + '&storeId=' + storeId + '&bgs=' + backgroundsString;  //   add this:  #/app/sliderShop  to see the slideShop
         var url = baseUrl + '?apiKey=' + apiKey + '&storeId=' + storeId + '&bgs=' + backgroundsString + '&host=' + encodeURIComponent(location.host);  //   add this:  #/app/sliderShop  to see the slideShop
         iframe = document.createElement('iframe');
@@ -62,11 +69,11 @@
             overlay.style.position = "fixed";
             overlay.style.top = "0px";
             overlay.style.left = "0px";
-            overlay.style.zIndex = "99999";
+            overlay.style.zIndex = "2147483645";
             overlay.style.background = "rgba(0,0,0,0.4)";
             document.body.appendChild(overlay);
-            var screenW = document.body.clientWidth;
-            var screenH = document.body.clientHeight;
+            var screenW = window.innerWidth;
+            var screenH = window.innerHeight;
             var iframeW = 790;//(screenW / 100) * 64;
             var iframeH = 580;
             if (iframeW > 790) {
@@ -74,7 +81,6 @@
             }
             if (screenW < 790) {
                 iframeW = screenW;
-
             }
 
 
@@ -82,10 +88,13 @@
 
             iframe.style.position = 'fixed';
             iframe.style.left = offsetLeft + "px";
-
             iframe.style.top = (screenH - iframeH) / 2 + "px";
+            if(iframeH > screenH){
+                iframe.style.top = 0    
+                iframeH = screenH
+            }            
             iframe.style.width = iframeW + "px";
-            iframe.style.zIndex = "999999";
+            iframe.style.zIndex = "2147483647";
             iframe.style.height = iframeH + 'px';
             iframe.style.maxWidth = "920px";
             iframe.style.border = "none";

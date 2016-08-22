@@ -4,9 +4,8 @@
         </button>
         <h2 class="modal-title">Have a coupon?</h2>
     </div>
-    <div class="modal-body">
-    <p style="color:{{brandingStyle.header.color}}">
-
+    <div class="modal-body" ng-show="!vm.successMessage">        
+        <p style="color:{{brandingStyle.header.color}}">
             Paste in your coupon code
         </p>
         <div class="form-group">
@@ -15,7 +14,7 @@
         </div>
 
     </div>
-    <div class="modal-footer" style="text-align:center">
+    <div class="modal-footer" style="text-align:center" ng-show="!vm.successMessage">
         <div class="row">
             <button type="button" class="btn white-button" ng-click="vm.dismiss()">
                 Cancel
@@ -24,5 +23,8 @@
                 OK
             </button>
         </div>
+    </div>
+    <div class="modal-body" ng-show="vm.successMessage">        
+        <h4 style="color:{{brandingStyle.header.color}}">{{vm.successMessage}}</h4>
     </div>
 </div>

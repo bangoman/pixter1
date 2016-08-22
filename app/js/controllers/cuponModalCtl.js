@@ -3,7 +3,7 @@ angular.module('app').controller('cuponModalCtl', function ($uibModalInstance, a
 
     vm.close = $uibModalInstance.close;
     vm.dismiss = $uibModalInstance.dismiss;
-
+    vm.successMessage = false;
     vm.apply = function () {
         return apiService
             .validateCoupon({
@@ -12,9 +12,12 @@ angular.module('app').controller('cuponModalCtl', function ($uibModalInstance, a
                 quantity:1,
             })
             .then(function (coupon) {
-
+                vm.successMessage = "Congratulations, the coupon has been verified!";
                 $rootScope.coupon = coupon;
-                $uibModalInstance.close(coupon);
+                setTimeout(function(){
+                    $uibModalInstance.close(coupon);
+                }, 3000);
+                
             },function(data){
                vm.error = data.error.message ;
             });

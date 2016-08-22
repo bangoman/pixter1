@@ -104,7 +104,8 @@
                 </div>
             </div>
             <div ng-if="!vm.getTotal()">
-                <div class="btn" ng-style="brandingStyle.generalButton" ng-click="vm.checkout('submit')">Submit</div>
+                <div class="btn pull-right hidden-xs" ng-style="brandingStyle.generalButton"  style="width:244px" ng-click="vm.checkout('submit')">Submit</div>
+                <div class="btn col-xs-12 visible-xs" ng-style="brandingStyle.generalButton"   ng-click="vm.checkout('submit')">Submit</div>
             </div>
         </div>
     </div>
