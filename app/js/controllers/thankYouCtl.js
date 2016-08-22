@@ -1,5 +1,5 @@
 
-angular.module('app').controller('thankYouCtl',function(message, $state){
+angular.module('app').controller('thankYouCtl',function(message,$rootScope,$state){
     var vm = this;
 
     vm.close = function(){
@@ -8,7 +8,7 @@ angular.module('app').controller('thankYouCtl',function(message, $state){
     };    
     
     vm.goToShopView = function() {
-        console.log('somthing happend');
+        $rootScope.coupon = undefined;
         $state.go('app.shop');
     };
 

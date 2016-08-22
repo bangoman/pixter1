@@ -9,7 +9,7 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
         return $location.search().apiKey;
     }, function () {
         locationSearchWatcher();
-        setImageUrl(localStorage.getItem($location.search().host + '.imageUrl'));
+        setImageUrl(sessionStorage.getItem($location.search().host + '.imageUrl'));
         if (!inIframe()) {
             afterImageLoaded();
         }
@@ -26,7 +26,7 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
             }
             else if (e.data.type == "pixter") {
                 var url = e.data.img;
-                localStorage.setItem($location.search().host + '.imageUrl', url);
+                sessionStorage.setItem($location.search().host + '.imageUrl', url);
                 setImageUrl(url);
                 message('image_received');
                 afterImageLoaded();
@@ -232,6 +232,7 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
         return $http.get($rootScope.baseApi + '/api/v2/store/init?api_key=' + $rootScope.apiKey + '&store_id=' + $rootScope.storeId)
             .then(function (res) {
                 $rootScope.brandingData = res.data;
+                $rootScope.pixKey = res.data.initdata.pix_apikey;
                 generateBrandingStyle();
             }).then(function () {
 

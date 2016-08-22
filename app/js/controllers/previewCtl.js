@@ -118,17 +118,24 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,
     vm.goToOrderDetails = function() {
     	$rootScope.finalStep = true;
     };
+
     if ($scope.displayDropdown) {
-        $rootScope.$watch('currentProduct',function(){   
-            $rootScope.finalStep = false;
-            //$rootScope.dpiApproved = false;                
-            $scope.imageToPreview = $rootScope.currentProduct.images['Preview'];      
-            $scope.getFinalPrice()  
+        $scope.$watch(function() {
+            return $rootScope.currentProduct;
+        }, function(current, original) {
             if($rootScope.currentProduct.rotate_product){
                 //$scope.setLandscapeOrPortrait();
                 $scope.chooseLandscapeOrPortrait(); 
-            }            
-        });
+            }                                        
+            
+            if(current !== original){
+                $rootScope.finalStep = false;
+                $rootScope.imageUrl = $rootScope.originalImageUrl;
+                //$rootScope.dpiApproved = false;
+                $scope.imageToPreview = $rootScope.currentProduct.images['Preview']; 
+                $scope.getFinalPrice()  
+            }
+        });        
     }
 
     

@@ -72,10 +72,6 @@
             <div class="col-sm-6 col-xs-12">
                 <div>
                     <div class="form-group">
-                        <input type="text" class="form-control order-details-input" name="telephoneNo" placeholder="Tel No."
-                               ng-model="order.telephoneNo"/>
-                    </div>                                  
-                    <div class="form-group">
                         <input type="text" class="form-control order-details-input" name="city" placeholder="City*"
                                ng-model="order.city"
                                required 
@@ -102,6 +98,11 @@
                         </div>
 
                     </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control order-details-input" name="telephoneNo" placeholder="Telephone Number"
+                               ng-model="order.telephoneNo"/>
+                    </div>                                  
+
                     <div class="form-group" ng-show="countries.length > 1">    
                         <select class="order-details-input country-select" ng-model="order.country" 
                                 ng-options="country.name for country in countries  " >

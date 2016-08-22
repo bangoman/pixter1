@@ -2,7 +2,7 @@
 
     <div class="col-sm-5 col-xs-12 preview-product-image">
         <div class="preview-product-border">
-            <product-image-display back-side-flag="bsf"  product="currentProduct.images['Preview']"  image-url="imageUrl" tmb-width="tmbWidth"  final-step="finalStep" catalog-mode="true" ng-show="!isLoading">
+            <product-image-display back-side-flag="bsf"  product="currentProduct[currentProduct.display.image_orientation]['Preview']"  image-url="imageUrl" tmb-width="tmbWidth"  final-step="finalStep" catalog-mode="true" ng-show="!isLoading">
             </product-image-display>
         </div>
         <div class="preview-product-border">
@@ -11,14 +11,13 @@
         <div style="margin-top:{{tmbWidth}}px;">
 
             <div class="row preview-edit-row">
-                <div class="preview-edit-btn pull-left" ng-show="currentProduct.rotate_product.length > 0"  ng-if="!$root.brandingData.behaviour.orientation" ng-click="findRotatedProduct(currentProduct.rotate_product[0].id)" style="color:{{brandingData.branding.buttons.backgroundcolor}};" >
+                <div class="preview-edit-btn pull-left" ng-show="currentProduct.rotate_product.length > 0"   ng-click="findRotatedProduct(currentProduct.rotate_product[0].id)" style="color:{{brandingData.branding.buttons.backgroundcolor}};" >
                     <i class="glyphicon glyphicon-repeat"></i>
                     <span>Rotate</span>
                     
                 </div>
                 <div class="preview-edit-btn pull-left" 
-                    ng-show="currentProduct.rotate_images.Preview && !currentProduct.params"
-                    ng-if="!$root.brandingData.behaviour.orientation" 
+                    ng-show="currentProduct.rotate_images.Preview && !currentProduct.params"                    
                     ng-click="rotateImage()" 
                     style="color:{{brandingData.branding.buttons.backgroundcolor}};" >
                     <i class="glyphicon glyphicon-repeat"></i>

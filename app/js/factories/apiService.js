@@ -1,7 +1,7 @@
 /**
  * Created by ori on 04/07/16.
  */
-angular.module('app').factory('apiService', function ($http, uuidService, $q, $httpParamSerializerJQLike) {
+angular.module('app').factory('apiService', function ($http,$rootScope, uuidService, $q, $httpParamSerializerJQLike) {
     return {
         validateCoupon: validateCoupon,
         validateOrder: validateOrder,
@@ -16,7 +16,7 @@ angular.module('app').factory('apiService', function ($http, uuidService, $q, $h
             user_id: uuidService.getId('session'),
             lang: 'en_US',
             metadata: {
-                api_key: 'SDKSLIDELY',
+                api_key: $rootScope.pixKey,
                 l_version: '1.1.0.0',
                 brand: 'none',
                 s_version: '1.4.0.0'

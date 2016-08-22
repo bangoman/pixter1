@@ -12,6 +12,7 @@ angular.module('app').controller('orderDetailsCtl',function($state,$rootScope,ap
 
     if (JSON.parse($window.localStorage.getItem("orderDetails"))) {
         $rootScope.order = JSON.parse($window.localStorage.getItem("orderDetails"));
+        console.log($rootScope.order);
         $rootScope.order.country = $rootScope.countries.filter(function (country) {
             return $rootScope.order.country.code === country.code;
         })[0];        
