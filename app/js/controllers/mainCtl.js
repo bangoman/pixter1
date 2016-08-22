@@ -34,6 +34,14 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
         });
     }, false);
 
+    window.onbeforeunload = function () {
+        crosstab.broadcast('close');
+    };
+
+    crosstab.on('close',function () {
+        message('close');
+    });
+
     crosstab.on('p_order_complete', function () {
         message('p_order_complete');
     });
@@ -130,7 +138,7 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
             $state.go('app.preview');
         }
         if ($state.current.name == 'app.checkout') {
-             $rootScope.coupon = undefined;
+            $rootScope.coupon = undefined;
             $state.go('app.orderDetails');
         }
     };

@@ -1,5 +1,6 @@
 (function () {
     var imgUrl, iframe, overlay, initialized, readyToShow, win, callbacks = {};
+    var closeCalled = false;
     var noop = function () {};
     window.pixter = {
         loadIframe: loadIframe,
@@ -19,11 +20,14 @@
                 }
                 break;
             case 'pixter_close':
-                callbacks.onClose();
-                document.body.removeChild(iframe);
-                document.body.removeChild(overlay);
-                iframe = null;
-                overlay = null;
+                if( !closeCalled ){
+                    closeCalled = true;
+                    callbacks.onClose();
+                    document.body.removeChild(iframe);
+                    document.body.removeChild(overlay);
+                    iframe = null;
+                    overlay = null;
+                }
                 break;
             case 'pixter_p_order_complete':
                 callbacks.onOrderComplete();
@@ -32,8 +36,8 @@
     }, false);
 
     var proxy = "https://pixprox.pixter.me/";
-    var baseUrl = "http://pixter-v1-responsive.s3-website-us-east-1.amazonaws.com/";
-    //baseUrl = "../";
+    // var baseUrl = "http://pixter-v1-responsive.s3-website-us-east-1.amazonaws.com/";
+    baseUrl = "../";
     // baseUrl =  proxy + baseUrl;
     function loadIframe(imgUrl, apiKey, storeId, backgrounds, onClose, onOrderComplete) {        
 
@@ -139,9 +143,6 @@
         if (initialized) {
             if (mobileAndTabletcheck()) {
                 win.location.href = iframe.src;
-                setTimeout(function () {
-                    win.onbeforeunload = callbacks.onClose;
-                },100);
                 win.focus();
             } else {
                 iframe.style.display = 'block';
