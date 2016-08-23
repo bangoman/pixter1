@@ -9,7 +9,7 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
         return $location.search().apiKey;
     }, function () {
         locationSearchWatcher();
-        setImageUrl(sessionStorage.getItem('.imageUrl'));
+        setImageUrl(localStorage.getItem('.imageUrl'));
         if (!inIframe()) {
             afterImageLoaded();
         }
@@ -27,8 +27,8 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
             }
             else if (e.data.type == "pixter") {
                 var url = e.data.img;
-                sessionStorage.setItem('.imageUrl', url);
-                console.log('sessionStorage', sessionStorage);
+                localStorage.setItem('.imageUrl', url);
+                console.log('localStorage', localStorage);
                 setImageUrl(url);
                 message('image_received');
                 afterImageLoaded();

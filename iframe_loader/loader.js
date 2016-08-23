@@ -94,7 +94,7 @@
             iframe.style.left = offsetLeft + "px";
             iframe.style.top = (screenH - iframeH) / 2 + "px";
             if(iframeH > screenH){
-                iframe.style.top = 0    
+                iframe.style.top = 0
                 iframeH = screenH
             }            
             iframe.style.width = iframeW + "px";
@@ -135,6 +135,7 @@
     }
 
     function showSite() {
+        debugger;
         if (mobileAndTabletcheck() && !win) {
             win = window.open('', '_blank');
             self.focus();
