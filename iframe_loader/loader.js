@@ -135,7 +135,6 @@
     }
 
     function showSite() {
-        debugger;
         if (mobileAndTabletcheck() && !win) {
             win = window.open('', '_blank');
             self.focus();
