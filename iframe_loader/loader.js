@@ -123,7 +123,7 @@
     function postImage() {
 
         iframe.contentWindow.postMessage({img: imgUrl, type: "pixter"}, '*');
-        window.postMessage({img: imgUrl, type: "pixter"}, '*');
+        // window.postMessage({img: imgUrl, type: "pixter"}, '*');
     }
 
     function mobileAndTabletcheck() {
