@@ -37,7 +37,7 @@
 
     var proxy = "https://pixprox.pixter.me/";
     var baseUrl = "http://pixter-v1-responsive.s3-website-us-east-1.amazonaws.com/";
-    baseUrl = "../";
+    //baseUrl = "../";
     // baseUrl =  proxy + baseUrl;
     function loadIframe(imgUrl, apiKey, storeId, backgrounds, onClose, onOrderComplete) {        
 
@@ -64,9 +64,8 @@
         // var url = baseUrl + '/index.html?imageUrl=' + imgUrl + '&apiKey=' + apiKey + '&storeId=' + storeId + '&bgs=' + backgroundsString;  //   add this:  #/app/sliderShop  to see the slideShop
         var url = baseUrl + '?apiKey=' + apiKey + '&storeId=' + storeId + '&bgs=' + backgroundsString + '&host=' + encodeURIComponent(location.host);  //   add this:  #/app/sliderShop  to see the slideShop
         iframe = document.createElement('iframe');
-        iframe.src = url;
-        iframe.style.display = 'none';
         if (!mobileAndTabletcheck()) {
+            iframe.src = url;        
             overlay = document.createElement('div');
             overlay.style.width = "100vw";
             overlay.style.height = "100vh";
@@ -102,8 +101,9 @@
             iframe.style.height = iframeH + 'px';
             iframe.style.maxWidth = "920px";
             iframe.style.border = "none";
-
-
+        }else{
+            iframe.src = url;
+            iframe.style.display = 'none';
         }
         document.body.appendChild(iframe);
 

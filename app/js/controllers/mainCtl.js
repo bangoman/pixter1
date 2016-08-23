@@ -15,8 +15,14 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
         }
         message('init');
     });
-    window.addEventListener('message', function (e) {
-        console.log('message received', e);
+    window.addEventListener('message', function (e) {        
+        if (e.data.type == "pixter") {
+            localStorage.setItem('.imageUrl', url);
+            var url = e.data.img;
+            setImageUrl(url);
+            message('image_received');
+            afterImageLoaded();
+        }
         $timeout(function () {
             if (e.data == "p_order_complete") {
                 crosstab.broadcast('p_order_complete');
@@ -24,14 +30,6 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
             }
             else if ((e.data) == "p_order_canceled") {
                 crosstab.broadcast('p_order_canceled');
-            }
-            else if (e.data.type == "pixter") {
-                var url = e.data.img;
-                localStorage.setItem('.imageUrl', url);
-                console.log('localStorage', localStorage);
-                setImageUrl(url);
-                message('image_received');
-                afterImageLoaded();
             }
         });
     }, false);
