@@ -16,6 +16,14 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
         message('init');
     });
     window.addEventListener('message', function (e) {        
+        if (e.data.type == "pixter") {
+
+            var url = e.data.img;
+            localStorage.setItem('.imageUrl', url);
+            setImageUrl(url);
+            message('image_received');
+            afterImageLoaded();
+        }
         $timeout(function () {
             if (e.data == "p_order_complete") {
                 crosstab.broadcast('p_order_complete');
