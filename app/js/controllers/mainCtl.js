@@ -9,13 +9,14 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
         return $location.search().apiKey;
     }, function () {
         locationSearchWatcher();
-        setImageUrl(sessionStorage.getItem($location.search().host + '.imageUrl'));
+        setImageUrl(sessionStorage.getItem('.imageUrl'));
         if (!inIframe()) {
             afterImageLoaded();
         }
         message('init');
     });
     window.addEventListener('message', function (e) {
+        console.log('message received', e);
         $timeout(function () {
             if (e.data == "p_order_complete") {
                 crosstab.broadcast('p_order_complete');
@@ -26,7 +27,8 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
             }
             else if (e.data.type == "pixter") {
                 var url = e.data.img;
-                sessionStorage.setItem($location.search().host + '.imageUrl', url);
+                sessionStorage.setItem('.imageUrl', url);
+                console.log('sessionStorage', sessionStorage);
                 setImageUrl(url);
                 message('image_received');
                 afterImageLoaded();
@@ -38,7 +40,7 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
         crosstab.broadcast('close');
     };
 
-    crosstab.on('close',function () {
+    crosstab.on('close', function () {
         message('close');
     });
 
