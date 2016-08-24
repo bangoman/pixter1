@@ -315,6 +315,7 @@ select[type="number"]:active {
   padding-top: 80px;
 }
 .preview-product-image {
+  padding-top: 44px;
   text-align: center;
   margin-bottom: 12px;
 }
