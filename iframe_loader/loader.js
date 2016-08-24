@@ -9,6 +9,14 @@
     };
 
     window.addEventListener('message', function (e) {
+        console.log("message",e);
+        if(e.data.type == "pixter_image_received"){
+            initialized = true;
+            url = url + "&imgUrl=" + e.data.img;
+            if (readyToShow) {
+                showSite();
+            }            
+        }
         switch (e.data) {
             case 'pixter_init':
                 postImage();
@@ -51,7 +59,6 @@
         }
 
         if (iframe) {
-            console.log("removing iframe");
             document.body.removeChild(iframe);
             win = null;
         }
@@ -102,11 +109,19 @@
             iframe.style.height = iframeH + 'px';
             iframe.style.maxWidth = "920px";
             iframe.style.border = "none";
+            document.body.appendChild(iframe);
         }else{
-            iframe.src = url;
-            iframe.style.display = 'none';
+            if(isDatauri(imgUrl)){
+                iframe.src = url;
+                iframe.style.display = 'none';                
+                document.body.appendChild(iframe);
+            }else{
+                initialized = true;
+                url = url + "&imgUrl=" + imgUrl;
+                showSite();
+            }
         }
-        document.body.appendChild(iframe);
+        
 
 
         // Do whatever you'd like with the Data URI!
@@ -114,6 +129,9 @@
         changeImage(imgUrl);
 
         showSite();
+    }
+    function isDatauri(str) {
+        return str.indexOf('data:') === 0
     }
 
     function changeImage(url) {
@@ -138,7 +156,7 @@
     function showSite() {
         if (mobileAndTabletcheck() && !win) {
             win = window.open('', '_blank');
-            self.focus();
+            self.focus();   
         }
 
         if (initialized) {

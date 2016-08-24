@@ -9,19 +9,24 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
         return $location.search().apiKey;
     }, function () {
         locationSearchWatcher();
-        setImageUrl(localStorage.getItem('.imageUrl'));
-        if (!inIframe()) {
-            afterImageLoaded();
-        }
-        message('init');
-    });
-    window.addEventListener('message', function (e) {        
-        if (e.data.type == "pixter") {
 
+        if (!inIframe()) {
+            setImageUrl(getParameterByName("imgUrl",location.search));
+            afterImageLoaded();
+        }else{
+            message('init');    
+            setImageUrl(sessionStorage.getItem('.imageUrl'));
+        }
+        
+    });   
+
+    window.addEventListener('message', function (e) {                
+        if (e.data.type == "pixter") {
             var url = e.data.img;
-            localStorage.setItem('.imageUrl', url);
+            sessionStorage.setItem('.imageUrl', url);
+            var imgurl = url;
             setImageUrl(url);
-            message('image_received');
+            
             afterImageLoaded();
         }
         $timeout(function () {
@@ -178,6 +183,8 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
             if (isDatauri(url)) {
                 url = dataURItoBlob(url);
             }
+            message('image_received',url);
+            
             $rootScope.originalImageUrl = $rootScope.imageUrl = url;
         }
     }
