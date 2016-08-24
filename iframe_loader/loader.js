@@ -1,7 +1,11 @@
 (function () {
-    var imgUrl, iframe, overlay, initialized, readyToShow, win, callbacks = {};
+    var imgUrl, iframe, overlay, initialized, readyToShow, win;
     var closeCalled = false;
     var noop = function () {};
+    var callbacks = {
+        onClose:noop,
+        onOrderComplete:noop,
+    };
     window.pixter = {
         loadIframe: loadIframe,
         changeImage: changeImage,
@@ -43,9 +47,12 @@
     // baseUrl =  proxy + baseUrl;
     var url;
     function loadIframe(imgUrl, apiKey, storeId, backgrounds, onClose, onOrderComplete) {        
-
-        callbacks.onClose = onClose || noop;
-        callbacks.onOrderComplete = onOrderComplete || noop;
+        if( onClose ){
+            callbacks.onClose = onClose;
+        }
+        if( onOrderComplete ){
+            callbacks.onOrderComplete = onOrderComplete;
+        }
         closeCalled = false;
         initialized = false;
 
