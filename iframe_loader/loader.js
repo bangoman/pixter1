@@ -46,6 +46,7 @@
 
         callbacks.onClose = onClose || noop;
         callbacks.onOrderComplete = onOrderComplete || noop;
+        closeCalled = false;
         initialized = false;
 
         if (imgUrl.indexOf("http://") != -1 || imgUrl.indexOf("https://") != -1 || imgUrl.indexOf("ftp://") != -1) {
