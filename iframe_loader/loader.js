@@ -10,19 +10,13 @@
 
     window.addEventListener('message', function (e) {
         console.log("message",e);
-        if(e.data.type == "pixter_image_received"){
-            initialized = true;
-            url = url + "&imgUrl=" + e.data.img;
-            if (readyToShow) {
-                showSite();
-            }            
-        }
         switch (e.data) {
             case 'pixter_init':
                 postImage();
                 break;
             case 'pixter_image_received':
                 initialized = true;
+                url = url + "&imgUrl=" + e.data.img;
                 if (readyToShow) {
                     showSite();
                 }
