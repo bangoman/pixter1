@@ -1,7 +1,7 @@
 <div id="shop-view-responsive" class="row hidden-xs">
     <div class="col-xs-12"  ng-repeat="category in productsData.objects"  ng-show="currentIndex == $index">
         <div style="height:{{bannerHeight}}px;  ">
-            <product-image-display class="shop-view-product-image-display" product="category.images['OSS']" image-url="imageUrl"  tmb-width="bannerWidth" catalog-mode="true" >
+            <product-image-display class="shop-view-product-image-display" product="category[category.image_orientation]['OSS']" image-url="imageUrl"  tmb-width="bannerWidth" catalog-mode="true" >
             </product-image-display>
             <div class="slider-shop-description-box" ng-style="brandingStyle.oss.description">
                
