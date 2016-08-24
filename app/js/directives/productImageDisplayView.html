@@ -36,7 +36,7 @@
     </div>
 
 
-    <div class="col-lg-8 col-lg-offset-2 col-xs-12 edit-bottom-buttons-container">
+    <div class="col-lg-8 col-lg-offset-2 col-xs-12 edit-bottom-buttons-container" style="margin:0px;padding:0px;">
         <div class="revert-changes-button">
     <!--        <img src="https://pixter-loader-assets.s3.amazonaws.com/1_8_1_stg/files/images/revertCrop.png">
             <span style="text-decoration: underline">
@@ -44,22 +44,22 @@
             </span>
             -->
         </div>
-    <div class="col-lg-8 col-lg-offset-2 col-xs-12 edit-crop-controls-container hidden-xs" >
-        <ul class="crop-controls horizontal">
-            <li class="crop-control-button" ng-click="triggerZoom(1.05)">
-                <img src="https://pixter-loader-assets.s3.amazonaws.com/1_8_1_stg/files/images/cropZoomIn.png">
-            </li>
-            <li class="crop-control-button" ng-click="triggerZoom(0.95)">
-                <img src="https://pixter-loader-assets.s3.amazonaws.com/1_8_1_stg/files/images/cropZoomOut.png">
-            </li>
-            <li class="crop-control-button" ng-click="startRotateLoader(-90)">
-                <img src="https://pixter-loader-assets.s3.amazonaws.com/1_8_1_stg/files/images/cropRotateLeft.png">
-            </li>
-            <li class="crop-control-button" ng-click="startRotateLoader(90)">
-                <img src="https://pixter-loader-assets.s3.amazonaws.com/1_8_1_stg/files/images/cropRotateLeft.png" class="rotate-right">
-            </li>
-        </ul>
-    </div>                
+        <div class="col-lg-8 col-lg-offset-2 col-xs-12 edit-crop-controls-container hidden-xs" >
+            <ul class="crop-controls horizontal">
+                <li class="crop-control-button" ng-click="triggerZoom(1.05)">
+                    <img src="https://pixter-loader-assets.s3.amazonaws.com/1_8_1_stg/files/images/cropZoomIn.png">
+                </li>
+                <li class="crop-control-button" ng-click="triggerZoom(0.95)">
+                    <img src="https://pixter-loader-assets.s3.amazonaws.com/1_8_1_stg/files/images/cropZoomOut.png">
+                </li>
+                <li class="crop-control-button" ng-click="startRotateLoader(-90)">
+                    <img src="https://pixter-loader-assets.s3.amazonaws.com/1_8_1_stg/files/images/cropRotateLeft.png">
+                </li>
+                <li class="crop-control-button" ng-click="startRotateLoader(90)">
+                    <img src="https://pixter-loader-assets.s3.amazonaws.com/1_8_1_stg/files/images/cropRotateLeft.png" class="rotate-right">
+                </li>
+            </ul>
+        </div>                
 
 
         <button class="revert-changes-button" ng-click="revertChanges()">

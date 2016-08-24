@@ -88,12 +88,16 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,
     $scope.rotateImage = function(){
         $scope.isLoading = true;
         $timeout(function() {$scope.isLoading = false;}, 100);
-        var rotatedTarget = {};
-        var mainTarget = {};
-        angular.extend(rotatedTarget, $rootScope.currentProduct.images)
-        angular.extend(mainTarget, $rootScope.currentProduct.rotate_images)
-        $rootScope.currentProduct.rotate_images = rotatedTarget;
-        $rootScope.currentProduct.images = mainTarget;
+        if($rootScope.currentProduct.display.image_orientation == "rotate_images"){
+            $rootScope.currentProduct.display.image_orientation = "images";
+
+        }else{
+            $rootScope.currentProduct.display.image_orientation = "rotate_images";
+        }
+        
+//        $rootScope.currentProduct.rotate_images = rotatedTarget;
+//        $rootScope.currentProduct.images = mainTarget;
+
     }
 
     $scope.getFinalPrice = function(){
