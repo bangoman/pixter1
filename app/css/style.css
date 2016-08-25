@@ -130,13 +130,13 @@ select[type="number"]:active {
 }
 
 .store-header-back-button {
-  left: 20px;
+  left: 4px;
   z-index: 1;
   width: 40px;
   height: 32px;
   padding-left: 4px;
   margin-top: -6px;
-  line-height: 28px;
+  line-height: 29px;
   text-align: left;
   font-size: 28px;
   cursor: pointer;
@@ -148,7 +148,7 @@ select[type="number"]:active {
   left: 32px;
 }
 .header-logo-image {
-  height:18px;
+  height: 20px;
 }
 
 
@@ -158,6 +158,8 @@ select[type="number"]:active {
   top: 10px;
 }
 .store-header-learn-more-button {
+  position: relative;
+  top: 1px;
   height: 20px;
   width: 20px;
   padding: 3px;
@@ -176,10 +178,11 @@ select[type="number"]:active {
   outline: none;
 }
 .store-header-close-button {
+  border: none;
   color: #92aaaa;
   font-size: 14px;
   font-weight: 400;
-  border: none;
+  margin-right: -16px;
   background: transparent;
 }
 
@@ -1021,11 +1024,6 @@ select[type="number"]:active {
   .header-logo-image-container {
     left: 32px;
   }
-/*  .header-logo-image {
-    width: 15vw;
-    height: auto;
-    max-height: 30px;
-  }*/
 }
 @media screen and (max-width: 435px) {
   .hide-on-mobile {
@@ -1049,6 +1047,7 @@ select[type="number"]:active {
   }
   .header-logo-image {
     width: 14vw;
+    min-width: 54px;
     height: auto;
     max-height: 30px;
     margin-left:-20px;
