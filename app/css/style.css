@@ -392,8 +392,6 @@ select[type="number"]:active {
 .preview-details-header .preview-price {
   font-size: 18px;
   padding-left: 20px;
-    position: absolute;
-    right: 52px;
 }
 .preview-bullet-list {
   padding-top: 20px;
@@ -976,6 +974,11 @@ select[type="number"]:active {
   .preview-product-details {
     padding-left: 0;
     padding-right: 52px;
+  }
+  .preview-details-header .preview-price {
+    padding-left: 0px;
+    position: absolute;
+    right: 52px;
   }
   .front-back-buttons-row {
     width: initial !important;
