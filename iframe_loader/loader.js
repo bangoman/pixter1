@@ -1,11 +1,7 @@
 (function () {
-    var imgUrl, iframe, overlay, initialized, readyToShow, win;
+    var imgUrl, iframe, overlay, initialized, readyToShow, win, callbacks = {};
     var closeCalled = false;
     var noop = function () {};
-    var callbacks = {
-        onClose:noop,
-        onOrderComplete:noop,
-    };
     window.pixter = {
         loadIframe: loadIframe,
         changeImage: changeImage,
@@ -14,26 +10,32 @@
 
     window.addEventListener('message', function (e) {
         console.log("message",e);
+        if(e.data.type == "pixter_image_received"){
+            initialized = true;
+            url = url + "&imgUrl=" + e.data.img;
+            if (readyToShow) {
+                showSite();
+            }            
+        }
         switch (e.data) {
             case 'pixter_init':
                 postImage();
                 break;
             case 'pixter_image_received':
                 initialized = true;
-                url = url + "&imgUrl=" + e.data.img;
                 if (readyToShow) {
                     showSite();
                 }
                 break;
             case 'pixter_close':
-                if( !closeCalled ){
+      //          if( !closeCalled ){
                     closeCalled = true;
                     callbacks.onClose();
                     document.body.removeChild(iframe);
                     document.body.removeChild(overlay);
                     iframe = null;
                     overlay = null;
-                }
+        //        }
                 break;
             case 'pixter_p_order_complete':
                 callbacks.onOrderComplete();
@@ -43,17 +45,13 @@
 
     var proxy = "https://pixprox.pixter.me/";
     var baseUrl = "http://pixter-v1-responsive.s3-website-us-east-1.amazonaws.com/";
-    //baseUrl = "../";
+    baseUrl = "../";
     // baseUrl =  proxy + baseUrl;
     var url;
     function loadIframe(imgUrl, apiKey, storeId, backgrounds, onClose, onOrderComplete) {        
-        if( onClose ){
-            callbacks.onClose = onClose;
-        }
-        if( onOrderComplete ){
-            callbacks.onOrderComplete = onOrderComplete;
-        }
-        closeCalled = false;
+
+        callbacks.onClose = onClose || noop;
+        callbacks.onOrderComplete = onOrderComplete || noop;
         initialized = false;
 
         if (imgUrl.indexOf("http://") != -1 || imgUrl.indexOf("https://") != -1 || imgUrl.indexOf("ftp://") != -1) {
@@ -119,8 +117,6 @@
                 document.body.appendChild(iframe);
             }else{
                 initialized = true;
-                alert(imgUrl);
-                window.location = imgUrl;
                 url = url + "&imgUrl=" + imgUrl;
                 showSite();
             }

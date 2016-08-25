@@ -1,10 +1,10 @@
-angular.module('app').controller('mainCtl', function (message, $uibModal, $state, $rootScope, $http, $stateParams, $scope, $location, $timeout, localStorageService, $q, crosstab) {
+angular.module('app').controller('mainCtl', function (message, $uibModal, $state, $rootScope, $http, $stateParams, $scope, $location, $timeout, localStorageService, $q, crosstab,apiService) {
     var vm = this;
     vm.state = $state;
     $scope.loading = true;
-
     $rootScope.baseApi = 'http://ec2-52-201-250-90.compute-1.amazonaws.com:8000';
-    $scope.loading = true;
+    $rootScope.ordersApi = 'https://api-sg.pixter-media.com/'
+
     var locationSearchWatcher = $rootScope.$watch(function () {
         return $location.search().apiKey;
     }, function () {
@@ -183,7 +183,7 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
             if (isDatauri(url)) {
                 url = dataURItoBlob(url);
             }
-            message('image_received',url);
+            message('image_received',url.replace("%3A",":"));
             
             $rootScope.originalImageUrl = $rootScope.imageUrl = url;
         }
@@ -245,10 +245,11 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
     }
 
     function getBranding() {
-        return $http.get($rootScope.baseApi + '/api/v2/store/init?api_key=' + $rootScope.apiKey + '&store_id=' + $rootScope.storeId)
+        return apiService.getBranding()
             .then(function (res) {
-                $rootScope.brandingData = res.data;
-                $rootScope.pixKey = res.data.initdata.pix_apikey;
+                console.log(res);
+                $rootScope.brandingData = res;
+                $rootScope.pixKey = res.initdata.pix_apikey;
                 generateBrandingStyle();
             }).then(function () {
 
@@ -257,10 +258,10 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
     }
 
     function getProducts(w, h) {
-        return $http.get($rootScope.baseApi + '/api/v2/category/get_list?api_key=' + $rootScope.apiKey + '&store_id=' + $rootScope.storeId + '&add_products=true&img_w=' + w + '&img_h=' + h)
+        return  apiService.getProducts(w,h)
             .then(function (res) {
                 console.log("product res", res);
-                $rootScope.productsData = res.data;
+                $rootScope.productsData = res;
                 $scope.loading = false;
                 $scope.animateOpacity();
                 $rootScope.$broadcast("productArrive");
@@ -270,7 +271,7 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
                 // else {
                 //     $state.go('app.shop');
                 // }
-                $rootScope.currencySymbol = res.data.localization.currency.symbol
+                $rootScope.currencySymbol = res.localization.currency.symbol
             });
     }
 
@@ -320,9 +321,9 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
     //$scope.countryApi = 'http://ec2-52-201-250-90.compute-1.amazonaws.com:8000/api/v2/country/?user=demo';
 
     function getCountry() {
-        $http.get($rootScope.baseApi + '/api/v2/country/?api_key=' + $rootScope.apiKey + '&store_id=' + $rootScope.storeId + '&add_products=true')
+            apiService.getCountries()
             .then(function (res) {
-                $rootScope.countries = res.data.objects;
+                $rootScope.countries = res.objects;
             });
     }
 
