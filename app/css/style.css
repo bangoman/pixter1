@@ -324,7 +324,7 @@ select[type="number"]:active {
   padding-top: 80px;
 }
 .preview-product-image {
-  padding-top: 44px;
+  padding-top: 20px;
   text-align: center;
   margin-bottom: 12px;
   z-index: 1;
@@ -1111,11 +1111,8 @@ select[type="number"]:active {
     line-height: 16px;
     margin-bottom: 8px;
   }
-  #order-details-view-responsive {
-    padding: 100px 32px 20px;
-  }
   #checkout-view-responsive {
-    padding: 56px 32px 0;
+    padding: 48px 32px 0;
   }
   .order-details-header {
     font-size: 22px;
