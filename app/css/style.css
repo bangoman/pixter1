@@ -961,6 +961,7 @@ select[type="number"]:active {
   }
   .preview-product-details {
     padding-left: 0;
+    padding-right: 52px;
   }
 }
 @media screen and (max-width:767px) {
