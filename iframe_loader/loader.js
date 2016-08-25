@@ -29,12 +29,16 @@
                 break;
             case 'pixter_close':
       //          if( !closeCalled ){
+                try{
                     closeCalled = true;
                     callbacks.onClose();
                     document.body.removeChild(iframe);
                     document.body.removeChild(overlay);
                     iframe = null;
-                    overlay = null;
+                    overlay = null;                    
+                }catch(e){
+
+                }
         //        }
                 break;
             case 'pixter_p_order_complete':
@@ -59,7 +63,11 @@
         }
 
         if (iframe) {
-            document.body.removeChild(iframe);
+            try{
+                document.body.removeChild(iframe);
+            }catch(e){
+                            
+            }                        
             win = null;
         }
         var backgroundsString ; 

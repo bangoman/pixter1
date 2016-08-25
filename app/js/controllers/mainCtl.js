@@ -11,10 +11,15 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
         locationSearchWatcher();
 
         if (!inIframe()) {
-            setImageUrl(getParameterByName("imgUrl",location.search));
+            if(sessionStorage.getItem('.imageUrl') && getParameterByName("imgUrl",location.search).indexOf("blob:") != -1 ){
+                setImageUrl(sessionStorage.getItem('.imageUrl'));    
+            }else{
+                setImageUrl(getParameterByName("imgUrl",location.search));    
+            }
+            
             afterImageLoaded();
         }else{
-            message('init');    
+            message('init');                
             setImageUrl(sessionStorage.getItem('.imageUrl'));
         }
         
@@ -25,8 +30,7 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
             var url = e.data.img;
             sessionStorage.setItem('.imageUrl', url);
             var imgurl = url;
-            setImageUrl(url);
-            
+            setImageUrl(url);            
             afterImageLoaded();
         }
         $timeout(function () {
