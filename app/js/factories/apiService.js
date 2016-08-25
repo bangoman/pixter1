@@ -6,10 +6,14 @@ angular.module('app').factory('apiService', function ($http,$rootScope, uuidServ
         validateCoupon: validateCoupon,
         validateOrder: validateOrder,
         upload:upload,
+        getBranding:getBranding,
+        getProducts:getProducts,
+        getCountries:getCountries
     };
 
+
     function request(endPoint, data, method, baseUrl) {
-        baseUrl = baseUrl || 'https://api-sg.pixter-media.com/';
+        baseUrl = baseUrl || $rootScope.ordersApi;
         method = method || 'get';
         data = angular.extend({
             session_id: uuidService.getId('session'),
@@ -58,5 +62,34 @@ angular.module('app').factory('apiService', function ($http,$rootScope, uuidServ
             image_data:dataUrl,
         },'post','https://upload-sg.pixter-media.com/');
     }
+    function getProducts(w,h){
+        return request(
+            '/api/v2/category/get_list?api_key=' + $rootScope.apiKey + '&store_id=' + $rootScope.storeId + '&add_products=true&img_w=' + w + '&img_h=' + h,
+            {},
+            'get',
+            $rootScope.baseApi
+            );
+
+
+
+    }
+    function getBranding(){
+        return request(
+            '/api/v2/store/init?api_key=' + $rootScope.apiKey + '&store_id=' + $rootScope.storeId,
+            {},
+            'get',
+            $rootScope.baseApi);
+
+    }
+    function getCountries(){
+        return request(
+            '/api/v2/country/?api_key=' + $rootScope.apiKey + '&store_id=' + $rootScope.storeId + '&add_products=true',
+            {},
+            'get',
+            $rootScope.baseApi
+        );        
+        
+    }
+
     
 });

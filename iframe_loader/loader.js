@@ -1,11 +1,7 @@
 (function () {
-    var imgUrl, iframe, overlay, initialized, readyToShow, win;
+    var imgUrl, iframe, overlay, initialized, readyToShow, win, callbacks = {};
     var closeCalled = false;
     var noop = function () {};
-    var callbacks = {
-        onClose:noop,
-        onOrderComplete:noop,
-    };
     window.pixter = {
         loadIframe: loadIframe,
         changeImage: changeImage,
@@ -14,26 +10,36 @@
 
     window.addEventListener('message', function (e) {
         console.log("message",e);
+        if(e.data.type == "pixter_image_received"){
+            initialized = true;
+            url = url + "&imgUrl=" + e.data.img;
+            if (readyToShow) {
+                showSite();
+            }            
+        }
         switch (e.data) {
             case 'pixter_init':
                 postImage();
                 break;
             case 'pixter_image_received':
                 initialized = true;
-                url = url + "&imgUrl=" + e.data.img;
                 if (readyToShow) {
                     showSite();
                 }
                 break;
             case 'pixter_close':
-                if( !closeCalled ){
+      //          if( !closeCalled ){
+                try{
                     closeCalled = true;
                     callbacks.onClose();
                     document.body.removeChild(iframe);
                     document.body.removeChild(overlay);
                     iframe = null;
-                    overlay = null;
+                    overlay = null;                    
+                }catch(e){
+
                 }
+        //        }
                 break;
             case 'pixter_p_order_complete':
                 callbacks.onOrderComplete();
@@ -47,13 +53,9 @@
     // baseUrl =  proxy + baseUrl;
     var url;
     function loadIframe(imgUrl, apiKey, storeId, backgrounds, onClose, onOrderComplete) {        
-        if( onClose ){
-            callbacks.onClose = onClose;
-        }
-        if( onOrderComplete ){
-            callbacks.onOrderComplete = onOrderComplete;
-        }
-        closeCalled = false;
+
+        callbacks.onClose = onClose || noop;
+        callbacks.onOrderComplete = onOrderComplete || noop;
         initialized = false;
 
         if (imgUrl.indexOf("http://") != -1 || imgUrl.indexOf("https://") != -1 || imgUrl.indexOf("ftp://") != -1) {
@@ -61,7 +63,11 @@
         }
 
         if (iframe) {
-            document.body.removeChild(iframe);
+            try{
+                document.body.removeChild(iframe);
+            }catch(e){
+                            
+            }                        
             win = null;
         }
         var backgroundsString ; 
@@ -119,8 +125,6 @@
                 document.body.appendChild(iframe);
             }else{
                 initialized = true;
-                alert(imgUrl);
-                window.location = imgUrl;
                 url = url + "&imgUrl=" + imgUrl;
                 showSite();
             }
