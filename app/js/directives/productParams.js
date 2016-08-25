@@ -4,9 +4,10 @@ angular.module('app').directive('productParams', function () {
         scope: {
             params: '=',
         },
-		controller: function ($scope,$rootScope){
+		controller: function ($scope ,$rootScope, formatPriceCurrency){
 			$rootScope.choosenParams = {};
 			$scope.paramPrice = 0 ;
+			$scope.priceCurrencyOrder = formatPriceCurrency;
             $scope.$watch('params', function () {
                 if ($scope.params) {
                    $scope.generateBackgrounds();

@@ -14,7 +14,7 @@
                         <div class="invitation-background-choose-inner"
                             style="background:{{option.rgb}}">        
                                
-                        </div> 
+                        </div>
                     </li>  
                 </ul>
             </div>
@@ -27,10 +27,11 @@
    	            <div class="params-checkbox-container" ng-repeat="option in param.options track by $index">
   	                <label for="{{param.title}}">
                     <input  type="radio" id="{{option.title}}" name="{{param.title}}" ng-model="param.chosenOption" ng-value="option" ng-change="getQuantity()">
-                        {{option.name}}
+                        {{option.name}}<!--  {{option.pricing.price}} --> {{priceCurrencyOrder(option.pricing.price, $root.currencySymbol)}}
                     </label>
                     <div ng-if="param.chosenOption == option && option.additional_data">
-                        <textarea class="form-control" type="text" rows="3" ng-model="option.additional_data.data" placeholder="{{option.additional_data.placeholder}}"></textarea>
+                        <textarea class="form-control" type="text" rows="3" col="20" maxlength="60" ng-model="option.additional_data.data" placeholder="{{option.additional_data.placeholder}}">
+                        </textarea>
                     </div>        
                 </div>
   	        </div>  
