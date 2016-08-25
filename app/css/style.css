@@ -720,8 +720,11 @@ select[type="number"]:active {
   margin-top: 28px;
 }
 .thank-you-buttons-row button {
+  padding: 0;
   height: 36px;
   margin: 12px 0;
+  line-height: 36px;
+  border: 1px solid #8b8b8b;
 }
 .thank-you-buttons-row button.white-button {
   width: 172px;
@@ -1073,6 +1076,9 @@ select[type="number"]:active {
   .checkout-view-responsive .pay-flow-product-thumbnail {
     margin-top: 8px;
   }
+  .thank-you-buttons-row button {
+    width: 100% !important;
+  }
 }
 @media screen and (max-width: 375px) {
   .preview-details-header {
@@ -1086,7 +1092,7 @@ select[type="number"]:active {
     padding: 100px 32px 20px;
   }
   #checkout-view-responsive {
-    padding: 56px 32px 20px;
+    padding: 56px 32px 0;
   }
   .order-details-header {
     font-size: 22px;
