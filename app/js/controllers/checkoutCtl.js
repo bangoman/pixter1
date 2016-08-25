@@ -1,6 +1,8 @@
 angular.module('app').controller('checkoutCtl', function ($uibModal, $rootScope, apiService, $filter, $scope, formatPriceCurrency, crosstab) {
     var vm = this;
 
+    window.scrollTo(0,0);
+
     $scope.tmbWidth = $rootScope.screenW * 0.35;
     //$rootScope.quantity = 0;
     if ($scope.tmbWidth > 180) {
@@ -133,4 +135,6 @@ angular.module('app').controller('checkoutCtl', function ($uibModal, $rootScope,
             return properties;
         }
     }
+
+
 });

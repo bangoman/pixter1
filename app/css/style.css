@@ -127,17 +127,20 @@ select[type="number"]:active {
   text-align: center;
   z-index: 100;
   background: #fff;
-  
 }
 
 .store-header-back-button {
   left: 20px;
   z-index: 1;
-  width: 20px;
+  width: 40px;
+  height: 32px;
+  padding-left: 4px;
+  margin-top: -6px;
+  line-height: 28px;
+  text-align: left;
   font-size: 28px;
   cursor: pointer;
   position: absolute;
-  
 }
 .header-logo-image-container {
   position:absolute;
@@ -152,7 +155,7 @@ select[type="number"]:active {
 .store-header-buttons-container {
   position: absolute;
   right: 20px;
-  top: 8px;
+  top: 10px;
 }
 .store-header-learn-more-button {
   height: 20px;
@@ -492,13 +495,14 @@ select[type="number"]:active {
 }
 .edit-bottom-buttons-container .next-button {
   padding: 0px 48px;
-  margin-left: 16px;
+  margin: 0 16px;
 }
 .edit-bottom-buttons-container .revert-changes-button {
   color: #999;
   border: none;
   cursor: pointer;
   font-size: 19px;
+  margin-left: 16px;
   margin-bottom: 12px;
   background: transparent;
   text-decoration: underline;
@@ -520,7 +524,7 @@ select[type="number"]:active {
 /* order-details view style */
 
 #order-details-view-responsive {
-  padding: 72px 52px 12px;
+  padding: 68px 52px 12px;
 }
 .order-details-header {
   color: #4d4d4d;
@@ -1022,9 +1026,6 @@ select[type="number"]:active {
     height: auto;
     max-height: 30px;
   }*/
-  .store-header-back-button {
-    line-height: 18px;
-  }
 }
 @media screen and (max-width: 435px) {
   .hide-on-mobile {
@@ -1042,9 +1043,6 @@ select[type="number"]:active {
   }
   .store-header {
     font-size:12px;
-  }
-  .store-header-buttons-container {
-    top: 8px;
   }
   .header-logo-image-container {
     left: 52px;

@@ -1,5 +1,6 @@
 angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,$q,$stateParams,$timeout, formatPriceCurrency){
     var vm = this;
+    window.scrollTo(0,0);
     $rootScope.disableScroll = false;
     $rootScope.finalStep = false;
     $scope.bsf = false;

@@ -1,5 +1,6 @@
 angular.module('app').controller('orderDetailsCtl',function($state,$rootScope,apiService,$scope,$http,$window){
     var vm = this;
+    window.scrollTo(0,0);
     if(!$rootScope.order){
         $rootScope.order = {state:"",address2:""};
     }
