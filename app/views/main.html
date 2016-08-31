@@ -17,7 +17,9 @@
         </div>
     </div>
     <div class="user-messaging" ng-style="brandingStyle.spcialOffer" ng-class="{'hide-on-mobile': vm.state.current.name == 'app.edit'}" >
-       {{brandingData.campaign.message}}            
+       <span ng-show="!$root.CouponMarketingString">{{brandingData.campaign.message}}</span>
+       <span ng-show="$root.CouponMarketingString">{{$root.CouponMarketingString}}</span>
+       
     </div>
     
     <div ui-view="main"></div>

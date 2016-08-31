@@ -12,7 +12,7 @@ angular.module('app').controller('checkoutCtl', function ($uibModal, $rootScope,
 
     vm.shipmentMethods = [];
 
-
+    
     $scope.priceCurrencyOrder = formatPriceCurrency;
 
 
@@ -69,7 +69,7 @@ angular.module('app').controller('checkoutCtl', function ($uibModal, $rootScope,
 
     vm.checkout = function (paymentType) {
         var win = window.open('', "", "width=500, height=500");
-        win.document.body.innerHTML = 'Processing...';
+        win.document.body.innerHTML = 'Uploading your image ...';
         var returnAddressPrice = 0;
         var quantity = 1;
         if (properties) {
@@ -80,6 +80,7 @@ angular.module('app').controller('checkoutCtl', function ($uibModal, $rootScope,
         }
         var watch = $rootScope.$watch('order.key', function () {
             if ($rootScope.order.key) {
+                win.document.body.innerHTML = 'Processing your order ...';
                 console.log($rootScope.order);
                 watch();
                 apiService
@@ -99,9 +100,11 @@ angular.module('app').controller('checkoutCtl', function ($uibModal, $rootScope,
                     }))
                     .then(function (data) {
                         if (data.url) {
+                            win.document.body.innerHTML = 'Redirecting you to the payment provider...';
                             win.location.href = data.url;
                         } else {
                             win.close();
+                            $rootScope.CouponMarketingString = false;
                             $state.go('app.thankYou');
                             crosstab.broadcast('p_order_complete');
                         }

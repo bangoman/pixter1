@@ -7,6 +7,9 @@
         changeImage: changeImage,
         showSite: showSite,
     };
+    if(location.hostname == "pixter-loader-assets.s3.amazonaws.com"){
+        console.log = noop;
+    }
 
     window.addEventListener('message', function (e) {
         console.log("message",e);
@@ -49,7 +52,7 @@
 
     var proxy = "https://pixprox.pixter.me/";
     var baseUrl = "http://pixter-v1-responsive.s3-website-us-east-1.amazonaws.com/";
-    baseUrl = "../";
+    //baseUrl = "../";
     // baseUrl =  proxy + baseUrl;
     var url;
     function loadIframe(imgUrl, apiKey, storeId, backgrounds, onClose, onOrderComplete) {        
@@ -66,7 +69,7 @@
             try{
                 document.body.removeChild(iframe);
             }catch(e){
-                            
+
             }                        
             win = null;
         }

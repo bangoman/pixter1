@@ -1,4 +1,4 @@
-angular.module('app').controller('cuponModalCtl', function ($uibModalInstance, apiService, $rootScope) {
+angular.module('app').controller('cuponModalCtl', function ($uibModalInstance, apiService, $rootScope,$timeout) {
     var vm = this;
 
     vm.close = $uibModalInstance.close;
@@ -13,6 +13,7 @@ angular.module('app').controller('cuponModalCtl', function ($uibModalInstance, a
             })
             .then(function (coupon) {
                 vm.successMessage = "Congratulations, the coupon has been verified!";
+                $timeout($rootScope.CouponMarketingString = coupon.marketing_string);                
                 $rootScope.coupon = coupon;
                 setTimeout(function(){
                     $uibModalInstance.close(coupon);

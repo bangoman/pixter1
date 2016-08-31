@@ -4,7 +4,9 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
     $scope.loading = true;
     $rootScope.baseApi = 'http://ec2-52-201-250-90.compute-1.amazonaws.com:8000';
     $rootScope.ordersApi = 'https://api-sg.pixter-media.com/'
-
+    if(location.hostname == "pixter-loader-assets.s3.amazonaws.com"){
+        console.log = function(){};
+    }
     var locationSearchWatcher = $rootScope.$watch(function () {
         return $location.search().apiKey;
     }, function () {
@@ -123,6 +125,7 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
 
 
     vm.goBack = function () {
+        $rootScope.CouponMarketingString = false;
         if ($state.current.name == 'app.preview') {
 
             if ($rootScope.productsData.display.type == "OSS") {
@@ -225,6 +228,19 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
                 }),
         ];
         return $q.all(promises).then(function () {
+            var found = false
+            angular.forEach($rootScope.productsData.objects, function(category, key){               
+                if(category.id == $rootScope.startFromPreviewMode){
+                    $rootScope.category = category;
+                    $rootScope.currentProduct = category.products[0];
+                    found = true
+                    
+
+                }                
+            });
+            if(found){
+                return $state.go('app.preview');
+            }
             if ($rootScope.productsData.display.type == "OSS") {
                 return $state.go('app.sliderShop');
             }
@@ -251,9 +267,14 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
     function getBranding() {
         return apiService.getBranding()
             .then(function (res) {
-                console.log(res);
+                console.log("init",res);
                 $rootScope.brandingData = res;
                 $rootScope.pixKey = res.initdata.pix_apikey;
+                $rootScope.startFromPreviewMode = false;
+                if(res.next.storestage.category_id){
+                    $rootScope.startFromPreviewMode  = res.next.storestage.category_id;
+
+                }
                 generateBrandingStyle();
             }).then(function () {
 
