@@ -12,7 +12,6 @@
     }
 
     window.addEventListener('message', function (e) {
-        console.log("message",e);
         if(e.data.type == "pixter_image_received"){
             initialized = true;
             url = url + "&imgUrl=" + e.data.img;
@@ -52,7 +51,7 @@
 
     var proxy = "https://pixprox.pixter.me/";
     var baseUrl = "http://pixter-v1-responsive.s3-website-us-east-1.amazonaws.com/";
-    //baseUrl = "../";
+    baseUrl = "../";
     // baseUrl =  proxy + baseUrl;
     var url;
     function loadIframe(imgUrl, apiKey, storeId, backgrounds, onClose, onOrderComplete) {        
