@@ -78,7 +78,7 @@ angular.module('app').controller('checkoutCtl', function ($uibModal, $rootScope,
             properties.return_address.totalPrice = properties.return_address.discountedPrice;
             returnAddressPrice = properties.return_address.totalPrice;
         }
-        var watch = $rootScope.$watch('order.key', function () {
+        var watch = $rootScope.$watch('orderKey', function () {
             if ($rootScope.orderKey) {
                 win.document.body.innerHTML = 'Processing your order ...';
                 console.log($rootScope.order);
