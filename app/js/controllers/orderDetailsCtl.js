@@ -42,7 +42,7 @@ angular.module('app').controller('orderDetailsCtl',function($state,$rootScope,ap
     getCountry(); */
 
     apiService.upload($rootScope.finalCroppedImageData).then(function (data) {
-        $rootScope.order.key = data.key;
+        $rootScope.orderKey = data.key;
     });
        
 

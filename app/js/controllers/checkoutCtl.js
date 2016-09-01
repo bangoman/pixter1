@@ -79,7 +79,7 @@ angular.module('app').controller('checkoutCtl', function ($uibModal, $rootScope,
             returnAddressPrice = properties.return_address.totalPrice;
         }
         var watch = $rootScope.$watch('order.key', function () {
-            if ($rootScope.order.key) {
+            if ($rootScope.orderKey) {
                 win.document.body.innerHTML = 'Processing your order ...';
                 console.log($rootScope.order);
                 watch();
@@ -97,6 +97,7 @@ angular.module('app').controller('checkoutCtl', function ($uibModal, $rootScope,
                         properties: properties,
                     }, $rootScope.order, {
                         country: $rootScope.order.country.code,
+                        key: $rootScope.orderKey,
                     }))
                     .then(function (data) {
                         if (data.url) {
