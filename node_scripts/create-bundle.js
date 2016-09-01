@@ -5,6 +5,7 @@ const fs = require('fs');
 const path = require('path');
 
 var scriptSources = [
+    'app/js/localStorageCommunicator.js',
     'bower_components/ionic/release/js/ionic.bundle.js',
     'bower_components/angular-ui-router/release/angular-ui-router.js',
     'bower_components/angular-animate/angular-animate.js',
@@ -20,7 +21,7 @@ var scriptSources = [
     'app/js/factories/message.js',
     'app/js/factories/uuidService.js',
     'app/js/factories/apiService.js',
-    'app/js/factories/localStorageCommunicator.js',
+    'app/js/factories/crosstab.js',
     'app/js/directives/productImageDisplay.js',
     'app/js/directives/productParams.js',
     'app/js/directives/amazingLoader.js',
@@ -50,7 +51,7 @@ writeBundle(styles,'bundle-style.css');
 function writeBundle(sources,filename) {
     var script = '';
     sources.forEach(src => {
-        script += fs.readFileSync(path.resolve(__dirname, '../', src), 'utf8');
+        script += fs.readFileSync(path.resolve(__dirname, '../', src), 'utf8') + "\r\n";
     });
 
     fs.writeFileSync(filename,script);
