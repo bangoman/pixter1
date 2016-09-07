@@ -486,7 +486,7 @@ select[type="number"]:active {
   cursor: pointer;
   text-align: center;
 }
-.crop-controls.horizontal .crop-control-button img {
+.edit-crop-controls-container.visible-xs button img {
   position: relative;
   top: -6px;
 }
