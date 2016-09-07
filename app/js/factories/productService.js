@@ -52,7 +52,7 @@ angular.module('app').factory('productService', function ($rootScope,$filter) {
                 }
                 property.discount_price = parseFloat(
                     $filter('number')(
-                        vm.getDiscountPrice(property.price
+                        getDiscountPrice(property.price
                         ), 2)
                 );
                 properties[param.key] = property;
@@ -60,4 +60,8 @@ angular.module('app').factory('productService', function ($rootScope,$filter) {
             return properties;
         }
     }
+
+    function getDiscountPrice(price) {
+        return $rootScope.coupon ? price * (100 - $rootScope.coupon.shipping_discount ) / 100 : parseFloat(price);
+    };
 });

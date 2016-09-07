@@ -129,30 +129,26 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
         if ($state.current.name == 'app.preview') {
 
             if ($rootScope.productsData.display.type == "OSS") {
-                $state.go('app.sliderShop');
+                return $state.go('app.sliderShop');
             }
-            else {
-                $state.go('app.shop');
-            }
+            return $state.go('app.shop');
         }
         if ($state.params.subcategories == 'true') {
             if ($rootScope.productsData.display.type == "OSS") {
-                $state.go('app.sliderShop');
+                return $state.go('app.sliderShop');
             }
-            else {
-                $state.go('app.shop', {subcategories: false});
-            }
+            return $state.go('app.shop', {subcategories: false});
         }
         if ($state.current.name == 'app.edit') {
             $rootScope.imageUrl = $rootScope.originalImageUrl;
-            $state.go('app.preview');
+            return $state.go('app.preview');
         }
         if ($state.current.name == 'app.orderDetails') {
-            $state.go('app.preview');
+            return $state.go('app.preview');
         }
         if ($state.current.name == 'app.checkout') {
             $rootScope.coupon = undefined;
-            $state.go('app.orderDetails');
+            return $state.go('app.orderDetails');
         }
     };
 

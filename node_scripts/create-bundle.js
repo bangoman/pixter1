@@ -26,6 +26,7 @@ var scriptSources = [
     'app/js/directives/productImageDisplay.js',
     'app/js/directives/productParams.js',
     'app/js/directives/amazingLoader.js',
+    'app/js/directives/click-once-promise.js',
     'app/js/controllers/mainCtl.js',
     'app/js/controllers/learnMoreCtl.js',
     'app/js/controllers/shopCtl.js',

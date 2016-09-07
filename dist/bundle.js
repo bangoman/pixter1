@@ -79953,7 +79953,7 @@ angular.module('app').factory('productService', function ($rootScope,$filter) {
                 }
                 property.discount_price = parseFloat(
                     $filter('number')(
-                        vm.getDiscountPrice(property.price
+                        getDiscountPrice(property.price
                         ), 2)
                 );
                 properties[param.key] = property;
@@ -79961,6 +79961,10 @@ angular.module('app').factory('productService', function ($rootScope,$filter) {
             return properties;
         }
     }
+
+    function getDiscountPrice(price) {
+        return $rootScope.coupon ? price * (100 - $rootScope.coupon.shipping_discount ) / 100 : parseFloat(price);
+    };
 });
 /**
  * Created by ori on 15/08/16.
@@ -80594,6 +80598,43 @@ angular.module('app').directive('amazingLoader', function () {
     };
 });
 
+/**
+ * Created by ori on 07/09/16.
+ */
+angular.module('app').directive('clickOncePromise', function ($q,$timeout) {
+    var delay = 500;   // min milliseconds between clicks
+
+    return {
+        scope: {
+            clickOncePromise: '&',
+        },
+        restrict: 'A',
+        link: function (scope, elem) {
+            var inProcess;
+            var minimumDelay = 500;
+
+            function onClick() {
+                if (!inProcess) {
+                    inProcess = true;
+                    $q
+                        .all([
+                            $timeout(angular.noop,minimumDelay),
+                            scope.clickOncePromise(),
+                        ])
+                        .catch(angular.noop)
+                        .then(function () {
+                            inProcess = false;
+                        });
+                }
+            }
+
+            scope.$on('$destroy', function () {
+                elem.off('click', onClick);
+            });
+            elem.on('click', onClick);
+        }
+    };
+});
 angular.module('app').controller('mainCtl', function (message, $uibModal, $state, $rootScope, $http, $stateParams, $scope, $location, $timeout, localStorageService, $q, crosstab, apiService, productService) {
     var vm = this;
     vm.state = $state;
@@ -80725,30 +80766,26 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
         if ($state.current.name == 'app.preview') {
 
             if ($rootScope.productsData.display.type == "OSS") {
-                $state.go('app.sliderShop');
+                return $state.go('app.sliderShop');
             }
-            else {
-                $state.go('app.shop');
-            }
+            return $state.go('app.shop');
         }
         if ($state.params.subcategories == 'true') {
             if ($rootScope.productsData.display.type == "OSS") {
-                $state.go('app.sliderShop');
+                return $state.go('app.sliderShop');
             }
-            else {
-                $state.go('app.shop', {subcategories: false});
-            }
+            return $state.go('app.shop', {subcategories: false});
         }
         if ($state.current.name == 'app.edit') {
             $rootScope.imageUrl = $rootScope.originalImageUrl;
-            $state.go('app.preview');
+            return $state.go('app.preview');
         }
         if ($state.current.name == 'app.orderDetails') {
-            $state.go('app.preview');
+            return $state.go('app.preview');
         }
         if ($state.current.name == 'app.checkout') {
             $rootScope.coupon = undefined;
-            $state.go('app.orderDetails');
+            return $state.go('app.orderDetails');
         }
     };
 
