@@ -412,6 +412,8 @@ select[type="number"]:active {
 .preview-list-more-button {
   float: right;
   font-weight: 600;
+  border: none;
+  background: #fff;
 }
 
 .preview-next-row {
@@ -478,12 +480,13 @@ select[type="number"]:active {
   width: 25%;
 }
 .crop-controls .crop-control-button {
+  border: 0;
   width: 100%;
   height: 25%;
-  /*line-height: 75px;*/
-  line-height: 40px;
   font-size: 20px;
   cursor: pointer;
+  background: #000;
+  line-height: 40px;
   text-align: center;
 }
 .edit-crop-controls-container.visible-xs button img {
