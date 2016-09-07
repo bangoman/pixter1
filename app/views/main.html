@@ -1,28 +1,34 @@
 <div id="pixter-responsive-store">
-    <div class="store-header"  ng-show="!loading" ng-style="brandingStyle.header" ng-class="{'hide-on-mobile': vm.state.current.name == 'app.edit'}">
+    <div class="store-header" ng-show="!loading" ng-style="brandingStyle.header"
+         ng-class="{'hide-on-mobile': vm.state.current.name == 'app.edit'}">
         <div class="header-back-button-and-logo-container">
             <div class="header-logo-image-container">
-                <img ng-src={{brandingStyle.logo}} alt="Logo" class="header-logo-image">  
+                <img ng-src={{brandingStyle.logo}} alt="Logo" class="header-logo-image">
             </div>
             <div class="store-header-back-button" ng-if="!vm.stateIsShop()" ng-click="vm.goBack()">
                 <span><</span>
             </div>
         </div>
         <div class="col-xs-12">
-            {{ vm.getViewHeader() }}    
+            {{ vm.getViewHeader() }}
         </div>
         <div class="store-header-buttons-container">
-            <button class="store-header-learn-more-button" ng-style="brandingStyle.header.button" ng-click="vm.learnMore()">?</button>
-            <button class="store-header-close-button" ng-style="brandingStyle.header.button" ng-click="vm.close()">Close</button>
+            <button class="store-header-learn-more-button" ng-style="brandingStyle.header.button"
+                    ng-click="vm.learnMore()">?
+            </button>
+            <button class="store-header-close-button" ng-style="brandingStyle.header.button" ng-click="vm.close()">
+                Close
+            </button>
         </div>
     </div>
-    <div class="user-messaging" ng-style="brandingStyle.spcialOffer" ng-class="{'hide-on-mobile': vm.state.current.name == 'app.edit'}" >
-       <span ng-show="!$root.CouponMarketingString">{{brandingData.campaign.message}}</span>
-       <span ng-show="$root.CouponMarketingString">{{$root.CouponMarketingString}}</span>
-       
+    <div ng-show="!loading" class="user-messaging" ng-style="brandingStyle.spcialOffer"
+         ng-class="{'hide-on-mobile': vm.state.current.name == 'app.edit'}">
+        <span ng-show="!$root.CouponMarketingString">{{brandingData.campaign.message}}</span>
+        <span ng-show="$root.CouponMarketingString">{{$root.CouponMarketingString}}</span>
+
     </div>
-    
-    <div ui-view="main"></div>
+
+    <div ng-show="!loading" ui-view="main"></div>
 
 </div>
 <amazing-loader loader-color="brandingData.branding.loader.textcolor" loader-is-active="loading"></amazing-loader>

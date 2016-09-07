@@ -156,8 +156,10 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
         }
     };
 
-    vm.setCurrency = function () {
-        $rootScope.currencyCode;
+    $rootScope.setCurrency = function (currencyCode) {
+        $scope.loading = true;
+        $rootScope.currencyCode = currencyCode;
+        pLoader.setCurrency(currencyCode);
         afterImageLoaded();
     };
 
@@ -303,6 +305,7 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
             .then(function (res) {
                 console.log("product res", res);
                 $rootScope.productsData = res;
+                pLoader.setCurrency(res.localization.currency.code);
                 $scope.loading = false;
                 $scope.animateOpacity();
                 $rootScope.$broadcast("productArrive");

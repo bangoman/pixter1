@@ -30,10 +30,6 @@ angular.module('app').factory('productService', function ($rootScope,$filter) {
     }
 
     function sendGAEvent() {
-        if( $rootScope.currentProduct.localization.currency.code !== currency ){
-            currency = $rootScope.productsData.localization.currency.code;
-            pLoader.setCurrency(currency);
-        }
         return pLoader.sendGAEvent.apply(pLoader,arguments);
     }
 

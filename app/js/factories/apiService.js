@@ -46,6 +46,9 @@ angular.module('app').factory('apiService', function ($http,$rootScope, uuidServ
         };
         if( method === 'get' ){
             config.params = data;
+            if( $rootScope.currencyCode ){
+                config.params.currency = $rootScope.currencyCode;
+            }
         }else{
             config.data = $httpParamSerializerJQLike(data);
         }
