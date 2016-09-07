@@ -474,6 +474,9 @@ select[type="number"]:active {
   display: flex;
   width: 100%;
 }
+.crop-controls.horizontal li {
+  width: 25%;
+}
 .crop-controls .crop-control-button {
   width: 100%;
   height: 25%;
@@ -483,9 +486,11 @@ select[type="number"]:active {
   cursor: pointer;
   text-align: center;
 }
-.crop-controls.horizontal .crop-control-button {
-  width: 25%;
+.crop-controls.horizontal .crop-control-button img {
+  position: relative;
+  top: -6px;
 }
+
 .crop-controls .crop-control-button .rotate-right {
   transform: rotateY(180Deg);
 }
