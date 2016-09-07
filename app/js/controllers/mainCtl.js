@@ -1,11 +1,12 @@
-angular.module('app').controller('mainCtl', function (message, $uibModal, $state, $rootScope, $http, $stateParams, $scope, $location, $timeout, localStorageService, $q, crosstab,apiService) {
+angular.module('app').controller('mainCtl', function (message, $uibModal, $state, $rootScope, $http, $stateParams, $scope, $location, $timeout, localStorageService, $q, crosstab, apiService, productService) {
     var vm = this;
     vm.state = $state;
     $scope.loading = true;
     $rootScope.baseApi = 'http://ec2-52-201-250-90.compute-1.amazonaws.com:8000';
     $rootScope.ordersApi = 'https://api-sg.pixter-media.com/'
-    if(location.hostname == "pixter-loader-assets.s3.amazonaws.com"){
-        console.log = function(){};
+    if (location.hostname == "pixter-loader-assets.s3.amazonaws.com") {
+        console.log = function () {
+        };
     }
     var locationSearchWatcher = $rootScope.$watch(function () {
         return $location.search().apiKey;
@@ -13,26 +14,26 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
         locationSearchWatcher();
 
         if (!inIframe()) {
-            if(sessionStorage.getItem('.imageUrl') && getParameterByName("imgUrl",location.search).indexOf("blob:") != -1 ){
-                setImageUrl(sessionStorage.getItem('.imageUrl'));    
-            }else{
-                setImageUrl(getParameterByName("imgUrl",location.search));    
+            if (sessionStorage.getItem('.imageUrl') && getParameterByName("imgUrl", location.search).indexOf("blob:") != -1) {
+                setImageUrl(sessionStorage.getItem('.imageUrl'));
+            } else {
+                setImageUrl(getParameterByName("imgUrl", location.search));
             }
-            
+
             afterImageLoaded();
-        }else{
-            message('init');                
+        } else {
+            message('init');
             setImageUrl(sessionStorage.getItem('.imageUrl'));
         }
-        
-    });   
 
-    window.addEventListener('message', function (e) {                
+    });
+
+    window.addEventListener('message', function (e) {
         if (e.data.type == "pixter") {
             var url = e.data.img;
             sessionStorage.setItem('.imageUrl', url);
             var imgurl = url;
-            setImageUrl(url);            
+            setImageUrl(url);
             afterImageLoaded();
         }
         $timeout(function () {
@@ -63,7 +64,6 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
     });
 
 
-    window.$state = $state;
     // $rootScope.screenW = document.body.clientWidth;
     Object.defineProperties($rootScope, {
         screenW: {
@@ -156,6 +156,11 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
         }
     };
 
+    vm.setCurrency = function () {
+        $rootScope.currencyCode;
+        afterImageLoaded();
+    };
+
     // Usage
     function dataURItoBlob(uri) {
         //console.log(uri);
@@ -190,8 +195,8 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
             if (isDatauri(url)) {
                 url = dataURItoBlob(url);
             }
-            message('image_received',url.replace("%3A",":"));
-            
+            message('image_received', url.replace("%3A", ":"));
+
             $rootScope.originalImageUrl = $rootScope.imageUrl = url;
         }
     }
@@ -214,6 +219,7 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
         $rootScope.storeId = getParameterByName("storeId", location.search); //"87CD192192A547"
         $rootScope.bgs = getParameterByName("bgs", location.search); //"87CD192192A547"
         $rootScope.bgs = JSON.parse($rootScope.bgs);
+        pLoader.initV3Ga($rootScope.apiKey, "UA-55216316-17", '249222d593798049e23e4fd3f00ac0ec6052b3bb', 'B522BFCF646D4F', "UA-55216316-18");
         getCountry();
         $rootScope.originalImageUrl = $rootScope.imageUrl;
         var promises = [
@@ -228,17 +234,27 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
                 }),
         ];
         return $q.all(promises).then(function () {
-            var found = false
-            angular.forEach($rootScope.productsData.objects, function(category, key){               
-                if(category.id == $rootScope.startFromPreviewMode){
+            var watch = $rootScope.$watch('currentProduct', function () {
+                if ($rootScope.currentProduct) {
+                    watch();
+                    if ($state.current.name === 'app.sliderShop') {
+                        productService.sendGAEvent(true, 'send', 'event', 'Catalog', 'impression', 'visible flow');
+                    } else {
+                        productService.sendGAEvent(true, 'send', 'event', 'one stop shop', 'important action');
+                    }
+                }
+            });
+            var found = false;
+            angular.forEach($rootScope.productsData.objects, function (category, key) {
+                if (category.id == $rootScope.startFromPreviewMode) {
                     $rootScope.category = category;
                     $rootScope.currentProduct = category.products[0];
                     found = true
-                    
 
-                }                
+
+                }
             });
-            if(found){
+            if (found) {
                 return $state.go('app.preview');
             }
             if ($rootScope.productsData.display.type == "OSS") {
@@ -267,12 +283,12 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
     function getBranding() {
         return apiService.getBranding()
             .then(function (res) {
-                console.log("init",res);
+                console.log("init", res);
                 $rootScope.brandingData = res;
                 $rootScope.pixKey = res.initdata.pix_apikey;
                 $rootScope.startFromPreviewMode = false;
-                if(res.next.storestage.category_id){
-                    $rootScope.startFromPreviewMode  = res.next.storestage.category_id;
+                if (res.next.storestage.category_id) {
+                    $rootScope.startFromPreviewMode = res.next.storestage.category_id;
 
                 }
                 generateBrandingStyle();
@@ -283,7 +299,7 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
     }
 
     function getProducts(w, h) {
-        return  apiService.getProducts(w,h)
+        return apiService.getProducts(w, h)
             .then(function (res) {
                 console.log("product res", res);
                 $rootScope.productsData = res;
@@ -346,7 +362,7 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
     //$scope.countryApi = 'http://ec2-52-201-250-90.compute-1.amazonaws.com:8000/api/v2/country/?user=demo';
 
     function getCountry() {
-            apiService.getCountries()
+        apiService.getCountries()
             .then(function (res) {
                 $rootScope.countries = res.objects;
             });

@@ -1,7 +1,7 @@
-angular.module('app').controller('checkoutCtl', function ($uibModal, $rootScope, apiService, $filter, $scope, formatPriceCurrency, crosstab) {
+angular.module('app').controller('checkoutCtl', function ($uibModal, $rootScope, apiService, $filter, $scope, formatPriceCurrency, crosstab, productService) {
     var vm = this;
 
-    window.scrollTo(0,0);
+    window.scrollTo(0, 0);
 
     $scope.tmbWidth = $rootScope.screenW * 0.35;
     //$rootScope.quantity = 0;
@@ -12,7 +12,7 @@ angular.module('app').controller('checkoutCtl', function ($uibModal, $rootScope,
 
     vm.shipmentMethods = [];
 
-    
+
     $scope.priceCurrencyOrder = formatPriceCurrency;
 
 
@@ -78,6 +78,14 @@ angular.module('app').controller('checkoutCtl', function ($uibModal, $rootScope,
             properties.return_address.totalPrice = properties.return_address.discountedPrice;
             returnAddressPrice = properties.return_address.totalPrice;
         }
+        var price = $filter('number')(vm.getDiscountProductPrice() + returnAddressPrice, 2);
+        var shippingPrice = $filter('number')(vm.getDiscountShippingPrice(), 2);
+        productService.sendGAEvent(true, 'send', 'event', 'Checkout', "impression", "flow");
+        productService.sendGA('checkout', {
+            shipping: shippingPrice,
+            revenue: price,
+            option: paymentType,
+        });
         var watch = $rootScope.$watch('orderKey', function () {
             if ($rootScope.orderKey) {
                 win.document.body.innerHTML = 'Processing your order ...';
@@ -86,12 +94,12 @@ angular.module('app').controller('checkoutCtl', function ($uibModal, $rootScope,
                 apiService
                     .validateOrder(angular.extend({
                         product_id: $rootScope.currentProduct.id,
-                        price: $filter('number')(vm.getDiscountProductPrice() + returnAddressPrice, 2),
+                        price: price,
                         curr: $rootScope.productsData.localization.currency.code,
                         quantity: quantity,
                         shipping_method: vm.shipmentMethod.method,
                         shipping_id: vm.shipmentMethod.id,
-                        shipping_price: $filter('number')(vm.getDiscountShippingPrice(), 2),
+                        shipping_price: shippingPrice,
                         payment_type: paymentType,
                         coupon_string: $rootScope.coupon ? $rootScope.coupon.coupon_code.replace(/'/g, '') : undefined,
                         properties: properties,
@@ -100,6 +108,13 @@ angular.module('app').controller('checkoutCtl', function ($uibModal, $rootScope,
                         key: $rootScope.orderKey,
                     }))
                     .then(function (data) {
+                        productService.sendGAEvent(true,"send", "event", "Checkout", "order validated by server", "event");
+                        productService.sendGA('purchase', {
+                            id: data.order_id,
+                            shipping: shippingPrice,
+                            revenue: price,
+                            option: paymentType,
+                        });
                         if (data.url) {
                             win.document.body.innerHTML = 'Redirecting you to the payment provider...';
                             win.location.href = data.url;

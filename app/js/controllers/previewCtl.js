@@ -1,4 +1,4 @@
-angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,$q,$stateParams,$timeout, formatPriceCurrency){
+angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,$q,$stateParams,$timeout, formatPriceCurrency, productService){
     var vm = this;
     window.scrollTo(0,0);
     $rootScope.disableScroll = false;
@@ -8,7 +8,16 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,
     $scope.tmbWidth  = $rootScope.screenW * 0.67; 
     $scope.productsToDisplay = [];
     $scope.productsToDisplayOriginal = [];    
-    $scope.productsToDisplayRotated = [];       
+    $scope.productsToDisplayRotated = [];
+
+    /**
+     * Send Event to Google analytics ecommerce
+     * Event type: Viewed product
+     */
+    $timeout(function () {
+        productService.sendGAEvent(true,'send', 'event', 'preview','preview impression','flow');
+        productService.sendGA('detail');
+    },1000);
 
     if($scope.tmbWidth > 320){
     	$scope.tmbWidth = 320;

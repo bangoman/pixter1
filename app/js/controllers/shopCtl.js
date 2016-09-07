@@ -43,6 +43,7 @@ angular.module('app').controller('shopCtl', function ($state, $http, $rootScope,
     });
 
     vm.goToPreview = function (category) {
+        if( $state.current.name )
         if(category.subcategories){
             $rootScope.subcategories  = category.subcategories.objects;             
             $state.go('app.shop',{subcategories:true})            
@@ -51,7 +52,8 @@ angular.module('app').controller('shopCtl', function ($state, $http, $rootScope,
         {
             $rootScope.category = category;
             $rootScope.currentProduct = category.products[0];
-            
+            var state = $state.current.name === 'app.sliderShop' ? 'Catalog' : 'one stop shop';
+            pLoader.sendGAEvent(true,'send', 'event', state,'clickOnProductImage - ' + $rootScope.currentProduct.name,'important action');
             if ($rootScope.previewCatalogParams.previewCatalog) {
                 $state.go('app.previewCatalog');
             }

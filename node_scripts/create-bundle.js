@@ -21,6 +21,7 @@ var scriptSources = [
     'app/js/factories/message.js',
     'app/js/factories/uuidService.js',
     'app/js/factories/apiService.js',
+    'app/js/factories/productService.js',
     'app/js/factories/crosstab.js',
     'app/js/directives/productImageDisplay.js',
     'app/js/directives/productParams.js',
@@ -45,7 +46,7 @@ var styles = [
     'app/css/style.css'
 ];
 
-writeBundle(scriptSources,'bundle.js');
+writeBundle(scriptSources,'dist/bundle.js');
 writeBundle(styles,'bundle-style.css');
 
 function writeBundle(sources,filename) {

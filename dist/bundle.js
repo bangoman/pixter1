@@ -79887,6 +79887,73 @@ angular.module('app').factory('apiService', function ($http,$rootScope, uuidServ
     
 });
 /**
+ * Created by ori on 06/09/16.
+ */
+angular.module('app').factory('productService', function ($rootScope) {
+
+    var currency = 'USD';
+
+    return {
+        sendGA: sendGA,
+        sendGAEvent: sendGAEvent,
+    };
+    
+    function sendGA(eventName,actionData) {
+        var ecommerceProduct = {
+            id: $rootScope.currentProduct.id, // (productid)
+            name: $rootScope.currentProduct.name, //(productname)
+            price: $rootScope.currentProduct.finalPrice.price,
+            quantity: getQuantity(),
+            category: $rootScope.category.name  //(categoryname)
+        };
+        var ecommerceActionData = {
+            id: $rootScope.currentProduct.id,
+            affiliation: $rootScope.apiKey,
+            coupon: $rootScope.coupon ? $rootScope.coupon.coupon_code.replace(/'/g, '') : undefined,
+        };
+        if( actionData ){
+            angular.extend(ecommerceActionData,actionData);
+        }
+        return sendGAEvent(true,'ecommerce',ecommerceProduct,eventName,ecommerceActionData);
+    }
+
+    function sendGAEvent() {
+        if( $rootScope.currentProduct.localization.currency.code !== currency ){
+            currency = $rootScope.productsData.localization.currency.code;
+            pLoader.setCurrency(currency);
+        }
+        return pLoader.sendGAEvent.apply(pLoader,arguments);
+    }
+
+    function getQuantity() {
+        var properties = getProperties();
+        if (properties) {
+            return properties.quantity.quantity;
+        }
+        return 1;
+    }
+
+    function getProperties() {
+        if ($rootScope.currentProduct && $rootScope.currentProduct.params) {
+            var properties = {};
+            $rootScope.currentProduct.params.forEach(function (param) {
+                var property = angular.extend({}, param.chosenOption);
+                if (property.pricing) {
+                    angular.extend(property, property.pricing);
+                    delete property.pricing;
+                }
+                property.discount_price = parseFloat(
+                    $filter('number')(
+                        vm.getDiscountPrice(property.price
+                        ), 2)
+                );
+                properties[param.key] = property;
+            });
+            return properties;
+        }
+    }
+});
+/**
  * Created by ori on 15/08/16.
  */
 angular.module('app').factory('crosstab', function ($timeout) {
@@ -80518,7 +80585,7 @@ angular.module('app').directive('amazingLoader', function () {
     };
 });
 
-angular.module('app').controller('mainCtl', function (message, $uibModal, $state, $rootScope, $http, $stateParams, $scope, $location, $timeout, localStorageService, $q, crosstab,apiService) {
+angular.module('app').controller('mainCtl', function (message, $uibModal, $state, $rootScope, $http, $stateParams, $scope, $location, $timeout, localStorageService, $q, crosstab,apiService, productService) {
     var vm = this;
     vm.state = $state;
     $scope.loading = true;
@@ -80734,6 +80801,7 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
         $rootScope.storeId = getParameterByName("storeId", location.search); //"87CD192192A547"
         $rootScope.bgs = getParameterByName("bgs", location.search); //"87CD192192A547"
         $rootScope.bgs = JSON.parse($rootScope.bgs);
+        pLoader.initV3Ga($rootScope.apiKey , "UA-55216316-17", '249222d593798049e23e4fd3f00ac0ec6052b3bb', 'B522BFCF646D4F', "UA-55216316-18");
         getCountry();
         $rootScope.originalImageUrl = $rootScope.imageUrl;
         var promises = [
@@ -80748,7 +80816,17 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
                 }),
         ];
         return $q.all(promises).then(function () {
-            var found = false
+            var watch = $rootScope.$watch('currentProduct',function () {
+                if( $rootScope.currentProduct ){
+                    watch();
+                    if( $state.current.name === 'app.sliderShop' ){
+                        productService.sendGAEvent(true,'send', 'event', 'Catalog','impression','visible flow');
+                    }else{
+                        productService.sendGAEvent(true,'send', 'event', 'one stop shop','important action');
+                    }
+                }
+            });
+            var found = false;
             angular.forEach($rootScope.productsData.objects, function(category, key){               
                 if(category.id == $rootScope.startFromPreviewMode){
                     $rootScope.category = category;
@@ -80928,6 +81006,7 @@ angular.module('app').controller('shopCtl', function ($state, $http, $rootScope,
     });
 
     vm.goToPreview = function (category) {
+        if( $state.current.name )
         if(category.subcategories){
             $rootScope.subcategories  = category.subcategories.objects;             
             $state.go('app.shop',{subcategories:true})            
@@ -80936,7 +81015,8 @@ angular.module('app').controller('shopCtl', function ($state, $http, $rootScope,
         {
             $rootScope.category = category;
             $rootScope.currentProduct = category.products[0];
-            
+            var state = $state.current.name === 'app.sliderShop' ? 'Catalog' : 'one stop shop';
+            pLoader.sendGAEvent(true,'send', 'event', state,'clickOnProductImage - ' + $rootScope.currentProduct.name,'important action');
             if ($rootScope.previewCatalogParams.previewCatalog) {
                 $state.go('app.previewCatalog');
             }
@@ -80949,7 +81029,7 @@ angular.module('app').controller('shopCtl', function ($state, $http, $rootScope,
 
     }
 });
-angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,$q,$stateParams,$timeout, formatPriceCurrency){
+angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,$q,$stateParams,$timeout, formatPriceCurrency, productService){
     var vm = this;
     window.scrollTo(0,0);
     $rootScope.disableScroll = false;
@@ -80959,7 +81039,16 @@ angular.module('app').controller('previewCtl',function($state,$rootScope,$scope,
     $scope.tmbWidth  = $rootScope.screenW * 0.67; 
     $scope.productsToDisplay = [];
     $scope.productsToDisplayOriginal = [];    
-    $scope.productsToDisplayRotated = [];       
+    $scope.productsToDisplayRotated = [];
+
+    /**
+     * Send Event to Google analytics ecommerce
+     * Event type: Viewed product
+     */
+    $timeout(function () {
+        productService.sendGAEvent(true,'send', 'event', 'preview','preview impression','flow');
+        productService.sendGA('detail');
+    },1000);
 
     if($scope.tmbWidth > 320){
     	$scope.tmbWidth = 320;
@@ -81147,7 +81236,7 @@ angular.module('app').controller('editCtl',function($scope,$rootScope){
     }
 
 });
-angular.module('app').controller('orderDetailsCtl',function($state,$rootScope,apiService,$scope,$http,$window){
+angular.module('app').controller('orderDetailsCtl',function($state,$rootScope,apiService,$scope,$http,$window, productService){
     var vm = this;
     window.scrollTo(0,0);
     if(!$rootScope.order){
@@ -81173,6 +81262,10 @@ angular.module('app').controller('orderDetailsCtl',function($state,$rootScope,ap
 		$scope.tmbWidth = 120
 
 	}
+
+    productService.sendGAEvent(true,'send', 'event', 'Shipping Details', 'Shipping Details impression', 'flow');
+    productService.sendGA('add');
+
  /*   $scope.countryApi = 'http://ec2-52-201-250-90.compute-1.amazonaws.com:8000/api/v2/country/?user=demo';
     
     function getCountry () {
@@ -81223,10 +81316,10 @@ angular.module('app').controller('orderDetailsCtl',function($state,$rootScope,ap
     };
     
 });        
-angular.module('app').controller('checkoutCtl', function ($uibModal, $rootScope, apiService, $filter, $scope, formatPriceCurrency, crosstab) {
+angular.module('app').controller('checkoutCtl', function ($uibModal, $rootScope, apiService, $filter, $scope, formatPriceCurrency, crosstab, productService) {
     var vm = this;
 
-    window.scrollTo(0,0);
+    window.scrollTo(0, 0);
 
     $scope.tmbWidth = $rootScope.screenW * 0.35;
     //$rootScope.quantity = 0;
@@ -81237,7 +81330,7 @@ angular.module('app').controller('checkoutCtl', function ($uibModal, $rootScope,
 
     vm.shipmentMethods = [];
 
-    
+
     $scope.priceCurrencyOrder = formatPriceCurrency;
 
 
@@ -81303,6 +81396,14 @@ angular.module('app').controller('checkoutCtl', function ($uibModal, $rootScope,
             properties.return_address.totalPrice = properties.return_address.discountedPrice;
             returnAddressPrice = properties.return_address.totalPrice;
         }
+        var price = $filter('number')(vm.getDiscountProductPrice() + returnAddressPrice, 2);
+        var shippingPrice = $filter('number')(vm.getDiscountShippingPrice(), 2);
+        productService.sendGAEvent(true, 'send', 'event', 'Checkout', "impression", "flow");
+        productService.sendGA('checkout', {
+            shipping: shippingPrice,
+            revenue: price,
+            option: paymentType,
+        });
         var watch = $rootScope.$watch('orderKey', function () {
             if ($rootScope.orderKey) {
                 win.document.body.innerHTML = 'Processing your order ...';
@@ -81311,12 +81412,12 @@ angular.module('app').controller('checkoutCtl', function ($uibModal, $rootScope,
                 apiService
                     .validateOrder(angular.extend({
                         product_id: $rootScope.currentProduct.id,
-                        price: $filter('number')(vm.getDiscountProductPrice() + returnAddressPrice, 2),
+                        price: price,
                         curr: $rootScope.productsData.localization.currency.code,
                         quantity: quantity,
                         shipping_method: vm.shipmentMethod.method,
                         shipping_id: vm.shipmentMethod.id,
-                        shipping_price: $filter('number')(vm.getDiscountShippingPrice(), 2),
+                        shipping_price: shippingPrice,
                         payment_type: paymentType,
                         coupon_string: $rootScope.coupon ? $rootScope.coupon.coupon_code.replace(/'/g, '') : undefined,
                         properties: properties,
@@ -81325,6 +81426,13 @@ angular.module('app').controller('checkoutCtl', function ($uibModal, $rootScope,
                         key: $rootScope.orderKey,
                     }))
                     .then(function (data) {
+                        productService.sendGAEvent(true,"send", "event", "Checkout", "order validated by server", "event");
+                        productService.sendGA('purchase', {
+                            id: data.order_id,
+                            shipping: shippingPrice,
+                            revenue: price,
+                            option: paymentType,
+                        });
                         if (data.url) {
                             win.document.body.innerHTML = 'Redirecting you to the payment provider...';
                             win.location.href = data.url;

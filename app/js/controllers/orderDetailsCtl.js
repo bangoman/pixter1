@@ -1,4 +1,4 @@
-angular.module('app').controller('orderDetailsCtl',function($state,$rootScope,apiService,$scope,$http,$window){
+angular.module('app').controller('orderDetailsCtl',function($state,$rootScope,apiService,$scope,$http,$window, productService){
     var vm = this;
     window.scrollTo(0,0);
     if(!$rootScope.order){
@@ -24,6 +24,10 @@ angular.module('app').controller('orderDetailsCtl',function($state,$rootScope,ap
 		$scope.tmbWidth = 120
 
 	}
+
+    productService.sendGAEvent(true,'send', 'event', 'Shipping Details', 'Shipping Details impression', 'flow');
+    productService.sendGA('add');
+
  /*   $scope.countryApi = 'http://ec2-52-201-250-90.compute-1.amazonaws.com:8000/api/v2/country/?user=demo';
     
     function getCountry () {
