@@ -54,7 +54,7 @@
     baseUrl = "../";
     // baseUrl =  proxy + baseUrl;
     var url;
-    function loadIframe(imgUrl, apiKey, storeId, backgrounds, onClose, onOrderComplete) {        
+    function loadIframe(imgUrl, apiKey, storeId, backgrounds, objId, onClose, onOrderComplete) {
 
         callbacks.onClose = onClose || noop;
         callbacks.onOrderComplete = onOrderComplete || noop;
@@ -80,7 +80,7 @@
         }
         
         // var url = baseUrl + '/index.html?imageUrl=' + imgUrl + '&apiKey=' + apiKey + '&storeId=' + storeId + '&bgs=' + backgroundsString;  //   add this:  #/app/sliderShop  to see the slideShop
-         url = baseUrl + '?apiKey=' + apiKey + '&storeId=' + storeId + '&bgs=' + backgroundsString + '&host=' + encodeURIComponent(location.host);  //   add this:  #/app/sliderShop  to see the slideShop
+         url = baseUrl + '?apiKey=' + apiKey + '&storeId=' + storeId + '&bgs=' + backgroundsString + '&host=' + encodeURIComponent(location.host) + '&objId=' + objId;  //   add this:  #/app/sliderShop  to see the slideShop
         iframe = document.createElement('iframe');
         if (!mobileAndTabletcheck()) {
             iframe.src = url;        

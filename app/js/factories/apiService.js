@@ -89,7 +89,9 @@ angular.module('app').factory('apiService', function ($http,$rootScope, uuidServ
     function getBranding(){
         return request(
             '/api/v2/store/init?api_key=' + $rootScope.apiKey + '&store_id=' + $rootScope.storeId,
-            {},
+            {
+                obj_id:getParameterByName('objId'),
+            },
             'get',
             $rootScope.baseApi);
 
