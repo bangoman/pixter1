@@ -92,7 +92,12 @@
 
     <div ng-style="imageStyle"></div>
 
-    <div id="product-box-{{product.type}}" on-drag="onDrag($event)" on-release="onRelease($event)" style="height:{{product.tmbHeight}}px;width:{{product.tmbWidth}}px;background:url('{{product.image}}');background-size:{{product.tmbWidth}}px {{product.tmbHeight}}px; position: absolute;"> 
+    <div id="product-box-{{product.type}}" on-drag="onDrag($event)" on-release="onRelease($event)" style="height:{{product.tmbHeight}}px;
+                    width:{{product.tmbWidth}}px;
+                    background:url('{{product.image}}');
+                    background-size:{{product.tmbWidth + 4}}px {{product.tmbHeight + 4}}px;
+                    position: absolute;
+                    background-position: -2px;"> 
     </div>
 </div>
 
