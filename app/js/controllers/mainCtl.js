@@ -36,7 +36,7 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
             try{
                 sessionStorage.setItem('.imageUrl', url);
             }catch (e){
-
+                console.error(e);
             }
             var imgurl = url;
             setImageUrl(url);
