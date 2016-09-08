@@ -80642,7 +80642,7 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
     vm.state = $state;
     $scope.loading = true;
     $rootScope.baseApi = 'http://ec2-52-201-250-90.compute-1.amazonaws.com:8000';
-    $rootScope.ordersApi = 'https://api-sg.pixter-media.com/'
+    $rootScope.ordersApi = 'https://api-sg.pixter-media.com/';
     if (location.hostname == "pixter-loader-assets.s3.amazonaws.com") {
         console.log = function () {
         };
@@ -80662,7 +80662,9 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
             afterImageLoaded();
         } else {
             message('init');
-            setImageUrl(sessionStorage.getItem('.imageUrl'));
+            if( sessionStorage.getItem('.imageUrl') ){
+                setImageUrl(sessionStorage.getItem('.imageUrl'));
+            }
         }
 
     });
@@ -80670,7 +80672,11 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
     window.addEventListener('message', function (e) {
         if (e.data.type == "pixter") {
             var url = e.data.img;
-            sessionStorage.setItem('.imageUrl', url);
+            try{
+                sessionStorage.setItem('.imageUrl', url);
+            }catch (e){
+
+            }
             var imgurl = url;
             setImageUrl(url);
             afterImageLoaded();
