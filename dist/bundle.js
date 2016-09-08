@@ -80646,6 +80646,8 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
     if (location.hostname == "pixter-loader-assets.s3.amazonaws.com") {
         console.log = function () {
         };
+        console.error = function () {
+        };
     }
     var locationSearchWatcher = $rootScope.$watch(function () {
         return $location.search().apiKey;
