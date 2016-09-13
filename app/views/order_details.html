@@ -4,7 +4,7 @@
               <h5>{{currentProduct.shortName}}</h5>
         </div>
         <div class="order-details-header">
-            Contact Information 
+            {{translate('Contact Information')}}
         </div>
         <div class="row order-details-personal-information">
             <div class="col-sm-6 col-xs-12">
@@ -117,15 +117,19 @@
                            ng-model="order.TOC"
                            required
                            name="terms" />
-                        I agree to the <a target="_blank" href="http://pixter.me/terms_of_use.html">terms</a> and confirm I have the rights to upload and use the image.
+                    {{translate('I agree to the ')}}
+                         <a target="_blank" href="http://pixter.me/terms_of_use.html">{{translate('terms')}}</a>
+                    {{translate('and confirm I have the rights to upload and use the image.')}}
                 </label>
                 <div class="form-group error-text" ng-show="vm.form.$submitted">
                     <!-- <div ng-show="!order.TOC">You must agree to the terms</div> -->
                 </div>
             </div>
             <div class="col-sm-4 col-xs-12">
-               <div class="form-group error-text" ng-show="!vm.form.$valid && showErrorMessage" style="position:absolute ; top:-20px">Please fill in the highlighted fields</div>
-                <button type="submit" class="btn next-button" ng-style="brandingStyle.generalButton" ng-click="vm.goToCheckout()">Next</button>
+               <div class="form-group error-text" ng-show="!vm.form.$valid && showErrorMessage" style="position:absolute ; top:-20px">
+                   {{translate('Please fill in the highlighted fields')}}
+               </div>
+                <button type="submit" class="btn next-button" ng-style="brandingStyle.generalButton" ng-click="vm.goToCheckout()">{{translate('Next')}}</button>
             </div>
         </div>
     </form>

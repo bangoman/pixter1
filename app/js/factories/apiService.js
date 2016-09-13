@@ -91,6 +91,7 @@ angular.module('app').factory('apiService', function ($http,$rootScope, uuidServ
             '/api/v2/store/init?api_key=' + $rootScope.apiKey + '&store_id=' + $rootScope.storeId,
             {
                 obj_id:getParameterByName('objId'),
+                translation:'True',
             },
             'get',
             $rootScope.baseApi);

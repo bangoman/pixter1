@@ -79884,6 +79884,7 @@ angular.module('app').factory('apiService', function ($http,$rootScope, uuidServ
             '/api/v2/store/init?api_key=' + $rootScope.apiKey + '&store_id=' + $rootScope.storeId,
             {
                 obj_id:getParameterByName('objId'),
+                translation:'True',
             },
             'get',
             $rootScope.baseApi);
@@ -81018,6 +81019,13 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
     $scope.animateOpacity = function () {
         document.getElementById('pixter-responsive-store').classList.add('opacity-animation');
     }
+
+    $rootScope.translate = function (term) {
+        if( $rootScope.brandingData ){
+            return $rootScope.brandingData.translation.objects_dict[term] || term;
+        }
+        return term;
+    };
 
 });
 angular.module('app').controller('learnMoreCtl', function ($uibModalInstance, $rootScope) {

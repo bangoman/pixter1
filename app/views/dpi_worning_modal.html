@@ -2,19 +2,21 @@
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" ng-click="vm.dismiss()">&times;
         </button>
-        <h2 class="modal-title text-center">Please note:</h2>
+        <h2 class="modal-title text-center">
+            {{translate('Please note:')}}
+        </h2>
     </div>
     <div class="modal-body">
         <p>
-            The selected image is not at very high resolution and thus the sharpness of the created photo product might not be the highest.
+            {{translate('The selected image is not at very high resolution and thus the sharpness of the created photo product might not be the highest.')}}
         </p>
     <div class="modal-footer" style="text-align:center">
         <div class="row">
             <button type="button" class="btn dpi-worning-modal-cancel-button"  ng-click="vm.dismiss()">
-                Cancel
+                {{translate('Cancel')}}
             </button>            
             <button type="button" class="btn dpi-worning-modal-ok-button" ng-style="brandingStyle.generalButton" ng-click="approved()">
-                Continue Anyway
+                {{translate('Continue Anyway')}}
             </button>            
 
         </div>

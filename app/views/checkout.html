@@ -13,7 +13,7 @@
         </div>
         <div class="row checkout-view-price-row">
             <span class="checkout-price-title">
-                Product Price:
+                {{translate('Product Price:')}}
             </span>
             <div class="pull-right">
                 <span class="checkout-price checkout-old-price" ng-show="vm.getDiscountProductPrice() < currentProduct.finalPrice.price">
@@ -27,7 +27,7 @@
         <div class="row checkout-view-price-row">
             <div>
                 <span class="checkout-price-title bigger-title">
-                   shipping method:
+                   {{translate('Shipping Method')}}
                 </span>
                 <div class="pull-right">
                     <span class="checkout-price checkout-old-price" ng-show="vm.getDiscountShippingPrice() < vm.shipmentMethod.price">
@@ -65,7 +65,7 @@
             <span class="checkout-price-title" 
                 ng-show="(vm.getDiscountProductPrice() < currentProduct.finalPrice.price) || (vm.getDiscountShippingPrice() < vm.shipmentMethod.price)"
                 >
-                You saved:
+                {{translate('You saved:')}}
             </span>
              <span class="checkout-price checkout-saved-price"
                 ng-show="(vm.getDiscountProductPrice() < currentProduct.finalPrice.price) || (vm.getDiscountShippingPrice() < vm.shipmentMethod.price)"
@@ -74,7 +74,7 @@
             </span>
             <div class="pull-right">
                 <span class="checkout-price-title bigger-title checkout-total-title">
-                    Total:
+                    {{translate('Total:')}}
                 </span>
                  <span class="checkout-price checkout-total-price">
                     {{priceCurrencyOrder(vm.getTotal(), currencySymbol)}}
@@ -82,7 +82,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="checkout-cupon-modal-button" ng-click="vm.openCuponModal()">Have A Coupon?</div>
+            <div class="checkout-cupon-modal-button" ng-click="vm.openCuponModal()">{{translate('Have a coupon?')}}</div>
         </div>
         <div class="row checkout-pay-buttons-row" dir="ltr">
             <div ng-if="vm.getTotal()">
@@ -98,8 +98,8 @@
                 </div>
             </div>
             <div ng-if="!vm.getTotal()">
-                <div class="btn pull-right hidden-xs" ng-style="brandingStyle.generalButton"  style="width:244px" ng-click="vm.checkout('submit')">Submit</div>
-                <div class="btn col-xs-12 visible-xs" ng-style="brandingStyle.generalButton"   ng-click="vm.checkout('submit')">Submit</div>
+                <div class="btn pull-right hidden-xs" ng-style="brandingStyle.generalButton"  style="width:244px" ng-click="vm.checkout('submit')">{{translate('Submit')}}</div>
+                <div class="btn col-xs-12 visible-xs" ng-style="brandingStyle.generalButton"   ng-click="vm.checkout('submit')">{{translate('Submit')}}</div>
             </div>
         </div>
     </div>

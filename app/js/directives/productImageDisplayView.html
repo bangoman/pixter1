@@ -72,17 +72,17 @@
 
         <button class="revert-changes-button" ng-click="revertChanges()">
             <i class="glyphicon glyphicon-share-alt"></i>
-            Revert changes 
+            {{$root.translate('Revert changes')}}
         </button>
         <div class="pull-right right-buttons-group">
-            <button class="btn white-button" ng-click="editCancel()">Cancel</button>
+            <button class="btn white-button" ng-click="editCancel()">{{$root.translate('Cancel')}}</button>
             <button class="btn next-button" ng-style="branding.generalButton" ng-click="applyChanges                        
                                 (backgroundPosition.left,
                                 backgroundPosition.top,
                                 backgroundSize.h,
                                 backgroundSize.w,
                                 imageSizeRatio)">
-               Apply
+                {{$root.translate('Applt')}}
             </button>
         </div>
     </div>       

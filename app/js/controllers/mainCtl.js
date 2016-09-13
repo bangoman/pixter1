@@ -380,4 +380,11 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
         document.getElementById('pixter-responsive-store').classList.add('opacity-animation');
     }
 
+    $rootScope.translate = function (term) {
+        if( $rootScope.brandingData ){
+            return $rootScope.brandingData.translation.objects_dict[term] || term;
+        }
+        return term;
+    };
+
 });

@@ -21,21 +21,21 @@
                     ng-click="rotateImage()" 
                     style="color:{{brandingData.branding.buttons.backgroundcolor}};" >
                     <i class="glyphicon glyphicon-repeat"></i>
-                    <span>Rotate</span>
+                    <span>{{translate('Rotate')}}</span>
                 </div>
 
                 <div class="preview-edit-btn" style="color:{{brandingData.branding.buttons.backgroundcolor}};" ng-click="vm.goToEdit()" ng-if="!currentProduct.params && brandingData.behaviour.cropping">
                     <i class="glyphicon glyphicon-scissors"></i>
-                    <span>Edit</span>
+                    <span>{{translate('Edit')}}</span>
                 </div>
 
             </div>
             <div ng-if="currentProduct.params" class="row front-back-buttons-row" style="width:{{tmbWidth}}px">
-                <div class="btn front-back-button pull-left" ng-style="brandingStyle.generalButton" ng-click="changeBackSideFlag(true)" ng-disabled="bsf">                    
-                        Back side
+                <div class="btn front-back-button pull-left" ng-style="brandingStyle.generalButton" ng-click="changeBackSideFlag(true)" ng-disabled="bsf">
+                    {{translate('Back side')}}
                 </div>
-                <div class="btn front-back-button pull-right" ng-style="brandingStyle.generalButton" ng-click="changeBackSideFlag(false)" ng-disabled="!bsf">                    
-                        Front side
+                <div class="btn front-back-button pull-right" ng-style="brandingStyle.generalButton" ng-click="changeBackSideFlag(false)" ng-disabled="!bsf">
+                    {{translate('Front side')}}
                 </div>
             </div>            
         </div>
@@ -74,7 +74,7 @@
             <button class="preview-list-more-button" 
                 style="color:{{brandingData.branding.buttons.backgroundcolor}};"
                 ng-click="vm.seeFullListOnMobile = !vm.seeFullListOnMobile">
-                ... Read More
+                ... {{translate('Read More')}}
             </button>
         </div>
         <div class="col-xs-12 visible-xs" ng-if="!currentProduct.params && vm.seeFullListOnMobile">
@@ -85,7 +85,7 @@
     </div>
     <div class="row no-margin">
         <div class="col-xs-12 col-sm-7 col-sm-offset-5">
-            <button class="btn next-button" ng-style="brandingStyle.generalButton" ng-click="vm.goToOrderDetails()">Next</button>
+            <button class="btn next-button" ng-style="brandingStyle.generalButton" ng-click="vm.goToOrderDetails()">{{translate('Next')}}</button>
         </div>
     </div>
 </div>
