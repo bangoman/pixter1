@@ -1,22 +1,38 @@
 <div id="checkout-view-responsive" class="row">
     <div class="col-sm-3 col-xs-12">
         <div class="pay-flow-product-thumbnail" style="min-height:{{tmbWidth}}px">
-            <product-image-display class="shop-view-product-image-display" product="currentProduct[currentProduct.display.image_orientation]['Preview']" image-url="imageUrl"
+            <product-image-display class="shop-view-product-image-display"
+                                   product="currentProduct[currentProduct.display.image_orientation]['Preview']"
+                                   image-url="imageUrl"
                                    tmb-width="tmbWidth" catalog-mode="true">
             </product-image-display>
-            
+
         </div>
     </div>
     <div class="col-sm-9 col-xs-12 checkout-view-details-container">
         <div class="row checkout-view-header">
             {{currentProduct.shortname}}
         </div>
+        <div ng-repeat="param in currentProduct.params" class="row checkout-view-price-row">
+            <span class="checkout-price-title">
+                {{param.title}}: {{param.chosenOption.name}}
+            </span>
+            <div class="pull-right">
+                <span class="checkout-price checkout-old-price" ng-show="vm.getParamPrice(param) > vm.getDiscountPrice(vm.getParamPrice(param))">
+                    {{priceCurrencyOrder(vm.getParamPrice(param), currencySymbol)}}
+                </span>
+                <span class="checkout-price checkout-new-price">
+                    {{priceCurrencyOrder(vm.getDiscountPrice(vm.getParamPrice(param)), currencySymbol)}}
+                </span>
+            </div>
+        </div>
         <div class="row checkout-view-price-row">
             <span class="checkout-price-title">
                 {{translate('Product Price:')}}
             </span>
             <div class="pull-right">
-                <span class="checkout-price checkout-old-price" ng-show="vm.getDiscountProductPrice() < currentProduct.finalPrice.price">
+                <span class="checkout-price checkout-old-price"
+                      ng-show="vm.getDiscountProductPrice() < currentProduct.finalPrice.price">
                     {{priceCurrencyOrder(currentProduct.finalPrice.price, currencySymbol)}} 
                 </span>
                 <span class="checkout-price checkout-new-price">
@@ -30,7 +46,8 @@
                    {{translate('Shipping Method')}}
                 </span>
                 <div class="pull-right">
-                    <span class="checkout-price checkout-old-price" ng-show="vm.getDiscountShippingPrice() < vm.shipmentMethod.price">
+                    <span class="checkout-price checkout-old-price"
+                          ng-show="vm.getDiscountShippingPrice() < vm.shipmentMethod.price">
                         {{priceCurrencyOrder(vm.shipmentMethod.price, currencySymbol)}}
                     </span>
                     <span class="checkout-price checkout-new-price">
@@ -39,67 +56,74 @@
                 </div>
             </div>
             <!--<div ng-if="vm.shipmentMethod == 'express'">-->
-                <!--<span class="checkout-price-title bigger-title">-->
-                    <!--Express Shipping-->
-                <!--</span>-->
-                <!--<div class="pull-right">-->
-                    <!--<span class="checkout-price checkout-old-price">-->
-                        <!--$13.94-->
-                    <!--</span>-->
-                    <!--<span class="checkout-price checkout-new-price">-->
-                        <!--$0.00-->
-                    <!--</span>-->
-                <!--</div>-->
+            <!--<span class="checkout-price-title bigger-title">-->
+            <!--Express Shipping-->
+            <!--</span>-->
+            <!--<div class="pull-right">-->
+            <!--<span class="checkout-price checkout-old-price">-->
+            <!--$13.94-->
+            <!--</span>-->
+            <!--<span class="checkout-price checkout-new-price">-->
+            <!--$0.00-->
+            <!--</span>-->
+            <!--</div>-->
             <!--</div>-->
             <div class="checkout-shipping-method-info">
                 {{vm.shipmentMethod.text}}
             </div>
             <label class="radio-inline" ng-repeat="shipmentMethod in vm.shipmentMethods">
                 <input type="radio" name="ship-method-radios" ng-model="vm.shipmentMethod" ng-value="shipmentMethod">
-                    <span class="checkout-ship-type-radio-text">
+                <span class="checkout-ship-type-radio-text">
                         {{shipmentMethod.type}}
-                    </span> 
+                    </span>
             </label>
         </div>
         <div class="row checkout-view-price-row">
-            <span class="checkout-price-title" 
-                ng-show="(vm.getDiscountProductPrice() < currentProduct.finalPrice.price) || (vm.getDiscountShippingPrice() < vm.shipmentMethod.price)"
-                >
+            <span class="checkout-price-title"
+                  ng-show="(vm.getDiscountProductPrice() < currentProduct.finalPrice.price) || (vm.getDiscountShippingPrice() < vm.shipmentMethod.price)"
+            >
                 {{translate('You saved:')}}
             </span>
-             <span class="checkout-price checkout-saved-price"
-                ng-show="(vm.getDiscountProductPrice() < currentProduct.finalPrice.price) || (vm.getDiscountShippingPrice() < vm.shipmentMethod.price)"
-             >
+            <span class="checkout-price checkout-saved-price"
+                  ng-show="(vm.getDiscountProductPrice() < currentProduct.finalPrice.price) || (vm.getDiscountShippingPrice() < vm.shipmentMethod.price)"
+            >
                  <span>{{priceCurrencyOrder(vm.getSaving(), currencySymbol)}}</span>
             </span>
             <div class="pull-right">
                 <span class="checkout-price-title bigger-title checkout-total-title">
                     {{translate('Total:')}}
                 </span>
-                 <span class="checkout-price checkout-total-price">
+                <span class="checkout-price checkout-total-price">
                     {{priceCurrencyOrder(vm.getTotal(), currencySymbol)}}
                 </span>
             </div>
         </div>
         <div class="row">
-            <div class="checkout-cupon-modal-button" ng-click="vm.openCuponModal()">{{translate('Have a coupon?')}}</div>
+            <div class="checkout-cupon-modal-button" ng-click="vm.openCuponModal()">{{translate('Have a coupon?')}}
+            </div>
         </div>
         <div class="row checkout-pay-buttons-row" dir="ltr">
             <div ng-if="vm.getTotal()">
                 <div class="col-sm-6 col-xs-6">
                     <div class="checkout-pay-button credit" ng-click="vm.checkout('cc')">
-                        <img src="https://pixter-loader-assets.s3.amazonaws.com/1_8_1_stg/files/images/checkout_card_slidly.png" width="100%">
+                        <img src="https://pixter-loader-assets.s3.amazonaws.com/1_8_1_stg/files/images/checkout_card_slidly.png"
+                             width="100%">
                     </div>
                 </div>
                 <div class="col-sm-6 col-xs-6">
                     <div class="checkout-pay-button paypal" ng-click="vm.checkout('paypal')">
-                        <img src="https://pixter-loader-assets.s3.amazonaws.com/1_8_1_stg/files/images/checkout_paypal.png" width="100%">
+                        <img src="https://pixter-loader-assets.s3.amazonaws.com/1_8_1_stg/files/images/checkout_paypal.png"
+                             width="100%">
                     </div>
                 </div>
             </div>
             <div ng-if="!vm.getTotal()">
-                <div class="btn pull-right hidden-xs" ng-style="brandingStyle.generalButton"  style="width:244px" ng-click="vm.checkout('submit')">{{translate('Submit')}}</div>
-                <div class="btn col-xs-12 visible-xs" ng-style="brandingStyle.generalButton"   ng-click="vm.checkout('submit')">{{translate('Submit')}}</div>
+                <div class="btn pull-right hidden-xs" ng-style="brandingStyle.generalButton" style="width:244px"
+                     ng-click="vm.checkout('submit')">{{translate('Submit')}}
+                </div>
+                <div class="btn col-xs-12 visible-xs" ng-style="brandingStyle.generalButton"
+                     ng-click="vm.checkout('submit')">{{translate('Submit')}}
+                </div>
             </div>
         </div>
     </div>

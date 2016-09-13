@@ -133,6 +133,13 @@ angular.module('app').controller('checkoutCtl', function ($uibModal, $rootScope,
 
     };
 
+    vm.getParamPrice = function (param) {
+        if( angular.isDefined(param.chosenOption.price)){
+            return param.chosenOption.price;
+        }
+        return param.chosenOption.pricing.price;
+    };
+
     var properties = getProperties();
 
     function getProperties() {

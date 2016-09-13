@@ -81553,6 +81553,13 @@ angular.module('app').controller('checkoutCtl', function ($uibModal, $rootScope,
 
     };
 
+    vm.getParamPrice = function (param) {
+        if( angular.isDefined(param.chosenOption.price)){
+            return param.chosenOption.price;
+        }
+        return param.chosenOption.pricing.price;
+    };
+
     var properties = getProperties();
 
     function getProperties() {
@@ -81591,7 +81598,7 @@ angular.module('app').controller('cuponModalCtl', function ($uibModalInstance, a
                 quantity:1,
             })
             .then(function (coupon) {
-                vm.successMessage = "Congratulations, the coupon has been verified!";
+                vm.successMessage = $rootScope.translate("Congratulations, the coupon has been verified!");
                 $timeout($rootScope.CouponMarketingString = coupon.marketing_string);                
                 $rootScope.coupon = coupon;
                 setTimeout(function(){

@@ -2,11 +2,11 @@
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" ng-click="vm.dismiss()">&times;
         </button>
-        <h2 class="modal-title">Have a coupon?</h2>
+        <h2 class="modal-title">{{translate('Have a coupon?')}}</h2>
     </div>
     <div class="modal-body" ng-show="!vm.successMessage">        
         <p style="color:{{brandingStyle.header.color}}">
-            Paste in your coupon code
+            {{translate('Paste in your coupon code')}}
         </p>
         <div class="form-group">
             <input type="text" class="form-control cupon-modal-input" ng-model="vm.couponString" name="cupon_code">
@@ -17,10 +17,10 @@
     <div class="modal-footer" style="text-align:center" ng-show="!vm.successMessage">
         <div class="row">
             <button type="button" class="btn white-button" ng-click="vm.dismiss()">
-                Cancel
+                {{translate('Cancel')}}
             </button>            
             <button type="button" class="btn next-button" ng-style="brandingStyle.generalButton" ng-click="vm.apply()">
-                OK
+                {{translate('OK')}}
             </button>
         </div>
     </div>

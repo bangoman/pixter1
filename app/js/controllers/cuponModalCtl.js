@@ -12,7 +12,7 @@ angular.module('app').controller('cuponModalCtl', function ($uibModalInstance, a
                 quantity:1,
             })
             .then(function (coupon) {
-                vm.successMessage = "Congratulations, the coupon has been verified!";
+                vm.successMessage = $rootScope.translate("Congratulations, the coupon has been verified!");
                 $timeout($rootScope.CouponMarketingString = coupon.marketing_string);                
                 $rootScope.coupon = coupon;
                 setTimeout(function(){
