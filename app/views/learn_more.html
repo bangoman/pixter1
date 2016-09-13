@@ -2,9 +2,9 @@
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" ng-click="vm.dismiss()">&times;
         </button>
-        <h4 class="modal-title">What is Pixter.me?</h4>
+        <h4 class="modal-title">{{translate('What is Pixter.me?')}}</h4>
         <div class="pull-right">
-            <select id="languageSelect">
+            <select id="languageSelect" ng-model="vm.lang">
                 <option value="en_US" selected>English</option>
                     <option value="es_ES">Español</option>
             </select>
@@ -16,41 +16,41 @@
     </div>
     <div class="modal-body">
         <p>
-            Pixter.me brings photo-products to your hands.<br>
-            It takes a few simple steps and your selected Image can be ordered as a beautiful photo-product and then produced and shipped to your doorstep
+            {{translate('Pixter.me brings photo-products to your hands.')}}<br>
+            {{translate('It takes a few simple steps and your selected Image can be ordered as a beautiful photo-product and then produced and shipped to your doorstep')}}
         </p>
         <p>
-            We take great care to provide users with the highest level of products and service and would be happy to have your feedbacks anytime.
+            {{translate('We take great care to provide users with the highest level of products and service and would be happy to have your feedbacks anytime.')}}
         </p>
         <p>
-            Enjoy!
+            {{translate('Enjoy!')}}
         </p>
     </div>
     <div class="modal-footer" style="text-align:center">
         <div class="row">
             <button type="button" class="btn next-button" ng-style="$root.brandingStyle.generalButton" ng-click="vm.close()">
-                OK
+                {{translate('OK')}}
             </button>
         </div>
         <ul class="learn-more-modal-links">
             <li>
                 <a href="https://www.pixter.me/privacy_policy.html" target="_blank">
-                    Privacy Policy
+                    {{translate('Privacy Policy')}}
                 </a>
             </li>
             <li>
                 <a href="https://www.pixter.me/terms_of_use.html" target="_blank">
-                    Terms of Use
+                    {{translate('Terms of Use')}}
                 </a>
             </li>
             <li>
                 <a href="https://www.pixter.me/store/faq/" target="_blank">
-                    FAQ
+                    {{translate('FAQ')}}
                 </a>
             </li>
             <li>
                 <a href="https://www.pixter.me/support-mini.html" target="_blank">
-                    Support
+                    {{translate('Support')}}
                 </a>
             </li>
         </ul>

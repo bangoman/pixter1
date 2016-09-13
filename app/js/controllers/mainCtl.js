@@ -160,10 +160,8 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
         }
     };
 
-    $rootScope.setCurrency = function (currencyCode) {
+    $rootScope.reload = function () {
         $scope.loading = true;
-        $rootScope.currencyCode = currencyCode;
-        pLoader.setCurrency(currencyCode);
         afterImageLoaded();
     };
 

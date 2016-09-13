@@ -79794,14 +79794,14 @@ angular.module('app').factory('uuidService', function($cookies){
 /**
  * Created by ori on 04/07/16.
  */
-angular.module('app').factory('apiService', function ($http,$rootScope, uuidService, $q, $httpParamSerializerJQLike) {
+angular.module('app').factory('apiService', function ($http, $rootScope, uuidService, $q, $httpParamSerializerJQLike) {
     return {
         validateCoupon: validateCoupon,
         validateOrder: validateOrder,
-        upload:upload,
-        getBranding:getBranding,
-        getProducts:getProducts,
-        getCountries:getCountries
+        upload: upload,
+        getBranding: getBranding,
+        getProducts: getProducts,
+        getCountries: getCountries
     };
 
     function getParameterByName(name, url) {
@@ -79837,12 +79837,15 @@ angular.module('app').factory('apiService', function ($http,$rootScope, uuidServ
                 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
             },
         };
-        if( method === 'get' ){
+        if (method === 'get') {
             config.params = data;
-            if( $rootScope.currencyCode ){
-                config.params.currency = $rootScope.currencyCode;
+            if ($rootScope.currencyCode) {
+                config.params.currency_code = $rootScope.currencyCode;
             }
-        }else{
+            if ($rootScope.lang) {
+                config.params.language = $rootScope.lang;
+            }
+        } else {
             config.data = $httpParamSerializerJQLike(data);
         }
         return $http(config).then(function (res) {
@@ -79864,43 +79867,57 @@ angular.module('app').factory('apiService', function ($http,$rootScope, uuidServ
     }
 
     function upload(dataUrl) {
-        return request('image/upload',{
-            image_data:dataUrl,
-        },'post','https://upload-sg.pixter-media.com/');
+        return request('image/upload', {
+            image_data: dataUrl,
+        }, 'post', 'https://upload-sg.pixter-media.com/');
     }
-    function getProducts(w,h){
+
+    function getProducts(w, h) {
         return request(
-            '/api/v2/category/get_list?api_key=' + $rootScope.apiKey + '&store_id=' + $rootScope.storeId + '&add_products=true&img_w=' + w + '&img_h=' + h,
-            {},
+            '/api/v2/category/get_list',
+            {
+                api_key: $rootScope.apiKey,
+                store_id: $rootScope.storeId,
+                add_products: true,
+                img_w: w,
+                img_h: h,
+            },
             'get',
             $rootScope.baseApi
-            );
-
+        );
 
 
     }
-    function getBranding(){
+
+    function getBranding() {
         return request(
-            '/api/v2/store/init?api_key=' + $rootScope.apiKey + '&store_id=' + $rootScope.storeId,
+            '/api/v2/store/init',
             {
-                obj_id:getParameterByName('objId'),
-                translation:'True',
+                store_id: $rootScope.storeId,
+                api_key: $rootScope.apiKey,
+                obj_id: getParameterByName('objId'),
+                translation: 'True',
             },
             'get',
             $rootScope.baseApi);
 
     }
-    function getCountries(){
+
+    function getCountries() {
         return request(
-            '/api/v2/country/?api_key=' + $rootScope.apiKey + '&store_id=' + $rootScope.storeId + '&add_products=true',
-            {},
+            '/api/v2/country/',
+            {
+                api_key: $rootScope.apiKey,
+                store_id: $rootScope.storeId,
+                add_products: true,
+            },
             'get',
             $rootScope.baseApi
-        );        
-        
+        );
+
     }
 
-    
+
 });
 /**
  * Created by ori on 06/09/16.
@@ -80800,10 +80817,8 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
         }
     };
 
-    $rootScope.setCurrency = function (currencyCode) {
+    $rootScope.reload = function () {
         $scope.loading = true;
-        $rootScope.currencyCode = currencyCode;
-        pLoader.setCurrency(currencyCode);
         afterImageLoaded();
     };
 
@@ -81031,14 +81046,22 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
 angular.module('app').controller('learnMoreCtl', function ($uibModalInstance, $rootScope) {
     var vm = this;
     vm.close = function () {
-        if( $rootScope.productsData.localization.currency.code !== vm.currencyCode ){
-            $rootScope.setCurrency(vm.currencyCode);
+        var currencyChanged = $rootScope.productsData.localization.currency.code !== vm.currencyCode;
+        var langChanged = $rootScope.productsData.localization.language !== vm.lang;
+        $rootScope.currencyCode = vm.currencyCode;
+        $rootScope.lang = vm.lang;
+        if( currencyChanged ){
+            pLoader.setCurrency(vm.currencyCode);
+        }
+        if( currencyChanged || langChanged ){
+            $rootScope.reload();
         }
         $uibModalInstance.close();
     };
     vm.dismiss = $uibModalInstance.dismiss;
 
     vm.currencyCode = $rootScope.productsData.localization.currency.code;
+    vm.lang = $rootScope.productsData.localization.language;
 });
 angular.module('app').controller('shopCtl', function ($state, $http, $rootScope,$stateParams,$scope, formatPriceCurrency) {
     var vm = this;

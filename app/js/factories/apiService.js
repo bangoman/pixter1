@@ -1,14 +1,14 @@
 /**
  * Created by ori on 04/07/16.
  */
-angular.module('app').factory('apiService', function ($http,$rootScope, uuidService, $q, $httpParamSerializerJQLike) {
+angular.module('app').factory('apiService', function ($http, $rootScope, uuidService, $q, $httpParamSerializerJQLike) {
     return {
         validateCoupon: validateCoupon,
         validateOrder: validateOrder,
-        upload:upload,
-        getBranding:getBranding,
-        getProducts:getProducts,
-        getCountries:getCountries
+        upload: upload,
+        getBranding: getBranding,
+        getProducts: getProducts,
+        getCountries: getCountries
     };
 
     function getParameterByName(name, url) {
@@ -44,12 +44,15 @@ angular.module('app').factory('apiService', function ($http,$rootScope, uuidServ
                 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
             },
         };
-        if( method === 'get' ){
+        if (method === 'get') {
             config.params = data;
-            if( $rootScope.currencyCode ){
-                config.params.currency = $rootScope.currencyCode;
+            if ($rootScope.currencyCode) {
+                config.params.currency_code = $rootScope.currencyCode;
             }
-        }else{
+            if ($rootScope.lang) {
+                config.params.language = $rootScope.lang;
+            }
+        } else {
             config.data = $httpParamSerializerJQLike(data);
         }
         return $http(config).then(function (res) {
@@ -71,41 +74,55 @@ angular.module('app').factory('apiService', function ($http,$rootScope, uuidServ
     }
 
     function upload(dataUrl) {
-        return request('image/upload',{
-            image_data:dataUrl,
-        },'post','https://upload-sg.pixter-media.com/');
+        return request('image/upload', {
+            image_data: dataUrl,
+        }, 'post', 'https://upload-sg.pixter-media.com/');
     }
-    function getProducts(w,h){
+
+    function getProducts(w, h) {
         return request(
-            '/api/v2/category/get_list?api_key=' + $rootScope.apiKey + '&store_id=' + $rootScope.storeId + '&add_products=true&img_w=' + w + '&img_h=' + h,
-            {},
+            '/api/v2/category/get_list',
+            {
+                api_key: $rootScope.apiKey,
+                store_id: $rootScope.storeId,
+                add_products: true,
+                img_w: w,
+                img_h: h,
+            },
             'get',
             $rootScope.baseApi
-            );
-
+        );
 
 
     }
-    function getBranding(){
+
+    function getBranding() {
         return request(
-            '/api/v2/store/init?api_key=' + $rootScope.apiKey + '&store_id=' + $rootScope.storeId,
+            '/api/v2/store/init',
             {
-                obj_id:getParameterByName('objId'),
-                translation:'True',
+                store_id: $rootScope.storeId,
+                api_key: $rootScope.apiKey,
+                obj_id: getParameterByName('objId'),
+                translation: 'True',
             },
             'get',
             $rootScope.baseApi);
 
     }
-    function getCountries(){
+
+    function getCountries() {
         return request(
-            '/api/v2/country/?api_key=' + $rootScope.apiKey + '&store_id=' + $rootScope.storeId + '&add_products=true',
-            {},
+            '/api/v2/country/',
+            {
+                api_key: $rootScope.apiKey,
+                store_id: $rootScope.storeId,
+                add_products: true,
+            },
             'get',
             $rootScope.baseApi
-        );        
-        
+        );
+
     }
 
-    
+
 });
