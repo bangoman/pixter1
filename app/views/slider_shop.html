@@ -1,6 +1,6 @@
 <div id="shop-view-responsive" class="row hidden-xs">
     <div class="col-xs-12"  ng-repeat="category in productsData.objects"  ng-show="currentIndex == $index">
-        <div style="height:{{bannerHeight}}px;  ">
+        <div ng-style="{'height':'{{bannerHeight}}px'}">
             <product-image-display class="shop-view-product-image-display" product="category[category.image_orientation]['OSS']" image-url="imageUrl"  tmb-width="bannerWidth" catalog-mode="true" >
             </product-image-display>
             <div class="slider-shop-description-box" ng-style="brandingStyle.oss.description">
@@ -14,14 +14,13 @@
             </div>
             <div ng-click="changeBanner(-1)" 
                  class="slider-shop-next-back-button back"
-                 style="top:{{bannerHeight/2 - 40}}px;">
+                 ng-style="{'top':'{{bannerHeight/2 - 40}}px'}">
                  <span class="glyphicon glyphicon-menu-left"></span>
              </div>
 
             <div ng-click="changeBanner(1)" 
                  class="slider-shop-next-back-button next"
-            style="
-            top:{{bannerHeight/2 - 40 }}px;">
+                 ng-style="{'top':'{{bannerHeight/2 - 40}}px'}">
                 <span class="glyphicon glyphicon-menu-right"></span>
             </div>
 
@@ -43,7 +42,7 @@
 
 <div id="shop-view-responsive" class="row mobile visible-xs">
     <div class="col-xs-12 mobile-slider-product-box"  ng-repeat="category in productsData.objects"  >
-        <div style="height:{{bannerHeight}}px">
+        <div ng-style="{'height':'{{bannerHeight}}px'}">
             <product-image-display class="shop-view-product-image-display" product="category[category.image_orientation]['OSS']" image-url="imageUrl"  tmb-width="bannerWidth" catalog-mode="true">
             </product-image-display>
             <div class="slider-shop-description-box" ng-style="brandingStyle.oss.description">

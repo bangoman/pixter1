@@ -29,12 +29,15 @@
             </li>
         </ul>
     </div>                
-    <div class="col-lg-8 col-lg-offset-2 col-xs-12 edit-image-outer-container" style="min-height:{{tmbWidth}}px">
+    <div class="col-lg-8 col-lg-offset-2 col-xs-12 edit-image-outer-container" ng-style="{'min-height':'{{tmbWidth}}px'}">
         <amazing-loader loader-color="loaderColor" loader-is-active="vm.showLoader"></amazing-loader>
         <div class="crop-image-container" ng-show="!vm.showLoader">
             <div class="edit-image-inner-container" >
                 <div ng-style="imageStyle">
-                    <div   on-drag="onDrag($event)" on-release="onRelease($event)" style="height:{{product.tmbHeight}}px;width:{{product.tmbWidth}}px;background:url('{{product.image}}');background-size:{{product.tmbWidth}}px {{product.tmbHeight}}px"> 
+                    <div   on-drag="onDrag($event)" on-release="onRelease($event)" ng-style="{'height':'{{product.tmbHeight}}px',
+                            'width':'{{product.tmbWidth}}px',
+                            'background':'url({{product.image}})',
+                            'background-size':'{{product.tmbWidth}}px {{product.tmbHeight}}px'}"> 
 
                     </div>
                 </div>
@@ -88,21 +91,37 @@
     </div>       
 
 </div>
-<div ng-if="catalogMode && !loading" style="height:{{product.tmbHeight}}px;width:{{product.tmbWidth}}px;overflow:hidden;position:absolute;left: calc(50% - {{product.tmbWidth/2}}px);">
+<!-- <div ng-if="catalogMode && !loading" style="height:{{product.tmbHeight}}px;width:{{product.tmbWidth}}px;overflow:hidden;position:absolute;left: calc(50% - {{product.tmbWidth/2}}px);">
+ -->
+<div ng-if="catalogMode && !loading" ng-style="{'height':'{{product.tmbHeight}}px',
+    'width':'{{product.tmbWidth}}px',
+    'overflow':'hidden',
+    'position':'absolute',
+    'left': 'calc(50% - {{product.tmbWidth/2}}px)'}">
 
     <div ng-style="imageStyle"></div>
-
-    <div id="product-box-{{product.type}}" on-drag="onDrag($event)" on-release="onRelease($event)" style="height:{{product.tmbHeight}}px;
+    <div id="{{'product-box-' + product.type}}" on-drag="onDrag($event)" on-release="onRelease($event)" ng-style="{'height':'{{product.tmbHeight}}px',
+                    'width':'{{product.tmbWidth}}px',
+                    'background':'url({{product.image}})',
+                    'background-size':'{{product.tmbWidth + 4}}px {{product.tmbHeight + 4}}px',
+                    'position': 'absolute',
+                    'background-position': '-2px'}"> 
+    </div>
+<!--     <div id="{{'product-box-' + product.type}}" on-drag="onDrag($event)" on-release="onRelease($event)" style="height:{{product.tmbHeight}}px;
                     width:{{product.tmbWidth}}px;
                     background:url('{{product.image}}');
                     background-size:{{product.tmbWidth + 4}}px {{product.tmbHeight + 4}}px;
                     position: absolute;
                     background-position: -2px;"> 
-    </div>
+    </div> -->
+
 </div>
 
 
 <div ng-style="imageStyle" ng-if="!editMode && !catalogMode && !backSideFlag && !loading" >
-    <div   on-drag="onDrag($event)" on-release="onRelease($event)" style="height:{{product.tmbHeight}}px;width:{{product.tmbWidth}}px;background:url('{{product.image}}');background-size:{{product.tmbWidth}}px {{product.tmbHeight}}px"> 
+    <div   on-drag="onDrag($event)" on-release="onRelease($event)" ng-style="{'height':'{{product.tmbHeight}}px',
+                'width':'{{product.tmbWidth}}px',
+                'background':'url({{product.image}})',
+                'background-size':'{{product.tmbWidth}}px {{product.tmbHeight}}px'}"> 
     </div>
 </div>
