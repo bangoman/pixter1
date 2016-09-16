@@ -80455,7 +80455,11 @@ angular.module('app').directive('productImageDisplay', function ($http) {
                 $scope.backgroundPosition = {top: "", left: ""}
                 $scope.backgroundSize = {w: "", h: ""}
                 var bpl, vpt
-              
+                $scope.editImageStyle = {'height': $scope.product.tmbHeight + 'px',
+                        'width': $scope.product.tmbWidth + 'px',
+                        'background':'url(' + $scope.product.image + ')',
+                        'background-size': $scope.product.tmbWidth + 'px ' + $scope.product.tmbHeight + 'px'};              
+
                 if (productRatio >= imgRatio) { // Left case
                     $scope.imageSizeRatio = img.height / ($scope.product.window.h / $scope.sizeRatio);
 
