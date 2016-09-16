@@ -80451,6 +80451,10 @@ angular.module('app').directive('productImageDisplay', function ($http) {
                 $scope.currentImg = img;
                 $scope.product.tmbWidth = parseInt($scope.tmbWidth);
                 $scope.product.tmbHeight = $scope.product.tmbWidth * ($scope.product.height / $scope.product.width);
+                $scope.editImageStyle = {'height': $scope.product.tmbHeight + 'px',
+                        'width': $scope.product.tmbWidth + 'px',
+                        'background':'url(' + $scope.product.image + ')',
+                        'background-size': $scope.product.tmbWidth + 'px ' + $scope.product.tmbHeight + 'px'};                
                 $scope.sizeRatio = $scope.product.width / $scope.product.tmbWidth;
                 $scope.backgroundPosition = {top: "", left: ""}
                 $scope.backgroundSize = {w: "", h: ""}
