@@ -34,16 +34,12 @@
         <div class="crop-image-container" ng-show="!vm.showLoader">
             <div class="edit-image-inner-container" >
                 <div ng-style="imageStyle">
-                    <div on-drag="onDrag($event)" on-release="onRelease($event)" ng-style="editImageStyle"> 
-
-                    </div>
-<!--                     <div on-drag="onDrag($event)" on-release="onRelease($event)" ng-style="{'height':'{{product.tmbHeight}}px',
+                    <div   on-drag="onDrag($event)" on-release="onRelease($event)" ng-style="{'height':'{{product.tmbHeight}}px',
                             'width':'{{product.tmbWidth}}px',
                             'background':'url({{product.image}})',
                             'background-size':'{{product.tmbWidth}}px {{product.tmbHeight}}px'}"> 
 
-                    </div> -->
-
+                    </div>
                 </div>
 
             </div>
@@ -123,6 +119,9 @@
 
 
 <div ng-style="imageStyle" ng-if="!editMode && !catalogMode && !backSideFlag && !loading" >
-    <div on-drag="onDrag($event)" on-release="onRelease($event)" ng-style="{'height':'{{product.tmbHeight}}px','width':'{{product.tmbWidth}}px','background':'url({{product.image}})','background-size':'{{product.tmbWidth}}px {{product.tmbHeight}}px'}"> 
+    <div   on-drag="onDrag($event)" on-release="onRelease($event)" ng-style="{'height':'{{product.tmbHeight}}px',
+                'width':'{{product.tmbWidth}}px',
+                'background':'url({{product.image}})',
+                'background-size':'{{product.tmbWidth}}px {{product.tmbHeight}}px'}"> 
     </div>
 </div>
