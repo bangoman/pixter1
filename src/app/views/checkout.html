@@ -13,19 +13,6 @@
         <div class="row checkout-view-header">
             {{currentProduct.shortname}}
         </div>
-        <div ng-repeat="param in currentProduct.params" class="row checkout-view-price-row">
-            <span class="checkout-price-title">
-                {{param.title}}: {{param.chosenOption.name}}
-            </span>
-            <div class="pull-right">
-                <span class="checkout-price checkout-old-price" ng-show="vm.getParamPrice(param) > vm.getDiscountPrice(vm.getParamPrice(param))">
-                    {{priceCurrencyOrder(vm.getParamPrice(param), currencySymbol)}}
-                </span>
-                <span class="checkout-price checkout-new-price">
-                    {{priceCurrencyOrder(vm.getDiscountPrice(vm.getParamPrice(param)), currencySymbol)}}
-                </span>
-            </div>
-        </div>
         <div class="row checkout-view-price-row">
             <span class="checkout-price-title">
                 {{translate('Product Price:')}}
@@ -37,6 +24,19 @@
                 </span>
                 <span class="checkout-price checkout-new-price">
                     {{priceCurrencyOrder(vm.getDiscountProductPrice(), currencySymbol)}} 
+                </span>
+            </div>
+        </div>
+        <div ng-repeat="param in currentProduct.params" class="row checkout-view-price-row">
+            <span class="checkout-price-title"  style="font-size: 16px;">
+                {{param.title}}: {{param.chosenOption.name}}
+            </span>
+            <div class="pull-right">
+                <span class="checkout-price checkout-old-price" ng-show="vm.getParamPrice(param) > vm.getDiscountPrice(vm.getParamPrice(param))">
+                    {{priceCurrencyOrder(vm.getParamPrice(param), currencySymbol)}}
+                </span>
+                <span class="checkout-price checkout-new-price">
+                    {{priceCurrencyOrder(vm.getDiscountPrice(vm.getParamPrice(param)), currencySymbol)}}
                 </span>
             </div>
         </div>
