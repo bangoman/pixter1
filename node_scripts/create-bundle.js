@@ -53,7 +53,7 @@ writeBundle(styles,'bundle-style.css');
 function writeBundle(sources,filename) {
     var script = '';
     sources.forEach(src => {
-        script += fs.readFileSync(path.resolve(__dirname, '../', src), 'utf8') + "\r\n";
+        script += fs.readFileSync(path.resolve(__dirname, '../src/', src), 'utf8') + "\r\n";
     });
 
     fs.writeFileSync(filename,script);

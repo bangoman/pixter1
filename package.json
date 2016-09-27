@@ -6,7 +6,8 @@
   "scripts": {
     "create-index": "node ./node_scripts/createIndex.js",
     "create-bundle": "node ./node_scripts/create-bundle.js",
-    "build": "npm run create-index && npm run create-bundle && cp-cli app dist/app && cp-cli iframe_loader dist/iframe_loader && cp-cli image.jpg"
+    "build": "mkdir -p dist && npm run create-index && npm run create-bundle && cp-cli src dist",
+    "build:watch": "watch 'npm run build' ./src"
   },
   "repository": {
     "type": "git",
@@ -20,6 +21,8 @@
   "homepage": "https://github.com/bangoman/pixter1#readme",
   "dependencies": {
     "cp-cli": "^1.0.2",
-    "mz": "^2.4.0"
+    "mkdir": "0.0.2",
+    "mz": "^2.4.0",
+    "watch": "^0.19.2"
   }
 }
