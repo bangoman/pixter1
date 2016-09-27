@@ -27,8 +27,8 @@
                     <label for="{{param.title}}">
                         <input type="radio" id="{{option.title}}" name="{{param.title}}" ng-model="param.chosenOption"
                                ng-value="option" ng-change="getQuantity()">
-                        <span ng-if="option.pricing.price">{{option.name}}
-                            <!--  {{option.pricing.price}} --> {{priceCurrencyOrder(option.pricing.price,
+                        {{option.name}}
+                        <span ng-if="option.pricing.price">&nbsp;{{priceCurrencyOrder(option.pricing.price,
                         $root.currencySymbol)}}</span>
                     </label>
                     <div ng-if="param.chosenOption == option && option.additional_data">
