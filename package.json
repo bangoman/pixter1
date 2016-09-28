@@ -6,7 +6,7 @@
   "scripts": {
     "populate-templates": "node ./node_scripts/populate-templates.js",
     "create-bundle": "node ./node_scripts/create-bundle.js",
-    "build": "mkdir -p dist && cp-cli src dist && npm run populate-templates && npm run create-bundle",
+    "build": "mkdir -p dist && node ./node_scripts/copy-to-dist.js && npm run populate-templates && npm run create-bundle",
     "build:watch": "watch 'npm run build' ./src"
   },
   "repository": {
@@ -20,9 +20,10 @@
   },
   "homepage": "https://github.com/bangoman/pixter1#readme",
   "dependencies": {
-    "cp-cli": "^1.0.2",
+    "delete-empty": "^0.1.3",
     "mkdir": "0.0.2",
     "mz": "^2.4.0",
+    "recursive-copy": "^2.0.5",
     "watch": "^0.19.2"
   }
 }
