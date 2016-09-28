@@ -196,8 +196,11 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
             if (isDatauri(url)) {
                 url = dataURItoBlob(url);
             }
-            var isSdk = getParameterByName("sdk", location.search);
+            vm.isSdk = getParameterByName("sdk", location.search);            
             $rootScope.originalImageUrl = $rootScope.imageUrl = url;
+<<<<<<< HEAD
+            message('image_received', url.replace("%3A", ":"));                
+=======
             console.log(isSdk,"!!!",location.search);
             if(isSdk){
                 afterImageLoaded()
@@ -207,6 +210,7 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
 
 
 
+>>>>>>> 716beb6eea69e88d7cad841a5c67b1122211a24c
         }
     }
 

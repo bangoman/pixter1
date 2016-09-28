@@ -8,7 +8,7 @@
         <div class="preview-product-border">
          <!--    <amazing-loader loader-color="brandingData.branding.loader.textcolor" loader-is-active="isLoading"></amazing-loader> -->
         </div>
-        <div style="margin-top:{{tmbWidth}}px;">
+        <div ng-style="{'margin-top':'{{tmbWidth}}px'}">
 
             <div class="row preview-edit-row">
                 <div class="preview-edit-btn pull-left" ng-show="currentProduct.rotate_product.length > 0"   ng-click="findRotatedProduct(currentProduct.rotate_product[0].id)" style="color:{{brandingData.branding.buttons.backgroundcolor}};" >
@@ -30,7 +30,7 @@
                 </div>
 
             </div>
-            <div ng-if="currentProduct.params" class="row front-back-buttons-row" style="width:{{tmbWidth}}px">
+            <div ng-if="currentProduct.params" class="row front-back-buttons-row" ng-style="{'margin-top':'{{tmbWidth}}px'}">
                 <div class="btn front-back-button pull-left" ng-style="brandingStyle.generalButton" ng-click="changeBackSideFlag(true)" ng-disabled="bsf">
                     {{translate('Back side')}}
                 </div>

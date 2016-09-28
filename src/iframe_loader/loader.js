@@ -6,7 +6,6 @@
         loadIframe: loadIframe,
         changeImage: changeImage,
         showSite: showSite,
-        version:__RANDOM__,
     };
     if(location.hostname == "pixter-loader-assets.s3.amazonaws.com"){
         console.log = noop;

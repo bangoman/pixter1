@@ -562,7 +562,7 @@ select[type="number"]:active {
 }
 .edit-crop-controls-container.visible-xs button img {
   position: relative;
-  top: -6px;
+  top: -4px;
 }
 
 .crop-controls .crop-control-button .rotate-right {
