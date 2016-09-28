@@ -16,7 +16,7 @@
             <button class="store-header-learn-more-button" ng-style="brandingStyle.header.button"
                     ng-click="vm.learnMore()">?
             </button>
-            <button class="store-header-close-button" ng-style="brandingStyle.header.button" ng-click="vm.close()">
+            <button class="store-header-close-button" ng-if="!vm.isSdk" ng-style="brandingStyle.header.button" ng-click="vm.close()">
                 {{translate('Close')}}
             </button>
         </div>
