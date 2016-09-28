@@ -129,7 +129,7 @@
                <div class="form-group error-text" ng-show="!vm.form.$valid && showErrorMessage" style="position:absolute ; top:-20px">
                    {{translate('Please fill in the highlighted fields')}}
                </div>
-                <button type="submit" class="btn next-button" ng-style="brandingStyle.generalButton" ng-click="vm.goToCheckout()">{{translate('Next')}}</button>
+                <button type="submit" class="btn next-button" ng-style="brandingStyle.generalButton" ng-click="vm.goToCheckout()">{{brandingData.branding.buttons.text}}</button>
             </div>
         </div>
     </form>

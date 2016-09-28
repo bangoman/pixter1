@@ -14,12 +14,12 @@
     window.addEventListener('message', function (e) {
         if(e.data.type == "pixter_image_received"){
             initialized = true;
-            url = url + "&imgUrl=" + e.data.img;
+            url = url + "&imgUrl=" + e.data.data.img;
             if (readyToShow) {
                 showSite();
             }            
         }
-        switch (e.data) {
+        switch (e.data.type) {
             case 'pixter_init':
                 postImage();
                 break;
@@ -33,7 +33,7 @@
       //          if( !closeCalled ){
                 try{
                     closeCalled = true;
-                    callbacks.onClose();
+                    callbacks.onClose(e.data.data);
                     document.body.removeChild(iframe);
                     document.body.removeChild(overlay);
                     iframe = null;
@@ -44,7 +44,7 @@
         //        }
                 break;
             case 'pixter_p_order_complete':
-                callbacks.onOrderComplete();
+                callbacks.onOrderComplete(e.data.data);
                 break;
         }
     }, false);

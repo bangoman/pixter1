@@ -1,4 +1,4 @@
-angular.module('app').controller('checkoutCtl', function ($uibModal, $rootScope, apiService, $filter, $scope, formatPriceCurrency, crosstab, productService) {
+angular.module('app').controller('checkoutCtl', function ($uibModal, $rootScope, apiService, $filter, $scope, formatPriceCurrency, crosstab, productService, $state) {
     var vm = this;
 
     window.scrollTo(0, 0);
@@ -108,6 +108,7 @@ angular.module('app').controller('checkoutCtl', function ($uibModal, $rootScope,
                         key: $rootScope.orderKey,
                     }))
                     .then(function (data) {
+                        $rootScope.order.id = data.order_id;
                         productService.sendGAEvent(true,"send", "event", "Checkout", "order validated by server", "event");
                         productService.sendGA('purchase', {
                             id: data.order_id,
@@ -122,7 +123,9 @@ angular.module('app').controller('checkoutCtl', function ($uibModal, $rootScope,
                             win.close();
                             $rootScope.CouponMarketingString = false;
                             $state.go('app.thankYou');
-                            crosstab.broadcast('p_order_complete');
+                            crosstab.broadcast('p_order_complete',{
+                                orderId:data.order_id,
+                            });
                         }
                     }, function (data) {
                         win.close();

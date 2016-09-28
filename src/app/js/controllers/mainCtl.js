@@ -46,7 +46,9 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
         }
         $timeout(function () {
             if (e.data == "p_order_complete") {
-                crosstab.broadcast('p_order_complete');
+                crosstab.broadcast('p_order_complete',{
+                    orderId:$rootScope.order.id,
+                });
                 $state.go('app.thankYou');
             }
             else if ((e.data) == "p_order_canceled") {
@@ -59,16 +61,10 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
         crosstab.broadcast('close');
     };
 
-    crosstab.on('close', function () {
-        message('close');
-    });
-
-    crosstab.on('p_order_complete', function () {
-        message('p_order_complete');
-    });
-
-    crosstab.on('p_order_canceled', function () {
-        message('p_order_canceled');
+    ['close','p_order_complete','p_order_canceled'].forEach(function (eventName) {
+        crosstab.on(eventName, function (e) {
+            message(eventName,e.data);
+        });
     });
 
 
@@ -199,7 +195,7 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
             if (isDatauri(url)) {
                 url = dataURItoBlob(url);
             }
-            message('image_received', url.replace("%3A", ":"));
+            message('image_received', {img:url.replace("%3A", ":")});
 
             $rootScope.originalImageUrl = $rootScope.imageUrl = url;
         }
