@@ -69,7 +69,7 @@ angular.module('app').controller('checkoutCtl', function ($uibModal, $rootScope,
 
     vm.checkout = function (paymentType) {
         var win = window.open('', "", "width=500, height=500");
-        win.document.body.innerHTML = 'Uploading your image ...';
+        win.document.body.innerHTML = '<h5>Uploading your image ...</h5>';
         var returnAddressPrice = 0;
         var quantity = 1;
         if (properties) {
@@ -88,7 +88,7 @@ angular.module('app').controller('checkoutCtl', function ($uibModal, $rootScope,
         });
         var watch = $rootScope.$watch('orderKey', function () {
             if ($rootScope.orderKey) {
-                win.document.body.innerHTML = 'Processing your order ...';
+                win.document.body.innerHTML = '<h5>Processing your order ...</h5>';
                 console.log($rootScope.order);
                 watch();
                 apiService
@@ -117,7 +117,7 @@ angular.module('app').controller('checkoutCtl', function ($uibModal, $rootScope,
                             option: paymentType,
                         });
                         if (data.url) {
-                            win.document.body.innerHTML = 'Redirecting you to the payment provider...';
+                            win.document.body.innerHTML = '<h5>Redirecting you to the payment provider...</h5>';
                             win.location.href = data.url;
                         } else {
                             win.close();

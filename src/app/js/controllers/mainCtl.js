@@ -198,19 +198,7 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
             }
             vm.isSdk = getParameterByName("sdk", location.search);            
             $rootScope.originalImageUrl = $rootScope.imageUrl = url;
-<<<<<<< HEAD
             message('image_received', url.replace("%3A", ":"));                
-=======
-            console.log(isSdk,"!!!",location.search);
-            if(isSdk){
-                afterImageLoaded()
-            }else{
-                message('image_received', {img:url.replace("%3A", ":")});
-            }
-
-
-
->>>>>>> 716beb6eea69e88d7cad841a5c67b1122211a24c
         }
     }
 
