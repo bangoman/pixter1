@@ -46,7 +46,9 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
         }
         $timeout(function () {
             if (e.data == "p_order_complete") {
-                crosstab.broadcast('p_order_complete');
+                crosstab.broadcast('p_order_complete',{
+                    orderId:$rootScope.order.id,
+                });
                 $state.go('app.thankYou');
             }
             else if ((e.data) == "p_order_canceled") {
@@ -59,16 +61,10 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
         crosstab.broadcast('close');
     };
 
-    crosstab.on('close', function () {
-        message('close');
-    });
-
-    crosstab.on('p_order_complete', function () {
-        message('p_order_complete');
-    });
-
-    crosstab.on('p_order_canceled', function () {
-        message('p_order_canceled');
+    ['close','p_order_complete','p_order_canceled'].forEach(function (eventName) {
+        crosstab.on(eventName, function (e) {
+            message(eventName,e.data);
+        });
     });
 
 
@@ -202,7 +198,19 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
             }
             vm.isSdk = getParameterByName("sdk", location.search);            
             $rootScope.originalImageUrl = $rootScope.imageUrl = url;
+<<<<<<< HEAD
             message('image_received', url.replace("%3A", ":"));                
+=======
+            console.log(isSdk,"!!!",location.search);
+            if(isSdk){
+                afterImageLoaded()
+            }else{
+                message('image_received', {img:url.replace("%3A", ":")});
+            }
+
+
+
+>>>>>>> 716beb6eea69e88d7cad841a5c67b1122211a24c
         }
     }
 

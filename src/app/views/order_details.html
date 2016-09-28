@@ -15,19 +15,19 @@
                                required
                                ng-class="!vm.form.user_name.$valid && vm.form.$submitted ? 'error-input' : ''"/>
                     </div>
-                    <div class="form-group error-text" ng-show="vm.form.$submitted">
-                       <!--  <div ng-show="vm.form.user_name.$error.required">Required Field</div> -->
-                    </div>
+                    <!-- <div class="form-group error-text" ng-show="vm.form.$submitted">
+                        <div ng-show="vm.form.user_name.$error.required">Required Field</div>
+                    </div> -->
                     <div class="form-group">
                         <input type="email" class="form-control order-details-input" name="user_email" placeholder="E-Mail*" 
                                ng-model="order.user_email"
                                required
                                ng-class="!vm.form.user_email.$valid && vm.form.$submitted ? 'error-input' : ''"/>
                     </div>
-                    <div class="form-group error-text" ng-show="vm.form.$submitted">
-                 <!--        <div ng-show="vm.form.user_email.$error.required">Required Field</div>
-                        <div ng-show="vm.form.user_email.$error.email">Please type valid email</div> -->
-                    </div>
+                    <!-- <div class="form-group error-text" ng-show="vm.form.$submitted">
+                        <div ng-show="vm.form.user_email.$error.required">Required Field</div>
+                        <div ng-show="vm.form.user_email.$error.email">Please type valid email</div>
+                    </div> -->
                 </div>
                 
             </div>
@@ -51,17 +51,17 @@
                                required 
                                ng-class="!vm.form.recipient_name.$valid && vm.form.$submitted ? 'error-input' : ''"/>
                     </div>
-                    <div class="form-group error-text" ng-show="vm.form.$submitted">
-                 <!--        <div ng-show="vm.form.recipient_name.$error.required">Required Field</div> -->
-                    </div>
+                    <!-- <div class="form-group error-text" ng-show="vm.form.$submitted">
+                        <div ng-show="vm.form.recipient_name.$error.required">Required Field</div>
+                    </div> -->
                     <div class="form-group">
                         <input type="text" class="form-control order-details-input" name="address" placeholder="Address 1*"
                                ng-model="order.address" 
                                required 
                                ng-class="!vm.form.address.$valid && vm.form.$submitted ? 'error-input' : ''"/>
-                        <div class="form-group error-text" ng-show="vm.form.$submitted">
-              <!--           <div ng-show="vm.form.address.$error.required">Required Field</div> -->
-                        </div>
+                        <!-- <div class="form-group error-text" ng-show="vm.form.$submitted">
+                            <div ng-show="vm.form.address.$error.required">Required Field</div>
+                        </div> -->
                     </div>
                     <div class="form-group">
                         <input type="text" class="form-control order-details-input" name="address2" placeholder="Address 2"
@@ -76,9 +76,9 @@
                                ng-model="order.city"
                                required 
                                ng-class="!vm.form.city.$valid && vm.form.$submitted ? 'error-input' : ''"/>
-                        <div class="form-group error-text" ng-show="vm.form.$submitted">
-                         <!--    <div ng-show="vm.form.city.$error.required">Required Field</div> -->
-                        </div>
+                        <!-- <div class="form-group error-text" ng-show="vm.form.$submitted">
+                            <div ng-show="vm.form.city.$error.required">Required Field</div>
+                        </div> -->
                     </div>
                     <div class="form-group order-details-state-zip-inputs">
                         <input type="text" class="form-control order-details-input" style="width:59%; margin-bottom:0"
@@ -121,15 +121,19 @@
                          <a target="_blank" href="http://pixter.me/terms_of_use.html">{{translate('terms')}}</a>
                     {{translate('and confirm I have the rights to upload and use the image.')}}
                 </label>
-                <div class="form-group error-text" ng-show="vm.form.$submitted">
-                    <!-- <div ng-show="!order.TOC">You must agree to the terms</div> -->
-                </div>
+                <!-- <div class="form-group error-text" ng-show="vm.form.$submitted">
+                    <div ng-show="!order.TOC">You must agree to the terms</div>
+                </div> -->
             </div>
             <div class="col-sm-4 col-xs-12">
-               <div class="form-group error-text" ng-show="!vm.form.$valid && showErrorMessage" style="position:absolute ; top:-20px">
+               <div class="form-group error-text" ng-show="!vm.form.$valid && showErrorMessage" 
+                    style="top:-20px;
+                           position:absolute;
+                           white-space: nowrap;
+                           margin-bottom: 0px;">
                    {{translate('Please fill in the highlighted fields')}}
                </div>
-                <button type="submit" class="btn next-button" ng-style="brandingStyle.generalButton" ng-click="vm.goToCheckout()">{{translate('Next')}}</button>
+                <button type="submit" class="btn next-button" ng-style="brandingStyle.generalButton" ng-click="vm.goToCheckout()">{{brandingData.branding.buttons.text}}</button>
             </div>
         </div>
     </form>

@@ -13,8 +13,8 @@ angular.module('app').factory('crosstab', function ($timeout) {
     }
 
     function on(eventName, cb) {
-        return localStorageCommunicator.on(eventName, function () {
-            $timeout(cb);
+        return localStorageCommunicator.on(eventName, function (e) {
+            $timeout(cb.bind(null,e));
         });
     }
 });

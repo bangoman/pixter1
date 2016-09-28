@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "create-index": "node ./node_scripts/createIndex.js",
+    "populate-templates": "node ./node_scripts/populate-templates.js",
     "create-bundle": "node ./node_scripts/create-bundle.js",
-    "build": "mkdir -p dist && npm run create-index && npm run create-bundle && cp-cli src dist",
+    "build": "mkdir -p dist && cp-cli src dist && npm run populate-templates && npm run create-bundle",
     "build:watch": "watch 'npm run build' ./src"
   },
   "repository": {
