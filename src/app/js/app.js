@@ -8,3 +8,7 @@ var app = angular.module('app',[
     'ngCookies',
     'LocalStorageModule',
 ]);
+
+function launchStore(image){
+    window.postMessage({img: image, type: "pixter"}, '*');
+}
