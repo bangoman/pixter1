@@ -83,6 +83,7 @@
         // var url = baseUrl + '/index.html?imageUrl=' + imgUrl + '&apiKey=' + apiKey + '&storeId=' + storeId + '&bgs=' + backgroundsString;  //   add this:  #/app/sliderShop  to see the slideShop
          url = baseUrl + '?apiKey=' + apiKey + '&storeId=' + storeId + '&bgs=' + backgroundsString + '&host=' + encodeURIComponent(location.host) + '&objId=' + objId;  //   add this:  #/app/sliderShop  to see the slideShop
         iframe = document.createElement('iframe');
+        iframe.className += "p1xtr-store";
         if (!mobileAndTabletcheck()) {
             iframe.src = url;        
             overlay = document.createElement('div');
