@@ -9,6 +9,6 @@ var app = angular.module('app',[
     'LocalStorageModule',
 ]);
 
-function lunchStore(image){
+function launchStore(image){
     window.postMessage({img: image, type: "pixter"}, '*');
 }
