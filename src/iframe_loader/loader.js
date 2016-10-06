@@ -51,7 +51,7 @@
 
     var proxy = "https://pixprox.pixter.me/";
     var baseUrl = "http://pixter-v1-responsive.s3-website-us-east-1.amazonaws.com/";
-    baseUrl = "../";
+   // baseUrl = "../";
     // baseUrl =  proxy + baseUrl;
     var url;
     function loadIframe(imgUrl, apiKey, storeId, backgrounds, objId, onClose, onOrderComplete) {
