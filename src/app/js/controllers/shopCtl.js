@@ -15,6 +15,13 @@ angular.module('app').controller('shopCtl', function ($state, $http, $rootScope,
         $scope.bannerHeight = ($scope.bannerWidth / $scope.bannerRatio) * 0.99;
     }
     $scope.priceCurrencyOrder = formatPriceCurrency;
+    $scope.isMobile = $rootScope.isMobile;
+
+    if ($scope.isMobile) {
+        vm.tmbWidth = 220;
+    }else {
+        vm.tmbWidth = 160;
+    }
  
     $scope.changeBanner = function(i){
         $scope.currentIndex += i;
@@ -65,4 +72,5 @@ angular.module('app').controller('shopCtl', function ($state, $http, $rootScope,
 
 
     }
+
 });

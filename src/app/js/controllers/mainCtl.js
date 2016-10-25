@@ -214,7 +214,6 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
         }
     }
     $rootScope.isMobile = !inIframe();
-    console.log('$rootScope.isDesktop = ',$rootScope.isDesktop);
 
     function afterImageLoaded() {
         //$rootScope.imageUrl = getParameterByName("imageUrl",location.search);//"image.jpg";

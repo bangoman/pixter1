@@ -6,10 +6,10 @@
                    'width-100':categories.length < 2}">
 
         <div class="product_image_container">
-            <product-image-display class="shop-view-product-image-display" product="category[category.image_orientation]['Preview']" image-url="imageUrl"  tmb-width="160" catalog-mode="true" >
+            <product-image-display class="shop-view-product-image-display" product="category[category.image_orientation]['Preview']" image-url="imageUrl"  tmb-width="vm.tmbWidth" catalog-mode="true" >
             </product-image-display>
         </div>
-        <div class="product-data">
+        <div class="product-data" ng-class="{'mobile-padding':isMobile}">
             <span class="product-name">{{ category.name }}</span>
             <span class="product-price" style="padding-left:10px;">{{priceCurrencyOrder(category.pricing.price, currencySymbol)}}</span>
         </div>
