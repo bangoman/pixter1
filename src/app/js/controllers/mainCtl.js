@@ -25,7 +25,7 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
             afterImageLoaded();
         } else {
             message('init');
-            if( sessionStorage.getItem('.imageUrl') ){
+            if (sessionStorage.getItem('.imageUrl')) {
                 setImageUrl(sessionStorage.getItem('.imageUrl'));
             }
         }
@@ -35,9 +35,9 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
     window.addEventListener('message', function (e) {
         if (e.data.type == "pixter") {
             var url = e.data.img;
-            try{
+            try {
                 sessionStorage.setItem('.imageUrl', url);
-            }catch (e){
+            } catch (e) {
                 console.error(e);
             }
             var imgurl = url;
@@ -46,8 +46,8 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
         }
         $timeout(function () {
             if (e.data == "p_order_complete") {
-                crosstab.broadcast('p_order_complete',{
-                    orderId:$rootScope.order.id,
+                crosstab.broadcast('p_order_complete', {
+                    orderId: $rootScope.order.id,
                 });
                 $state.go('app.thankYou');
             }
@@ -61,9 +61,9 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
         crosstab.broadcast('close');
     };
 
-    ['close','p_order_complete','p_order_canceled'].forEach(function (eventName) {
+    ['close', 'p_order_complete', 'p_order_canceled'].forEach(function (eventName) {
         crosstab.on(eventName, function (e) {
-            message(eventName,e.data);
+            message(eventName, e.data);
         });
     });
 
@@ -196,9 +196,9 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
             if (isDatauri(url)) {
                 url = dataURItoBlob(url);
             }
-            vm.isSdk = getParameterByName("sdk", location.search);            
+            vm.isSdk = getParameterByName("sdk", location.search);
             $rootScope.originalImageUrl = $rootScope.imageUrl = url;
-            message('image_received', url.replace("%3A", ":"));                
+            message('image_received', url.replace("%3A", ":"));
         }
     }
 
@@ -213,6 +213,7 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
             return true;
         }
     }
+
     $rootScope.isMobile = !inIframe();
 
     function afterImageLoaded() {
@@ -221,7 +222,6 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
         $rootScope.storeId = getParameterByName("storeId", location.search); //"87CD192192A547"
         $rootScope.bgs = getParameterByName("bgs", location.search); //"87CD192192A547"
         $rootScope.bgs = JSON.parse($rootScope.bgs);
-        pLoader.initV3Ga($rootScope.apiKey, "UA-55216316-17", '249222d593798049e23e4fd3f00ac0ec6052b3bb', 'B522BFCF646D4F', "UA-55216316-18");
         getCountry();
         $rootScope.originalImageUrl = $rootScope.imageUrl;
         var promises = [
@@ -235,35 +235,39 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
                     return getProducts(width, height);
                 }),
         ];
-        return $q.all(promises).then(function () {
-            var watch = $rootScope.$watch('currentProduct', function () {
-                if ($rootScope.currentProduct) {
-                    watch();
-                    if ($state.current.name === 'app.sliderShop') {
-                        productService.sendGAEvent(true, 'send', 'event', 'Catalog', 'impression', 'visible flow');
-                    } else {
-                        productService.sendGAEvent(true, 'send', 'event', 'one stop shop', 'important action');
+        return $q
+            .all(promises)
+            .then(function () {
+                pLoader.initV3Ga($rootScope.pixKey, $rootScope.brandingData.initdata.ga_id, $rootScope.apiKey, $rootScope.storeId, $rootScope.brandingData.initdata.ga_pub_id);
+                pLoader.setCurrency($rootScope.productsData.localization.currency.code);
+                var watch = $rootScope.$watch('currentProduct', function () {
+                    if ($rootScope.currentProduct) {
+                        watch();
+                        if ($state.current.name === 'app.sliderShop') {
+                            productService.sendGAEvent(true, 'send', 'event', 'Catalog', 'impression', 'visible flow');
+                        } else {
+                            productService.sendGAEvent(true, 'send', 'event', 'one stop shop', 'important action');
+                        }
                     }
-                }
-            });
-            var found = false;
-            angular.forEach($rootScope.productsData.objects, function (category, key) {
-                if (category.id == $rootScope.startFromPreviewMode) {
-                    $rootScope.category = category;
-                    $rootScope.currentProduct = category.products[0];
-                    found = true
+                });
+                var found = false;
+                angular.forEach($rootScope.productsData.objects, function (category, key) {
+                    if (category.id == $rootScope.startFromPreviewMode) {
+                        $rootScope.category = category;
+                        $rootScope.currentProduct = category.products[0];
+                        found = true
 
 
+                    }
+                });
+                if (found) {
+                    return $state.go('app.preview');
                 }
+                if ($rootScope.productsData.display.type == "OSS") {
+                    return $state.go('app.sliderShop');
+                }
+                return $state.go('app.shop');
             });
-            if (found) {
-                return $state.go('app.preview');
-            }
-            if ($rootScope.productsData.display.type == "OSS") {
-                return $state.go('app.sliderShop');
-            }
-            return $state.go('app.shop');
-        });
     }
 
     function getImgSize() {
@@ -305,7 +309,6 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
             .then(function (res) {
                 console.log("product res", res);
                 $rootScope.productsData = res;
-                pLoader.setCurrency(res.localization.currency.code);
                 $scope.loading = false;
                 $scope.animateOpacity();
                 $rootScope.$broadcast("productArrive");
@@ -377,7 +380,7 @@ angular.module('app').controller('mainCtl', function (message, $uibModal, $state
     }
 
     $rootScope.translate = function (term) {
-        if( $rootScope.brandingData ){
+        if ($rootScope.brandingData) {
             return $rootScope.brandingData.translation.objects_dict[term] || term;
         }
         return term;
